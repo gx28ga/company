@@ -1,0 +1,16 @@
+assets: 静态文件
+components : 组件
+enum : 枚举
+mixin : mixin
+mock : 接口
+views : 展示层
+contants : 常量
+dto : 数据类型转换
+directive : 指令
+global : 常用功能
+middle : 中间件
+plugins : 插件
+router : 路由
+style : 样式
+utils : 工具类
+convert : dto to domain or domain to dto
