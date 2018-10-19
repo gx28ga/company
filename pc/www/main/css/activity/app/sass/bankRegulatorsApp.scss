@@ -1,0 +1,120 @@
+@import "../../common/global.scss";
+html,body,div{ margin:0; padding:0;}
+a{text-decoration: none;}
+$fontCol: #815800;
+.bankRegulatorsApp-wrapper{
+	background:#fff;
+	.banner{
+		background: url('../../../../images/bankRegulators/bannerApp.png') center 0 no-repeat;
+	    background-size: contain;
+	}
+	.imgs{
+		>div{
+			background-position:0 center;
+			background-repeat:no-repeat;
+			background-size:contain;
+		}
+		.img1{  background-image:url('../../../../images/bankRegulators/img1.png') }
+		.img2{  background-image:url('../../../../images/bankRegulators/img2.png') }
+	}
+	.title2{background:url('../../../../images/bankRegulators/tit2.png') no-repeat; background-size:contain;}
+	.ptitle{ 
+		@include size(font-size,52px,1080);
+		color:#333;text-align:center;
+		&.stitle{
+			@include size(font-size,32px,1080);color:#000;
+		}
+		&.htitle{
+			@include size(font-size,42px,1080);
+			text-align:left;
+			@include size(padding-left,64px,1080);
+			@include size(padding-right,64px,1080);
+			@include size(line-height,60px,1080);
+		}
+		&.ltitle{
+			@include size(font-size,36px,1080);color:#333333;text-align:left;
+		}
+		&.ktitle{
+			@include size(font-size,36px,1080);color:#333333;text-align:left;@include size(padding-bottom,80px,1080);
+		}
+		&.btitle{
+			@include size(font-size,48px,1080);@include size(line-height,76px,1080);color:#2863bc;text-align:left;
+		}
+		&.wtitle{
+			@include size(font-size,60px,1080);@include size(line-height,80px,1080);color:#cccccc;text-align:left;
+		}
+		&.wstitle{
+			@include size(font-size,48px,1080);@include size(line-height,80px,1080);color:#cccccc;text-align:left;
+		}
+		&.botitle{
+			@include size(font-size,30px,1080);text-align:center;@include size(line-height,170px,1080);color:#cccccc;
+		}
+		&.padd{
+			@include size(padding-top,85px,1080);
+			@include size(padding-bottom,115px,1080);
+		}
+	}
+	.fg{
+		@include size(width,120px,1080);
+		@include size(height,7px,1080);
+		background:#5b8edb;
+		margin:0 auto;
+		@include size(margin-top,15px,1080);
+	}
+	.content{
+		@include size(padding-top,75px,1080);
+		.con{
+			@include size(padding-top,50px,1080);
+			@include size(padding-bottom,50px,1080);
+		}
+		.conTwo{
+			background: url('../../../../images/bankRegulators/contwo.png') center 0 no-repeat;
+		    background-size: contain;
+		    margin:0 auto;
+		    @include size(margin-top,30px,1080);
+		}
+		&.contentThree{
+			@include size(padding-top,45px,1080);
+			@include size(padding-bottom,45px,1080);
+			@include size(padding-left,64px,1080);
+			@include size(padding-right,64px,1080);
+			.conThree{
+				table{
+					width:100%;;
+					@include size(margin-top,70px,1080);
+					.icon{
+						@include size(width,138px,1080);@include size(height,138px,1080);@include size(margin-bottom,120px,1080);
+						&.iconOne{
+							background: url('../../../../images/bankRegulators/iconOneApp.png') center center no-repeat;
+							background-size: contain;
+						}
+						&.iconTwo{
+							background: url('../../../../images/bankRegulators/iconTwoApp.png') center center no-repeat;
+							background-size: contain;@include size(margin-bottom,60px,1080);
+						}
+						&.iconThree{
+							background: url('../../../../images/bankRegulators/iconThreeApp.png') center center no-repeat;
+							background-size: contain;
+						}
+					}
+				}
+			}
+		}
+	}
+	.contentFour{
+		background: url('../../../../images/bankRegulators/bottom.png') center 0 no-repeat;
+	    background-size: contain;
+		@include size(padding-left,64px,1080);
+		@include size(padding-right,64px,1080);
+		table{
+			width:100%;
+			tr.dashed{
+				border-bottom:1px dashed #ccc;
+				td.padd{
+					@include size(padding-top,90px,1080);
+					@include size(padding-bottom,90px,1080);
+				}
+			}
+		}
+	}
+}

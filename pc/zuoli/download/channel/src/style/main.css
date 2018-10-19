@@ -1,0 +1,63 @@
+body, div, p, h1, h2, h3, h4, h5, h6, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, table, th, td { margin: 0; padding: 0; }
+address, cite, em, i { font-style: normal; }
+h1,h2,h3,h4,h5,h6{ font-weight: normal;}
+body{
+	margin:0 auto;
+	-webkit-appearance: none;
+	background:#fff;
+	color: #000;
+	font-size:14px;
+	-webkit-overflow-scrolling: touch;
+}
+html,body{ height:100%; overflow:hidden;}
+li { list-style: none; }
+a { color:#333; text-decoration: none; }
+a:hover { color:#c40000; text-decoration: none; }
+img { border: 0; }
+table { border-collapse: collapse; border-spacing: 0; }
+input[type="button"], input[type="submit"], input[type="reset"] { cursor: pointer;-webkit-appearance: none; }
+/* close commented backslash hack */
+::-webkit-input-placeholder{ font-size:.75rem;  }
+/* public */
+input{outline: none;}
+a{-webkit-tap-highlight-color:rgba(255,0,0,0);}
+i{ display:inline-block; }
+#app{
+	height:100%;
+	display:flex;
+	flex-direction:column;
+}
+#Content{
+	position:relative;
+	z-index:1;
+	display:flex;
+	flex:1;
+}
+.view{ 
+	width:100%; 
+	padding:15px; 
+	overflow-y: scroll;
+	box-sizing:border-box; 
+	transition-duration:.3s; 
+}
+.btn{
+	color: #ffffff;
+	text-align: center;
+	border-radius: 2.5rem;
+	margin: 0.625rem auto;
+	background: -webkit-gradient(linear, 0 0, 100% 0, from(#39d6c6), to(#3bb5dd));
+    &:hover{-webkit-filter:brightness(1.2);}
+    &.gray{ opacity:.3; }/*filter: grayscale(100%);*/
+}
+.msg-error{
+    color: #E94F37;
+    height:0;
+    line-height: 44px;
+    font-size: 12px;
+    transition-duration: .3s;
+    overflow:hidden;
+    text-align: center;
+    &.cur{
+         height:44px;
+     }
+}

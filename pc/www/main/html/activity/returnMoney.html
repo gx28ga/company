@@ -1,0 +1,104 @@
+<div class="returnMoney-warpper" ng-controller="returnMoneyCtrl">
+	<div class="returnMoneybanner"></div>
+	<div class="informationBox">
+		<div class="returnMoney-title"></div>
+		<p>为庆祝多融财富正式跻身国资控股网贷平台行列，特推出投资返现活动！活动期间投资≥30天的产品，根据每日累计投资总额进行返现，多投多返,上不封顶！</p>
+		<p class="red">PS: 此活动可使用加息券,红包哦~</p>
+		<p class="red">年化投资金额 = 投资金额 * 产品期限 / 360</p>
+		<div class="bagBox">
+			<div class="returnMoney-bagFirst bag"></div>
+			<div class="returnMoney-bagSecond bag"></div>
+			<div class="returnMoney-bagThree bag" style="margin-right:0"></div>
+		</div>
+		<span>举个栗子：</span>
+		<p>本日累计投资120天产品10W元，3日内即可获得返现：200元。（100,000*0.6%*120/360=200）</p>
+		<p>本日累计投资120天产品10W元，180天产品10W元，3日内即可获得返现：500元。（100,000*0.6%*120/360+100,000*0.6%*180/360=500） </p>
+		<p class="red">您今日已投：<span ng-if="login==1" class="red">{{info.memberInvest | currency:'':0}}元</span><span ng-if="login==0"> <a ui-sref="dl">登录</a>查看</span></p>
+		<div class="returnMoney-btn btn" ng-if="login==0" ui-sref="dl">立即投资</div>
+		<div class="returnMoney-btn btn" ng-if="login==1" ui-sref="main.bankBillList">立即投资</div>
+	</div>
+	<div class="mask-wrapper" ng-show="isJoin">
+		<div class="tan">
+			<div class="top">提示</div>
+			<span>亲，由于您是渠道VIP用户，<br>所以不能参加此次活动，敬请谅解！</span>
+			<div class="returnMoney-btn btn" style="font-size: 18px;" ui-sref="main.home" ng-click="!isJoin">返回首页</div>
+		</div>
+	</div>
+	<div class="common-wrapper">
+		<div class="mode">
+			<div class="title">活动规则</div>
+			<div class="content rule">
+				<ul>
+					<li>1、2016年10月21日--2016年10月25日；</li>
+					<li>2、用户投资≥30天以上的产品才可参与返现活动；</li>
+					<li>3、返现金额将在投资成功后（3天内）直接发放至个人账户，登录后</li>
+					<li>可在“我的账户—我的资产”中查看；（此返现可与加息券、红包叠加）</li>
+					<li>4、如有疑问，欢迎咨询客服热线4006-908-896；</li>
+					<li>• 本次活动部分渠道不参加，请谅解，谢谢！</li>
+					<li>• 本次活动最终解释权归多融财富所有。</li>
+				</ul>
+			</div>
+		</div>
+		<div class="mode">
+			<div class="title">为什么选择多融</div>
+			<div class="content">
+				<div class="iconmode">
+					<i class="returnMoney-gzkg"></i>
+					<div>
+						<span>国企控股</span>
+						<p>大型国企中商沪深控股</p>
+					</div>
+				</div>
+				<div class="iconmode">
+					<i class="returnMoney-guarantee"></i>
+					<div>
+						<span>资金安全保障</span> 
+						<p>历史到期产品100%本息兑付，安全可靠</p>
+					</div>
+				</div>
+				<div class="iconmode">
+					<i class="returnMoney-pjcd"></i>
+					<div>
+						<span>票据100%承兑</span>
+						<p>所有票据来源于银行与大型国企，100%无条件承兑</p>
+					</div>
+				</div>
+				<div class="iconmode">
+					<i class="returnMoney-lszc"></i>
+					<div>
+						<span>专业律所全程支持</span>
+						<p>专业律师事务所，全程提供法律支持</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="code-wrapper">
+		<div class="code">
+			<div class="appcode">
+				<div class="code-box">
+					<div class="app-code-icon"><img src="/images/activity/newfriend-app.png"></div>
+					<div class="app-code-word">
+						<p><i class="olympiad-iphone"></i></p>
+					</div>
+				</div>
+				<div class="title">App下载</div>
+			</div>
+			<div class="appcode wechatcode">
+				<div class="code-box">
+					<div class="app-code-icon"><img src="/images/activity/newfriend-wechat.png"></div>
+				</div>
+				<div class="title">关注公众号</div>
+			</div>
+			<div class="tel">
+				<div class="number">
+					<i class="olympiad-phone"></i>
+					<div>
+						<span>4006-908-896</span>
+						<p>服务时间 08:30 - 20:30 （法定节假日除外）</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

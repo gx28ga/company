@@ -1,0 +1,217 @@
+<div ng-controller="bankBillCtrl">
+  <!-- <div class="bread-nav-wrapper">
+  <div class="bread-nav">
+    <div class="bread-box">
+    <span ng-repeat="item in path"><a href="{{item.url}}">{{item.pathName}}</a> > </span>{{title}}
+    </div>
+  </div>
+</div> -->
+  <div class="bill-content-wrapper">
+    <div class="bill-list-wrap">
+      <!--  总标题 -->
+    <div class="billListTitle">
+      <span>产品类别：</span>
+     <ul class="title">
+       <li ng-class="{'all':'actived','baoli':'','piaoju':''}[show]" ng-click='showAll()'>全部产品</li>
+       <li ng-class="{'all':'','baoli':'','piaoju':'actived'}[show]" ng-click='showPiaoju()'>票据产品</li>
+       <li ng-class="{'all':'','baoli':'actived','piaoju':''}[show]" ng-click='showBaoli()'>保理产品</li>
+     </ul>
+    </div> 
+      <!-- 安选 -->
+      <div class="billing-list">
+        <div class="bill-trigger">
+          <p class="active" ng-bind='name'>{{name}}</p>
+          <!-- <p ng-click="changeTo('an')" ng-class="{0: '',1: 'active'}[anShow]">票据安选</p>
+        <p ng-click="changeTo('you')" ng-class="{0: 'active',1: ''}[anShow]">票据优选</p> -->
+        </div>
+       <!-- 全部产品 -->
+        <div class="bill-mode">
+          <!--  ng-show="anShow" -->
+          <!-- 不控制tab的显示隐藏 -->
+          <div class="list-title">
+            <!-- <p class="title">{{title}}</p> -->
+            <div class="filter-wrap">
+              <span>排序：</span>
+              <ul>
+                <li ng-click="onClickPage('默认', 1, 2)" ng-class="{0:'actived',1:'',2:'',3:'',4:''}[an.order]">默认</li>
+                <li ng-click="onClickPage('利率', 1, 2)" ng-class="{0:'',1:'actived',2:'actived',3:'',4:''}[an.order]"><i ng-class="{1: 'bill-down', 2: 'bill-up'}[an.lv]"></i>利率</li>
+                <li ng-click="onClickPage('期限', 1, 2)" ng-class="{0:'',1:'',2:'',3:'actived',4:'actived'}[an.order]"><i ng-class="{3: 'bill-down', 4: 'bill-up'}[an.qx]"></i>期限</li>
+              </ul>
+            </div>
+            <div class="nums">共{{(listDatas.total ) }}条</div>
+            <!-- 把新手标的个数去掉 -->
+          </div>
+          <div class="list-box" ng-click="onClickToBillDetail(item)" ng-show="listDatas.total!=0">
+            <!-- list-box  ng-click="onClickToBillDetail(item)"-->
+            <div class="list-mode hot-mode new-mode" ui-sref="main.billDetail({ id: item.id })" ng-repeat="item in listDatas" ng-class="{6: 'end-mode',7: 'end-mode',8: 'end-mode',9: 'end-mode'}[item.status]" ng-if="item.type != 1">
+              <!-- 把新手标隐掉 -->
+              <i class="icon home-icons-hot" ng-class="{0:'bill-billingicon',1:'bill-hoticon'}[item.isHot]" ng-if="item.isHot == 1"></i>
+              <ul>
+                <li class="bill-name"><i class="public-piaoju" ng-if="item.type == 2 || item.type == 3">票据</i><i class="public-baoli" ng-if="item.type == 5">保理</i>{{item.fullName}}<span class="honour-tip" ng-show="item.accept != undefined && item.accept != ''">
+                                            <i class="common-honour-icon"></i>{{item.accept}}</span></li>
+                <li class="rate-box">
+                  <!--<p>利率 <span class="rate"><b>{{item.rate}}</b>%<i class='rateLittle' ng-if="item.activityRate>0">+{{item.activityRate}}%</i></span></p>-->
+                  <p><span class="rate"><b>{{item.rate}}</b>%<i class='rateLittle' ng-if="item.activityRate>0">+{{item.activityRate}}%</i></span></p>
+                  <div style="color: #999; margin-top: -10px;">历史年化收益率</div>
+                </li>
+                <li class="term-box">
+                  <p>期限 <span><b>{{item.deadline}}</b>天</span></p>
+                </li>
+                <li class="start-box">
+                  <p>起投<span><b>{{item.leastaAmount |currency:'':0}}</b>元</span></p>
+                </li>
+                <li class="total-box">
+                  <p>总额<span><b>{{item.amount |currency:'':0}}</b>元</span></p>
+                </li>
+                <div class="feature-box" style="position: absolute;right: 180px;margin-top: 20px;">
+                  <p class="feature">
+                    <span ng-if="item.isRookie==1" data-tips='.XSZX-tips' class="xianjin">新手专享</span>
+                    <span ng-if="item.isExclusive==1" data-tips='.ZSJXQ-tips' class="jiaxi">专属加息券</span>
+                    <span ng-if="item.isInterest==1" data-tips='.JXQ-tips' class="jiaxi">加息券</span>
+                    <span ng-if="item.isCash==1" data-tips='.XJQ-tips' class="xianjin">返现券</span>
+                    <span ng-if="item.isDouble==1" data-tips='.FBQ-tips' class="fanBei">翻倍券</span>
+                  <!--   <span ng-if="item.isRepair==1" data-tips='.BB-tips' class="bubiao">补标</span> -->
+                    <span ng-if="item.activityRate>0 " class="activity">活动</span>
+                  </p>
+                </div>
+                <li class="invest-btn-box">
+                  <div class="percentage-box">
+                    <i>{{item.pert | setProgress}}%</i>
+                    <div class="percentage"><span ng-attr-style="width: {{item.pert | setProgress}}%"></span></div>
+                  </div>
+                  <a href="" class="invest-btn">{{(item.status | isProductType).cnvalue}}</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+           <div class="list-box" ng-click="onClickToBillDetail(item)" ng-show="listDatas.total==0" style='text-align: center'>
+           暂无产品
+           </div>
+        </div>
+        <!-- 票据产品 -->
+        <!-- 保理产品 -->
+   
+      </div>
+      <div class="past-list">
+        <div class="past-title">
+          <div class="title">往期产品</div>
+        </div>
+        <div class="list-title">
+          <!-- <p class="title">{{title}}</p> -->
+          <div class="filter-wrap">
+            <span>排序：</span>
+            <ul>
+              <li ng-click="onClickPage('默认')" ng-class="{0:'actived',1:'',2:'',3:'',4:''}[past.order]">默认</li>
+              <li ng-click="onClickPage('利率')" ng-class="{0:'',1:'actived',2:'actived',3:'',4:''}[past.order]"><i ng-class="{1: 'bill-down', 2: 'bill-up'}[past.lv]"></i>利率</li>
+              <li ng-click="onClickPage('期限')" ng-class="{0:'',1:'',2:'',3:'actived',4:'actived'}[past.order]"><i ng-class="{3: 'bill-down', 4: 'bill-up'}[past.qx]"></i>期限</li>
+            </ul>
+          </div>
+          <div class="nums">共{{listDatasPast.total}}条</div>
+        </div>
+        <div class="list-box">
+          <div class="list">
+            <!-- list-box -->
+            <div class="list-mode hot-mode new-mode" ui-sref="main.billDetail({ id: item.id })" ng-repeat="item in listDatasPast" ng-if="item.status != 5">
+              <!--  ng-class="{6: 'end-mode',7: 'end-mode',8: 'end-mode',9: 'end-mode'}[item.status]" -->
+              <ul>
+                <li class="bill-name"><i class="public-piaojuicon" ng-if="item.type == 2 || item.type == 3">票据</i><i class="public-baoliicon" ng-if="item.type == 5">保理</i>{{item.fullName}}<span class="honour-tip" ng-show="item.accept != undefined && item.accept != ''">
+                    <i class="common-honour-icon"></i>{{item.accept}}</span></li>
+                <li class="rate-box">
+                  <!--<p>利率 <span class="rate"><b>{{item.rate}}</b>%<i class='rateLittle' ng-if="item.activityRate>0">+{{item.activityRate}}%</i></span></p>-->
+                  <p><span class="rate"><b>{{item.rate}}</b>%<i class='rateLittle' ng-if="item.activityRate>0">+{{item.activityRate}}%</i></span></p>
+                  <div style="color:#999; margin-top: -10px;">历史年化收益率</div>
+                </li>
+                <li class="term-box">
+                  <p>期限 <span><b>{{item.deadline}}</b>天</span></p>
+                </li>
+                <li class="start-box">
+                  <p>起投<span><b>{{item.leastaAmount |currency:'':0}}</b>元</span></p>
+                </li>
+                <li class="total-box">
+                  <p>总额<span><b>{{item.amount |currency:'':0}}</b>元</span></p>
+                </li>
+                <li class="invest-btn-box">
+                  <span class="detail-btn">查看详情</span>
+                  <p class="bill-l-end" ng-if="item.status == 6 || item.status == 7 "></p>
+                  <!-- 募集结束 -->
+                  <p class="bill-l-wait" ng-if="item.status == 8"></p>
+                  <!-- 项目计息中 -->
+                  <p class="bill-l-already" ng-if="item.status == 9"></p>
+                  <!-- 已回款 -->
+                </li>
+              </ul>
+            </div>
+            <!-- 页码原来存放位置 -->
+            <div class="page-wrap" ng-if="bill.pages.length < 7">
+              <div class="page-box">
+                <a href ng-click="onClickPage('beforPage',a)" class="prev">上一页</a>
+                <ul>
+                  <li ng-click="onClickPage('currentPage',a)" ng-repeat="a in bill.pages"><a href="" ng-class="{true: 'cur', false: ''}[bill.pageOn == a]">{{a}}</a></li>
+                </ul><a href class="next" ng-click="onClickPage('nextPage',a)">下一页</a>
+              </div><span>共{{bill.totalPage}}页</span>
+            </div>
+            <div ng-if="bill.pages.length >= 7">
+              <div class="page-wrap" ng-if="bill.pageOn <= 5">
+                <div class="page-box">
+                  <a href ng-click="onClickPage('beforPage',a)" class="prev">上一页</a>
+                  <ul>
+                    <li ng-click="onClickPage('currentPage',1)"><a ng-class="{true: 'cur', false: ''}[bill.pageOn == 1]" href="">1</a></li>
+                    <li ng-click="onClickPage('currentPage',2)"><a ng-class="{true: 'cur', false: ''}[bill.pageOn == 2]" href="">2</a></li>
+                    <li ng-click="onClickPage('currentPage',3)"><a ng-class="{true: 'cur', false: ''}[bill.pageOn == 3]" href="">3</a></li>
+                    <li ng-click="onClickPage('currentPage',4)"><a ng-class="{true: 'cur', false: ''}[bill.pageOn == 4]" href="">4</a></li>
+                    <li ng-click="onClickPage('currentPage',5)"><a ng-class="{true: 'cur', false: ''}[bill.pageOn == 5]" href="">5</a></li>
+                    <li ng-if="bill.pageOn == 5" ng-click="onClickPage('currentPage',6)"><a href="">6</a></li>
+                    <li ng-if="bill.pageOn == 5" ng-click="onClickPage('currentPage',7)"><a href="">7</a></li>
+                    <li ng-if="bill.pages.length != 0"><span>...</span></li>
+                  </ul><a href class="next" ng-click="onClickPage('nextPage',a)">下一页</a>
+                </div><span>共{{bill.totalPage}}页</span>
+              </div>
+              <div class="page-wrap" ng-if="bill.pageOn > 5 && bill.pageOn <= (bill.pages.length - 4)">
+                <div class="page-box">
+                  <a href ng-click="onClickPage('beforPage',bill.pageOn)" class="prev">上一页</a>
+                  <ul>
+                    <li ng-click="onClickPage('currentPage',1)"><a href="">1</a></li>
+                    <li ng-click="onClickPage('currentPage',2)"><a href="">2</a></li>
+                    <li><span>...</span></li>
+                    <li ng-click="onClickPage('currentPage',bill.pageOn-2)"><a href="">{{bill.pageOn-2}}</a></li>
+                    <li ng-click="onClickPage('currentPage',bill.pageOn-1)"><a href="">{{bill.pageOn-1}}</a></li>
+                    <li ng-click="onClickPage('currentPage',bill.pageOn)"><a href="" class="cur">{{bill.pageOn}}</a></li>
+                    <li ng-click="onClickPage('currentPage',bill.pageOn+1)"><a href="">{{bill.pageOn+1}}</a></li>
+                    <li ng-click="onClickPage('currentPage',bill.pageOn+2)"><a href="">{{bill.pageOn+2}}</a></li>
+                    <li><span>...</span></li>
+                  </ul><a href class="next" ng-click="onClickPage('nextPage',bill.pageOn)">下一页</a>
+                </div><span>共{{bill.totalPage}}页</span>
+              </div>
+              <div class="page-wrap" ng-if="bill.pageOn > 5 && bill.pageOn > (bill.pages.length - 4)">
+                <div class="page-box">
+                  <a href ng-click="onClickPage('beforPage',bill.pageOn)" class="prev">上一页</a>
+                  <ul>
+                    <li ng-click="onClickPage('currentPage',1)"><a href="">1</a></li>
+                    <li ng-click="onClickPage('currentPage',2)"><a href="">2</a></li>
+                    <li><span>...</span></li>
+                    <li ng-click="onClickPage('currentPage',bill.pages.length-4)"><a ng-class="{true: 'cur', false: ''}[bill.pageOn == (bill.pages.length - 4)]" href="">{{bill.pages.length-4}}</a></li>
+                    <li ng-click="onClickPage('currentPage',bill.pages.length-3)"><a ng-class="{true: 'cur', false: ''}[bill.pageOn == (bill.pages.length - 3)]" href="">{{bill.pages.length-3}}</a></li>
+                    <li ng-click="onClickPage('currentPage',bill.pages.length-2)"><a ng-class="{true: 'cur', false: ''}[bill.pageOn == (bill.pages.length - 2)]" href="">{{bill.pages.length-2}}</a></li>
+                    <li ng-click="onClickPage('currentPage',bill.pages.length-1)"><a ng-class="{true: 'cur', false: ''}[bill.pageOn == (bill.pages.length - 1)]" href="">{{bill.pages.length-1}}</a></li>
+                    <li ng-click="onClickPage('currentPage',bill.pages.length)"><a ng-class="{true: 'cur', false: ''}[bill.pageOn == (bill.pages.length)]" href="">{{bill.pages.length}}</a></li>
+                  </ul><a href class="next" ng-click="onClickPage('nextPage',bill.pageOn)">下一页</a>
+                </div><span>共{{bill.totalPage}}页</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    </div>
+    <!-- 提示语 -->
+  <div class="XJQ-tips tips"><div class="jiantop"></div>本产品可用返现券，投资成功返现</div>
+<div class="ZSJXQ-tips tips"><div class="jiantop"></div>本产品可用专属加息券，投资时增加投资利息</div>
+<div class="XSZX-tips tips"><div class="jiantop"></div>仅新注册用户可体验一次</div>
+<div class="JXQ-tips tips"><div class="jiantop"></div>本产品可用加息券，投资时增加投资利息</div>
+<div class="FBQ-tips tips"><div class="jiantop"></div>本产品可用翻倍券，投资时产品利率翻倍</div>
+<!---对应升级存管账户 Start-->
+<!--<div class="BB-tips tips"><div class="jiantop"></div>该产品支持补标，补标有礼</div>-->
+<!---对应升级存管账户 End  -->
+  </div>
+  
+</div>

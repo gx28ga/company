@@ -1,0 +1,315 @@
+<div class="body-wrapper">
+  <!-- 活动未开始 -->
+  <div class="pop-bg noready-popbg" style="display: none;">
+    <div class="pop">
+      <a class="close" href="/main/home" target="_self"></a>
+      <div class="info" style="font-size: 36px;color: #e20c2e;top: 180px;">敬请谅解!</div>
+      <div class="text " style="top: 262px;font-size: 30px;color: #e20c2e;font-weight: normal;left:218px;">本次活动尚未开始
+      </div>
+      <div class="text" style="top: 300px;font-size: 30px;color: #e20c2e;font-weight: normal;left:271px;">敬请期待</div>
+      <a class="sureBtn" href="/main/home" target="_self">回到首页</a>
+    </div>
+  </div>
+  <!-- 活动已结束 -->
+  <div class="pop-bg over-popbg" style="display: none;">
+    <div class="pop over-pop">
+      <a class="close" href="/main/home" target="_self"></a>
+      <div class="info" style="font-size: 36px;color: #e20c2e;top: 180px;">感谢关注！</div>
+      <div class="text " style="top: 262px;font-size: 30px;color: #e20c2e;font-weight: normal;left:218px;">本次活动已结束</div>
+      <div class="text" style="top: 300px;font-size: 30px;color: #e20c2e;font-weight: normal;left:163px;">请继续关注我们
+        n(*≧▽≦*)n
+      </div>
+      <a class="sureBtn" href="/main/home" target="_self">我知道了</a>
+    </div>
+  </div>
+  <!-- 渠道用户 -->
+  <div class="pop-bg channel-popbg" style="display: none;">
+    <div class="pop">
+      <a class="close" href="/main/home" target="_self"></a>
+      <div class="info" style="font-size: 36px;color: #e20c2e;top: 180px;">敬请谅解!</div>
+      <div class="text " style="top: 262px;font-size: 30px;color: #e20c2e;font-weight: normal;left:156px;">
+        亲，由于您是渠道VIP用户
+      </div>
+      <div class="text" style="top: 300px;font-size: 30px;color: #e20c2e;font-weight: normal;left:182px;">所以不能参与此次活动
+      </div>
+      <a class="sureBtn" href="/main/home" target="_self">回到首页</a>
+    </div>
+  </div>
+  <div class="pop-bg prize-popbg" style="display: none;">
+    <div class="pop prize-pop">
+      <a class="close" href=""></a>
+      <h4></h4>
+      <div class="nodata" style="display: none;">暂无数据</div>
+      <div class="list-box">
+        <div class="piece-wrapper">
+          <div class="piece" ng-repeat="item in prizeList">
+            <div class="prize" style="width: 312px;margin-right: 6px;text-align: left;">{{item.name}}</div>
+            <div class="date" style="margin-right: 80px;width: 168px;">{{item.updateTime}}</div>
+          </div>
+        </div>
+      </div>
+      <div class="page-box">
+        <div class="page-con">
+          <div class="prev">上一页</div>
+          <div class="page active"></div>
+          <div class="next">下一页</div>
+        </div>
+        <div class="total-page">共{{totalPage}}页</div>
+      </div>
+    </div>
+  </div>
+  <div class="con-top">
+  </div>
+  <div class="con-cen">
+    <h2></h2>
+    <div class="jd-card-mode">
+      <p>即日起~2月28日，累计投资<i>每满3万≥90</i>天产品，送50元京东卡</p>
+      <a href="/main/bankBillList" class="invest-btn" target="_blank">立即投资</a>
+      <div class="progress-box">
+        <p>您当前的累计投资金额：元，继续投资元，可以再获得1张京东卡</p>
+        <p class="nologin" style="display: none;">您当前的累计投资金额：***** 元<span class="login-return">登录查看</span></p>
+        <p style="display: none" class="over">（京东卡将于刮刮卡活动结束后统一发放）</p>
+        <div class="total">
+          <div class="now"></div>
+          <div class="add"></div>
+        </div>
+        <div class="num-box" style="width: 952px;">
+          <div style="margin-right: 394px;">
+            <i>0</i>
+          </div>
+          <div class="center" style="margin-right: 356px;">
+            <i style="text-align: center">3万</i>
+            <i><span></span>&nbspx1</i>
+          </div>
+          <div class="rt">
+            <i style="text-align: center">6万</i>
+            <i><span></span>&nbspx2</i>
+          </div>
+        </div>
+      </div>
+      <p>* 投资90天以下产品，投资金额不计入总金额，京东卡将于活动结束后统一发放</p>
+    </div>
+    <div class="blew-card-mode">
+      <h3></h3>
+      <div class="line"></div>
+      <div class="card-box">
+        <div class="lt">
+          <p>单笔投资<b>每满5000元≥30</b>天产品</p>
+          <p>获取1张刮刮卡</p>
+          <a href="/main/bankBillList" class="invest2" target="_blank">立即投资</a>
+        </div>
+        <div class="rt">
+          <p></p>
+          <a href="" class="go-login" style="display: none;">登录</a>
+          <a href="/main/bankBillList" class="invest" style="display: none;" target="_blank">投资获取</a>
+          <a href="" class="now-blew" style="display: none;">开始刮奖</a>
+          <a href="/main/bankBillList" class="invest-again" style="display: none;" target="_blank">投资再获取一张</a>
+        </div>
+        <div id="scratch" >
+          <div class="get-prize" id="card">
+            <p class="remain"><i></i>你目前还剩<b>{{remainChance}}张</b>刮刮卡</p>
+            <p class="prize-tip">恭喜获得<b>{{prizeName}}</b></p>
+            <p class="check-tip" >可到多融财富APP或多融官网登录账户查看</p>
+            <p class="game-over" style="display: none;">实物奖品将于活动结束后15个工作日内联系发放</p>
+            <a href=""  class="invest3" ng-show="remainChance" ng-cloak>再刮一次</a>
+            <a href="/main/bankBillList"  class="invest4" ng-show="remainChance==0" ng-cloak target="_blank">投资再获取一张</a>
+            <div class="refresh">刷新</div>
+          </div>
+        </div>
+      </div>
+      <div class="record" style="display: block">查看我的中奖记录></div>
+      <div class="prize-box">
+        <h4 style="margin-top: -34px;width:200px">刮刮卡奖品</h4>
+        <ul style="margin-top: 20px;">
+          <li>
+            <img src="activity/web/blewCard/images/prize1.jpg" alt="">
+            <p>iphone7 plus</p>
+          </li>
+          <li>
+            <img src="activity/web/blewCard/images/prize2.jpg" alt="">
+            <p>戴森吸尘器</p>
+          </li>
+          <li>
+            <img src="activity/web/blewCard/images/prize3.jpg" alt="">
+            <p>象印保温杯</p>
+          </li>
+          <li>
+            <img src="activity/web/blewCard/images/prize4.jpg" alt="">
+            <p>10-500元京东卡</p>
+          </li>
+          <li>
+            <img src="activity/web/blewCard/images/prize5.jpg" alt="">
+            <p>10-200元红包</p>
+          </li>
+          <li style="margin-right: 0">
+            <img src="activity/web/blewCard/images/prize16.png" alt="">
+            <p>0.5%-2%加息券</p>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+  <div class="con-btm">
+    <div class="lover"></div>
+    <div class="rule-mode" id='rule'>
+      <span class="title">活动规则</span>
+      <ul>
+        <li style="color:#e20c2e;"><i class="arrow"></i>活动时间：2017.2.8~2017.3.19</li>
+        <li><i class="arrow"></i>30天以下投资期限产品不参加本次活动</li>
+        <li><i class="arrow"></i>投资有奖</li>
+        <li>　• 即日起~2月28日，累计投资每满3万≥90天的产品，送50元京东卡1张。如累计投资6万元即获2张，以此类推。</li>
+        <li><i class="arrow"></i>刮刮卡</li>
+        <li style="margin-bottom: 14px;">　• 每人每日1次免费机会，单笔投资每满5000元可再获得1次刮刮卡机会。如单笔投资10000元即获得2次机会，以此类推。</li>
+        <!--<li style="font-weight: bold;" class="mr">即单笔每满2000获2张刮刮卡。</li>-->
+        <li style="margin-bottom: 0;">　• 刮刮卡奖品包括：iphone7 plus，戴森吸尘器，象印保温杯，500京东卡，50京东卡，10京东卡，10~200红包，0.5%~2%加息券。
+        </li>
+        <li class="mr" style="color: #e20c2e; font-style: italic">&nbsp;温馨提示：情人节期间（2.12~2.14），有神秘礼物等你来发现哟！</li>
+        <li style=""><i class="arrow"></i>红包、加息券将即时发放到您的多融账户中，可前往多融财富APP或多融官网登录账户查看。</li>
+        <li><i class="arrow"></i>京东卡及其他实物奖品将于活动结束后15个工作日内联系发放，期间请确保手机畅通。</li>
+        <li style="margin-bottom: 36px;"><i class="arrow"></i>本活动最终解释权归多融财富所有。</li>
+      </ul>
+    </div>
+    <div class="common-wrapper">
+      <div class="mode">
+        <div class="title">为什么选择多融</div>
+        <div class="content">
+          <div class="iconmode">
+            <i class="olympiad-gzkg"></i>
+            <div>
+              <span>国企控股</span>
+              <p>大型国企中商沪深控股</p>
+            </div>
+          </div>
+          <div class="iconmode">
+            <i class="olympiad-guarantee"></i>
+            <div>
+              <span>资金安全保障</span>
+              <p>历史到期产品100%本息兑付，安全可靠</p>
+            </div>
+          </div>
+          <div class="iconmode">
+            <i class="olympiad-pjcd"></i>
+            <div>
+              <span>票据100%承兑</span>
+              <p>所有票据来源于银行与大型国企，100%无条件承兑</p>
+            </div>
+          </div>
+          <div class="iconmode">
+            <i class="olympiad-lszc"></i>
+            <div>
+              <span>专业律所全程支持</span>
+              <p>专业律所全程保驾护航</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mode">
+        <div class="title">多融荣誉</div>
+        <ul>
+          <li>
+            <a href="https://www.duorongcf.com/main/jt/XWXQ?newId=1&t=1" target="_blank">
+              <img src="/main/images/honor/honor1.png">
+              <p>多融财富荣膺<br>“2016中国最佳诚信示范金融企业”</p>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.duorongcf.com/main/jt/XWXQ?newId=3&t=0" target="_blank">
+              <img src="/main/images/honor/honor2.png">
+              <p>多融财富加入<br>“上海市信息服务业行业协会”</p>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.duorongcf.com/main/jt/XWXQ?newId=2&t=0" target="_blank">
+              <img src="/main/images/honor/honor3.png">
+              <p>多融财富加入<br>“上海金融信息行业协会”</p>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.duorongcf.com/main/jt/XWXQ?newId=11&t=1" target="_blank">
+              <img src="/main/images/honor/honor4.png">
+              <p>多融财富荣获<br>“中国信用企业认证体系示范单位”证书</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="mode">
+        <div class="title">合作单位</div>
+        <div class="partners">
+          <div class="swiper-button-prev"></div>
+          <div class="imgs swiper-container">
+            <ul class="swiper-wrapper">
+              <li class="swiper-slide" style="margin-left: 30px;">
+                <img src="/main/images/gua-partner/partner1.png">
+              </li>
+              <li class="swiper-slide">
+                <img src="/main/images/gua-partner/partner2.png">
+              </li>
+              <li class="swiper-slide">
+                <img src="/main/images/gua-partner/partner3.png">
+              </li>
+              <li class="swiper-slide">
+                <img src="/main/images/gua-partner/partner4.png">
+              </li>
+              <li class="swiper-slide">
+                <img src="/main/images/gua-partner/partner5.png">
+              </li>
+              <li class="swiper-slide">
+                <img src="/main/images/gua-partner/partner11.png">
+              </li>
+            </ul>
+          </div>
+          <!-- <div class="olympiad-right swiper-button-next"></div> -->
+        </div>
+      </div>
+    </div>
+    <div class="code-wrapper">
+      <div class="code">
+        <div class="icon"></div>
+        <div class="phonecode"></div>
+        <div class="appcode">
+          <div class="code-box">
+            <div class="app-code-icon"><img src="/main/images/activity/newfriend-app.png"></div>
+            <div class="app-code-word">
+              <p><i class="olympiad-iphone"></i></p>
+            </div>
+          </div>
+          <div class="title">App下载</div>
+        </div>
+        <div class="appcode wechatcode">
+          <div class="code-box">
+            <div class="app-code-icon"><img src="/main/images/activity/newfriend-wechat.png"></div>
+          </div>
+          <div class="title">关注公众号</div>
+        </div>
+        <div class="tel">
+          <div class="number">
+            <i class="olympiad-phone"></i>
+            <div>
+              <span>4006-908-896</span>
+              <p>服务时间 08:30 - 20:30 （法定节假日除外）</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--<script type="text/html" id="DATE_BD_LIST_WP">-->
+  <!--<%for(var key in data){%>-->
+  <!--<h4><%=data[key].date%></h4>-->
+  <!--<%}%>-->
+  <!--</script>-->
+
+  <script type="text/html" id="TAB_BD_LIST_WP">
+    <%for(var key in data){%>
+    <div class="data-piece">
+      <div class="nums" style="width: 40px;margin-right: 70px;"><%=data[key].index%></div>
+      <div class="phone" style="width: 120px;text-align: left;"><%=data[key].mobilePhone%></div>
+      <div style="text-align: left;margin-right: 30px;"><%=data[key].fortune%></div>
+      <div style="width: 120px;margin-right: 0;text-align: left;"><%=data[key].prize%></div>
+    </div>
+    <%}%>
+  </script>
+</div>
+

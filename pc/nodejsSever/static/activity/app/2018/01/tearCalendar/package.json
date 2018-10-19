@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "build": "set NODE_ENV=build&& webpack --progress --colors --hide-modules --config webpack.config.js",
+    "dev": "set NODE_ENV=dev&& webpack --progress --colors --hide-modules --config webpack.config.js",
+    "upload": "set NODE_ENV=dev&& webpack --progress --colors --config webpack.dll.config.js",
+    "gulpdev": "gulp dev --gulpfile gulpfile.babel.js",
+    "gulpbuild": "gulp build --gulpfile gulpfile.babel.js"
+  },
+  "devDependencies": {
+    "node-sass": "^4.5.2",
+    "webpack": "^2.3.3"
+  },
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}

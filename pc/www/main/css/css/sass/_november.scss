@@ -1,0 +1,959 @@
+// $olympiad-sprite-dimensions: true;
+// @import "olympiad/*.png";
+// @include all-olympiad-sprites();
+.november-wrapper{
+	background:#fff;
+	.banner{
+		background: image-url('november-banner.png') center center;
+		width: 100%;
+		height: 794px;
+		position: relative;
+		z-index: 2;
+		.giftAll{
+			background: image-url('nov-giftAll.gif') center center;
+			width: 100%;
+			height: 581px;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+		.lamp{
+			background: image-url('nov-lamp.png') center center;
+			width: 794px;
+			height: 180px;
+			position: absolute;
+		    left: 28%;
+		    top: 24%;
+			z-index: 3;
+		}
+	}
+	.prize-wrapper{
+		// background: image-url('olympiad-prize.png') center top no-repeat;
+		background: #ffebec;
+		width: 1200px;
+		margin: -48px auto 36px;
+		border-radius: 18px;
+	    box-sizing: border-box;
+	    padding-top: 30px;
+	    position: relative;
+	    left: 2px;
+	    h2{
+	    	font-size: 60px;
+	    	color: #852c2c;
+	    	font-weight: bolder;
+	    	text-align: center;
+	    }
+	    .titleInfoA{
+	    	font-size: 18px;
+	    	color: #852c2c;
+	    	text-align: center;
+	    	width: 650px;
+	    	margin: 0 auto;
+	    }
+	    .titleInfoB{
+	    	font-size: 14px;
+	    	color: #852c2c;
+	    	text-align: center;
+	    	width: 629px;
+	    	margin: 0 auto;
+	    }
+	    .phoneBox{
+	    	width: 100%;
+	    	position: relative;
+			    .more{
+			    	color: #006cff;
+			    	font-size: 14px;
+			    	position: absolute;
+				    right: 82px;
+					top: 566px;
+					text-decoration: none;
+					transition: all 0.2s ease-in;
+					&:hover{
+						font-size: 18px;
+						text-shadow: 1px 1px 0 #333;
+					}
+			    }
+	    	ul{
+	    		overflow: hidden;
+	    		margin-left: 117px;
+	    		margin-top: 30px;
+	    		li{
+	    			float: left;
+    				margin-right: 120px;
+    				margin-bottom: 40px;
+	    			.mode{
+	    				width: 241px;
+	    				height: 254px;
+	    				position: relative;
+	    				&.modeA{
+	    				background:  image-url('olympiad/textbg.png') center center;
+	    				}
+	    				&.modeB{
+	    				background:  image-url('olympiad/textbg.png') center center;
+	    				}
+	    				&.modeC{
+	    				background:  image-url('olympiad/textbg.png') center center;
+	    				}
+	    				&.modeD{
+	    				background:  image-url('olympiad/textbg.png') center center;
+	    				}
+	    				&.modeE{
+	    				background:  image-url('olympiad/textbg.png') center center;
+	    				}
+	    				&.modeF{
+	    				background:  image-url('olympiad/textbg.png') center center;
+	    				}
+	    				&.nort{
+	    				margin-right: 0;
+	    				}
+	    				.phone{
+	    					position: absolute;
+	    					top: 20px;
+	    					left: 57px;
+						    transition-duration:1s;
+						    -webkit-transition-duration:1s;
+						    transform: translateY(48px);
+						    -webkit-transform: translateY(48px);
+							animation-duration:.5s;
+							-webkit-animation-duration:.5s;
+
+
+	    					&:hover{
+								animation-name: shake;
+								-webkit-animation-name: shake;
+								-moz-animation-name: shake;
+								-o-animation-name: shake;
+								-ms-animation-name: shake;
+	    					}
+	    					&.prizea{
+		    					width: 109px;
+		    					height: 151px;
+	    						background: image-url('olympiad/prizeaa.png') center center no-repeat;
+		    					left: 62px;
+	    					}
+	    					&.prizeb{
+		    					width: 124px;
+		    					height: 146px;
+	    						background: image-url('olympiad/prizebb.png') center center no-repeat;
+		    					left: 57px;
+	    					}
+	    					&.prizec{
+		    					width: 122px;
+		    					height: 150px;
+	    						background: image-url('olympiad/prizecc.png') center center no-repeat;
+
+	    					}
+	    					&.prized{
+		    					width: 104px;
+		    					height: 135px;
+	    						background: image-url('olympiad/prizedd.png') center center no-repeat;
+	    					}
+	    					&.prizee{
+		    					width: 122px;
+		    					height: 180px;
+	    						background: image-url('olympiad/prizeee.png') center center no-repeat;
+	    					}
+	    					&.prizef{
+		    					width: 133px;
+		    					height: 96px;
+	    						background: image-url('olympiad/prizeff.png') center center no-repeat;
+	    					}
+	    					&.goUp{
+								 transform: translateY(0);
+						   		 -webkit-transform: translateY(0);
+							}
+	    				}
+	    				.bgbtm{
+	    					width: 241px;
+	    					height: 132px;
+	    					background: image-url('olympiad/bgbtm.png') center center;
+	    					position: absolute;
+	    					bottom: 2px;
+	    					left: 0;
+	    					z-index: 2;
+	    					&.goUp{
+								animation: 0.5s ease-in goUp;
+								animation-fill-mode: forwards;
+	    					}
+
+	    				}
+	    				.phoneName{
+							position: absolute;
+						    left: 52px;
+						    top: 143px;
+							color: #000;
+							font-size: 14px;
+							z-index: 3;
+							&.spe{
+								top: 142px;
+							    text-align: center;
+							    left: 57px;
+
+							}
+
+	    				}
+    					.investInfo{
+							position: absolute;
+						    left: 44px;
+							top: 166px;
+							color: #666;
+							font-size: 12px;
+							z-index: 3;
+
+
+    					}
+    					.ifGet{
+							position: absolute;
+							width: 227px;
+							height: 36px;
+							font-size: 14px;
+							text-align: center;
+							line-height: 36px;
+							left: 0;
+							bottom: 12px;
+							z-index: 3;
+    						&.getNo{
+    						color: #666;
+	    					background:  image-url('olympiad/prizeNo.png') center center;
+
+    						}
+    						&.getYes{
+    						color: #813f3f;
+	    					background:  image-url('olympiad/prizeYes.png') center center;
+
+    						}
+    					}
+	    			}
+	    		}
+	    	}
+	    }
+	    .cenLine{
+	    	width: 1100px;
+	    	height: 0;
+	    	border-bottom: 1px dashed #efa1a3;
+	    	position: absolute;
+	    	left: 50px;
+	    	top: 800px;
+	    }
+	    .btm{
+	    	width: 100%;
+			padding-bottom: 42px;
+			.investBtn{
+				font-size: 24px;
+				color: #fff;
+				text-align: center;
+				width: 232px;
+				height: 72px;
+				line-height: 72px;
+				background: image-url('olympiad/btnbg.png') center center;
+				margin: 60px auto 38px;
+				display: block;
+				text-decoration: none;
+				transition: all 0.2s ease-in;
+				&:hover{
+					font-size: 28px;
+					text-shadow: 1px 1px 1px #333;
+				}
+			}
+			.countInfo{
+				font-size: 18px;
+				color: #000;
+				margin: 0 auto 16px;
+				width: 790px;
+				text-align: center;
+			}
+			.investRule{
+				font-size: 14px;
+				color: #333;
+				width: 230px;
+				margin: 0 auto;
+
+			}
+			.forExample{
+				width: 610px;
+				height: 59px;
+				background: image-url('olympiad/egbg.jpg') center center no-repeat;
+				color: #852c2c;
+				font-size: 14px;
+				margin-left: 236px;
+			    line-height: 52px;
+			    padding-left: 109px;
+			    margin-top: -9px;
+
+			}
+			.noLogin{
+				font-size: 18px;
+				color: #000;
+				width: 200px;
+				margin: 20px auto;
+				.loginBtn{
+					color: #136bf0;
+					text-decoration: underline;
+
+				}
+			}
+	    }
+
+	}
+	.prize-tan{
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0,0,0,.4);
+		z-index:88;
+  		transform-style: preserve-3d;
+		.tan{
+			background: #fff;
+			width:600px;
+			height: 520px;
+			margin:0 auto;
+			margin-top:-350px;
+			position:fixed;
+			top:60%;
+			left:50%;
+			margin-left:-300px;
+			text-align:center;
+			border-radius: 12px;
+			box-sizing: border-box;
+			position: relative;
+			opacity: 0;
+			transform: scale(0);
+			.line{
+				width: 490px;
+				height: 0px;
+				border-bottom: 1px solid #efa1a3;
+				position: absolute;
+				bottom: 127px;
+				left: 54px;
+
+			}
+			&.openMode{
+				animation: 0.5s ease-in openMove;
+				animation-fill-mode: forwards;
+			}
+			&.closeMode{
+				animation: 0.5s ease-in closeMove;
+				animation-fill-mode: forwards;
+			}
+			h2{
+				font-size: 24px;
+				color: #eb667a;
+				background: image-url('olympiad/tanh2bg.png') center bottom no-repeat;
+				position: relative;
+				width: 100%;
+				height: 95px;
+				.close{
+					position: absolute;
+					right: 10px;
+					top: 22px;
+					color: #ccc;
+					font-size: 24px;
+					text-decoration: none;
+					background: image-url('olympiad/close.png') center center no-repeat;
+					width: 24px;
+					height: 24px;
+				}
+				.listTitle{
+					position: absolute;
+					top: 20px;
+					left: 20px;
+				}
+			}
+			.conBox{
+				margin-top: 24px;
+				.content{
+				    width: 490px;
+				    margin: 0 auto;
+				    font-size: 18px;
+				    color: #666;
+				    .scrollBox{
+			    	    height: 200px;
+    					overflow-y: auto;
+				    	border-top: 1px dashed #efa1a3;
+				    	padding-top: 10px;
+				    	padding-right: 10px;
+				    }
+				    .thead{
+				    	overflow: hidden;
+				    	margin-bottom: 10px;
+				    	p{
+							float: left;
+							&.rt{
+								float: right;
+							}
+				    	}
+				    }
+				}
+
+			}
+			.sureBtn{
+				width: 475px;
+				height: 68px;
+				border: 1px solid #ce0341;
+				box-sizing: border-box;
+				color: #fff;
+				background: #ff557a;
+				text-align: center;
+				line-height: 68px;
+				font-size: 24px;
+				position: absolute;
+				bottom: 34px;
+				left: 63px;
+				border-radius: 12px;
+				cursor: pointer;
+			}
+
+
+		}
+	}
+	.investPro-tan{
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0,0,0,.4);
+		z-index:88;
+		.tan{
+			background: #fff;
+			width: 900px;
+			box-sizing: border-box;
+			margin:0 auto;
+			margin-top:-250px;
+			position:fixed;
+			top:50%;
+			left:50%;
+			margin-left:-450px;
+			text-align:center;
+			border-radius: 12px;
+			box-sizing: border-box;
+			position: relative;
+			opacity: 0;
+			transform: scale(0);
+			&.openMode{
+				animation: 0.5s ease-in openMove;
+				animation-fill-mode: forwards;
+			}
+			&.closeMode{
+				animation: 0.5s ease-in closeMove;
+				animation-fill-mode: forwards;
+			}
+				h2{
+					font-size: 24px;
+					color: #333;
+					border-bottom: 1px dashed #ccc;
+					position: relative;
+					width: 94%;
+					height: 54px;
+					margin: 0 auto;
+					padding-top: 10px;
+					text-align: left;
+					.close{
+						position: absolute;
+						right: 0;
+						top: 18px;
+						color: #ccc;
+						font-size: 24px;
+						text-decoration: none;
+						background: image-url('olympiad/close.png') center center no-repeat;
+						width: 24px;
+						height: 24px;
+					}
+				}
+				.conBox{
+					margin-top: 24px;
+					height: 300px;
+					overflow-y: auto;
+					.investMode{
+						background: #f8f8f8;
+						border: 1px solid #f0f1ee;
+						border-radius: 12px;
+						width: 830px;
+						height: 82px;
+						margin: 0 auto 22px;
+						overflow: hidden;
+						.lt{
+							font-size: 24px;
+							color: #333;
+							margin-right: 50px;
+							line-height: 82px;
+							float: left;
+							vertical-align: middle;
+							width: 216px;
+						    text-align: left;
+						    padding-left: 30px;
+						}
+						.day{
+							font-size: 24px;
+							margin-right: 39px;
+							vertical-align: middle;
+							float: left;
+							margin-top: 21px;
+							width: 67px;
+							text-align: right;
+							span{
+								display: block;
+								color: #ff7200;
+								line-height: 24px;
+							}
+							i{
+								color: #999;
+								font-size: 14px;
+								display: block;
+							}
+
+						}
+						.year{
+							font-size: 24px;
+							margin-right: 15px;
+							vertical-align: middle;
+							float: left;
+							margin-top: 21px;
+							text-align: right;
+							width: 80px;
+
+							span{
+								display: block;
+								color: #ff7200;
+								line-height: 24px;
+							}
+							i{
+								color: #999;
+								font-size: 14px;
+								display: block;
+							}
+
+						}
+						.balance{
+							color: #ff7200;
+							margin-right: 50px;
+							vertical-align: middle;
+							float: left;
+							margin-top: 23px;
+							width: 120px;
+							text-align: right;
+							span{
+								display: block;
+								color: #ff7200;
+								font-size: 24px;
+								line-height: 24px;
+							}
+							i{
+								color: #999;
+								font-size: 14px;
+								display: block;
+							}
+
+						}
+						.nowInvest{
+							float: left;
+							color: #fff;
+							background: #e8a22b;
+							width: 130px;
+							height: 40px;
+							border-radius: 8px;
+							line-height: 40px;
+							text-align: center;
+							text-decoration: none;
+							font-size: 18px;
+							cursor: pointer;
+							vertical-align: middle;
+							margin-top: 22px;
+						}
+					}
+
+				}
+		}
+	}
+
+	.rule{
+		// background: image-url('olympiad-rule.png') center top no-repeat;
+		width:1200px;
+		height: 440px;
+		background: #fff0f1;
+		margin:0 auto;
+		padding-top:43px;
+		color:#fff;
+		margin-top:85px;
+		position: relative;
+		border-radius: 18px;
+		.HDGZ{
+			font-size:48px;
+			background: image-url('olympiad/title.png') no-repeat;
+			position: absolute;
+			top: -37px;
+			left: 256px;
+			width: 674px;
+			height: 109px;
+			line-height: 109px;
+			text-align: center;
+			color: #fff;
+		}
+		.GQKG{
+			font-size:18px;
+			margin-left:393px;
+		    margin-top: -10px;
+		}
+		div{
+			width: 1004px;
+			height:296px;
+		    margin-left: 108px;
+		    margin-top: 83px;
+			ul{
+				li{
+					font-size:18px;
+					line-height:30px;
+					color: #852c2c;
+					position:relative;
+					margin-bottom: 10px;
+					i{
+						position:absolute;
+						left:-28px;
+					}
+					strong{
+						color: #000;
+					}
+				}
+			}
+		}
+		&.investBox{
+			    margin-top: 68px;
+			    font-size: 24px;
+			    color: #ff557a;
+			    text-align: center;
+			    position: relative;
+			    height: 630px;
+		    	.btn{
+		    		width:450px;
+					height: 68px;
+					position: absolute;
+				    bottom: 52px;
+				    left: 23%;
+				    background: #ce0341;
+				    border-radius: 6px;
+				    padding: 1px 1px 1px 1px;
+				    box-sizing: content-box;
+					a{
+						width:450px;
+						text-align:center;
+						line-height:67px;
+						font-size:24px;
+						color:#fffefe;
+						cursor: pointer;
+						display:block;
+						height: 68px;
+						line-height: 68px;
+						background: #ff557a;
+					    &:hover{
+					    	text-decoration:none;
+					    }
+					}
+		    	}
+			    p{
+			    	margin-top: 68px;
+			    }
+			    .tableBox{
+			    	width: 100%;
+			    	margin-left: 0;
+			    	margin-top: 34px;
+			    	ul{
+		    		    margin: 0 auto;
+					    width: 90%;
+					    font-size: 18px;
+					    background: #fc99b7;
+					    border-radius: 10px;
+					    padding: 0 1px 5px 1px;
+					    box-sizing: border-box;
+					    li{
+				    	    background: #852c2c;
+						    height: 52px;
+						    line-height: 52px;
+						    margin-bottom: 0;
+						    &.dl{
+				    	    background: #ff7ba3;
+			    			color: #fff;
+			    			border-radius: 6px 6px 0 0;
+						    }
+					    	    &.bla{
+					    	    	color: #000;
+					    	    }
+					    	    &.bg{
+					    	    	background: #ffe8ef;
+					    	    }
+					    	    &.radius{
+					    	    	border-radius: 0 0 6px 6px;
+					    	    }
+				    	    span{
+				    	    text-align: center;
+						    font-weight: normal;
+							width: 320px;
+							display: inline-block;
+								&.pl{
+									padding-left: 80px;
+								}
+								&.cen{
+								    padding-left: 85px;
+									box-sizing: border-box;
+								}
+
+				    	    }
+				    	    i{
+				    	    	width: 1px;
+				    	    	height: 52px;
+				    	    	background: #fc99b7;
+				    	    	display: inline-block;
+				    	    	margin-left: 487px;
+				    	    	&.rt{
+				    	    	margin-left: 771px;
+				    	    	}
+				    	    }
+					    }
+			    	}
+			    }
+		}
+	}
+	.common-wrapper{
+		padding-bottom: 70px;
+		overflow: hidden;
+		.mode{
+			width: 1198px;
+			margin: 70px auto 0;
+			border: 1px solid #f9bcc2;
+			position: relative;
+			.title{
+				width: 162px;
+				height: 33px;
+				text-align: center;
+				line-height: 33px;
+				background: #ef5767;
+				font-size: 18px;
+				color: #f0f0f0;
+				float: left;
+				margin: -17px 0 0 30px;
+			}
+			.love-icon{
+				position: absolute;
+				left: 53px;
+				top: 140px;
+			}
+			.content{
+				padding: 49px 0 10px 120px;
+				overflow: hidden;
+				clear: both;
+				zoom: 1;
+				.iconmode{
+					width: 529px;
+					float: left;
+					height: 137px;
+					position: relative;
+					i{
+						position: absolute;
+						left: 0;
+						top: 0;
+						width: 97px;
+						height: 97px;
+						&.olympiad-gzkg{
+							background: image-url('olympiad/gzkg.png') center center no-repeat;
+						}
+						&.olympiad-guarantee{
+
+							background: image-url('olympiad/guarantee.png') center center no-repeat;
+						}
+						&.olympiad-pjcd{
+
+							background: image-url('olympiad/pjcd.png') center center no-repeat;
+						}
+						&.olympiad-lszc{
+
+							background: image-url('olympiad/lszc.png') center center no-repeat;
+						}
+
+					}
+					div{
+						padding: 14px 0 0 112px;
+						font-size: 14px;
+						color: #333;
+						span{
+							font-size: 26px;
+							color: #333;
+						}
+					}
+				}
+			}
+			ul{
+				padding: 40px 0 40px 33px;
+				overflow: hidden;
+				clear: both;
+				zoom: 1;
+				li{
+					float: left;
+					margin-right: 17px;
+					width: 271px;
+					text-align: center;
+					a:hover{
+						color: #313131;
+					}
+					p{
+						font-size: 14px;
+						color: #313131;
+						line-height: 24px;
+						padding-top: 16px;
+					}
+				}
+			}
+			.partners{
+				padding: 50px 0 44px 30px;
+				overflow: hidden;
+				clear: both;
+				zoom: 1;
+				.olympiad-left{
+					float: left;
+					margin: 30px 10px 0 0;
+					cursor: pointer;
+				}
+				.imgs{
+					width: 1099px;
+					overflow: hidden;
+					float: left;
+					height: 78px;
+					ul{
+						width: 2080px;
+						padding: 0;
+						li{
+							float: left;
+							width: auto;
+							margin: 0 !important;
+							img{
+								width: 153px;
+							}
+						}
+					}
+				}
+				.olympiad-right{
+					float: left;
+					margin: 30px 0 0 10px;
+					cursor: pointer;
+					width: 14px;
+					height: 14px;
+					background: image-url('olympiad/right.png') center center no-repeat;
+				}
+			}
+		}
+	}
+	.code-wrapper{
+		width: 100%;
+		height: 200px;
+		background: #ef5767;
+		.code{
+			width: 1200px;
+			margin: 0 auto;
+			position: relative;
+			.icon{
+				width: 104px;
+				height: 60px;
+				background: image-url('olympiad/appicon.png') center center no-repeat;
+				position: absolute;
+			    top: 67px;
+    			left: 167px;
+			}
+			.phonecode{
+				width: 62px;
+				height: 62px;
+				background: image-url('olympiad/phone.png') center center no-repeat;
+				position: absolute;
+			    top: 75px;
+			    right: 322px;
+
+			}
+			.appcode{
+				float: left;
+				margin: 41px 0 0 44px;
+			}
+			.wechatcode{
+				float: left;
+				margin: 41px 0 0 172px;
+			}
+			.tel{
+				float: left;
+				margin: 76px 0 0 414px;
+				.number{
+					i{
+						float: left;
+					}
+					div{
+						float: left;
+						color: #fff;
+						padding-left: 13px;
+						margin-top: -5px;
+						span{
+							font-size: 32px;
+						}
+						p{
+							font-size: 12px;
+							margin-top: -3px;
+						}
+					}
+				}
+			}
+			.title{
+				font-size: 16px;
+				color: #fff;
+				padding-top: 6px;
+			    width: 106px;
+			    text-align: center;
+			}
+			.code-box{
+				overflow: hidden;
+				.app-code-icon{
+					float: left;
+					img{
+						display: block;
+						border: 1px solid #008c40;
+					}
+				}
+				.app-code-word{
+					float: left;
+					padding: 29px 0 0 18px;
+					p{
+
+						i{
+							float: left;
+							margin: 3px 5px 0 20px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@keyframes openMove{
+	0%{
+		opacity: 0.2;
+		transform: scale(0);
+	}
+	80%{
+		opacity: 0.8;
+		transform: scale(1.2);
+	}
+	100%{
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+@keyframes closeMove{
+	0%{
+		opacity: 1;
+		transform: scale(1);
+	}
+	80%{
+		opacity: 0.8;
+		transform: scale(1.2);
+	}
+	100%{
+		opacity: 0.2;
+		transform: scale(0);
+	}
+}

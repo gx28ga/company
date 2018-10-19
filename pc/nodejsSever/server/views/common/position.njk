@@ -1,0 +1,15 @@
+{# 当前位置 #}
+{% macro size(list) %}
+<div class="position">
+    <a href="/">首页</a>
+    {% for item in list %}
+        {% if item.link %}
+        &gt;
+        <a href="{{item.link}}">{{item.title}}</a>
+        {% else %}
+        &gt;
+        <span>{{item.title}}</span>
+        {% endif %}
+    {% endfor %}
+</div>
+{% endmacro %}

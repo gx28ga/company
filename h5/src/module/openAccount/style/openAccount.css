@@ -1,0 +1,65 @@
+.openAccount-content{
+    background: #fff;
+    font-family: "PingFangSC-Light";
+    .btn{
+        background:#FE7634;
+        color:#fff;
+        text-align: center;
+        border-radius: 5px;
+        margin:0 auto;
+    }
+    .prompt{
+        text-align: center;
+        color:#FE7634;
+    }
+    .handle{
+        text-align: center;
+        color:#FE7634;
+        font-family: "PingFangSC-Regular";
+    }
+    .line{
+        height:1px;
+        background: #ddd;
+        margin:0 auto;
+    }
+    .faileimg{
+        background: url("../../../images/openAccount/faile.png") no-repeat;
+        background-size: contain;
+        margin:0 auto;
+    }
+    .successimg{
+        background: url("../../../images/openAccount/success.png") no-repeat;
+        background-size:contain;
+        margin:0 auto;
+    }
+    .drlogo{
+        background: url("../../../images/openAccount/dr.png") no-repeat;
+        background-size:contain;
+        position: absolute;
+    }
+    .cun{
+        background: url("../../../images/openAccount/money.png") no-repeat;
+        background-size:contain;
+        position: absolute;
+    }
+    .ji{
+        background: url("../../../images/openAccount/arrow.png") no-repeat;
+        background-size:contain;
+        position: absolute;
+    }
+    .promptimg{
+        position: relative;
+        margin:0 auto;
+    }
+    .rechargePrompt{
+        text-align: center;
+        color:#333;
+    }
+    .rechargeFont{
+        color:#333;
+        position: absolute;
+        text-align: center;
+    }
+}
+
+

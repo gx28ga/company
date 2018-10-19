@@ -1,0 +1,44 @@
+@import "../../../common/style/global.scss";
+.banner{
+    @include contain('../images/banner.jpg');
+     background-position:center center;
+}
+.title{
+    margin:$s60 auto;
+    @include contain('../images/title.png');
+}
+.mode{
+    background-color:#eeeeee;
+    margin-bottom:$s30;
+    .num1{
+       @include contain('../images/num1.png'); 
+       margin:0 auto ; 
+    }
+    .num2{
+        @include contain('../images/num2.png'); 
+       margin:0 auto ;  
+    }
+     .num3{
+        @include contain('../images/num3.png'); 
+       margin:0 auto ;  
+    }
+
+}
+p{
+    background-color:#fff;
+    padding:0 $s30;
+    color:#333;
+    @include  font-size(12px);
+    line-height:$s30;
+    text-indent:2em;
+}
+.xieyi{
+        @include contain('../images/xieyi.png'); 
+       margin:0 auto ;  
+}
+.xieyicon{
+     @include contain('../images/xieyi2.jpg'); 
+       margin:$s40 auto $s70;  
+}
+  
+

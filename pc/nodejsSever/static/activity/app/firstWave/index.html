@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html ng-app="someApp" id='ng-app' xmlns:ng="http://angularjs.org"  lang="zh_CN">
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta name="theme-color" content="#2932e1">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <title>破十亿--第一波</title>
+    <link rel="stylesheet" href="stylesheets/firstWave.css">
+    <script type="text/javascript" src="../../../vendor/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../../../vendor/angular.min.js"></script>
+    <script type="text/javascript" src="../../../vendor/angular-resource.min.js"></script>
+    <script type="text/javascript" src="js/firstWave.js"></script>
+    <script type="text/javascript" src='../../common/js/modules/time.js'></script>
+</head>
+<body ng-controller="firstWaveCtrl"><div ng-show="activity.status == 1 || activity.status == 0">
+	<div class="firstWave-wrapper img-size" data-width='750' data-height='1334'>
+		<div class="title img-size" data-height='130'></div>
+		<div class="tree img-size" data-height='814' data-marginTop='-10'></div>
+		<p class="myjh img-size" data-marginTop='-5'>我的剩余机会：<span></span></p>
+		<div class="tzbtn img-size" id="yaojiang" data-widht='360' data-height='99' data-marginTop='7'></div>
+		<p class="qtz img-size" data-marginTop='5'>单笔投资≥90天产品,每满5万必出10000钻石</p>
+		<div class="yjbtn img-size" data-widht='687' data-height='88' data-marginTop='5'><div class="img-size" id="touzi" data-width='200' data-height='50' data-marginTop='23' data-marginRight='100' style="float: right;"></div></div>
+		<div class="zsbox img-size" data-marginTop='5' data-paddingLeft='30'><div class="myzs">我的钻石：<span></span></div><div class="dhbtn img-size" data-width='231' data-height='68' data-marginRight='30'></div></div>
+		<div class="btnbox img-size" data-marginTop='76'>
+			<div class="jpbtn img-size" data-marginLeft='154'><i class="jpicon img-size" data-width='22' data-height='24' data-marginRight='5'></i><a href="">我的奖品</a></div>
+			<div class="gzbtn img-size" data-marginRight='154'><i class="gzicon img-size" data-width='22' data-height='24' data-marginRight='5'></i><a href="">活动规则</a></div>
+		</div>
+	</div></div>
+	<div class="firstWaveConvert-wrapper img-size">
+		<div class="page1">
+		  	<div class="top img-size" data-height='221'>
+		  		<div class="back img-size" data-lineHeight='100' data-paddingLeft='32'>＜</div><span class="text img-size" data-lineHeight='100'>{{mingxiname}}</span>
+		  		<div class="newtitle img-size" data-height='124'><p ng-show='mingxiname == "钻石明细"' class="img-size" data-paddingLeft='60' data-paddingTop='30'>我的钻石余量　<span>{{surplusCoins}}</span></p></div>
+		  	</div>
+
+		  	<div class="list img-size" data-width='655'>
+		  		<ul class="list img-size" ng-show='coinDetail!=null' data-width='600' data-lineHeight='68' data-paddingLeft='30' data-paddingRight='30' ng-repeat="item in coinDetail" repeat-finish="setImgSize()">
+		  			<li class="tel" style="text-align: left;width:30%" ng-show="mingxiname == '钻石明细'">{{item.Opt}}</li>
+		  			<li class="tel" style="text-align: left;width:30%" ng-show="mingxiname == '钻石兑换明细'">{{item.name}}</li>
+		  			<li class="price" style="width:27%" ng-show="mingxiname == '钻石明细'">{{item.count}}</li>
+		  			<li class="price" style="width:27%" ng-show="mingxiname == '钻石兑换明细'">{{item.needGoldCoin}}</li>
+		  			<li class="date" style="text-align: right;width:43%">{{item.updateTime}}</li>
+		  		</ul>
+			  	<div ng-show='coinDetail==null' class="loading"><img src='../../../main/images/loading.gif'></div>
+		  	</div>
+		  </div>
+		<!-- 兑换列表页 --> 
+		<div class="page2">
+			<div class="top img-size" data-height='221'>
+				<div class="back img-size" data-lineHeight='40'><p class="img-size" data-paddingLeft='40' data-paddingTop='30'>我的钻石　<i class="img-size" data-width='30' data-height='25' data-paddingTop='19' data-marginLeft='13'></i><span>{{surplusCoins}}</span></p></div>
+				<span class="getmore img-size" data-paddingTop='30' data-paddingRight='32'>获取更多></span>
+				<div class="newtitle img-size" data-height='124'><span href="" class="img-size" data-paddingLeft='90' data-paddingTop='60' style="float: left;" ng-click="mingxi(obj)">钻石明细</span><span href="" class="img-size" data-paddingRight='90' data-paddingTop='60' style="float: right;" ng-click="mingxi(obj)">钻石兑换明细</span></div>
+			</div>
+			<div class="con">
+				<div class="kuai img-size" data-width='622' data-marginTop='30' data-paddingLeft="32" data-paddingTop="15" data-paddingRight="32">
+					<p>京东卡</p>
+					<ul class="img-size" data-paddingLeft='35'  data-paddingTop='10' data-paddingRight='35'>
+						<li width='50%' ng-repeat='obj in dataprize.prizes.cashCouponList' repeat-finish="setImgSize()">
+							<div class="p1 img-size" data-width='247' data-height='125' style="background-image: url('{{obj.imagePath}}')"></div>
+							<div class="infos img-size" data-lineHeight='40'><span>{{obj.needGoldCoin}}</span><i class="img-size" data-width='30' data-height='25' data-paddingTop='19' data-marginLeft='13'></i><a href="" ng-click="duoshouu(obj)">兑换</a></div>
+						</li>
+					</ul>
+				</div>
+				<div class="kuai img-size" data-width='622' data-marginTop='30' data-paddingLeft="32" data-paddingTop="15" data-paddingRight="32">
+					<p>超值大礼</p>
+					<ul class="img-size" data-paddingLeft='35'  data-paddingTop='10' data-paddingRight='35'>
+						<li width='50%' ng-repeat='obj in dataprize.prizes.realPrizeList' repeat-finish="setImgSize()">
+							<div class="p1 img-size" data-width='247' data-height='125' style="background-image: url('{{obj.imagePath}}')"></div>
+							<div class="infos img-size" data-lineHeight='40'><span>{{obj.needGoldCoin}}</span><i class="img-size" data-width='30' data-height='25' data-paddingTop='19' data-marginLeft='13'></i><a href="" ng-click="duoshouu(obj)">兑换</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="mask" style='display:none;'><!-- ng-show="activity.isrule || activity.isprize || activity.isZJ || activity.isShouhuo || activity.isqudao || activity.isduoshou || activity.isDJ || activity.isdjend" -->
+	    <!-- —————————————————兑换提示 弹框—————————————————————————  -->
+		<div class="qrdh-tan img-size" data-width='621' data-height='482' data-marginLeft='-311' data-marginTop='-241' ng-show="activity.isduoshou">
+			<div class="qrdhbg img-size" data-width='621' data-height='66' data-marginLeft='0'>
+				<span class="notice img-size" data-lineHeight='66' data-paddingLeft='20'>{{prize.top}}</span>
+				<div class="closedh img-size" data-width='60' data-height='50' ></div>
+			</div>
+			<p class="prizename img-size" data-paddingTop='70'>{{prize.title}}</p>
+			<p class="prizemoney">{{prize.name}}</p>
+			<p class="prizemoney">{{prize.coin}}</p>
+			<div class="qrdhbtn img-size" data-width='320' data-height='70' data-lineHeight='70' data-marginTop='60' ng-show="prize.btntext == '确认兑换'" ng-click="aa(prize)"><a href="" id="tan">{{prize.btntext}}</a></div>
+			<div class="qrdhbtn img-size" id="qrdhbtn" data-width='320' data-height='70' data-lineHeight='70' data-marginTop='60' ng-show="prize.btntext == '我知道了'" ><a href="" id="tan">{{prize.btntext}}</a></div>
+		</div>
+		<!-- —————————————————恭喜兑换成功 弹框 ————————————————————————— -->
+		<div class="gxn-tan img-size" ng-show="activity.isDJ" data-width='518' data-height='639' data-marginLeft='-259' data-marginTop='-314'>
+			<div class="closedh img-size" data-width='60' data-height='50' ></div>
+			<p class="img-size" data-paddingTop='90'>兑换获得{{prize.name}}</p>
+			<div class="prizeimg img-size" data-marginTop='40'>
+				<ul class="img-size" data-width='304' data-height='203' style="margin:0 auto;">
+					<li class="p1 img-size" style="background-image: url('{{prize.imagePath}}');"></li>
+				</ul>
+			</div>
+			<p class="img-size" data-marginTop='30'>* 兑换奖品将于活动结束后15个工作<br>日内发放，会提前与您联系，期间请<br>保持手机畅通</p>
+			<div class="gxnbtn img-size" data-width='260' data-height='55' data-lineHeight='55' data-marginTop='30' ng-click="addinfo()">填写联系方式</div>
+		</div>
+		
+		<!-- —————————————————填写收货信息 弹框 ————————————————————————— -->
+		<div class="shouhuo-tan cur img-size" ng-show="activity.isShouhuo" data-width='621' data-height='482' data-marginLeft='-311' data-marginTop='-241'>
+		  	<div class="qrdhbg img-size" data-width='621' data-height='66'>
+		  		<div class="infotitle img-size" data-lineHeight='65' data-paddingLeft='20'>奖品兑换<div class="closedh img-size" data-width='60' data-height='50' ></div></div>
+		  		<div class="infocon img-size" data-marginLeft='2'>
+		  			<form>
+		  				<p><span>联系人姓名</span><input type="text" ng-pattern="/^1[3|4|5|7|8][0-9]{9}$/" class="img-size" data-height='48' data-width='308' data-marginLeft='20' data-marginTop='30' data-paddingLeft='20'></p>
+		  				<p><span>联系人号码</span><input type="text" class="img-size" data-height='48' data-width='308' data-marginLeft='20' data-marginTop='30' data-paddingLeft='20' ng-pattern="/^1[3|4|5|7|8][0-9]{9}$/" placeholder=""  ng-mouseOut="userNameShowError=true" ng-mouseOver="userNameShowError=fasle" onkeyup="this.value=this.value.replace(/[\D\.]/gi,'') "  ng-model="userLogin.mobilephone" name="userName" required minlength="11" maxlength="11" autocomplete="off" /></p>
+		  				<p><span>联系人地址</span><input type="text" class="img-size" data-height='48' data-width='308' data-marginLeft='20' data-marginTop='30' data-paddingLeft='20'></p>
+		  			</form>
+		  			<p class="error img-size" data-marginTop='5' style="color:red"></p>
+		  			<p class="notice img-size" data-marginTop='1'>兑换话费无需填写联系地址</p>
+		  			<div class="qrdhbtn img-size" id="cg" data-width='320' data-height='70' data-lineHeight='70' data-marginTop='20'>完成</div>
+		  		</div> 
+		  	</div>
+		 </div> 
+		<!-- —————————————————活动规则 弹框————————————————————————— -->
+			<!-- <rule-tan></rule-tan> -->
+		<div class="rule-tan img-size" ng-show="activity.isrule" data-width='689' data-height='1025' data-marginTop='-512' data-marginLeft='-345'>
+			<div class="colse img-size" data-width='50' data-height='50' ></div>
+			<div class="rulecon img-size" data-width='609' data-height='870' data-marginTop='100'>
+				<div class="con">
+				<ul class="img-size" data-width='539' data-height='770' data-paddingLeft='40' data-paddingRight='30'>
+					<li  class="img-size" data-marginBottom='10'>1、活动时间：2016年1月6日—2017年2月2日</li>
+					<li  class="img-size" data-marginBottom='10'>2、30天以下投资期限产品不参加本次活动</li>
+					<li  class="img-size" data-marginBottom='10'>3、活动期间，每天免费1次机会；单笔投资满5000元（除30天以下产品），再获1次机会；如单笔满10000元，即获得2次机会，以此类推</li>
+					<li  class="img-size" data-marginBottom='10'>4、摇钱树可以摇到10-200元红包、1%-6%加息券、或者钻石。单笔投资90天及以上产品每满5万，必出10000钻石，如10万，出20000钻石，以此类推。</li>
+					<li  class="img-size" data-marginBottom='10'>5、凭钻石可在活动页兑换奖品，奖品包括：
+						<ul class="img-size" data-paddingLeft='40' data-paddingRight='30'>
+							<li>• iPhone7 Plus 128G</li>
+							<li>• Xbox One</li>
+							<li>• 戴森吸尘器</li>
+							<li>• 松下空气净化器</li>
+							<li>• 膳魔师保温杯</li>
+							<li>• brita净水器</li>
+							<li>• 小米移动电源</li>
+							<li>• 50元话费</li>
+							<li>• 京东卡100元</li>
+							<li>• 京东卡1000元</li>
+						</ul>
+					</li>
+					<li  class="img-size" data-marginBottom='10'>6、钻石兑换截至2017年2月9日，请注意兑换，截至2017年2月9日仍未兑换的，将终止兑换</li>
+					<li  class="img-size" data-marginBottom='10'>7、红包、加息券，将即时发放到您的账户；兑换奖品将于活动结束后15个工作日内发放，会提前与您联系，期间请保持手机畅通</li>
+					<li  class="img-size" data-marginBottom='10'>8、活动最终解释权归多融财富所有。</li>
+				</ul>
+				</div>
+				<div class="iknow img-size" data-width='256' data-height='66' data-lineHeight='66' data-marginTop='20' >我知道了</div>
+			</div>
+		</div>
+		<!-- —————————————————我的奖品 弹框————————————————————————— -->
+		<div class="prize-tan img-size" data-width='689' data-height='573' data-marginTop='-286' data-marginLeft='-345' ng-show='activity.isprize'>
+			<div class="colse img-size" data-width='50' data-height='50' ></div>
+			<div class="rulecon img-size" data-width='603' data-height='356' data-marginTop='120'>
+				<div class="con">
+					<table ng-show='myPrize!=null' class="img-size" data-width='603' data-height='356'>
+						<tr class="img-size" data-lineHeight='70' ng-repeat='obj in myPrize' repeat-finish="setImgSize()">
+							<td width=20% class="img-size" data-paddingLeft='20'>{{obj.Opt}}</td>
+							<td width=35%>{{obj.name}}</td>
+							<td width=45% class="img-size" data-paddingRight='20'>{{obj.updateTime}}</td>
+						</tr>
+					</table>
+					<div ng-show='myPrize==null' class="loading"><img src='../../../main/images/loading.gif'></div>
+				</div>
+			</div>
+		</div>
+		<!-- —————————————————渠道用户 次数不足 弹框————————————————————————— -->
+		<div class="qrdh-tan img-size" ng-show="activity.isqudao" data-width='621' data-height='482' data-marginLeft='-311' data-marginTop='-241'>
+			<div class="qrdhbg img-size" data-width='621' data-height='66' data-marginLeft='0'>
+				<span class="notice img-size" data-lineHeight='66' data-paddingLeft='20'>{{tan.top}}</span>
+				<div class="closedh img-size" data-width='60' data-height='50'  ng-show="tan.btntext != '回到首页'"></div>
+			</div>
+			<p class="prizename img-size" data-paddingTop='70'>{{tan.title}}</p>
+			<p class="prizemoney">{{tan.notice}}</p>
+			<p class="prizemoney" ng-show="tan.btntext == '登录'">您尚未登录,请先去登录</p>
+			<p class="prizemoney" ng-show="tan.btntext == '投资获取'">剩余抽奖次数不足<br/>快去获取次数吧</p>
+			<p class="prizemoney" ng-show="tan.btntext == '回到首页'">由于您是渠道VIP用户<br>所以不能参与此处活动</p>
+			<p class="prizemoney" ng-show="tan.btntext == '我知道了'">活动尚未开始<br>敬请期待</p>
+			<div class="qrdhbtn img-size" data-width='320' data-height='70' data-lineHeight='70' data-marginTop='60' ng-show="tan.btntext == '登录'"><a href="http://app.duorongcf.com/main/dl" id="tan" ng-show="wap">{{tan.btntext}}</a><a href="jump://page=4?" id="tan" ng-show="!wap">{{tan.btntext}}</a></div>
+			<div class="qrdhbtn img-size" data-width='320' data-height='70' data-lineHeight='70' data-marginTop='60' ng-show="tan.btntext == '投资获取'"><a href="http://app.duorongcf.com/main/bankBillList" id="tan" ng-show="wap">{{tan.btntext}}</a><a href="jump://page=2?" id="tan" ng-show="!wap">{{tan.btntext}}</a></div>
+			<div class="qrdhbtn img-size" data-width='320' data-height='70' data-lineHeight='70' data-marginTop='60' ng-show="tan.btntext == '回到首页'"><a href="http://app.duorongcf.com/main/home" id="tan" ng-show="wap">{{tan.btntext}}</a><a href="jump://page=1?" id="tan" ng-show="!wap">{{tan.btntext}}</a></div>
+			<div class="qrdhbtn img-size" id="qrdhbtn" data-width='320' data-height='70' data-lineHeight='70' data-marginTop='60' ng-show="tan.btntext == '我知道了'"><a href="http://app.duorongcf.com/main/home" id="tan" ng-show="wap">{{tan.btntext}}</a><a href="jump://page=1?" id="tan" ng-show="!wap">{{tan.btntext}}</a></div>
+		</div>
+		<!-- —————————————————恭喜您中奖了 弹框————————————————————————— -->
+		<div class="gxn-tan img-size" data-width='518' data-height='639' data-marginLeft='-259' data-marginTop='-314' ng-show="activity.isZJ">
+		 	<div class="closedh img-size" data-width='60' data-height='50' ></div>
+		 	<p class="img-size" data-paddingTop='90' ng-show="ZJL.type == 3">获得{{ZJL.amount}}%{{ZJL.comments}}</p>
+		 	<p class="img-size" data-paddingTop='90' ng-show="ZJL.type == 2">获得{{ZJL.amount}}元{{ZJL.comments}}</p>
+		 	<p class="img-size" data-paddingTop='90' ng-show="ZJL.type == 1">获得{{ZJL.amount}}个{{ZJL.comments}}</p>
+		 	<div class="prizeimg img-size" data-marginTop='40'>
+		 		<ul class="img-size" data-width='304' data-height='203' style="margin:0 auto;">
+		 			<li class="p1 img-size" style="background-image: url('{{ZJL.imagePath}}');"></li>
+		 		</ul>
+		 	</div>
+		 	<p class="img-size" data-marginTop='30' ng-show="ZJL.type == 1">* 钻石可到活动页兑换专区兑换超值大礼，请注意兑换截至时间</p>
+		 	<p class="img-size" data-marginTop='30' ng-show="ZJL.type == 3 || ZJL.type == 2">*{{ZJL.comments}}已发放到你的账户，请注意使用</p>
+		 	<div class="gxnbtn img-size" data-width='260' data-height='55' data-lineHeight='55' data-marginTop='30' >{{gx.btntext}}</div>
+		 	<a href="http://app.duorongcf.com/myCoupon" ng-show="(gx.btntext=='继续摇'&&ZJL.type == 2&&wap)||(gx.btntext=='继续摇'&&ZJL.type == 3&&wap)" class="img-size" data-marginTop="30">立即查看</a>
+		 	<a href="jump://page=16?" ng-show="(gx.btntext=='继续摇'&&ZJL.type == 2&&!wap)||(gx.btntext=='继续摇'&&ZJL.type == 3&&!wap)" class="img-size" data-marginTop="30">立即查看</a>
+		 </div>
+<!-- <div style="width:200px;height:200px;background: #000;" id="maskclick"></div> -->
+	</div>
+<div style="width:0px;height:0px;" ng-click="duoshouu()"></div>
+
+<div class="firstWaveEnd-wrapper img-size" data-width='750' data-height='1334' ng-show="activity.status == 2 || activity.status == 3">
+	<div class="one img-size" data-width="622" data-height='105' data-paddingTop='200'></div>
+	<div class="two img-size" data-width="626" data-height='189'></div>
+	<div class="three img-size" data-width="603" data-height='288' data-marginTop='90'><p class='img-size' data-paddingTop='58' data-lineHeight='68'>摇一摇活动已结束</p><p>截止至 2017-02-09<span></span><br>仅支持钻石兑换超值大奖</p></div>
+	<div class="four img-size" data-marginTop='90' data-paddingLeft='30'><div class="myzs">我的钻石：<span></span></div><div class="dhbtn img-size" data-width='231' data-height='68' data-marginRight='30'></div></div>
+	<div class="five img-size" data-width='432' data-height='60' data-marginTop='262'><div class="jpbtn img-size" data-width='181' data-height='61' style='float: left;'></div><div class="gzbtn img-size" data-width='181' data-height='61' style='float: right;'></div></div>
+	<div class="mask2" ng-show="activity.status == 3">
+		<!-- ————————————————— 兑换过期 弹框 ————————————————————————— -->
+		<div class="djend-tan img-size" data-width='691' data-height='530' data-marginTop='-286' data-marginLeft='-345' ng-show='activity.isdjend'>
+			<div class="colse img-size" data-width='80' data-height='80' ></div>
+			<div class="rulecon img-size" data-width='609' data-height='356' data-marginTop='120'>
+				<div class="con">
+					<p class="prizename img-size" data-paddingTop='60'>活动已结束！</p>
+					<p class="prizemoney">钻石兑换截至{{activity.duihuanData}}<br>所以不能参与此处活动</p>
+					<div class="qrdhbtn img-size" id="qrdhbtn" data-width='230' data-height='46' data-lineHeight='46' data-marginTop='30'><a href="http://app.duorongcf.com/main/home" ng-show="wap">返回首页</a><a href="jump://page=1?" ng-show="!wap">返回首页</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+<!-- https://shimo.im/spreadsheet/G APmGmOMnQ4RMvPa/ECq74 ________________双旦活动 API-->
+<script>
+	function setImgSize(){
+        var  originWidth = 375
+            ,ratio =$(window).width()/originWidth;
+        $('.img-size').each(function(){
+            var self = $(this);
+            $.each(['height','width','left','right','bottom','top' , 'paddingTop' ,'lineHeight' , 'paddingLeft' , 'paddingRight' , 'paddingBottom','marginTop', 'marginLeft' , 'marginRight' , 'marginBottom'],function( i , str ){
+                var num = self.attr('data-'+str); 
+                if( num ){
+                    num = num*ratio/2+'px';
+                    self.css(str,num)
+                }
+            });
+        });
+    }
+    setTimeout(function(){
+   		setImgSize();
+    },300)
+
+</script>
+</html>

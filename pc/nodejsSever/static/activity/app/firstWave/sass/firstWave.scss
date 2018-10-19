@@ -1,0 +1,138 @@
+@import "../../../common/style/global.scss";
+.firstWave-wrapper{
+	background:#c5790f;display:block;
+	@include contain('../images/bgone.jpg');
+	background-position:center center;
+	.title{@include contain('../images/title.png');background-position:center center;}
+	.tree{@include contain('../images/tree.png');background-position:center center;}
+	p{ text-align:center;
+		&.myjh{@include font-size(15px);color:#ffff85;a{color:#04bbff;}span.islogin{ color:#ff4800;font-weight: bold;}}
+		&.qtz{@include font-size(12px);color:#f7e8b8;}}
+	.tzbtn{@include contain('../images/yjbtn.png');background-position:center center;}
+	.yjbtn{@include contain('../images/yjbtn2.png');background-position:center center;}
+	.zsbox{
+		.myzs{text-align:left;@include font-size(15px);color:#ffff85;float:left;@include size(line-height,34px);span.islogin{ color:#ff4800;font-weight: bold;}a{color:#04bbff;}}
+		.dhbtn{@include contain('../images/dhbtn.png');background-position:center center;float: right;}
+	}
+	.btnbox{@include font-size(14px);a{color:#5c1e00;}
+		.jpbtn{ float:left;i.jpicon{@include contain('../images/myjpbtn.png');background-position:center center;display:-webkit-inline-box;}}
+		.gzbtn{ float:right;i.gzicon{@include contain('../images/gzbtn.png');background-position:center center;display:-webkit-inline-box;}}
+	}
+}
+.loading{
+	height: 37px;margin:0 auto;img{display:block;margin:0 auto;}
+}
+.firstWaveConvert-wrapper{display:none;width:100%;height:100%;background:#fffaef;color:#822b00;@include font-size(18px);overflow-x:hidden;position:relative;
+	.page1{position:absolute;left:1900px;width:100%;height:100%;background:#fffaef;
+		.top{ background:#fce2af;position:relative;
+			.back{display:block;float:left;position: absolute;}
+			.text{display:block;text-align:center;}
+			.newtitle{@include contain('../images/nretitle.png');background-position:center center;width:100%;position:absolute;bottom:0;p{@include font-size(14px);}span{@include font-size(21px);color:#fb7f1c;font-weight:bold;}}}
+		.list{background:#fff;margin:0 auto;
+			ul{ @include font-size(12px);color:#822b00;float:left; overflow:hidden;
+				li{ float:left; width:33.33%; text-align:center;border-bottom:1px solid #ede7d9;}
+			}
+		}
+		&.page{left:0px;z-index:99;}
+	}
+	.page2{
+		.top{ background:#fce2af;position:relative;
+			span{color:#000;@include font-size(14px);float:right;}
+			p{@include font-size(14px);i{@include contain('../images/zuanshi.png');background-position:center center;display:block;float:right;}span{@include font-size(21px);color:#fb7f1c;font-weight:bold;}}
+			.back{display:block;float:left;position: absolute;}
+			.text{display:block;text-align:center;}
+			.newtitle{@include contain('../images/nretitle.png');background-position:center center;width:100%;position:absolute;bottom:0;span{@include font-size(15px);text-decoration: underline;color:#822b00;}}}
+			a{@include font-size(15px);text-decoration: underline;color:#822b00;}
+		.list{background:#fff;margin:0 auto;
+			ul{ @include font-size(12px);color:#822b00;float:left; overflow:hidden;
+				li{ float:left; width:33.33%; text-align:center;border-bottom:1px solid #ede7d9;}
+			}
+		}
+		.kuai{height:auto;background:#fff;margin:auto;box-shadow:0px 0px 20px 2px rgba(255, 240, 212,1);display: table;
+			p{color:#fb7f1c;@include font-size(12px);}
+			ul{height:auto;li{float:left;}li:nth-child(even){float:right;}
+				.p1{@include contain('../images/duihuan/p8.png');background-position:center center;}
+				.p2{@include contain('../images/duihuan/p9.png');background-position:center center;}
+				.infos{span{color:#fb7f1c;@include font-size(12px);display:block;float:left;}i{@include contain('../images/zuanshi.png');background-position:center center;display:block;float:left;}a{float:right;@include font-size(12px);color:#04bbff;text-decoration:none;}}
+			}
+		}
+	}
+}
+.mask,.mask2{ width:100%;height:100%;position:fixed;top:0;left:0;background:rgba(0,0,0,0.8);z-index:888; -webkit-perspective:600px;display:none;
+	span.notice{color:#ffffcc;@include font-size(15px);} 
+	.colse{float:right;}
+	.con{height:auto;overflow-y:scroll;
+		table{@include font-size(9px);color:#822b00;overflow-y:scroll;}ul{@include font-size(9px);color:#822b00;}
+		/* &.loading{
+			height: 37px;
+		    background: url("../../../../images/loading.gif") center center no-repeat;
+		} */
+	}
+	.rulecon{margin:0 auto;background:#e8c8a1;@include size(border-radius,8px);overflow-y:scroll;}
+	.rule-tan{z-index:999;position: fixed;top: 50%;left: 50%;@include contain('../images/rulebg.png');background-position:center center;
+		.iknow{background:#822b00;margin:0 auto;@include font-size(15px);text-align:center;color:#fff;}
+		transition:all 0.5s ease-in-out;transform:rotateY(360deg); opacity:0;
+		&.cur{
+			transform:rotateY(0deg); opacity:1;
+		}
+	}
+	.prize-tan{z-index:999;position: fixed;top: 50%;left: 50%;@include contain('../images/myprizebg.png');background-position:center center;
+		transition:all 0.5s ease-in-out;transform:rotateY(360deg); opacity:0;
+		&.cur{
+			transform:rotateY(0deg);opacity:1;z-index:999;
+		}}
+	.djend-tan{z-index:999;position: fixed;top: 50%;left: 50%;@include contain('../images/end/tanbg.png');background-position:center center;
+		p{color:#822b00;text-align:center;
+			&.prizename{@include font-size(21px);font-weight:bold;}
+			&.prizemoney{@include font-size(18px);}
+		}
+		.qrdhbtn{background:#822b00;@include size(border-radius,30px);margin:0 auto;text-align:center;a{color:#fff;}}
+		transition:all 0.5s ease-in-out;transform:rotateY(360deg); opacity:0;
+		&.cur{
+			transform:rotateY(0deg);opacity:1;z-index:999;
+		}}
+	.closedh{float:right;color:#fff;text-align:center;@include font-size(40px);}
+	.qrdh-tan,.shouhuo-tan{z-index:999;position: fixed;top: 50%;left: 50%;background:#fffff1;@include size(border-radius,5px);
+		.qrdhbg{@include contain('../images/qrdhbg.png');background-position:center center;margin:0 auto;}
+		p{color:#822b00;text-align:center;
+			&.prizename{@include font-size(21px);font-weight:bold;}
+			&.prizemoney{@include font-size(18px);}
+		}
+		.qrdhbtn{background:rgba(251,127,28,1);@include size(border-radius,30px);margin:0 auto;text-align:center;a{color:#fff;}}
+		p.notice{@include font-size(12px);color:#fb7f1c;text-align:center;}
+		.infotitle{color:#ffffcc;@include font-size(15px);}
+		.infocon{background:#fffff1;color:#822b00;@include font-size(12px);
+			form{p{span{color:#822b00;}}}
+			input{border:1px solid #cccccc;@include size(border-radius,8px);}}
+		transition:all 0.5s ease-in-out;transform:rotateY(360deg) translateX(0px); opacity:0;
+		&.cur{
+			transform:rotateY(0deg) translateX(0px);opacity:1;z-index:999;
+		}
+	}
+	.gxn-tan{z-index:999;position: fixed;top: 50%;left: 50%;@include contain('../images/prizebg.png');background-position:center center;
+		p{@include font-size(13px);color:#fff;text-align:center;}
+		.prizeimg{ul{li{width:100%;height:100%; 
+			&.p1{@include contain('../images/prize/z1.png');background-position:center center;margin:0 auto;}
+			}}}
+		.gxnbtn{background:rgba(255,234,151,1);@include size(border-radius,4px);margin:0 auto;text-align:center;color:#ff5400;
+			box-shadow:0 4px 0 rgba(251,158,1,.8);}
+		transition:all 0.5s ease-in-out;transform:rotateY(360deg) translateX(0px); opacity:0;
+		&.cur{
+			transform:rotateY(0deg) translateX(0px);opacity:1;z-index:999;
+		}
+		a{display:block;text-align:center;color:#ffea97;@include font-size(12px);text-decoration: underline;}
+	}
+}
+.firstWaveEnd-wrapper{@include contain('../images/end/bg.png');background-position:center center;
+	.one{@include contain('../images/end/one.png');background-position:center center;margin:0 auto;}
+	.two{@include contain('../images/end/two.png');background-position:center center;margin:0 auto;}
+	.three{@include contain('../images/end/three.png');background-position:center center;margin:0 auto;color:#812a00;text-align:center;
+		p{@include font-size(18px);}
+		p:nth-child(1){font-weight:bold;@include font-size(24px);}}
+	.four{
+		.myzs{text-align:left;@include font-size(15px);color:#ffff85;float:left;@include size(line-height,34px);span.islogin{ color:#ff4800;font-weight: bold;}a{color:#04bbff;}}
+		.dhbtn{@include contain('../images/dhbtn.png');background-position:center center;float: right;}
+	}
+	.five{@include contain('../images/end/five.png');background-position:center center;margin:0 auto;}
+	.six{@include contain('../images/end/six.png');background-position:center center;margin:0 auto;text-align:center;color:#812a00;a{color:#04bbff;}}
+}

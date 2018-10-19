@@ -1,0 +1,70 @@
+{# p2p 理财 #}
+<div class="bank-box cplist clearfix">
+    <div class="leftside" style="height:545px;">
+
+        <div class="imgb">
+            <div class="hover">
+                <div class="bg"></div>
+                <div class="bg-hover">
+                    <!--<div class="ckxq">-->
+                        <!--<a target="_blank" href="{{http}}/other/pjspecial.html" class="nohover">-->
+                            <!--<span>查看详情</span>-->
+                        <!--</a>-->
+                    <!--</div>-->
+                </div>
+            </div>
+        </div>
+        <div class="customer-service">
+            <div class="img"></div>
+            <div class="service-bottom">
+                <h2>Lily</h2>
+                <div class="right">
+                    <p>年度服务最佳客服</p>
+                    <p>一对一贴心服务</p>
+                </div>
+            </div>
+            <div class="btnmask">
+                <div class="btn" @click="consultation">立即咨询</div>
+            </div>
+        </div>
+        {# 客服弹框 #}
+        <div id="servertan" class="servertan" v-show="show_servertan" style="display:none">
+            <div class="title">咨询<span class="close" @click="servertanClose">×</span></div>
+            <div class="con">
+                <p>咨询电话：<span>{{contactPhone}}</span></p>
+                <form>
+                    <input type="text" maxlength="20"
+                           v-model="contactName" placeholder="请输入您的姓名" class="phone"/>
+                    <input type="text" maxlength="11"
+                           v-model="contactTel" placeholder="请输入您的手机号码" class="phone"/>
+                    <p class="error">${contactMsg}</p>
+                </form>
+                <div class="subbtn" style="cursor: pointer;" @click="servertanEvent">确认</div>
+            </div>
+        </div>
+        {# 客服弹框 成功 #}
+        <div id="servertan_success" class="servertan" v-show="show_servertan_sucesse" style="display:none">
+            <div class="title">发送成功</div>
+            <div class="con con2">
+                <div class="cgimg"></div>
+                <p class="qqcg">您的请求已发送成功</p>
+                <p class="text">客服人员将在一个工作日内与您联系，<br>请耐心等待</p>
+                <div class="subbtn subbtn2" @click="servertanClose">确定</div>
+            </div>
+        </div>
+    </div>
+    <div class="rightside">
+        <div class="list clearfix">
+            <div class="over">
+                {# 热推产品 #}
+                {% import "./product.njk" as product2 %}
+                {{ product2.productList(p2pHot,"p2pHot",{tagname:true}) }}
+                {# end 热推产品 #}
+                {# 普通产品 #}
+                {% import "./product.njk" as product3 %}
+                {{ product3.productList(p2pList,"p2pList") }}
+                {# end 普通产品 #}
+            </div>
+        </div>
+    </div>
+</div>

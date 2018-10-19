@@ -1,0 +1,24 @@
+<div class="bread-nav-wrapper">
+    <div class="bread-nav">
+        <!-- <div class="bread-box"><a href="">首页</a><span>></span><a href="">票据理财</a></div> -->
+    </div>
+</div>
+
+<div class="wq-my-account-wrapper" ng-controller="jtMenuCtrl" style='background:#161f34;'>
+    <div class="my-account-wrap">
+        <div class="my-account-side" style='background: #161f34;'>
+            <!-- <i class="line"></i> -->
+            <div class="side-mode-list">
+                <menu1></menu1>
+            </div>
+            <!-- <div class="phone-wrap">
+                <p>{{(a | web).phoneLabel}}<i class="my-side-phone"></i></p>
+                <strong>{{(a | web).phone}}</strong>
+            </div> -->
+        </div>
+        <!-- class="my-account-content" -->
+        <div  style='border:none;width: 1200px; float: left;'>
+            <div ng-cloak class="ng-scope ng-cloak" ui-view=""></div>
+        </div>
+    </div>
+</div>

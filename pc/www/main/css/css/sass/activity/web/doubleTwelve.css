@@ -1,0 +1,10 @@
+.doubleTwelve-wrapper{
+	width: 100%;
+	background: #e3eefa;
+}
+.banner{
+	background: url('./images/doubleTwelve/bannerBg.png') center no-repeat;
+	width: 100%;
+	height:42.8125rem;
+	background-size: contain;
+}

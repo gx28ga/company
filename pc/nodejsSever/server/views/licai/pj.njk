@@ -1,0 +1,206 @@
+{% extends "../common/main.njk" %}
+{% block body %}
+<link href="/style/licai/pj.css" rel="stylesheet" type="text/css" inline/>
+<div id="APP">
+    <!--<div class="nav">
+        <div class="type">
+            产品类别：
+        </div>
+        <ul>
+            <li class="current">全部产品</li>
+            <li>票据产品</li>
+            <li>保理产品</li>
+        </ul>
+    </div>-->
+    <article class="options">
+        <article class="container cur" style="display:block;">
+            {% include "./dq/topsort.njk" %}
+
+            {# 全部产品 nodejs 生成 #}
+            <div class="effect allProduct">
+                {# 默认 #}
+                <div class="option cur" style="display:block;">
+                    {% for item in listDatas %}
+                    {% import "./pj/box.njk" as box %}
+                    {{ box.list(item) }}
+                    {% endfor %}
+                </div>
+                {# 利率up #}
+                <div class="option">
+                    {% for item in rateUp %}
+                    {% import "./pj/box.njk" as box %}
+                    {{ box.list(item) }}
+                    {% endfor %}
+                </div>
+                {# 利率down #}
+                <div class="option">
+                    {% for item in rateDown %}
+                    {% import "./pj/box.njk" as box %}
+                    {{ box.list(item) }}
+                    {% endfor %}
+                </div>
+                {# 期限up #}
+                <div class="option">
+                    {% for item in termUp %}
+                    {% import "./pj/box.njk" as box %}
+                    {{ box.list(item) }}
+                    {% endfor %}
+                </div>
+                {# 期限down #}
+                <div class="option">
+                    {% for item in termDown %}
+                    {% import "./pj/box.njk" as box %}
+                    {{ box.list(item) }}
+                    {% endfor %}
+                </div>
+            </div>
+            {# end 全部产品 #}
+            <div class="clearfix"></div>
+        </article>
+        <article class="container">
+            {% include "./dq/topsort.njk" %}
+
+            {# 全部产品 nodejs 生成 #}
+            <div class="effect allProduct">
+                {# 默认 #}
+                <div class="option cur" style="display:block;">
+                    {% for item in listDatas %}
+                        {% if item.type == 2 or item.type == 3 %}
+                            {% import "./pj/box.njk" as box %}
+                            {{ box.list(item) }}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                {# 利率up #}
+                <div class="option">
+                    {% for item in rateUp %}
+                        {% if item.type == 2 or item.type == 3 %}
+                            {% import "./pj/box.njk" as box %}
+                            {{ box.list(item) }}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                {# 利率down #}
+                <div class="option">
+                    {% for item in rateDown %}
+                        {% if item.type == 2 or item.type == 3 %}
+                            {% import "./pj/box.njk" as box %}
+                            {{ box.list(item) }}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                {# 期限up #}
+                <div class="option">
+                    {% for item in termUp %}
+                        {% if item.type == 2 or item.type == 3 %}
+                            {% import "./pj/box.njk" as box %}
+                            {{ box.list(item) }}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                {# 期限down #}
+                <div class="option">
+                    {% for item in termDown %}
+                        {% if item.type == 2 or item.type == 3 %}
+                            {% import "./pj/box.njk" as box %}
+                            {{ box.list(item) }}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            {# end 全部产品 #}
+            <div class="clearfix"></div>
+        </article>
+        <article class="container">
+            {% include "./dq/topsort.njk" %}
+
+            {# 全部产品 nodejs 生成 #}
+            <div class="effect allProduct">
+                {# 默认 #}
+                <div class="option cur" style="display:block;">
+                    {% for item in listDatas %}
+                        {% if item.type == 5 %}
+                            {% import "./pj/box.njk" as box %}
+                            {{ box.list(item) }}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                {# 利率up #}
+                <div class="option">
+                    {% for item in rateUp %}
+                        {% if item.type == 5 %}
+                            {% import "./pj/box.njk" as box %}
+                            {{ box.list(item) }}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                {# 利率down #}
+                <div class="option">
+                    {% for item in rateDown %}
+                        {% if item.type == 5 %}
+                            {% import "./pj/box.njk" as box %}
+                            {{ box.list(item) }}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                {# 期限up #}
+                <div class="option">
+                    {% for item in termUp %}
+                        {% if item.type == 5 %}
+                            {% import "./pj/box.njk" as box %}
+                            {{ box.list(item) }}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                {# 期限down #}
+                <div class="option">
+                    {% for item in termDown %}
+                        {% if item.type == 5 %}
+                            {% import "./pj/box.njk" as box %}
+                            {{ box.list(item) }}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            {# end 全部产品 #}
+            <div class="clearfix"></div>
+        </article>
+
+    </article>
+    {# 往期产品 ajax生成，分页太多 #}
+    <div class="history-list">
+        <div class="history-title">
+            <div class="border"></div>
+            <h2>往期产品</h2>
+        </div>
+        <div class="screen">
+            <div class="num">共${total}条</div>
+            <div class="sort">
+                <span>排序：</span>
+                <ul>
+                    <li class="cur">默认</li>
+                    <li>利率<i></i></li>
+                    <li>期限<i></i></li>
+                </ul>
+            </div>
+        </div>
+        <div class="effect">
+            <div class="option cur" style="display:block;">
+                {% import "./pj/hisBox.njk" as hisbox %}
+                {{ hisbox.name('hislist') }}
+            </div>
+            <div class="option">
+                {% import "./pj/hisBox.njk" as hisbox %}
+                {{ hisbox.name('hislist1') }}
+            </div>
+        </div>
+        <div id="Page"></div>
+    </div>
+    {# end 往期产品 #}
+    {# float-window弹窗 #}
+    {% include "home/float_window.njk" %}
+</div>
+{% include "../common/layui.njk" %}
+<script src="/js/common/component.js"></script>
+<script src="/js/licai/pj.js" inline></script>
+{% endblock %}

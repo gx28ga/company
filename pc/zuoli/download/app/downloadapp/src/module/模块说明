@@ -1,0 +1,40 @@
+帮助中心
+home
+index.vue
+
+充值
+login
+
+开户
+open
+
+名词解释
+explain
+
+提现
+drawals
+
+投资
+investment
+
+注册
+register
+
+推荐
+recommend
+
+相关协议
+relevantAgreement
+
+components:
+banner //公用banner
+bottom //底部tab栏
+
+question 资金安全
+question2 新手宝
+question3 优惠福利
+question4 银行卡
+question5 账户相关
+question6 投资产品
+question7 投资产品
+agreement  常见问题

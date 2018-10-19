@@ -1,0 +1,70 @@
+.background-wrap{
+	width: 100%;
+	.banner{
+		width: 100%;
+		height: 344px;
+		background: #31beff  image-url('activity/background-bg.jpg') no-repeat center top;
+	}
+	.background-mode{
+		width: 948px;
+		margin: 0 auto;
+		padding: 28px 0 15px;
+		.title{
+			padding-left: 25px;
+			font-size: 51px;
+			color: #2b2929;
+			overflow: hidden;
+			span{
+				float: left;
+				height: 74px;
+				border-bottom: 3px solid #fe7634;
+			}
+		}
+		img{
+			display: block;
+			margin-top: 10px;
+		}
+		.con{
+			padding: 10px 25px 0;
+			color: #474545;
+			font-size: 14px;
+			line-height: 30px;
+			overflow: hidden;
+			.mod{
+				width: 295px;
+				padding-left: 82px;
+				padding-top: 7px;
+				float: left;
+				position: relative;
+				height: 73px;
+				margin: 0 0 33px 13px;
+				span{
+					font-size: 18px;line-height: 48px;
+					color: #fe7634;font-weight: bold;
+				}
+				p{
+					line-height: normal;
+					font-size: 12px;
+					margin-top: -2px;
+				}
+				i{
+					width: 73px;
+					height: 73px;
+					position: absolute;
+					left: 0;
+					top: 7px;
+					background: image-url('activity/background-icon.png');
+					&.icon2{
+						background-position: -73px 0;
+					}
+					&.icon3{
+						background-position: 0 -73px;
+					}
+					&.icon4{
+						background-position: -73px -73px;
+					}
+				}
+			}
+		}
+	}
+}

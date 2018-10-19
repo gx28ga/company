@@ -1,0 +1,102 @@
+@import "../../../common/style/global.scss";
+.luntan{
+   background:#f2f2f2; 
+   .banner{
+    @include contain("../images/banner.jpg");
+    background-size:100%;
+   }
+   .content{
+    @include font-size(14px);
+    color:#333333;
+    .ying1{
+        @include contain("../images/ying1_02.png");
+        margin:0 auto;
+    } 
+    .ying2{
+        @include contain("../images/ying1_06.png");
+        margin:0 auto;
+    }
+    .ying3{
+        @include contain("../images/ying1_08.png");
+        margin:0 auto;
+    }
+    .ying4{
+        @include contain("../images/video.png");
+        margin:0 auto;
+        position:relative;
+        #the-video-box{
+            position:absolute;
+        }
+    }
+    .caifang{
+        text-indent:2em;
+        color:#a0a0a0;
+        @include font-size(12px);
+    }
+    .lookmore{
+        @include contain("../images/xiala.png");
+        margin: 0 auto;
+    }
+    .fontCont{
+        background:#fff;
+        border-top:1px dotted #c4b498;
+        border-bottom:1px dotted #c4b498;
+        position: relative;
+        p{
+            text-indent:2em;
+            padding:$s10;
+            span{
+            color:#fe7634;
+             }
+        }
+        .circletl{
+            width:$s6;
+            height:$s6;
+            background:#c4b498;
+            position:absolute;
+            border-radius:50%;
+            top:-$s3;
+            left:-$s3;
+        }  
+         .circletr{
+            width:$s6;
+            height:$s6;
+            background:#c4b498;
+            position:absolute;
+             border-radius:50%;
+            top:-$s3;
+            right:-$s3;
+        } 
+        .circlebr{
+            width:$s6;
+            height:$s6;
+            background:#c4b498;
+            position:absolute;
+             border-radius:50%;
+            bottom:-$s3;
+            right:-$s3;
+        } 
+        .circlebl{
+            width:$s6;
+            height:$s6;
+            background:#c4b498;
+            position:absolute;
+             border-radius:50%;
+            bottom:-$s3;
+            left:-$s3;
+        }
+        .question{
+           color:#333; 
+           @include font-size(14px);
+           padding-left:$s10;
+           padding-right:$s10;
+        }
+        .answer{
+            color:#fe7634;
+            @include font-size(14px);
+            padding-left:$s10;
+            padding-right:$s10;
+        }
+    }
+   }
+}

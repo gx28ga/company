@@ -1,0 +1,343 @@
+<div ng-if="isShowOver"ng-init="changeIMGCode()" class="dialog invest-dialog" >
+	<div class="title">
+	确认投资
+	<a class="right" href='activity/november'  style="text-decoration: none;    display: inline;
+    text-align: right;
+    color: red;
+    font-weight: normal;
+    margin-left: 425px;
+    text-decoration: underline;
+    font-size: 14px;" ng-click="closeDialog()" ng-if='cp181'>投资不使用加息券、红包券，即有机会获得肾7哟</a>
+
+	</div>
+		<div class="dialog-content">
+			<p class="stitle">产品信息</p>
+			<div class="con">
+				<dl>
+					<dt>产品名称：</dt>
+					<dd>{{product.fullName}}</dd>
+				</dl>
+				<dl>
+					<dt>项目期限：</dt>
+					<dd><b>{{product.deadline}}</b>天</dd>
+				</dl>
+				<dl>
+					<dt>还款方式：</dt>
+					<dd>{{product.refundType}}到期还本付息</dd>
+				</dl>
+				<dl>
+					<dt>投资总额：</dt>
+					<dd><b>{{product.nowNum | currency:'' }}</b> 元</dd>
+					<dd ng-if="product.type == 1 && cp181Activity!=true"><t> + (体验金<font style="color: red;">{{TYJ.amount | currency:''}}</font>元 )</t></dd>
+					<dd ng-if="hb.type == 4 && cp181Activity!=true"><t> + (翻倍金<font style="color: red;">{{product.nowNum*(hb.multiple-1) | currency:''}}</font>元 )</t></dd>
+					<dd ng-if="hb.type == 1  && cp181Activity!=true"><t> + (返现券<font style="color: red;">{{hb.amount | currency:''}}</font>元 )</t></dd>
+					</dd>
+				</dl>
+			</div>
+		</div>
+		<!-- 优惠券 -->
+		<div class="dialog-content quan-box ZSJXQ" ng-if="product.type != 1 && cp181Activity!=true
+		"><!-- && HBList.length >0 || QList.length >0 || FBQList.length >0  || VIPList.length >0  || ZSQList.length >0  -->
+			<p class="stitle">使用优惠信息</p>
+			<div class="con" style="position: relative;">
+				<style>
+					.selected-box2,.selected-box3{border: 1px solid #c6d4eb; position: relative; line-height:33px; float: left; padding: 0 22px; cursor: pointer; border: 1px solid #bbcbef; border-bottom: 0px;border-top-left-radius: 5px; border-top-right-radius: 5px; background: #fff; color: #ff7200; border-right-style: hidden; }
+					.selected-box3{ border-right-style: solid; }
+					.tab{ position: absolute; top: 0; height: 35px; }
+					.tabline{ height: 34px; width: 100%; border-bottom: 1px solid #bbcbef; position: absolute; }
+					.click{ background: #f6f9ff; color: #333333; }
+				</style>
+				<div class="tabline"></div>
+				<div class="tab">
+					<div ng-class="{true:'selected-box2',false:'selected-box2 click'}[clickBox == 0]" ng-click="clickBox=0">VIP特权　{{VIPList.length}}</div>
+					<div ng-class="{true:'selected-box2',false:'selected-box2 click'}[clickBox == 1]" ng-click="clickBox=1">返现券　{{HBList.length}}</div>
+					<div ng-class="{true:'selected-box2',false:'selected-box2 click'}[clickBox == 2]" ng-click="clickBox=2">加息券　{{QList.length}}</div>
+					<div ng-class="{true:'selected-box2',false:'selected-box2 click'}[clickBox == 3]" ng-click="clickBox=3">专属加息券　{{ZSQList.length}}</div>
+					<div ng-class="{true:'selected-box3',false:'selected-box3 click'}[clickBox == 4]" ng-click="clickBox=4">翻倍券　{{FBQList.length}}</div>
+					<a style="padding: 40px 0 0; display: block; float: right;" href="{{a|webIE8}}main/myAccount/vipAbout" target="_blank" ng-show="clickBox==0">什么是特权？</a>
+				</div>
+				<style>
+					.bill-voucher{ color: #229dfe; }
+					.bills .icon{ display: block; float: left; }
+					.bills{ width: 630px; color: #fff; margin-top: 62px; }
+					.bills .content{ padding: 3px 0 0 10px; }
+					.bills p { padding: 10px 0 0 6px; }
+					.bills p b { font-size: 14px; }
+				</style>
+				<div class="bills">
+					<div ng-show="clickBox==0" ng-class="{true:'icon bill-voucher-act',false:'icon bill-voucher'}[item.sel]" ng-repeat="item in VIPList" ng-click="onClick('券',item)">
+						<div class="t">
+						    <p style="padding-left: 10px;"><b>{{item.raisedRates}}%</b>　<span>加息特权</span></p>
+						</div>
+						<div class="content" style="padding-top: 10px;">
+							剩余特权次数：1<br>
+							作用描述：投资成功返现<br>
+						</div>
+					</div>
+					<div ng-show="clickBox==1" ng-class="{true:'icon bill-voucher-act',false:'icon bill-voucher'}[item.sel]" ng-repeat="item in HBList" ng-click="onClick('券',item)">
+						<div class="t">
+						    <p><b>{{item.amount| currency:''}} </b>元　<span>返现券</span></p>
+						</div>
+						<div class="content">
+							有效期：{{item.addtime| date:'yyyy.MM.dd'}}-{{item.expireDate| date:'yyyy.MM.dd'}}<br>
+							作用描述：投资成功返现<br>
+							<span ng-if="item.maxAmount == 0">投资金额≥{{item.enableAmount|isAmountToStr}}元</span>
+							<span ng-if="item.maxAmount != 0">{{item.enableAmount| isAmountToStr}}元≤投资金额≤{{item.maxAmount| isAmountToStr}}元</span>
+						</div>
+					</div>
+					<div ng-show="clickBox==2" ng-class="{true:'icon bill-voucher-act',false:'icon bill-voucher'}[item.sel]" ng-click="onClick('券',item)" ng-repeat="item in QList">
+						<div class="t">
+							<p style="padding-left: 10px;"><b>{{item.raisedRates}}%</b>　<span>加息券</span></p>
+						</div>
+						<div class="content">
+							有效期：{{item.addtime| date:'yyyy.MM.dd'}}-{{item.expireDate| date:'yyyy.MM.dd'}}<br>
+							作用描述：增加投资利息<br>
+							<span ng-if="item.maxAmount == 0">投资金额≥{{item.enableAmount|isAmountToStr}}元</span>
+							<span ng-if="item.maxAmount != 0">{{item.enableAmount| isAmountToStr}}元≤投资金额≤{{item.maxAmount| isAmountToStr}}元</span>
+						</div>
+					</div>
+					<div ng-show="clickBox==3" ng-repeat="item in ZSQList" ng-class="{true:'icon bill-voucher-act',false:'icon bill-voucher'}[item.sel]" ng-click="onClick('券',item)">
+						<div class="t">
+							<p style="padding-left: 10px;"><b>{{item.raisedRates}}%</b>　<span>专属加息券</span></p>
+						</div>
+						<div class="content">
+							有效期：{{item.addtime| date:'yyyy.MM.dd'}}-{{item.expireDate| date:'yyyy.MM.dd'}}<br>
+							作用描述：增加投资利息<br>
+							<span ng-if="item.maxAmount == 0">投资金额≥{{item.enableAmount|isAmountToStr}}元</span>
+							<span ng-if="item.maxAmount != 0">{{item.enableAmount| isAmountToStr}}元≤投资金额≤{{item.maxAmount| isAmountToStr}}元</span>
+						</div>
+					</div>
+					<div ng-show="clickBox==4" ng-class="{true:'icon bill-voucher-act',false:'icon bill-voucher'}[item.sel]" ng-click="onClick('券',item)" ng-repeat="item in FBQList">
+						<div class="t">
+							<p style="padding-left: 10px;">收益 × {{item.multiple}}倍</p>
+						</div>
+						<div class="content">
+							有效期：{{item.addtime| date:'yyyy.MM.dd'}}-{{item.expireDate| date:'yyyy.MM.dd'}}<br>
+							作用描述：产品利率翻倍<br>
+							<span ng-if="item.maxAmount == 0">投资金额≥{{item.enableAmount|isAmountToStr}}元</span>
+							<span ng-if="item.maxAmount != 0">{{item.enableAmount| isAmountToStr}}元≤投资金额≤{{item.maxAmount| isAmountToStr}}元</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 新手表 -->
+		<div class="dialog-content quan-box" ng-if="product.type == 1">
+			<p class="stitle"></p>
+			<div class="con special-con">
+				<dl>
+					<dt>年化收益：</dt>
+					<dd><b>{{product.rate}}</b>%</dd>
+				</dl>
+				<dl>
+					<dt>预期收益：</dt>
+					<dd>
+						<!--<strong style="text-decoration:line-through;color: #000;">{{(product.rate/100 / 360 * product.nowNum * product.deadline) | currency:''}} 元</strong>-->
+						<strong style="text-decoration:line-through;color: #000;">{{(product.rate/100 / 365 * product.nowNum * product.deadline) | currency:''}} 元</strong>
+						<!--<strong>{{(product.rate/100 / 360 * (product.nowNum+TYJ.amount) * product.deadline) | isNumber2}}</strong> 元-->
+						<strong>{{(product.rate/100 / 365 * (product.nowNum+TYJ.amount) * product.deadline) | isNumber2}}</strong> 元
+						<t>  <font style="color: #555;">(已加 {{TYJ.amount | isNumber2}}  元体验金收益)</font></t>
+					</dd>
+				</dl>
+				<dl>
+					<dt>实际付款金额：</dt>
+					<dd><strong>{{product.nowNum | currency:''}}</strong> 元 （投资总额<b>{{product.nowNum | currency:'':0}}</b> 元 + 体验金<b style="color: red;">{{TYJ.name}}</b> ）</dd>
+				</dl>
+			</div>
+		</div>
+		<!-- 不是新手表 -->
+		<style type="text/css">.fbq{text-decoration:line-through;color: #000 !important;}</style>
+		<div class="dialog-content quan-box" ng-if="product.type != 1">
+			<p class="stitle"></p>
+			<div class="con special-con">
+				<dl>
+					<dt>年化收益：</dt>
+					<dd><b>{{product.rate+product.activityRate | currency : '' : 2}}</b>%</dd>
+					<dd ng-if="hb.type==2 && cp181Activity!=true"><t> + <font style="color: red;">{{hb.raisedRates}}%</font></t></dd>
+				</dl>
+				<dl>
+					<dt>预期收益：</dt>
+					<dd ng-if="hb==null&&!ischufa">
+						<strong>
+						<!-- 产品利率 + 活动利率 -->
+							<!--{{((product.rate + product.activityRate)/100 / 360 * product.nowNum * product.deadline) | isNumber2 }}-->
+							{{((product.rate + product.activityRate)/100 / 365 * product.nowNum * product.deadline) | isNumber2 }}
+							<font style="color: #555">元</font>
+						</strong>
+
+						<!--对应升级存管账户 Start-->
+						<!--<strong ng-if="isShowShouyi" >
+							&lt;!&ndash;{{(product.nowNum * (product.rate/100 + product.activityRate/100 + repair.content/100) / 360 * product.deadline) | isNumber2}}&ndash;&gt;
+							{{(product.nowNum * (product.rate/100 + product.activityRate/100 + repair.content/100) / 365 * product.deadline) | isNumber2}}
+							<font style="color: #555">元</font>
+						</strong>
+						<strong ng-if="product.activityRate == 0 && hb.type==1 && isShowShouyi"
+						 style="color: #666">(投资生效后，返现收益将返回您资产账户 <b style="color: #fe7634">{{hb.amount| isNumber2}}</b> 元)</strong>-->
+						<!--对应升级存管账户 End  -->
+					</dd>
+					<!-- 正常利息 -->
+					<dd ng-if="hb!=null&&!ischufa"><!-- &&product.nowNum != product.surplusAmount -->
+						<!-- 原利息 -->
+						<!--<strong ng-if="hb.type!=1" ng-style="{'text-decoration': (hb.type==null?'':'line-through'), color:' #000'}">{{(product.rate + product.activityRate)/100 / 360 * product.nowNum * product.deadline | isNumber2}} <font style="color: #555">元</font></strong>-->
+						<strong ng-if="hb.type!=1" ng-style="{'text-decoration': (hb.type==null?'':'line-through'), color:' #000'}">{{(product.rate + product.activityRate)/100 / 365 * product.nowNum * product.deadline | isNumber2}} <font style="color: #555">元</font></strong>
+
+						<!-- 返现 -->   <!-- 2016/12/5  jingjing -->
+						<!--<strong ng-if="hb.type==1">{{(product.rate + product.activityRate)/100 / 360 * product.nowNum * product.deadline  | isNumber2}} <font style="color: #555">元</font></strong>-->
+						<strong ng-if="hb.type==1">{{(product.rate + product.activityRate)/100 / 365 * product.nowNum * product.deadline  | isNumber2}} <font style="color: #555">元</font></strong>
+						<t ng-if="hb.type==1"> <font style="color: #555;">(投资生效后，返现收益将返回您资产账户 <font color="red">{{hb.amount | currency:''}}</font> 元)</font></t>
+
+						<!-- 加息 -->
+						<!--<strong ng-if="hb.type==2">{{(product.rate + product.activityRate)/100 / 360 * product.nowNum * product.deadline + (hb.raisedRates/100 / 360 * product.nowNum * product.deadline) | isNumber2}} <font style="color: #555">元</font></strong>-->
+						<strong ng-if="hb.type==2">{{(product.rate + product.activityRate)/100 / 365 * product.nowNum * product.deadline + (hb.raisedRates/100 / 365 * product.nowNum * product.deadline) | isNumber2}} <font style="color: #555">元</font></strong>
+
+						<!-- 体验金 -->
+						<!--<strong  ng-if="hb.type==3">{{(product.rate+hb.raisedRates)/100 / 360 * product.nowNum * product.deadline | isNumber2}} <font style="color: #555">元</font></strong>-->
+						<strong  ng-if="hb.type==3">{{(product.rate+hb.raisedRates)/100 / 365 * product.nowNum * product.deadline | isNumber2}} <font style="color: #555">元</font></strong>
+
+						<!-- 翻倍 -->
+						<!--<strong ng-if="hb.type==4">{{(product.rate/100 / 360 * product.nowNum * product.deadline) * hb.multiple + (product.activityRate/100 / 360 * product.nowNum * product.deadline) | isNumber2 }}<font style="color: #555">元</font></strong>-->
+						<strong ng-if="hb.type==4">{{(product.rate/100 / 365 * product.nowNum * product.deadline) * hb.multiple + (product.activityRate/100 / 365 * product.nowNum * product.deadline) | isNumber2 }}<font style="color: #555">元</font></strong>
+						<t ng-if="hb.type==4"> <font style="color: #555;">(已加翻倍金<font color="red">收益</font>)</font></t>
+					</dd>
+
+
+					<!-- 触发补标(反息)并达到奖励要求 -->
+					<!--对应升级存管账户 Start-->
+					<!--<dd ng-if="ischufa&&!repairIsFanxian&&product.nowNum == product.surplusAmount">
+						&lt;!&ndash;<strong ng-style="{'text-decoration': (hb.type==null?'':'line-through'), color:' #000'}">{{(product.rate/100 / 360 * product.nowNum * product.deadline) | isNumber2}} </strong> 元&ndash;&gt;
+						<strong ng-style="{'text-decoration': (hb.type==null?'':'line-through'), color:' #000'}">{{(product.rate/100 / 365 * product.nowNum * product.deadline) | isNumber2}} </strong> 元
+						&lt;!&ndash; 正常加息 &ndash;&gt;
+						<strong ng-if="hb==null">
+							&lt;!&ndash;<t>{{(product.nowNum * (product.rate/100 + product.activityRate/100 + repair.content/100) / 360 * product.deadline) | isNumber2}}</t>&ndash;&gt;
+							<t>{{(product.nowNum * (product.rate/100 + product.activityRate/100 + repair.content/100) / 365 * product.deadline) | isNumber2}}</t>
+						<font style="color: #555"> 元</font></strong>
+
+						&lt;!&ndash; 返现 &ndash;&gt;
+						&lt;!&ndash;<strong ng-if="hb.type==1">{{(product.nowNum * (product.rate/100 + product.activityRate/100 + repair.content/100) / 360 * product.deadline)  | isNumber2}} <font style="color: #555">元</font></strong>&ndash;&gt;
+						<strong ng-if="hb.type==1">{{(product.nowNum * (product.rate/100 + product.activityRate/100 + repair.content/100) / 365 * product.deadline)  | isNumber2}} <font style="color: #555">元</font></strong>
+
+						<t ng-if="hb.type==1"> <font style="color: #555;">(投资生效后，返现收益将返回您资产账户 <font color="red">{{hb.amount | currency:''}}</font> 元)</font></t>
+
+						&lt;!&ndash; 加息 &ndash;&gt;
+						&lt;!&ndash;<strong ng-if="hb.type==2">{{(product.nowNum * (product.rate/100 + product.activityRate/100 + repair.content/100) / 360 * product.deadline) + (hb.raisedRates/100 / 360 * product.nowNum * product.deadline) | isNumber2}} <font style="color: #555">元</font></strong>&ndash;&gt;
+						<strong ng-if="hb.type==2">{{(product.nowNum * (product.rate/100 + product.activityRate/100 + repair.content/100) / 365 * product.deadline) + (hb.raisedRates/100 / 365 * product.nowNum * product.deadline) | isNumber2}} <font style="color: #555">元</font></strong>
+
+
+						&lt;!&ndash; 翻倍 &ndash;&gt;
+						&lt;!&ndash;<strong ng-if="hb.type==4">{{(product.rate/100 / 360 * product.nowNum * product.deadline) * hb.multiple + (product.nowNum *  (repair.content/100) / 360 * product.deadline) | isNumber2 }}<font style="color: #555">元</font></strong>&ndash;&gt;
+						<strong ng-if="hb.type==4">{{(product.rate/100 / 365 * product.nowNum * product.deadline) * hb.multiple + (product.nowNum *  (repair.content/100) / 365 * product.deadline) | isNumber2 }}<font style="color: #555">元</font></strong>
+						<t ng-if="hb.type==4"> <font style="color: #555;">(已加翻倍金<font color="red">收益</font>)</font></t>
+					</dd>-->
+					<!--对应升级存管账户 End  -->
+					<!-- 触发补标(反现) -->
+					<!--对应升级存管账户 Start-->
+					<!--<dd ng-if="ischufa&&repairIsFanxian&&product.nowNum == product.surplusAmount">
+						&lt;!&ndash;<strong style="text-decoration:line-through;color: #000;">{{(product.rate/100 / 360 * product.nowNum * product.deadline) | isNumber2}} </strong> 元&ndash;&gt;
+						<strong style="text-decoration:line-through;color: #000;">{{(product.rate/100 / 365 * product.nowNum * product.deadline) | isNumber2}} </strong> 元
+						&lt;!&ndash; 正常加息 &ndash;&gt;
+						<strong ng-if="hb==null">
+							&lt;!&ndash;<t>{{(product.nowNum * (product.rate/100 + product.activityRate/100 ) / 360 * product.deadline) | isNumber2}}</t>&ndash;&gt;
+							<t>{{(product.nowNum * (product.rate/100 + product.activityRate/100 ) / 365 * product.deadline) | isNumber2}}</t>
+						<font style="color: #555"> 元</font></strong>
+
+						&lt;!&ndash; 返现 &ndash;&gt;
+						&lt;!&ndash;<strong ng-if="hb.type==1">{{(product.nowNum * (product.rate/100 + product.activityRate/100) / 360 * product.deadline)  | isNumber2}} <font style="color: #555">元</font></strong>&ndash;&gt;
+						<strong ng-if="hb.type==1">{{(product.nowNum * (product.rate/100 + product.activityRate/100) / 365 * product.deadline)  | isNumber2}} <font style="color: #555">元</font></strong>
+						<t ng-if="hb.type==1"> <font style="color: #555;">(投资生效后，返现收益将返回您资产账户 <font color="red">{{hb.amount | currency:''}}</font> 元)</font></t>
+
+						&lt;!&ndash; 加息 &ndash;&gt;
+						&lt;!&ndash;<strong ng-if="hb.type==2">{{(product.nowNum * (product.rate/100 + product.activityRate/100) / 360 * product.deadline) + (hb.raisedRates/100 / 360 * product.nowNum * product.deadline) | isNumber2}} <font style="color: #555">元</font></strong>&ndash;&gt;
+						<strong ng-if="hb.type==2">{{(product.nowNum * (product.rate/100 + product.activityRate/100) / 365 * product.deadline) + (hb.raisedRates/100 / 365 * product.nowNum * product.deadline) | isNumber2}} <font style="color: #555">元</font></strong>
+
+
+						&lt;!&ndash; 翻倍 &ndash;&gt;
+						&lt;!&ndash;<strong ng-if="hb.type==4">{{(product.rate/100 / 360 * product.nowNum * product.deadline) * hb.multiple + (product.nowNum *  (repair.content/100) / 360 * product.deadline) | isNumber2 }}<font style="color: #555">元</font></strong>&ndash;&gt;
+						<strong ng-if="hb.type==4">{{(product.rate/100 / 365 * product.nowNum * product.deadline) * hb.multiple + (product.nowNum *  (repair.content/100) / 365 * product.deadline) | isNumber2 }}<font style="color: #555">元</font></strong>
+						<t ng-if="hb.type==4"> <font style="color: #555;">(已加翻倍金<font color="red">收益</font>)</font></t>
+					</dd>-->
+					<!--对应升级存管账户 End  -->
+				</dl>
+				<dl>
+					<dt>实际付款金额：</dt>
+					<dd><strong>{{product.nowNum | isNumber2}}</strong> 元</dd>
+					 <!-- <dd ng-if="hb.type==4 || fristInvest.investCount==0&&FBQList.length>0 "> （投资总金额 <strong>{{product.nowNum | isNumber2}}</strong> 元 + 翻倍金 -->
+					 <dd ng-if="hb.type==4 && cp181Activity!=true"> （投资总金额 <strong>{{product.nowNum | isNumber2}}</strong> 元 + 翻倍金
+					<span ng-if="hb.type==4 && cp181Activity!=true">
+						<font color="red" >{{product.nowNum*(hb.multiple-1) | isNumber2}} 元</font>）
+					</span>
+
+					<!-- <span ng-if="fristInvest.investCount==0&&FBQList.length>0"><font color="red">{{product.nowNum*(FBQList[0].multiple-1) | isNumber2}} 元</font>）</span> -->
+					</dd>
+				</dl>
+				<!--<dl ng-if="ischufa">&lt;!&ndash;  &ndash;&gt;
+					<dt>补贴额外奖励：</dt>
+					<dd ng-show="repair.type==2">本产品额外<strong>{{repair.content}}%</strong>加息</dd>
+					<dd ng-show="repair.type==1">本产品额外返现<strong>{{repair.content}}</strong>元</dd>
+				</dl>-->
+			</div>
+		</div>
+
+		<form name="payFrom" class="tradepwd-box">
+			<input style="display:none">
+			<input type="password" style="display:none">
+
+            <!-- 交易密码未设置时，显示此dl -->
+			<dl ng-if="!XQ.tpwdFlag">
+			    <dt></dt>
+		        <dd>
+		            <div class="input-mod">
+		            	<input ng-if="!XQ.tpwdFlag" class="sub invest-btn mimawei" value="交易密码未设置" ng-disabled="true" />
+		                <div class="qianqushezhi">
+		                    <a ng-click="setTradeCode()" ui-sref="main.myAccount.security">前去设置</a>
+		                </div>
+		            </div>
+
+		        </dd>
+			</dl>
+
+            <!-- 交易密码已设置，显示此dl -->
+			<dl ng-if="XQ.tpwdFlag">
+				<dt>交易密码</dt>
+				<dd>
+					<div class="input-mod">
+						<input class="text" type="password" onkeyup="this.value=this.value.replace(/[\D\.]/gi,'') " ng-model="product.tpwd" name="tpwd"  maxlength="6" minlength="6" required autocomplete="off">
+						<a ng-if="product.type != 4"href="" ng-click="forgetTradeCode()" class="forget">忘记密码？</a>
+						<a ng-if="product.type == 4" href="{{a|webIE8}}main/myAccount/security" target="_blank" class="forget">忘记密码？</a>
+					</div>
+
+					<input ng-click="onClick('确认投资')" ng-disabled="payFrom.$invalid" type="submit" class="sub" value="确认投资">
+				</dd>
+			</dl>
+		</form>
+</div>
+
+<div ng-hide="isShowOver" ng-init="changeIMGCode()"  class="dialog invest-success-dialog" ng-class="{true: 'redbag-dialog'}[redbag]">
+	<div class="success-content">
+		<i class="dialog-{{statusCode}}" ng-if="!redbag"></i>
+		<i class="dialog-redbag" ng-if="redbag"></i>
+		<div class="{{statusCode}}-text">
+			<span ng-hide="redbag">投资信息</span>
+			<span ng-show="redbag">投资成功</span>
+			<p>{{pText}}<b ng-show="showForgetPwd == true">，请一小时后再试，或<a href="" ng-click="forgetTradeCode()">找回密码</a>解锁</b></p>
+		</div>
+	</div>
+
+	<div class="process" >
+		<div class="bill-process-line" ng-if="success"></div>
+		<div class="process-text" ng-if="success">
+			<div style="float: left;"><span>投资成功</span><p>{{investTime | date:'yyyy.MM.dd'}}</p></div>
+			<div style="width: 33%; text-align: center; margin: 0 auto;"><span>产品起息</span><p>{{nextInvestTime | date:'yyyy.MM.dd'}}</p></div>
+			<div style="float: right;"><span>产品到期</span><p>{{expireDate | date:'yyyy.MM.dd'}}</p></div>
+		</div>
+	</div>
+	<div ng-if='success && task.hasFinishedTasks' class="task" style='text-align: center; font-size: 24px; '>
+       <div ng-repeat='item in task.taskAwardList'>恭喜您，您已经完成了 <span style='color:#FC8146;font-size: 24px;font-weight: blod'>{{item.taskName}}</span>              任务，获得<span ng-show='item.gainedPoints != 0'>{{item.gainedPoints}}积分</span><span ng-show='item.gainedEXP != 0'>{{item.gainedEXP}}经验</span></div>
+
+          <p style='float: right;font-size: 16px;height:16px;margin-top:50px;color:#A0A0A0;margin-right: 30px;'>温馨提示：获得的积分可以去积分商城进行兑换</p>
+	 </div>
+	<div class="redbag-box" ng-if="success && redbag">
+		<a class="invest-btn" ng-hide="success" href="" ng-click="onClick('返回')">返回</a>
+		<a class="invest-btn" ng-show="success && !redbag" href="" ng-click="closeDialog('true')">返回投资页面</a>
+		<a class="invest-btn" ng-if="errorCode == 1007 || 1004 == errorCode" href="/main/myAccount/security" ng-click="closeDialog('false')">立即充值</a>
+		<a class="invest-btn" ng-if="errorCode == 1009" href="/main/tradepasswdSet" ng-click="closeDialog('false')">立即认证</a>
+	</div>

@@ -1,0 +1,196 @@
+body, div, p, h1, h2, h3, h4, h5, h6, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, table, th, td {
+  margin: 0;
+  padding: 0; }
+
+address, cite, em, i {
+  font-style: normal; }
+
+html, body, root {
+  height: 100%;
+  overflow: hidden; }
+
+body {
+  margin: 0 auto;
+  color: #fff;
+  -webkit-appearance: none;
+  background: #fff;
+  overflow-y: scroll;
+  font-family: 'PingFang SC','STHeiti','Microsoft YaHei',Helvetica,Arial,sans-serif;
+  color: #878C92; }
+
+li {
+  list-style: none; }
+
+html, body {
+  max-width: 750px;
+  margin: 0 auto; }
+
+a {
+  color: #535862;
+  text-decoration: none; }
+
+a:hover {
+  color: #c40000;
+  text-decoration: underline; }
+
+legend {
+  color: #000; }
+
+fieldset, img {
+  border: 0; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+input[type="button"], input[type="submit"], input[type="reset"] {
+  cursor: pointer; }
+
+.clearfix:after, .wrapper:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0; }
+
+.clearfix {
+  display: inline-block; }
+
+/* start commented backslash hack \*/
+* html .clearfix {
+  height: 1%; }
+
+.clearfix {
+  display: block; }
+
+/* close commented backslash hack */
+.middle * {
+  display: inline-block;
+  vertical-align: middle; }
+
+::-webkit-input-placeholder {
+  font-size: .75rem; }
+
+/* height */
+/* public */
+/* link color */
+.red {
+  color: #f42b13; }
+
+.green {
+  color: #16c154; }
+
+.black {
+  color: black; }
+
+.gray {
+  color: #666; }
+
+.blue {
+  color: #2899f2; }
+
+.orange {
+  color: #cb420c; }
+
+/* public */
+.flex {
+  flex-shrink: 0;
+  -webkit-flex-shrink: 0; }
+
+input {
+  outline: none; }
+
+/* layout */
+.hide {
+  display: none; }
+
+.container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  transform: translateY(300px);
+  -webkit-transform: translateY(300px);
+  transition-duration: 1s;
+  -webkit-transition-duration: 1s;
+  opacity: 0;
+  overflow: hidden; }
+
+.container.cur {
+  transform: translateY(0px);
+  -webkit-transform: translateY(0px);
+  opacity: 1; }
+
+.effect {
+  float: left;
+  transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  perspective: 600px;
+  -webkit-perspective: 600px;
+  background: #EFEFF4; }
+
+.effect .option {
+  float: left;
+  min-height: 6.25rem;
+  transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  overflow: hidden;
+  background: #fff; }
+
+.banner {
+  background: url("../images/banner.jpg") no-repeat;
+  background-size: contain;
+  background-position: center center; }
+
+.title {
+  margin: 3.75rem auto;
+  background: url("../images/title.png") no-repeat;
+  background-size: contain; }
+
+.mode {
+  background-color: #eeeeee;
+  margin-bottom: 1.875rem; }
+  .mode .num1 {
+    background: url("../images/num1.png") no-repeat;
+    background-size: contain;
+    margin: 0 auto; }
+  .mode .num2 {
+    background: url("../images/num2.png") no-repeat;
+    background-size: contain;
+    margin: 0 auto; }
+  .mode .num3 {
+    background: url("../images/num3.png") no-repeat;
+    background-size: contain;
+    margin: 0 auto; }
+
+p {
+  background-color: #fff;
+  padding: 0 1.875rem;
+  color: #333;
+  font-size: 0.75rem;
+  line-height: 1.875rem;
+  text-indent: 2em; }
+  @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+    p {
+      font-size: 0.64286rem; } }
+  @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+    p {
+      font-size: 0.64286rem; } }
+  @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+    p {
+      font-size: 0.82875rem; } }
+
+.xieyi {
+  background: url("../images/xieyi.png") no-repeat;
+  background-size: contain;
+  margin: 0 auto; }
+
+.xieyicon {
+  background: url("../images/xieyi2.jpg") no-repeat;
+  background-size: contain;
+  margin: 2.5rem auto 4.375rem; }
+
+/*# sourceMappingURL=fuyou.css.map */

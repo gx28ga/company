@@ -1,0 +1,38 @@
+{# 定期理财详情 #}
+{% extends "common/main.njk" %}
+{% block body %}
+{% import "../common/position.njk" as position %}
+<link rel="stylesheet" type="text/css" href="/style/billDetail/index.css" inline>
+<article id="APP" class="container">
+    {# 导航 #}
+    {% if type==2 %}
+    {{ position.size([{'title':'新手宝'}]) }}
+    {% elseif type==1%}
+    {{ position.size([{'title':'P2P理财','link':'/pj'},{'title':'产品详情'}]) }}
+    {% else %}
+    {{ position.size([{'title':'定期理财','link':'/dq'},{'title':'产品详情'}]) }}
+    {% endif %}
+
+    {# 详情 #}
+    {% include './dq/detail.njk' %}
+
+    {# 计息流程 #}
+    {% import "./dq/section-2.njk" as item %}
+    {% if type !=2 %}
+    {{item.obj(map.info,type)}}
+    {% else %}
+    {{item.obj(map.currentInfo,type)}}
+    {% endif %}
+
+
+    {# 项目介绍 投资记录 #}
+    {% include "./dq/section-3.njk" %}
+    {# float-window弹窗 #}
+    {% include "home/float_window.njk" %}
+</article>
+{% include "common/layui.njk" %}
+<script src="/js/common/component.js"></script>
+<script src="/js/plug/superSlide.js"></script>
+<script src="/js/billDetail/index.js" inline></script>
+{% endblock %}
+

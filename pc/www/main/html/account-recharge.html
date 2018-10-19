@@ -1,0 +1,247 @@
+<style type="text/css">
+	.fast{
+		margin: -20px 0 35px;
+	}
+	.fast .dl{
+		margin: 20px 0;
+	}
+	.input-box .vfycd-btn{
+		display: inline-block;
+		padding: 5px 10px;
+		background: #5DB9F2;
+		color: #FFF;
+		font-size: 14px;
+		line-height: 28px;
+		vertical-align: top;
+		text-align: center;
+		position: relative;
+		left: -24px;
+		cursor: pointer;
+	}
+	input[type=text]+i{
+		position: absolute;
+		top: -2px;
+		left: 147px;
+		font-size: 140%;
+		cursor: pointer;
+	}
+	.input-box .vfycd-btn.inactive, .input-box .vfycd-btn.inactive:hover{
+		background: #BBB;
+		color: #FFF;
+	}
+	.input-box .vfycd-btn:hover{
+		background: #2EA5EE;
+	}
+	.input-box .notice{
+		display: inline-block;
+		font-size: 12px;
+		line-height: 19px;
+	}
+	.mobile-error{
+		position: relative;
+		top: -20px;
+		left: 18px;
+	}
+</style>
+<div class="account-recharge-wrap" ng-controller="rechargeCtrl">
+	<div class="rechargetip" ng-hide="user.realFlag">根据互联网金融协会相关规定，您必须先进行<a href="" ng-click="bindBank()">身份认证</a>，多融不会在任何场合泄露你的身份信息</div>
+	<!-- 紧急通告 -->
+	<div style="margin-top: 20px;">
+		<marquee style="color: red">{{GGContents}}</marquee>
+	</div>
+	<!--<div class="escrow-adjoin-banner" style="margin-left: 62px; margin-right: 45px;"></div>-->
+	<div class="account-common-title">充值</div>
+	<div class="account-common-con">
+		<div class="form-wrap">
+			<!--<form name="rechargeForm" ng-submit="submitForm(rechargeForm.$valid)" novalidate>-->
+			<form name="rechargeForm" novalidate>
+				<!--<input style="display:none">-->
+				<!--<input type="password" style="display:none">-->
+				<dl>
+					<dt>充值金额：</dt>
+					<!--<dd class="input-box" ng-if="showAmount">-->
+					<dd class="input-box">
+						<div class="input-mode">
+							<!--<input type="text" id="amount" class="text sum amount" name="amount" ng-model="user.amount" ng-value="user.amount" ng-disabled="!user.realFlag" required onkeyup="this.value=this.value.replace(/^\D*(\d*(?:\.\d{0,2})?).*$/g, '$1')" ng-blur="setAmount()" autocomplete="off" placeholder="0.00" ng-pattern="/^[0-9]+([.]{1}[0-9]+){0,1}$/" maxlength="10" ng-change="setAmountError()">--><!--  -->
+							<input type="text" id="amount" class="text sum amount" name="amount" ng-model="user.amount" ng-value="user.amount" ng-disabled="!user.realFlag" required onkeyup="this.value=this.value.replace(/^\D*(\d*(?:\.\d{0,2})?).*$/g, '$1')" ng-blur="setAmount()" autocomplete="off" placeholder="0.00" ng-pattern="/^[0-9]+([.]{1}[0-9]+){0,1}$/" maxlength="10">
+							<span>元</span><!--  rechargemore rechargelimit -->
+						</div>
+						<!--<i ng-class="{true: '', false: 'common-form-error'}[rechargeForm.amount.$valid && amountIsTrue]" ng-show="rechargeForm.amount.$dirty || amountError"></i><span class="error" ng-show="rechargeForm.amount.$error.pattern && !amountError">请输入正确的数值</span><span class="error" ng-show="(rechargeForm.amount.$dirty && rechargeForm.amount.$error.required) || amountError">请输入充值金额</span><span class="error" ng-show="amountIsTrue == false">{{amountMsg}}</span>-->
+						<i ng-class="{true: '', false: 'common-form-error'}[rechargeForm.amount.$valid && amountIsTrue]" ng-show="rechargeForm.amount.$dirty"></i><span class="error" ng-show="rechargeForm.amount.$error.pattern">请输入正确的数值</span><span class="error" ng-show="(rechargeForm.amount.$dirty && rechargeForm.amount.$error.required)">请输入充值金额</span><span class="error" ng-show="amountIsTrue == false">{{amountMsg}}</span><span class="error" ng-show="amountIsTrue == true && rechargeForm.amount.$dirty && !rechargeForm.amount.$valid && !rechargeForm.amount.$error.required">超过允许输入的最高上限</span>
+						<!--<a href="" class="getphonecode set-info-btn" ng-click="bindBank()" ng-hide="user.realFlag">身份认证</a>-->
+					</dd>
+					<!--<dd ng-if="!showAmount" class="amount-fixed"><b>{{user.amount | currency:''}}</b>元</dd>-->
+				</dl>
+				<!--<div class="recharge-tip">充值金额最少3元,单笔限额最多50万元,单日限额500万</div>-->
+				<!--<div class="recharge-tip">充值金额最少3元,单笔限额最多{{user.quota / 10000}}万元,单日限额{{user.dayQuota / 10000}}万元</div>-->
+				<div class="recharge-tip">充值金额最少3元<span ng-if="payMethod == 0">,单笔限额最多{{user.quota / 10000}}万元,单日限额{{user.dayQuota / 10000}}万元</span></div>
+
+				<dl style="margin: 20px 0 35px;">
+					<dt>支付方式：</dt>
+					<dd>
+						<!--<div ng-class="{0:'in-focus', 1:'out-focus'}[payMethod]" ng-click="payMethod = 0">快捷支付</div>-->
+						<div ng-class="{0:'in-focus', 1:'out-focus'}[payMethod]" ng-click="payMethod = 0; setAmount();" style="cursor: pointer;">快捷支付</div>
+						<div ng-class="{0:'out-focus', 1:'in-focus'}[payMethod]" ng-click="payMethod = (isGettingVfycd ? 0 : 1); setAmount();" style="cursor: pointer;">网银支付</div>
+						<!--<div ng-class="{0:'out-focus', 1:'in-focus'}[payMethod]" ng-click="(payMethod = 1) && (amountIsTrue = true)">网银支付</div>-->
+					</dd>
+				</dl>
+
+				<div ng-if="payMethod == 0" class="fast">
+					<dl>
+						<dt>充值银行：</dt>
+						<dd>
+							<div class="bank-info" style="width: 195px;">
+								<!--<img src="/main/images/bank/{{user.bankCode}}.jpg">-->
+								<img src="{{userbank.logoUrl}}">
+								<p class="last-num">尾号<b>{{userbank.banknoLast}}</b></p>
+							</div>
+						</dd>
+					</dl>
+					<dl>
+						<dt>银行预留手机号：</dt>
+						<dd class="input-box" style="width: 700px;">
+							<div class="input-mode" style="position: relative;">　
+								<!--<input name="mobilePhone" class="text" type="text" style="width: 120px; font-size: 18px; font-family: Airal;" ng-pattern="/^1[3|4|5|7|8][0-9]{9}$/"  placeholder="请输入手机号" onkeyup="this.value=this.value.replace(/[\D\.]/gi,'')" ng-model="mobilePhone" required minlength="11" maxlength="11">-->
+								<input name="mobilePhone" class="text" type="text" style="width: 120px; font-size: 18px; font-family: Airal;" ng-pattern="/^1[3|4|5|7|8][0-9]+$/"  placeholder="请输入手机号" onkeyup="this.value=this.value.replace(/[\D\.]/gi,''); document.getElementById('clear-mobile').style.display = (this.value.length > 0 ? 'inline' : 'none');" ng-model="mobilePhone" required minlength="11" maxlength="11">
+								<i id="clear-mobile" onclick="this.style.display = 'none';" ng-click="mobilePhone = ''">&times;</i>
+							</div>
+							<div ng-class="['vfycd-btn', rechargeForm.amount.$valid && rechargeForm.mobilePhone.$valid && amountIsTrue ? '' : 'inactive']" ng-click="rechargeForm.amount.$invalid || rechargeForm.mobilePhone.$invalid || !amountIsTrue || onGetVfycd()">获取手机验证码</div><!--<span style="font-size: 12px;">* 请先输入正确的充值金额</span>-->
+							<div class="notice">
+								<div>* 请先输入正确的充值金额</div>
+								<div style="color: #F00;">* 请确认此号码是否为您在办理此银行卡时所预留的手机号</div>
+							</div>
+							<div class="mobile-error">
+								<i ng-show="rechargeForm.mobilePhone.$invalid && rechargeForm.mobilePhone.$dirty" ng-class="{false: 'common-form-ok', true: 'common-form-error'}[rechargeForm.mobilePhone.$invalid]"></i>
+								<!--<span class="error" ng-show="rechargeForm.mobilePhone.$invalid">{{mobilePhone | zhuCePhoneError:serverErrorCode}}</span>-->
+								<span class="error" ng-show="rechargeForm.mobilePhone.$dirty && rechargeForm.mobilePhone.$error.required">请输入手机号码</span>
+								<span class="error" ng-show="rechargeForm.mobilePhone.$dirty && rechargeForm.mobilePhone.$error.pattern">无效的手机号码</span>
+								<span class="error" ng-show="rechargeForm.mobilePhone.$invalid && !rechargeForm.mobilePhone.$error.pattern && rechargeForm.mobilePhone.$error.minlength">手机号码长度错误</span>
+							</div>
+						</dd>
+					</dl>
+					<dl>
+						<dt>手机验证码：</dt>
+						<dd class="input-box">
+							<div class="input-mode">　
+								<input name="vfycd" ng-model="vfycd" class="text" type="text" style="width: 70px; padding: 6px 10px; font-size: 18px; font-family: Airal;" maxlength="6" minlength="4" required>
+							</div>
+						</dd>
+					</dl>
+				</div>
+
+				<!--<div class="balance-wrap" ng-if="showAmount">-->
+				<div class="balance-wrap">
+					<div class="usable">可用余额：<b>{{user.funds | currency:''}}</b>元</div>
+					<div class="rest">充值后余额：<b id="balance">{{(user.amount * 1 + user.funds) | currency:''}}</b>元</div>
+				</div>
+				<!--<div ng-if="user.realFlag && !showAmount">
+					<div class="tab-trigger">
+						<p ng-class="{1: 'active',2: ''}[tab]" ng-click="changeTab(1)">快捷支付</p>
+						<p ng-class="{1: '',2: 'active'}[tab]" ng-click="changeTab(2)">网银支付</p>
+					</div>
+					<div class="tab-content" ng-class="{1: 'active-tab',2: ''}[tab]">
+						<dl>
+							<dt>充值银行：</dt>
+							<dd>
+								<div class="bank-info">
+									<img src="/main/images/bank/{{user.bankCode}}.jpg">
+									<p class="last-num">尾号<b>{{user.bankNum}}</b></p>
+								</div>
+								<div class="limit">单笔限额<span>{{user.quota | currency:'':0}}</span>元</div>
+							</dd>
+							&lt;!&ndash; <dd class="nobind" ng-hide="user.realFlag">
+								<p>未绑定</p>
+								<a href="" ng-click="bindBank()">绑定银行卡<i>+</i></a>
+							</dd> &ndash;&gt;
+						</dl>
+						<dl>
+							<dt>银行预留手机号：</dt>
+							<dd class="get-box">
+								<p>{{user.mobilePhone}}</p>
+								<a class="getphonecode" href="javascript:;" ng-class="{'getcode-disabled': code.isGetCode || isGetVoice}" ng-click="getPhoneCode(rechargeForm.amount.$valid, $event, code, false)">{{code.getCodeText}}</a>
+							</dd>
+						</dl>
+						<dl>
+							<dt>短信验证码：</dt>
+							<dd class="input-box">
+								<div class="input-mode">
+									<input type="text" class="text" placeholder="请输入短信验证码" required name="phonecode" ng-model="user.phonecode" autocomplete="off" onkeyup="this.value=this.value.replace(/[\D\.]/gi,'')">
+								</div>
+								<i class="common-form-error" ng-show="rechargeForm.phonecode.$dirty && (bankPhoneCodeError || rechargeForm.phonecode.$invalid)"></i><span class="error" ng-show="rechargeForm.phonecode.$dirty && rechargeForm.phonecode.$error.required">请输入短信验证码</span><span class="error" ng-show="bankPhoneCodeError">验证码错误</span>
+							</dd>
+						</dl>
+						<div class="sub-box"><input type="submit" value="确认充值" class="sub-btn sub" ng-disabled="rechargeForm.$invalid || !amountIsTrue" disabled="disabled"></div>
+						<div class="return-btn"><a href="" ng-click="tabRecharge(1)">返回上一步</a></div>
+					</div>
+					<div class="tab-content" ng-class="{1: '',2: 'active-tab'}[tab]">
+						<div class="online-tip">确保已经在银行柜台开通了网上支付功能，为了方便您支付请使用IE8及以上版本浏览器！<a href='{{a|webIE8}}help/WYBZ.html' style='color:#fe483a;text-decoration:underline;' target="_blank">使用说明</a></div>
+						<div class="bank-mode">
+							<div class="bank" ng-repeat="item in user.bankList" ng-if="item.bankCode != '04031000' && item.bankCode !='04243010' && item.bankCode != '03200000'" ng-click="chooseBank(item.bankCode)">
+								<i ng-class="{true: 'active-bank', false: ''}[item.bankCode == bankCode]"></i>
+								<div class="img"><img src="/main/images/bankimg/{{item.id}}.jpg"></div>
+							</div>
+						</div>
+						<div class="sub-box">
+							<input type="button" value="登录网银支付" class="sub-btn sub" ng-disabled="rechargeForm.amount.$invalid || !amountIsTrue" ng-click="goWYPay()">
+							<em style="color:#ea6221; padding-left:5px;">*仅支持借记卡充值</em>
+						</div>
+						<div class="return-btn"><a href="" ng-click="tabRecharge(1)">返回上一步</a></div>
+					</div>
+				</div>-->
+				<!--<div class="operate-wrap" ng-if="showAmount"><span class="next-btn" ng-if="user.realFlag" ng-click="tabRecharge(2)">下一步</span><span class="" ng-if="!user.realFlag" ng-click="bindBank()">前去实名认证</span></div>-->
+				<!--<div class="operate-wrap"><span class="next-btn" ng-if="user.realFlag" ng-click="tabRecharge(2)">下一步</span><span class="" ng-if="!user.realFlag" ng-click="bindBank()">前去实名认证</span></div>-->
+				<div class="operate-wrap"><span ng-class="rechargeForm.$valid && amountIsTrue && !isSubmitting ? '' : 'inactive'" ng-click="rechargeForm.$invalid || !amountIsTrue || isSubmitting || onClickNext()" style="display: inline-block;">{{payMethod == 0 ? '确认充值' : '下一步'}}</span>　　
+					<img style="display: inline-block; vertical-align: middle;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAUCAYAAACEYr13AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDoyZDkzZjkyNi1lNDEwLTRjMjMtYTVkMC1jOWY3ZjU1NGFiYzMiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NTQ3NzUzRDE2MTVCMTFFN0FBQjhFMjQ1QUU3NUEzODEiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NTQ3NzUzRDA2MTVCMTFFN0FBQjhFMjQ1QUU3NUEzODEiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpmYWFjOTA2Yi1hZDIyLTRhZjEtOTZkMy02ODkxZTQ1OWU5ZjEiIHN0UmVmOmRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDo4ODczNzZiMy05ZGVlLTExN2EtOTFmOS1iNDllYzk4ZTViZTAiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7A19UBAAACvUlEQVR42pRUS08TURQ+c+30MW0RKCBCaZUIFELw0YgmGh+4wqVu3BgTTfQnyEKNW+NOFsaNGzcuXfiIGhTRBUmlKUhCCI+AtKWPYWb6mEdnpnO906YTWkPEL/ky93G+75577slQt19OgNfNAONwwUY6BR3NTeC0OyEuxptaKN8NIODxzuuAJ5AXVQkEWYBAix9EVYa8IIEN6tFGeItwfKg9dDTYcSjosNMUMX7I5fObZH2a8DlhoiYwDXoJ7xBePNXXH+zt7PJ7GabO9XjvMT/5+EVFObeVTt3L5ATTbI5w0tbR0jp9fnikx07T8C+4nU4IBY+0hUimqqaFZxYXxpHL4VD3I26EqWFoewnpZUP/HyGikDXWjLKOMDb4/Yp7vH443RkGGlVrjzEWkFouc/sRd3u6INTaD4qugI7LlTW9rPFIkuWVkqZagQzN1KVZEw/5QpCVWFhgF82TQVZVkJXSEpIU+W2GzxXMQBrRMEpSHGkftky6PIdh0DcArLxjiU1kBdIZkvoeuYvi920um6oWRYNVYR3aXW0Vk24iNk/mZA7ms7/AwIaVVZLlUk1S4YdZjRKXz60ZBu5DiIJ4odpkg60DFSNO4SDWIDZIFlwxv2ZqkdzsgbwiTsbZjFALME2WuGUi5iGWqReb2Eyn+IJYeCZ53UBB9UrU/TdPZsdOhkcpslQDVdnG9c9Bpp/nIpGn1yfOmLNauXFOEh+tJxOZ+lj813Mux39nckrxQdWKNNauvY+rycQHqaQYe/VCUZaNjdT2OzL8ZGV598Xj3THMQZ9j6tKJ8FnadqBOrOk6TEV/zm4BO0amstXaDYdIiUzu6sx8NKKoqpW/XFLx11g0wonZ8d3i2v+gEXxSZC9Px6Kv+noCF8zGWYlvfRN57SbYQWoMtu1xXZHw2uLGypUyRthlo7/sVZc/AgwACIxKwCa6kfUAAAAASUVORK5CYII=">
+					<a class="recharge-withdraw-btn-comment">您的资金将由银行提供存管服务，敬请放心！</a>
+				</div>
+				<div class="newtips">
+					<p>友情提示：</p>
+					<p>1. 浦发银行/邮储银行/上海银行 需要开通银联无卡支付，开通地址：<a target="_blank" href="https://online.unionpay.com/portal/open/init.do?entry=open">https://online.unionpay.com/portal/open/init.do?entry=open</a>，<a href="{{a|webIE8}}help/YLKT.html" target="_blank">查看开通演示</a>；</p>
+					<p>2. 认证前，请确认“您填写银行预留的手机号”与您的银行卡预留的手机号码一致，如果您尚未在银行预留手机号码，建议你去银行柜面进行信息补充。</p>
+				</div>
+
+				<!--<p style="margin-top: -37px;" ng-if="user.bankCode==3">建行支付服务时间 00:00 至 22:00</p>-->
+			</form>
+			<form action="" id="hiddenFormFast" target="_blank">
+				<input type="hidden" class="mchnt_cd" name="mchnt_cd">
+				<input type="hidden" class="mchnt_txn_ssn" name="mchnt_txn_ssn">
+				<input type="hidden" class="login_id" name="login_id">
+				<input type="hidden" class="amt" name="amt">
+				<input type="hidden" class="page_notify_url" name="page_notify_url">
+				<input type="hidden" class="back_notify_url" name="back_notify_url">
+				<input type="hidden" class="signature" name="signature">
+			</form>
+			<form action="" id="hiddenFormNetbank" target="_blank">
+				<input type="hidden" class="mchnt_cd" name="mchnt_cd">
+				<input type="hidden" class="mchnt_txn_ssn" name="mchnt_txn_ssn">
+				<input type="hidden" class="login_id" name="login_id">
+				<input type="hidden" class="amt" name="amt">
+				<input type="hidden" class="page_notify_url" name="page_notify_url">
+				<input type="hidden" class="back_notify_url" name="back_notify_url">
+				<input type="hidden" class="signature" name="signature">
+			</form>
+			<!--<form action="" id="hiddenForm" target="_blank">-->
+				<!--<input type="hidden" class="tranCode" name="tranCode">-->
+				<!--<input type="hidden" class="version" name="version">-->
+				<!--<input type="hidden" class="charset" name="charset">-->
+				<!--<input type="hidden" class="uaType" name="uaType">-->
+				<!--<input type="hidden" class="merchantId" name="merchantId">-->
+				<!--<input type="hidden" class="merOrderId" name="merOrderId">-->
+				<!--<input type="hidden" class="merTranTime" name="merTranTime">-->
+				<!--<input type="hidden" class="merUserId" name="merUserId">-->
+				<!--<input type="hidden" class="orderDesc" name="orderDesc">-->
+				<!--<input type="hidden" class="prodInfo" name="prodInfo">-->
+				<!--<input type="hidden" class="tranAmt" name="tranAmt">-->
+				<!--<input type="hidden" class="curType" name="curType">-->
+				<!--<input type="hidden" class="payMode" name="payMode">-->
+				<!--<input type="hidden" class="bankCode" name="bankCode">-->
+				<!--<input type="hidden" class="bankCardType" name="bankCardType">-->
+				<!--<input type="hidden" class="notifyUrl" name="notifyUrl">-->
+				<!--<input type="hidden" class="backUrl" name="backUrl">-->
+				<!--<input type="hidden" class="signType" name="signType">-->
+				<!--<input type="hidden" class="sign" name="sign">-->
+				<!--<input type="hidden" class="Key" name="Key">-->
+			<!--</form>-->
+		</div>
+	</div>
+</div>

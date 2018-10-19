@@ -1,0 +1,27 @@
+{"result":[
+    {
+        "memnTitle": "公司简介",
+        "name": "DRGK",
+        "url":"main.jt.DRGK"
+    },{
+        "memnTitle": "安全保障",
+        "name": "guarantee",
+        "url":"main.jt.guarantee"
+    },{
+        "memnTitle": "运营报告",
+        "name": "report",
+        "url":"main.report.201709"
+    },{
+        "memnTitle": "公司新闻",
+        "name": "GSXW",
+        "url":"main.jt.GSXW"
+    },{
+        "memnTitle": "公司动态",
+        "name": "GSDT",
+        "url":"main.jt.GSDT"
+    },{
+        "memnTitle": "联系我们",
+        "name": "LXWM",
+        "url":"main.jt.LXWM"
+    }
+]}

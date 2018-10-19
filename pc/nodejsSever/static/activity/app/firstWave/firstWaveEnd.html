@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="someApp" id='ng-app' xmlns:ng="http://angularjs.org"  lang="zh_CN">
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta name="theme-color" content="#2932e1">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <title>破十亿--第一波</title>
+    <link rel="stylesheet" href="stylesheets/firstWaveEnd.css">
+    <script type="text/javascript" src="../../../vendor/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../../../vendor/angular.min.js"></script>
+    <script type="text/javascript" src="../../../vendor/angular-resource.min.js"></script>
+    <script type="text/javascript" src="js/firstWave.js"></script>
+    <script type="text/javascript" src='../../common/js/modules/time.js'></script>
+</head>
+<body ng-controller="firstWaveCtrl">
+	<div class="firstWaveEnd-wrapper img-size" data-width='750' data-height='1334'>
+		<div class="one img-size" data-width="622" data-height='105' data-paddingTop='22'></div>
+		<div class="two img-size" data-width="626" data-height='189' data-marginTop='44'></div>
+		<div class="three img-size" data-width="603" data-height='288' data-marginTop='46'><p class='img-size' data-paddingTop='58' data-lineHeight='68'>摇一摇活动已结束</p><p>截止至 <span></span><br>仅支持钻石兑换超值大奖</p></div>
+		<div class="four img-size" data-marginTop='46' data-paddingLeft='30'><div class="myzs">我的钻石：<span></span></div><div class="dhbtn img-size" data-width='231' data-height='68' data-marginRight='30'></div></div>
+		<div class="five img-size" data-width='432' data-height='60' data-marginTop='162'><div class="img-size" data-width='181' data-height='61' style='background: #fff;float: left;'></div><div class="img-size" data-width='181' data-height='61' style='background: #fff;float: right;'></div></div>
+		<div class="six img-size" data-width="750" data-height='358' data-marginTop='60'><p class="img-size" data-paddingTop='186'>已经开始，<a href="">去看看</a></p></div>
+	</div>
+</body>
+<script>
+	function setImgSize(){
+        var  originWidth = 375
+            ,ratio =$(window).width()/originWidth;
+        $('.img-size').each(function(){
+            var self = $(this);
+            $.each(['height','width','left','right','bottom','top' , 'paddingTop' ,'lineHeight' , 'paddingLeft' , 'paddingRight' , 'paddingBottom','marginTop', 'marginLeft' , 'marginRight' , 'marginBottom'],function( i , str ){
+                var num = self.attr('data-'+str); 
+                if( num ){
+                    num = num*ratio/2+'px';
+                    self.css(str,num)
+                }
+            });
+        });
+    }
+    setTimeout(function(){
+ 	   setImgSize();
+    },1100)
+</script>
+</html>

@@ -1,0 +1,17 @@
+{# 合作单位 #}
+<div class="cooperation clearfix">
+    <div class="title">合作单位</div>
+    <div class="content">
+        <div class="left-btn"></div>
+        <div class="right-btn"></div>
+        <div class="swiper-img coopimg">
+            <ul>
+                {% for item in cooperationImg %}
+                    <li>
+                        <div style="width: 178px; height: 59px; display: block;"><img src='{{item.linkPath}}'></div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>

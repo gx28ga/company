@@ -1,0 +1,28 @@
+{# 公告 #}
+<div class="speaker">
+    <div class="tit">
+        <i class="icon-volume-up"></i>网站公告
+    </div>
+    <div class="text" v-if="summaryContents">
+        <div class="pp"><marquee direction="up" scrolldelay="100" scrollamount="1" :title="summaryContents" style="height: 16px;">${summaryContents}</marquee></div>
+        <div class="ppdata">[${summaryTime | format_date}]</div>
+    </div>
+    <div class="text" v-else>
+        <div class="pp">暂无公告</div>
+    </div>
+    <div class="moreno"><a  href="{{http}}/main/jt/GSXW" target="_blank">[更多]</a></div>
+    <div class="funds clearfix">
+        <div class="tit two">
+            最新投资用户
+        </div>
+        <div class="options"><!--  -->
+            <div class="option" v-for="arr in investList" >
+                <ul v-for='item in arr'>
+                    <li class="tel">${item.mobilephone}</li>
+                    <li class="price">投资 ${item.amount}元</li>
+                    <li class="date">${item.investTime | format_date}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

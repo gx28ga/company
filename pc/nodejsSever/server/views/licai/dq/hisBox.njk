@@ -1,0 +1,63 @@
+{% macro name(name) %}
+<a class="box gray" v-for="item in {{name}}" :href="'/billDetail/billDetal_html_'+item.id+'.html'">
+    <div id="ProductStatus">
+        <product-status :item="item"></product-status>
+    </div>
+    <div v-if="item.isHot == 1" class="tag-type">
+        <i class="hot" title="热销"></i>
+    </div>
+    <div class="leftside">
+        <div class="title">
+            <div id="tags" class="tags">
+                <coupon-tag :item="item"></coupon-tag>
+            </div>
+            <!--<div class="tag">-->
+                <!--<span v-if="item.type == 6">资管</span>-->
+                <!--<span v-if="item.type == 7">金交所</span>-->
+            <!--</div>-->
+            <h2>${item.fullName}</h2>
+        </div>
+        <div class="content">
+            <ul>
+                <li class="rate">
+                    <span>
+                        <b>${item.rate}</b>%
+                        <sup v-if="item.activityRate>0">
+                            +${item.activityRate}%
+                        </sup>
+                    </span>
+                    <p>历史年化收益率</p>
+                </li>
+                <li class="term">
+                    <span><b>${item.deadline}</b>天</span>
+                    <p>产品期限</p>
+                </li>
+                <li class="acount">
+                    <span><b>${item.amount}</b>元</span>
+                    <p>产品总额</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="rightside">
+        <div class="progress">
+            <div class="text">
+                <span>${parseInt(item.pert)}%</span>
+                <h6>募集进度</h6>
+            </div>
+            <div class="percent">
+                <div class="num" style="width:${item.pert}%"></div>
+            </div>
+        </div>
+        <div class="line"></div>
+        <div class="aside">
+            <div class="btn">查看详情</div>
+            <div class="money">
+                <h6>可投金额</h6>
+                <span>${item.surplusAmount}</span>
+            </div>
+        </div>
+    </div>
+    <div v-if="item.accept != undefined && item.accept != ''" class="footer"><i></i>产品管理人：${item.accept}</div>
+</a>
+{% endmacro %}

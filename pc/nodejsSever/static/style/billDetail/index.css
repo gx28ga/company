@@ -1,0 +1,1111 @@
+.box{
+	position:relative;
+	z-index:1;
+	border: 1px solid #e2e2e2;
+	border-radius: 5px;
+	background: #ffffff;
+	box-shadow: 0 0 5px #e9e9e9;
+	margin-bottom:20px;
+	overflow:hidden;
+	.leftside{
+		float:left;
+		width:827px;
+		padding:20px;
+		padding-right:0;
+		border-right: 1px solid #f2f2f2;
+	}
+	.rightside{
+		float:right;
+		width:350px;
+		padding:10px 0;
+	}
+
+	.title{
+		height:33px;
+		line-height:33px;
+		padding-right:20px;
+		position:relative;
+		z-index:1;
+		.feature{
+			float:right;
+			padding-right:20px;
+			span{
+				display: inline-block;
+				height: 18px;
+				line-height: 18px;
+				padding: 0 5px;
+				font-size: 12px;
+				border: 1px solid #bfd1e2;
+				color: #bfd1e2;
+				border-radius: 3px;
+			}
+			i{
+				position:absolute;
+				top:-2px;
+				right:10px;
+				background:url("/images/licai/detail-bao.png");
+				width:20px; height:24px;
+				transition-duration:.3s;
+				animation:bao infinite linear 5s;
+				@at-root{
+					@keyframes bao{
+						40%{ transform:rotateY(0deg)}
+						50%{ transform:rotateY(90deg)}
+						60%{ transform:rotateY(0deg)}
+					}
+				}
+			}
+		}
+		.tags{
+			display:inline-block;
+			span{
+				display:inline-block;
+				vertical-align:text-bottom;
+			}
+		}
+		.tag{
+			display:inline-block;
+			span{
+				display:inline-block;
+				height: 18px;
+				line-height:18px;
+				padding:1px 5px;
+				border-radius: 5px;
+				font-size: 12px;
+				text-align: center;
+				color: #fff;
+				vertical-align:middle;
+				margin-top:-5px;
+				background-color: #3a97dd;
+			}
+		}
+		h2{
+			display:inline-block;
+			color: #333333;
+			font-size:18px;
+			padding-left:10px;
+		}
+		.about{
+			position:absolute;
+			left:45px;
+			top:35px;
+			height: 22px;
+			line-height: 22px;
+			font-size: 12px;
+			color: #b2b2b2;
+			background: linear-gradient(to top,#f4f4f4,#fff 43%);
+			padding: 0 10px;
+			border: 1px solid #f2f2f2;
+			border-radius:5px;
+			box-shadow: 0 -1px 1px #fff inset;
+			.jian{
+				position:absolute;
+				left:10px;
+				top:-3px;
+				width:8px;
+				height:8px;
+				border-left:1px solid #f2f2f2;
+				border-top:1px solid #f2f2f2;
+				transform:rotate(45deg);
+				background: #fff;
+			}
+		}
+	}
+	.content{
+		padding:20px 0 0;
+		ul{
+			overflow:hidden;
+		}
+		.data{
+			margin-right:30px;
+			border-bottom: 1px solid #f2f2f2;
+		}
+		.data li{
+			float:left;
+			width:250px;
+			margin:10px 0;
+			padding:20px 0;
+			text-align:center;
+			position:relative;
+			border-right: 1px dotted #e9e9e9;
+			b{
+				font-size: 48px;
+				text-shadow: 2px 2px 5px rgba(245,47,62,.2);
+				color: #f52f3e;
+				background-image: -webkit-gradient(linear,0 0,0 bottom,from(#ff9801),to(#f5313c));
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+
+			}
+			p{ padding-top:5px; font-size:14px; color: #999;}
+			dfn{ color: #999;font-size: 18px; font-weight:normal;}
+			span{
+				display:inline-block;
+				height:45px;
+				font-size:24px;
+				color:#ff7101;
+			}
+			sup{ font-size:20px; vertical-align:top;}
+			.icon1{
+				background:url("../../images/licai/answer.png") no-repeat;
+				position: absolute;
+				width:17px;
+				height:17px;
+				top:20px;
+				right:40px;
+			}
+			.about{
+				position:absolute;
+				right:-65px;
+				top:-10px;
+				height: 22px;
+				line-height: 22px;
+				font-size: 12px;
+				color: #b2b2b2;
+				background:#f8f8f8;
+				padding: 0 10px;
+				border: 1px solid #f2f2f2;
+				border-radius:5px;
+				box-shadow: 0 -1px 1px #fff inset;
+				.jian{
+					position:absolute;
+					left:45px;
+					top:20px;
+					width:8px;
+					height:8px;
+					border-right:1px solid #f2f2f2;
+					border-bottom:1px solid #f2f2f2;
+					transform:rotate(45deg);
+					background: #fff;
+				}
+			}
+		}
+		.allAcount{
+			height: 39px;
+			line-height: 39px;
+			color: #777;
+			font-size: 14px;
+			padding-left:30px;
+			margin-right:30px;
+			overflow: hidden;
+			border-bottom: 1px solid #f2f2f2;
+			li{
+				float:left;
+				&.td1{
+					width:320px;
+				}
+				&.td2{
+					float:right;
+				}
+				.tit{ float:left; width:80px;}
+				.cnt{ float:left;}
+			}
+			&.baozhang{
+				border-top:1px solid #f2f2f2;
+				border-bottom:none;
+			}
+		}
+		.list-mod{
+			border-bottom:none;
+			a{
+				color: #ffc526;
+			}
+			.bankcolor{
+				color:#ffc526;
+			}
+			i{
+				width: 18px;
+				height:19px;
+				background: url('/images/licai/bz.png') no-repeat;
+				animation:bao infinite linear 5s;
+			}
+			.huarui{
+				width:19px;
+				height:24px;
+				background: url('/images/licai/huarui.png') no-repeat;
+				animation:bao infinite linear 5s;
+			}
+		}
+	}
+	.status{
+		padding:10px 20px 20px;
+		border-bottom:1px solid #f2f2f2;
+		overflow:hidden;
+	}
+	.progress{
+		float:left;
+		width:170px;
+		padding:10px 0;
+		line-height:20px;
+		.text{
+
+			font-size: 12px;
+			color: #999;
+			span{
+				float:right;
+				padding-left:5px;
+				margin-top:-7px;
+			}
+		}
+		.percent{
+			height: 7px;
+			font:0/0 arial;
+			border-radius:20px;
+			background: #e9e9e9;
+			overflow:hidden;
+		}
+		.num{
+			height: 7px;
+			border-radius:20px;
+			background: #ffa32c;
+		}
+
+	}
+	.money{
+		padding-top:5px;
+		h6{
+			height: 30px;
+			line-height:30px;
+			font-size: 12px;
+			color: #999;
+		}
+		span{ font-size: 16px;}
+	}
+	.wrap{
+		float:right;
+		width:133px;
+		i{
+			width:133px;
+			height:49px;
+			background:url("/images/licai/ing.png");
+		}
+	}
+	/* 已经投过，过期的产品 */
+	.overdue{
+		.progress{
+			width: 300px;
+			margin-left: 20px;
+			clear:both;
+		}
+		.data{
+			padding:30px 0;
+			border-top:1px solid #f2f2f2;
+			border-bottom:1px solid #f2f2f2;
+			overflow:hidden;
+			clear:both;
+			text-align:center;
+			font-size: 14px;
+			color: #777;
+			b{
+				font-size: 24px;
+				color: #fe7634;
+			}
+		}
+		i{
+			display:block;
+			width:236px;
+			height:86px;
+			margin:50px auto 0;
+			background-repeat:no-repeat;
+			&.end{
+				background-image:url("/images/licai/detail-end.png");
+			}
+			&.wait{
+				background-image:url("/images/licai/detail-wait.png");
+			}
+			&.already{
+				background-image:url("/images/licai/detail-already.png");
+			}
+		}
+	}
+}
+.recharge-box{
+	padding:20px 20px;
+	line-height:22px;
+	color:#777;
+	b{ font-weight:bold;}
+	.my-rest{
+		padding-bottom:20px;
+	}
+	.text{
+		width: 209px;
+		height: 23px;
+		line-height: 23px;
+		font-size: 16px;
+		color: #555;
+		padding: 8px 8px;
+		border: 1px solid #e2e2e2;
+		font-family: Arial;
+		background:#fff;
+		&::-webkit-input-placeholder{
+			color:#999;
+			font-size:14px;
+		}
+	}
+	.gray{
+		background:#f8f8f8;
+	}
+	.profit{
+		padding:10px 0;
+		b{ color:#fe7634;}
+	}
+	.error{
+		height:0;
+		line-height:25px;
+		background:#fffcc9;
+		color:red;
+		text-align: center;
+		opacity:0;
+		transition-duration:.3s;
+		overflow:hidden;
+		&.cur{
+			border:1px dashed #ff0000;
+			height:25px;
+			margin-bottom: 10px;
+			opacity:1;
+
+		}
+	;
+	}
+	.btn{
+		display:block;
+		height: 40px;
+		line-height: 40px;
+		border-radius: 5px;
+		font-size: 18px;
+		background: #fe651b;
+		text-align:center;
+		color:#fff;
+		border:none;
+		cursor: pointer;
+		&:hover{
+			background:#ff5300;
+		}
+		&.gray{
+			background:#ddd;
+		}
+	}
+	.recharge-btn{
+		float:right;
+		font-size: 14px;
+		color: #17a9ef;
+	}
+	.checkbox-mod{
+		padding-top:10px;
+		input{ vertical-align:middle;}
+		a{ color:#777;}
+	}
+	.input{
+		overflow:hidden;
+		.text{
+			float:left;
+			border:1px solid #f3ccb8;
+			box-shadow: 0 0 5px rgba(255,84,0,0.2) inset;
+		}
+		.add,.del{
+			float:left;
+			width: 41px;
+			height: 41px;
+			line-height:38px;
+			text-align:center;
+			background: linear-gradient(to top, #ff7c35, #ff9d6e);
+			color:#fff;
+			font-weight:bold;
+			cursor:pointer;
+			font-size:24px;
+			transition-duration:.3s;
+			&.gray{
+				background: linear-gradient(to top, #ddd, #f8f8f8);
+				color:#cfcfcf;
+			}
+		}
+		.add{
+			border-top-right-radius: 5px;
+			border-bottom-right-radius: 5px;
+		}
+		.del{
+			border-top-left-radius: 5px;
+			border-bottom-left-radius: 5px;
+		}
+	}
+}
+/*计息流程*/
+.interest{
+	padding:30px;
+	.title{
+		position:relative;
+		z-index:9;
+		overflow:hidden;
+		h2{
+			line-height:33px;
+			color:#777;
+		}
+		.line{
+			position:absolute;
+			top:15px;
+			left:150px;
+			width:100%;
+			height:1px;
+			font:0/0 arial;
+			border-bottom:1px dashed #ddd;
+		}
+		i{
+			 margin-top:-4px;
+			 width:26px;
+			 height:29px;
+			 background:url("/images/licai/interest.png") no-repeat;
+		 }
+	}
+	.content{ padding:30px 0;}
+
+	.process-bg{
+		width:986px;
+		height:80px;
+		margin:0 auto;
+		background-repeat:no-repeat;
+		&.bill-process-one{
+			background-image:url("/images/licai/process-one.png");
+		}
+		&.bill-process-two{
+			background-image:url("/images/licai/process-two.png");
+		}
+		&.bill-process-three{
+			background-image:url("/images/licai/process-three.png");
+		}
+	}
+	.progress-bg-newhand{
+		width:634px;
+		height:87px;
+		margin:0 auto;
+		background: url("/images/licai/jxlc.png") no-repeat;
+	}
+	.calculateDate{
+		padding-left:540px;
+		padding-top:10px;
+		color:#777;
+		.nextTime{
+		margin-left:180px;
+		}
+	}
+	.time{
+		padding-left:597px; padding-top:10px;
+		color:#777;
+		&.pj-time{
+			padding-left:392px;
+			li{
+				float:left;
+				width:204px;
+			}
+		}
+	}
+}
+.detail-info{
+	.title{
+		height:50px;
+		line-height:48px;
+		border-bottom: 1px solid #d1d1d1;
+
+		li{
+			float:left;
+			height:50px;
+			font-size: 16px;
+			color: #555;
+			border-right: 1px solid #d1d1d1;
+			padding:0 50px;
+			background:#fff;
+			cursor:pointer;
+			&.actived{
+				height:48px;
+				border-top: 3px solid #17a9ef;
+			}
+		}
+	}
+
+	/*审核项目*/
+	.examine{
+		padding:30px;
+		.title{
+			border:none;
+			position:relative;
+			z-index:9;
+			overflow:hidden;
+			h2{
+				line-height:33px;
+				color:#777;
+			}
+			.line{
+				position:absolute;
+				top:21px;
+				left:150px;
+				width:100%;
+				height:1px;
+				font:0/0 arial;
+				border-bottom:1px dashed #ddd;
+			}
+			i{
+				margin-top:-4px;
+				width:29px;
+				height:29px;
+				background:url("/images/licai/check.png") no-repeat;
+			}
+		}
+		.content{
+			padding:30px 20px 10px 40px;
+		}
+		.check-box{
+			li{
+				float:left;
+				width:539px;
+				height:43px;
+				line-height:43px;
+				b{color:#999;}
+				h6{ float:left; width:300px; color:#666;}
+				i{
+					width:24px;
+					height:17px;
+					background:url("/images/licai/tick.png");
+				}
+			}
+		}
+	}
+
+	/*产品资料情况*/
+	.pro-detail{
+		margin:30px 0;
+		padding:50px 20px 0;
+		border: 1px solid #ddd;
+		box-shadow: 0 0 8px rgba(0,0,0,.1) inset;
+		border-radius: 32px;
+		background: #f5f6f8;
+		position:relative;
+		z-index:9;
+		.bill-turn-left,.bill-turn-right{
+			float:left;
+			width:17px;
+			height:27px;
+			cursor:pointer;
+			margin: 65px 20px 0 20px;
+			background:url("/images/licai/turn-left.png");
+			&.prevStop{
+				background:none;
+			}
+		}
+		.bill-turn-right{
+			margin: 65px 20px 0 20px;
+			background:url("/images/licai/turn-right.png");
+			&.nextStop{
+				background:none;
+			}
+		}
+		.swiper-container{
+			width: 910px;
+			float: left;
+			text-align: center;
+			overflow: hidden;
+		}
+		.title{
+			line-height:30px;
+			text-align:center;
+			overflow:visible;
+			h2{
+				display:inline-block;
+				position:relative;
+				padding:0 10px;
+				z-index:12;
+				top: -15px;
+				font-size: 18px;
+				color: #666;
+				background: #f5f6f8;
+			}
+			.line-box{
+				position:relative;
+				height:30px;
+				z-index:11;
+				display:inline-block;
+				padding:0 50px;
+				border:1px solid #999;
+				background: #f5f6f8;
+			}
+			.line{
+				left:0;
+				top:15px;
+				border-bottom:1px solid #999;
+			}
+
+		}
+
+		.img-detail{
+			padding:20px 0;
+			text-align:center;
+			overflow:hidden;
+			ul{
+				height:200px;
+				white-space: nowrap;
+			}
+			li{
+				display: inline-block;
+				vertical-align: top;
+				margin-right: 22px;
+				width: 282px;
+				height: 176px;
+				box-shadow: 5px 5px 20px rgba(102, 102, 102, 0.2);
+				background: #fff;
+				cursor: pointer;
+				img{
+					max-width: 282px;
+					max-height: 176px;
+				}
+			}
+		}
+	}
+
+	/*项目文件 项目介绍*/
+	.fileSpeci{
+		padding:10px 30px;
+		h3{
+			height:34px;
+			line-height:34px;
+			font-size: 18px;
+			color: #ff9600;
+		}
+		.content{
+			line-height:25px;
+			padding:10px 20px 10px 40px;
+		}
+		.tags{
+			li{
+				float: left;
+				margin-right: 50px;
+				margin-top: 10px;
+			}
+			a{
+				color: #45b8ef;
+				display: block;
+				height: 33px;
+				line-height: 33px;
+				text-align: center;
+				border: 1px solid #cfebfb;
+				background-color: #f1faff;
+				padding: 0 25px;
+				transition-duration:.3s;
+				&:hover{
+					border-color:#6bcfff;
+					background-color: #6bcfff;
+					color:#fff;
+					text-decoration:none;
+				}
+			}
+		}
+		h4{
+			font-size: 18px;
+			color: #ff9600;
+			margin-bottom: 10px;
+		}
+		.message{
+			line-height:25px;
+			text-indent: 2em;
+			color:#666;
+			padding-bottom:20px;
+		}
+		table{
+			width:90%;
+			margin:10px 0 30px;
+			td{
+				font-size: 14px;
+				color: #666;
+				padding: 16px 0;
+				border: 1px solid #ccc;
+				text-indent:0;
+				&.t{
+					width:230px;
+					text-align:right;
+					padding-right: 25px;
+					color:#ff9600;
+				}
+				&.c{
+					padding-left:15px;
+				}
+			}
+
+		}
+	}
+/*新手宝项目介绍表格*/
+  .newhand{
+	  margin-top: 50px;
+	  margin-left:40px;
+	  margin-bottom:50px;
+	  padding-left: 40px;
+	  padding-bottom: 20px;
+      border:1px solid #ccc;
+	  table{ margin: 35px 0 0 0; }
+      td{
+	  font-size:14px;
+	  color:#666;
+	  padding:16px 0;
+	  border:1px solid #ccc;
+	  }
+	  table tr{ line-height: 27px; }
+	  .df{ color: #fc763f; }
+	  .ds{ width: 212px; text-align: center; }
+	  .dd{ width: 512px; text-align: center; }
+  }
+		/*新手宝常见问题*/
+		.ask-question{
+			.guarantee-box{
+				padding-left:40px;
+				padding-bottom:20px;
+			}
+		.ques span{width: 20px;display: inline-block; font-style: italic;color: #fff; font-size: 18px; line-height: 20px;background: #fd7222;margin-right: 20px;}
+		.ands span{width: 18px;padding-left:2px;display: inline-block;font-style: italic;color: #fff; font-size: 18px; line-height: 20px;background: #ccc;margin-right: 20px;}
+		.guarantee-box .ques{color: #fd7222;font-size: 18px;line-height: 35px;}
+		.guarantee-box .ands{color: #666;font-size: 18px;line-height: 35px;}
+		.guarantee-box .info{background: #fef6e8; color: #ff9966;font-size: 14px;line-height: 18px;padding:10px 25px;display: inline-block;margin:15px 0 0 38px;}
+		}
+
+	/* 产品说明 */
+	.product-about{
+		padding-bottom:80px;
+		background:url("/images/licai/infobg.png") bottom center no-repeat;
+		.title{
+			border-bottom:none;
+			overflow:hidden;
+			i{
+				width:23px;
+				height:29px;
+				margin-top: -4px;
+				background:url("/images/licai/info.png") no-repeat;
+			}
+			h2{
+				display: inline-block;
+			}
+			.line{
+				position: absolute;
+				top: 21px;
+				left: 150px;
+				width: 100%;
+				height: 1px;
+				font: 0/0 arial;
+				border-bottom: 1px dashed #ddd;
+			}
+		}
+	}
+
+
+}
+/*登录查看更多*/
+.no-login{
+	text-align:center;
+	color:#2892d9;
+	margin-bottom:20px;
+	span{
+		cursor:pointer;
+	}
+
+}
+/*投资记录*/
+.investment-record{
+	padding:20px;
+
+	.tab{
+		width:100%;
+		margin-bottom:20px;
+		color:#555;
+	}
+	tr{
+		th{
+			height: 43px;
+			line-height: 43px;
+			font-weight: bold;
+			text-align: center;
+			background: #f0f8fc;
+			border-top: 1px solid #ececec;
+		}
+		td{
+			height: 45px;
+			text-align: center;
+		}
+		&.active{
+			td{
+				background: #f0f8fc;
+			}
+		}
+	}
+}
+
+/*投资弹出窗*/
+.pop{
+	.form{
+		color:#777;
+		.item{
+
+		}
+		.txt{
+			float:left;
+			width:100px;
+			line-height:22px;
+			text-align:right;
+			font-weight:bold;
+		}
+		.cnt{
+			padding-left:120px;
+			line-height:22px;
+		}
+		b{ font-weight:bold;}
+		dt{
+			float:left;
+			width:80px;
+			text-align:left;
+		}
+		dd{
+			padding-left:90px;
+		}
+	}
+	.input{
+		padding-top:5px;
+		input{
+			width:120px;
+			height:18px;
+			padding:5px;
+			line-height:26px;
+			margin-right:10px;
+		}
+	}
+	.forget{
+		margin-top:10px;
+		margin-left:10px;
+		font-size: 12px;
+		color: #17a9ef;
+	}
+	.error{
+		width:0;
+		height:30px;
+		line-height:28px;
+		margin-top:5px;
+		overflow:hidden;
+		transition-duration:.3s;
+		background:#fffdd5;
+		color:#f30000;
+		&.cur{
+			width:150px;
+			height:28px;
+			margin-right:20px;
+			text-align:center;
+			border:1px dashed #f30000;
+		}
+	}
+	/*投资失败*/
+	.errorPop{
+		padding:20px;
+		text-align:center;
+		h2{
+			font-size:26px;
+			color:#ec0000;
+		}
+		i{
+			width:51px; 
+			height:51px;
+			background:url("/images/common/error.png");
+		}
+		p{
+			padding-top:20px;
+		}
+	}
+	/*投资成功*/
+	.succsePop{
+		padding:20px;
+		text-align:center;
+		h2{
+			font-size:26px;
+			color:#3ad11d;
+		}
+		i{
+			width:53px;
+			height:53px;
+			background:url("/images/common/success-icon.png");
+		}
+		.img{
+			width:554px; height:46px;
+			background:url("/images/billDetail/process-line.png");
+		}
+		.cnt{
+			width:554px;
+			padding:30px 20px 0;
+			overflow:hidden;
+		}
+		.rate{
+			color:#333;
+			margin-top: 15px;
+			position:relative;
+		}
+		.rateNumber{
+			color:#ff7200;
+		}
+		ul{
+			width:999px;
+			padding-top:10px;
+			li{
+				float:left;
+				line-height:22px;
+				text-align:left;
+			}
+			.name{
+				font-size:14px;
+			}
+			.time{
+				font-size:12px;
+				color:#999;
+			}
+			.li_1{ width:250px;}
+			.li_2{ width:262px;}
+			.li_3{ width:100px;}
+		}
+	}
+}
+.product-info{
+	padding:10px 0;
+	border-bottom:1px solid #ddd;
+	box-shadow: 0 -1px 1px #fff inset;
+	background: linear-gradient(to top, #f9f9f9, #ffffff 10%);
+	.quan{
+		display:inline-block;
+	}
+}
+.coupon{
+	padding:20px 0 10px;
+	.no-data{
+		padding:10px;
+		padding-left:250px;
+	}
+	.aside{ float:right; margin-right:65px; margin-top:-15px;}
+
+	.menu{
+		width:715px;
+		height:33px;
+		border-bottom:1px solid #c6d4eb;
+		li{
+			float:left;
+			line-height: 32px;
+			padding: 0 22px;
+			cursor: pointer;
+			border: 1px solid #bbcbef;
+			border-bottom: 0;
+			border-top-left-radius: 5px;
+			border-top-right-radius: 5px;
+			border-right-style: hidden;
+			background: #fff;
+			box-shadow: 0 0 3px rgba(0,0,0,.1);
+			&.last{ border-right:1px solid #bbcbef;}
+			&.cur{
+				line-height:33px;
+				background: #fff;
+				color: #ff7200;
+				box-shadow: 0 -1px 3px rgba(0,0,0,.1);
+			}
+		}
+	}
+	.option{
+		margin-top:20px;
+		ul{
+			overflow:hidden;
+			clear:both;
+		}
+		li{
+			float:left;
+			position:relative;
+			z-index:7;
+			width:210px;
+			line-height:20px;
+			margin-right:10px;
+			margin-bottom:10px;
+			padding:10px;
+			border:1px solid #b7c6e7;
+			border-radius:5px;
+			background: #fff;
+			box-shadow: 0 0 3px rgba(0,0,0,.1);
+			font-size:12px;
+			color:#777;
+			transition-duration:.3s;
+			cursor:pointer;
+			em{
+				color:#ff6000;
+			}
+			.select{
+				position:absolute;
+				top:2px;
+				right:4px;
+				height:0;
+				overflow:hidden;
+				transition-duration:.3s;
+			}
+			&:hover,&.hover{
+				em{
+					color:#fff000;
+				}
+				color:#fff;
+				background: linear-gradient(to left, #78a2f7, #abc6ff);
+				.select{
+					transition-duration:.3s;
+					width:0;
+					height:0;
+					overflow:hidden;
+					transform-origin:center center;
+				}
+			}
+			&.hover .select{
+				width:15px;
+				height:15px;
+				background:#fff;
+				border-radius:100%;
+				i{
+					width:4px;
+					height:8px;
+					vertical-align:text-top;
+					margin-left:5px;
+					border-bottom:2px solid #abc6ff;
+					border-right:2px solid #abc6ff;
+					transform:rotate(45deg);
+				}
+
+			}
+		}
+	}
+}
+.profit-info{
+	line-height:22px;
+	border-top:1px solid #ddd;
+	padding:10px 0;
+	padding-left:120px;
+	box-shadow: 0 1px 1px #fff inset;
+	color:#777;
+	background: linear-gradient(to bottom, #f9f9f9, #ffffff 10%);
+	dl{ overflow:hidden;}
+	dt{
+		float:left;
+		width:100px;
+		margin-right:5px;
+		text-align:right;
+	}
+	em{
+		font-size:14px;
+		font-weight: bold;
+		color: #fe7634;
+	}
+	sup{
+		font-size:14px;
+		color: red;
+	}
+	.red{
+		color:red;
+	}
+	.del{
+		em{color:#777;}
+		text-decoration: line-through;
+	}
+	.border{
+		margin-right: 250px;
+		padding: 10px;
+		border: 1px dashed #ff0000;
+		background: #fffff9;
+	}
+}
+/* end 投资弹出窗*/

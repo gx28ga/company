@@ -1,0 +1,75 @@
+{% extends "common/main.njk" %}
+{% block body %}
+<link href="/style/about/menu.css" rel="stylesheet" type="text/css" inline/>
+<style>
+    .qyhf{
+        width: 1200px;
+        background: #fff;
+        margin: 0 auto;
+    }
+    .banner{
+        width: 100%;
+        height: 230px;
+        background: url("../../images/about/qyhf/banner.jpg");
+    }
+    .content{
+        padding: 0 31px;
+        margin-bottom: 25px;
+    }
+    p.con{
+        text-indent: 2rem;
+        padding: 50px 0;
+        font-size: 19px;
+    }
+    .content p{
+        color: #333;
+        font-size: 18px;
+    }
+    .quan{
+        width: 9px;
+        height: 9px;
+        border: 3px solid #fa9c21;
+        border-radius: 50px;
+        float: left;
+        margin: 5px 15px 0 0;
+    }
+    .img{
+        border: 15px solid #f5f5f5;
+        width: 1110px;
+        height:240px;
+        margin: 26px 0;
+    }
+    .img_1{
+        background: url("../../images/about/qyhf/img_1.jpg");
+    }
+    .img_2{
+        background: url("../../images/about/qyhf/img_2.jpg");
+    }
+    .img_3{
+        background: url("../../images/about/qyhf/img_3.jpg");
+    }  
+    p.qd{
+        text-align: center;
+        padding-bottom: 45px;
+        line-height: 50px;
+        color: #999;
+    }
+    a{
+        cursor: pointer;
+    }
+</style>
+<div id='APP' class='qyhf'>
+    {% include "./menu.njk"%}
+    <div class="banner"></div>
+    <div class="content">
+        <p class="con">贷后回访是多融财富风险管理体系的重要环节，对于借款成功的项目，多融财富将定期或不定期对其进行贷后跟踪、实地考察，并对收集的信息进行分析，识别风险的类别、程度、原因及变化趋势，及时防范、化解和规避风险。根据平台风险管理体系的要求，多融财富近期对以下借款企业进行了贷后回访，为给广大投资者呈现客观、真实、全面的贷后风险管理，现将回访信息公示如下： </p>
+        <div class="quan"></div><p>企业回访一：对中建二局成都分公司业务进行回访及实地考察</p>
+        <a href="{{http}}/other/zhongjianerju.html"><div class="img img_1"></div></a>
+        <div class="quan"></div><p>企业回访二：对中交二航局公司业务进行回访及实地考察</p>
+        <a href="{{http}}/other/zhongjianerjuhuifang.html"><div class="img img_2"></div></a>
+        <div class="quan"></div><p>企业回访三：对中建二局重庆分公司业务进行回访及实地考察</p>
+        <a href="{{http}}/other/zhongjianerju_chongqing.html"><div class="img img_3"></div></a>
+        <p class="qd">尽请期待......</p>
+    </div>
+</div>
+{% endblock %}

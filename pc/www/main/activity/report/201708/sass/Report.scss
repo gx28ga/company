@@ -1,0 +1,287 @@
+.wq-my-account-wrapper {
+  .my-account-wrap {
+    font-family: '微软雅黑';
+    .banner {
+      width: 1200px;
+      height: 450px;
+      vertical-align: middle;
+      background: url('../images/banner.jpg');
+      position: relative;
+      .number {
+        width: 221px;
+        height: 215px;
+        position: absolute;
+        top: 80px;
+        left: 50%;
+        margin-left: -130px;
+      }
+    }
+    .infomation {
+      .clearfix {
+        height: 0px;
+        line-height: 0px;
+        content: "";
+        clear: both;
+        display: block;
+        // visibility:hidden;
+      }
+      .infoTitle {
+        color: #ffa800;
+        font-weight: 700;
+        text-align: center;
+        font-size: 42px;
+        letter-spacing: 5px;
+      }
+      .deadline {
+        color: #fff;
+        font-size: 18px;
+        text-align: center;
+        letter-spacing: 5px;
+        .numColor {
+          color: #ffe383;
+        }
+      }
+      .totalProgress {
+        color: #ffa800;
+        font-size: 34px;
+        text-align: center;
+        margin-top: 35px;
+      }
+      .totalNumber {
+        width: 810px;
+        height: 92px;
+        background: url('../images/totalbg.png');
+        background-repeat: no-repeat;
+        margin: 30px auto;
+        color: #ffe383;
+        font-weight: 700;
+        font-size: 48px;
+        padding-left: 82px;
+        letter-spacing: 40px;
+      }
+      .total {
+        margin: 0 auto;
+        height: 200px;
+        padding-left: 130px;
+        position: relative;
+        .totalLeft {
+          float: left;
+          .totalIcon {
+            width: 340px;
+            height: 161px;
+            background: url('../images/income.png');
+          }
+          .totalperson {
+            width: 206px;
+            height: 161px;
+            background: url('../images/totalperson.png');
+            margin-left: 270px;
+          }
+          .iconm {
+            color: #ea9b08;
+            font-size: 28px;
+            .numColor {
+              color: #ffe383;
+              font-weight: 700;
+            }
+          }
+        }
+      }
+      .data {
+        margin-top: 35px;
+        overflow: hidden;
+        .colorqiye {
+          color: #ffd800;
+          text-align: center;
+          font-weight: 700;
+          font-size: 42px;
+        }
+        .bottomFont{
+          color:#fff;
+          text-align:center;
+          font-size:18px;
+        }
+        .colorbigEvent{
+          color: #fff;
+          text-align: center;
+          font-weight: 700;
+          font-size: 42px;
+          margin-bottom:35px;
+        }
+        .dataInfo {
+          width: 600px;
+          float: left;
+          overflow: hidden;
+          position: relative;
+          .qiyeLeft{
+            color:#f2d87e;
+            text-align:center;
+            font-size:18px;
+            margin-top:50px;
+          }
+          .qiyeRight{
+            color:#45a4ed;
+            text-align:center;
+            font-size:18px;
+            margin-top:50px;
+          }
+          .dataTitle {
+            font-size: 42px;
+            font-weight: 700;
+            text-align: center;
+          }
+          .datayuqi{
+            background:url('../images/yuqi.png');
+            width:318px;
+            margin:50px auto 0;
+            height:395px;
+            position: relative;
+         
+          }
+             .yuqiFont{
+              color:#ff8149;
+              font-size:18px;
+              position: absolute;
+              bottom:0px;
+              left:100px;
+            }
+          .colorO {
+            color: #ff4200;
+          }
+          .colorB {
+            color: #00e4cc;
+          }
+          .colorQudao {
+            color: #5bcbff;
+          }
+          .colorYonghu {
+            color: #00be6b;
+          }
+          .colorAge {
+            color: #00e4cc;
+          }
+          .colorGeili {
+            color: #ffb55d;
+          }
+          .colorFuli{
+            color:#ffe194;
+          }
+          .dataFont {
+            color: #fff;
+            font-size: 18px;
+            text-align: center;
+            .dataFontColor {
+              color: #ffe383;
+            }
+            .dataFontSize {
+              font-size: 28px;
+              font-weight: 700;
+            }
+          }
+          .geiliperson {
+            width: 300px;
+            float: left;
+            color: #fff;
+            margin-top: 40px;
+            font-size: 18px;
+            .max {
+              text-align: center;
+              margin-bottom: 20px;
+            }
+            .geiliman {
+              width: 118px;
+              height: 94px;
+              margin: 0 auto;
+              background: url('../images/man.png') no-repeat;
+            }
+            .woman {
+              color: #ffa8c6;
+              height: 28px;
+              line-height: 28px;
+              text-align: center;
+              .countColor{
+                color:#fff;
+              }
+            }
+            .man {
+              color: #47aaf6;
+              height: 28px;
+              line-height: 28px;
+              text-align: center;
+               .countColor{
+                color:#fff;
+              }
+            }
+            .geiliwoman {
+              width: 96px;
+              height: 92px;
+              margin: 0 auto;
+              background: url('../images/woman.png') no-repeat;
+            }
+          }
+          .dataMap {
+            background: url('../images/map.png') no-repeat;
+            width: 407px;
+            height: 340px;
+            margin: 80px auto;
+          }
+          .chart {
+            position: absolute;
+            top: 100px;
+            left: 50px;
+          }
+          .top10 {
+            position: absolute;
+            top: 100px;
+            left: 150px;
+            font-size: 18px;
+            color: #fff;
+            text-align: center;
+            .top10img {
+              background: url('../images/top10.png');
+              width: 44px;
+              height: 43px;
+              float: left;
+            }
+            .top10num {
+              color: #ffe383;
+              font-size: 38px;
+            }
+          }
+          .userPerson {
+            .personImg {
+              background: url('../images/person.png');
+              width: 411px;
+              height: 152px;
+              margin: 0 auto;
+              margin-top: 100px;
+            }
+            .personmanFont {
+              font-size: 24px;
+              color: #0079d5;
+              float: left;
+              margin: 45px 70px 0 110px;
+            }
+            .personwomanFont {
+              color: #eb6795;
+              font-size: 24px;
+              text-align: center;
+              float: left;
+              margin-top: 45px;
+            }
+          }
+          .fontFuli{
+            font-size:18px;
+             color:#fff;
+             text-align:center;
+          }
+          .img1{
+            width:310px;
+            height:158px;
+            margin:10px auto 20px;
+          }
+        }
+      }
+    }
+  }
+}

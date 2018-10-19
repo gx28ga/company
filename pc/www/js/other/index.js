@@ -1,0 +1,1 @@
+"use strict";new Vue({el:"#APP",delimiters:["${","}"],data:function(){return{}},mounted:function(){},methods:{}});

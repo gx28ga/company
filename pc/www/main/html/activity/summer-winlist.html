@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html ng-app="someApp" id='ng-app' xmlns:ng="http://angularjs.org"  lang="zh_CN">
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge;IE=8" />
+    <meta content="always" name="referrer"><meta name="theme-color" content="#2932e1">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <title >投资排行</title>
+    <link rel="stylesheet" type="text/css" href="css/stylesheets/swiper.css">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheets/newapp.css">
+    <script type="text/javascript" src="../../vendor/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../../vendor/angular.min.js"></script>
+    <script type="text/javascript" src="../../vendor/angular-resource.min.js"></script>
+    <script type="text/javascript" src="../../vendor/swiper.min.js"></script>
+    <!-- <script type="text/javascript" src="../../vendor/qtip.js"></script> -->
+    <script type="text/javascript" src="../../js/activity/summer.js"></script>
+</head>
+<body class="summerwin-body" ng-controller="summerCtrl" >
+<!-- 中奖历史记录 -->
+	<div class="summerwin-wrapper" >
+		<div class="title">
+			<p><span ng-class="{true:'active',false:''}[activeList]" ng-click="onBefoDatas('日')">每日中奖名单</span></p>
+			<p><span ng-class="{true:'',false:'active'}[activeList]" ng-click="onBefoDatas('周')">每周中奖名单</span></p>
+		</div>
+		<div class="center" >
+			<div class="line"></div>
+			<div class="list" style="height: 33rem;overflow: scroll;">
+			<div ng-repeat="item in listLs" ng-if="listLs.length >0" >
+					<div class="inner-t">{{item.title}}</div>
+					<table class="rank-table">
+						<tr>
+							<th>名次</td>
+							<th>手机号码</td>
+							<th>投资金额</td>
+						</tr>
+						<tr ng-repeat="tag in item.investList">
+							<td>第{{$index+1}}名</td>
+							<td>{{tag.mobilePhone | limitTo:3}}****{{tag.mobilePhone | limitTo:-4}}</td>
+							<td>{{tag.total}}元</td>
+						</tr>	
+					</table>
+				</div>
+				<div ng-if="listLs.length < 1" style="color: #999;line-height:33rem;font-size: 1.3rem ;text-align: center;">暂未公布排行榜，敬请期待。</div>
+			</div>
+		</div>
+	</div>
+<!-- 中奖历史记录 over -->
+</body>
+</html>
+<script type="text/javascript">
+	var routerApp = angular.module('someApp', [
+	'ngResource'
+    ]);
+
+/*
+    username注意
+    grid = 表格数据
+
+ */
+
+routerApp.factory(
+		'resourceService', 
+		['$resource', '$http','$filter',function($resource, $http,$filter) {
+	return new resourceService($resource, $http,$filter);
+}]);
+/*缓存要跳转到页面名*/
+routerApp.factory(
+		'communicationService', 
+		['$resource', '$http','$filter',function($resource, $http,$filter) {
+	return new function(){
+		var tag = {};
+		/*路径*/
+		this.setTagPage=function(name,url){
+			tag.name=name;
+			tag.url=url;
+		};
+		this.getTagPage=function(){
+			return tag;
+		};
+		/*产品*/
+		this.setProduct=function(item){	tag.product = item;}
+		this.getProduct=function(){return tag.product;}
+	};
+}]);
+
+
+function resourceService(resource, http , $filter) {
+	var actions = {
+		'query':{
+            method:'GET'
+        },
+        'queryPost':{
+        	method:'POST'
+        	// headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'} 
+        },
+        'formGet':{
+        	method:'GET',
+        	async:false
+        	// headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'} 
+        }
+    };
+	//加载json模板页面
+	this.getJsonServer = function(scope,url,data,type) {
+		var queryResource = resource(url, {}, actions);
+		queryResource.query(data, function(data) {
+				scope.$broadcast('resourceService_GET_JSON.MYEVENT',data,type);
+		}, function(error) {
+		});
+	};
+		//查找
+	this.queryPost = function(scope,url,data,type,idx,title) {
+				/*临时改变时间*/
+				if ($filter('isOnLine')()) {
+					var queryResource = resource(url, {}, actions);
+					queryResource.queryPost(data, function(data) {
+						if(data.success){
+							data.map.title = title;
+							scope.$broadcast('resourceService.QUERY_POST_MYEVENT',data,type,idx);
+						}else{
+							if(data.errorCode == '9999'){
+							}else{
+								scope.$broadcast('resourceService.QUERY_POST_MYEVENT',data,type,idx);
+							}
+						}
+
+					}, function(error) {
+						// $filter('服务器信息')(type, scope,'y');
+					});
+				}else{
+					test(scope,url,data,type);
+				};
+	};
+	
+}
+routerApp
+/*开发环境*/
+        .filter('isOnLine', function() {
+            return function() {
+                var isOnLine = true;//fasle=静态调试；true=开发模式
+                return isOnLine;
+            }
+        }) 
+         .filter('交互接口对照表', function() {
+
+            return function(name) {
+                var portUrlMap = {
+
+                    /* cp079  */
+                    'cp079获取投资数据': '../../activity/getInvestTopData.do',
+                    'end' : 'end'
+                };
+                
+                return portUrlMap[name];
+            }
+        }) 
+
+/* cp079 */
+routerApp.controller('summerCtrl', ['$scope','$location','$filter','resourceService',function($scope,$location,$filter,resourceService) {
+
+	$scope.wap = getUrlParam('wap');
+	$scope.uid = getUrlParam('uid');
+	$scope.activeList = getUrlParam('activeList');
+	$scope.listLs=[];
+	
+
+	function getUrlParam(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+        var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+        if (r != null) return unescape(r[2]); return null; //返回参数值
+    }
+	var zDate=[
+		{strTitle:'7月4日--7月10日',dateNum:4,startDate:'2016-07-04 00:00:00',endDate:'2016-07-10 23:59:59'},
+		{strTitle:'7月11日--7月17日',dateNum:11,startDate:'2016-07-11 00:00:00',endDate:'2016-07-17 23:59:59'},
+		{strTitle:'7月18日--7月24日',dateNum:18,startDate:'2016-07-18 00:00:00',endDate:'2016-07-24 23:59:59'},
+		{strTitle:'7月25日--7月31日',dateNum:25,startDate:'2016-07-25 00:00:00',endDate:'2016-07-31 23:59:59'}
+	];
+	var dDate=[];
+	for (var i = 4; i <= 31; i++) {
+		var obj={};
+		obj.strTitle='7月'+i+'日';
+		obj.dateNum = i;
+		obj.startDate='2016-07-'+i+' 00:00:00';
+		obj.endDate='2016-07-'+i+' 23:59:59';
+		dDate.push(obj);
+	};
+
+
+	if($location.$$search.toFrom != undefined || $location.$$search.recommCode!= undefined){
+		$localStorage.webFormPath = $location.$$search;
+	};
+
+/*
+	排行榜记录
+*/
+	var dlodingBool=true;
+	var zlodingBool=true;
+	function getStartDates(bool,topNum,type){
+		var nowdate = new Date().getDate();
+		var mm= new Date().getMonth()+1;
+		if(bool){
+		//当日
+			if(dlodingBool){
+				dlodingBool=false;
+				// $scope.dDatetitle=dDate[$scope.dpageNum-1].strTitle;
+				for (var i = 0; i < dDate.length; i++) {
+					if(dDate[i].dateNum < nowdate && mm !=8){
+						resourceService.queryPost($scope,$filter('交互接口对照表')('cp079获取投资数据'),
+						{
+							type:1,
+							uid:$scope.uid,
+							topNum:topNum,
+							startDate:dDate[i].startDate,
+							endDate:dDate[i].endDate
+						},type,i,dDate[i].strTitle);
+					}
+					if(mm==8){
+						resourceService.queryPost($scope,$filter('交互接口对照表')('cp079获取投资数据'),
+						{
+							type:1,
+							uid:$scope.uid,
+							topNum:topNum,
+							startDate:dDate[i].startDate,
+							endDate:dDate[i].endDate
+						},type,i,dDate[i].strTitle);
+					}
+				}
+			}
+		}else{
+		//本周
+			if(zlodingBool){
+				zlodingBool=false;
+				var arr =[];
+				if(nowdate>=11&&nowdate<=18){
+					arr.push(zDate[0]);
+				}else if(nowdate>=18&&nowdate<=25){
+					arr.push(zDate[0]);
+					arr.push(zDate[1]);
+				}else if(nowdate>=25&&nowdate<=31){
+					arr.push(zDate[0]);
+					arr.push(zDate[1]);
+					arr.push(zDate[2]);
+				}else if(mm == 8){
+					arr=zDate;
+				}
+				for (var i = 0; i < arr.length; i++) {
+					resourceService.queryPost($scope,$filter('交互接口对照表')('cp079获取投资数据'),
+					{
+						type:1,
+						uid:$scope.uid,
+						topNum:topNum,
+						startDate:arr[i].startDate,
+						endDate:arr[i].endDate
+					},type,i,arr[i].strTitle);
+				}
+			}
+		}
+	};
+
+
+	var zhouPaiHang = [];
+	var riPaiHang = [];	
+	var zhouPaiHangTitle = [];
+	var riPaiHangTitle = [];
+	$scope.$on('resourceService.QUERY_POST_MYEVENT', function(event,data,type,idx) {
+		switch(type) {
+			case "日获取投资数据历史":
+				riPaiHang[idx]=data.map ;
+			break;
+			case "周获取投资数据历史":
+				zhouPaiHang[idx]=(data.map);
+			break;
+		}
+	});
+	var mySwiper = new Swiper('.swiper-container', {
+        slidesPerView: 6,
+        paginationClickable: true
+    });
+
+	if($scope.activeList=='true'||$scope.activeList==true){
+		getDates(true);
+		getStartDates(true,3,'日获取投资数据历史');
+	}else{
+		getDates(false);
+		getStartDates(false,8,'周获取投资数据历史');
+	};
+
+	/*中奖排行*/
+	$scope.onBefoDatas=function(type){
+		$scope.isShowList = true;
+		switch(type) {
+			case "日":
+				getStartDates(true,3,'日获取投资数据历史');
+				$scope.activeList=true;
+				getDates(true);
+			break;
+			case "周":
+				getStartDates(false,8,'周获取投资数据历史');
+				$scope.activeList=false;
+				getDates(false);
+			break;
+		}
+	};
+	function getDates(bool) {
+		if(bool){
+			$scope.listLs=riPaiHang;
+		}else{
+			$scope.listLs=zhouPaiHang;
+		}
+	};
+
+}])
+</script>

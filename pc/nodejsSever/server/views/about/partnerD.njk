@@ -1,0 +1,16 @@
+{#合作单位#}
+<div class='partner clearfix'>
+    <div class='content1'>
+        <div class="left-btn"></div>
+        <div class="right-btn"></div>
+         <div class="swiper-img partnerimg">
+            <ul>
+                {% for item in partnerImg %}
+                    <li>
+                        <div style="width: 190px; height: 59px; display: block;"><img src='{{item.linkPath}}'></div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>

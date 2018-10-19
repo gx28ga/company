@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html ng-app="someApp" id='ng-app' xmlns:ng="http://angularjs.org">
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge;IE=8" />
+    <meta content="always" name="referrer"><meta name="theme-color" content="#2932e1">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <title ng-bind="title">多融财富-资金存管</title>
+    <link rel="stylesheet" type="text/css" href="../../../css/activity/app/stylesheets/bankRegulatorsApp.css">
+</head>
+<body>
+<div class="bankRegulatorsApp-wrapper">
+    <div class="banner img-size" data-height='337'></div>
+    <div class='imgs'>
+        <div class='img1 img-size' data-height='652'></div>
+        <div class='img2 img-size' data-height='840'></div>
+    </div>
+    <div class="content-box">
+        <!-- <div class="content contentFrist">
+            <p class="ptitle">拥抱监管 合规运营</p>
+            <p class="ptitle stitle">看得见的一大步 看不见的无数步</p>
+            <div class="con">
+                <p class="ptitle htitle">　　多融财富近日与某大型商业银行达成一致，签署银行存管协议，切换工作也将陆续开展，未来资金交易均由用户授权银行操作执行，保证交易真实有效。</p>
+            </div>
+        </div>
+        <div class="content contentTwo" style="background: #f3f7ff;">
+            <p class="ptitle">银行资金存管模式 保障用户资金安全</p>
+            <p class="ptitle stitle">全新的体验与服务 不变的安全与透明</p>
+            <div class="fg"></div>
+            <div class="conTwo img-size" data-width='952' data-height='499'></div>
+            <p class="ptitle htitle padd">多融财富成立以来，一直定位于信息中介，不碰用户资金，未来切换银行存管系统后，投资方与借款方之间交易环节，均在银行系统中进行，资金交易均有银行操作执行，为投资者保驾护航。</p>
+        </div> -->
+        <div class="content contentThree">
+            <!-- <p class="ptitle">银行存管 资金透明 交易安全</p>
+            <p class="ptitle stitle">为投资者保驾护航</p>
+            <div class="fg"></div> -->
+            <div class='title2 img-size' data-height='119'></div>
+            <div class="conThree">
+                <table>
+                    <tr>
+                        <td width="20%"><div class="icon iconOne"></div></td>
+                        <td width="80%"><p class="ptitle btitle">资金隔离</p><p class="ptitle ktitle">用户所有资金均保存在存管银行系统的账户体系内，由存管银行对资金进行管理与监督，平台无法触碰用户资金。</p></td>
+                    </tr>
+                    <tr>
+                        <td width="20%"><div class="icon iconTwo"></div></td>
+                        <td width="80%"><p class="ptitle btitle">交易安全</p><p class="ptitle ktitle">资金交易环节均在银行系统中进行，资金交易均由用户授权银行操作执行，保证交易真实有效。</p></td>
+                    </tr>
+                    <tr>
+                        <td width="20%"><div class="icon iconThree"></div></td>
+                        <td width="80%"><p class="ptitle btitle">金茂律所</p><p class="ptitle ktitle">金茂律师事务所将协助多融财富审核、起草、修改相关法律文件，对项目进行法律合规性审查，确保项目的合规性、合法性。</p></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="contentFour img-size" data-width="100%" data-height="366">
+            <table>
+                <tr class="dashed">
+                    <td width="50%"></td>
+                    <td width="50%" class="padd"><p class="ptitle wtitle">多融财富</p><p class="ptitle wstitle">国企中商沪深旗下</p></td>
+                </tr>
+                <tr>
+                    <td colspan='2'><p class="ptitle botitle">每几分钟就有一个人在多融财富获取超过8%的收益</p></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<script src='../../../vendor/jquery-1.11.1.min.js'></script>
+<script>
+function setImgSize(){
+    var  width = $(window).width()
+        ,originWidth = 375
+        ,ratio = width/originWidth;
+
+    $('.img-size').each(function(){
+        var self = $(this);
+        $.each(['data-height','data-width','data-left','data-right','data-bottom','data-top' , 'data-paddingTop' , 'data-paddingLeft' , 'data-paddingRight' , 'data-paddingBottom','data-marginTop', 'data-marginLeft' , 'data-marginRight' , 'data-marginBottom'],function( i , str ){
+            var num = self.attr(str); 
+            if( num ){
+                num = num*ratio/2+'px';
+                self.css(str.match(/\w+$/)[0],num)
+            }
+        });
+    });
+}
+setImgSize();
+window.onresize = setImgSize;
+</script>
+</body>
+</html>

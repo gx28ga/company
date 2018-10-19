@@ -1,0 +1,123 @@
+<section class='infomation'>
+      <div class="infoTitle">平台整体数据总览</div>
+        <div class="deadline">截止日期<span class="numColor" v-show='showyear'>${new Date(result.deadline).Format("yyyy-MM-dd")}</span><span class="numColor" v-show='!showyear'>2017-12-31</span></div>
+        <div class="totalProgress" v-if='showyear'>累计交易总额（元）</div>
+        <div class="totalProgress" v-else>累计交易总额（万元）</div>
+        <div class="totalNumber" v-if='showyear'>${total}</div>
+        <div class="totalNumberyear" v-else>2997461</div>
+        {# 累计交易总额 #}
+         <div class="total">
+            <div class="totalLeft">
+                <div class="totalIcon "></div>
+                <p class="iconm" v-if='showyear'>累计赚取收益：<span class="numColor">${numFormat(result.cumulativeIncome)}</span> 元</p>   
+                  <p class="iconm" v-else>累计赚取收益：<span class="numColor">${numFormat(result.cumulativeIncome)}</span> 万元</p>
+            </div>
+            <div class="totalLeft">
+                <div class="totalperson "></div>
+                <p class="iconm" style="margin-left: 200px" v-if='showyear'>累计注册用户：<span class="numColor">${numFormat(result.cumulativeRegisteredUser)}</span> 人</p>
+                 <p class="iconm" style="margin-left: 200px" v-else>累计注册用户：<span class="numColor">${numFormat(result.cumulativeRegisteredUser)}</span> 万人</p>
+            </div>
+        </div>
+        {# 业绩数据注册数据 #}
+         <div class="data">
+            <div class="dataInfo">
+                <div class='dataTitle colorO'>业绩数据</div>
+                <p class='dataFont' v-if='showyear'><span class='dataFontColor'>${result.year}</span> 年<span class="dataFontColor">${result.month}</span>月份累计交易额<span class="dataFontColor dataFontSize">${numFormat(result.cumulativeMonthlyTurnover)}</span> 元</p> 
+                <p class='dataFont' v-else><span class='dataFontColor'>2017</span> 年累计交易额<span class="dataFontColor dataFontSize">${numFormat(result.cumulativeMonthlyTurnover)}</span> 元</p>
+                <div class="dataMap"></div>
+                <div class="chart" style='width:580px;height:470px;position: absolute;' id='figure'></div>
+                <div class="top10"><span class="top10img"></span>按区域分布排名前<span class="top10num">10</span>名</div>
+            </div>
+            <div class='dataInfo'>
+                <div class='dataTitle colorB'>注册数据</div>
+                <p class='dataFont' v-if='showyear'><span class='dataFontColor'>${result.year}</span> 年<span class="dataFontColor">${result.month}</span>月份新增注册用户<span class="dataFontColor dataFontSize">${numFormat(result.cumulativeMonthlyRegistered)}</span> 人</p> 
+                <p class='dataFont' v-else><span class='dataFontColor'>2017</span> 年<span class="dataFontColor">新增注册用户<span class="dataFontColor dataFontSize">${numFormat(result.cumulativeMonthlyRegistered)}</span> 人</p>
+                <div class="dataMap"></div>
+                <div class="chart" style='width:580px;height:470px;position: absolute;' id='figu'></div>
+                <div class="top10"><span class="top10img"></span>按区域分布排名前<span class="top10num">10</span>名</div>
+            </div>
+        </div>
+        {# 渠道数据用户画像 #}
+        <div class="data">
+            <div class="dataInfo">
+                <div class="dataTitle colorQudao">渠道数据</div>
+                <p class='dataFont' v-if='showyear'><span class='dataFontColor'>${result.year}</span> 年<span class="dataFontColor">${result.month}</span>月份投资终端分布</p>
+                <p class='dataFont' v-else><span class='dataFontColor'>2017</span> 年投资终端分布</p>
+                <div style='width:500px;height: 400px ;margin:0 auto;' id='channel'></div>
+            </div>
+            <div class="dataInfo">
+                <div class="dataTitle colorYonghu">用户画像</div>
+                <p class='dataFont' v-if='showyear'>截止日期<span class='dataFontColor'>${new Date(result.deadline).Format("yyyy-MM-dd")}</span></p> 
+                <p class='dataFont' v-else>截止日期<span class='dataFontColor'>2017-12-31</span></p>
+                <div class="userPerson">
+                    <div class="personImg"></div>
+                    <div class="personmanFont" style='margin: 45px 50px 0 95px'>注册占比：${result.registeredMaleRatio}%
+                        <br>投资占比：${result.investedMaleRatio}% </div>
+                    <div class="personwomanFont">注册占比：${result.registeredFemaleRatio}%
+                        <br>投资占比：${result.investedFemaleRatio}%</div>
+                </div>
+            </div>
+        </div>
+        {#投资用户年龄分析 最给力用户#}
+          <div class="data">
+            <!-- 用户年龄分析 -->
+            <div class="dataInfo">
+                <div class="dataTitle colorAge">投资用户年龄分析</div>
+                <p class="dataFont" v-if='showyear'>截止日期 <span class='dataFontColor'>${new Date(result.deadline).Format("yyyy-MM-dd")}</span> </p>
+                <p class="dataFont" v-else>截止日期 <span class='dataFontColor'>2017-12-31</span> </p>
+                <p class="dataFont">多融注册用户年龄分布情况</p>
+                <div style='width:580px;height:470px;margin-left: 100px' id='userAge'></div>
+            </div>
+            <!--  最给力用户 -->
+            <div class="dataInfo">
+                <div class="dataTitle colorGeili">最给力投资用户</div>
+                <p class="dataFont" v-if='showyear'><span class='dataFontColor'>${result.year} </span>年<span class='dataFontColor'>${result.month}</span> 月 </p>  
+                <p class="dataFont" v-else><span class='dataFontColor'>2017 </span>年</p>
+                <div class="geiliperson">
+                    <p class="max">累计投资额最多</p>
+                    <div class="geiliwoman" v-if='maxCumulativeInvest.sex==2'></div>
+                    <div class="geiliman" v-if='maxCumulativeInvest.sex==1'></div>
+                    <p class="woman" v-if='maxCumulativeInvest.sex==2'><span>${maxCumulativeInvest.surname}</span>女士</p>
+                    <p class="man" v-if='maxCumulativeInvest.sex==1'><span>${maxCumulativeInvest.surname}</span>先生</p>
+                    <p class="woman" v-if='maxCumulativeInvest.sex==2'>${maxCumulativeInvest.mobilePhone} </p>
+                    <p class="man" v-if='maxCumulativeInvest.sex==1'>${maxCumulativeInvest.mobilePhone} </p>
+                    <p class="woman" v-if='maxCumulativeInvest.sex==2'>共计投资：<span class="countColor">${numFormat(maxCumulativeInvest.maxCumulativeInvest)}</span> 元</p>
+                    <p class="man" v-if='maxCumulativeInvest.sex==1'>共计投资：<span class="countColor">${numFormat(maxCumulativeInvest.maxCumulativeInvest)}</span> 元</p>
+                </div>
+                  <div class="geiliperson">
+                    <p class="max">单笔投资额最大</p>
+                    <div class="geiliwoman" v-if='maxOnceInvest.sex==2'></div>
+                    <div class="geiliman" v-if='maxOnceInvest.sex==1'></div>
+                    <p class="woman" v-if='maxOnceInvest.sex==2'><span>${maxOnceInvest.surname}</span>女士</p>
+                    <p class="man" v-if='maxOnceInvest.sex==1'><span>${maxOnceInvest.surname}</span>先生</p>
+                    <p class="woman"  v-if='maxOnceInvest.sex==2'>${maxOnceInvest.mobilePhone}</p>
+                    <p class="man"v-if='maxOnceInvest.sex==1'>${maxOnceInvest.mobilePhone} </p>
+                    <p class="woman" v-if='maxOnceInvest.sex==2'>共计投资：<span class="countColor">${numFormat(maxOnceInvest.maxOnceInvest)}</span> 元</p>
+                    <p class="man" v-if='maxOnceInvest.sex==1'>共计投资：<span class="countColor">${numFormat(maxOnceInvest.maxOnceInvest)}</span> 元</p>
+                </div>
+                <div class="geiliperson">
+                    <p class="max">累计投资次数最多</p>
+                    <div class="geiliwoman" v-if='maxInvestFrequency.sex==2'></div>
+                    <div class="geiliman" v-if='maxInvestFrequency.sex==1'></div>
+                    <p class="woman" v-if='maxInvestFrequency.sex==2'><span>${maxInvestFrequency.surname}</span>女士</p>
+                    <p class="man" v-if='maxInvestFrequency.sex==1'><span>${maxInvestFrequency.surname}</span>先生</p>
+                    <p class="woman" v-if='maxInvestFrequency.sex==2'>${maxInvestFrequency.mobilePhone}</p>
+                    <p class="man"v-if='maxInvestFrequency.sex==1'>${maxInvestFrequency.mobilePhone} </p>
+                    <p class="woman" v-if='maxInvestFrequency.sex==2'>共计投资：<span class="countColor">${maxInvestFrequency.maxInvestFrequency}</span> 次</p>
+                    <p class="man" v-if='maxInvestFrequency.sex==1'>共计投资：<span class="countColor">${maxInvestFrequency.maxInvestFrequency}</span> 次</p>
+                </div>
+                <div class="geiliperson">
+                    <p class="max">邀请好友总数最多</p>
+                    <div class="geiliwoman" v-if='maxRecommendFrequency.sex==2'></div>
+                    <div class="geiliman" v-if='maxRecommendFrequency.sex==1'></div>
+                    <p class="woman" v-if='maxRecommendFrequency.sex==2'><span>${maxRecommendFrequency.surname}</span>女士</p>
+                    <p class="man" v-if='maxRecommendFrequency.sex==1'><span>${maxRecommendFrequency.surname}</span>先生</p>
+                    <p class="woman" v-if='maxRecommendFrequency.sex==2'>${maxRecommendFrequency.mobilePhone} </p>
+                    <p class="man" v-if='maxRecommendFrequency.sex==1'> ${maxRecommendFrequency.mobilePhone}</p>
+                    <p class="woman" v-if='maxRecommendFrequency.sex==2'>共邀好友：<span class="countColor">${maxRecommendFrequency.maxRecommendFrequency}</span> 位</p>
+                    <p class="man" v-if='maxRecommendFrequency.sex==1'>共邀好友：<span class="countColor">${maxRecommendFrequency.maxRecommendFrequency}</span> 位</p>
+                </div>
+            </div>
+        </div>
+        
+</section>

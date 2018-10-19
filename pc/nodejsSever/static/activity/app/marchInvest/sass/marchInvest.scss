@@ -1,0 +1,240 @@
+@import "../../../common/style/global.scss";
+body { overflow-y:scroll;
+  @include font-size(16px);
+}
+.marchInvest {
+    overflow-y:hidden; padding-bottom:$s20;
+    display: block;
+    background: -webkit-gradient(linear, 0 100%, 0 0, from(#e82124), to(#fc4044));
+  .banner {
+    @include contain('../images/banner.png');
+  }
+
+  .marchInvestContent {
+    position: relative;
+    .activity {
+      @include contain('../images/activity.png');
+    }
+    .investProduct {
+      text-align: center;
+      color: #fff997;
+      .investProductTop {
+        @include font-size(18px);
+      }
+      .investProductBottom {
+        @include font-size(15px);
+      }
+    }
+    .submit{
+    }
+    .investBtn {
+      display: block; margin:0 auto;
+      @include contain('../images/nowInvest.png');
+    }
+      .investBtnOver {
+     display: block; margin:0 auto;
+      @include contain('../images/gameOver.png');
+
+    }
+    .rule {
+        display:block; margin-top:$s20; text-align:right; padding-right:$s20;
+      color: #ffe6e6;
+      @include font-size(12px);
+      text-decoration: underline;
+    }
+    .activityContent {
+      // position: absolute;    
+      .line {
+        @include contain('../images/ruleLine.png');
+        /* position:absolute;
+              top:90px;
+              left:0;  */
+      }
+      .activityLine {
+        background: -webkit-gradient(linear, 0 100%, 0 0, from(#fd2e46), to(#fc4e62));
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        .wealthValue {
+          position: relative;
+          .wealthValueLeft {
+            float: left;
+            color: #ffffff;
+            @include font-size(15px);
+            .leiji {
+              @include font-size(12px);
+              color: #fff997;
+            }
+            
+          }
+          .wealthValueRight {
+            position: absolute;
+            top: 50px;
+            right: 50px;
+            display: block;
+            @include contain('../images/loginlook.png');
+          }
+        }
+        .prize {
+          .prizeTitle {
+            @include contain('../images/prizeTitle.png');
+          }
+          .prizeContent {
+            .jd15 {
+              @include contain('../images/15000jd.png');
+              float: left;
+            }
+            .rimowa {
+              @include contain('../images/rimowa.png');
+              float: left;
+            }
+            .jd50 {
+              @include contain('../images/50jd.png');
+              float: left;
+            }
+            .daisen {
+              @include contain('../images/daisen .png');
+              float: left;
+            }
+            .feilipu {
+              @include contain('../images/feilipu.png');
+              float: left;
+            }
+            .Swaroviski {
+              @include contain('../images/Swaroviski.png');
+              float: left;
+            }
+            .jdWan{
+              @include contain('../images/jdWan.png');
+              float: left;
+            }
+            .iphone{
+              @include contain('../images/iphone.png');
+              float: left;
+            }
+            .jiaNeng{
+               @include contain('../images/jiaNeng.png');
+              float: left;
+            }
+            .wanLong{
+                @include contain('../images/wanLong.png');
+              float: left;
+            }
+            .shuangLi{
+                @include contain('../images/shuangLi.png');
+              float: left;
+            }
+            .tiXuDao{
+                @include contain('../images/tiXuDao.png');
+              float: left;
+            }
+            .jd20{
+                @include contain('../images/jd20.png');
+              float: left;
+            }
+            p {
+              text-align: center;
+              color: #ffffff;
+              @include font-size(12px);
+              
+            }
+          }
+        }
+      }
+    }
+    .activityRule {
+        padding:0 $s20;
+      color: #fff;
+      position:relative; z-index:2;
+      // background-color: #fff;
+      // position:absolute;
+      clear: both;
+      .activityRuleLine {
+        position:absolute; left:$s10; right:$s10; top:$s12; margin:0 $s10;
+         @include box-sizing;
+        height:$s1; font:0/0 arial; background:rgba(255,255,255,.8);
+      }
+      .rule-div{
+            position:relative; z-index:3;
+            @include box; @include boxCenter;
+      }
+      .rule-name{
+        display:inline-block;
+        @include font-size(14px);
+        background:#e92325; padding:0 $s20;
+      }
+      .activityRuleContent {
+        @include font-size(12px);
+        li { padding:$s5 0;
+          list-style-type: decimal;
+          line-height:19px;
+        }
+      }
+    }
+  }
+}
+.mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 500;
+  transform-style: preserve-3d;
+  .tishi {
+    @include contain('../images/vip.png');
+    background-position: center center;
+    position: fixed;
+    color: #e20c2e;
+    text-align: center;
+    animation: show 2s forwards;
+   
+      
+   
+    // position:relative;
+    .tishiTitle {
+      font-weight: 700;
+      @include font-size(24px);
+    }
+    .tishiContent{
+       @include font-size(18px); 
+    }
+    .back{
+        @include contain('../images/back.png'); 
+       color:#fff;
+        @include font-size(18px); 
+        text-align:center;
+        // background-color:red;
+        border-radius:30px;
+        display:block;
+
+    }
+    .close{
+        position:absolute;
+        top:0;
+        right:0;
+
+    }
+  }
+}
+@keyframes show{
+  0%{
+    transform:translateZ(0);
+    opacity:0
+  }
+  100%{
+     transform:translateZ(100%);
+     opacity:1;
+  }
+}
+@keyframes close{
+  0%{
+    transform:translateZ(100%)  ;
+    opacity:1;
+  }
+ 
+  100%{
+     transform:translateZ(0) ;
+     opacity:0;
+  }
+}

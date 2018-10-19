@@ -1,0 +1,1 @@
+"use strict";new Vue({el:"#APP",delimiters:["${","}"],mounted:function mounted(){this.carouselChange()},methods:{carouselChange:function carouselChange(){$(".imgbox").slide({mainCell:".box ul",autoPlay:true,effect:"left",titCell:".ceremony-title ul li",titOnClassName:"current",interTime:2e3,prevCell:".prev",nextCell:".next",vis:1})}}});

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+body {
+    background: #F2F2F2;
+    margin: 0;
+    padding: 0;
+    font-size: 3.6vw;
+    color: #3F3F3F;
+}
+
+.section {
+    margin-bottom: 1.5vh;
+    background: #FFF;
+}
+
+.accordion-bar {
+    position: relative;
+    padding: 4vw 5vw;
+    line-height: 3.6vw;
+}
+
+.st-sign {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 1.6vw solid transparent;
+    border-left: 1.6vw solid #FC8146;
+    border-bottom: 1.6vw solid transparent;
+    position: relative;
+    top: 0.25vw;
+}
+
+.collapse-sign {
+    position: absolute;
+    right: 6vw;
+    top: 4vw;
+    border-top: 2px solid #A0A0A0;
+    border-right: 2px solid #A0A0A0;
+    height: 2.8vw;
+    width: 2.8vw;
+}
+
+.collapse-sign.close {
+    -ms-transform: rotate(45deg);
+    /* IE 9 */
+    -webkit-transform: rotate(45deg);
+    /* Safari */
+    transform: rotate(45deg);
+}
+
+.collapse-sign.open {
+    -ms-transform: rotate(135deg);
+    /* IE 9 */
+    -webkit-transform: rotate(135deg);
+    /* Safari */
+    transform: rotate(135deg);
+}
+
+.accordion-content {
+    display: none;
+    line-height: 6vw;
+    border-top: 1px solid #DDD;
+    color: #A0A0A0;
+    padding: 4vw 5vw;
+}
+
+.show {
+    display: block;
+}
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>活期问题说明</title>
+</head>
+
+<body>
+    <div class="section">
+        <div class="accordion-bar" onclick="toggle(this)">
+           <!--  <span class="st-sign"></span> -->
+            <span>什么是新手宝?</span>
+            <span class="collapse-sign open"></span>
+        </div>
+        <div class="accordion-content show">
+            新手宝是多融财富为兼顾投资者收益性和流动性的需求而特别推出的新手专享类活期理财产品。收益稳健，期限灵活，随时可退。
+            <br> 温馨提示：
+            <br>  新手宝为新手专享产品，仅限新用户首笔投资，且只能投资1次。假如注册成功后首笔投资了其他产品，则无法投资新手宝。
+            <br>  每人最高可购买额度为50000元
+        </div>
+    </div>
+    <div class="section">
+        <div class="accordion-bar" onclick="toggle(this)">
+           <!--  <span class="st-sign"></span> -->
+            <span>新手宝的收益如何计算?</span>
+            <span class="collapse-sign close"></span>
+        </div>
+        <div class="accordion-content">
+       <!--<span style='color:#333'> ●&nbsp;关于收益：</span>新手宝预期年化5%，前7天享受5%的额外活动加息，即5%+5%，7天后如果继续持有，新手宝预期收益恢复为5%。<br>-->
+       <span style='color:#333'> ●&nbsp;关于收益：</span>新手宝历史年化收益率5%，前7天享受5%的额外活动加息，即5%+5%，7天后如果继续持有，新手宝预期收益恢复为5%。<br>
+       <span style='color:#333'> ●&nbsp;关于计息：</span>当日购买，次日起息，第三日收益到账。发起产品退出申请，当日不计息。<br>
+       <span style='color:#333'> ●&nbsp;关于结算：</span>每日产生利息，按日结算，收益直接转入账户余额。<br> 
+       以7月1日投资5万新手宝并于7月20日发起退出申请为例：<br>
+ 7月1日购买成功 <br> 
+ 7月2日起开始计息<br>
+ 7月3日上一日利息直接转入账户余额<br>
+ 7月2-8日，享受额外活动加息，按5%+5%计息<br>
+ 7月9-19日，恢复产品原始收益,按5%计息<br>
+ 7月20日，发起产品退出申请，当日不计息<br>
+收益=（5%+5%）*50000*7/365+5%*50000*11/365=171.23元<br>
+        </div>
+    </div>
+    <div class="section">
+        <div class="accordion-bar" onclick="toggle(this)">
+            <!-- <span class="st-sign"></span> -->
+            <span>为什么无法再次购买新手宝？</span>
+            <span class="collapse-sign close"></span>
+        </div>
+        <div class="accordion-content">
+            新手宝为新手专享产品，每位新用户只有一次购买机会。
+        </div>
+    </div>
+    <div class="section">
+        <div class="accordion-bar" onclick="toggle(this)">
+           <!--  <span class="st-sign"></span> -->
+            <span>新手宝退出（回款）注意事项</span>
+            <span class="collapse-sign close"></span>
+        </div>
+        <div class="accordion-content">
+        <span style='color:#333'> ●&nbsp;关于退出时间：</span>随时可退出，购买当日无法申请退出<br>
+       <span style='color:#333'> ●&nbsp;关于退出金额：</span>必须全额退出，无法选择部分退出<br>
+       <span style='color:#333'> ●&nbsp;关于结算：</span>发起产品退出申请，当日不计息<br> 
+       <span style='color:#333'> ●&nbsp;关于退出方式：</span>您于T日发起的退出申请（即点击“全额转出到余额”按钮进行转出），将于T+1日一次性本息全额退出到您的账户余额，例如：周一转出，周二到账；周五转出，下周一到账。以此类推，节假日顺延。如需提现到银行卡，可继续发起提现申请。<br> 
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+function toggle(elem) {
+    var myCls = elem.nextElementSibling.className;
+    var childCls = elem.lastElementChild.className;
+    if (myCls.indexOf('show') == -1) {
+        elem.nextElementSibling.className += ' show';
+        elem.lastElementChild.className = childCls.replace('close', 'open');
+    } else {
+        elem.nextElementSibling.className = myCls.replace(' show', '');
+        elem.lastElementChild.className = childCls.replace('open', 'close');
+    }
+}
+</script>
+
+</html>

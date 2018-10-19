@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>相关式列</title>
+<style>
+html,body{ font-size:12px; margin:0; padding:0; }
+ul li,li{ list-style:none; }
+.times li{ float:left; }
+</style>
+<script type='text/javascript' src='https://code.jquery.com/jquery-1.9.1.min.js'></script>
+<script type='text/javascript' src='time.js'></script>
+</head>
+<body>
+<div>
+	倒计时:从今天8:00 - 20:00;
+	<div class="time1 times"></div>
+</div>
+</body>
+<script>
+var time = new countTime({
+		startTime : '2017/01/12 08:00:00',
+		endTime : '2017/01/12 20:17:00' , 
+		updateTime : true, //实时更新
+		callback : function(obj){
+			$('.time1').html(
+				'日:'+obj.day+',时：'+obj.hour+',分：'+obj.minute+',秒：'+obj.second
+				+'<br>你的状态是：'+obj.status+',你的状态名称：'+obj.statusName
+			)
+		}
+	});
+</script>
+</html>

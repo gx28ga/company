@@ -1,0 +1,413 @@
+<div class="body-wrapper">
+    <!-- 渠道用户 -->
+    	<div class="pop-bg channel-pop"style="display: none;">
+            <div class="pop">
+                    <a class="close" href="/main/home"  target="_self"></a>
+                    <div class="text">敬请谅解！</div>
+                    <div class="info">亲，由于您是渠道VIP用户，</div>
+                    <div class="info">所以不能参加此次活动，敬请谅解！</div>
+              <a class="sureBtn" href="/main/home" target="_self">返回首页</a>
+            </div>
+        </div>
+    <!-- 未登录 -->
+    	<div class="pop-bg login-popbg"style="display: none;">
+            <div class="pop">
+                    <a class="close" href=""  target="_self"></a>
+                    <div class="text">很抱歉！</div>
+                    <div class="info">亲，您尚未登陆，</div>
+                    <div class="info">请登录后再摇奖！</div>
+              <a class="sureBtn dlBtn" href="" >登录</a>
+            </div>
+        </div>
+    <!-- 抽奖次数不足 -->
+    	<div class="pop-bg chance-pop"style="display: none;">
+            <div class="pop">
+                    <a class="close" href=""  target="_self"></a>
+                    <div class="info no-counts">剩余抽奖次数不足</div>
+                    <div class="info">快去投资获取吧</div>
+              <a class="sureBtn" href="/main/bankBillList" target="_blank">投资获取</a>
+            </div>
+        </div>
+    <!-- 活动已结束 -->
+    	<div class="pop-bg gameover"style="display: none;">
+            <div class="pop">
+                    <a class="close" href=""  target="_self"></a>
+                    <div class="text">活动已结束！</div>
+                    <div class="info">钻石兑换截至2017年2月9 日</div>
+                    <div class="info">目前已结束</div>
+              <a class="sureBtn" href="/main/home" target="_self">返回首页</a>
+            </div>
+        </div>
+    <!-- 活动未开始 -->
+    	<div class="pop-bg noready"style="display: none;">
+            <div class="pop">
+                    <a class="close" href="/main/home"  target="_self"></a>
+                    <div class="info no-counts">活动尚未开始</div>
+                    <div class="info">敬请期待</div>
+              <a class="sureBtn" href="/main/home" target="_self">返回首页</a>
+            </div>
+        </div>
+    <!-- 奖品兑换 -->
+    	<div class="pop-bg exchange-popbg"style="display: none;">
+            <div class="pop exchange-pop">
+                    <a class="close" href=""  target="_self"></a>
+                    <div class="info no-counts" style="font-weight: bold;"></div>
+                    <div class="info cost">需消耗钻石</div>
+              <a class="sureBtn nextBtn" href="" target="_self">确认兑换</a>
+            </div>
+      </div>
+  <!-- 确认兑换\\\ -->
+    <div class="pop-bg check-popbg"style="display: none;">
+      <div class="pop check-pop">
+        <a class="close" href=""  target="_self"></a>
+        <div class="title">兑换成功 !</div>
+        <div class="tip1">兑换获得XXXX</div>
+        <div class="image"><img src="" alt=""></div>
+        <div class="tip2">兑换奖品将于活动结束后15个工作日内发放</div>
+        <div class="tip3">会提前与您联系，期间请保持手机畅通</div>
+        <a class="sureBtn contact" href="" target="_self">填写联系方式</a>
+      </div>
+    </div>
+    <!-- 补货中\\\ -->
+    	<div class="pop-bg addPrize"style="display: none;">
+            <div class="pop exchange-pop">
+                    <a class="close" href=""  target="_self"></a>
+                    <div class="text">真遗憾！</div>
+                    <div class="info">您兑换的奖品,已被抢兑一空！</div>
+                    <div class="info">工作人员正在加紧补货中</div>
+              <a class="sureBtn" href="" target="_self">我知道了</a>
+            </div>
+        </div>
+    <!-- 钻石不足 -->
+    	<div class="pop-bg nodiamonds"style="display: none;">
+            <div class="pop exchange-pop">
+                    <a class="close" href=""  target="_self"></a>
+                    <div class="text">真遗憾！</div>
+                    <div class="info">钻石不足，无法兑换</div>
+              <a class="sureBtn" href="" target="_self">我知道了</a>
+            </div>
+        </div>
+    <!-- 中奖了 -->
+    	<div class="pop-bg congradutions" style="display: none;">
+            <div class="pop prize-pop ">
+                    <a class="close" href=""  target="_self" style="top:60px;right:13px;"></a>
+                    <div class="text congradutions">恭喜你！</div>
+                    <div class="info sinfo gain">摇一摇获得<span></span></div>
+                    <div class="imgs"><img src=""></div>
+                    <div class="info sinfo tips">*已发放到你的账户，请注意使用</div>
+              <a class="again" href="" target="_self">继续摇</a>
+              <a class="noplay" href="/main/myAccount/myCoupon" target="_blank">点击查看</a>
+            </div>
+        </div>
+	<!-- 我的奖品 -->
+  <div class="pop-bg myprize"style="display: none;">
+    <div class="pop myprize-pop">
+      <a class="close" href=""  target="_self"></a>
+      <div class="notip" style="display: none;">暂无数据</div>
+      <div id="MYPRIZE_LIST"></div>
+      <div class="pages pages12"></div>
+      <div class="total-pages">共1页</div>
+    </div>
+  </div>
+	<!-- 钻石明细 -->
+  <div class="pop-bg diamonds"style="display: none;">
+    <div class="pop diamodsdetails-pop">
+      <a class="close" href=""  target="_self"></a>
+      <div class="notip" style="display: none;">暂无数据</div>
+      <div class="diamonds-count">我的钻石余量：0个</div>
+      <div id="DIAMONDS_LIST"></div>
+      <div class="pages pages11"></div>
+      <div class="total-pages">共1页</div>
+    </div>
+  </div>
+	<!-- 钻石兑换明细 -->
+  <div class="pop-bg record-details"style="display: none;">
+    <div class="pop exchange2-pop">
+      <a class="close" href=""  target="_self"></a>
+      <div class="notip" style="display: none;">暂无数据</div>
+      <div id="EXCHANGE_LIST"></div>
+      <div class="pages pages13"></div>
+      <div class="total-pages">共1页</div>
+    </div>
+  </div>
+
+  <!-- 收货地址弹窗 -->
+  <div class="pop-bg address-pop" style="display: none;">
+    <div class="alert" style="display: none;">√ 收货地址预留成功!</div>
+    <div class="pop form-pop ">
+      <a class="close" href=""></a>
+      <form class="form-mode" method="post" action='' id='form'>
+        <div class="form-box">
+          <div class="ipt-mode">
+            <label for='username'>联系人姓名</label>
+            <input type="text" id='username'/>
+            <span style="display: none;">请输入有效的联系人</span>
+          </div>
+          <div class="ipt-mode">
+            <label for="telephone">联系人电话</label>
+            <input type="text" id='telephone' required="required"/>
+            <span style="display: none;">手机号码有误，请重填</span>
+          </div>
+          <div class="ipt-mode">
+            <label for='address'>联系人地址</label>
+            <input type="text" id='address'/>
+            <span style="display: none;">请填写正确有效的地址</span>
+          </div>
+        </div>
+        <div class="checkinfo">兑换话费无需填写联系地址</div>
+        <input class="done" type="button" value="完成" id="send">
+      </form>
+    </div>
+  </div>
+    <div class='con-box'>
+        <h2>单笔投资<span>≥90天产品，每满5万必出10000钻石</span></h2>
+        <div class="tree"></div>
+        <div class="shake-btn"></div>
+        <div class="chance-box">
+        	<p class="remain-chance">我的剩余机会:<span class="counts">XX次</span><span class="login" style="display: none;">请<a href="" style="color: #0042d8;border-bottom: 1px solid #0042d8;">登录</a>后查看</span></p>
+        	<i>单笔投资≥30天产品，每满5000即获得一次摇奖机会</i>
+        	<i>单笔投资≥90天产品，每满5万必出10000钻石</i>
+        	<div class="title" style="display: none;" >本次活动已结束！</div>
+        	<div class="golook"  style="display: none;" >破十亿第二波活动正在进行中，<a href="/online-activity/secWave" style="font-size: 24px;color:#1142cf;text-decoration: underline;">去看看</a></div>
+			<a  href="/main/bankBillList" class="invest" target="_blank">立即投资</a>
+        </div>
+        <div class="my-diamonds">我的钻石:
+          <span class="numbers">0</span>
+          <a class="details">明细</a>
+          <span class="login" style="display: none;">请
+            <a href="" style="color: #0042d8;border-bottom: 1px solid #0042d8;">登录</a>
+          </span>
+        </div>
+        <div class="my-prizes">我抽中的奖品</div>
+        <div class="exchange-wrapper">
+            <div class="exchange-box">
+                <div class="tab-thead">
+                    <div class="tab-card tab active">话费/京东卡</div>
+                    <div class="tab-surprise tab">超值大礼</div>
+                </div>
+                <div class="tab-body">
+                    <div id="TAB_BD_LIST"></div>
+                </div>
+            </div>
+            <a class="exchange-record" href="">兑换记录></a>
+        </div>
+        <div class="rule-mode">
+            <span class="title">活动规则</span>
+            <ul>
+                <li>1、活动时间：2017年1月6日—2017年2月2日</li>
+                <li>2、30天以下投资期限产品不参加本次活动。</li>
+                <li>3、活动期间，每天免费1次机会；单笔投资满5000元（除30 天以下产品），再获1次机会；如单笔满10000元，即获得2次</li>
+                <li class="mr">机会，以此类推。</li>
+                <li>4、摇钱树可以摇到10-200元红包、1%-6%加息券、或者钻石。单笔投资90天及以上产品每满5万，必出10000钻石,</li>
+                <li class="mr">如10万，出20000钻石，以此类推。</li>
+                <li>5、凭钻石可在活动页兑换奖品，奖品包括：</li>
+                <li class="li2"><span></span>iPhone7 Plus 128G</li>
+                <li class="li2"><span></span>Xbox One</li>
+                <li class="li2"><span></span>戴森吸尘器</li>
+                <li class="li2"><span></span>松下空气净化器</li>
+                <li class="li2"><span></span>膳魔师保温杯</li>
+                <li class="li2"><span></span>brita净水器</li>
+                <li class="li2"><span></span>小米移动电源</li>
+                <li class="li2"><span></span>50元话费</li>
+                <li class="li2"><span></span>京东卡100元</li>
+                <li class="li2"><span></span>京东卡1000元</li>
+                <li>6、钻石兑换截至2017年2月9日，请注意兑换，截至2017年2月9日仍未兑换的，将终止兑换</li>
+                <li>7、红包、加息券将即时发放到您的账户；兑换奖品将于活动结束后15个工作日内发放，会提前与您联系，期</li>
+                <li class="mr">间请保持手机畅通。</li>
+                <li>8、活动最终解释权归多融财富所有。</li>
+            </ul>
+        </div>
+    </div>
+    <div class="common-wrapper">
+        <div class="mode">
+            <div class="title">为什么选择多融</div>
+            <div class="content">
+                <div class="iconmode">
+                    <i class="olympiad-gzkg"></i>
+                    <div>
+                        <span>国企控股</span>
+                        <p>大型国企中商沪深控股</p>
+                    </div>
+                </div>
+                <div class="iconmode">
+                    <i class="olympiad-guarantee"></i>
+                    <div>
+                        <span>资金安全保障</span>
+                        <p>历史到期产品100%本息兑付，安全可靠</p>
+                    </div>
+                </div>
+                <div class="iconmode">
+                    <i class="olympiad-pjcd"></i>
+                    <div>
+                        <span>票据100%承兑</span>
+                        <p>所有票据来源于银行与大型国企，100%无条件承兑</p>
+                    </div>
+                </div>
+                <div class="iconmode">
+                    <i class="olympiad-lszc"></i>
+                    <div>
+                        <span>专业律所全程支持</span>
+                        <p>专业律所全程保驾护航</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mode">
+            <div class="title">多融荣誉</div>
+            <ul>
+                <li>
+                    <a href="https://www.duorongcf.com/main/jt/XWXQ?newId=1&t=1" target="_blank">
+                        <img src="/main/images/honor/honor1.png">
+                        <p>多融财富荣膺<br>“2016中国最佳诚信示范金融企业”</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.duorongcf.com/main/jt/XWXQ?newId=3&t=0" target="_blank">
+                        <img src="/main/images/honor/honor2.png">
+                        <p>多融财富加入<br>“上海市信息服务业行业协会”</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.duorongcf.com/main/jt/XWXQ?newId=2&t=0" target="_blank">
+                        <img src="/main/images/honor/honor3.png">
+                        <p>多融财富加入<br>“上海金融信息行业协会”</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.duorongcf.com/main/jt/XWXQ?newId=11&t=1" target="_blank">
+                        <img src="/main/images/honor/honor4.png">
+                        <p>多融财富荣获<br>“中国信用企业认证体系示范单位”证书</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="mode">
+            <div class="title">合作单位</div>
+            <div class="partners">
+                <div class="swiper-button-prev"></div>
+                <div class="imgs swiper-container">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide" style="margin-left: 30px;">
+                            <img src="/main/images/gua-partner/partner1.png">
+                        </li>
+                        <li class="swiper-slide">
+                            <img src="/main/images/gua-partner/partner2.png">
+                        </li>
+                        <li class="swiper-slide">
+                            <img src="/main/images/gua-partner/partner3.png">
+                        </li>
+                        <li class="swiper-slide">
+                            <img src="/main/images/gua-partner/partner4.png">
+                        </li>
+                        <li class="swiper-slide">
+                            <img src="/main/images/gua-partner/partner5.png">
+                        </li>
+                        <li class="swiper-slide">
+                            <img src="/main/images/gua-partner/partner11.png">
+                        </li>
+                    </ul>
+                </div>
+                <!-- <div class="olympiad-right swiper-button-next"></div> -->
+            </div>
+        </div>
+    </div>
+    <div class="code-wrapper">
+        <div class="code">
+            <div class="icon"></div>
+            <div class="phonecode"></div>
+            <div class="appcode">
+                <div class="code-box">
+                    <div class="app-code-icon"><img src="/main/images/activity/newfriend-app.png"></div>
+                    <div class="app-code-word">
+                        <p><i class="olympiad-iphone"></i></p>
+                    </div>
+                </div>
+                <div class="title">App下载</div>
+            </div>
+            <div class="appcode wechatcode">
+                <div class="code-box">
+                    <div class="app-code-icon"><img src="/main/images/activity/newfriend-wechat.png"></div>
+                </div>
+                <div class="title">关注公众号</div>
+            </div>
+            <div class="tel">
+                <div class="number">
+                    <i class="olympiad-phone"></i>
+                    <div>
+                        <span>4006-908-896</span>
+                        <p>服务时间 08:30 - 20:30 （法定节假日除外）</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/html" id="TAB_BD_LIST_WP">
+    <div class="cost-jdcard tab">
+      <%for(var key in data.cashCouponList){%>
+        <div class="list">
+          <p><%= data.cashCouponList[key].giftName%></p>
+          <div class="img"><img src="<%=data.cashCouponList[key].imagePath%>"></div>
+          <div class="nums"><%=data.cashCouponList[key].needGoldCoin%></div>
+          <input type="hidden" value='{"id":"<%=data.cashCouponList[key].id%>","name":"<%= data.cashCouponList[key].giftName%>","nums":"<%= data.cashCouponList[key].needGoldCoin%>","imgs":"<%= data.realPrizeList[key].imagePath%>"}' />
+          <div class="exchange-btn">兑换</div>
+        </div>
+      <%}%>
+    </div>
+
+
+
+    <div class="surprise-box tab" style="display: none;">
+      <%for(var key in data.realPrizeList){%>
+        <div class="list">
+          <p class="fz"><%= data.realPrizeList[key].giftName%></p>
+          <div class="img"><img src="<%=data.realPrizeList[key].imagePath%>"></div>
+          <div class="nums"><%=data.realPrizeList[key].needGoldCoin%></div>
+          <input type="hidden" value='{"id":"<%=data.realPrizeList[key].id%>","name":"<%= data.realPrizeList[key].giftName%>","nums":"<%= data.realPrizeList[key].needGoldCoin%>","imgs":"<%= data.realPrizeList[key].imagePath%>"}' />
+          <div class="exchange-btn">兑换</div>
+        </div>
+      <%}%>
+    </div>
+
+
+
+
+</script>
+
+
+<script type="text/html" id="DIAMONDS_LIST_WP">
+  <div class="list-mode diamonds-mode">
+    <%for(var key in data){%>
+      <div class="piece">
+        <div class="items"><%= data[key].Opt%></div>
+        <div class="numbers"><%= data[key].count%></div>
+        <div class="time"><%= data[key].updateTime%></div>
+      </div>
+    <%}%>
+  </div>
+</script>
+
+<script type="text/html" id="MYPRIZE_LIST_WP">
+  <div class="list-mode diamonds-mode">
+    <%for(var key in data){%>
+    <div class="piece">
+      <div class="items"><%= data[key].Opt%></div>
+      <div class="numbers"><%= data[key].name%></div>
+      <div class="time"><%= data[key].updateTime%></div>
+    </div>
+    <%}%>
+  </div>
+</script>
+
+<script type="text/html" id="EXCHANGE_LIST_WP">
+  <div class="list-mode diamonds-mode">
+    <%for(var key in data){%>
+    <div class="piece">
+      <div class="items"><%= data[key].name%></div>
+      <div class="numbers"><%= data[key].needGoldCoin%></div>
+      <div class="time"><%= data[key].updateTime%></div>
+    </div>
+    <%}%>
+  </div>
+</script>

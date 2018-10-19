@@ -1,0 +1,156 @@
+@import "../../../../common/style/global.scss";
+.swiper-container {
+  .swiper-wrapper {
+    .swiper-slide{
+        background:#161f34;
+        position:relative;
+        color:#fff;
+        .alcenter{
+            text-align:center;
+        }
+        .colorWhite{
+            color:#fff;
+        }
+        .colorYellow{
+            color:#ffe383;
+        }
+        .fongBlod{
+            font-weight:700;
+        }
+        .numTitle{
+            @include font-size(22px);
+            
+            font-weight:700;
+        }
+        .title1Color{
+            color:#ffa800;
+        }
+        .title2Color{
+            color:#ff4200;
+        }
+        .title3Color{
+            color:#00e4cc;
+        }
+        .title4Color{
+            color:#00be6b;
+        }
+        .title5Color{
+            color:#ffb55d;
+        }
+        .title6Color{
+            color:#ffd800;
+        }
+         .title7Color{
+            color:#ffe194;
+        }
+        .jiezhi{
+            @include font-size(12px);
+        }
+        .totalIcon{
+            margin:0 auto;
+        }
+        .totalFont{
+            @include font-size(16px);
+            color:#ea9b08;
+        }
+        .top10{
+            margin:0 auto;
+            .top10Img{
+                @include contain('../images/top10.png');
+                display:inline-block;
+            }
+            .ten{
+                font-weight:700;
+                @include font-size(22px);
+                color:#ffe383;
+            }
+        }
+        .map{
+            @include contain('../images/map.png');
+            position:absolute;
+        }
+        .chart{
+            position:absolute;
+            margin:0 auto;
+        }
+        .person{ 
+            @include font-size(12px);
+            color:#fff;
+            .manImg{
+                @include contain('../images/bigman.png');
+                margin: 0 auto;
+            }
+            .womanImg{
+                @include contain('../images/bigwoman.png');
+                margin:0 auto;
+            }
+            .manFont{
+                @include font-size(16px);
+                color:#63bcff;
+                text-align:center;
+            }
+            .womanFont{
+                @include font-size(16px);
+                color:#ff91b7;
+                text-align:center;
+            }
+            .littlePerson{
+                float: left;
+                text-align:center;
+                .littleWoman{
+                    @include contain('../images/littlewoman.png');
+                    margin:0 auto;
+                }
+                .littleMan{
+                    @include contain('../images/littleman.png');
+                    margin:0 auto;
+                }
+                .womanFontLittle{
+                    @include font-size(12px);
+                    color:#ff91b7;
+                    text-align:center;
+                    .spanColor{
+                        color:#fff;
+                    }
+                }
+                .manFontLittle{
+                    @include font-size(12px);
+                    color:#63bcff;
+                    text-align:center;
+                    .spanColor{
+                        color:#fff;
+                    }
+                }
+            }
+        }
+        .jiekuan{
+            @include font-size(12px);
+            text-align:center;
+            color:#f2d87e;
+        }
+        .maxTen{
+            @include font-size(12px);
+            text-align:center;
+            color:#0069c2;
+        }
+        .bank{
+            @include font-size(12px);
+            text-indent:2em;
+        }
+        .fuliFont{
+            @include font-size(16px);
+            text-align:center;
+        }
+        .fuliImg{
+            margin:0 auto;
+        }
+    }
+    .p1 {
+      .month {
+        position: absolute;
+        top: 35%;
+        left: 50%;
+      }
+    }
+  }
+}

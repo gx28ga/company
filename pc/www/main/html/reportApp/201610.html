@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge;IE=8" />
+    <meta content="always" name="referrer"><meta name="theme-color" content="#2932e1">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <title ng-bind="title">2016年10月运营报告</title>
+    <link rel="stylesheet" type="text/css" href="../../main/css/stylesheets/activity/reset.css">
+    <link rel="stylesheet" type="text/css" href="../../main/css/stylesheets/activity/app.css">
+    <link rel="stylesheet" type="text/css" href="../../main/css/stylesheets/newapp.css">
+    <script type="text/javascript" src="../../main/vendor/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../../main/vendor/angular.min.js"></script>
+</head>
+<body class="wqq-body" ng-app="myapp">
+	<div class="wqq-header">
+	    <img src="../../main/images/activity/oct-reportApp/header.png" alt="">
+	</div>
+	<div class="wqq-tap-box" ng-init="action=0;action1=0" ng-controller="ctrl">
+	    <div class="wqq-tap-list-box">
+			<div class="wqq-tap-list">
+				<div ng-click="action= 0" ng-class="{0:'wqq-tap-item',1:'wqq-tap-item-1',2:'wqq-tap-item-1',3:'wqq-tap-item-1',4:'wqq-tap-item-1'}[action]">业务数据</div>
+				<div ng-click="action= 1" ng-class="{0:'wqq-tap-item-1',1:'wqq-tap-item',2:'wqq-tap-item-1',3:'wqq-tap-item-1',4:'wqq-tap-item-1'}[action]">逾期数据</div>
+				<div ng-click="action= 2" ng-class="{0:'wqq-tap-item-1',1:'wqq-tap-item-1',2:'wqq-tap-item',3:'wqq-tap-item-1',4:'wqq-tap-item-1'}[action]">借款企业</div>
+				<div ng-click="action= 3" ng-class="{0:'wqq-tap-item-1',1:'wqq-tap-item-1',2:'wqq-tap-item-1',3:'wqq-tap-item',4:'wqq-tap-item-1'}[action]" style="margin-right:0">出借用户</div>
+			</div>
+		</div>
+		<div ng-if="action==0" class="wqq-tap-list-img">
+			<img src="../../main/images/activity/oct-reportApp/tap1.PNG" alt="">
+		</div>
+		<div ng-if="action==1" class="wqq-tap-list-img">
+			<img src="../../main/images/activity/oct-reportApp/tap2.PNG" alt="">
+		</div>
+		<div ng-if="action==2" class="wqq-tap-list-img">
+			<img src="../../main/images/activity/oct-reportApp/tap3.PNG" alt="">
+		</div>
+		<div ng-if="action==3" class="wqq-tap-list-img">
+			<img src="../../main/images/activity/oct-reportApp/tap4.PNG" alt="">
+		</div>
+	</div>
+
+    <div class="wqq-footer"><img src="../../main/images/activity/oct-reportApp/footer.PNG" alt=""></div>
+</body>
+<script>
+angular.module("myapp",[])
+　　.controller('ctrl',['$scope',function($scope){
+	　　$scope.flag = false;
+	　　$scope.animate = function(){
+	　　    $scope.flag = !$scope.flag;
+　　    }　
+}])
+</script>
+</html>

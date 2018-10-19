@@ -1,0 +1,80 @@
+<div>
+	<!-- 欢迎栏 -->
+	<div ng-controller="mainCtrl">
+		<!-- 新版欢迎栏 -->
+	<div id="Topbar" ng-hide="isLoginPage">
+		<div class="middle">
+			<div class="sideright">
+				<a ng-if="!(a | isRegister).register" ui-sref="zhuce">新人注册</a>
+				<a ng-if="!(a | isRegister).register" ui-sref="dl">用户登录</a>
+				<a ng-if="(a | isRegister).register" ng-click="gotoLoginPage('myAccount')">{{(a | isRegister).user.userName}}</a>
+				<a ng-show="(a | isRegister).register" ng-click="userOut()" href="#" class="top-quit">退出</a>
+				<div class="follow">
+					<div class="follow-mod">
+						<a href="{{a|webIE8}}other/downloadApp.html">手机APP</a>
+						<div class="con">
+							<div class="common-appcode"></div>
+							<p>APP下载</p>
+						</div>
+					</div>
+				</div>
+				<a href="{{a|webIE8}}help/XSZY.html" target="_blank">新手指引</a>
+				<a href="{{a|webIE8}}help/CJWT.html" target="_blank">帮助中心</a>
+			</div>
+			<div class="sideleft">
+				<span>客服热线：<em>4006-908-896</em></span>
+				<span class="line">|</span>
+				<div class="follow">
+					<div class="follow-mod">
+						<i class="topsina"></i>
+						<div class="con">
+							<div class="common-dr-sina"></div>
+							<p>多融财富</p>
+							<a target="_blank" href="http://weibo.com/u/5866519482">加关注</a>
+						</div>
+					</div>
+					<div class="follow-mod">
+						<i class="topwechat"></i>
+						<div class="con">
+							<div class="code-bg"><img src="/images/wechat-code.png"></div>
+							<div class="tip">扫一扫<br>关注微信号</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 欢迎栏结束 -->
+
+<!-- 导航 -->
+	<div class="header-wrapper">
+		<div class='transition'>
+			<div class="header-wrap">
+				<div class="logo-wrap">
+					<img src="../../main/images/logo.png" onclick="location.href=location.origin">
+					<span></span>
+					<a class="logoimg" href="http://www.china-hshc.com/" target="_blank" ng-if="activeNav == 'home' && !selMenu "></a>
+					<a class="logoimg shouye" ng-if="activeNav != 'home'"></a>
+				</div>
+				<div class="nav-box">
+					<div>
+						<ul>
+							<li><a ng-class="{true: 'active'}[activeNav == 'home' && !selMenu ]" href="#" onclick="location.href=location.origin">首页</a></li>
+							<li><a ng-class="{true: 'active'}[activeNav == 'bill2' && !selMenu ]" ui-sref="main.bankBillList2">定期理财</a></li>
+							<li><a ng-class="{true: 'active'}[activeNav == 'bill' && !selMenu ]" ui-sref="main.bankBillList">票据理财</a></li>
+							<li><a href="{{a|webIE8}}help/XSZY.html">新手指引</a></li>
+							<li><a ng-class="{true: 'active'}[selMenu == 'guarantee']" ui-sref="main.jt.guarantee({menuName:guarantee})">安全保障</a></li>
+							<li><a ng-class="{true: 'active'}[selMenu == 'DRGK']" ui-sref="main.jt.DRGK({menuName:DRGK})">关于我们</a></li>
+							<li class="account"><a ui-sref="dl" ng-if="!(a | isRegister).register">我的账户</a><a ui-sref="main.myAccount.accountHome" ng-class="{true: 'active'}[activeNav == 'account']" ng-if="(a | isRegister).register"><i class="drop"></i>我的账户</a><div class="con" ng-show="(a | isRegister).register"><div><a ui-sref="main.myAccount.myAssets">我的资产</a><a ui-sref="main.myAccount.myInvest">我的投资</a><a ui-sref="main.myAccount.myCoupon">我的优惠券</a><a ui-sref="main.myAccount.myMsg">我的消息</a><a ui-sref="main.pointMall">积分商城</a><a ui-sref="main.myAccount.myTask">我的任务</a></div></div></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 中间容器 -->
+	<div ui-view="" ng-cloak class='ng-scope ng-cloak' style="height:800px;background: #fff"></div>
+	<!-- 中间容器结束 -->
+
+</div>

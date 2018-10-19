@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta name="theme-color" content="#2932e1">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="format-detection" content="telephone=no, email=no" />
+  <link rel="stylesheet" type="text/css" href="./css/stylesheets/jiaXi.css">
+  <script type="text/javascript" src="../../../vendor/jquery-1.11.1.min.js"></script>
+</head>
+
+<body>
+  <!-- banner -->
+  <div class="banner img-size" data-height='652' >
+  </div>
+  <!-- 内容部分 -->
+  <div class="content img-size">
+      <p class="rule">1、活动时间：2017.3.23~2017.3.31 <br>2、活动期间，累计购买≥30天的产品，满足条件即送加息券 <br>(<span>以可获得的最高奖品为准，不同时获得</span>) </p>
+      <div class="image img-size" data-height='500' data-paddingTop="40">
+          <div class="jiaxi1 img-size" data-width="510" data-height='204' data-marginBottom='40'></div>
+          <div class="jiaxi2 img-size" data-width="505" data-height='204'></div>
+      </div>
+      <p class="rule">
+        3、优惠券将在活动结束后5个工作日内发放到您的多融账户<br>（<span>非即时发放</span>）<br>
+        4、活动最终解释权归多融财富所有
+      </p>
+  </div>
+  <script>
+    function setImgSize() {
+      var originWidth = 375,
+        ratio = $(window).width() / originWidth;
+      $('.img-size').each(function () {
+        console.log("执行了")
+        var self = $(this);
+        $.each(['height', 'width', 'left', 'right', 'bottom', 'top', 'paddingTop', 'lineHeight', 'paddingLeft', 'paddingRight', 'paddingBottom', 'marginTop', 'marginLeft', 'marginRight', 'marginBottom'], function (i, str) {
+          var num = self.attr('data-' + str);
+          if (num) {
+            num = num * ratio / 2 + 'px';
+            self.css(str, num)
+          }
+        })
+      });
+    }
+    setImgSize();
+  </script>
+</body>
+
+</html>

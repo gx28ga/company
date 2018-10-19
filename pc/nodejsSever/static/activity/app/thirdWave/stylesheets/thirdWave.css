@@ -1,0 +1,1088 @@
+/* line 1, ../../../common/style/global.scss */
+body, div, p, h1, h2, h3, h4, h5, h6, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, table, th, td {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 2, ../../../common/style/global.scss */
+address, cite, em, i {
+  font-style: normal;
+}
+
+/* line 3, ../../../common/style/global.scss */
+html, body, root {
+  height: 100%;
+  overflow: hidden;
+}
+
+/* line 4, ../../../common/style/global.scss */
+body {
+  margin: 0 auto;
+  color: #fff;
+  -webkit-appearance: none;
+  background: #fff;
+  overflow-y: scroll;
+  font-family: 'PingFang SC','STHeiti','Microsoft YaHei',Helvetica,Arial,sans-serif;
+  color: #878C92;
+}
+
+/* line 5, ../../../common/style/global.scss */
+li {
+  list-style: none;
+}
+
+/* line 6, ../../../common/style/global.scss */
+html, body {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+/* line 7, ../../../common/style/global.scss */
+a {
+  color: #535862;
+  text-decoration: none;
+}
+
+/* line 8, ../../../common/style/global.scss */
+a:hover {
+  color: #c40000;
+  text-decoration: underline;
+}
+
+/* line 9, ../../../common/style/global.scss */
+legend {
+  color: #000;
+}
+
+/* line 10, ../../../common/style/global.scss */
+fieldset, img {
+  border: 0;
+}
+
+/* line 11, ../../../common/style/global.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 12, ../../../common/style/global.scss */
+input[type="button"], input[type="submit"], input[type="reset"] {
+  cursor: pointer;
+}
+
+/* line 13, ../../../common/style/global.scss */
+.clearfix:after, .wrapper:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+/* line 14, ../../../common/style/global.scss */
+.clearfix {
+  display: inline-block;
+}
+
+/* start commented backslash hack \*/
+/* line 16, ../../../common/style/global.scss */
+* html .clearfix {
+  height: 1%;
+}
+
+/* line 17, ../../../common/style/global.scss */
+.clearfix {
+  display: block;
+}
+
+/* close commented backslash hack */
+/* line 19, ../../../common/style/global.scss */
+.middle * {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* line 20, ../../../common/style/global.scss */
+::-webkit-input-placeholder {
+  font-size: .75rem;
+}
+
+/* height */
+/* public */
+/* link color */
+/* line 195, ../../../common/style/global.scss */
+.red {
+  color: #f42b13;
+}
+
+/* line 196, ../../../common/style/global.scss */
+.green {
+  color: #16c154;
+}
+
+/* line 197, ../../../common/style/global.scss */
+.black {
+  color: black;
+}
+
+/* line 198, ../../../common/style/global.scss */
+.gray {
+  color: #666;
+}
+
+/* line 199, ../../../common/style/global.scss */
+.blue {
+  color: #2899f2;
+}
+
+/* line 200, ../../../common/style/global.scss */
+.orange {
+  color: #cb420c;
+}
+
+/* public */
+/* line 203, ../../../common/style/global.scss */
+.flex {
+  flex-shrink: 0;
+  -webkit-flex-shrink: 0;
+}
+
+/* line 204, ../../../common/style/global.scss */
+input {
+  outline: none;
+}
+
+/* layout */
+/* line 207, ../../../common/style/global.scss */
+.hide {
+  display: none;
+}
+
+/* line 208, ../../../common/style/global.scss */
+.container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  transform: translateY(300px);
+  -webkit-transform: translateY(300px);
+  transition-duration: 1s;
+  -webkit-transition-duration: 1s;
+  opacity: 0;
+  overflow: hidden;
+}
+
+/* line 209, ../../../common/style/global.scss */
+.container.cur {
+  transform: translateY(0px);
+  -webkit-transform: translateY(0px);
+  opacity: 1;
+}
+
+/* line 210, ../../../common/style/global.scss */
+.effect {
+  float: left;
+  transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  perspective: 600px;
+  -webkit-perspective: 600px;
+  background: #EFEFF4;
+}
+
+/* line 211, ../../../common/style/global.scss */
+.effect .option {
+  float: left;
+  min-height: 6.25rem;
+  transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  overflow: hidden;
+  background: #fff;
+}
+
+/* line 3, ../sass/thirdWave.scss */
+.thirWave-wrapper {
+  font-size: 0.9375rem;
+  color: #ffff99;
+  background: #f10c49;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 3, ../sass/thirdWave.scss */
+  .thirWave-wrapper {
+    font-size: 0.80357rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 3, ../sass/thirdWave.scss */
+  .thirWave-wrapper {
+    font-size: 0.80357rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 3, ../sass/thirdWave.scss */
+  .thirWave-wrapper {
+    font-size: 1.03594rem;
+  }
+}
+/* line 4, ../sass/thirdWave.scss */
+.thirWave-wrapper .banner {
+  position: relative;
+  width: 100%;
+  background: url("../images/banner.jpg") no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+/* line 5, ../sass/thirdWave.scss */
+.thirWave-wrapper .banner2 {
+  position: relative;
+  width: 100%;
+  background: url("../images/bannerr.jpg") no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+/* line 6, ../sass/thirdWave.scss */
+.thirWave-wrapper .banner2 p {
+  text-align: center;
+}
+/* line 8, ../sass/thirdWave.scss */
+.thirWave-wrapper ul li {
+  position: relative;
+  font-size: 0.9375rem;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 8, ../sass/thirdWave.scss */
+  .thirWave-wrapper ul li {
+    font-size: 0.80357rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 8, ../sass/thirdWave.scss */
+  .thirWave-wrapper ul li {
+    font-size: 0.80357rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 8, ../sass/thirdWave.scss */
+  .thirWave-wrapper ul li {
+    font-size: 1.03594rem;
+  }
+}
+/* line 8, ../sass/thirdWave.scss */
+.thirWave-wrapper ul li i {
+  position: absolute;
+}
+/* line 8, ../sass/thirdWave.scss */
+.thirWave-wrapper ul li i#small {
+  font-size: 0.5625rem;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 8, ../sass/thirdWave.scss */
+  .thirWave-wrapper ul li i#small {
+    font-size: 0.48214rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 8, ../sass/thirdWave.scss */
+  .thirWave-wrapper ul li i#small {
+    font-size: 0.48214rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 8, ../sass/thirdWave.scss */
+  .thirWave-wrapper ul li i#small {
+    font-size: 0.62156rem;
+  }
+}
+/* line 8, ../sass/thirdWave.scss */
+.thirWave-wrapper ul li span {
+  color: #fce3e3;
+  font-size: 0.8125rem;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 8, ../sass/thirdWave.scss */
+  .thirWave-wrapper ul li span {
+    font-size: 0.69643rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 8, ../sass/thirdWave.scss */
+  .thirWave-wrapper ul li span {
+    font-size: 0.69643rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 8, ../sass/thirdWave.scss */
+  .thirWave-wrapper ul li span {
+    font-size: 0.89781rem;
+  }
+}
+/* line 8, ../sass/thirdWave.scss */
+.thirWave-wrapper ul.notice {
+  font-size: 0.75rem;
+  color: #fce3e3;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 8, ../sass/thirdWave.scss */
+  .thirWave-wrapper ul.notice {
+    font-size: 0.64286rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 8, ../sass/thirdWave.scss */
+  .thirWave-wrapper ul.notice {
+    font-size: 0.64286rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 8, ../sass/thirdWave.scss */
+  .thirWave-wrapper ul.notice {
+    font-size: 0.82875rem;
+  }
+}
+/* line 9, ../sass/thirdWave.scss */
+.thirWave-wrapper .tzbtn {
+  text-align: center;
+  color: #fe5100;
+  font-size: 1.125rem;
+  margin: 0 auto;
+  background: #ffa403;
+  background: -webkit-gradient(linear, 0 100%, 0 0, from(#ffa403), to(#ffe06b));
+  border-radius: 1.875rem;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 9, ../sass/thirdWave.scss */
+  .thirWave-wrapper .tzbtn {
+    font-size: 0.96429rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 9, ../sass/thirdWave.scss */
+  .thirWave-wrapper .tzbtn {
+    font-size: 0.96429rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 9, ../sass/thirdWave.scss */
+  .thirWave-wrapper .tzbtn {
+    font-size: 1.24313rem;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 9, ../sass/thirdWave.scss */
+  .thirWave-wrapper .tzbtn {
+    border-radius: 1.60714rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 9, ../sass/thirdWave.scss */
+  .thirWave-wrapper .tzbtn {
+    border-radius: 1.60714rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 9, ../sass/thirdWave.scss */
+  .thirWave-wrapper .tzbtn {
+    border-radius: 2.07188rem;
+  }
+}
+/* line 10, ../sass/thirdWave.scss */
+.thirWave-wrapper .loginbtn {
+  text-align: center;
+  color: #fe5100;
+  font-size: 0.75rem;
+  background: #ffcd3f;
+  border-radius: 1.875rem;
+  float: right;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 10, ../sass/thirdWave.scss */
+  .thirWave-wrapper .loginbtn {
+    font-size: 0.64286rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 10, ../sass/thirdWave.scss */
+  .thirWave-wrapper .loginbtn {
+    font-size: 0.64286rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 10, ../sass/thirdWave.scss */
+  .thirWave-wrapper .loginbtn {
+    font-size: 0.82875rem;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 10, ../sass/thirdWave.scss */
+  .thirWave-wrapper .loginbtn {
+    border-radius: 1.60714rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 10, ../sass/thirdWave.scss */
+  .thirWave-wrapper .loginbtn {
+    border-radius: 1.60714rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 10, ../sass/thirdWave.scss */
+  .thirWave-wrapper .loginbtn {
+    border-radius: 2.07188rem;
+  }
+}
+/* line 11, ../sass/thirdWave.scss */
+.thirWave-wrapper .activity {
+  background: #f10c49;
+  position: relative;
+}
+/* line 12, ../sass/thirdWave.scss */
+.thirWave-wrapper .activity .zjbtn {
+  background: #f10c49;
+  border-radius: 0.5rem;
+  float: right;
+  box-shadow: inset 0px 0 10px #b40a35;
+  color: #fce2e2;
+  font-size: 0.5rem;
+  text-align: center;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 12, ../sass/thirdWave.scss */
+  .thirWave-wrapper .activity .zjbtn {
+    border-radius: 0.42857rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 12, ../sass/thirdWave.scss */
+  .thirWave-wrapper .activity .zjbtn {
+    border-radius: 0.42857rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 12, ../sass/thirdWave.scss */
+  .thirWave-wrapper .activity .zjbtn {
+    border-radius: 0.5525rem;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 12, ../sass/thirdWave.scss */
+  .thirWave-wrapper .activity .zjbtn {
+    font-size: 0.42857rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 12, ../sass/thirdWave.scss */
+  .thirWave-wrapper .activity .zjbtn {
+    font-size: 0.42857rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 12, ../sass/thirdWave.scss */
+  .thirWave-wrapper .activity .zjbtn {
+    font-size: 0.5525rem;
+  }
+}
+/* line 13, ../sass/thirdWave.scss */
+.thirWave-wrapper .activity .icon {
+  background: url("../images/icon.png") no-repeat;
+  background-size: contain;
+  background-position: center center;
+  position: absolute;
+}
+/* line 14, ../sass/thirdWave.scss */
+.thirWave-wrapper .activity .wicon {
+  background: url("../images/wicon.png") no-repeat;
+  background-size: contain;
+  background-position: center center;
+  position: absolute;
+}
+/* line 16, ../sass/thirdWave.scss */
+.thirWave-wrapper .ge {
+  background: url("../images/ge.png") no-repeat;
+  background-size: contain;
+  background-position: center center;
+  margin: 0 auto;
+}
+/* line 17, ../sass/thirdWave.scss */
+.thirWave-wrapper .contain {
+  border-radius: 0.375rem;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 17, ../sass/thirdWave.scss */
+  .thirWave-wrapper .contain {
+    border-radius: 0.32143rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 17, ../sass/thirdWave.scss */
+  .thirWave-wrapper .contain {
+    border-radius: 0.32143rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 17, ../sass/thirdWave.scss */
+  .thirWave-wrapper .contain {
+    border-radius: 0.41438rem;
+  }
+}
+/* line 18, ../sass/thirdWave.scss */
+.thirWave-wrapper .contain .title {
+  background: url("../images/title.png") no-repeat;
+  background-size: contain;
+  background-position: center center;
+  margin: 0 auto;
+}
+/* line 19, ../sass/thirdWave.scss */
+.thirWave-wrapper .contain p {
+  font-size: 0.9375rem;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 19, ../sass/thirdWave.scss */
+  .thirWave-wrapper .contain p {
+    font-size: 0.80357rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 19, ../sass/thirdWave.scss */
+  .thirWave-wrapper .contain p {
+    font-size: 0.80357rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 19, ../sass/thirdWave.scss */
+  .thirWave-wrapper .contain p {
+    font-size: 1.03594rem;
+  }
+}
+/* line 20, ../sass/thirdWave.scss */
+.thirWave-wrapper .contain .kuang {
+  background: url("../images/kuang.png") no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+/* line 21, ../sass/thirdWave.scss */
+.thirWave-wrapper .contain .kuang table {
+  font-size: 0.75rem;
+  width: 100%;
+  text-align: center;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 21, ../sass/thirdWave.scss */
+  .thirWave-wrapper .contain .kuang table {
+    font-size: 0.64286rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 21, ../sass/thirdWave.scss */
+  .thirWave-wrapper .contain .kuang table {
+    font-size: 0.64286rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 21, ../sass/thirdWave.scss */
+  .thirWave-wrapper .contain .kuang table {
+    font-size: 0.82875rem;
+  }
+}
+/* line 21, ../sass/thirdWave.scss */
+.thirWave-wrapper .contain .kuang table tr:nth-child(1) {
+  font-weight: bold;
+  font-size: 0.8125rem;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 21, ../sass/thirdWave.scss */
+  .thirWave-wrapper .contain .kuang table tr:nth-child(1) {
+    font-size: 0.69643rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 21, ../sass/thirdWave.scss */
+  .thirWave-wrapper .contain .kuang table tr:nth-child(1) {
+    font-size: 0.69643rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 21, ../sass/thirdWave.scss */
+  .thirWave-wrapper .contain .kuang table tr:nth-child(1) {
+    font-size: 0.89781rem;
+  }
+}
+/* line 22, ../sass/thirdWave.scss */
+.thirWave-wrapper .contain .kuang p {
+  text-align: center;
+  font-size: 0.9375rem;
+  border-top: 1px dashed #ef0c47;
+  color: #fce3e3;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 22, ../sass/thirdWave.scss */
+  .thirWave-wrapper .contain .kuang p {
+    font-size: 0.80357rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 22, ../sass/thirdWave.scss */
+  .thirWave-wrapper .contain .kuang p {
+    font-size: 0.80357rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 22, ../sass/thirdWave.scss */
+  .thirWave-wrapper .contain .kuang p {
+    font-size: 1.03594rem;
+  }
+}
+/* line 22, ../sass/thirdWave.scss */
+.thirWave-wrapper .contain .kuang p.gs {
+  border-top: none;
+  color: #ffff99;
+  font-size: 0.8125rem;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 22, ../sass/thirdWave.scss */
+  .thirWave-wrapper .contain .kuang p.gs {
+    font-size: 0.69643rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 22, ../sass/thirdWave.scss */
+  .thirWave-wrapper .contain .kuang p.gs {
+    font-size: 0.69643rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 22, ../sass/thirdWave.scss */
+  .thirWave-wrapper .contain .kuang p.gs {
+    font-size: 0.89781rem;
+  }
+}
+
+/* line 26, ../sass/thirdWave.scss */
+.mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 888;
+  -webkit-perspective: 600px;
+}
+/* line 27, ../sass/thirdWave.scss */
+.mask .rule {
+  z-index: 999;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  background: url("../images/tanbg.png") no-repeat;
+  background-size: 100% auto;
+  background-position: center center;
+  transition: all 0.5s ease-in-out;
+  transform: rotateY(360deg);
+  opacity: 1;
+}
+/* line 27, ../sass/thirdWave.scss */
+.mask .rule ul {
+  overflow-y: scroll;
+  color: #333 !important;
+  font-size: 0.75rem;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 27, ../sass/thirdWave.scss */
+  .mask .rule ul {
+    font-size: 0.64286rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 27, ../sass/thirdWave.scss */
+  .mask .rule ul {
+    font-size: 0.64286rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 27, ../sass/thirdWave.scss */
+  .mask .rule ul {
+    font-size: 0.82875rem;
+  }
+}
+/* line 27, ../sass/thirdWave.scss */
+.mask .rule ul span {
+  font-weight: bold;
+  color: #333 !important;
+}
+/* line 28, ../sass/thirdWave.scss */
+.mask .close {
+  background: url("../images/close.png") no-repeat;
+  background-size: contain;
+  background-position: center top;
+  float: right;
+  color: #fff;
+  font-size: 1.5625rem;
+  text-align: center;
+  border-radius: 2.5rem;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 28, ../sass/thirdWave.scss */
+  .mask .close {
+    font-size: 1.33929rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 28, ../sass/thirdWave.scss */
+  .mask .close {
+    font-size: 1.33929rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 28, ../sass/thirdWave.scss */
+  .mask .close {
+    font-size: 1.72656rem;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 28, ../sass/thirdWave.scss */
+  .mask .close {
+    border-radius: 2.14286rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 28, ../sass/thirdWave.scss */
+  .mask .close {
+    border-radius: 2.14286rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 28, ../sass/thirdWave.scss */
+  .mask .close {
+    border-radius: 2.7625rem;
+  }
+}
+/* line 29, ../sass/thirdWave.scss */
+.mask .titlebg {
+  background: url("../images/titlebg.png") no-repeat;
+  background-size: contain;
+  background-position: center top;
+  margin: 0 auto;
+  color: #ffe2a4;
+  font-size: 1.125rem;
+  text-align: center;
+  color: #e20a2e;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 29, ../sass/thirdWave.scss */
+  .mask .titlebg {
+    font-size: 0.96429rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 29, ../sass/thirdWave.scss */
+  .mask .titlebg {
+    font-size: 0.96429rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 29, ../sass/thirdWave.scss */
+  .mask .titlebg {
+    font-size: 1.24313rem;
+  }
+}
+/* line 30, ../sass/thirdWave.scss */
+.mask .titlebgg {
+  margin: 0 auto;
+  color: #ffe2a4;
+  font-size: 1.125rem;
+  text-align: center;
+  color: #e20a2e;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 30, ../sass/thirdWave.scss */
+  .mask .titlebgg {
+    font-size: 0.96429rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 30, ../sass/thirdWave.scss */
+  .mask .titlebgg {
+    font-size: 0.96429rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 30, ../sass/thirdWave.scss */
+  .mask .titlebgg {
+    font-size: 1.24313rem;
+  }
+}
+/* line 31, ../sass/thirdWave.scss */
+.mask .notice {
+  z-index: 999;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  border-radius: 1.25rem;
+  background: url("../images/tanbgg.png") no-repeat;
+  background-size: contain;
+  background-size: cover;
+  transition: all 0.5s ease-in-out;
+  transform: rotateY(360deg);
+  opacity: 1;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 31, ../sass/thirdWave.scss */
+  .mask .notice {
+    border-radius: 1.07143rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 31, ../sass/thirdWave.scss */
+  .mask .notice {
+    border-radius: 1.07143rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 31, ../sass/thirdWave.scss */
+  .mask .notice {
+    border-radius: 1.38125rem;
+  }
+}
+/* line 32, ../sass/thirdWave.scss */
+.mask .notice p {
+  font-size: 1.125rem;
+  color: #e20c2e;
+  text-align: center;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 32, ../sass/thirdWave.scss */
+  .mask .notice p {
+    font-size: 0.96429rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 32, ../sass/thirdWave.scss */
+  .mask .notice p {
+    font-size: 0.96429rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 32, ../sass/thirdWave.scss */
+  .mask .notice p {
+    font-size: 1.24313rem;
+  }
+}
+/* line 32, ../sass/thirdWave.scss */
+.mask .notice p.noticetitle {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 32, ../sass/thirdWave.scss */
+  .mask .notice p.noticetitle {
+    font-size: 1.28571rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 32, ../sass/thirdWave.scss */
+  .mask .notice p.noticetitle {
+    font-size: 1.28571rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 32, ../sass/thirdWave.scss */
+  .mask .notice p.noticetitle {
+    font-size: 1.6575rem;
+  }
+}
+/* line 34, ../sass/thirdWave.scss */
+.mask .tanbtn {
+  background: #fd8325;
+  margin: 0 auto;
+  color: #fff;
+  font-size: 1.125rem;
+  border-radius: 1.875rem;
+  text-align: center;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 34, ../sass/thirdWave.scss */
+  .mask .tanbtn {
+    font-size: 0.96429rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 34, ../sass/thirdWave.scss */
+  .mask .tanbtn {
+    font-size: 0.96429rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 34, ../sass/thirdWave.scss */
+  .mask .tanbtn {
+    font-size: 1.24313rem;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 34, ../sass/thirdWave.scss */
+  .mask .tanbtn {
+    border-radius: 1.60714rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 34, ../sass/thirdWave.scss */
+  .mask .tanbtn {
+    border-radius: 1.60714rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 34, ../sass/thirdWave.scss */
+  .mask .tanbtn {
+    border-radius: 2.07188rem;
+  }
+}
+/* line 35, ../sass/thirdWave.scss */
+.mask .info div {
+  float: left;
+}
+/* line 35, ../sass/thirdWave.scss */
+.mask .info div:nth-child(2) {
+  width: 3px;
+  height: 3px;
+  background: #e20c2e;
+}
+/* line 35, ../sass/thirdWave.scss */
+.mask .info div:nth-child(3) {
+  background: #e20c2e;
+  height: 1px;
+}
+/* line 36, ../sass/thirdWave.scss */
+.mask .tablebox {
+  position: relative;
+}
+/* line 37, ../sass/thirdWave.scss */
+.mask .table {
+  position: absolute;
+  font-size: 0.5625rem;
+  text-align: center;
+  color: #333;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 37, ../sass/thirdWave.scss */
+  .mask .table {
+    font-size: 0.48214rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 37, ../sass/thirdWave.scss */
+  .mask .table {
+    font-size: 0.48214rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 37, ../sass/thirdWave.scss */
+  .mask .table {
+    font-size: 0.62156rem;
+  }
+}
+/* line 37, ../sass/thirdWave.scss */
+.mask .table tr:nth-child(1) {
+  font-size: 0.5625rem;
+  font-weight: bold;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 37, ../sass/thirdWave.scss */
+  .mask .table tr:nth-child(1) {
+    font-size: 0.48214rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 37, ../sass/thirdWave.scss */
+  .mask .table tr:nth-child(1) {
+    font-size: 0.48214rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 37, ../sass/thirdWave.scss */
+  .mask .table tr:nth-child(1) {
+    font-size: 0.62156rem;
+  }
+}
+/* line 39, ../sass/thirdWave.scss */
+.mask .page-wrap {
+  text-align: center;
+  margin: 0 auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+/* line 40, ../sass/thirdWave.scss */
+.mask .page-wrap a {
+  display: block;
+  float: left;
+  color: #ffb26b;
+  font-size: 0.5625rem;
+  text-align: center;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 40, ../sass/thirdWave.scss */
+  .mask .page-wrap a {
+    font-size: 0.48214rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 40, ../sass/thirdWave.scss */
+  .mask .page-wrap a {
+    font-size: 0.48214rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 40, ../sass/thirdWave.scss */
+  .mask .page-wrap a {
+    font-size: 0.62156rem;
+  }
+}
+/* line 41, ../sass/thirdWave.scss */
+.mask .page-wrap .page-box {
+  display: block;
+  float: left;
+  border: 1px solid #ffb26b;
+}
+/* line 42, ../sass/thirdWave.scss */
+.mask .page-wrap .page-box ul {
+  display: block;
+  float: left;
+}
+/* line 42, ../sass/thirdWave.scss */
+.mask .page-wrap .page-box ul li a {
+  background: #f9f9f9;
+  background: #ffb26b;
+  color: #fff;
+}
+/* line 44, ../sass/thirdWave.scss */
+.mask .page-wrap span {
+  font-size: 0.5625rem;
+  display: block;
+  float: left;
+  color: #ffb26b;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 44, ../sass/thirdWave.scss */
+  .mask .page-wrap span {
+    font-size: 0.48214rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 44, ../sass/thirdWave.scss */
+  .mask .page-wrap span {
+    font-size: 0.48214rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 44, ../sass/thirdWave.scss */
+  .mask .page-wrap span {
+    font-size: 0.62156rem;
+  }
+}
+/* line 46, ../sass/thirdWave.scss */
+.mask .cur {
+  transform: rotateY(0deg);
+  opacity: 1;
+  z-index: 999;
+}

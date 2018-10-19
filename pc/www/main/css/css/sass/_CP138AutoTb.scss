@@ -1,0 +1,281 @@
+$autotb-sprite-dimensions: true;
+@import "autotb/*.png";
+@include all-autotb-sprites(); 
+.cp138-box{
+	width: 100%;
+	background: #fff;
+	color:#666;
+	h3{
+		font-size:24px;
+		height:70px;
+		line-height:70px;
+		border-bottom:1px solid #e4e4e4;
+		padding-left:22px;
+		margin-bottom:20px;
+	}
+	.list-title{
+		padding-left:66px;
+		height:56px;
+		font-size:14px;
+		overflow:hidden;
+		p{
+			line-height:56px;
+			float:left;	
+		}
+		.state-tab{
+			margin-left:18px;
+			float:left;
+			.no-start{
+				color:#999;
+				line-height:56px;
+			}
+		}
+		.start{
+			p{
+				float:left;
+				padding-right:15px;
+			}
+		}
+			a{
+				float:left;
+				line-height:56px;
+			}
+	}
+		a{
+			float:left;
+		    line-height: 40px;
+		}
+	.list-con{
+		padding-top:22px;
+		overflow:hidden;
+		margin-left:40px;
+		background:#f8f8f8;
+		border:1px dashed #e4e4e4;
+		width:530px;
+		height:238px;
+		.list-con-box{
+			margin-bottom:20px;
+			overflow:hidden;
+			position:relative;
+			span{
+				margin-left:43px;
+				text-align:right;
+				float:left;
+				width:98px;
+				height:40px;
+				line-height:40px;
+
+			}
+			.error-info{
+				position:absolute;
+				right:14px;
+				top:11px;
+			}
+			input{
+				height:40px;
+				margin-left:22px;
+				width:228px;
+				border:1px solid #ccc;
+				padding-left:10px;
+				line-height:40px;
+				outline:none;
+				}
+			.date-range{
+				margin-left:22px;
+				float:left;
+				select{
+					color:#666;
+					line-height:40px;
+					border: 1px solid #ccc;
+					height:40px;
+					line-height:40px;
+					width:96px;
+					padding-left:8px;
+					outline:none;
+					option{
+						color:#666;
+						outline:none;
+					}
+				}
+				i{
+					color:#666;
+				}
+			}
+		}
+		.list-con-sale{
+
+			span{
+				margin-left:43px;
+				text-align:right;
+				width:98px;
+				height:40px;
+				line-height:40px;
+				float:left;
+				margin-right:23px;
+			}
+			.sale-radio{
+				float:left;
+				marign-right:47px;
+				margin-top:12px;
+				input{
+					margin-right:16px;
+					outline:none;
+				}
+			}
+			em{
+				margin-right:47px;
+			}
+		}
+		
+
+	}
+	.list-bottom{
+		padding-top:38px;
+		padding-left:40px;
+		padding-bottom:48px;
+		.list-bottom-password{
+			position:relative;
+			overflow:hidden;
+			width:580px;
+			span{
+				float:left;
+				margin-right:22px;
+				height:40px;
+				line-height:40px;
+				margin-left:58px;
+
+			}
+			.passwd-tip{
+				position:absolute;
+				right:20px;
+				top:12px;
+			}
+			input{
+				float:left;
+				margin-right:20px;
+				width:228px;
+				height:38px;
+				border:1px solid #ccc;
+				outline:none;
+				padding-left:4px;
+			}
+			.reset-passwd{
+				color:#00a7e3;
+				margin-left:20px;
+				text-decoration:none;
+				display:block;
+				margin-top:12px;
+			}
+		}
+		.restart{
+			background:#ff9427;
+			width:150px;
+			height:40px;
+			text-align:center;
+			line-height:40px;
+			font-size:18px;
+			color:#fff;
+			border:none;
+			border-radius:5px;
+			margin-top:30px;
+			margin-left:127px;
+			cursor:pointer;
+		}
+	}
+	.autoTb-info{
+		position:relative;
+		border-top:3px solid #f9f9f9;
+		width:892px;
+		margin:0 17px 22px 17px;
+		padding-left:24px;
+		padding-top:12px;
+		h4{
+			height:72px;
+			line-height:72px;
+			font-size:18px;
+			padding-left:16px;
+			i{
+				color:#999;
+			}
+
+		}
+		ul{
+			padding-left:17px;
+			li{
+				line-height:30px;
+				color:#999;
+				font-size:14px;
+			}
+		}
+		.autotb-bgone{
+			position:absolute;
+			right:0;
+			top:40px;
+		}
+	}
+}
+
+.autotb-dialog-box{
+	width:680px;
+	height:350px;
+	background:#fff;
+
+	p{
+		font-size:16px;
+	}
+
+	.autotb-errortext ,.autotb-img{
+		padding-top:40px;
+	}
+	.line{
+		margin-top:40px;
+		margin-bottom:15px;
+		width:100%;
+		height:15px;
+		background: image-url('cp138/lan.png') no-repeat center top;
+	}	
+	.line1{
+		margin-bottom:15px;
+		width:100%;
+		height:15px;
+		background: image-url('cp138/lan.png') no-repeat center top;
+	}
+	.sub-box{
+		padding-left: 270px;
+		a{
+			float: right;
+    		margin-top: 10px;
+   			margin-right: 179px;
+		}
+		.sub-btn{
+			width: 145px;
+			height: 40px;
+			line-height: 38px;
+			text-align: center;
+			background: #e88a1a;
+			color: #fff;
+			font-weight: bold;
+			font-size: 18px;
+			display: block;
+			border: none;
+			cursor: pointer;
+			&:hover{
+				background: darken(#30a1e8, 10%);
+			}
+			&.bind-card{
+				background: #ff7373;
+				margin-top: -10px;
+			}
+			&.bind-card:hover{
+				background: darken(#ff7373, 5%);
+				text-decoration: none;
+			}
+			&[disabled="disabled"]{
+				border: none;
+				background: grayscale(#00e165);
+				cursor: default;
+				color: #fff !important;
+			}
+		}
+	}
+}

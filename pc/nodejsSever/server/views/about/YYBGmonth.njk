@@ -1,0 +1,39 @@
+{% extends "common/main.njk" %}
+{% block body %}
+<link href="/style/about/report.css" rel="stylesheet" type="text/css" inline/>
+<link href="/style/about/reportMenu.css" rel="stylesheet" type="text/css" inline/>
+<div id='APP' class='about'>
+{% include "./menu.njk"%} 
+    <div class='content'>
+    {# banner #}
+    {% include "./report/banner.njk"%}
+    {# 平台数据总览 #}
+    {% include "./report/platform.njk"%}
+    <div class='infomation'>
+        {# 平台逾期 平台福利#}
+         <div class="data">
+            <!-- 平台逾期数据 -->
+            <div  :class='{"yuqi":!showyear1,"dataInfo":showyear1}'>
+                <div class='dataTitle colorO'>平台逾期数据</div>
+                <div class="datayuqi"></div>
+                <div class="yuqiFont">借款逾期金额 0.00 元 &nbsp; &nbsp; &nbsp; &nbsp; 代偿金额 0.00元
+                    <br> 借款逾期率 0.00% &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 借款坏账率 0. 00% </div>
+            </div>
+            <div class="dataInfo" v-show='showyear1'>
+                <div v-show="showActivity">
+                <div class='dataTitle colorFuli' style="margin-bottom: 35px;">${result.month}月份平台福利</div>
+                <div class="img"><img :src="pic1" style="margin:0 auto; display:block;max-width:500px;"></div>
+                </div>
+            </div>
+        </div>
+        {#大事记#}
+      <div class="data" style='paddiv-bottom: 75px;' v-if='showBigEvent'>
+            <div class="colorbigEvent" v-show="showActivity">平台大事记</div>
+            <img :src="pic2" style="margin:0 auto; display:block;">
+        </div>
+    </div>
+    </div>    
+</div>
+<script src="../js/plug/eahart.js"></script>
+<script src='../js/about/report_month.js'></script>
+{% endblock %}

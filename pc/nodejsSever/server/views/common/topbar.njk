@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=960px">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta name="renderer" content="webkit" />
+    <title>{{ title }}</title>
+    <meta name='keywords' content="{{ keywords }}">
+    <meta name='description' content="{{ description }}">
+    <link rel="stylesheet" type="text/css" href="/style/common/common.css" inline>
+</head>
+<body>
+<div id="Topbar">
+    <div class="middle">
+        <div class="sideright">
+            <span v-if="!isLogin">
+                <a href="javascript:void(0)" @click="reg">新人注册</a>
+                <a href="javascript:void(0)" @click="login">用户登录</a>
+            </span>
+            <span v-if="userInfo && userInfo.realName" v-show="isLogin" style="display:none">
+                <a href="{{http}}/main/myAccount/accountHome">${userInfo.realName}</a>
+                <a href="javascript:void(0)" onclick="T.exit()" class="top-quit">退出</a>
+            </span>
+
+            <div class="follow">
+                <div class="follow-mod">
+                    <a href="{{http}}/other/downloadApp.html">手机APP</a>
+                    <div class="con">
+                        <div class="icon-appcode"></div>
+                        <p>APP下载</p>
+                    </div>
+                </div>
+            </div>
+            <a href="{{http}}/help/XSZY.html">新人指引</a>
+            <a href="{{http}}/help/CJWT.html">帮助中心</a>
+            <a href="{{http}}/guide">网站导航</a>
+        </div>
+        <div class="sideleft">
+            <span>客服热线：<em>{{contactPhone}}</em></span>
+            <span class="line">|</span>
+            <div class="follow">
+                <div class="follow-mod">
+                    <i class="topsina"></i>
+                    <div class="con">
+                        <div class="icon-dr-sina"></div>
+                        <p>多融财富</p>
+                        <a target="_blank" href="http://weibo.com/u/5866519482" rel="nofollow">加关注</a>
+                    </div>
+                </div>
+                <div class="follow-mod">
+                    <i class="topwechat"></i>
+                    <div class="con">
+                        <div class="code-bg"><img src="/images/common/weixin_83x83.png"></div>
+                        <div class="tip">扫一扫<br>关注微信号</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

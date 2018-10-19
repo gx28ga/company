@@ -1,0 +1,86 @@
+{% extends "../common/main.njk" %}
+{% block body %}
+<link href="/style/licai/dq.css" rel="stylesheet" type="text/css" inline/>
+<div id="APP">
+    <article class="container">
+        {% include "./dq/topsort.njk" %}
+
+        {# 全部产品 nodejs 生成 #}
+        <div class="effect allProduct">
+            {# 默认 #}
+            <div class="option cur" style="display:block;">
+                {% for item in listDatas %}
+                {% import "./dq/box.njk" as box %}
+                {{ box.list(item) }}
+                {% endfor %}
+            </div>
+            {# 利率up #}
+            <div class="option">
+                {% for item in rateUp %}
+                {% import "./dq/box.njk" as box %}
+                {{ box.list(item) }}
+                {% endfor %}
+            </div>
+            {# 利率down #}
+            <div class="option">
+                {% for item in rateDown %}
+                {% import "./dq/box.njk" as box %}
+                {{ box.list(item) }}
+                {% endfor %}
+            </div>
+            {# 期限up #}
+            <div class="option">
+                {% for item in termUp %}
+                {% import "./dq/box.njk" as box %}
+                {{ box.list(item) }}
+                {% endfor %}
+            </div>
+            {# 期限down #}
+            <div class="option">
+                {% for item in termDown %}
+                {% import "./dq/box.njk" as box %}
+                {{ box.list(item) }}
+                {% endfor %}
+            </div>
+        </div>
+        {# end 全部产品 #}
+
+        {# 往期产品 ajax生成，分页太多 #}
+        <div class="history-list">
+            <div class="history-title">
+                <div class="border"></div>
+                <h2>往期产品</h2>
+            </div>
+            <div class="screen">
+                <div class="num">共${total}条</div>
+                <div class="sort">
+                    <span>排序：</span>
+                    <ul>
+                        <li class="cur">默认</li>
+                        <li>利率<i></i></li>
+                        <li>期限<i></i></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="effect">
+                <div class="option cur" style="display:block;">
+                    {% import "./dq/hisBox.njk" as hisbox %}
+                    {{ hisbox.name('hislist') }}
+                </div>
+                <div class="option">
+                    {% import "./dq/hisBox.njk" as hisbox %}
+                    {{ hisbox.name('hislist1') }}
+                </div>
+            </div>
+            <div id="Page"></div>
+        </div>
+        {# end 往期产品 #}
+        <div class="clearfix"></div>
+    </article>
+    {# float-window弹窗 #}
+    {% include "home/float_window.njk" %}
+</div>
+{% include "../common/layui.njk" %}
+<script src="/js/common/component.js"></script>
+<script src="/js/licai/dq.js" inline></script>
+{% endblock %}

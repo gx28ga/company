@@ -1,0 +1,16 @@
+{#公司荣誉#}
+<div class='staff-box clearfix'>
+    <div class='content1'>
+        <div class="left-btn"></div>
+        <div class="right-btn"></div>
+         <div class="swiper-img staffimg">
+            <ul>
+                {% for item in staffImg %}
+                    <li>
+                        <div style="width: 349px; height: 242px; display: block;"><img src='{{item.linkPath}}' style='width:100%;height:100%'></div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>

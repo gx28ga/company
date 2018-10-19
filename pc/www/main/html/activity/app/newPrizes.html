@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html ng-app="someApp" id='ng-app' xmlns:ng="http://angularjs.org" lang="zh_CN">
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge;IE=8" />
+    <meta content="always" name="referrer"><meta name="theme-color" content="#2932e1">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <title ng-bind="title">积分奖品升级</title>
+</head>
+<style>
+  body {
+    max-width: 750px;
+    width: 100%;
+    margin: 0 auto;
+    font: 12px/1.5 "Microsoft Yahei",arial,tahoma,"Hiragino Sans GB",\5b8b\4f53;
+    position: relative;
+  }
+  .page{
+    width: 100%;
+    height: 18.07333333333333rem;
+    background: url("../../../main/images/pointMall-NewPrize/app-page.jpg") center no-repeat;
+    background-size: cover;
+    padding-top: 17.5rem;
+    /*position: relative;*/
+  }
+  .page .btn{
+    width: 7.2rem;
+    height: 1.9rem;
+    margin: 0 auto;
+  }
+  .foot-wrapper{
+    width: 100%;
+    background: rgb(8, 7, 27);
+    height: 8rem;
+    position: relative;
+  }
+  .foot-wrapper .qrcd-frame{
+    display: inline-block;
+    position: absolute;
+    margin: 1.2rem 2.5rem;
+    height: 5.6rem;
+    width: 5.6rem;
+    border: .04rem solid rgb(255, 156, 0);
+  }
+  .foot-wrapper .v-cover{
+    position: absolute;
+    height: 100%;
+    width: 4.6rem;
+    margin-left: 3rem;
+    background: rgb(8, 7, 27);
+  }
+  .foot-wrapper .h-cover{
+    position: absolute;
+    width: 5.82rem;
+    height: 4.6rem;
+    margin-left: 2.4rem;
+    margin-top: 1.7rem;
+    background: rgb(8, 7, 27);
+  }
+  .foot-wrapper .qrcd-frame .qrcd-img{
+    position: absolute;
+    margin: .5rem;
+    height: 4.6rem;
+    width: 4.6rem;
+    background: url("../../../main/images/thank-guest/qrcd-app.jpg") center no-repeat;
+    background-size: contain;
+    z-index: 5;
+  }
+  .foot-wrapper .words-container{
+    position: absolute;
+    margin: 1.8rem 0 0 48%;
+    display: inline-block;
+  }
+  .foot-wrapper .words-container .hot-words{
+    color: rgb(255, 156, 0);
+    font-size: .64rem;
+    line-height: .8rem;
+  }
+  .foot-wrapper .words-container .hot-phone{
+    color: rgb(255, 156, 0);
+    font-size: 1rem;
+    font-weight: bolder;
+  }
+  .foot-wrapper .words-container .more-about-app{
+    margin: .15rem 0;
+    border-top: 1px dashed #FFF;
+    padding: .5rem 0;
+    color: #FFF;
+    font-size: .62rem;
+  }
+</style>
+<body>
+<div class="page">
+  <div class="btn" onclick="onBtnClick()"></div>
+</div>
+<div class="foot-wrapper">
+  <div class="qrcd-frame">
+    <div class="qrcd-img"></div>
+  </div>
+  <div class="v-cover"></div>
+  <div class="h-cover"></div>
+  <div class="words-container">
+    <div class="hot-words">客服热线</div>
+    <div class="hot-phone">4006-908-896</div>
+    <div class="more-about-app">下载多融APP了解更多...</div>
+  </div>
+</div>
+<script type="text/javascript">
+    //适配屏幕尺寸调整字体大小
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = Math.min(docEl.clientWidth, 750);
+                if (!clientWidth) return;
+                docEl.style.fontSize = 16 * (clientWidth / 320) + 'px';
+            };
+
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+</script>
+<script type="text/javascript">
+  function onBtnClick() {
+      if(getQueryString("wap") == "true") {
+          window.location.href = 'http://app.duorongcf.com/html/2weima.html';
+      } else {
+          window.location.href = 'jump://page=34?';
+      }
+  }
+  function getQueryString( name ){
+      var reg = new RegExp("(^|&|/?)" + name + "=([^&]*)(&|$)", "i");
+      var r = encodeURI(window.location.search||window.location.href||window.location.hash).substr(1).match(reg);
+      if (r != null) return unescape(r[2]); return null;
+  }
+</script>
+</body>
+</html>

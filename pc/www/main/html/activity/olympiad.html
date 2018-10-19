@@ -1,0 +1,254 @@
+<div class="olympiad-wrapper" ng-controller="olympiadCtrl" ng-init="isJoin=true">
+	<div class="banner">
+	</div>
+	<div class="prize-wrapper">
+		<div class="join-btn"><a ui-sref="main.bankBillList" target="_blank">立即补血</a></div>
+		<div class="prize-wrapper-right">
+			<div class="prize-box">
+				<table class="prize-list">
+					<tr ng-repeat="item in phList" >
+						<td width="25%">第{{$index+1}}名</td>
+						<td width="40%">{{item.mobilePhone}}</td>
+						<td width="35%" style="padding-right: 68px;text-align: right;">{{item.total}}元</td>
+					</tr>
+				</table>
+			</div>
+			<div class="prize-bottom">
+				<p ng-show="login==1">截止{{end|date:'yyyy-MM-dd HH:mm:ss'}}</p>
+				<p ng-show="login==1">您累计投资金额{{memberInvest}}元,（<a ng-click="onClick('获取最新')">点击获取您最新投资金额</a>）</p><br>
+				<p ng-show="login==0">请<a ng-click="onClick('登录')">登录</a>查看您的投资金额</p>
+			</div>
+		</div>
+	</div>
+	<div class="qudao-tan" ng-show="login==1&&!isJoin">
+		<div class="tan">
+			<div class="olympiad-liangjie"></div>
+			<span>亲，由于您是渠道VIP用户，<br>所以不能参加此次活动，敬请谅解！</span>
+			<div class="olympiad-btn" ui-sref="main.home"></div>
+		</div>
+	</div>
+	<div class="rule investBox" style="height: 826px;">
+		<span class="HDGZ titlebg">投资送现金</span>
+		<p>活动期间内投资≥90天的产品，累计投资总额达到指定的区间即可获得对应的现金奖励。</p>
+		<div class="tableBox">
+			<ul>
+				<li class="dl" style="height: 36px;line-height: 36px;">
+					<span class="pl" style="width:44%;padding-left: 20px;">累计投资总额（≥90天产品）</span>
+					<span class="cen" style="width:44%;padding-left: 104px;">现金奖励</span>
+				</li>
+				<li class="bla bg" style="height: 36px;line-height: 36px;">
+					<span class="pl" style="width:44%;margin-right: 30px;">≥100万以上（90天）</span>
+					<i style="height: 36px;margin-left: 583px;"></i>
+					<span style="width:44%;margin-left: 15px;margin-right: -3px;">2500元</span>
+				</li>
+				<li class="bla" style="height: 36px;line-height: 36px;">
+					<span class="pl" style="width:44%;margin-right: 30px;">≥90万以上（90天）</span>
+					<span style="width:44%;margin-left: 15px;margin-right: -3px;">2250元</span>
+				</li>
+				<li class="bla bg" style="height: 36px;line-height: 36px;">
+					<span class="pl" style="width:44%;margin-right: 30px;">≥80万以上（90天）</span>
+					<i style="height: 36px;margin-left: 583px;"></i>
+					<span style="width:44%;margin-left: 15px;margin-right: -3px;">2000元</span>
+				</li>
+				<li class="bla" style="height: 36px;line-height: 36px;">
+					<span class="pl" style="width:44%;margin-right: 30px;" >≥70万以上（90天）</span>
+					<span style="width:44%;margin-left: 15px;margin-right: -3px;">1750元</span>
+				</li>
+				<li class="bla bg" style="height: 36px;line-height: 36px;">
+					<span class="pl" style="width:44%;margin-right: 30px;">≥60万以上（90天）</span>
+					<i style="height: 36px;margin-left: 583px;"></i>
+					<span style="width:44%;margin-left: 15px;margin-right: -3px;">1500元</span>
+				</li>
+				<li class="bla" style="height: 36px;line-height: 36px;">
+					<span class="pl" style="width:44%;margin-right: 30px;">≥50万以上（90天）</span>
+					<span style="width:44%;margin-left: 15px;margin-right: -3px;">1250元</span>
+				</li>
+				<li class="bla bg" style="height: 36px;line-height: 36px;">
+					<span class="pl" style="width:44%;margin-right: 30px;">≥40万以上（90天）</span>
+					<i style="height: 36px;margin-left: 583px;"></i>
+					<span style="width:44%;margin-left: 15px;margin-right: -3px;">1000元</span>
+				</li>
+				<li class="bla" style="height: 36px;line-height: 36px;">
+					<span class="pl" style="width:44%;margin-right: 30px;">≥30万以上（90天）</span>
+					<span style="width:44%;margin-left: 15px;margin-right: -3px;">750元</span>
+				</li>
+				<li class="bla bg" style="height: 36px;line-height: 36px;">
+					<span class="pl" style="width:44%;margin-right: 30px;">≥20万以上（90天）</span>
+					<i style="height: 36px;margin-left: 583px;"></i>
+					<span style="width:44%;margin-left: 15px;margin-right: -3px;">500元</span>
+				</li>
+				<li class="bla" style="height: 36px;line-height: 36px;">
+					<span class="pl" style="width:44%;margin-right: 30px;">≥10万以上（90天）</span>
+					<span style="width:44%;margin-left: 15px;margin-right: -3px;">248元</span>
+				</li>
+				<li class="bla bg" style="height: 36px;line-height: 36px;">
+					<span class="pl" style="width:44%;margin-right: 30px;">≥6万以上（90天）</span>
+					<i style="height: 36px;margin-left: 583px;"></i>
+					<span style="width:44%;margin-left: 15px;margin-right: -3px;">150元</span>
+				</li>
+				<li class="bla" style="height: 36px;line-height: 36px;">
+					<span class="pl" style="width:44%;margin-right: 30px;">≥4万以上（90天）</span>
+					<span style="width:44%;margin-left: 15px;margin-right: -3px;">100元</span>
+				</li>
+				<li class="bla bg radius" style="height: 36px;line-height: 36px;">
+					<span class="pl" style="width:44%;margin-right: 30px;">≥2万以上（90天）</span>
+					<i style="height: 36px;margin-left: 583px;"></i>
+					<span style="width:44%;margin-left: 15px;margin-right: -3px;">50元</span>
+				</li>
+			</ul>
+		</div>
+		<div class="btn"><a ui-sref="main.bankBillList" target="_blank">立即补血</a></div>
+	</div>
+	<div class="rule">
+		<span class="HDGZ titlebg">活动规则</span>
+		<div>
+			<ul>
+				<li><i>></i>活动时间：2016年11月5日-11月12日；</li>
+				<li><i>></i>活动期间内用户投资≥90天产品，累计投资总额排名前5的用户可获得对应奖品。如遇多名用户累计投资总额相同时，则以最后
+一笔投资时间为准，先投者排前；</li>
+				<li><i>></i>冲榜赢壕礼奖励与投资送现金奖励可同时获得；</li>
+				<li><i>></i>投资送现金奖励将于活动结束后3个工作日内直接发放至个人账户，登录后可在“我的账户—我的资产”中查看；</li>
+				<li><i>></i>关于实物奖励：活动结束后两个工作日内公布获奖名单，客服在公布后的5个工作日内联系获奖用户，核对用户信息和奖品信息
+后发放奖品，若5个工作日内未能与用户取得联系，则视为该用户自动放弃本次获奖奖品；</li>
+				<li><i>></i>奖品的邮寄地址仅限中国大陆快递公司可覆盖区域，寄出后客服会告知快递单号；</li>
+				<li><i>></i>如有疑问，欢迎咨询客服热线 <strong>4006-908-896</strong>；</li>
+				<!-- 平台将实时更新累计投资总额前20名用户的排名情况； -->
+				<li><i>•</i>本次活动部分渠道不参加，请谅解，谢谢！</li>
+				<li><i>•</i>本次活动最终解释权归多融财富所有。</li>
+			</ul>
+		</div>
+	</div>
+	<div class="common-wrapper">
+		<div class="mode">
+			<div class="title">为什么选择多融</div>
+			<div class="content">
+				<div class="iconmode">
+					<i class="olympiad-gzkg"></i>
+					<div>
+						<span>国企控股</span>
+						<p>大型国企中商沪深控股</p>
+					</div>
+				</div>
+				<div class="iconmode">
+					<i class="olympiad-guarantee"></i>
+					<div>
+						<span>资金安全保障</span>
+						<p>历史到期产品100%本息兑付，安全可靠</p>
+					</div>
+				</div>
+				<div class="iconmode">
+					<i class="olympiad-pjcd"></i>
+					<div>
+						<span>票据100%承兑</span>
+						<p>所有票据来源于银行与大型国企，100%无条件承兑</p>
+					</div>
+				</div>
+				<div class="iconmode">
+					<i class="olympiad-lszc"></i>
+					<div>
+						<span>专业律所全程支持</span>
+						<p>专业律所全程保驾护航</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="mode">
+			<div class="title">多融荣誉</div>
+			<ul>
+				<li>
+					<a href="https://www.duorongcf.com/jt/XWXQ?newId=1&t=1" target="_blank">
+						<img src="/images/honor/honor1.png">
+						<p>多融财富荣膺<br>“2016中国最佳诚信示范金融企业”</p>
+					</a>
+				</li>
+				<li>
+					<a href="https://www.duorongcf.com/jt/XWXQ?newId=3&t=0" target="_blank">
+						<img src="/images/honor/honor2.png">
+						<p>多融财富加入<br>“上海市信息服务业行业协会”</p>
+					</a>
+				</li>
+				<li>
+					<a href="https://www.duorongcf.com/jt/XWXQ?newId=2&t=0" target="_blank">
+						<img src="/images/honor/honor3.png">
+						<p>多融财富加入<br>“上海金融信息行业协会”</p>
+					</a>
+				</li>
+				<li>
+					<a href="https://www.duorongcf.com/jt/XWXQ?newId=11&t=1" target="_blank">
+						<img src="/images/honor/honor4.png">
+						<p>多融财富荣获<br>“中国信用企业认证体系示范单位”证书</p>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="mode">
+			<div class="title">合作单位</div>
+			<div class="partners">
+				<div class="swiper-button-prev"></div>
+				<div class="imgs swiper-container">
+					<ul class="swiper-wrapper">
+						<li class="swiper-slide">
+							<img src="/images/gua-partner/partner1.png">
+						</li>
+						<li class="swiper-slide">
+							<img src="/images/gua-partner/partner2.png">
+						</li>
+						<li class="swiper-slide">
+							<img src="/images/gua-partner/partner3.png">
+						</li>
+						<li class="swiper-slide">
+							<img src="/images/gua-partner/partner5.png">
+						</li>
+						<li class="swiper-slide">
+							<img src="/images/gua-partner/partner6.png">
+						</li>
+						<li class="swiper-slide">
+							<img src="/images/gua-partner/partner7.png">
+						</li>
+						<li class="swiper-slide">
+							<img src="/images/gua-partner/partner8.png">
+						</li>
+						<li class="swiper-slide">
+							<img src="/images/gua-partner/partner9.png">
+						</li>
+						<li class="swiper-slide">
+							<img src="/images/gua-partner/partner10.png">
+						</li>
+						<li class="swiper-slide">
+							<img src="/images/gua-partner/partner11.png">
+						</li>
+					</ul>
+				</div>
+				<div class="olympiad-right swiper-button-next"></div>
+			</div>
+		</div>
+	</div>
+	<div class="code-wrapper">
+		<div class="code">
+			<div class="appcode">
+				<div class="code-box">
+					<div class="app-code-icon"><img src="/images/activity/newfriend-app.png"></div>
+					<div class="app-code-word">
+						<p><i class="olympiad-iphone"></i></p>
+					</div>
+				</div>
+				<div class="title">App下载</div>
+			</div>
+			<div class="appcode wechatcode">
+				<div class="code-box">
+					<div class="app-code-icon"><img src="/images/activity/newfriend-wechat.png"></div>
+				</div>
+				<div class="title">关注公众号</div>
+			</div>
+			<div class="tel">
+				<div class="number">
+					<i class="olympiad-phone"></i>
+					<div>
+						<span>4006-908-896</span>
+						<p>服务时间 08:30 - 20:30 （法定节假日除外）</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

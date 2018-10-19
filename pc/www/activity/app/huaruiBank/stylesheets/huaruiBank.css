@@ -1,0 +1,448 @@
+body, div, p, h1, h2, h3, h4, h5, h6, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, table, th, td {
+  margin: 0;
+  padding: 0; }
+
+address, cite, em, i {
+  font-style: normal; }
+
+html, body, root {
+  height: 100%;
+  overflow: hidden; }
+
+body {
+  margin: 0 auto;
+  color: #fff;
+  -webkit-appearance: none;
+  background: #fff;
+  overflow-y: scroll;
+  font-family: 'PingFang SC','STHeiti','Microsoft YaHei',Helvetica,Arial,sans-serif;
+  color: #878C92; }
+
+li {
+  list-style: none; }
+
+html, body {
+  max-width: 750px;
+  margin: 0 auto; }
+
+a {
+  color: #535862;
+  text-decoration: none; }
+
+a:hover {
+  color: #c40000;
+  text-decoration: underline; }
+
+legend {
+  color: #000; }
+
+fieldset, img {
+  border: 0; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+input[type="button"], input[type="submit"], input[type="reset"] {
+  cursor: pointer; }
+
+.clearfix:after, .wrapper:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0; }
+
+.clearfix {
+  display: inline-block; }
+
+/* start commented backslash hack \*/
+* html .clearfix {
+  height: 1%; }
+
+.clearfix {
+  display: block; }
+
+/* close commented backslash hack */
+.middle * {
+  display: inline-block;
+  vertical-align: middle; }
+
+::-webkit-input-placeholder {
+  font-size: .75rem; }
+
+/* height */
+/* public */
+/* link color */
+.red {
+  color: #f42b13; }
+
+.green {
+  color: #16c154; }
+
+.black {
+  color: black; }
+
+.gray {
+  color: #666; }
+
+.blue {
+  color: #2899f2; }
+
+.orange {
+  color: #cb420c; }
+
+/* public */
+.flex {
+  flex-shrink: 0;
+  -webkit-flex-shrink: 0; }
+
+input {
+  outline: none; }
+
+/* layout */
+.hide {
+  display: none; }
+
+.container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  transform: translateY(300px);
+  -webkit-transform: translateY(300px);
+  transition-duration: 1s;
+  -webkit-transition-duration: 1s;
+  opacity: 0;
+  overflow: hidden; }
+
+.container.cur {
+  transform: translateY(0px);
+  -webkit-transform: translateY(0px);
+  opacity: 1; }
+
+.effect {
+  float: left;
+  transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  perspective: 600px;
+  -webkit-perspective: 600px;
+  background: #EFEFF4; }
+
+.effect .option {
+  float: left;
+  min-height: 6.25rem;
+  transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  overflow: hidden;
+  background: #fff; }
+
+.huarui .banner {
+  background: url("../images/banner.jpg") no-repeat;
+  background-size: contain;
+  background-position: center center; }
+.huarui .content {
+  background: #fff;
+  font-size: 0.75rem;
+  color: #000000; }
+  @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+    .huarui .content {
+      font-size: 0.64286rem; } }
+  @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+    .huarui .content {
+      font-size: 0.64286rem; } }
+  @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+    .huarui .content {
+      font-size: 0.82875rem; } }
+  .huarui .content .title {
+    color: #3b3154;
+    text-align: center;
+    font-size: 1.3125rem; }
+    @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+      .huarui .content .title {
+        font-size: 1.125rem; } }
+    @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+      .huarui .content .title {
+        font-size: 1.125rem; } }
+    @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+      .huarui .content .title {
+        font-size: 1.45031rem; } }
+    .huarui .content .title .titleColor {
+      color: #ff7200; }
+  .huarui .content .title2 {
+    font-size: 0.9375rem;
+    color: #666666;
+    text-align: center;
+    letter-spacing: 0.3125rem; }
+    @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+      .huarui .content .title2 {
+        font-size: 0.80357rem; } }
+    @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+      .huarui .content .title2 {
+        font-size: 0.80357rem; } }
+    @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+      .huarui .content .title2 {
+        font-size: 1.03594rem; } }
+  .huarui .content .tabs .tabtitle {
+    float: left;
+    font-size: 0.9375rem;
+    border-bottom: 0.3125rem solid #ccc; }
+    @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+      .huarui .content .tabs .tabtitle {
+        font-size: 0.80357rem; } }
+    @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+      .huarui .content .tabs .tabtitle {
+        font-size: 0.80357rem; } }
+    @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+      .huarui .content .tabs .tabtitle {
+        font-size: 1.03594rem; } }
+    .huarui .content .tabs .tabtitle a {
+      color: #999999;
+      font-size: 0.9375rem; }
+      @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+        .huarui .content .tabs .tabtitle a {
+          font-size: 0.80357rem; } }
+      @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+        .huarui .content .tabs .tabtitle a {
+          font-size: 0.80357rem; } }
+      @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+        .huarui .content .tabs .tabtitle a {
+          font-size: 1.03594rem; } }
+    .huarui .content .tabs .tabtitle .active {
+      color: #ff7200;
+      border-bottom: 0.3125rem solid #ff7200;
+      text-decoration: none; }
+  .huarui .content .tabCainer .tab_content {
+    font-size: 0.75rem;
+    color: #666666; }
+    @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+      .huarui .content .tabCainer .tab_content {
+        font-size: 0.64286rem; } }
+    @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+      .huarui .content .tabCainer .tab_content {
+        font-size: 0.64286rem; } }
+    @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+      .huarui .content .tabCainer .tab_content {
+        font-size: 0.82875rem; } }
+    .huarui .content .tabCainer .tab_content .titleIcon {
+      background: #ff7200;
+      color: #fff;
+      float: left;
+      width: 0.9375rem;
+      height: 0.9375rem;
+      text-align: center; }
+    .huarui .content .tabCainer .tab_content .titleContent {
+      color: #000; }
+    .huarui .content .tabCainer .tab_content .answer {
+      font-size: 0.75rem; }
+      @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+        .huarui .content .tabCainer .tab_content .answer {
+          font-size: 0.64286rem; } }
+      @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+        .huarui .content .tabCainer .tab_content .answer {
+          font-size: 0.64286rem; } }
+      @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+        .huarui .content .tabCainer .tab_content .answer {
+          font-size: 0.82875rem; } }
+  .huarui .content .letter {
+    background: url("../images/letter.png") no-repeat;
+    background-size: contain;
+    float: left;
+    margin-right: 0.625rem;
+    color: #fff;
+    text-align: center;
+    font-style: italic;
+    font-size: 0.75rem; }
+    @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+      .huarui .content .letter {
+        font-size: 0.64286rem; } }
+    @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+      .huarui .content .letter {
+        font-size: 0.64286rem; } }
+    @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+      .huarui .content .letter {
+        font-size: 0.82875rem; } }
+  .huarui .content .letterContent {
+    font-size: 0.75rem;
+    float: left; }
+    @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+      .huarui .content .letterContent {
+        font-size: 0.64286rem; } }
+    @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+      .huarui .content .letterContent {
+        font-size: 0.64286rem; } }
+    @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+      .huarui .content .letterContent {
+        font-size: 0.82875rem; } }
+  .huarui .content .bankyiyi {
+    font-size: 1.125rem;
+    color: #ff7100; }
+    @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+      .huarui .content .bankyiyi {
+        font-size: 0.96429rem; } }
+    @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+      .huarui .content .bankyiyi {
+        font-size: 0.96429rem; } }
+    @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+      .huarui .content .bankyiyi {
+        font-size: 1.24313rem; } }
+    .huarui .content .bankyiyi .san {
+      background: url("../images/san.png") no-repeat;
+      background-size: contain;
+      float: left; }
+  .huarui .content .jiandu .jiandu1 {
+    background: url("../images/circle1.png") no-repeat;
+    background-size: contain;
+    float: left; }
+  .huarui .content .jiandu .jiandu2 {
+    background: url("../images/circle2.png") no-repeat;
+    background-size: contain;
+    float: left; }
+  .huarui .content .jiandu .jiandu3 {
+    background: url("../images/circle3.png") no-repeat;
+    background-size: contain;
+    float: left; }
+  .huarui .content .jiandu .jianduTitle {
+    font-size: 1.125rem;
+    color: #3a2f5a; }
+    @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+      .huarui .content .jiandu .jianduTitle {
+        font-size: 0.96429rem; } }
+    @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+      .huarui .content .jiandu .jianduTitle {
+        font-size: 0.96429rem; } }
+    @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+      .huarui .content .jiandu .jianduTitle {
+        font-size: 1.24313rem; } }
+  .huarui .content .jiandu .jianduContent {
+    color: #333333;
+    font-size: 0.75rem; }
+    @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+      .huarui .content .jiandu .jianduContent {
+        font-size: 0.64286rem; } }
+    @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+      .huarui .content .jiandu .jianduContent {
+        font-size: 0.64286rem; } }
+    @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+      .huarui .content .jiandu .jianduContent {
+        font-size: 0.82875rem; } }
+  .huarui .content .douLeft {
+    background: url("../images/douLeft.png") no-repeat;
+    background-size: contain;
+    float: left; }
+  .huarui .content .douRight {
+    background: url("../images/douRight.png") no-repeat;
+    background-size: contain;
+    float: right; }
+  .huarui .content .progress {
+    background: url("../images/progressLine.png") no-repeat;
+    background-size: contain;
+    margin: 0 auto; }
+  .huarui .content .progressContent {
+    position: relative; }
+    .huarui .content .progressContent .progressLeft {
+      float: left; }
+      .huarui .content .progressContent .progressLeft .icon {
+        background: #32256d;
+        font-size: 0.625rem;
+        font-style: italic;
+        color: #fff;
+        display: inline-block;
+        border-radius: 0.9375rem;
+        text-align: center;
+        margin-right: 1.25rem; }
+        @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+          .huarui .content .progressContent .progressLeft .icon {
+            font-size: 0.53571rem; } }
+        @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+          .huarui .content .progressContent .progressLeft .icon {
+            font-size: 0.53571rem; } }
+        @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+          .huarui .content .progressContent .progressLeft .icon {
+            font-size: 0.69063rem; } }
+    .huarui .content .progressContent .progressRight {
+      float: left; }
+      .huarui .content .progressContent .progressRight .icon {
+        background: #32256d;
+        font-size: 0.625rem;
+        font-style: italic;
+        color: #fff;
+        display: inline-block;
+        border-radius: 0.9375rem;
+        text-align: center;
+        margin-right: 1.25rem; }
+        @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+          .huarui .content .progressContent .progressRight .icon {
+            font-size: 0.53571rem; } }
+        @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+          .huarui .content .progressContent .progressRight .icon {
+            font-size: 0.53571rem; } }
+        @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+          .huarui .content .progressContent .progressRight .icon {
+            font-size: 0.69063rem; } }
+.huarui .moshi {
+  background: -webkit-gradient(linear, 0 0, 100% 0, from(#3a1e69), to(#152d72));
+  color: #ffffff; }
+  .huarui .moshi .title {
+    font-size: 1.125rem;
+    text-align: center; }
+    @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+      .huarui .moshi .title {
+        font-size: 0.96429rem; } }
+    @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+      .huarui .moshi .title {
+        font-size: 0.96429rem; } }
+    @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+      .huarui .moshi .title {
+        font-size: 1.24313rem; } }
+    .huarui .moshi .title .titleColor {
+      color: #ff7100; }
+  .huarui .moshi .title2 {
+    color: #cccccc;
+    font-size: 0.9375rem;
+    text-align: center; }
+    @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+      .huarui .moshi .title2 {
+        font-size: 0.80357rem; } }
+    @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+      .huarui .moshi .title2 {
+        font-size: 0.80357rem; } }
+    @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+      .huarui .moshi .title2 {
+        font-size: 1.03594rem; } }
+  .huarui .moshi .douLeft {
+    background: url("../images/douLeft.png") no-repeat;
+    background-size: contain;
+    float: left; }
+  .huarui .moshi .douRight {
+    background: url("../images/douRight.png") no-repeat;
+    background-size: contain;
+    float: right; }
+  .huarui .moshi .why {
+    background: url("../images/why.png") no-repeat;
+    background-size: contain;
+    margin: 0 auto; }
+  .huarui .moshi .liucheng {
+    margin: 0 auto;
+    background: url("../images/liucheng.png") no-repeat;
+    background-size: contain; }
+  .huarui .moshi .cunguan {
+    color: #ffaf1b;
+    font-size: 0.75rem; }
+    @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+      .huarui .moshi .cunguan {
+        font-size: 0.64286rem; } }
+    @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+      .huarui .moshi .cunguan {
+        font-size: 0.64286rem; } }
+    @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+      .huarui .moshi .cunguan {
+        font-size: 0.82875rem; } }
+.huarui .footer {
+  background: url("../images/footer.png") no-repeat;
+  background-size: contain; }
+
+/*# sourceMappingURL=huaruiBank.css.map */

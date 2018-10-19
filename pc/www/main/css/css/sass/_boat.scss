@@ -1,0 +1,427 @@
+$boat-sprite-dimensions: true;
+@import "boat/*.png";
+@include all-boat-sprites();
+
+.dragon-boat-wrapper{
+	.boat-code{
+		position: fixed;
+		top: 50%;
+		right: 20px;
+		background: image-url('boatcode.png');
+		width: 258px;
+		height: 257px;
+		margin-top: -129px;
+	}
+	.showrules{
+		font-size: 18px; 
+		color: #03c;
+		position: absolute;
+		left: 0;
+		bottom: 55px;
+		text-decoration: underline;
+	}
+	.boat-rules-bg{
+		color: #d1fefe;
+		font-size: 16px;
+		position: absolute;
+		z-index: 20;
+		.close{
+			color: #78b5b0;
+			font-size: 60px;
+			position: absolute;
+			right: 20px;
+			top: -10px;
+			&:hover{
+				text-decoration: none;
+				color: #d1fefe;
+			}
+		}
+		p{
+			font-size: 22px;
+			padding-bottom: 20px;
+			padding-left: 94px;
+		}
+		ul{
+			padding-left: 94px;
+		}
+		li{
+			line-height: 24px;
+			padding-bottom: 14px;
+			padding-left: 37px;
+			position: relative;
+			width: 598px;
+			i{
+				position: absolute;
+				left: 20px;
+				top: 7px;
+			}
+		}
+		span{
+			position: absolute;
+			left: 196px;
+			bottom: 22px;
+			font-size: 14px;
+		}
+	}
+	.banner{
+		width: 100%;
+		height: 399px;
+		background: #bbe8e8 image-url('boat-banner.png') no-repeat center top;
+	}
+	.lottery-box{
+		width: 100%;
+		height: 1047px;
+		background: #dce9e0 image-url('boat-lottery.png') no-repeat center top;
+		.lottery{
+			width: 1180px;
+			margin: 0 auto;
+			padding-top: 46px;
+			position: relative;
+			height: 1001px;
+			.boat-rules-bg{
+				top: 752px;
+				left: -44px;
+				p{
+					padding-top: 51px;
+				}
+			}
+			.boat-lottery-title{
+				margin: 0 auto;
+				text-indent: -999em;
+			}
+			.tip{
+				font-size: 18px;
+				color: #006659;
+				text-align: center;
+				padding: 7px 0;
+			}
+			.login-tip{
+				color: #01241f;
+				font-size: 18px;
+				text-align: center;
+				height: 30px;
+				padding: 7px 0;
+				span{
+					color: #fa1949;
+				}
+			}
+			.boat-lottery-mod{
+				overflow: hidden;
+				margin: 0 auto;
+				position: relative;
+				.giftbg{
+					position: absolute;
+					left: 141px;
+					top: 166px;
+					z-index: 10;
+					&.boat-getgift{
+						left: 188px;
+						top: 137px;
+						p{
+							padding-top: 170px;
+							text-align: center;
+							height: 58px;
+							line-height: 58px;
+							color: #fff195;
+							font-size: 24px;
+						}
+					}
+				}
+				ul{
+					width: 643px;
+					margin: 25px auto 0;
+					li{
+						width: 193px;
+						height: 178px;
+						&.center{
+							width: 258px;
+						}
+						display: table-cell;
+						text-align: center;
+						vertical-align: middle;
+					}
+				}
+				table{
+					width: 643px;
+					margin: 25px auto 0;
+					td{
+						height: 156px;
+						padding-bottom: 22px;
+						text-align: center;
+						vertical-align: middle;
+					}
+				}
+				.boat-login{
+					position: absolute;
+					left: 198px;
+					top: 215px;
+				}
+			}
+		}
+	}
+	.list-wrapper{
+		width: 100%;
+		height: 800px;
+		background: #cfefe9;
+		padding-top: 75px;
+		.boat-list-title{
+			margin: 0 auto;
+		}
+		.list{
+			width: 1180px;
+			margin: 0 auto;
+			position: relative;
+			height: 799px;
+			.boat-rules-bg{
+				top: 547px;
+				left: -80px;
+				p{
+					padding-top: 32px;
+				}
+			}
+			.list-show{
+				padding-top: 82px;
+				.boat-gift-list{
+					float: left;margin: 0 30px 0 15px;
+					ul{
+						padding: 147px 0 0 244px;
+						color: #fff;
+						font-size: 18px;
+						line-height: 50px;
+						span{
+							color: #fbff97;
+							font-size: 24px;
+						}
+					}
+					a{
+						font-size: 24px;
+						color: #fbff97;
+						margin: 49px 0 0 163px;
+						display: block;
+					}
+				}
+				.boat-line{
+					float: left;
+					margin: 30px 18px 0 0;
+				}
+				.boat-invest-list{
+					float: left;
+					margin-top: 2px;
+					table{
+						margin: 130px auto 0;
+						width: 350px;
+						font-size: 16px;
+						color: #333;
+						th{
+							text-align: center;
+							font-size: 18px;
+							height: 44px;
+							font-weight: bold;
+							vertical-align: top;
+						}
+						td{
+							height: 37px;
+							text-align: center;
+						}
+					}
+					.show-list{
+						height: 185px;
+						overflow: hidden;
+						table{
+							margin-top: 0;
+						}
+					}
+					.invest-info{
+						font-size: 14px;
+						color: #000;
+						line-height: 24px;
+						padding: 55px 0 0 63px;
+						a{
+							color: #03c;
+						}
+					}	
+				}
+			}
+		}
+	}
+	.common-wrapper{
+		width: 100%;
+		background: #dce9e0;
+		padding-bottom: 70px;
+		overflow: hidden;
+		.mode{
+			width: 1198px;
+			margin: 82px auto 0;
+			border: 1px solid #8bcac4;
+			position: relative;
+			.title{
+				width: 162px;
+				height: 33px;
+				text-align: center;
+				line-height: 33px;
+				background: #2ea6a4;
+				font-size: 18px;
+				color: #f0f0f0;
+				float: left;margin: -17px 0 0 30px;
+			}
+			.love-icon{
+				position: absolute;
+				left: 53px;
+				top: 140px;
+			}
+			.content{
+				padding: 49px 0 10px 120px;
+				overflow: hidden;
+				clear: both;
+				zoom: 1;
+				.iconmode{
+					width: 529px;
+					float: left;
+					height: 137px;
+					position: relative;
+					i{
+						position: absolute;
+						left: 0;
+						top: 0;
+					}
+					div{
+						padding: 14px 0 0 112px;
+						font-size: 14px;
+						color: #333;
+						span{
+							font-size: 26px;
+							color: #333;
+						}
+					}
+				}
+			}
+			ul{
+				padding: 40px 0 40px 33px;
+				overflow: hidden;
+				clear: both;
+				zoom: 1;
+				li{
+					float: left;
+					margin-right: 17px;
+					width: 271px;
+					text-align: center;
+					a:hover{
+						color: #313131;
+					}
+					p{
+						font-size: 14px;
+						color: #313131;
+						line-height: 24px;
+						padding-top: 16px;
+					}
+				}
+			}
+			.partners{
+				padding: 50px 0 44px 30px;
+				overflow: hidden;
+				clear: both;
+				zoom: 1;
+				.love-left{
+					float: left;margin: 30px 10px 0 0;
+					cursor: pointer;
+				}
+				.imgs{
+					width: 1099px;
+					overflow: hidden;
+					float: left;
+					height: 78px;
+					ul{
+						width: 2080px;
+						padding: 0;
+						li{
+							float: left;
+							width: auto;
+							margin: 0 !important;
+							img{
+								width: 153px;
+							}
+						}
+					}
+				}
+				.love-right{
+					float: left;margin: 30px 0 0 10px;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+	.code-wrapper{
+		width: 100%;
+		height: 200px;
+		background: #2ea6a4;
+		.code{
+			width: 1200px;
+			margin: 0 auto;
+			.appcode{
+				float: left;
+				margin: 41px 0 0 44px;
+			}
+			.wechatcode{
+				float: left;
+				margin: 41px 0 0 98px;
+			}
+			.tel{
+				float: left;
+				margin: 76px 0 0 353px;
+				.number{
+					i{
+						float: left;
+					}
+					div{
+						float: left;
+						color: #fff;
+						padding-left: 13px;
+						margin-top: -5px;
+						span{
+							font-size: 32px;
+						}
+						p{
+							font-size: 12px;
+							margin-top: -3px;
+						}
+					}
+				}
+			}
+			.title{
+				font-size: 16px;
+				color: #fff;
+				padding-top: 6px;
+			    width: 106px;
+			    text-align: center;
+			}
+			.code-box{
+				overflow: hidden;
+				.app-code-icon{
+					float: left;
+					img{
+						display: block;
+						border: 1px solid #008c40;
+					}
+				}
+				.app-code-word{
+					float: left;
+					padding: 29px 0 0 18px;
+					p{
+						width: 102px;
+						height: 23px;
+						border: 1px solid #bfe4e3;
+						border-radius: 2px;
+						margin-bottom: 10px;
+						font-size: 12px;
+						color: #fff;
+						line-height: 23px;
+						i{
+							float: left;
+							margin: 3px 5px 0 20px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

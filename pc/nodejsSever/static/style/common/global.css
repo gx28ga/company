@@ -1,0 +1,41 @@
+@mixin modestyle{
+  width: 1200px;
+  margin: 0 auto;
+}
+@mixin ellipsis {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin modebtn {
+  background: #ff9600;
+  color: #fff;
+  text-align: center;
+  &:hover {
+    background: lighten(#ff9600, 5%);
+    text-decoration: none;
+  }
+  font-weight: bold;
+  border: none;
+  border-bottom: 2px solid #d84a40;
+  cursor: pointer;
+  font-size: 20px;
+}
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " "; 
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+@mixin transition-duration($val){
+    transition-duration:$val;
+};
+@mixin border-radius($val){
+    border-radius:$val;
+};

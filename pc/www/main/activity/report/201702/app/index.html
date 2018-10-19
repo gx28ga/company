@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+  <title>2月运营报告</title>
+  <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no">
+  <script type="text/javascript" src="dist/min.slip.js"></script>
+  <script type="text/javascript" src="dist/zepto.js"></script>
+  <script type="text/javascript" src="../../../../vendor/angular.min.js"></script>
+  <style type="text/css">
+    body {
+      background-color: #f2f4f5;
+      margin: 0;
+      padding: 0;
+    }
+    
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    
+    @-webkit-keyframes start {
+      0%,
+      30% {
+        opacity: 0.2;
+        -webkit-transform: translate(0, 10px);
+      }
+      60% {
+        opacity: 1;
+        -webkit-transform: translate(0, 0);
+      }
+      100% {
+        opacity: 0.2;
+        -webkit-transform: translate(0, -5px);
+      }
+    }
+    
+    @keyframes start {
+      0%,
+      30% {
+        opacity: 0.2;
+        transform: translate(0, 10px);
+      }
+      60% {
+        opacity: 1;
+        transform: translate(0, 0);
+      }
+      100% {
+        opacity: 0.2;
+        transform: translate(0, -5px);
+      }
+    }
+    
+    .start {
+      position: fixed;
+      left: 50%;
+      margin-left: -17px;
+      top: 95%;
+      margin-top: -34px;
+      width: 34px;
+      height: 34px;
+    }
+    
+    .start b {
+      position: absolute;
+      left: 50%;
+      top: 10px;
+      margin-left: -9px;
+      width: 19px;
+      height: 12px;
+      background: url(images/top.png);
+      background-size: 100% 100%;
+      -webkit-animation: start 1.5s infinite ease-in-out;
+      animation: start 1.5s infinite ease-in-out;
+    }
+  </style>
+</head>
+
+<body ng-controller="feb">
+  <div id="container">
+    <div class="page page1"><img src="images/num1.jpg"></div>
+    <div class="page page2"><img src="images/num2.jpg"></div>
+    <div class="page page3"><img src="images/num3.jpg"></div>
+    <div class="page page4"><img src="images/num4.jpg"></div>
+    <div class="page page5"><img src="images/num5.jpg"></div>
+    <div class="page page6"><img src="images/num6.jpg"></div>
+    <div class="page page7"><img src="images/num7.jpg"></div>
+    <div class="page page8"><img src="images/num8.jpg"></div>
+    <div class="page page9"><img src="images/num9.jpg"></div>
+    <div class="page page10"><img src="images/num10.jpg"></div>
+    <div class="page page11"><img src="images/num11.jpg"></div>
+    <div class="page page12"><img src="images/num12.jpg"></div>
+    <div class=" page13" id="last"><img src="images/number13.jpg"></div>
+  </div>
+<!--   <span class="start"><b></b></span> -->
+</body>
+<script type="text/javascript">
+  Slip(document.getElementById('container'), 'y').webapp().end(function () {
+    // if (this.page === 12) location.reload();
+  });
+
+</script>
+</html>

@@ -1,0 +1,35 @@
+@import "../../../../common/style/global.scss";
+.banner {
+  @include contain('../../images/banner.jpg');
+  background-position: center center;
+  position: relative;
+  background-color: #ccc;
+}
+
+.content {
+  background: -webkit-gradient(linear, 0 100%, 0 0, from(#4f38df), to(#6515d3));
+  padding:$s15 $s30 $s50;
+  .rule {
+    @include font-size(15px);
+    color: #ffffff;
+    line-height:$s25;
+    span{
+      @include font-size(12px); 
+      color:#ffaf00;
+    }
+  }
+  .image{
+    background-color:#4900af;
+    margin:$s20 auto;
+    border-radius:$s10;
+    box-shadow:0px 0px 5px #3d0091  inset;
+    .jiaxi1{
+        @include contain('../../images/tiaojian1.png');
+        margin:0 auto;
+    }
+    .jiaxi2{
+         @include contain('../../images/tiaojian2.png');
+         margin:0 auto;
+    }
+  }
+}

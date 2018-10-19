@@ -1,0 +1,28 @@
+.lawprotocal{
+  padding-top:20px;
+  padding-bottom:38px;
+  .container{
+    background-color:#fff;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 38px 20px;
+    width: 80%;
+    box-sizing:border-box;
+    color:rgb(16,37,66);
+    font-size:14px;
+    h1{
+      font-size:20px;
+      font-weight:700;
+      text-align:center;
+    }
+    h3{
+      font-size:14px;
+      text-align:center;
+      margin-bottom:20px;
+    }
+    p{
+      margin-top:10px;
+      line-height:20px;
+    }
+  }
+}

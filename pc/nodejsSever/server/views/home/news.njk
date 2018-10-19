@@ -1,0 +1,89 @@
+{# 公司新闻 #}
+<div class="module gray clearfix" style="padding-top: 20px;">
+    <div class="middle">
+        <div  id="newBox">
+            <div class="news">
+                <ul class="title tabtitle">
+                    <li class="current">公司动态</li>
+                    <li>公司新闻</li>
+                </ul>
+                <div class="more">
+                    <a v-show="isnotice" target="_blank" href="{{http}}/about/GSDT.html">更多</a>
+                    <a v-show="isnew" target="_blank" href="{{http}}/about/NEWS.html">更多</a>
+                </div>
+                <div class="content">
+                    {# 新闻图片 #}
+                    <div class="slider newslider">
+                        <div class="swiper-img newsimg">
+                            <ul>
+                                <li v-if="newsliderImg" v-for="item in newsliderImg">
+                                    <div class="img">
+                                        <a target="_blank" :href="item.url">
+                                            <img :src="item.imgUrl">
+                                        </a>
+                                    </div>
+                                    <a class="imgh" target="_blank" :href="item.url">
+                                        <h2>${item.title}</h2>
+                                    </a>
+                                </li>
+                                <li v-for="item in newsList">
+                                    <div class="img">
+                                        <a target="_blank" :href="'{{http}}/about/newsDetail/XWXQ_html_'+item.arti_id+'.html?t=0'">
+                                            <img :src="item.litpic">
+                                        </a>
+                                    </div>
+                                    <a class="imgh" target="_blank" :href="'{{http}}/about/newsDetail/XWXQ_html_'+item.arti_id+'.html?t=0'">
+                                        <h2>${item.title}</h2>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="pagina imgspagina">
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>
+                    {# 新闻图片 end #}
+                    <div class="list tablist">
+                        <div class="options">
+                            <div class='option'>
+                                {# 动态列表 #}
+                                <dl class="hvr-forward" v-for="item in notice" style=" width: 685px;">
+                                    <dt>
+                                        <div class="aside">
+                                            <span class="time">${item.create_time | format_date}</span>
+                                        </div>
+                                        <h2>
+                                            <a target="_blank" :href="'{{http}}/about/newsDetail/XWXQ_html_'+item.arti_id+'.html?t=1'">${item.title}</a>
+                                        </h2>
+                                    </dt>
+                                    <dd>{{item.summaryContents}}</dd>
+                                </dl>
+                                {# 动态列表  end #}
+                            </div>
+                            <div class='option'>
+                                {# 新闻列表 #}
+                                <dl id="mover" class="hvr-forward" v-for="item in news" style=" width: 685px;">
+                                    <dt>
+                                        <div class="aside">
+                                            <span class="time">${item.create_time | format_date }</span>
+                                        </div>
+                                        <h2>
+                                            <a target="_blank" :href="'{{http}}/about/newsDetail/XWXQ_html_'+item.arti_id+'.html?t=0'">${item.title}</a>
+                                        </h2>
+                                    </dt>
+                                    <dd>${item.summaryContents}</dd>
+                                </dl>
+                                {# 新闻列表 end #}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

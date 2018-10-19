@@ -1,0 +1,90 @@
+{% extends "common/main.njk" %}
+{% block body %}
+<link href="/style/about/guarantee.css" rel="stylesheet" type="text/css" inline/>
+<link href="/style/about/menu.css" rel="stylesheet" type="text/css" inline/>
+<div id='APP' class='about'>
+{% include "./menu.njk"%}
+<div class="guarantee-wrapper us">
+     <div class="banner">
+        <div class='con'>
+            <a class='biao1 biao' href='#number1' id='beijing'>股东背景</a>
+            <a class='biao2 biao' href='#number2' id='beijing2'>优质资产</a>
+            <a class='biao3 biao' href='#number3' id='beijing3'>银行存管</a>
+            <a class='biao4 biao' href='#number4' id='beijing4'>专业风控</a>
+            <a class='biao5 biao' href='#number5' id='beijing5'>技术保障</a>
+            <a class='biao6 biao' href='#number6' id='beijing6'>法律支持</a>
+        </div>
+    </div>
+    <div class='number1' id='number1'>
+        <ul class='jieshao'>
+            <li class='concon'>2016年9月, 中商沪深产业投资有限公司战略入股银砖金融，占股比例为<span class='ha'>99%</span>。</li>
+            <li class='concon'>2017年12月，获<span style="font-weight: 700">南京银河生物技术有限公司</span>5000万元增资控股，占股比例为<span class='ha'>33.33%</span>，<span style="font-weight: 700">中商沪深产业投资有限公司</span>占股比例调整为<span class='ha'>66.67%</span>。
+            </li>
+        </ul>
+
+    </div>
+    <div id='number2' style='height:70px'></div>
+    <div class='content' >
+        <div class='title2' ></div>
+        <div class='titCon' >优质票据资产 安全高效兑付</div>
+        <div class='jianjie'>
+            <dl class='jie'>
+                <dt class='jieicon'></dt>
+                <dd class='jieCon'>平台专注于安全系数极高的票据理财市场，依托于控股方的强大背景，拥有比同行更优质的项目来源。其项目均为银行承 兑汇票或知名国企签发的商票，票据到期后，由银行或国企兑付的资金作为还款来源，确保资金兑付更加安全、高效。
+                </dd>
+            </dl>
+        </div>
+        <div class='number2'>
+            <div class='bank bank1'>
+                <span class='bankTitle'>银行承兑汇票</span>是由银行开具的到期兑付的书面凭证。根据 《票据法》第四十三条、第四十四条规定：付款人承兑汇票， 不得附有条件；付款人承兑汇票后，应当承担到期付款的责任。
+            </div>
+            <div class='bank bank2'><span class='bankTitle'>商业承兑汇票</span>是由企业签发，委托付款企业在到期日无条 件支付给收款人或持票人的票据。根据《票据法》第四十三 条、第四十四条、第四十五条规定：付款人承兑汇票，不得 附有条件；付款人承兑汇票后，应当承担到期付款的责任； 汇票的债务可以由保证人承担保证责任。
+            </div>
+        </div>
+    </div>
+    <div id='number3' style='height:1px'></div>
+    <div class='content'>
+        <div class='title3'  ></div>
+        <div class='titCon'>用户授权操作 资金专款专用</div>
+        <div class='jianjie'>
+            <dl class='jie'>
+                <dt class='jieicon'></dt>
+                <dd class='jieCon'>2017年7月,多融财富正式接入银行资金存管系统，资金交易环节均在银行系统中进行，资金交易均由用户授权银 行操作执行，平台无法触碰用户资金，确保资金进、存、出全程安全。
+                </dd>
+            </dl>
+        </div>
+        <div class='number3'></div>
+    </div>
+    <div id='number4' style='height:95px'></div>
+    <div class='number4' ></div>
+    <div id='number5' style='height:70px'></div>
+    <div class='number5'></div>
+    <div  id='number6'></div>
+    <div class='content content1' >
+        <div class='title6'></div>
+        <div class='titCon'>合规审查 健康发展</div>
+        <div class='jianjie'>
+            <dl class='jie'>
+                <dt class='jieicon'></dt>
+                <dd class='jieCon'>金茂律师事务所作为多融财富战略合作伙伴，将协助多融财富审核、起草、修改相关法律文件，对公司的业务模式进行合 规性审查，为公司的合法发展提供法律服务支持，更好的保障借贷双方的合法权益，保障平台的持续健康发展。
+                </dd>
+            </dl>
+        </div>
+        <div class='number6'></div>
+    </div>
+    <div class='rongyu'>
+        <div class='rongyuTitle'>公司荣誉</div>
+        {%include "./honor.njk"%}
+        <div class="fu"></div>
+    </div>
+    <div class='rongyu' style='padding-bottom: 80px;'>
+        <div class='rongyuTitle'>合作单位</div>
+         {%include "./partnerD.njk" %}
+    </div>
+</div>
+</div>
+</div>
+</div>
+<script src="../js/plug/superSlide.js" inline></script>
+<script src="../js/about/drgk.js" inline></script>
+{% endblock %}

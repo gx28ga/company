@@ -1,0 +1,95 @@
+{% macro acount(item,type) %}
+
+{% if item.type==1 %}
+<ul class="allAcount">
+    <li class="td1">
+        <div class="tit">最大投资额：</div>
+        <div class="cnt">{{item.maxAmount | isNumber2}} 元</div>
+    </li>
+    {% if item.repayType !="" or item.repayType !=undefined %}
+    <li class="td2">
+        <div class="tit">收益方式：</div>
+        <div class="cnt">
+            {% import './shouyi.njk' as obj %}
+            {{ obj.sy(item) }}
+        </div>
+    </li>
+    {% endif %}
+</ul>
+{% endif %}
+
+{% if item.limitOfPeople !=null or item.limitOfPeople !=undefined %}
+<ul class="allAcount">
+    <li class="td1">
+        <div class="tit">投资人数上限：</div>
+        <div class="cnt">{{item.limitOfPeople}}人</div>
+    </li>
+</ul>
+{% endif %}
+
+{% if (item.status==5 and item.type!=1) or (item.status!=5 and item.type!=1) %}
+<ul class="allAcount">
+    {% if type==2 %}
+    <li class="td1">
+        <div class="tit">起投金额：</div>
+        <div class="cnt">{{item.leastPurchaseAmount | toLocaleString(2)}} 元</div>
+    </li>
+    <li class="td2">
+        <div class="tit">投资上限：</div>
+        <div class="cnt">
+            {{item.maxPurchaseAmount | toLocaleString(2)}} 元
+        </div>
+    </li>
+    {% else %}
+    <li class="td1">
+        <div class="tit">产品总额：</div>
+        <div class="cnt">{{item.amount | toLocaleString(2)}} 元</div>
+    </li>
+    <li class="td2">
+        <div class="tit">{{ "可投余额：" if type==0 else "可投余额："}}</div>
+        <div class="cnt" v-if="info">
+            ${info.surplusAmount | toLocaleString(2)} 元
+        </div>
+        <div class="cnt" v-else>
+            {{item.surplusAmount | toLocaleString(2)}} 元
+        </div>
+    </li>
+    {% endif %}
+</ul>
+<ul class="allAcount">
+    {% if type==2 %}
+    <li class="td1">
+        <div class="tit">收益方式：</div>
+        <div class="cnt">
+            D+1起息，每日收益到账
+        </div>
+    </li>
+    {% else %}
+    <li class="td1">
+        <div class="tit">{{ "收益方式：" if type==0 else "还款方式："}}</div>
+        <div class="cnt">
+            {% if type==0 %}
+            {% import './shouyi.njk' as obj %}
+            {{ obj.sy(item) }}
+            {% else %}
+            到期还本付息
+            {% endif %}
+        </div>
+    </li>
+    {% endif %}
+
+    <!--{% if type==1 %}
+    <li class="td2">
+        <div class="tit">剩余时间：</div>
+        <div class="cnt" v-if="info">
+            ${info.nowTimer}
+        </div>
+        <div class="cnt" v-else>
+            {{item.nowTimer}}
+        </div>
+    </li>
+    {% endif %}-->
+</ul>
+{% endif %}
+
+{% endmacro %}

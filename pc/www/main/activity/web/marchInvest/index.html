@@ -1,0 +1,259 @@
+<div class="body-wrapper">
+  <!-- banner  -->
+  <div class="bannerTop"> </div>
+  <div class="bannerBottom"></div>
+  <!-- content-middle -->
+  <div class="contentMiddle">
+    <!-- 活动头部 -->
+    <div class="activityTitleLeft">
+      <p class="chanpin">通过投资≥30天的产品，可累计财富值
+        <br><span class="caifu">财富值=投资金额*产品期限/365</span> </p>
+      <a href="{{a|webIE8}}main/bankBillList" class="touziBtn" target="_blank"></a>
+      <a href="javascript:void(0);" class="touziBtnOver" ng-show='isGameOver'></a>
+    </div>
+    <!-- 活动中间 -->
+    <div class="activityMiddle">
+      <!-- 登录之后 -->
+      <div class="look" ng-show='login==1 && isGameOver==false'>
+        <p class="investValue"><span class="caifu">您的当前财富值为{{coin | number:2}}</span><span> 预计获得：{{expectGet}} 奖品</span> </p>
+        <div class="investLeiji" ng-show='isHeigh==false'>再累计 {{need | number:2}} 财富值，可获得：{{superiorGift}} 奖品</div>
+      </div>
+      <!--  登录之前 -->
+      <div class="look" ng-show='login==0 '>
+        <p class="investValue"><span class="caifu">您的当前财富值为 XXXXX</span> <span> 预计获得：XXXX 奖品</span> </p>
+        <a class="login" href="" ng-click='loginReturn()'></a>
+      </div>
+      <!-- 活动结束之后 -->
+      <div class="look" ng-show='isGameOver && login==1'>
+        <p class="investValue"><span class="caifu">活动期间您累计财富值为  {{coin | number:2}} </span><span> 获得：{{expectGet}} 奖品</span> </p>
+      </div>
+      <div class="prizeTitle">
+      </div>
+      <div class="prizeContent">
+        <ul>
+          <li>
+            <img src="activity/web/marchInvest/images/prize1.png" alt="">
+            <p>财富值 2000000</p>
+          </li>
+          <li>
+            <img src="activity/web/marchInvest/images/prize2.png" alt="">
+            <p>财富值 1500000</p>
+          </li>
+          <li>
+            <img src="activity/web/marchInvest/images/prize3.png" alt="">
+            <p>财富值 1100000</p>
+          </li>
+          <li>
+            <img src="activity/web/marchInvest/images/prize4.png" alt="">
+            <p>财富值 850000</p>
+          </li>
+          <li>
+            <img src="activity/web/marchInvest/images/prize5.png" alt="">
+            <p>财富值 650000</p>
+          </li>
+          <li>
+            <img src="activity/web/marchInvest/images/prize6.png" alt="">
+            <p>财富值 450000</p>
+          </li>
+          <li style="margin-right: 0;">
+            <img src="activity/web/marchInvest/images/prize7.png" alt="">
+            <p>财富值 330000</p>
+          </li>
+          <li style="margin-left: 80px;">
+            <img src="activity/web/marchInvest/images/prize8.png" alt="">
+            <p>财富值 220000</p>
+          </li>
+          <li>
+            <img src="activity/web/marchInvest/images/prize9.png" alt="">
+            <p>财富值 150000</p>
+          </li>
+          <li>
+            <img src="activity/web/marchInvest/images/prize10.png" alt="">
+            <p>财富值 95000</p>
+          </li>
+          <li>
+            <img src="activity/web/marchInvest/images/prize11.png" alt="">
+            <p>财富值 40000</p>
+          </li>
+          <li>
+            <img src="activity/web/marchInvest/images/prize12.png" alt="">
+            <p>财富值 10000</p>
+          </li>
+          <li>
+            <img src="activity/web/marchInvest/images/prize13.png" alt="">
+            <p>财富值 5000</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="activityLine"></div>
+    <!--   活动规则 -->
+    <div class="activityRuleTitle"></div>
+    <div class="activityRuleContent">
+      <ul>
+        <li>
+          <p>活动时间为2017年3月1日-2017年3月19日 </p>
+        </li>
+        <li>
+          <p>活动期间，投资30天以上产品（包含30天）获赠财富值，财富值计算方法：投资金额*产品期限/365。小于30天产品不参与此活动，不计入财富值</p>
+        </li>
+        <li>
+          <p>活动奖品以实际获得的最高奖项为准，不重复获得，平台将在活动结束后的15个工作日内完成礼品的发放</p>
+        </li>
+        <li>
+          <p>本活动最终解释权归多融财富所有</p>
+        </li>
+      </ul>
+    </div>
+    <div class="car2"></div>
+  </div>
+  <div class="contentBottom">
+    <div class="mode">
+      <div class="title">为什么选择多融</div>
+      <div class="content">
+        <div class="iconmode">
+          <a class="olympiad-gzkg"></a>
+          <div>
+            <span>国企控股</span>
+            <p>大型国企中商沪深控股</p>
+          </div>
+        </div>
+        <div class="iconmode">
+          <a class="olympiad-guarantee"></a>
+          <div>
+            <span>资金安全保障</span>
+            <p>历史到期产品100%本息兑付，安全可靠</p>
+          </div>
+        </div>
+        <div class="iconmode">
+          <a class="olympiad-pjcd"></a>
+          <div>
+            <span>票据100%承兑</span>
+            <p>所有票据来源于银行与大型国企，100%无条件承兑</p>
+          </div>
+        </div>
+        <div class="iconmode">
+          <a class="olympiad-lszc"></a>
+          <div>
+            <span>专业律所全程支持</span>
+            <p>专业律所全程保驾护航</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mode">
+      <div class="title">多融荣誉</div>
+      <ul>
+        <li>
+          <a href="javascript:void(0)" target="_blank">
+            <img src="activity/web/marchInvest/images/rongyu1.png">
+            <p>多融财富荣膺
+              <br>“2016中国最佳诚信示范金融企业”</p>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" target="_blank">
+            <img src="activity/web/marchInvest/images/rongyu2.png">
+            <p>多融财富荣膺
+              <br>“中国互联网金融行业AAA级信用企业”</p>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" target="_blank">
+            <img src="activity/web/marchInvest/images/rongyu3.png">
+            <p>多融财富荣获
+              <br>“可信网站验证单位”</p>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" target="_blank">
+            <img src="activity/web/marchInvest/images/rongyu4.png">
+            <p>多融财富荣获
+              <br>“中国信用企业认证体系示范单位”证书</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="mode">
+      <div class="title">合作单位</div>
+      <div class="partners">
+        <div class="swiper-button-prev"></div>
+        <div class="imgs swiper-container">
+          <ul class="swiper-wrapper">
+            <li class="swiper-slide" style="margin-left: 30px;">
+              <img src="activity/web/marchInvest/images/hezuo1.png">
+            </li>
+            <li class="swiper-slide">
+              <img src="activity/web/marchInvest/images/hezuo2.png">
+            </li>
+            <li class="swiper-slide">
+              <img src="activity/web/marchInvest/images/hezuo3.png">
+            </li>
+            <li class="swiper-slide">
+              <img src="activity/web/marchInvest/images/hezuo4.png">
+            </li>
+            <li class="swiper-slide">
+              <img src="activity/web/marchInvest/images/hezuo5.png">
+            </li>
+            <li class="swiper-slide">
+              <img src="activity/web/marchInvest/images/hezuo6.png">
+            </li>
+          </ul>
+        </div>
+        <!-- <div class="olympiad-right swiper-button-next"></div> -->
+      </div>
+    </div>
+  </div>
+  <div class="code-wrapper">
+    <div class="code">
+      <div class="icon"></div>
+      <div class="phonecode"></div>
+      <div class="appcode">
+        <div class="code-box">
+          <div class="app-code-icon"><img src="/main/images/activity/newfriend-app.png"></div>
+          <div class="app-code-word">
+            <p><i class="olympiad-iphone"></i></p>
+          </div>
+        </div>
+        <div class="title">App下载</div>
+      </div>
+      <div class="appcode wechatcode">
+        <div class="code-box">
+          <div class="app-code-icon"><img src="/main/images/activity/newfriend-wechat.png"></div>
+        </div>
+        <div class="title">关注公众号</div>
+      </div>
+      <div class="tel">
+        <div class="number">
+          <i class="olympiad-phone"></i>
+          <div>
+            <span>4006-908-896</span>
+            <p>服务时间 08:30 - 20:30 （法定节假日除外）</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 渠道用户 -->
+  <div class="mask" ng-if='mask' ng-show='showingBox=="vipBox"'>
+    <div class="tishi">
+      <a href="{{a|webIE8}}main/home" target="_self" class="closeBtn"></a>
+      <p class="tishiTitle">敬请期待！</p>
+      <p class="tishiContent">亲，由于您是渠道VIP用户
+        <br> 所以不能参与此次活动</p>
+      <a href="{{a|webIE8}}main/home" class="tishiBtn" target="_self">回到首页</a>
+    </div>
+  </div>
+    <!-- 活动未开始 -->
+
+    <div class="mask" ng-if='mask' ng-show='showingBox=="earlyBox"'>
+    <div class="tishi">
+      <a href="{{a|webIE8}}main/home" target="_self" class="closeBtn"></a>
+      <p class="tishiTitle">感谢关注!</p>
+      <p class="tishiContent">本次活动尚未开始
+        <br> 敬请期待</p>
+      <a href="{{a|webIE8}}main/home" class="tishiBtn" target="_self">回到首页</a>
+    </div>
+  </div>
+</div>

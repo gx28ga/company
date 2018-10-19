@@ -1,0 +1,168 @@
+{% extends "common/main.njk"%}
+{% block body%}
+<style>
+    .banner{
+        background: url("/images/other/recordSchedule/banner.jpg") center 0 no-repeat;
+        height:404px;
+    }
+    .content1{
+        background:url("/images/other/recordSchedule/progress.jpg")center 0 no-repeat;
+        height:230px;
+        padding-top: 70PX;
+    }
+    .con{
+        color:#fff;
+        width:1000px;
+        height:145px;
+        font-size: 16px;
+        line-height:24px;
+        margin:0 auto;
+        padding:20px;
+    }
+    .explain{
+        text-indent: 2em;
+    }
+    .content2{
+        background:url("/images/other/recordSchedule/content2.png")center 0 no-repeat;
+        height:147px;
+    }
+    .content3{
+       background:#1f1b7c;
+        /*height:542px;*/
+        padding-top:15px ;
+
+    }
+    .tableCon{
+       width:1042px;
+        margin:0 auto;
+        color:#fff;
+    }
+    .tableTitle{
+        height:50px;
+        line-height: 50px;
+        background:#564fb2;
+        font-size: 24px;
+        text-align: center;
+
+    }
+    .tablecontent{
+        font-size:18px;
+        height:50px;
+        line-height:50px;
+        background:#3b3597;
+        border-bottom:1px solid #5b55ae ;
+    }
+    .titleLeft{
+       float:left;
+        width:640px;
+        padding-left:30px;
+        border-right:1px solid #7b74c4;
+    }
+    .downIcon{
+        background:url("/images/other/recordSchedule/down.png") no-repeat;
+        width:106px;
+        height:47px;
+        display: inline-block;
+    }
+    .wancheng{
+        width:105px;
+        height:40px;
+        line-height: 40px;
+        border:1px solid #fff;
+        color:#fff;
+        display: inline-block;
+        text-align: center;
+    }
+    .icon{
+        background:url("/images/other/recordSchedule/icon1.png") no-repeat;
+        width:23px;
+        height:23px;
+        display: inline-block;
+        margin-right: 3px;
+    }
+    .icon2{
+        /*background:url("/images/other/recordSchedule/icon1.png") no-repeat;*/
+        width:23px;
+        height:23px;
+        display: inline-block;
+        margin-right: 3px;
+    }
+    .fr2{
+        display: flex;
+        float: right;
+        width:370px;
+        height:50px;
+        align-items: center;
+        justify-content: center;
+    }
+    .fr{
+        float:right;
+        width:370px;
+        text-align: center;
+    }
+    .content4{
+        background:url("/images/other/recordSchedule/content4.jpg")center 0 no-repeat;
+        height:98px;
+    }
+</style>
+<div>
+    <div class="banner"></div>
+    <div class="content1">
+        <div class="con">
+            <p>亲爱的用户：</p><br>
+            <p class="explain"> 感谢大家一直以来对上海银砖金融信息服务有限公司的关注和支持。作为一家拥有国资、上市背景的平台，我们积极配合有关部门，全面开启网络借贷信息中介平台备案登记工作，在通往合规的道路上稳步前行着。</p>
+            <p class="explain">  根据《网络借贷信息中介机构业务活动管理暂行办法》和《上海市网络借贷信息中介机构合规审核与整改验收工作指引表》并结合平台的实际运营情况，对上海银砖金融信息服务有限公司的备案进度进行披露，敬请查阅。</p>
+        </div>
+    </div>
+    <div class="content2"></div>
+    <div class="content3">
+        <div class="tableCon">
+            <div class="tableTitle">
+                <div class="titleLeft">备案项目</div>
+                <div class="fr">状态</div>
+            </div>
+            <div class="tablecontent">
+                <div class="titleLeft">加入电子签名及电子存证</div>
+                <div class="fr2"><span class="wancheng">已完成</span></div>
+            </div>
+            <div class="tablecontent">
+                <div class="titleLeft">银行资金存管</div>
+                <div class="fr2"><span class="wancheng">已完成</span></div>
+            </div>
+            <div class="tablecontent">
+                <div class="titleLeft">信息安全等级保护三级备案</div>
+                <div class="fr2"><span class="wancheng">已完成</span></div>
+            </div>
+
+            <div class="tablecontent">
+                <div class="titleLeft">及时真实对平台信息进行了披露</div>
+                <div class="fr2"><span class="wancheng">已完成</span></div>
+            </div>
+            <div class="tablecontent">
+                <div class="titleLeft">对出借人进行风险提示</div>
+                <div class="fr2"><span class="wancheng">已完成</span></div>
+            </div>
+            <div class="tablecontent">
+                <div class="titleLeft">制定符合法规和监管要求平台数据和资料保存制度</div>
+                <div class="fr2"><span class="wancheng">已完成</span></div>
+            </div>
+            <div class="tablecontent">
+                <div class="titleLeft">增值电信业务经营许可</div>
+                <div class="fr2">进行中</div>
+            </div>
+            <div class="tablecontent">
+                <div class="titleLeft">法律意见书</div>
+                <div class="fr2">进行中</div>
+            </div>
+            <div class="tablecontent">
+                <div class="titleLeft">专项审计报告</div>
+                <div class="fr2">进行中</div>
+            </div><div class="tablecontent">
+                <div class="titleLeft">金融局备案手续</div>
+                <div class="fr2">进行中</div>
+            </div>
+        </div>
+    </div>
+    <div class="content4"></div>
+</div>
+{% endblock%}

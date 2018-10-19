@@ -1,0 +1,124 @@
+.index{
+    background: linear-gradient(to top,#737aff,#3e1691);
+    .banner{
+        background: url('../images/banner.png') no-repeat;
+        background-size: contain;
+    }
+    .phone{
+        p{
+            color:#ffc459;
+            text-align: center;
+            span{
+                color:#ff0023;
+            }
+        }
+        input{ border:1px solid #ff6666; display: block; margin: 0 auto; box-sizing: border-box; }
+        input::-webkit-input-placeholder {color: #999999; font-size: 16px;}
+        input:-ms-input-placeholder {color: #999999; font-size: 16px;}
+        input:-moz-placeholder {color: #999999; font-size: 16px;}
+        input::-moz-placeholder {color: #999999; font-size: 16px;}
+    }
+    .regbox{
+        margin:0 auto;
+    }
+    #tzerror{color: #ff8383;}
+    .lqbtn{background: -webkit-gradient(linear,0 100% ,100% 100%, from(#ffcc33), to(#ff6600));margin: 0 auto;border-radius: 100px;color: #fff;text-align: center; }
+    
+    .parting-line{
+        background: url('../images/parting.png') no-repeat;
+        background-size: contain;
+        margin: 0 auto;
+    }
+    .faddish-box{
+        background: url('../images/faddishbg.png') no-repeat;
+        background-size: contain;
+        margin: 0 auto;
+        position: relative;
+        .title,.title2{
+            position: absolute;
+            background: url('../images/title1.png') no-repeat;
+            background-size: contain;
+            margin: 0 auto;
+            left: 0;
+            right:0;
+        }
+        .title2{
+            background: url('../images/title2.png') no-repeat;
+            background-size: contain;
+        }
+        .box{
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            .btn{
+                margin: 0 auto;
+            }
+            .A{
+                background: url('../images/faddish1.png') no-repeat;
+                background-size: contain;
+            }
+            .B{
+                background: url('../images/faddish2.png') no-repeat;
+                background-size: contain;
+            }
+        }
+        .box2{
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap; 
+            color: #fff;
+            .A{
+                background: #f5f3ff;
+                display: flex;
+            }
+            .icon1{
+                background: url('../images/about1.png') no-repeat;
+                background-size: contain;
+            }
+            .icon2{
+                background: url('../images/about2.png') no-repeat;
+                background-size: contain;
+            }
+            .icon3{
+                background: url('../images/about3.png') no-repeat;
+                background-size: contain;
+            }
+            .icon4{
+                background: url('../images/about4.png') no-repeat;
+                background-size: contain;
+            }
+            .icon5{
+                background: url('../images/about5.png') no-repeat;
+                background-size: contain;
+            }
+            .icon6{
+                background: url('../images/about6.png') no-repeat;
+                background-size: contain;
+            }
+        }
+    }
+    .faddish-box2{
+        background: url('../images/faddishbg2.png') no-repeat;
+        background-size: contain;
+    }
+
+
+    .about{
+        .info{
+            color: #333;
+            span:last-child{color: #999;}
+        }
+    }
+    .danger{ color: #ccccff; text-align: center; p:nth-child(1){
+        display:block; border-bottom: 1px dashed #9966ff; width: 90%;margin: 10px auto;padding-bottom: 10px;
+        };
+    }
+}

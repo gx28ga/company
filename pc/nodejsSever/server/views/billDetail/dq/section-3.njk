@@ -1,0 +1,213 @@
+{# 项目介绍 投资记录 #}
+{% if map.info.type != 1 %}
+<div class="box detail-info" v-if="isLogin">
+    <div class="title">
+        <ul>
+            <!--{% if product.type != 1 %}-->
+            <li @click="setInvestmentTab(1)" :class="{actived:investmentTab==1}">项目介绍</li>
+            {% if type ==2%}
+            <li @click="setInvestmentTab(2)" :class="{actived:investmentTab==2}">常见问题</li>
+            {% endif %}
+            <!--{% endif %}-->
+            <li @click="setInvestmentTab(3)" :class="{actived:investmentTab==3}">投资记录</li>
+        </ul>
+    </div>
+    <div class="effect">
+        <div class="option transition info-wrap" v-show="investmentTab==1">
+            {# 项目介绍 #}
+            {% if type !=2 %}
+            <div class="info">
+                {# 审核项目 #}
+                <div class="examine">
+                    <div class="title">
+                        <i></i>
+                        <h2>审核项目</h2>
+                        <div class="line"></div>
+                    </div>
+                    <div class="content">
+                        {% if projectListData == false %} {# 审核是另外一种展示 #}
+                        <ul class="check-box">
+                            <li>
+                                <h6>公司工商信息</h6>
+                                <i class="bill-tick"></i>
+                                <b>已审核</b>
+                            </li>
+                            <li>
+                                <h6>营业执照</h6>
+                                <i class="bill-tick"></i>
+                                <b>已审核</b>
+                            </li>
+                            <li>
+                                <h6>开户许可证</h6>
+                                <i class="bill-tick"></i>
+                                <b>已审核</b>
+                            </li>
+                            <li>
+                                <h6>法人及股东身份证</h6>
+                                <i class="bill-tick"></i>
+                                <b>已审核</b>
+                            </li>
+                            <li>
+                                <h6>公司章程</h6>
+                                <i class="bill-tick"></i>
+                                <b>已审核</b>
+                            </li>
+                            <li>
+                                <h6>经营场所实地认证</h6>
+                                <i class="bill-tick"></i>
+                                <b>已审核</b>
+                            </li>
+                        </ul>
+                        {% else %}
+                        <ul class="check-box">
+                            {% for item in projectList %}
+                            <li>
+                                <h6>{{item}}</h6>
+                                <i class="bill-tick"></i>
+                                <b>已审核</b>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+
+                        {% if pics.length>0 %}
+                        <div class="pro-detail">
+                            <div class="title">
+                                <div class="line-box">
+                                    <h2>产品资料情况</h2>
+                                </div>
+                                <div class="line"></div>
+                            </div>
+                            <div class="img-detail">
+                                <div class="bill-turn-left"></div>
+                                <div class="imgs swiper-container">
+                                    <ul>
+                                        {% for item in pics %}
+                                        <li class="swiper-slide" @click="showPic({pic:'{{item.bigUrl}}'})">
+                                            <img src="{{item.bigUrl}}">
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                                <div class="bill-turn-right"></div>
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+                {# 审核项目结束 #}
+
+				{% if type==0 %} {# 定期 #}
+	                {% include "./dq-section-3.njk" %}
+	            {% else %} {# 票据 #}
+	                {% include "./pj-section-3.njk" %}
+	            {% endif %}
+            </div>
+            {% else %}
+            <div class='info'>
+                {# 项目介绍#}
+                <table class='newhand'>
+                    <tr>
+                        <td class='ds'>起投金额</td>
+                        <td class='dd'><span class='df'>{{map.currentInfo.leastPurchaseAmount}}</span>元，且以<span class='df'>{{map.currentInfo.increasedAmount}}</span>的倍数递增</td>
+                    </tr>
+                    <tr>
+                        <td class='ds'>单人限投</td>
+                        <td class='dd'><span class='df'>{{map.currentInfo.maxPurchaseAmount | toLocaleString(2)}}</span>元</td>
+                    </tr>
+                    <tr>
+                        <td class='ds'>转入说明</td>
+                        <td class='dd'>今日购买，明日计息</td>
+                    </tr>
+                    <tr>
+                        <td class='ds'>转出说明</td>
+                        <td class='dd'>申购确认就随时退出</td>
+                    </tr>
+                </table>
+                {# 项目介绍结束 #}
+            </div>
+            {% endif %}
+        </div>
+        {# 常见问题 #}
+        <div class='option transition ask-question' v-show='investmentTab==2'>
+            <div class='guarantee-box'>
+                <div style="padding:10px 0 28px 0 ;border-bottom: 1px dashed #cccccc;">
+                    <div class="ques"><span>Q</span>什么是新手宝？</div>
+                    <div class="ands"><span>A</span>新手宝是多融财富为兼顾投资者收益性和流动性的需求而特别推出的新手专享类活期理财产品。收益稳健，期限灵活，随时可退。</div>
+                    <div class="info">
+                        <p>温馨提示：</p>
+                        <ul>
+                            <li>· 新手宝为新手专享产品，仅限新用户首笔投资，且只能投资1次。假如注册成功后首笔投资了其他产品，则无法投资新手宝。</li>
+                            <li>· 每人最高可购买额度为50000元</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="padding:10px 0 28px 0 ;border-bottom: 1px dashed #cccccc;">
+                    <div class="ques"><span>Q</span>新手宝的收益如何计算？</div>
+                    <!--<div class="ands"><span>A</span>· 关于收益：新手宝预期年化5%，前7天享受5%的额外活动加息，即5%+5%，7天后如果继续持有，新手宝预期收益恢复为5%。</div>-->
+                    <div class="ands"><span>A</span>· 关于收益：新手宝历史年化收益率5%，前7天享受5%的额外活动加息，即5%+5%，7天后如果继续持有，新手宝历史年化收益率仍为5%。</div>
+                    <div class="ands"><span></span>· 关于计息：当日购买，次日起息，第三日收益到账。发起产品退出申请，当日不计息。</div>
+                    <div class="ands"><span></span>· 关于结算：每日产生利息，按日结算，收益直接转入账户余额。</div>
+                    <div class="info">
+                        <p>以7月1日投资5万新手宝并于7月20日发起退出申请为例：</p>
+                        <ul>
+                            <li>· 7月1日购买成功</li>
+                            <li>· 7月2日起开始计息</li>
+                            <li>· 7月3日上一日利息直接转入账户余额</li>
+                            <li>· 7月2-8日，享受额外活动加息，按5%+5%计息</li>
+                            <li>· 7月9-19日，恢复产品原始收益,按5%计息</li>
+                            <li>· 7月20日，发起产品退出申请，当日不计息</li>
+                            <li style="line-height: 28px;font-weight: bold;">收益=（5%+5%）*50000*7/365+5%*50000*11/365=171.23元</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="padding:10px 0 15px 0 ;border-bottom: 1px dashed #cccccc;">
+                    <div class="ques"><span>Q</span>为什么无法再次购买新手宝？</div>
+                    <div class="ands"><span>A</span>新手宝为新手专享产品，每位新用户只有一次购买机会。</div>
+                </div>
+                <div style="padding-top:10px;">
+                    <div class="ques"><span>Q</span>新手宝退出（回款）注意事项？</div>
+                    <div class="ands"><span>A</span>· 关于退出时间：随时可退出，购买当日无法申请退出</div>
+                    <div class="ands"><span></span>· 关于退出金额：必须全额退出，无法选择部分退出</div>
+                    <div class="ands"><span></span>· 关于退出结息：发起产品退出申请，当日不计息</div>
+                    <div class="ands"><span></span>· 关于退出方式：您于T日发起的退出申请（即点击“全额转出到余额”按钮进行转出），将于T+1日一次性本息全额退出到您的账户</div>
+                    <div class="ands"><span></span>余额，例如：周一转出，周二到账；周五转出，下周一到账。以此类推，节假日顺延。如需提现到银行卡，可继续发起提现申请。</div>
+                </div>
+            </div>
+        </div>
+        {# end常见问题 #}
+        {# 投资记录 #}
+        <div class="option transition investment-record" v-show="investmentTab==3">
+            <table class="tab">
+                <tr>
+                    <th>投资人</th>
+                    <th>金额（元）</th>
+                    <th>时间</th>
+                </tr>
+                {% if type!=2 %}
+                <tr v-for="(item,index) in investList" :class="{active:index%2!=0}">
+                    <td>${item.mobilephone}</td>
+                    <td>${item.amount | isNumber2}</td>
+                    <td>${new Date(item.investTime).Format('yyyy-MM-dd hh:mm')}</td>
+                </tr>
+                {% else %}
+                <tr v-for="(item,index) in investList" :class="{active:index%2!=0}">
+                    <td>${item.mobilePhone}</td>
+                    <td>${item.amount | isNumber2}</td>
+                    <td>${item.purchaseTime}</td>
+                </tr>
+                {% endif %}
+                <tr v-else>
+                    <td colspan="3" class="nolist">暂无该产品投资记录</td>
+                </tr>
+
+            </table>
+            <div id="Page"></div>
+        </div>
+        {# end 投资记录 #}
+    </div>
+</div>
+<div v-else class="no-login" @click="login">
+    <span>登录查看更多</span>
+</div>
+{% endif %}

@@ -1,0 +1,20 @@
+<div class="autotb-dialog-box">
+	<div  class="autotb-img" >
+		<!-- 出错 -->
+		<img  ng-if="errorCode!=null" src="../main/images/cp138/error.png">
+		<p ng-if="errorCode==null"><font style="color: #ff5500;font-size: 28px;float:right;margin-top: 77px;margin-right: 13px;">{{okText}}</font></p>
+		<!-- 首次 -->
+		<img ng-if="tunOff&&errorCode==null" src="../main/images/cp138/flw.png">
+		<!-- 修改 -->
+		<img ng-if="!tunOff&&errorCode==null" src="../main/images/cp138/flw.png">
+	</div>
+	<div class='autotb-errortext' ng-if="errorCode!=null">
+		<p>失败原因：{{errorCode | autoTbServerError}}</p>
+	</div>
+	<div ng-class="{true:'line',false:'line1'}[errorCode!=null]"><img src=""></div>
+	<div class="sub-box">
+		<a href="" ui-sref="main.myAccount.accountHome" ng-click="onClickToBillDetail('关闭')">返回我的账户</a>
+		<input ng-if="errorCode==null" class="sub-btn sub" type="submit" value="继续投资" ng-click="onClickToBillDetail('关闭')" ui-sref="main.bankBillList"/>
+		<input ng-if="errorCode!=null" class="sub-btn sub" type="submit" value="关闭" ng-click="onClickToBillDetail('关闭')"/>
+	</div>
+</div>

@@ -1,0 +1,152 @@
+{% extends "common/main.njk" %}
+{% block body %}
+<style>
+    .wapper{
+        background:#fbedd2;
+    }
+    .bannerbg{
+        height:495px;
+        background:url("/images/other/powerfulShareholders/bannerbg.jpg") center 0 no-repeat;
+
+    }
+    .banner{
+        width:968px;
+        height:502px;
+        background:url("/images/other/powerfulShareholders/banner.png") center 0 no-repeat;
+        margin:0 auto;
+    }
+    .introduce{
+        width: 1212px;
+        height: 311px;
+        background:url("/images/other/powerfulShareholders/introduce.png") center 0 no-repeat;
+        margin:-69px auto 0;
+
+    }
+    .intro_info{
+        padding: 85px 95px 0 95px;
+        font-size: 24px;
+        color: #9e5c00;
+        line-height: 50px;
+    }
+    .title_1{
+        width: 427px;
+        height: 164px;
+        background: url("/images/other/powerfulShareholders/title1.png") center 0 no-repeat;
+        margin: 5px auto 0;
+    }
+    .title_2{
+        width: 427px;
+        height: 164px;
+        background: url("/images/other/powerfulShareholders/title2.png") center 0 no-repeat;
+        margin: 0 auto 85px;
+    }
+    .title_3{
+        width: 427px;
+        height: 164px;
+        background: url("/images/other/powerfulShareholders/title3.png") center 0 no-repeat;
+        margin: 0 auto;
+    }
+    .info{
+        width: 1200px;
+        margin: 44px auto 0;
+        display: flex;
+        padding-bottom: 108px;
+    }
+    .A{
+        width: 569px;
+        height: 332px;
+        background: url("/images/other/powerfulShareholders/infobg.png") center 0 no-repeat;
+        color: #9e5c00;
+    }
+    .A:first-child{
+        margin-right: 60px;
+    }
+    .title{
+        line-height: 88px;
+        font-size: 24px;
+        text-align: center;
+    }
+    .content{
+        width: 453px;
+        height: 198px;
+        padding: 15px 23px 0px 30px;
+        border: 1px solid #dac8ac;
+        line-height: 30px;
+        font-size: 20px;
+        margin: 0 auto;
+    }
+    .content span{
+        font-weight: 600;
+    }
+    .ratio_box{
+        background: #fffdf9;
+        padding: 66px 0 100px;
+    }
+    .ratio{
+        width: 1066px;
+        height: 371px;
+        margin: 85px auto 0;
+        background: url("/images/other/powerfulShareholders/ratio.png") center 0 no-repeat;
+    }
+    .strength{
+        height: 1158px;
+        padding-top: 48px;
+        background: url("/images/other/powerfulShareholders/strength.jpg") center 0 no-repeat;
+    }
+    .streinfo{
+        width: 1150px;
+        margin: 85px auto 0;
+        color: #9e5c00;
+        font-size: 24px;
+        line-height: 36px;
+    }
+    .streinfo p{
+        margin-top: 35px;
+    }
+    .streinfo p span{
+        display: block;
+        width: 30px;
+        height: 100px;
+        float: left;
+    }
+    p.mo{
+        font-size: 30px;
+        line-height: 48px;
+        color: #583400;
+    }
+</style>
+<div class="wapper">
+    <div class='bannerbg'>
+        <div class='banner'></div>
+    </div>
+    <div class="introduce">
+        <div class="intro_info">
+            <p>2016年9月, 中商沪深产业投资有限公司战略入股银砖金融，占股比例为99%。</p>
+            <P style="line-height: 38px;">2017年12月，获南京银河生物技术有限公司5000万元增资控股，占股比例为33.33%，中商沪深产业投资有限公司占股比例调整为66.67%。</P>
+        </div>
+    </div>
+    <div class="title_1"></div>
+    <div class="info">
+        <div class="A">
+            <div class="title">国资股东</div>
+            <div class="content"><span>中商沪深产业投资有限公司</span>是中商沪深资本控股有限公司（隶属于国务院国资委的司局级国家事业单位——商业网点建设开发中心的全资子公司）的全资子公司。中商沪深产业涵盖投资兴办实业、金融服务、供应链管理、保理、贸易等领域，实力雄厚。</div>
+        </div>
+        <div class="A">
+            <div class="title">上市股东</div>
+            <div class="content"><span>南京银河生物技术有限公司</span>为上市公司银河生物全资子公司。银河生物创建于1993年，1998年股票发行上市（股票代码SZ000806），旗下拥有十多家控股公司，业务遍及全国二十多个省市、自治区，多类产品荣获国家、省市科技进步奖和新产品奖，并出口到东南亚及欧美地区。</div>
+        </div>
+    </div>
+    <div class="ratio_box">
+        <div class="title_2"></div>
+        <div class="ratio"></div>
+    </div>
+    <div class="strength">
+        <div class="title_3"></div>
+        <div class="streinfo">
+            <p><span>●	</span>国资系资金实力雄厚，资源丰富，兑付能力强，能带来良好的信用背书，并保障投资者的资金安全及收益稳定。</p>
+            <p><span>●	</span>上市系在其所处细分领域深耕多年，熟知产业链上下游企业情况，掌握其经营风险、贸易真实性，很容易甄别出优质借款人，从而保证融资安全。</p>
+            <p class="mo">多融财富将与2大股东强强联手，发挥1+1+1>3的效应，打造更具竞争力的项目资产、风控体系、市场运营、客户服务等，实现三方共赢。</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

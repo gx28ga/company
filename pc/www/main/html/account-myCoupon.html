@@ -1,0 +1,572 @@
+<style type="text/css">
+	.closeHB{
+		background: rgba(189, 181, 182, 0.39); 
+		color: #2A6505;
+		width: 155px;
+		height: 77px;
+		margin-top: 5px;
+		position: absolute;
+		font-size: 15px;
+		text-align: center;
+	}
+	a:hover{
+		text-decoration: none;
+	}
+</style>
+<div class="account-mymsg-wrap" ng-controller="myCouPonCtrl" ng-init="action=1">
+	<div class="account-common-title">我的优惠券</div>
+	<div class="account-common-con" >
+	
+		<div class="coupon-wrap">
+			<!-- tab -->
+			<div class="account-top-box">
+		    	<p ng-click="action=1" ng-class="{1:'top-list',3:'',2:''}[action]">可使用</p>
+		    	<p ng-click="action=2" ng-class="{1:'',2:'top-list',3:''}[action]">已使用</p>
+		        <p ng-click="action=3" ng-class="{3:'top-list',1:'',2:''}[action]" style="border-right: 1px solid #ECECEC;">已失效</p>
+		    </div>
+			<!--<div class="coupon-box" ng-if="HBList.length>0||QList.length>0">-->
+			<div class="coupon-box" ng-if="HBList.length>0||QList.length>0||ZSQList.length>0||FBQList.length>0 || CJList.length>0 || NTLIST.length>0">
+<!-- 可使用 -->
+	        <!-- 红包 -->
+	        <div class="coupon-mode" ng-show="action==1">
+				<ul>
+					<li>红包 {{tipsLength}} 张</li>
+				</ul>
+				<div class="icons">
+					<div class="icons-con icons-conn" ng-repeat="item in HBList | filter: {status: 0}" ng-class="{0: 'my-active-tips',1: 'my-used-tips',2: 'my-disable-tips'}[item.status]">
+						<p class="title">
+							<b>{{item.amount}}<i></i></b>
+							<span ng-if="item.type != 3">元　红包</span>
+							<span ng-if="item.type == 3">元　体验金</span>
+                            <a class="lj-btn" ng-if="item.type == 3">立即使用</a>
+							<a class="lj-btn" href="/pj/" ng-if="item.type != 3" target="_self">立即使用</a>
+						</p>
+						<p class="content">
+							<span>红包作用：投资成功返现</span><br>
+							<div style="padding-left: 11px;">使用条件：
+								<span ng-if="item.maxAmount == 0" style="margin-left: -6px;">投资金额≥{{item.enableAmount | isAmountToStr}}元</span>
+								<span ng-if="item.maxAmount != 0" style="margin-left: -6px;">{{item.enableAmount | isAmountToStr}}元≤投资金额≤{{item.maxAmount | isAmountToStr}}元</span><br>
+							</div>
+							<div style="padding-left: 11px;" ng-if="item.productDeadline>0&&item.type != 3">
+								<span ng-if="item.maxProductDeadline == 0">期限≥{{item.productDeadline}}天且可用返现券</span>
+								<span ng-if="item.maxProductDeadline != 0">{{item.productDeadline}}天≤期限≤{{item.maxProductDeadline}}天且可用返现券</span><br>
+							</div>
+							<div style="padding-left: 11px;" ng-if="item.type == 3"><span>仅限新手标使用</span><br></div>
+							<span class="data">有效期：{{item.addtime | date:'yyyy.MM.dd'}}-{{item.expireDate| date:'yyyy.MM.dd'}}</span>
+						</p>
+					</div>
+				</div>
+			</div>
+			<!-- 加息券 -->
+			<div class="coupon-mode" ng-show="action==1">
+				<ul>
+					<li>加息券 {{couponLength}} 张</li> 
+				</ul>
+				<div class="icons">
+					<div ng-repeat="item in QList | filter: {status: 0}" class="icons-con" ng-class="{0: 'my-active-coupon',1: 'my-used-coupon',2: 'my-disable-coupon'}[item.status]">
+						<p class="title">
+							<b>{{item.raisedRates}}%</b>　加息券
+							<a class="lj-btn2" href="pj" target="_self">立即使用</a>
+						</p>
+						<p class="content">
+							<span>作用描述：增加投资利息</span><br>
+							<div style="padding-left: 11px;">使用条件：
+								<span ng-if="item.maxAmount == 0" style="margin-left: -6px;">投资金额≥{{item.enableAmount| isAmountToStr}}元</span>
+								<span ng-if="item.maxAmount != 0" style="margin-left: -6px;">{{item.enableAmount | isAmountToStr}}元≤投资金额≤{{item.maxAmount | isAmountToStr}}元</span><br>
+							</div>
+							<div style="padding-left: 11px;" ng-if="item.productDeadline>0&&item.type != 3">
+								<span ng-if="item.maxProductDeadline == 0">期限≥{{item.productDeadline}}天且可用加息券</span>
+								<span ng-if="item.maxProductDeadline != 0">{{item.productDeadline}}天≤期限≤{{item.maxProductDeadline}}天且可用加息券</span><br>
+							</div>
+							<span class="data data2">有效期：{{item.addtime | date:'yyyy.MM.dd'}}-{{item.expireDate| date:'yyyy.MM.dd'}}</span>
+						</p>
+					</div>
+				</div>
+			</div>
+			<!-- 专属加息券 -->
+			<div class="coupon-mode" ng-show="action==1">
+				<ul>
+					<li>专属加息券 {{ZScouponLength}} 张</li>
+				</ul>
+				<div class="icons">
+					<div ng-repeat="item in ZSQList | filter: {status: 0}" class="icons-con" ng-class="{0: 'my-active-ZS',1: 'my-used-coupon',2: 'my-disable-coupon'}[item.status]">
+						<p class="title">
+							<b>{{item.raisedRates}}%</b>　专属加息券
+							<a class="lj-btn" href="pj" target="_self">立即使用</a>
+						</p>
+						<p class="content">
+							<span>作用描述：增加投资利息</span><br>
+							<div style="padding-left: 11px;">使用条件：
+								<span ng-if="item.maxAmount == 0" style="margin-left: -6px;">投资金额≥{{item.enableAmount| isAmountToStr}}元</span>
+								<span ng-if="item.maxAmount != 0" style="margin-left: -6px;">{{item.enableAmount | isAmountToStr}}元≤投资金额≤{{item.maxAmount | isAmountToStr}}元</span><br>
+							</div>
+							<div style="padding-left: 11px;" ng-if="item.productDeadline>0&&item.type != 3">
+								<span ng-if="item.maxProductDeadline == 0">期限≥{{item.productDeadline}}天且可用加息券</span>
+								<span ng-if="item.maxProductDeadline != 0">{{item.productDeadline}}天≤期限≤{{item.maxProductDeadline}}天且可用加息券</span><br>
+
+							</div>
+							<div ng-if="item.productDeadline==null" style="height:18px;"></div>
+							<span class="data">有效期：{{item.addtime | date:'yyyy.MM.dd'}}-{{item.expireDate| date:'yyyy.MM.dd'}}</span>
+						</p>
+					</div>
+				</div>
+			</div>
+			<!-- 翻倍券 -->
+			<!--<div class="packet-mode" ng-show="action==1">-->
+				<!--<ul>-->
+					<!--<li>翻倍券 {{fbqLength}} 张</li>-->
+				<!--</ul>-->
+				<!--<div class="icons">-->
+					<!--<div class="icons-con icons-conn" ng-repeat="item in FBQList | filter: {status: 0}" ng-class="{0: 'my-active-FB',1: 'my-used-FB',2: 'my-disable-FB'}[item.status]">-->
+						<!--<p class="title">-->
+							<!--<b>收益 <t>X{{item.multiple}}</t></b>　翻倍券-->
+							<!--<a class="lj-btn" href="pj" style="margin-top: 7px;" target="_self">立即使用</a>-->
+						<!--</p>							-->
+						<!--<p class="content">-->
+							<!--作用描述：产品利率翻 {{item.multiple}} 倍<br>-->
+
+							<!--<div style="padding-left: 11px;">使用条件：-->
+								<!--<span ng-if="item.maxAmount == 0" style="margin-left: -6px;">投资金额≥{{item.enableAmount| isAmountToStr}}元</span>-->
+								<!--<span ng-if="item.maxAmount != 0" style="margin-left: -6px;">{{item.enableAmount| isAmountToStr}}元≤投资金额≤{{item.maxAmount| isAmountToStr}}元</span><br>-->
+							<!--</div>-->
+							<!--<div style="padding-left: 11px;" ng-if="item.productDeadline>0&&item.type != 3">-->
+								<!--<span ng-if="item.maxProductDeadline == 0">期限≥{{item.productDeadline}}天且可用翻倍券</span>-->
+								<!--<span ng-if="item.maxProductDeadline != 0">{{item.productDeadline}}天≤期限≤{{item.maxProductDeadline}}天且可用翻倍券</span><br>-->
+							<!--</div>-->
+							<!--<span class="data">有效期：{{item.addtime | date:'yyyy.MM.dd'}}-{{item.expireDate| date:'yyyy.MM.dd'}}</span>-->
+						<!--</p>-->
+					<!--</div>-->
+				<!--</div>-->
+			<!--</div>-->
+				<!--超级加息券-->
+				<div class="packet-mode" ng-show="action==1">
+					<ul>
+						<li>超级加息券 {{CJcounpLength}} 张</li>
+					</ul>
+					<div class="icons">
+						<div class="icons-con icons-conn" ng-repeat="item in CJList | filter: {status: 0}" ng-class="{0: 'my-active-FB',1: 'my-used-FB',2: 'my-disable-FB'}[item.status]">
+							<p class="title">
+								<b style="font-size: 18px;margin-right: 5px">{{item.minRaisedRates }}%~{{item.maxRaisedRates}}%</b>超级加息券
+								<a class="lj-btn" href="pj" style="margin-top: 7px;" target="_self">立即使用</a>
+							</p>
+							<p class="content">
+								作用描述：增加投资利息<br>
+
+							<div style="padding-left: 11px;">使用条件：
+								<span ng-if="item.maxAmount == 0" style="margin-left: -6px;">投资金额≥{{item.enableAmount| isAmountToStr}}元</span>
+								<span ng-if="item.maxAmount != 0" style="margin-left: -6px;">{{item.enableAmount| isAmountToStr}}元≤投资金额≤{{item.maxAmount| isAmountToStr}}元</span><br>
+							</div>
+							<div style="padding-left: 11px;" ng-if="item.productDeadline>0 && item.type != 3">
+								<span ng-if="item.maxProductDeadline == 0">期限≥{{item.productDeadline}}天且可用加息券</span>
+								<span ng-if="item.maxProductDeadline != 0">{{item.productDeadline}}天≤期限≤{{item.maxProductDeadline}}天且可用加息券</span><br>
+							</div>
+							<div ng-if="item.productDeadline==null" style="height:18px;"></div>
+							<span class="data" style="margin-top: 12px;">有效期：{{item.addtime | date:'yyyy.MM.dd'}}-{{item.expireDate| date:'yyyy.MM.dd'}}</span>
+							</p>
+						</div>
+					</div>
+				</div>
+                <!--n天加息券未使用-->
+                <div class="coupon-mode" ng-show="action==1">
+                    <ul>
+                        <li>N天加息券 {{NDAYLength}} 张</li>
+                    </ul>
+                    <div class="icons">
+                        <div ng-repeat="item in NTLIST | filter: {status: 0}" class="icons-con" ng-class="{0: 'my-active-n',1: 'my-used-coupon',2: 'my-disable-coupon'}[item.status]">
+                            <p class="title">
+                                <b>{{item.raisedRates}}%</b>　<span style="font-size: 20px">{{item.raisedDays}}天</span>加息券
+                                <a class="lj-btn3" href="pj" target="_self">立即使用</a>
+                            </p>
+                            <p class="content">
+                                <span>作用描述：增加投资前{{item.raisedDays}}天收益</span><br>
+                            <div style="padding-left: 11px;">使用条件：
+                                <span ng-if="item.maxAmount == 0" style="margin-left: -6px;">投资金额≥{{item.enableAmount| isAmountToStr}}元</span>
+                                <span ng-if="item.maxAmount != 0" style="margin-left: -6px;">{{item.enableAmount | isAmountToStr}}元≤投资金额≤{{item.maxAmount | isAmountToStr}}元</span><br>
+                            </div>
+                            <div style="padding-left: 11px;" ng-if="item.productDeadline>0&&item.type != 3">
+                                <span ng-if="item.maxProductDeadline == 0">期限≥{{item.productDeadline}}天且可用加息券</span>
+                                <span ng-if="item.maxProductDeadline != 0">{{item.productDeadline}}天≤期限≤{{item.maxProductDeadline}}天且可用加息券</span><br>
+
+                            </div>
+                            <div ng-if="item.productDeadline==null" style="height:18px;"></div>
+                            <span class="data data4">有效期：{{item.addtime | date:'yyyy.MM.dd'}}-{{item.expireDate| date:'yyyy.MM.dd'}}</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+<!-- 已使用 -->
+	        <!-- 红包 -->
+	        <div class="coupon-mode" ng-show="action==2">
+				<ul>
+					<li>红包 {{tipsUsedLength}} 张</li> 
+				</ul>
+				<div class="icons">
+					<div class="icons-con" ng-repeat="item in HBList | filter: {status: 1}" ng-class="{0: 'my-active-tips',1: 'my-used-tips',2: 'my-disable-tips'}[item.status]">
+						<p class="title">
+							<b>{{item.amount}}<i></i></b><span ng-if="item.type != 3">元　红包</span><span ng-if="item.type == 3">元　体验金</span>
+						</p>
+						<p class="content">
+							<span>红包作用：投资成功返现</span><br>
+							<div style="padding-left: 11px;">使用条件：
+								<span ng-if="item.maxAmount == 0" style="margin-left: -6px;">投资金额≥{{item.enableAmount|isAmountToStr}}元</span>
+								<span ng-if="item.maxAmount != 0" style="margin-left: -6px;">{{item.enableAmount|isAmountToStr}}元≤投资金额≤{{item.maxAmount|isAmountToStr}}元</span><br>
+							</div>
+							<div style="padding-left: 11px;" ng-if="item.productDeadline>0&&item.type != 3">
+								<span ng-if="item.maxProductDeadline == 0">期限≥{{item.productDeadline}}天且可用返现券</span>
+								<span ng-if="item.maxProductDeadline != 0">{{item.productDeadline}}天≤期限≤{{item.maxProductDeadline}}天且可用返现券</span><br>
+							</div>
+							<div style="padding-left: 11px;" ng-if="item.type == 3"><span>仅限新手标使用</span><br></div>
+
+							<span class="data data3">有效期：{{item.addtime | date:'yyyy.MM.dd'}}-{{item.expireDate| date:'yyyy.MM.dd'}}</span>
+						</p>
+					</div>
+				</div>
+			</div>
+			<!-- 加息券 -->
+			<div class="coupon-mode" ng-show="action==2">
+				<ul>
+					<li>加息券 {{couponUsedLength}} 张</li> 
+				</ul>
+				<div class="icons">
+					<div ng-repeat="item in QList | filter: {status: 1}" class="icons-con" ng-class="{0: 'my-active-coupon',1: 'my-used-tips',2: 'my-disable-tips'}[item.status]">
+						<p class="title"><b>{{item.raisedRates}}%</b>　加息券</p>
+						<p class="content">
+							<span>作用描述：增加投资利息</span><br>
+							<div style="padding-left: 11px;">使用条件：
+								<span ng-if="item.maxAmount == 0" style="margin-left: -6px;">投资金额≥{{item.enableAmount|isAmountToStr}}元</span>
+								<span ng-if="item.maxAmount != 0" style="margin-left: -6px;">{{item.enableAmount|isAmountToStr}}元≤投资金额≤{{item.maxAmount|isAmountToStr}}元</span><br>
+							</div>
+							<div style="padding-left: 11px;" ng-if="item.productDeadline>0&&item.type != 3">
+								<span ng-if="item.maxProductDeadline == 0">期限≥{{item.productDeadline}}天且可用加息券</span>
+								<span ng-if="item.maxProductDeadline != 0">{{item.productDeadline}}天≤期限≤{{item.maxProductDeadline}}天且可用加息券</span><br>
+							</div>
+							<div ng-if="item.productDeadline==null" style="height:18px;"></div>
+							<span class="data data3">有效期：{{item.addtime | date:'yyyy.MM.dd'}}-{{item.expireDate| date:'yyyy.MM.dd'}}</span>
+						</p>
+					</div>
+				</div>
+			</div>
+			<!-- 专属加息券 -->
+			<div class="coupon-mode" ng-show="action==2">
+				<ul>
+					<li>专属加息券 {{ZScouponUsedLength}} 张</li> 
+				</ul>
+				<div class="icons">
+					<div ng-repeat="item in ZSQList | filter: {status: 1}" class="icons-con" ng-class="{0: 'my-active-coupon',1: 'my-used-tips',2: 'my-disable-tips'}[item.status]">
+						<p class="title"><b>{{item.raisedRates}}%</b>　专属加息券</p>
+						<p class="content">
+							<span>作用描述：增加投资利息</span><br>
+							<div style="padding-left: 11px;">使用条件：
+								<span ng-if="item.maxAmount == 0" style="margin-left: -6px;">投资金额≥{{item.enableAmount|isAmountToStr}}元</span>
+								<span ng-if="item.maxAmount != 0" style="margin-left: -6px;">{{item.enableAmount|isAmountToStr}}元≤投资金额≤{{item.maxAmount|isAmountToStr}}元</span><br>
+							</div>
+							<div style="padding-left: 11px;" ng-if="item.productDeadline>0&&item.type != 3">
+								<span ng-if="item.maxProductDeadline == 0">期限≥{{item.productDeadline}}天且可用加息券</span>
+								<span ng-if="item.maxProductDeadline != 0">{{item.productDeadline}}天≤期限≤{{item.maxProductDeadline}}天且可用加息券</span><br>
+							</div>
+							<span class="data data3">有效期：{{item.addtime | date:'yyyy.MM.dd'}}-{{item.expireDate| date:'yyyy.MM.dd'}}</span>
+						</p>
+					</div>
+				</div>
+			</div>
+			<!-- 翻倍券 -->
+		<!--	<div class="packet-mode" ng-show="action==2">
+				<ul>
+					<li>翻倍券 {{fbqUsedLength}} 张</li>
+				</ul>
+				<div class="icons">
+					<div class="icons-con" ng-repeat="item in FBQList | filter: {status: 1}" ng-class="{0: 'my-active-tips',1: 'my-used-tips',2: 'my-disable-tips'}[item.status]">
+						<p class="title">
+							<b>收益 <t>X{{item.multiple}}</t></b>　翻倍券
+						</p>
+						<p class="content">
+							作用描述：产品利率翻 {{item.multiple}} 倍<br>
+
+							<div style="padding-left: 11px;">使用条件：
+								<span ng-if="item.maxAmount == 0" style="margin-left: -6px;">投资金额≥{{item.enableAmount|isAmountToStr}}元</span>
+								<span ng-if="item.maxAmount != 0" style="margin-left: -6px;">{{item.enableAmount|isAmountToStr}}元≤投资金额≤{{item.maxAmount|isAmountToStr}}元</span><br>
+							</div>
+							<div style="padding-left: 11px;" ng-if="item.productDeadline>0&&item.type != 3">
+								<span ng-if="item.maxProductDeadline == 0">期限≥{{item.productDeadline}}天且可用翻倍券</span>
+								<span ng-if="item.maxProductDeadline != 0">{{item.productDeadline}}天≤期限≤{{item.maxProductDeadline}}天且可用翻倍券</span><br>
+							</div>
+							<span class="data data3">有效期：{{item.addtime | date:'yyyy.MM.dd'}}-{{item.expireDate| date:'yyyy.MM.dd'}}</span>
+						</p>
+					</div>
+				</div>
+			</div>-->
+				<div class="packet-mode" ng-show="action==2">
+					<ul>
+						<li>超级加息券 {{CJusedcounpLength}} 张</li>
+					</ul>
+					<div class="icons">
+						<div class="icons-con" ng-repeat="item in CJList | filter: {status: 1}" ng-class="{0: 'my-active-tips',1: 'my-used-tips',2: 'my-disable-tips'}[item.status]">
+							<p class="title">
+								<b style="font-size: 18px">{{item.minRaisedRates }}%~{{item.maxRaisedRates }}%</b>　超级加息券
+							</p>
+							<p class="content">
+								作用描述：增加投资利息<br>
+
+							<div style="padding-left: 11px;">使用条件：
+								<span ng-if="item.maxAmount == 0" style="margin-left: -6px;">投资金额≥{{item.enableAmount|isAmountToStr}}元</span>
+								<span ng-if="item.maxAmount != 0" style="margin-left: -6px;">{{item.enableAmount|isAmountToStr}}元≤投资金额≤{{item.maxAmount|isAmountToStr}}元</span><br>
+							</div>
+							<div style="padding-left: 11px;" ng-if="item.productDeadline>0&&item.type != 3">
+								<span ng-if="item.maxProductDeadline == 0">期限≥{{item.productDeadline}}天且可用加息券</span>
+								<span ng-if="item.maxProductDeadline != 0">{{item.productDeadline}}天≤期限≤{{item.maxProductDeadline}}天且可用加息券</span><br>
+							</div>
+							<div ng-if="item.productDeadline==null" style="height:18px;"></div>
+							<span class="data data3" style="margin-top: 12px;">有效期：{{item.addtime | date:'yyyy.MM.dd'}}-{{item.expireDate| date:'yyyy.MM.dd'}}</span>
+							</p>
+						</div>
+					</div>
+				</div>
+				<!-- n天加息券 -->
+				<div class="coupon-mode" ng-show="action==2">
+					<ul>
+						<li>N天加息券 {{NDAYUsedLength}} 张</li>
+					</ul>
+					<div class="icons">
+						<div ng-repeat="item in NTLIST | filter: {status: 1}" class="icons-con" ng-class="{0: 'my-active-coupon',1: 'my-used-tips',2: 'my-disable-tips'}[item.status]">
+							<p class="title"><b>{{item.raisedRates}}%</b><span style="font-size: 20px">{{item.raisedDays}}天</span>加息券</p>
+							<p class="content">
+								<span>作用描述：增加投资前{{item.raisedDays}}天收益</span><br>
+							<div style="padding-left: 11px;">使用条件：
+								<span ng-if="item.maxAmount == 0" style="margin-left: -6px;">投资金额≥{{item.enableAmount|isAmountToStr}}元</span>
+								<span ng-if="item.maxAmount != 0" style="margin-left: -6px;">{{item.enableAmount|isAmountToStr}}元≤投资金额≤{{item.maxAmount|isAmountToStr}}元</span><br>
+							</div>
+							<div style="padding-left: 11px;" ng-if="item.productDeadline>0&&item.type != 3">
+								<span ng-if="item.maxProductDeadline == 0">期限≥{{item.productDeadline}}天且可用加息券</span>
+								<span ng-if="item.maxProductDeadline != 0">{{item.productDeadline}}天≤期限≤{{item.maxProductDeadline}}天且可用加息券</span><br>
+							</div>
+							<span class="data data3">有效期：{{item.addtime | date:'yyyy.MM.dd'}}-{{item.expireDate| date:'yyyy.MM.dd'}}</span>
+							</p>
+						</div>
+					</div>
+				</div>
+
+
+
+<!-- 已失效 -->
+	        <!-- 红包 -->
+	        <div class="coupon-mode" ng-show="action==3">
+				<ul>
+					<li>红包 {{tipsDisabledLength}} 张</li> 
+				</ul>
+				<div class="icons">
+					<div class="icons-con" ng-repeat="item in HBList | filter: {status: 2}" ng-class="{0: 'my-active-tips',1: 'my-used-tips',2: 'my-disable-tips'}[item.status]">
+						<p class="title">
+							<b>{{item.amount}}<i></i></b><span ng-if="item.type != 3">元　红包</span><span ng-if="item.type == 3">元　体验金</span>
+						</p>								
+						<p class="content">
+							<span>红包作用：投资成功返现</span><br>
+							<div style="padding-left: 11px;">使用条件：
+								<span ng-if="item.maxAmount == 0" style="margin-left: -6px;">投资金额≥{{item.enableAmount|isAmountToStr}}元</span>
+								<span ng-if="item.maxAmount != 0" style="margin-left: -6px;">{{item.enableAmount|isAmountToStr}}元≤投资金额≤{{item.maxAmount|isAmountToStr}}元</span><br>
+							</div>
+							<div style="padding-left: 11px;" ng-if="item.productDeadline>0&&item.type != 3">
+								<span ng-if="item.maxProductDeadline == 0">期限≥{{item.productDeadline}}天且可用返现券</span>
+								<span ng-if="item.maxProductDeadline != 0">{{item.productDeadline}}天≤期限≤{{item.maxProductDeadline}}天且可用返现券</span><br>
+							</div>
+							<div style="padding-left: 11px;" ng-if="item.type == 3"><span>仅限新手标使用</span><br></div>
+							<span class="data data3">有效期：{{item.addtime | date:'yyyy.MM.dd'}}-{{item.expireDate| date:'yyyy.MM.dd'}}</span>
+						</p>
+					</div>
+				</div>
+			</div>
+			<!-- 加息券 -->
+			<div class="coupon-mode" ng-show="action==3">
+				<ul>
+					<li>加息券 {{couponDisabledLength}} 张</li> 
+				</ul>
+				<div class="icons">
+					<div ng-repeat="item in QList | filter: {status: 2}" class="icons-con" ng-class="{0: 'my-active-coupon',1: 'my-used-tips',2: 'my-disable-tips'}[item.status]">
+						<p class="title">
+							<b>{{item.raisedRates}}%</b>　加息券
+						</p>
+						<p class="content">
+							<span>作用描述：增加投资利息</span><br>
+							<div style="padding-left: 11px;">使用条件：
+								<span ng-if="item.maxAmount == 0" style="margin-left: -6px;">投资金额≥{{item.enableAmount|isAmountToStr}}元</span>
+								<span ng-if="item.maxAmount != 0" style="margin-left: -6px;">{{item.enableAmount|isAmountToStr}}元≤投资金额≤{{item.maxAmount|isAmountToStr}}元</span><br>
+							</div>
+							<div style="padding-left: 11px;" ng-if="item.productDeadline>0&&item.type != 3">
+								<span ng-if="item.maxProductDeadline == 0">期限≥{{item.productDeadline}}天且可用加息券</span>
+								<span ng-if="item.maxProductDeadline != 0">{{item.productDeadline}}天≤期限≤{{item.maxProductDeadline}}天且可用加息券</span><br>
+							</div>
+							<span class="data data3">有效期：{{item.addtime | date:'yyyy.MM.dd'}}-{{item.expireDate| date:'yyyy.MM.dd'}}</span>
+						</p>
+					</div>
+				</div>
+			</div>
+			<!-- 专属加息券 -->
+			<div class="coupon-mode" ng-show="action==3">
+				<ul>
+					<li>专属加息券 {{ZScouponDisabledLength}} 张</li> 
+				</ul>
+				<div class="icons">
+					<div ng-repeat="item in ZSQList | filter: {status: 2}" class="icons-con" ng-class="{0: 'my-active-coupon',1: 'my-used-tips',2: 'my-disable-tips'}[item.status]">
+						<p class="title">
+							<b>{{item.raisedRates}}%</b>　专属加息券
+						</p>
+						<p class="content">
+							<span>作用描述：增加投资利息</span><br>
+							<div style="padding-left: 11px;">使用条件：
+								<span ng-if="item.maxAmount == 0" style="margin-left: -6px;">投资金额≥{{item.enableAmount|isAmountToStr}}元</span>
+								<span ng-if="item.maxAmount != 0" style="margin-left: -6px;">{{item.enableAmount|isAmountToStr}}元≤投资金额≤{{item.maxAmount|isAmountToStr}}元</span><br>
+							</div>
+							<div style="padding-left: 11px;" ng-if="item.productDeadline>0&&item.type != 3">
+								<span ng-if="item.maxProductDeadline == 0">期限≥{{item.productDeadline}}天且可用加息券</span>
+								<span ng-if="item.maxProductDeadline != 0">{{item.productDeadline}}天≤期限≤{{item.maxProductDeadline}}天且可用加息券</span><br>
+							</div>
+							<span class="data data3">有效期：{{item.addtime | date:'yyyy.MM.dd'}}-{{item.expireDate| date:'yyyy.MM.dd'}}</span>
+						</p>
+					</div>
+				</div>
+			</div>
+			<!-- 翻倍券 -->
+			<!--<div class="packet-mode" ng-show="action==3">
+				<ul>
+					<li>翻倍券 {{fbqDisabledLength}} 张</li>
+				</ul>
+				<div class="icons">
+					<div class="icons-con" ng-repeat="item in FBQList | filter: {status: 2}" ng-class="{0: 'my-active-tips',1: 'my-used-tips',2: 'my-disable-tips'}[item.status]">
+						<p class="title">
+							<b>收益 <t>X{{item.multiple}}</t></b>　翻倍券
+						</p>							
+						<p class="content">
+							作用描述：产品利率翻 {{item.multiple}} 倍<br>
+
+							<div style="padding-left: 11px;">使用条件：
+								<span ng-if="item.maxAmount == 0" style="margin-left: -6px;">投资金额≥{{item.enableAmount|isAmountToStr}}元</span>
+								<span ng-if="item.maxAmount != 0" style="margin-left: -6px;">{{item.enableAmount|isAmountToStr}}元≤投资金额≤{{item.maxAmount|isAmountToStr}}元</span><br>
+							</div>
+							<div style="padding-left: 11px;" ng-if="item.productDeadline>0&&item.type != 3">
+								<span ng-if="item.maxProductDeadline == 0">期限≥{{item.productDeadline}}天且可用翻倍券</span>
+								<span ng-if="item.maxProductDeadline != 0">{{item.productDeadline}}天≤期限≤{{item.maxProductDeadline}}天且可用翻倍券</span><br>
+							</div>
+							<span class="data data3">有效期：{{item.addtime | date:'yyyy.MM.dd'}}-{{item.expireDate| date:'yyyy.MM.dd'}}</span>
+						</p>
+					</div>
+				</div>
+			</div>-->
+				<div class="packet-mode" ng-show="action==3">
+					<ul>
+						<li>超级加息券 {{CJdisablecounpLength}} 张</li>
+					</ul>
+					<div class="icons">
+						<div class="icons-con" ng-repeat="item in CJList | filter: {status: 2}" ng-class="{0: 'my-active-tips',1: 'my-used-tips',2: 'my-disable-tips'}[item.status]">
+							<p class="title">
+								<b style="font-size: 18px">{{item.minRaisedRates }}%~{{item.maxRaisedRates }}%</b> 超级加息券
+							</p>
+							<p class="content">
+								作用描述：增加投资利息<br>
+
+							<div style="padding-left: 11px;">使用条件：
+								<span ng-if="item.maxAmount == 0" style="margin-left: -6px;">投资金额≥{{item.enableAmount|isAmountToStr}}元</span>
+								<span ng-if="item.maxAmount != 0" style="margin-left: -6px;">{{item.enableAmount|isAmountToStr}}元≤投资金额≤{{item.maxAmount|isAmountToStr}}元</span><br>
+							</div>
+							<div style="padding-left: 11px;" ng-if="item.productDeadline>0&&item.type != 3">
+								<span ng-if="item.maxProductDeadline == 0">期限≥{{item.productDeadline}}天且可用翻倍券</span>
+								<span ng-if="item.maxProductDeadline != 0">{{item.productDeadline}}天≤期限≤{{item.maxProductDeadline}}天且可用翻倍券</span><br>
+							</div>
+							<div ng-if="item.productDeadline==null" style="height:18px;"></div>
+							<span class="data data3" style="margin-top: 12px;">有效期：{{item.addtime | date:'yyyy.MM.dd'}}-{{item.expireDate| date:'yyyy.MM.dd'}}</span>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="coupon-mode" ng-show="action==3">
+					<ul>
+						<li>N天加息券 {{NDAYDisabledLength}} 张</li>
+					</ul>
+					<div class="icons">
+						<div ng-repeat="item in NTLIST | filter: {status: 2}" class="icons-con" ng-class="{0: 'my-active-coupon',1: 'my-used-tips',2: 'my-disable-tips'}[item.status]">
+							<p class="title">
+								<b>{{item.raisedRates}}%</b><span style="font-size: 20px">{{item.raisedDays}}天</span>加息券
+							</p>
+							<p class="content">
+								<span>作用描述：增加投资前{{item.raisedDays}}天收益</span><br>
+							<div style="padding-left: 11px;">使用条件：
+								<span ng-if="item.maxAmount == 0" style="margin-left: -6px;">投资金额≥{{item.enableAmount|isAmountToStr}}元</span>
+								<span ng-if="item.maxAmount != 0" style="margin-left: -6px;">{{item.enableAmount|isAmountToStr}}元≤投资金额≤{{item.maxAmount|isAmountToStr}}元</span><br>
+							</div>
+							<div style="padding-left: 11px;" ng-if="item.productDeadline>0&&item.type != 3">
+								<span ng-if="item.maxProductDeadline == 0">期限≥{{item.productDeadline}}天且可用加息券</span>
+								<span ng-if="item.maxProductDeadline != 0">{{item.productDeadline}}天≤期限≤{{item.maxProductDeadline}}天且可用加息券</span><br>
+							</div>
+							<span class="data data3">有效期：{{item.addtime | date:'yyyy.MM.dd'}}-{{item.expireDate| date:'yyyy.MM.dd'}}</span>
+							</p>
+						</div>
+					</div>
+				</div>
+			<!-- 加息券 -->
+				<!-- <div class="coupon-mode">
+					<ul>
+						<li>可用加息券 {{couponLength}} 张</li> 
+						<li>已使用 {{couponUsedLength}} 张</li>
+						<li>已失效 {{couponDisabledLength}} 张</li>
+					</ul>
+					<div class="icons">
+						<div ng-repeat="item in QList" class="icon-con" ng-class="{0: 'my-active-coupon',1: 'my-used- coupon',2: 'my-disable-coupon'}[item.status]">
+							<p class="title"><b>{{item.raisedRates}}%</b>加息券</p>
+							<p class="content">
+									有效期：{{item.addtime | date:'yyyy.MM.dd'}}-{{item.expireDate | date:'yyyy.MM.dd'}}<br>投资≥{{item.enableAmount| currency:'':0}}元<span ng-if="item.productDeadline>0">且产品期限≥{{item.productDeadline}}天</span>
+							</p>
+						</div>
+					</div>
+				</div> -->
+				<!-- 红包 -->
+				<!-- <div class="packet-mode">
+					<ul>
+						<li>可用红包 {{tipsLength}} 张</li>
+						<li>已使用 {{tipsUsedLength}} 张</li>
+						<li>已失效 {{tipsDisabledLength}} 张</li>
+					</ul>
+					<div class="icons">
+						<div class="icon-con" ng-repeat="item in HBList" ng-class="{0: 'my-active-tips',1: 'my-used-tips',2: 'my-disable-tips'}[item.status]">
+							<p class="title">
+								<b>{{item.amount| currency:'':0}}<i>元</i></b><span ng-if="item.type != 3">红包</span><span ng-if="item.type == 3">体验金</span>
+							</p>								
+							<p class="content">
+									有效期：{{item.addtime | date:'yyyy.MM.dd'}}-{{item.expireDate| date:'yyyy.MM.dd'}}<br>投资≥{{item.enableAmount| currency:'':0}}元<span ng-if="item.productDeadline>0&&item.type != 3">且产品期限≥{{item.productDeadline}}天</span> <span ng-if="item.type == 3">仅限新手标使用</span>
+							</p>
+						</div>
+						<p class="mycoupon-packet-di"></p>
+					</div>
+				</div> -->
+				<!-- 翻倍券 -->
+				<!-- <div class="packet-mode">
+					<ul>
+						<li>可用翻倍券 {{fbqLength}} 张</li>
+						<li>已使用 {{fbqUsedLength}} 张</li>
+						<li>已失效 {{fbqDisabledLength}} 张</li>
+					</ul>
+					<div class="icons">
+						<div class="icon-con" ng-repeat="item in FBQList" ng-class="{0: 'my-active-tips',1: 'my-used-tips',2: 'my-disable-tips'}[item.status]">
+							<p class="title">
+								收益 × {{item.multiple}}倍
+							</p>								
+							<p class="content" style="margin-top:10px; ">
+									有效期：{{item.addtime | date:'yyyy.MM.dd'}}-{{item.expireDate| date:'yyyy.MM.dd'}}<br>投资≥{{item.enableAmount| currency:'':0}}元<span ng-if="item.productDeadline>0">且产品期限≥{{item.productDeadline}}天</span> <span ng-if="item.type == 3">仅限新手标使用</span>
+							</p>
+						</div>
+						<p class="mycoupon-packet-di"></p>
+					</div>
+				</div> -->
+			</div>
+			<!--<p class="my-nocoupon" ng-if="HBList.length<1&&QList.length<1"></p>-->
+			<p class="my-nocoupon" ng-if="HBList.length<1&&QList.length<1&&ZSQList.length<1&&FBQList.length<1&&CJList.length<1"></p>
+		</div>
+		<div class="serve-box">
+			<i class="my-servebg"></i>
+			<div class="serve">
+				<p>想获得更高的年化收益</p>
+				<p>请联系<strong>4006-908-896</strong></p>
+				<p>或进入点击<a target="_blank" href="http://crm2.qq.com/page/portalpage/wpa.php?uin=4006908896&f=1&ty=1&aty=0&a=&from=5">客服QQ</a></p>
+			</div>
+		</div>
+	</div>
+</div>

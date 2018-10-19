@@ -1,0 +1,154 @@
+<div>
+  <!-- banner -->
+  <div class="banner">
+    <img src="" alt="" class="number" id='number'>
+  </div>
+  <div class="infomation">
+    <div class="infoTitle">平台整体数据总览</div>
+    <div class="deadline">截止日期<span class="numColor">{{deadline |date:'yyyy-MM-dd' }}</span></div>
+    <div class="totalProgress">累计交易总额（元）</div>
+    <div class="totalNumber">{{cumulativeTurnover}}</div>
+    <!-- 累计交易总额 -->
+    <div class="total">
+      <div class="totalLeft">
+        <div class="totalIcon "></div>
+        <p class="iconm">累计赚取收益：<span class="numColor">{{cumulativeIncome | number:0}}</span> 元</p>
+      </div>
+      <div class="totalLeft">
+        <div class="totalperson "></div>
+        <p class="iconm" style="margin-left: 200px">累计注册用户：<span class="numColor">{{cumulativeRegisteredUser | number:0}}</span> 人</p>
+      </div>
+    </div>
+    <!-- 业绩数据注册数据 -->
+    <div class="data">
+      <div class="dataInfo">
+        <div class='dataTitle colorO'>业绩数据</div>
+        <p class='dataFont'><span class='dataFontColor'>{{year}}</span> 年<span class="dataFontColor">{{month}}</span>月份累计交易额<span class="dataFontColor dataFontSize">{{cumulativeMonthlyTurnover | number:0}} </span> 元</p>
+        <div class="dataMap"></div>
+        <div class="chart" style='width:580px;height:470px;position: absolute;' id='figure'></div>
+        <div class="top10"><span class="top10img"></span>按区域分布排名前<span class="top10num">10</span>名</div>
+      </div>
+      <div class='dataInfo'>
+        <div class='dataTitle colorB'>注册数据</div>
+        <p class='dataFont'><span class='dataFontColor'>{{year}}</span> 年<span class="dataFontColor">{{month}}</span>月份新增注册用户<span class="dataFontColor dataFontSize">{{cumulativeMonthlyRegistered |number:0}} </span> 人</p>
+        <div class="dataMap"></div>
+        <div class="chart" style='width:580px;height:470px;position: absolute;' id='figu'></div>
+        <div class="top10"><span class="top10img"></span>按区域分布排名前<span class="top10num">10</span>名</div>
+      </div>
+    </div>
+    <!--  渠道数据用户画像 -->
+    <div class="data">
+      <!--  渠道数据 -->
+      <div class="dataInfo">
+        <div class="dataTitle colorQudao">渠道数据</div>
+        <p class='dataFont'><span class='dataFontColor'>{{year}}</span> 年<span class="dataFontColor">{{month}}</span>月份投资终端分布</p>
+        <div  style='width:500px;height: 400px ;background: #ccc;margin:0 auto;' id='channel'></div>
+      </div>
+      <!-- 用户画像 -->
+      <div class="dataInfo">
+        <div class="dataTitle colorYonghu">用户画像</div>
+        <p class='dataFont'>截止日期<span class='dataFontColor'>{{deadline | date:"yyyy-MM-dd"}}</span></p>
+        <div class="userPerson">
+          <div class="personImg"></div>
+          <div class="personmanFont" style='margin: 45px 50px 0 95px'>注册占比：{{registeredMaleRatio}}%
+            <br>投资占比：{{investedMaleRatio}}% </div>
+          <div class="personwomanFont">注册占比：{{registeredFemaleRatio}}%
+            <br>投资占比：{{investedFemaleRatio}}%</div>
+        </div>
+      </div>
+    </div>
+    <!-- 用户年龄分析，最给力用户 -->
+    <div class="data">
+      <!-- 用户年龄分析 -->
+      <div class="dataInfo">
+        <div class="dataTitle colorAge">投资用户年龄分析</div>
+        <p class="dataFont">截止日期 <span class='dataFontColor'>{{deadline | date:"yyyy-MM-dd"}}</span> </p>
+        <p class="dataFont">多融注册用户年龄分布情况</p>
+        <div style='width:580px;height:470px;margin-left: 100px' id='userAge'></div>
+      </div>
+      <!--  最给力用户 -->
+      <div class="dataInfo">
+        <div class="dataTitle colorGeili">最给力投资用户</div>
+        <p class="dataFont"><span class='dataFontColor'>{{year}} </span>年<span class='dataFontColor'> {{month}}</span> 月 </p>
+        <div class="geiliperson">
+          <p class="max">累计投资额最多</p>
+          <div class="geiliwoman" ng-if='maxCumulativeInvest.sex==2'></div>
+           <div class="geiliman" ng-if='maxCumulativeInvest.sex==1'></div>
+          <p class="woman" ng-if='maxCumulativeInvest.sex==2'><span ng-bind='maxCumulativeInvest.surname'></span>女士</p>
+          <p class="man" ng-if='maxCumulativeInvest.sex==1'><span ng-bind='maxCumulativeInvest.surname'></span>先生</p>
+          <p class="woman"  ng-bind='maxCumulativeInvest.mobilePhone' ng-if='maxCumulativeInvest.sex==2'> </p><p class="man"  ng-bind='maxCumulativeInvest.mobilePhone' ng-if='maxCumulativeInvest.sex==1'> </p>
+          <p class="woman"  ng-if='maxCumulativeInvest.sex==2'>共计投资：<span class="countColor">{{maxCumulativeInvestCount | number:0}}</span> 元</p>
+          <p class="man"  ng-if='maxCumulativeInvest.sex==1'>共计投资：<span class="countColor">{{maxCumulativeInvestCount | number:0}}</span> 元</p>
+        </div>
+        <div class="geiliperson">
+          <p class="max">单笔投资额最大</p>
+          <div class="geiliwoman"  ng-if='maxOnceInvest.sex==2'></div>
+          <div class="geiliman"  ng-if='maxOnceInvest.sex==1'></div>
+          <p class="woman"  ng-if='maxOnceInvest.sex==2'><span ng-bind='maxOnceInvest.surname'></span>女士</p>
+          <p class="man"  ng-if='maxOnceInvest.sex==1'><span ng-bind='maxOnceInvest.surname'></span>先生</p>
+         <p class="woman" ng-bind='maxOnceInvest.mobilePhone' ng-if='maxOnceInvest
+.sex==2'></p>
+<p class="man"  ng-bind='maxOnceInvest.mobilePhone' ng-if='maxOnceInvest.sex==1'> </p>
+          <p class="woman"  ng-if='maxOnceInvest.sex==2'>共计投资：<span  class="countColor">{{maxOnceInvestCount | number:0}}</span> 元</p>
+          <p class="man"  ng-if='maxOnceInvest.sex==1'>共计投资：<span class="countColor">{{maxOnceInvestCount | number:0}}</span> 元</p>
+        </div>
+        <div class="geiliperson">
+          <p class="max">累计投资次数最多</p>
+          <div class="geiliwoman" ng-if='maxInvestFrequency.sex==2'></div>
+           <div class="geiliman" ng-if='maxInvestFrequency.sex==1'></div>
+          <p class="woman" ng-if='maxInvestFrequency.sex==2'><span ng-bind='maxInvestFrequency.surname'></span>女士</p>
+          <p class="man" ng-if='maxInvestFrequency.sex==1'><span ng-bind='maxInvestFrequency.surname'></span>先生</p>
+          <p class="woman"  ng-bind='maxInvestFrequency.mobilePhone' ng-if='maxInvestFrequency.sex==2'> </p><p class="man"  ng-bind='maxInvestFrequency.mobilePhone' ng-if='maxInvestFrequency.sex==1'> </p>
+          <p class="woman"  ng-if='maxInvestFrequency.sex==2'>共计投资：<span  class="countColor">{{maxInvestFrequencyCount | number:0}}</span> 次</p>
+          <p class="man"  ng-if='maxInvestFrequency.sex==1'>共计投资：<span  class="countColor">{{maxInvestFrequencyCount | number:0}}</span> 次</p>
+        </div>
+        <div class="geiliperson">
+          <p class="max">邀请好友总数最多</p>
+          <div class="geiliwoman" ng-if='maxRecommendFrequency.sex==2'></div>
+           <div class="geiliman" ng-if='maxRecommendFrequency.sex==1'></div>
+          <p class="woman" ng-if='maxRecommendFrequency.sex==2'><span ng-bind='maxRecommendFrequency.surname'></span>女士</p>
+          <p class="man" ng-if='maxRecommendFrequency.sex==1'><span ng-bind='maxRecommendFrequency.surname'></span>先生</p>
+          <p class="woman"  ng-bind='maxRecommendFrequency.mobilePhone' ng-if='maxRecommendFrequency.sex==2'> </p><p class="man"  ng-bind='maxRecommendFrequency.mobilePhone' ng-if='maxRecommendFrequency.sex==1'> </p>
+          <p class="woman"  ng-if='maxRecommendFrequency.sex==2'>共邀好友：<span  class="countColor">{{maxRecommendFrequencyCount | number:0}}</span> 位</p>
+          <p class="man"  ng-if='maxRecommendFrequency.sex==1'>共邀好友：<span  class="countColor">{{maxRecommendFrequencyCount | number:0}}</span> 位</p>
+        </div>
+      </div>
+    </div>
+    <!-- 借款企业分析 -->
+    <div class="data" style='position: relative;'>
+      <div class="colorqiye">借款企业分析</div>
+<!-- 最大单户占比 -->
+      <data class="dataInfo">
+          <div class="qiyeLeft">最大单户借款余额占比</div>
+          <div style='width:550px;height:470px;' id='ins'></div>
+      </data>
+      <!-- 最大10户占比 -->
+      <data class="dataInfo">
+          <div class="qiyeRight">最大10户借款余额占比</div>
+          <div style="width:550px;height: 470px" id='tenUse'></div>
+      </data>
+      <p class="bottomFont" style="position: absolute;bottom:30px;left:150px">我们只选择银行、大型国企作为担保承兑机构的票据（银行汇票、商业汇票），确保资产真实、优质、无条件承兑</p>
+    </div>
+    <div class="data">
+      <!-- 平台逾期数据 -->
+      <div class="dataInfo">
+        <div class='dataTitle colorO'>平台逾期数据</div>
+        <div class="datayuqi">  
+        </div>
+        <div class="yuqiFont">借款逾期金额 0.00 元  &nbsp;  &nbsp; &nbsp; &nbsp;   代偿金额 0.00元 <br> 借款逾期率 0.00%    &nbsp; &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp;    借款坏账率 0. 00%  </div>
+      </div>
+      <!-- 平台福利 -->
+      <div class="dataInfo">
+        <div class='dataTitle colorFuli' style="margin-bottom: 35px;">{{month}}月份平台福利</div>
+        <div class="fontFuli">砸冰块拿大奖</div>
+        <div class="img1"><img src="main/activity/report/201708/images/pc1.png" alt=""></div>
+        <div class="fontFuli">集碎片玩拼图</div>
+        <div class="img1"><img src="main/activity/report/201708/images/pc2.png" alt=""></div>
+      </div>
+    </div>
+    <div class="data" style='padding-bottom: 75px;'>
+        <div class="colorbigEvent">平台大事记</div>
+        <img src="main/activity/report/201708/images/dashiji.jpg" alt="">
+    </div>
+  </div>
+</div>

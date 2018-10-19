@@ -1,0 +1,38 @@
+.xiangqing{
+    width: 1200px;
+    background: #fff;
+    margin:0 auto;
+    .xaingqingContent{
+        width:1058px;
+        border:1px solid #dcdcdc;
+        background:#fff;
+        min-height: 500px;
+        padding: 40px 70px 0;
+        img{
+            max-width: 822px;
+        }
+        .newstitle{
+            font-size: 30px;
+            font-weight: bold;
+            color:#555;
+            text-align: center;
+            position: relative;
+            padding-bottom:30px;
+            .return{
+                width: 48px;
+                height: 24px;
+                line-height: 24px;
+                text-align: center;
+                border-radius: 2px;
+                background: #00a7e3;
+                font-size: 12px;
+                color: #fff;
+                text-decoration: none;
+                font-weight:normal;
+                position: absolute;
+                right: 15px;
+                bottom:0;
+            }
+        }
+    }
+}

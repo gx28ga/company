@@ -1,0 +1,41 @@
+{# 导航 #}
+<div id="navContent" class="header-wrapper">
+    <div class='transition'>
+        <div class="header-wrap">
+            <div class="logo-wrap">
+                <img src="/images/logo/logo.png" onclick="location.href='/'">
+                <span></span>
+                <a class="logoimg" href="http://www.china-hshc.com/" target="_blank"></a>
+            </div>
+            <div class="nav-box">
+                <div>
+                    <ul>
+                        <li><a :class="{active:nav.home}" href="/">首页</a></li>
+                        <li><a :class="{active:nav.pj}" href="{{http}}/pj">P2P理财</a></li>
+                        <li><a :class="{active:nav.dq}" href="{{http}}/dq">定期理财</a></li>
+                        <li><a :class="{active:nav.xs}" href="{{http}}/help/XSZY.html">新手指引</a></li>
+                        <li><a :class="{active:nav.anqun}" href="{{http}}/about/AQBZ.html">安全保障</a></li>
+                        <li><a :class="{active:nav.about}" href="{{http}}/about/DRGK.html">信息披露</a></li>
+                        <li class="account">
+                            <a href="javascript:void(0)" @click="login" v-if="!isLogin">我的账户</a>
+                            <a v-if="isLogin" v-show="isLogin" style="display:none" href="{{http}}/main/myAccount/accountHome"><i class="drop"></i>我的账户</a>
+                            <div v-if="isLogin" v-show="isLogin" style="display:none" class="con">
+                                <div>
+                                    <a href="{{http}}/main/myAccount/myAssets">我的资产</a>
+                                    <a href="{{http}}/main/myAccount/myInvest">我的投资</a>
+                                    <a href="{{http}}/main/myAccount/myCoupon">我的优惠券</a>
+                                    <a href="{{http}}/main/myAccount/myMsg">我的消息</a>
+                                    <a href="{{http}}/main/pointMall">积分商城</a>
+                                    <a href="{{http}}/main/myAccount/myTask">我的任务</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/plug/jquery-1.11.1.min.js"></script>
+<script src="/js/plug/vue.2.4.2.min.js"></script>
+<script src="/js/common/global.js"></script>

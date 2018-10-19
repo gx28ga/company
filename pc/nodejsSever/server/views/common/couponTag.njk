@@ -1,0 +1,20 @@
+{% macro coupon(item , obj) %}
+    {% if item.isRookie==1 %}
+    <span data-tips="仅新注册用户可体验一次" class="yellow tag-tips">新手专享</span>
+    {% endif %}
+    {% if item.isExclusive==1 %}
+    <span data-tips="本产品可用专属加息券，投资时增加投资利息" class="blue tag-tips">专属加息券</span>
+    {% endif %}
+    {% if item.isInterest==1 %}
+    <span data-tips="本产品可用加息券，投资时增加投资利息" class="blue tag-tips">加息券</span>
+    {% endif %}
+    {% if item.isCash==1 %}
+    <span data-tips="本产品可用返现券，投资成功返现" class="red tag-tips">返现券</span>
+    {% endif %}
+    {% if item.isDouble==1 %}
+    <span data-tips="本产品可用翻倍券，投资时产品利率翻倍" class="red tag-tips">翻倍券</span>
+    {% endif %}
+    {% if item.activityRate>0 and (obj==null or obj.hideActivity==null) %}
+    <span data-tips="活动利率" class="activity tag-tips {{'gray' if item.status==6 else ''}}">活动</span>
+    {% endif %}
+{% endmacro %}

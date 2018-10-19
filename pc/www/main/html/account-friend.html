@@ -1,0 +1,374 @@
+<div class="account-myfriend-wrap" ng-controller="myFriend" style='margin-bottom: 20px;'>
+    <div class="table-title">
+        <div>邀请好友</div>
+        <!--  <p><i class="friend-friends"></i>累计奖励<span>{{user.rewards}}</span>元</p>
+   <p><i class="friend-rebate"></i>累计邀请好友<span>{{user.total}}</span>人</p> -->
+    </div>
+    <!-- 邀请好友 -->
+    <div class="recommend-box">
+        <div class="title">邀请好友获得更多奖励</div>
+        <div class="content">
+            <div class="copy-box box">
+                <a href="" class="copy" ng-click="copy()">复制链接</a>
+                <p>方式一：复制您的专属邀请链接</p>
+                <textarea class="copy-con">送你1588元红包和百分之十二安全好收益，多融财富亲测靠谱！ https://www.duorongcf.com/zhuce?recommCode={{user.recommCodes}}</textarea>
+                <div class="mycopy">
+                    <textarea id="mycopy">https://www.duorongcf.com/zhuce?recommCode={{user.recommCodes}}</textarea>
+                </div>
+            </div>
+            <div class="share-box box">
+                <p>方式二：分享至社交平台</p>
+                <div class="share-icon">
+                    <div class="bdsharebuttonbox">
+                        <p class="icon">
+                            <!-- <a href="#" class="bds_weixin myfriend-wechat" data-cmd="weixin" title="分享到微信" data-myurl="http://app.duorongcf.com/weixin/index.html"></a>微信</p>  -->
+                            <a href="#" class="bds_weixin myfriend-wechat" data-cmd="weixin" title="分享到微信" data-myurl="http://app.duorongcf.com/enroll"></a>微信</p>
+                        <p class="icon">
+                            <a href="#" class="bds_sqq myfriend-qq" data-cmd="sqq" title="分享到QQ好友" data-myurl="https://www.duorongcf.com/zhuce"></a>QQ好友</p>
+                        <p class="icon">
+                            <a href="#" class="bds_tsina myfriend-sina" data-cmd="tsina" title="分享到新浪微博" data-myurl="https://www.duorongcf.com/zhuce"></a>新浪微博</p>
+                    </div>
+                    <div class="tips"><i class="myfriend-triangle"></i>直接发送至QQ好友，更容易邀请到好友哟</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="table-title" style='height:10px;background: #f3f3f3;border-bottom: 1px solid #e4e4e4;margin-top: 45px;border-top:1px solid #e4e4e4;margin:45px -40px 0 -60px'></div>
+    <div class="myFriendTab">
+        <p ng-click='isActive=0' ng-class="{3:'',2:'',1:'',0:'active'}[isActive]">我的佣金</p>
+        <p ng-click='isActive=1' ng-class="{1:'active',3:'',2:'',0:''}[isActive]">我的好友</p>
+        <p ng-click='isActive=4' ng-class="{4:'active',3:'',2:'',0:''}[isActive]">首月返现奖励</p>
+        <p ng-click='isActive=2' ng-class="{0:'',3:'',1:'',2:'active'}[isActive]">我的待收等级<span class="level">{{commission.MyGrade}}</span></p>
+        <p ng-click='isActive=3' ng-class="{3:'active',2:'',1:'',0:''}[isActive]">每月邀请任务</p>
+    </div>
+    <!-- tab栏切换内容 -->
+    <div class="content-list">
+        <!-- 我的佣金 -->
+        <div class="contentMode" ng-show='isActive==0'>
+            <p class="todayCount">今日预计佣金<span class="question icon" data-tips='.YJexplain'></span><span class="explain">个人当日待收本金＜{{commission.drRecommendConfig.enableAmount}}元时，当日佣金自动终止计提</span></p>
+            <p><span class="fontColor count">{{myCount.estimateAmount | number:2}}</span>元</p>
+            <div class="countCent">
+                <ul class="showList">
+                    <li>
+                        <p>昨日佣金</p>
+                        <b>{{myCount.yesterdayAmount | number:2}}元</b>
+                    </li>
+                    <li>
+                        <p>累计佣金</p>
+                        <b>{{myCount.sumAmount | number:2}}元</b>
+                    </li>
+                    <li>
+                        <p>首月返现奖励</p>
+                        <b>{{myCount.firstMonthAmount | number:2}}元</b>
+                    </li>
+                    <li style='border-right:0px'>
+                        <div class="gonglue"><a href='{{http}}/other/inviteFriend.html' style='display: block;width: 26px;height:24px;' target="_blank"></a></div>
+                        <a href='{{http}}/other/inviteFriend.html' target="_blank">攻略</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="benjin">我的待收本金&nbsp;&nbsp;&nbsp;<span class="received fontColor">{{myCount.wprincipal | number:2}}</span>元&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我的佣金利率<span class="commissionRate fontColor">{{myCount.rate}}%</span><span class="promote" style='margin-left: 10px'><a ui-sref='main.bankBillList2' class="promote">提升&gt;</a></span></div>
+            <div class="table-title" style='border-bottom: 0px;clear: both'>
+                <div style='font-size: 18px;'>佣金记录</div>
+            </div>
+            <!--     佣金记录 -->
+            <div class="yongjinBox" style='padding-bottom: 15px;'>
+                <!-- 表单提交 -->
+                <form action="" class="nice-validator-default" novalidate="novalidate" style='position: relative;'>
+                    <div class="input-box">
+                        <p class="startEnd">起止时间</p>
+                        <div class="calendar-wrapper">
+                            <div class="ebcs-calendar">
+                                <p class="input-group" style='position: relative;'>
+                                    <input type="text" class="form-control" current-text="今天"  close-text="关闭" clear-text='清空 '  uib-datepicker-popup="{{format}}" ng-model='page.startDate' is-open="popup1.opened" min-date="minDate" max-date="page.endDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close"  value='{{page.startDate | date:"yyyy-MM-dd"}}'  show-button-bar="false"/>
+                                    <span style='position: absolute;top:5px; left:11px;width:120px;height:30px;'>{{page.startDate | date:"yyyy-MM-dd"}}</span>
+                                    <span class="input-group-btn">
+                       <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                                </p>
+                            </div>
+                            <div class="to">-</div>
+                            <div class="ebcs-calendar">
+                                <p class="input-group" style="position: relative;">
+                                    <input type="text" class="form-control" current-text="今天"  close-text="关闭" clear-text='清空' uib-datepicker-popup="{{format}}" ng-model="page.endDate" is-open="popup2.opened" min-date="page.startDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" show-button-bar="false" />
+                                    <span style='position: absolute;top:5px; left:11px;width:120px;height:30px;'>{{page.endDate | date:"yyyy-MM-dd"}}</span>
+                                    <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default" ng-click="open2()"><i class="glyphicon glyphicon-calendar"></i></button>
+                                  </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                  <!--   <input class="search-btn" type="button" ng-click="onClick('我的佣金查询')" value="查询"> -->
+                    <a style='position: absolute;top:5px;left:400px;cursor: pointer;text-decoration: none;background:#00a8ff;color:#fff;padding-left: 2px;padding-right:2px;' ng-click='month()' ng-show='fon==true'>最近一个月</a>
+                    <a style='position: absolute;top:5px;left:400px;cursor: pointer;text-decoration: none;color:#00a8ff;padding-left: 2px;padding-right:2px;' ng-click='month()' ng-show='fon==false'>最近一个月</a>
+                 <!--    <div style='position: absolute;top:5px;left:530px;cursor:pointer;text-decoration: none;color:#00a8ff' ng-click='openhistory()'>查看{{Task.startTime | date:"yyyy-MM-dd"}}佣金奖励明细</div> -->
+                </form>
+                <!-- 佣金记录 -->
+                <div class="commissionRecord">
+                    <!--   标题 -->
+                    <div class="recordTitle">
+                        <span>{{page.startDate | date:'yyyy-MM-dd' }}至{{page.endDate | date:'yyyy-MM-dd'}}</span>
+                        <div class='total'>总计：<span class="fontColor">{{myCount.aggregate | number:2}}</span>元</div>
+                    </div>
+                    <div class="tableCount">
+                        <table class="tablelist">
+                            <tr>
+                                <th>日期</th>
+                                <th>获得佣金</th>
+                            </tr>
+                            <tr ng-repeat="item in myCountlist">
+                                <td>{{item.addTime | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+                                <td>{{item.amount}}元</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" ng-if="myCountlist.length == 0" style="line-height: 40px;font-size: 18px;height:40px;vertical-align: middle">暂无记录，马上看<a href="{{http}}/other/inviteFriend.html" style='color:#c6e2ff' target="_blank">攻略</a>赚取佣金吧~</td>
+                            </tr>
+                        </table>
+                        <!--  页码 -->
+                        <div class="page-wrap" ng-show="myCountPage.totalPage > 0">
+                            <div class="page-box">
+                                <a href ng-click="changeP('beforPage',a)" class="prev" style="border:0px">上一页</a>
+                                <ul>
+                                    <li ng-click="changeP('currentPage',a)" ng-repeat="a in myCountPage.pages"><a href="" ng-class="{true: 'cur', false: ''}[myCountPage.pageOn == a]">{{a}}</a></li>
+                                </ul><a href class="next" ng-click="changeP('nextPage',a)" style='border:0px'>下一页</a>
+                            </div><span>共{{myCountPage.totalPage}}页</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--    查询时间 -->
+            <div class="myFriend" style="clear: both">
+            </div>
+        </div>
+        <!-- 我的好友 -->
+        <div class="contentMode" ng-show='isActive==1'>
+            <div class="taskMode">
+                <div class="taskTitle">我的好友人数:<span class="fontColor"> {{user.sumCount}}</span>人</div>
+                <!--    <div class="taskTitle">本月邀请注册并完成首投≥{{Task.enableAmount}}元的好友数:<span class="fontColor"> {{task.effectiveCount}}</span>人</div> -->
+                <div class="taskTitle">我的好友待收本金:&nbsp;<span class="fontColor">{{user.friendAmount | number:2}}</span>元(可计提佣金)</div>
+            </div>
+            <!--   邀请好友记录 -->
+            <div class="table-title" style='clear:both;border-top: 1px solid #e4e4e4'>
+                <div style='font-size: 18px;position: relative;'>已邀请到的好友<span class="question icon" data-tips='.friendExplain' style='position: absolute;top:20px;'></span></div>
+                <!--  <p><i class="friend-rebate"></i>累计奖励<span>{{user.rewards}}</span>元</p>
+       <p><i class="friend-friends"></i>累计邀请好友<span>{{user.total}}</span>人</p> -->
+            </div>
+            <div class="table-wrap">
+                <table class="table-list">
+                    <tr>
+                        <th>好友ID</th>
+                        <th>手机号</th>
+                        <th>时间</th>
+                    </tr>
+                    <tr ng-repeat="item in mylist">
+                        <td>{{item.realName}}</td>
+                        <td>{{item.mobilephone}}</td>
+                        <td>{{item.investTime | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" ng-if="mylist.length == 0">您邀请的好友，尚未给你带来奖励，请邀请好友进行投资</td>
+                    </tr>
+                </table>
+                <!--  页码 -->
+                <div class="page-wrap" ng-show="mylistPage.totalPage > 0">
+                    <div class="page-box">
+                        <a href ng-click="changePage('beforPage',a)" class="prev">上一页</a>
+                        <ul>
+                            <li ng-click="changePage('currentPage',a)" ng-repeat="a in mylistPage.pages"><a href="" ng-class="{true: 'cur', false: ''}[mylistPage.pageOn == a]">{{a}}</a></li>
+                        </ul><a href class="next" ng-click="changePage('nextPage',a)">下一页</a>
+                    </div><span>共{{mylistPage.totalPage}}页</span>
+                </div>
+            </div>
+        </div>
+        <!-- 我的待收等级 -->
+        <div class="contentMode" ng-show='isActive==2'>
+            <p class="todayCount">当前待收等级<span class="answer icon" id='explain'></span><span class="explain" style='display: none'>升级到更高等级，获取更多收益</span></p>
+            <div class="leveIcon">{{commission.MyGrade}}</div>
+            <div class="countCent">
+                <ul class="showList">
+                    <li>
+                        <p>我的待收（元）</p>
+                        <b>{{commission.wprincipal | number:2}}</b>
+                    </li>
+                    <li style='border-right:0px'>
+                        <p>今日待收佣金率</p>
+                        <b>{{commission.rate}}%</b>
+                    </li>
+                </ul>
+            </div>
+            <div class="table-title" style='border-top: 1px solid #e4e4e4;border-bottom: 0px;clear: both'>
+                <div style='font-size: 18px;'>待收等级及佣金利率</div>
+            </div>
+            <div class="table-wrap">
+                <table class="table-rate">
+                    <tr>
+                        <th>待收等级</th>
+                        <th>我的待收(元)</th>
+                        <th>奖励佣金率</th>
+                    </tr>
+                    <tr ng-repeat='item in level'>
+                        <td class="" ng-if="item.grade < MyGrade || item.grade == MyGrade"><span class="tdIcon">{{item.grade}}</span></td>
+                        <td class="" ng-if="item.grade > MyGrade"><span class="tdicon">{{item.grade}}</span></td>
+                        <td ng-if='$last'>待收≥{{item.minAmount}}</td>
+                        <td ng-if='!$last && !$first'>{{item.minAmount}}≤待收＜{{item.maxAmount}}</td>
+                        <td ng-if='$first'>待收＜{{item.maxAmount}}</td>
+                        <td>{{item.rate}}%</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- 每月任务 task-->
+        <div class="contentMode " ng-show='isActive==3'>
+            <div class="taskMode">
+                <div class="taskTitle">本月完成邀请任务:<span class="fontColor"> {{task.effectiveCount}}</span>人</div>
+                <!--    <div class="taskTitle">本月邀请注册并完成首投≥{{Task.enableAmount}}元的好友数:<span class="fontColor"> {{task.effectiveCount}}</span>人</div> -->
+                <div class="taskTitle">已获得任务奖励:&nbsp;<span class="fontColor">{{task.taskReward | number:2}}</span>元<span style='color:#00a8ff;font-size: 14px;cursor:pointer;' ng-click='openhistory()'>&nbsp;明细</span></div>
+                <div class="taskexplain">
+                    <p>任务说明</p>
+                    <p>*任务时间:<span style='color:#ff5100'>{{Task.startTime | date:'yyyy-MM-dd '}}~{{Task.endTime | date:'yyyy-MM-dd '}}</span></p>
+                    <p>*邀请任务期间,邀请新用户注册且首投≥<span style='color:#ff5100'>{{Task.enableAmount}}</span>元（新手宝除外）人数达到一定数量，即可领取一定奖励。
+                    </p>
+                </div>
+                <div class="taskTitle">任务奖励规则<span class="titleExplain">邀请的好友越多，奖励越多   每月上限240元</span></div>
+                <div class="table-wrap">
+                    <table class="table-rate">
+                        <tr>
+                            <th>本月邀请首投≥{{Task.enableAmount}}元人数 </th>
+                            <th> 邀请奖励 </th>
+                            <th>状态</th>
+                        </tr>
+                        <tr ng-repeat='item in detail'>
+                            <td>达<span class="fontColor">{{item.personNum}}</span>人</td>
+                            <td ng-if='$first'>可得现金{{item.reward}}元</td>
+                            <td ng-if='!$first'>再得现金{{item.reward}}元</td>
+                            <td ng-if='item.status==0'>未完成</td>
+                            <td ng-if='item.status==1'>已完成</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+     <!--    首月邀请返现奖励 -->
+         <div class="contentMode " ng-show='isActive==4'>
+            <div class="taskMode">
+                <div class="taskTitle">邀请好友首月返现<span class="fontColor"></div>
+            </div>
+            <p class="todayCount">累计获得<span class="question icon" data-tips='.YQexplain'></span></p>
+            <!-- <p><span class="fontColor count">{{hesuser.rewards | number:2}}</span>元</p> -->
+            <p><span class="fontColor count">{{myCount.firstMonthAmount | number:2}}</span>元</p>
+            <!-- 邀请好友首月返现记录 -->
+             <div class="table-title" style='clear:both;border-top: 1px solid #e4e4e4'>
+       <p style='float:left;margin-left: 55px;'><i class="friend-friends"></i>累计邀请好友<span>{{hesuser.total}}</span>人</p>
+            </div>
+            <div class="table-wrap">
+                <table class="table-list">
+                    <tr>
+                        <th>好友ID</th>
+                        <th>注册时间</th>
+                        <th style='border-right:none'>投资时间</th>
+                        <th>可获奖励</th>
+                    </tr>
+                    <tr ng-repeat="item in myHeistory">
+                        <td>{{item.mobilePhone}}</td>
+                        <td>{{item.regdate | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+                        <td>{{item.investTime | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+                        <td>{{item.referrerReward}}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" ng-if="myHeistory.length == 0">您邀请的好友，尚未给你带来奖励，请邀请好友进行投资</td>
+                    </tr>
+                </table>
+                <!--  页码 -->
+                <div class="page-wrap" ng-show="myHeistoryPage.totalPage > 0">
+                    <div class="page-box">
+                        <a href ng-click="changePP('beforPage',a)" class="prev">上一页</a>
+                        <ul>
+                            <li ng-click="changePP('currentPage',a)" ng-repeat="a in myHeistoryPage.pages"><a href="" ng-class="{true: 'cur', false: ''}[myHeistoryPage.pageOn == a]">{{a}}</a></li>
+                        </ul><a href class="next" ng-click="changePP('nextPage',a)">下一页</a>
+                    </div><span>共{{myHeistoryPage.totalPage}}页</span>
+                </div>
+            </div>
+            <!-- 邀请好友首月返现记录 -->
+            <div></div>
+        </div>
+        <div class="YJexplain tips">
+            <div class="jiantop"></div>
+            <ul>
+                <li>佣金奖励为现金奖励，直接发放到账户余额。
+                    <br>佣金奖励每日发放，无上限。</li>
+                <li>佣金奖励获取条件:
+                    <br> 邀请人自身账户待收≥{{Task.enableAmount}}元
+                    <br> 被邀请人账户待收不为0
+                    <br> 待收指待回款的产品的本金，可至【账户】→【我的资产】查看
+                </li>
+                <li>佣金奖励计算公式:
+                    <br> 每日佣金=佣金利率*好友总待收/365
+                </li>
+                <li>佣金发放:
+                    <br>每日发放上一日佣金，直接发放至账户余额
+                    <br>如上一日不满足获取佣金奖励的条件（详见邀请规则攻略）,则当日佣金为0</li>
+            </ul>
+        </div> 
+        <!-- 邀请好友首月返现  -->
+        <div class="YQexplain tips">
+            <div class="jiantop"></div>
+            <ul>
+                <li>活动期间，被邀请人在注册成功当天起首月内（30天内，含第30天），成功投资任意产品（除新手宝外），邀请人就能获得一定比例的返现奖励：</li>
+                <li>计算公式：
+                    <br> 首月返现奖励=被邀请人投资产品基本收益金额（不含任何加息/红包等福利收益）*15%
+                </li>
+            </ul>
+        </div>
+        <!-- 已邀请到的好友 -->
+        <div class="friendExplain tips">
+            <div class="jiantop"></div>
+            <ul>
+                <li>已邀请好友：
+                    <br> 包含所有完成首投建立邀请关系的好友（可获得每日佣金及首月返现奖励）
+                    <br>
+                </li>
+                <li>其中每月邀请任务条件的好友，计算邀请奖励</li>
+            </ul>
+        </div>
+        <!-- 历史数据弹框 -->
+        <div class='myFriendMask' style='z-index: 2;width:100%;height:100%;position: fixed;top:0;border: left:0' ng-show='openhistoryBox == true'>
+            <div class="tan1" style='width: 100%;
+    height: 100%;
+    position: fixed; 
+    background-color: rgba(0, 0, 0, 0.6);
+     background:#000\9;
+    filter:alpha(opacity=60);
+    top: 0;
+    left: 0;right:0;bottom:0' ng-click='closehistoryBox()'></div>
+                <div class='tan' style='width:600px;height:500px;'>
+                   <div class='tanTop'>
+                       已获得奖励明细<a class="close" ng-click='closehistoryBox()' style="cursor:pointer;">X</a>
+                   </div>
+                   <div class='table-wrap'>
+                           <table class="table-list">
+                    <tr>
+                        <th>时间</th>
+                        <th>奖励</th>
+                        <th>说明</th>
+                    </tr>
+                    <tr ng-repeat="item in taskList">
+                     <td style='border-bottom: none;padding:5px 24px;'>{{item.addTime | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+                     <td style='border-bottom: none;padding:5px 24px;'>{{item.amount | number:2}}</td>
+                     <td style='border-bottom: none;padding:5px 24px;'>完成【邀请任务首投>5000元】{{item.count}}人</td>
+                 </tr>
+                </table>
+                <!-- 页码 -->
+                    <!--  页码 -->
+                <div class="page-wrap" >
+                    <div class="page-box">
+                        <a href ng-click="changeTaskPage('beforPage',a)" class="prev">上一页</a>
+                        <ul>
+                            <li ng-click="changeTaskPage('currentPage',a)" ng-repeat="a in taskListPage.pages"><a href="" ng-class="{true: 'cur', false: ''}[taskListPage.pageOn == a]">{{a}}</a></li>
+                        </ul><a href class="next" ng-click="changeTaskPage('nextPage',a)">下一页</a>
+                    </div><span>共{{taskListPage.totalPage}}页</span>
+                    </div>
+                   </div>
+                </div>
+        </div>
+</div>

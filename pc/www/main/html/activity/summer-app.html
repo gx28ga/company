@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html ng-app="someApp" id='ng-app' xmlns:ng="http://angularjs.org"  lang="zh_CN">
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge;IE=8" />
+    <meta content="always" name="referrer"><meta name="theme-color" content="#2932e1">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <title >缤纷盛夏，乐在多融</title>
+    <link rel="stylesheet" type="text/css" href="main/css/stylesheets/swiper.css">
+    <link rel="stylesheet" type="text/css" href="main/css/stylesheets/newapp.css">
+    <script type="text/javascript" src="../../vendor/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../../vendor/angular.min.js"></script>
+    <script type="text/javascript" src="../../vendor/angular-resource.min.js"></script>
+    <script type="text/javascript" src="../../vendor/swiper.min.js"></script>
+    <!-- <script type="text/javascript" src="../../vendor/qtip.js"></script> -->
+    <script type="text/javascript" src="../../js/activity/summer.js"></script>
+</head>
+<body class="summerwin-body">
+<div class="summer-app-wrapper appbody" ng-controller="summerCtrl" ng-init="flag=true;isShowList=false;activeList=true">
+	<div ng-if="!isShowList">
+		<div class="banner"><img src="../../images/summer-app/banner.png"></div>
+		<div class="redmode-box">
+			<div class="mode-one mode">
+				<div class="titleone"></div>
+				<a href="" class="explain-btn" ng-click="onHelp('活动说明')">活动说明</a>
+				<a href="http://app.duorongcf.com/bankBillList" class="btn">立即抢购</a>
+				<!-- <a ng-if="!wap" href="/bankBillList" class="btn">立即抢购</a> -->
+			</div>
+		</div>
+		<div class="titletwo"><img src="../../images/summer-app/titletwo.png"></div>
+		<div class="greenmode-box">
+			<div class="mode-two mode">
+				<div class="titletw"></div>
+				<table class="gift-table">
+					<tr>
+						<td width="26%"><div class="iphone"></div></td>
+						<td width="18%"><span>第1名</span></td>
+						<td width="44%">iphone 6s</td>
+						<td><b>1台</b></td>
+					</tr>
+					<tr>
+						<td><div class="ipad"></div></td>
+						<td><span>第2名</span></td>
+						<td>ipad Air2</td>
+						<td><b>1台</b></td>
+					</tr>
+					<tr>
+						<td><div class="iwatch"></div></td>
+						<td><span>第3名</span></td>
+						<td>Apple watch</td>
+						<td><b>1台</b></td>
+					</tr>
+					<tr>
+						<td><div class="phone"></div></td>
+						<td><span>第4名</span></td>
+						<td>小米手机5</td>
+						<td><b>1台</b></td>
+					</tr>
+					<tr>
+						<td><div class="tv"></div></td>
+						<td><span>第5名</span></td>
+						<td>乐视超级电视</td>
+						<td><b>1台</b></td>
+					</tr>
+					<tr>
+						<td><div class="dishini"></div></td>
+						<td><span>第6名</span></td>
+						<td>迪士尼门票</td>
+						<td><b>2张</b></td>
+					</tr>
+					<tr>
+						<td><div class="flp"></div></td>
+						<td><span>第7名</span></td>
+						<td>飞利浦空气净化器</td>
+						<td><b>1台</b></td>
+					</tr>
+					<tr>
+						<td><div class="shoping"></div></td>
+						<td><span>第8名</span></td>
+						<td>500元购物卡</td>
+						<td><b>1份</b></td>
+					</tr>
+				</table>
+				<table class="explain-table">
+					<tr>
+						<td><a href="/html/activity/summer-winlist.html?uid={{uid}}&activeList=false" class="explain-btn" ng-click="onBefoDatas('周')" >中奖名单</a></td>
+						<td><a href="" class="explain-btn" ng-click="onHelp('周活动说明')" >活动说明</a></td>
+					</tr>
+				</table>
+				<p>*图片仅供参考</p>
+			</div>
+
+			<div class="mode-three mode">
+				<div class="titleth"></div>
+				<table class="explain-table">
+					<tr>
+						<td><a href="/html/activity/summer-winlist.html?uid=true&activeList={{activeList}}" ng-click="onBefoDatas('日')"  class="explain-btn">中奖名单</a></td>
+						<td><a href="" ng-click="onHelp('日活动说明')" class="explain-btn">活动说明</a></td>
+					</tr>
+				</table>
+			</div>
+
+			<div class="linebg"><img src="../../images/summer-app/linebg.png"></div>
+		</div>
+		<div style="background: #fff;margin: 0;overflow: hidden;">
+			<div class="join">
+				<a href="http://app.duorongcf.com/bankBillList" class="btn">立即加入投资达人排行榜</a>
+				<!-- <a ng-if="!wap" href="/bankBillList" class="btn" style="margin-top: 2rem;">立即加入投资达人排行榜</a> -->
+			</div>
+		</div>
+		<div class="redmode-box">
+			<div class="mode-four mode">
+				<div class="titlefour"></div>
+				<div class="rank-box" style="overflow: hidden;">
+					<div class="title">
+						<p><span ng-class="{true:'active',false:''}[flag]" ng-click="onClick(true)">今日排行榜</span></p>
+						<p><span ng-class="{true:'',false:'active'}[flag]" ng-click="onClick(false)">本周排行榜</span></p>
+					</div>
+					<div class="con" style="height: 21rem;"  ng-if="phList.investList.length > 0">
+						<table class="rank-table">
+							<tr >
+								<th>名    次</td>
+								<th>手机号码</td>
+								<th>投资金额</td>
+							</tr>
+						</table>
+						<table class="rank-table my-list" style="margin:0;">
+							<tr ng-repeat="item in phList.investList" >
+								<td>第{{$index+1}}名</td>
+								<td>{{item.mobilePhone | limitTo:3}}****{{item.mobilePhone | limitTo:-4}}</td>
+								<td>{{item.total}}元</td>
+							</tr>	
+						</table>
+					</div>
+					<div style="height: 21rem;color: #999;line-height: 21rem;font-size: 1.3rem;" ng-if="phList.investList.length < 1" class="noData">
+						<p ng-if="flag">新的一天开始啦，赶紧抢标</p>
+						<p ng-if="!flag">新的一周开始啦，赶紧抢标</p>
+					</div>
+				</div>
+				<strong ng-if="uid == null">
+					<a href="http://app.duorongcf.com/dl" style="color: #090ef7;font-size: 23px;">立即登录</a>
+					<!-- <a ng-if="!wap" href="/dl" style="color: #090ef7;font-size: 23px;">立即登录</a> -->
+					后可查看您的投资金额
+				</strong>
+				<strong ng-if="uid != null">
+					<p ng-if="flag">截止{{end}} <p ng-if="flag">您今日累计投资金额{{phList.memberInvest }}元</p></p>
+					<p ng-if="!flag">本周累计投资金额{{phList.memberInvest }}元</p>
+				</strong>
+				<a href="" ng-click="onResat(flag)" class="btn">刷新</a>
+			</div>
+			<div class="linebg"><img src="../../images/summer-app/linebg.png"></div>
+		</div>
+
+		<div class="greenmode-box">
+			<div class="mode-five mode">
+				<div class="titlefive"></div>
+				<ul>
+					<li><i></i>本次参与活动仅限≥15天的产品，各活动规则皆不同，具体以活动说明为准；</li>
+					<li class="small"><i></i>本次所有活动最终解释权归多融财富所有。</li>
+				</ul>
+			</div>
+			<div style="text-align: center;margin-top: 1.2rem;color: white;"><p>该活动与设备生产商Apple Inc.公司无关</p></div>
+			<div class="linebg"><img src="../../images/summer-app/linebg.png"></div>
+		</div>
+
+		<div class="redmode-box">
+			<div class="mode-six mode">
+				<div class="titlesix"></div>
+				<div class="content">
+					<div class="iconmode">
+						<i class="gzkg"></i>
+						<div>
+							<span>国企控股</span>
+							<p>知名国企控股</p>
+						</div>
+					</div>
+					<div class="iconmode">
+						<i class="guarantee"></i>
+						<div>
+							<span>资金安全保障</span> 
+							<p>历史到期产品100%本息兑付，安全可靠</p>
+						</div>
+					</div>
+					<div class="iconmode">
+						<i class="pjcd"></i>
+						<div>
+							<span>票据100%承兑</span>
+							<p>所有票据来源于银行与大型国企，100%无条件承兑</p>
+						</div>
+					</div>
+					<div class="iconmode">
+						<i class="lszc"></i>
+						<div>
+							<span>专业律所全程支持</span>
+							<p>专业律所全程保驾护航</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="code-wrapper">
+			<div class="code">
+				<div class="tel">
+					<table class="number">
+						<tr>
+							<td>
+								<i class="boat-phone-icon"></i>
+								<div>
+									<span>4006-908-896</span>
+									<p>服务时间 08:30 - 20:30 （法定节假日除外）</p>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+
+	<div class="mask" ng-show="aloneRuleShow"></div>
+	<div class="rules-bg" ng-show="aloneRuleShow">
+		<a href="" class="close" ng-click="onHelp('关闭')"></a>
+		<p class="title">{{hdTitle}}</p>
+		<div class="con"><p>{{hdText}}</p><p>{{hdText1}}</p>{{hdText2}}</div>
+	</div>
+		
+	</div>
+
+
+</div>
+</body>
+</html>

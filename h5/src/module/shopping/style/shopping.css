@@ -1,0 +1,138 @@
+/**
+* describe 积分商城样式
+* Created by wangCuiqing
+* Date: 2018/4/28
+*/
+.shopping{
+    .shoppingContent{
+        background:#FE7634;
+        color:#fff;
+        position: relative;
+        .myCont{
+            color:#fff;
+            opacity:0.6;
+            text-align: center;
+        }
+        .contNumber{
+            color:#fff;
+            display:flex;
+            justify-content:center;
+            .mingxi{
+                background:url("../../../images/shopping/ico_info.png") no-repeat;
+                background-size:contain;
+                display: inline-block;
+            }
+        }
+        .rules{
+            background:#FF8246;
+            text-align: center;
+            color:#fff;
+            border-top-left-radius: 28px;
+            border-bottom-left-radius: 28px;
+            position: absolute;
+        }
+        .prompt{
+            /*background:#F2F2F2;*/
+            border:0.5px solid #fff;
+            text-align: center;
+            color:#fff;
+            display: inline-block;
+            /*border-radius: 28px;*/
+            margin:0 auto;
+        }
+    }
+    .raiseBox{
+       /*background:#D2D2D2;*/
+        color:#666;
+        .title{
+            background: #fff;
+           color:#102542;
+           text-align: center;
+            display: flex;
+            .titleImg{
+                justify-content:center;
+            }
+
+        }
+        .raiseTitle{
+            background:#fff;
+            border-bottom:1px solid #D2D2D2;
+            display:flex;
+            color:#102542;
+            .jiaxi{
+                background:url("../../../images/shopping/ico_grey_jxq.png") no-repeat;
+                background-size:contain;
+                display: block;
+            }
+            .hongbao{
+                background:url("../../../images/shopping/ico_grey_hb.png") no-repeat;
+                background-size:contain;
+                display: block;
+            }
+            .xianshi{
+                background:url("../../../images/shopping/ico_grey_xldh.png") no-repeat;
+                background-size:contain;
+                display: block;
+            }
+        }
+        .raiseCon{
+            //background:#fff;
+            clear:both;
+            .raise{
+                float:left;
+                background:#fff;
+                border-right:0.5px solid #D2D2D2;
+                border-top:0.5px solid #D2D2D2;
+                .jiaxiIcon{
+                    background:url("../../../images/shopping/jiaxiquan.png") no-repeat;
+                    background-size:contain;
+                    position: relative;
+                    color:#fff;
+
+                }
+                .hongbaoIcon{
+                    background:url("../../../images/shopping/hongbao.png") no-repeat;
+                    background-size:contain;
+                    position: relative;
+                    color:#fff;
+                }
+                .meiyou{
+                    background:url("../../../images/shopping/meiyou.png") no-repeat;
+                    background-size:contain;
+                    position: absolute;
+                    top:0;
+                    left:0;
+                }
+                .jinzhang{
+                    background:url("../../../images/shopping/jiaxiquan.png") no-repeat;
+                    background-size:contain;
+                    position: absolute;
+                    top:0;
+                    left:0;
+                }
+                .chongzu{
+                    background:url("../../../images/shopping/chongzu.png") no-repeat;
+                    background-size:contain;
+                    position: absolute;
+                    top:0;
+                    left:0;
+                }
+                &:nth-child(2n){
+                    border-right:none;
+                 }
+                 .money{
+                     color:#A0A0A0;
+                     .fen{
+                         color:#FE7634;
+                     }
+                     .del{
+                        text-decoration: line-through;
+                     }
+                 }
+            }
+            .clearfix{
+                clear:both;
+            }
+        }
+    }
+}

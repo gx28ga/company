@@ -1,0 +1,30 @@
+@import "../../../common/style/global.scss";
+.banner {
+    @include contain('../images/jr_01.jpg');
+    background-position: center center;
+  }
+  .number1{
+    @include contain('../images/jr_02.jpg');
+    background-position: center center;
+  }  .number2{
+    @include contain('../images/jr_03.jpg');
+    background-position: center center;
+  }  .number3{
+    @include contain('../images/jr_04.jpg');
+    background-position: center center;
+  }  .number4{
+    @include contain('../images/jr_05.jpg');
+    background-position: center center;
+  }  .number5{
+    @include contain('../images/jr_06.jpg');
+    background-position: center center;
+  }  .number6{
+    @include contain('../images/jr_07.jpg');
+    background-position: center center;
+  } .number7{
+    @include contain('../images/jr_08.jpg');
+    background-position: center center;
+  } .number8{
+    @include contain('../images/jr_09.jpg');
+    background-position: center center;
+  }

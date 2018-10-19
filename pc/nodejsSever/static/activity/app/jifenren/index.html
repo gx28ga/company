@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta name="theme-color" content="#2932e1">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="format-detection" content="telephone=no, email=no" />
+    <title>积分任务</title>
+    <script type="text/javascript" src="../../../vendor/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="stylesheets/jifenren.css">
+</head>
+<body>
+    <div class='img-size banner' data-height='626' style="background-size: 100% auto;"></div>
+    <div class='img-size number1' data-height='180' style="background-size: 100% auto;"></div>
+    <div class='img-size number2' data-height='528' style="background-size: 100% auto;"></div>
+    <div class='img-size number3' data-height='461' style="background-size: 100% auto;"></div>
+    <div class='img-size number4' data-height='691' style="background-size: 100% auto;"></div>
+    <div class='img-size number5' data-height='221' style="background-size: 100% auto;"></div>
+    <div class='img-size number6' data-height='240' style="background-size: 100% auto;"></div>
+    <div class='img-size number7' data-height='448' style="background-size: 100% auto;"></div>
+    <div class='img-size number8' data-height='205' style="background-size: 100% auto;"></div>
+</body>
+<script>
+     function setImgSize() {
+      var originWidth = 375,
+        ratio = $(window).width() / originWidth;
+      $('.img-size').each(function () {
+        var self = $(this);
+        $.each(['height', 'width', 'left', 'right', 'bottom', 'top', 'paddingTop', 'lineHeight', 'paddingLeft', 'paddingRight', 'paddingBottom', 'marginTop', 'marginLeft', 'marginRight', 'marginBottom'], function (i, str) {
+          var num = self.attr('data-' + str);
+          if (num) {
+            num = num * ratio / 2 + 'px';
+            self.css(str, num)
+          }
+        })
+      });
+    }
+    setImgSize();
+</script>
+</html>

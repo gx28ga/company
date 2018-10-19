@@ -1,0 +1,1 @@
+"use strict";var app=new Vue({el:"#APP",delimiters:["${","}"],data:{},mounted:function(){this.honorLink()},methods:{honorLink:function(){$(".partner").slide({mainCell:".partnerimg ul",autoPage:!0,effect:"left",autoPlay:!0,vis:5,prevCell:".left-btn",nextCell:".right-btn"})}}});

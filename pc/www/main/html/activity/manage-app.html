@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html ng-app="someApp" id='ng-app' xmlns:ng="http://angularjs.org" lang="zh_CN">
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge;IE=8" />
+    <meta content="always" name="referrer"><meta name="theme-color" content="#2932e1">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <title ng-bind="title">票据资产安全</title>
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheets/newapp.css">
+</head>
+<body>
+<div class="manage-wrapper">
+	<div class="title-box"><div class="title">银行承兑汇票</div></div>
+	<div class="content">
+		<p class="con">银行承兑汇票是由银行开具的到期兑付的书面凭证。《票据法》规定：付款人承兑汇票，不得附有条件；付款人承兑汇票后，应当承担到期付款的责任。</p>
+		<i class="yin"></i>
+		<div class="stitle"><span>银票</span>·银行无条件兑付</div>
+		<div class="mycon">多融财富的银票系列，均以银行承兑汇票作为还款保证，项目到期后，若借款人无法偿还本息，则由承兑银行无条件兑付。</div>
+	</div>
+
+	<div class="line-title"><div><i class="left"></i>合作银行<i class="right"></i></div></div>
+	<div class="content">
+		<div class="banks"></div>
+		<ul>
+			<li><span>保障：</span>企业现有资产或银行承兑汇票作为质押担保财产</li>
+			<li><span>风险：</span>质押担保资产可靠，风险趋近于 0</li>
+		</ul>
+	</div>
+
+	<div class="title-box"><div class="title">商业承兑汇票</div></div>
+	<div class="content">
+		<p class="con">商业承兑汇票是由企业签发，委托付款企业在到期日无条件支付给收款人或持票人的票据。《票据法》规定：付款人承兑汇票，不得附有条件；付款人承兑汇票后，应当承担到期付款的责任；汇票的债务可以由保证人承担保证责任。</p>
+		<i class="shang"></i>
+		<div class="stitle"><span>商票</span>·信用度高，大型国企担保承兑</div>
+	</div>
+
+	<div class="line-title"><div><i class="left"></i>合作企业<i class="right"></i></div></div>
+	<div class="content">
+		<div class="partners"></div>
+		<ul>
+			<li><span>保障：</span>企业现有资产、承兑机构担保兑付（担保机构均为大型国企）</li>
+			<li><span>风险：</span>质押担保资产可靠，风险趋近于 0</li>
+		</ul>
+	</div>
+	<table><tr><td class="left"><div class="line-title"><div><i class="left"></i>商票样本<i class="right"></i></div></div><img class="small-img" src="../../images/prove/sample-s.jpg"></td><td class="right"><div class="line-title"><div><i class="left"></i>银票样本<i class="right"></i></div></div><img class="small-img" src="../../images/prove/sample-y.jpg"></td></tr></table>
+
+	<div class="title-box"><div class="title">多融财富的商票系列</div></div>
+	<div class="content">
+		<p class="con">多融财富的商票系列，均以融资企业持有的商业承兑汇票作为质押，保证其借款到期归还本息，并由承兑机构出具保函对融资企业在多融财富平台发布的融资项目本息进行担保。<br>商票系列担保承兑公司均为国企、央企、上市公司等大型集团公司。</p>
+		<div class="mycon">以黑龙江省建工集团有限责任公司为例，成立于1952年，集团注册资本金42633万元，资产规模44亿元。集团公司下属全资子公司、参控股企业21家。资本雄厚，经营范围广泛，可持续盈利能力强。</div>
+	</div>
+
+	<div class="bot">
+		<!-- <a href="/zhuce" id="zhuce">立即注册</a> -->
+	</div>
+	<div class="check-img-wrap"><div class="img"><img src="../../images/prove/sample-s.jpg"></div></div>
+</div>
+<script type="text/javascript" src="../../vendor/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+	var $win = $(window),
+		$checkImgWrap = $('.check-img-wrap');
+    $win.on('load resize scroll', function() {
+        // $checkImgWrap.height($('body').height());
+        $('.img',$checkImgWrap).height($checkImgWrap.height()).width($checkImgWrap.width());
+        $('.img img',$checkImgWrap).css('max-height',$checkImgWrap.height()).css('max-width',$checkImgWrap.width());
+    });
+    $('.small-img').on('click', function() {
+    	var /images = $(this).attr('/images');
+    	$('.img img',$checkImgWrap).attr('/images',/images);
+    	$checkImgWrap.show();
+    });
+    $checkImgWrap.on('click', function() {
+		$checkImgWrap.hide();
+    });
+    $zhuce = $('#zhuce');
+    if (getUrlParam('uid') == '' || getUrlParam('uid') == undefined) {
+		$zhuce.show();
+	} else {
+		$zhuce.hide();
+	}
+
+	var wap = getUrlParam('wap');
+    if(wap == 'true'){
+    	$zhuce.attr('href', 'http://app.duorongcf.com/zhuce');
+    } else {
+    	$zhuce.attr('href', '/zhuce');
+    }
+
+	function getUrlParam(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+        var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+        if (r != null) return unescape(r[2]); return null; //返回参数值
+    }
+</script>
+</body>
+</html>

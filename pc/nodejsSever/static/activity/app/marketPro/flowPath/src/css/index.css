@@ -1,0 +1,55 @@
+.index{
+    background: #6666ff;
+    .banner{
+        background: url('../images/banner.png') no-repeat;background-size: contain;
+    }
+    .tixing{ background: url('../images/tixing.png') no-repeat; background-size: contain;margin: 0 auto; }
+    .alReg{ background: url('../images/regpepolebox.png') no-repeat;background-size: contain;margin: 0 auto; }
+    .title{  margin: 0 auto; color: #996600;overflow: hidden;  
+        ul{ display: flex;
+            li{
+                float: left;width: 33%;text-align: center;
+            }
+        } 
+    }
+    #tzerror{color: #ff8383;}
+    .phone{
+        input{ border-radius: 100px; border:1px solid #ff6666; display: block; margin: 0 auto; }
+        input::-webkit-input-placeholder {color: #999999; font-size: 16px;}
+        input:-ms-input-placeholder {color: #999999; font-size: 16px;}
+        input:-moz-placeholder {color: #999999; font-size: 16px;}
+        input::-moz-placeholder {color: #999999; font-size: 16px;}
+    }
+
+    .lqbtn{background: -webkit-gradient(linear,0 100% ,100% 100%, from(#ffcc33), to(#ff6600));margin: 0 auto;border-radius: 100px;color: #fff;text-align: center; }
+    .box{ border: 2px solid #9999ff; background: #fff; margin: 0 auto; overflow: hidden;
+        .titlebg{ background: url('../images/titlebg.png') no-repeat; background-size: contain; margin: 0 auto; text-align: center; color: #6633ff; }
+        .cpbox{ margin: 0 auto; background: url('../images/cp.png') no-repeat; background-size: contain;
+            .cp{ width: 100%; box-shadow: 0.5px 1px 2px 2px #ccccff;
+                &.new{ background : -webkit-gradient(linear,0 100% ,100% 100%, from(#ff3366), to(#ff9933));}
+                &.duan{ background: -webkit-gradient(linear,0 100% ,100% 100%, from(#ff6600), to(#ffcc33)); }
+                &.larg{ background: -webkit-gradient(linear,0 100% ,100% 100%, from(#9966ff), to(#33ccff)); }
+                .name{ color: #ffffcc; border-right: 1px dashed #ff9999;display: inline-block; float: left; }
+                .right{  background : url('../images/newr.png') no-repeat ; background-size: contain; background-position: right bottom ; color: #fff; float: left; }
+                .duanbg{  background : url('../images/duanbg.png') no-repeat ; background-size: contain; background-position: right bottom ; color: #fff; float: left; }
+                .largbg{  background : url('../images/largbg.png') no-repeat ; background-size: contain; background-position: right bottom ; color: #fff; float: left; }
+            }
+        }
+        .about{
+            .about-icon{ float: left;
+                &.icon1{ background:url('../images/icon_1.png') no-repeat; background-size: contain; }; 
+                &.icon2{ background:url('../images/icon_2.png') no-repeat; background-size: contain; }; 
+                &.icon3{ background:url('../images/icon_3.png') no-repeat; background-size: contain; }; 
+            }
+            .ab-right { color:#333; p:nth-child(2){ color:#999; };  }
+        }
+        .investement{background: #dcd7ff; text-align: center; color: #000000;span{color: #ff0033;} }
+    }
+    .investement{background: #dcd7ff; text-align: center; color: #000000;span{color: #ff0033;} }
+    .danger{ color: #ccccff; text-align: center; p:nth-child(1){
+        display:block; border-bottom: 1px dashed #9966ff; width: 90%;margin: 10px auto;padding-bottom: 10px;
+        };
+    }
+    .float{ background: -webkit-gradient(linear,0 100%,0 0,from(#6633ff),to(#3366ff)); width: 100%; position: fixed; bottom:0; }
+    
+}

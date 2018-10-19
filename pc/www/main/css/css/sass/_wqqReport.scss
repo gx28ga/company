@@ -1,0 +1,81 @@
+$red: red;
+*{
+	margin:0;padding:0;
+}
+.banner-box{
+	width:100%;height:auto;
+	img{
+	    width:100%;height:100%;
+    }
+}
+
+.tab-box{
+	width:1196px;height:811px;
+	margin:0 auto;margin-top:15px;
+}
+
+
+@mixin aa{
+	height:auto;
+	width:297px;
+
+	line-height:60px;
+	display:block;
+	float: left;
+	text-align:center;
+	font-size:24px;
+	color:#ee7a44;
+	cursor:pointer;
+}
+.tap-top{
+	width:1194px;height:60px;
+	margin:0 auto;
+	border:1px solid #dddddd;
+	border-bottom:0;
+	.tap-top-item-0{
+		@include aa;margin-right:2px;
+		background:#fff0e4;
+	}
+	.tap-top-item{
+		@include aa;margin-right:2px;
+		background:#f4be49;
+		font-size:18px;
+		color:#fff;
+	}
+	.tap-top-item-1{
+		@include aa;margin-right:2px;
+		background:#fffaf0;
+	}
+	.tap-top-item-2{
+		@include aa;margin-right:2px;
+		background:#fdf0e5;
+	}
+	.tap-top-item-3{
+		@include aa;
+		background:#fdf0e5;
+		margin-right:0;
+	}
+	.tap-con{
+		width:1196px;
+		height:750px;
+		margin:0 auto;
+		img{
+			width:1196px;
+			height:750px;
+		}
+	}
+}
+.bigEvent{
+	width:1196px;height:810px;
+	margin:0 auto;margin-top:20px;
+	img{
+	    width:1196px;height:810px;
+    }
+}
+.mainPrize{
+	width:1196px;height:810px;
+	margin:20px auto;
+	img{
+	    width:100%;height:100%;
+    }
+}

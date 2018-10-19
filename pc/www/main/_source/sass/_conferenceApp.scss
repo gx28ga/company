@@ -1,0 +1,270 @@
+.conference-body{
+	img{
+		width:100%;
+		display:block;
+	}
+	.app2{
+		background: url('../../images/conference/bg.png') center top no-repeat;
+		width: 100% !important;
+		background-size: 100% 100%;
+	    background-origin: content-box;
+	    position:relative;
+	}
+	.app22{
+		background: url('../../images/conference/2.png') center top no-repeat;
+		width: 100% !important;
+		background-size: 100% 100%;
+	    background-origin: content-box;
+		position:relative;
+	}
+	.common-head{
+		height: rem-calc(138px,1080);
+		background: #091536;
+		color: #fff;
+		width: 100%;
+		position: relative;
+		a{
+			color:#fff;
+			p{
+				text-align: center;
+				font-size: rem-calc(56px,1080);
+				line-height: rem-calc(138px,1080);
+				width: 100%;
+			}
+			i{
+				position: absolute;
+				left: rem-calc(56px,1080);
+				@include rem-sprite("dialog/*.png",jiantou,$spacing:2px,$rem-base:1080px);
+				top: rem-calc(44px,1080);
+			}
+		}
+	} 
+	/* .con{
+		height: rem-calc(1271px,1080);
+		width: rem-calc(644px,1080);
+		margin: rem-calc(165px auto 0,1080);
+		.btnBox{
+			height: rem-calc(167px,1080);
+			position:relative;
+			i{
+				position:absolute;
+				left:0;right:0;margin:auto;
+				line-height: rem-calc(167px,1080);
+				text-align:center;
+				color:#fff;
+				font-size:rem-calc(48px,1080);
+			    font-weight: bold;
+			    &.bold{
+			    	font-size:rem-calc(60px,1080);
+				    letter-spacing: rem-calc(5px,1080);
+			    }
+				&.smallbtn{
+					@include rem-sprite("conferenceIcon/*.png",smallbtn,$spacing:2px,$rem-base:1080px);
+				}
+				&.largebtn{
+					@include rem-sprite("conferenceIcon/*.png",largebtn,$spacing:2px,$rem-base:1080px);
+				}
+				&.logo{
+					@include rem-sprite("conferenceIcon/*.png",logo,$spacing:2px,$rem-base:1080px);
+				}
+			}
+		}
+		.downBox{
+			height: rem-calc(75px,1080);
+			position:relative;
+			i{
+				position:absolute;
+				left:0;right:0;margin:auto;
+				top:rem-calc(18px,1080);
+				&.downbtn{
+					@include rem-sprite("conferenceIcon/*.png",downbtn,$spacing:2px,$rem-base:1080px);
+				}
+			}
+		}
+	} */
+	.huaTitle{
+		position:relative;
+		width:100%;
+		height:rem-calc(150px,1080);
+		top:3.1rem;
+		span{
+			height: rem-calc(150px,1080);
+			line-height: rem-calc(150px,1080);
+			font-size: rem-calc(60px,1080);
+			color: #dcbe70;
+			position: absolute;
+			left: rem-calc(95px,1080); 
+		}
+		i{
+			position: absolute;
+			top: rem-calc(30px,1080);
+			left: rem-calc(36px,1080);
+			&.hua{
+				@include rem-sprite("dialog/*.png",hua,$spacing:2px,$rem-base:1080px);
+			}
+		}
+	}
+	.app1{
+		background: url('../../images/conference/11.jpg') center top no-repeat;
+		width: 100% !important;
+		background-size: 100% 100%;
+	    background-origin: content-box;
+		position:relative;
+	}
+	.app3{
+		background: url('../../images/conference/3.png') center top no-repeat;
+		width: 100% !important;
+		background-size: 100% 100%;
+	    background-origin: content-box;
+		position:relative;
+		/*.GDJSBox{
+			width:100%;
+			height:rem-calc(458px,1080);
+			position:relative;
+			i.GDJS{
+				position:absolute;
+				left:0;right:0;margin:auto;
+				@include rem-sprite("conferenceIcon/*.png",GDJS,$spacing:2px,$rem-base:1080px);
+			}
+		} */
+		.content{
+			width:rem-calc(880px,1080);
+			height:rem-calc(380px,1080);
+			// margin:rem-calc(896px auto 0,1080);
+			margin: 16.30864rem auto 0;
+			.titleJS{
+				position:relative;
+				.sanjiao{
+					width: 0px;
+		            height: 0px;
+		            border-bottom: rem-calc(20px,1080) solid transparent;
+		            border-top: rem-calc(20px,1080) solid transparent;
+		            border-left: rem-calc(28px,1080) solid #d1b166;
+		            font-size: 0px;
+		            position:absolute;top:rem-calc(20px,1080);
+				}
+				.spanBox{
+					position:absolute;left:rem-calc(58px,1080);
+					p{
+						font-size:rem-calc(50px,1080);
+						color:#d1b166;
+					}
+					span{
+						font-size:rem-calc(40px,1080);
+						color:#fff;
+					}
+				}
+			}
+		}
+	}
+	.app4{
+		@extend .app2;
+		.imgBox{
+			width:rem-calc(1008px,1080);
+			margin:rem-calc(158px auto 0,1080);
+			.team{
+				margin-top:rem-calc(38px,1080);
+			}
+		}
+	}
+	.app5{
+		@extend .app2;
+		.MTBox{
+			width:rem-calc(688px,1080);
+			margin:rem-calc(202px auto 0,1080);
+			height:rem-calc(752px,1080);
+			background:#fff;
+			.MT{
+				width:rem-calc(688px,1080);
+				padding:rem-calc(100px 0 30px 0,1080);
+				height:rem-calc(354px,1080);
+				img{
+					width:100%;
+					display:block;
+					margin:0 auto;
+				}
+				span.MTText{
+					width:rem-calc(552px,1080);
+					height:rem-calc(458px,1080);
+					display:block;
+					margin-top:rem-calc(76px,1080);
+					padding:rem-calc(0 68px,1080);
+					font-size:rem-calc(40px,1080);
+				}
+			}
+		}
+	}
+	.app6{
+		background: url('../../images/conference/6.png') center top no-repeat;
+		width: 100% !important;
+		background-size: 100% 100%;
+	    background-origin: content-box;
+		position:relative;
+	}
+	.swiper-container{
+		width: 100%;
+		height: 100%;
+	}
+	.swiper-slide{
+		width: 100%;
+		overflow: hidden;
+	}
+	.pagination2{
+		width:rem-calc(200px,1080);
+		height:rem-calc(113px,1080);
+		margin:rem-calc(150px auto 0,1080);
+		.swiper-pagination-bullet{
+			width:rem-calc(23px,1080);
+			height:rem-calc(23px,1080);
+			border:rem-calc(2px,1080) solid #92b2d7;
+			display: block;
+		    border-radius: 50%;
+		    float: left;
+		    margin-right:rem-calc(19px,1080);
+		    cursor: pointer;
+		    opacity: 1;
+		    &.swiper-pagination-bullet-active{
+				width:rem-calc(23px,1080);
+				height:rem-calc(23px,1080);
+				background:#92b2d7;
+		    }
+		}
+	}
+}
+
+@media screen and (max-width: 330px) {
+	.conference-body .app2 p{
+		padding-top: rem-calc(20px,1080);
+	}
+	.conference-body .app2 .mod{
+		margin-top: rem-calc(100px,1080);
+	}
+	.conference-body .app3{
+		overflow: scroll !important;
+	}
+	.conference-body .app3 .stitle{
+		padding: rem-calc(10px 0 10px 135px,1080);
+	}
+	.conference-body .app3 p{
+		padding-top: 0;
+		padding-bottom: rem-calc(10px,1080);
+	}
+	.conference-body .app5 .mode{
+		margin-top: rem-calc(50px,1080);
+	}
+	.conference-body .app5 .mode div{
+		padding-top: 0;
+	}
+	.conference-body .app5 .mode div span{
+		padding-bottom: rem-calc(40px,1080);
+	}
+	.conference-body .app6 .con{
+		padding-top: rem-calc(20px,1080);
+	}
+	.conference-body .app6 .con li{
+		line-height: rem-calc(60px,1080);
+	}
+	.conference-body .app6 .con li i{
+		top: rem-calc(16px,1080);
+	}
+}

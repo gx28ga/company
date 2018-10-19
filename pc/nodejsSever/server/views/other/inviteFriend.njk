@@ -1,0 +1,93 @@
+{% extends "common/main.njk" %}
+{% block body %}
+<link href="/style/other/inviteFriend.css" rel="stylesheet" type="text/css" inline/>
+<div id="APP" class="body-wrapper">
+    <div class="banner">
+        <div class="btn">
+            <a @click='loginReturn' ></a>
+        </div>
+        <a class='tabActive' @click='loginReturn'>每日佣金奖励</a>
+        <a class='tab' @click='goMonth'>当月返现奖励</a>
+        <a class='tab' style='margin-left:230px;' @click='goTask'>邀请任务奖励</a>
+    </div>
+    <div class="inviteTitle"></div>
+    <p class='what'>即日起，每成功邀请一位新用户注册并投资平台任意产品（除新手宝），即可获得佣金奖励。佣金奖励的多少，与邀请人投资待收、被邀请人投资待收、被邀请人数量有关。邀请的用户越多，投资待收金额越大，可获得的佣金就越多。佣金每日发放，无上限。
+    </p>
+    <div class='example'>
+        <p>* 2017-08-31之前的邀请的好友，不享受任何邀请佣金奖励。</p>
+        <p>* 待收指待回款的产品的本金，可至【账户】→【我的资产】查看</p>
+    </div>
+    <div class="content1">
+        <div class="content">
+            <ul>
+                <li class="liIcon">每日佣金的计算方法
+                    <ul>
+                        <li class="littleIcon">佣金奖励计算公式
+                            <div class="rate"></div>
+                        </li>
+                        <li class="littleIcon">佣金奖励利率
+                            <div class="myAccount">
+                                <div class="myAccountLeft" style='width:360px'>我的待收（元）</div>
+                                <div class="myAccountLeft" style='width:265px;float:right'>奖励佣金率</div>
+                                <ul>
+                                    <li>
+                                        <div class="daishou">待收＜5000</div>
+                                        <div class="jian">&gt;</div>
+                                        <div class="yongjinRate">0.0%</div>
+                                    </li>
+                                    <li>
+                                        <div class="daishou">5000≤待收＜10000</div>
+                                        <div class="jian">&gt;</div>
+                                        <div class="yongjinRate">0.4%</div>
+                                    </li>
+                                    <li>
+                                        <div class="daishou">10000≤待收＜20000</div>
+                                        <div class="jian">&gt;</div>
+                                        <div class="yongjinRate">0.5%</div>
+                                    </li>
+                                    <li>
+                                        <div class="daishou">20000≤待收＜50000</div>
+                                        <div class="jian">&gt;</div>
+                                        <div class="yongjinRate">0.6%</div>
+                                    </li>
+                                    <li>
+                                        <div class="daishou">50000≤待收＜100000</div>
+                                        <div class="jian">&gt;</div>
+                                        <div class="yongjinRate">0.7%</div>
+                                    </li>
+                                    <li>
+                                        <div class="daishou">100000≤待收＜200000</div>
+                                        <div class="jian">&gt;</div>
+                                        <div class="yongjinRate">0.8%</div>
+                                    </li>
+                                    <li>
+                                        <div class="daishou">200000≤待收＜500000</div>
+                                        <div class="jian">&gt;</div>
+                                        <div class="yongjinRate">0.9%</div>
+                                    </li>
+                                    <li>
+                                        <div class="daishou" style="margin-bottom: 85px;">待收≥500000</div>
+                                        <div class="jian">&gt;</div>
+                                        <div class="yongjinRate">1.0%</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="content2">
+        <div class="contentTitle"></div>
+        <div class="progress"></div>
+        <div class='progressContent'>* 如上一日不满足获取佣金奖励的条件（见上述规则），则当日佣金为0</div>
+    </div>
+    <div class="footer">
+        <div class="btn">
+            <a @click='loginReturn'></a>
+        </div>
+    </div>
+</div>
+<script src="/js/other/friend.js" inline></script>
+{% endblock %}

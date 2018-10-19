@@ -1,0 +1,82 @@
+<div class="pointRecords">
+  <div class="content">
+    <div class="bread-nav-wrapper new-bread-wrapper" style="position: relative; left: -30px;">
+      <div class="bread-nav">
+        <div class="bread-box"><span ng-repeat="item in ctrl.path"><a href="{{item.url}}">{{item.pathName}}</a> > </span>{{ctrl.title}}</div>
+      </div>
+    </div>
+    <!--<div class="searchBar">
+      <div class="search-box" style="padding: 0;">
+        <div class="input-box itemWrapper">
+          <p>类型：</p>
+          <select>
+            <option value="0">全部</option>
+          </select>
+        </div>
+        <div class="input-box calendar-wrapper itemWrapper">
+          <div class="to">查询时间:</div>
+          <div class="ebcs-calendar">
+            <p class="input-group">
+              <input type="text" class="form-control" current-text="今天" clear-text="清空" close-text="关闭" uib-datepicker-popup="{{ctrl.format}}" ng-model="ctrl.startDate" is-open="ctrl.startPopup.opened" datepicker-options="ctrl.dateOptions" ng-required="false" />
+              &lt;!&ndash; cs-date-to-iso &ndash;&gt;
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="ctrl.openStartDate()"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
+          </div>
+          <div class="to">至</div>
+          <div class="ebcs-calendar">
+            <p class="input-group">
+              <input type="text" class="form-control" current-text="今天" clear-text="清空" close-text="关闭" uib-datepicker-popup="{{ctrl.format}}" ng-model="ctrl.endDate" is-open="ctrl.endPopup.opened" datepicker-options="ctrl.dateOptions" ng-required="false" />
+              &lt;!&ndash; cs-date-to-iso &ndash;&gt;
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="ctrl.openEndDate()"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
+          </div>
+          <input class="search-btn" style="margin-left: 15px;" type="button" ng-click="" value="查询">
+        </div>
+      </div>
+    </div>-->
+    <div class="detailWrapper">
+      <div class="currentPoint">当前积分: {{ctrl.currentPoint}}</div>
+      <table ng-if="ctrl.records && ctrl.records.length > 0" class="tbl">
+        <thead ng-if="ctrl.hasOwnProperty('contentType') &&  ctrl.contentType == 'exchange'">
+          <tr>
+            <td width="20%">兑换时间</td>
+            <td>内容</td>
+            <td>数量</td>
+            <td width="15%">花费积分</td>
+          </tr>
+        </thead>
+        <thead ng-if="ctrl.hasOwnProperty('contentType') &&  ctrl.contentType == 'all'">
+        <tr>
+          <td width="20%">日期</td>
+          <td width="60%">内容</td>
+          <td width="20%">变化</td>
+        </tr>
+        </thead>
+        <tbody ng-if="ctrl.hasOwnProperty('contentType') &&  ctrl.contentType == 'exchange'">
+          <tr ng-repeat="item in ctrl.records">
+            <td>{{item.date}}</td>
+            <td>{{item.desc}}</td>
+            <td>{{item.count}}</td>
+            <td ng-class="ctrl.getChangeTxtClass(item.change)">{{item.change}}</td>
+          </tr>
+        </tbody>
+        <tbody ng-if="ctrl.hasOwnProperty('contentType') &&  ctrl.contentType == 'all'">
+        <tr ng-repeat="item in ctrl.records">
+          <td>{{item.date}}</td>
+          <td>{{item.desc}}</td>
+          <td ng-class="ctrl.getChangeTxtClass(item.change)">{{item.change}}</td>
+        </tr>
+        </tbody>
+        <tfoot></tfoot>
+      </table>
+      <div ng-if="ctrl.records == undefined || ctrl.records.length == 0" class="nodata"></div>
+    </div>
+    <div class="btnWrapper">
+      <div class="btm-btn" ng-click="ctrl.onEarnPoints()">获取积分</div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,152 @@
+<div ng-controller="mainCtrl">
+
+<!-- 新版欢迎栏 -->
+	<div id="Topbar" ng-hide="isLoginPage">
+		<div class="middle">
+			<div class="sideright">
+				<a ng-if="!(a | isRegister).register" ui-sref="zhuce">新人注册</a>
+				<a ng-if="!(a | isRegister).register" ui-sref="dl">用户登录</a>
+				<a ng-if="(a | isRegister).register" ng-click="gotoLoginPage('myAccount')">{{(a | isRegister).user.userName}}</a>
+				<a ng-show="(a | isRegister).register" ng-click="userOut()" href="#" class="top-quit">退出</a>
+				<div class="follow">
+					<div class="follow-mod">
+						<a href="{{a|webIE8}}other/downloadApp.html">手机APP</a>
+						<div class="con">
+							<div class="common-appcode"></div>
+							<p>APP下载</p>
+						</div>
+					</div>
+				</div>
+				<a href="{{a|webIE8}}help/XSZY.html" target="_blank">新手指引</a>
+				<a href="{{a|webIE8}}help/CJWT.html" target="_blank">帮助中心</a>
+				<a href="{{a|webIE8}}guide" target="_blank">网站导航</a>
+			</div>
+			<div class="sideleft">
+				<span>客服热线：<em>4006-908-896</em></span>
+				<span class="line">|</span>
+				<div class="follow">
+					<div class="follow-mod">
+						<i class="topsina"></i>
+						<div class="con">
+							<div class="common-dr-sina"></div>
+							<p>多融财富</p>
+							<a target="_blank" href="http://weibo.com/u/5866519482">加关注</a>
+						</div>
+					</div>
+					<div class="follow-mod">
+						<i class="topwechat"></i>
+						<div class="con">
+							<div class="code-bg"><img src="/main/images/wechat-code.png"></div>
+							<div class="tip">扫一扫<br>关注微信号</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 欢迎栏结束 -->
+
+<!-- 导航 -->
+	<div class="header-wrapper">
+		<div class='transition'>
+			<div class="header-wrap">
+				<div class="logo-wrap">
+					<img src="/main/images/logo.png" onclick="location.href=location.origin">
+					<span></span>
+					<a class="logoimg" href="http://www.china-hshc.com/" target="_blank" ng-if="activeNav == 'home' && !selMenu "></a>
+					<a class="logoimg shouye" ng-if="activeNav != 'home'"></a>
+				</div>
+				<div class="nav-box">
+					<div>
+						<ul>
+							<li><a ng-class="{true: 'active'}[activeNav == 'home' && !selMenu ]" href="#" onclick="location.href=location.origin">首页</a></li>
+							<li><a href="/pj/" onclick="location.href=location.origin+'/pj/'">P2P理财</a></li>
+							<li><a href="/dq/" onclick="location.href=location.origin+'/dq/'">定期理财</a></li>
+							<li><a href="{{a|webIE8}}help/XSZY.html" target="_blank">新手指引</a></li>
+							<li><a ng-class="{true: 'active'}[selMenu == 'guarantee']" href="/about/AQBZ.html" onclick="location.href=location.origin+'/about/AQBZ.html'">安全保障</a></li>
+							<li><a ng-class="{true: 'active'}[selMenu == 'DRGK']" href="/about/DRGK.html" onclick="location.href=location.origin+'/about/DRGK.html'">信息披露</a></li>
+							<li class="account"><a ui-sref="dl" ng-if="!(a | isRegister).register">我的账户</a><a ui-sref="main.myAccount.accountHome" ng-class="{true: 'active'}[activeNav == 'account']" ng-if="(a | isRegister).register"><i class="drop"></i>我的账户</a><div class="con" ng-show="(a | isRegister).register"><div><a ui-sref="main.myAccount.myAssets">我的资产</a><a ui-sref="main.myAccount.myInvest">我的投资</a><a ui-sref="main.myAccount.myCoupon">我的优惠券</a><a ui-sref="main.myAccount.myMsg">我的消息</a><a ui-sref="main.pointMall">积分商城</a><a ui-sref="main.myAccount.myTask">我的任务</a></div></div></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- 中间容器 -->
+<div ng-cloak class="ng-scope ng-cloak" ui-view=""></div>
+<!-- 中间容器结束 -->
+
+<!-- 底部 -->
+<div id="footer">
+	<div class="footer-wrapper">
+		<div class="foot-wrap">
+			<div class="foot-nav">
+				<div class="nav-mod">
+					<p class="sml">移动端下载</p>
+					<ul class="fir">
+						<a href="{{a|webIE8}}other/downloadApp.html" target="_blank"><li class="ios"></li></a>
+						<a href="{{a|webIE8}}other/downloadApp.html" target="_blank"><li class="and"></li></a>
+						<!-- <a href="http://app.duorongcf.com"><li class="pho"></li></a> -->
+					</ul>
+				</div>
+				<div class="nav-mod mod2">
+					<p class="sml">手机APP二维码</p>
+					<ul class="fir">
+						<li class="apper"></li>
+					</ul>
+				</div>
+				<div class="nav-mod  mod2">
+					<p class="sml">关注微信服务号</p>
+					<ul class="fir">
+						<li class="weier"></li>
+					</ul>
+				</div>
+			</div>
+			<div class="modeline"></div>                                                                
+			<div class="contact-wrap">
+				<div class="nav-mod mod3">
+					<i class="about"></i>
+					<p>关于多融</p>
+					<ul>
+						<li><a href="{{a|webIE8}}about/DRGK.html" target="_blank">多融概况</a></li>
+						<li><a href="{{a|webIE8}}about/LXWM.html" target="_blank">联系我们</a></li>
+						<li><a href="{{a|webIE8}}about/AQBZ.html" target="_blank">安全保障</a></li>
+					</ul>
+				</div>
+				<div class="nav-mod mod3">
+					<i class="help"></i>
+					<p>帮助中心</p>
+					<ul>
+						<li><a href="{{a|webIE8}}help/CJWT.html" target="_blank">常见问题</a></li>
+						<li><a href="{{a|webIE8}}help/LCKT.html" target="_blank">理财课堂</a></li>
+						<li><a href="{{a|webIE8}}help/XSZY.html" target="_blank">新手指引</a></li>
+						<li><a href="{{a|webIE8}}help/MZSM.html" target="_blank">免责声明</a></li>
+					</ul>
+				</div>
+				<div class="nav-mod mod3 three">
+					<i class="ask"></i>
+					<strong ng-cloak>4006-908-896</strong>
+					<span>工作时间<em>：08:30 — 20:30</em><br>法定节假日除外<br>客服<em>QQ：4006908896</em></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="right-wrapper">
+		<div class="foot-right">
+            <!--<div class="right-text" style="padding: 0;">市场有风险 投资需谨慎；平台建议的预期年化收益率仅供参考，不代表未来实际收益</div>-->
+			<div class="right-text" style="padding: 0;">市场有风险 投资需谨慎；平台建议的历史年化收益率仅供参考，不代表未来实际收益</div>
+			<div class="right-text" style="padding: 0;">沪ICP备15011207号-5 | Copyright Reserved © 上海银砖金融信息服务有限公司 {{v}}</div>
+			<div class="right-text" style="padding-top: 0;">公司电话：021-80312696 | 公司地址：上海市虹口区四川北路859号中信广场41楼</div>
+			<ul>
+				<li><a class="spread-partners-hu" href="https://trustsealinfo.verisign.com/splash?form_file=fdf/splash.fdf&dn=www.duorongcf.com&lang=zh_cn" target="_blank"><img src="/main/images/spread-partners/hu.png"></a></li>
+				<li><a id='___szfw_logo___' class="spread-partners-kexin" href="https://credit.szfw.org/CX20170123033101030377.html" target="_blank"><img src="/main/images/spread-partners/kexin.png"></a></li>
+				<li><a class="spread-partners-aliyun" href="https://www.aliyun.com/" target="_blank"><img src="/main/images/spread-partners/aliyun.png"></a></li>
+				<li><a class="spread-partners-zdcy" href="https://www.yunaq.com/cyd/" target="_blank"><img src="/main/images/spread-partners/zdcy.png"></a></li>
+				<li><a  key ="570e15dfefbfb02ee9d6f567"  logo_size="83x30"  logo_type="business"  href="http://v.pinpaibao.com.cn/authenticate/cert/?site=www.duorongcf.com&at=business" target="_black" ><img style="background: #fff;" src="//static.anquan.org/static/outer/image/hy_83x30.png" alt="安全联盟认证" width="83" height="30" style="border: none;"></a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<script type='text/javascript'>(function(){document.getElementById('___szfw_logo___').oncontextmenu = function(){return false;}})();</script>
+<!-- 底部结束 -->
+</div>

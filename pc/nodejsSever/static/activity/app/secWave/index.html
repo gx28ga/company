@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html ng-app="someApp" id='ng-app' xmlns:ng="http://angularjs.org" lang="zh_CN">
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta name="theme-color" content="#2932e1">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <title >破十亿--第二波</title>
+    <link rel="stylesheet" href="stylesheets/secWave.css">
+    <script type="text/javascript" src="../../../vendor/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../../../vendor/angular.min.js"></script>
+    <script type="text/javascript" src="../../../vendor/angular-resource.min.js"></script>
+    <script type="text/javascript" src="js/secWave.js"></script>
+    <script type="text/javascript" src='../../common/js/modules/time.js'></script>
+</head>
+<body ng-controller="secWaveCtrl">
+	<div class="secWave-wrapper">
+		<div class="banner img-size" data-height="428"><span class="img-size" data-bottom="25">活动时间：1月20-1月26日</span></div>
+		<div class="contain img-size" data-height="995">
+			<div class="containTop img-size" data-width="750" data-height="666">
+				<div class="btnbox img-size" data-height="95" data-lineHeight="95">
+					<div class="firstBtn img-size" data-width="385">
+						<div class="img-size">第一场8点开始</div>
+					</div>
+					<div class="secBtn img-size" data-width="385">
+						<div class="img-size">第二场10点开始</div>
+					</div>
+				</div>
+				<div class="redbox img-size" data-height="516"><p class="img-size" data-paddingTop="45">150天及以上红包组合专场</p><div id="open" class="img-size" data-width="120" data-height="120" style="margin:0 auto;"></div></div>
+			</div>
+			<div class="containBottom img-size" data-width="750" data-height="328">
+				<div class="img-size" data-paddingTop="48">
+					<div ng-show="istime==1" id="eight" style="display: block;">
+						<!--———————————————————————————————— 立即领取 按钮 —————————————————————————————————————————— —-->
+						<div class="timebtn timebtn1 img-size" data-width="355" data-height="82">
+							<div class="timebox img-size" id="timebox" data-width="306" data-height="48" data-marginTop="10" data-paddingTop="4" data-paddingLeft="15">
+								<span class="hh img-size" id="timerH" data-width="54" data-height="45"></span>
+								<span class="img-size" data-marginLeft="6">时</span>
+								<span class="hh img-size" id="timerM" data-width="54" data-height="45"></span>
+								<span class="img-size" data-marginLeft="6">分</span>
+								<span class="hh img-size" id="timerS" data-width="54" data-height="45"></span>
+								<span class="img-size" data-marginLeft="6">秒</span>
+							</div>
+						</div>
+						<div class="lqbtn lqbtn1 img-size" data-width="355" data-height="82" data-lineHeight="82" style="display:none">立即领取</div>
+					</div>
+					<div ng-show="istime==2" id="ten">
+						<!--———————————————————————————————— 倒计时 按钮 ————————————————————————————————————————————-->
+						<div class="timebtn timebtn2 img-size" data-width="355" data-height="82">
+							<div class="timebox2 img-size" id="timebox" data-width="306" data-height="48" data-marginTop="10" data-paddingTop="4" data-paddingLeft="15">
+								<span class="hh img-size" id="timerH2" data-width="54" data-height="45"></span>
+								<span class="img-size" data-marginLeft="6">时</span>
+								<span class="hh img-size" id="timerM2" data-width="54" data-height="45"></span>
+								<span class="img-size" data-marginLeft="6">分</span>
+								<span class="hh img-size" id="timerS2" data-width="54" data-height="45"></span>
+								<span class="img-size" data-marginLeft="6">秒</span>
+							</div>
+						</div>
+						<!--———————————————————————————————— 立即领取 按钮 —————————————————————————————————————————— —-->
+						<div class="lqbtn lqbtn2 img-size" data-width="355" data-height="82" data-lineHeight="82" style="display:none">立即领取</div>
+					</div>
+					<div class="rulebtn img-size" data-marginTop="-82" data-lineHeight="82" data-marginRight="32">活动规则></div>
+					<a ng-show="istime==1" id="gocoupon1" class="img-size" data-marginTop="20"></a><!-- 前去看看 -->
+					<a ng-show="istime==2" id="gocoupon2" class="img-size" data-marginTop="20"></a><!-- 前去看看 -->
+					<div class="firstnotice img-size" data-width="687" data-height="107" data-marginTop="25" data-paddingLeft="50" data-lineHeight="107">第一波活动持续进行中...<span class="img-size" data-width="152" data-height="52" data-marginRight="56" data-marginTop="30"></span></div>
+				</div>
+			</div>
+		</div>
+		<div class="mask" style="display: none;">
+			<div class="rule img-size" data-width="622" data-height="826" data-marginLeft="-311" data-marginTop="-413" ng-show="activity.isrule">
+				<div class="title img-size" data-width="323" data-height="55" data-lineHeight="55" data-marginTop="50">活动规则</div>
+				<div class="close img-size" data-width="80" data-height="80" data-lineHeight="80" data-marginTop="-106">×</div>
+				<div class="rulecon img-size" data-height="626" data-marginTop="50">
+					<ul class="img-size" data-paddingLeft="50" data-paddingRight="50">
+						<li>1、活动时间：2017年1月20-2017年1月26日。</li><li>　</li>
+						<li>2、活动期间，每天上午8点10点，共2场红包雨，先到先得。</li><li>　</li>
+						<li>3、每场红包雨，用户可领到一个红包组合，共8个小红包，总金额为588/888/1088/1888元，最高1888元红包；红包使用条件以领到的红包实际说明为准</li><li>　</li>
+						<li>4、如因用户自己原因，错过红包的领取，概不补发。</li><li>　</li>
+						<li>5、当天领取的红包，有效期为1天，仅限当天使用。领取红包后，红包将即时发放您的多融财富账户，请打开多融财富APP或网站查看使用</li><li>　</li>
+						<li>6、活动最终解释权归多融财富所有。</li><li>　</li>
+					</ul>
+				</div>
+			</div>
+			<div class="notice img-size" data-width="622" data-height="598" data-marginLeft="-311" data-marginTop="-299" ng-show="activity.isqudao">
+				<div class="title img-size" data-width="323" data-height="55" data-lineHeight="55" data-marginTop="50">提示</div>
+				<div class="close img-size" data-width="80" data-height="80" data-lineHeight="80" data-marginTop="-106">×</div>
+				<div class="rulecon img-size" data-marginTop="60">
+					<p class="img-size" data-lineHeight="90" >{{notice.title}}</p>
+					<p class="img-size" data-lineHeight="60" >{{notice.text1}}</p>
+					<p class="img-size" data-lineHeight="60" >{{notice.text2}}</p>
+				</div>
+				<div class="tanbtn img-size" data-width="300" data-height="60" data-lineHeight="60" data-marginTop="60">{{notice.btntext}}</div>
+			</div>
+			<div class="zjl img-size" data-width="690" data-height="820" data-marginLeft="-345" data-marginTop="-410" ng-show="activity.iszjl">
+				<div class="close img-size" data-width="82" data-height="82" data-marginTop="46" data-marginRight="38"></div>
+				<p class="img-size" data-paddingTop="392"><span class="img-size">{{288+amount}}</span>元</p>
+				<div class="tolookbtn img-size" data-width="271" data-height="61" data-marginTop="33" style="margin:0 auto;"></div>
+			</div>
+			<div class="redlisttan img-size" data-width="554" data-height="642" data-marginLeft="-277" data-marginTop="-321" ng-show="activity.islookred">
+				<div class="orange img-size" data-height="525">
+					<div class="closehb img-size" data-width="82" data-height="82" data-marginTop="-30" data-marginRight="-30">
+						<div class="closenei img-size" data-width="62" data-height="62" data-lineHeight="58" data-marginTop="10" data-marginRight="10">×</div>
+					</div>
+					<div class="bagList img-size" data-width="373" data-paddingTop="76">
+						<div class="img-size" data-height="61">
+							<ul>
+								<li class="img-size" data-width="119" data-height="61" data-lineHeight="61" data-marginRight="7">5元×2</li>
+								<li class="img-size" data-width="119" data-height="61" data-lineHeight="61" data-marginRight="7">10元</li>
+								<li class="img-size" data-width="119" data-height="61" data-lineHeight="61">30元</li>
+							</ul>
+						</div>
+						<div class="redbigbg img-size" data-width="373" data-height="131" data-lineHeight="131" data-marginTop="18" data-marginBottom="18">{{amount}}元红包</div>
+						<div class="img-size" data-height="61">
+							<ul>
+								<li class="img-size" data-width="119" data-height="61" data-lineHeight="61" data-marginRight="7">50元</li>
+								<li class="img-size" data-width="119" data-height="61" data-lineHeight="61" data-marginRight="7">88元</li>
+								<li class="img-size" data-width="119" data-height="61" data-lineHeight="61">100元</li>
+							</ul>
+						</div>
+					</div>
+					<p class="img-size" data-marginLeft="90" data-marginTop="40">红包已发送至你的账户</p>
+					<p class="img-size" data-marginLeft="90">使用条件：≥{{qixiandata}}天产品 有效期 1天</p>
+				</div>
+				<div class="lookbtn img-size" data-width="271" data-height="61" data-lineHeight="61" data-marginTop="28"><a href="http://app.duorongcf.com/myCoupon" ng-show="wap">立即查看</a><a href="jump://page=16?" ng-show="!wap">立即查看</a></div>
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+	function setImgSize(){
+        var  originWidth = 375
+            ,ratio =$(window).width()/originWidth;
+        $('.img-size').each(function(){
+            var self = $(this);
+            $.each(['height','width','left','right','bottom','top' , 'paddingTop' ,'lineHeight' , 'paddingLeft' , 'paddingRight' , 'paddingBottom','marginTop', 'marginLeft' , 'marginRight' , 'marginBottom'],function( i , str ){
+                var num = self.attr('data-'+str); 
+                if( num ){
+                    num = num*ratio/2+'px';
+                    self.css(str,num)
+                }
+            });
+        });
+    }
+    setImgSize();
+  
+</script>
+</html>

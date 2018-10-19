@@ -1,0 +1,17 @@
+[
+{"parentBankId":"中国工商银行","bankId":"0102","once":"50000","oneDay":"50000","month":"200000","url":""},
+{"parentBankId":"中国农业银行","bankId":"0103","once":"50000","oneDay":"100000","month":"200000","url":""},
+{"parentBankId":"中国银行","bankId":"0104","once":"50000","oneDay":"100000","month":"200000","url":""},
+{"parentBankId":"中国建设银行","bankId":"0105","once":"50000","oneDay":"100000","month":"200000","url":""},
+{"parentBankId":"交通银行","bankId":"0301","once":"50000","oneDay":"100000","month":"200000","url":""},
+{"parentBankId":"中信银行","bankId":"0302","once":"10000","oneDay":"10000","month":"20000","url":""},
+{"parentBankId":"中国光大银行","bankId":"0303","once":"50000","oneDay":"200000","month":"200000","url":""},
+{"parentBankId":"华夏银行","bankId":"0304","once":"50000","oneDay":"200000","month":"200000","url":""},
+{"parentBankId":"中国民生银行","bankId":"0305","once":"50000","oneDay":"200000","month":"200000","url":""},
+{"parentBankId":"广东发展银行","bankId":"0306","once":"50000","oneDay":"200000","month":"200000","url":""},
+{"parentBankId":"平安银行股份有限公司","bankId":"0307","once":"50000","oneDay":"200000","month":"200000","url":""},
+{"parentBankId":"招商银行","bankId":"0308","once":"50000","oneDay":"50000","month":"200000","url":""},
+{"parentBankId":"兴业银行","bankId":"0309","once":"50000","oneDay":"50000","month":"200000","url":""},
+{"parentBankId":"上海浦东发展银行","bankId":"0310","once":"50000","oneDay":"200000","month":"200000","url":""},
+{"parentBankId":"中国邮政储蓄银行股份有限公司","bankId":"0403","once":"50000","oneDay":"200000","month":"200000","url":""}
+]

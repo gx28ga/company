@@ -1,0 +1,171 @@
+@import "./global.scss";
+.support {
+  font-family: "PingFangSC Light";
+  .banner {
+    @include contain("../images/bannerapp.jpg");
+    background-size: 100% auto;
+  }
+  .content1 {
+    background: url("../images/bg1.jpg") repeat;
+    position: relative;
+    .number1 {
+      @include contain("../images/con3.png");
+      margin: 0 auto;
+    }
+    .number0 {
+      @include contain("../images/con1.png");
+      margin: 0 auto;
+    }
+    .number2 {
+      @include contain("../images/con2.png");
+      margin: 0 auto;
+    }
+  }
+  .content2 {
+    background: url("../images/bg2.png") repeat;
+    position: relative;
+    .contitle {
+      @include font-size(15px);
+      color: #eb6100;
+      border-bottom: 1px solid #eb6100;
+      margin:0 auto;
+    }
+    .concon {
+      @include font-size(10px);
+      color: #834e00;
+      margin:0 auto;
+    }
+    .juanimg{
+      position: relative;
+      .slideBox {
+        z-index: 0;
+        margin: 0 auto;
+        .bd {
+          overflow: hidden;
+          margin: 0 auto;
+          position:relative;
+          .imgbox{
+            margin:0 auto;
+
+          }
+          li {
+            zoom: 1;
+            vertical-align: middle;
+            margin: 0 auto;
+          }
+          img {
+            display: block;
+          }
+        }
+      }
+      .btnRight {
+        @include contain("../images/rightbtn.png");
+        position: absolute;
+      }
+      .btnLeft {
+        @include contain("../images/leftbtn.png");
+        position: absolute;
+      }
+    }
+  }
+  .content3{
+    background: url("../images/bg1.jpg") repeat;
+    position: relative;
+    .zoufang{
+      @include contain("../images/zoufang.png");
+      margin:0 auto;
+      position: relative;
+      .hb{
+        position: absolute;
+        li{
+          border-radius: 50%;
+          background: #bda99f;
+          margin-right:10px;
+          float: left;
+
+        }
+        .on{
+          background:#eb6100;
+        }
+      }
+      .zu{
+        margin:0 auto;
+
+      }
+
+    }
+    .seventitle{
+      @include contain("../images/seven.png");
+      margin:0 auto;
+    }
+    .sevenc{
+      @include font-size(10px);
+      color:#834e00;
+      margin:0 auto;
+    }
+    .sevenimg{
+        position: relative;
+      .imgbox {
+        z-index: 0;
+        margin: 0 auto;
+        .bd {
+          overflow: hidden;
+          margin: 0 auto;
+          position:relative;
+          .slideBox{
+            margin:0 auto;
+
+          }
+          li {
+            zoom: 1;
+            vertical-align: middle;
+            margin: 0 auto;
+          }
+          img {
+            display: block;
+          }
+        }
+      }
+      .btnRight {
+        @include contain("../images/rightbtn.png");
+        position: absolute;
+      }
+      .btnLeft {
+        @include contain("../images/leftbtn.png");
+        position: absolute;
+      }
+    }
+  }
+  .content4{
+    background: url("../images/bg1.jpg") repeat;
+    position: relative;
+    .ceo{
+      @include contain("../images/ceotitle.png");
+      margin:0 auto;
+    }
+    .ceocon{
+      background: #f8c2c5;
+      margin:0 auto;
+      border-radius: 5px;
+      .ceoimg{
+        @include contain("../images/ceocon.png");
+        margin:0 auto;
+      }
+    }
+    .bottom{
+      @include contain("../images/bottom.png");
+      margin:0 auto;
+    }
+  }
+  .content5{
+    background: url("../images/bg2.png") repeat;
+    .medis{
+      @include contain("../images/meedia.png");
+      position: relative;
+      margin:0 auto;
+      .tv{
+        position: absolute;
+      }
+    }
+  }
+}

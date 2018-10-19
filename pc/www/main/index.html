@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<!--  HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" -->
+<html ng-app="someApp" id='ng-app' xmlns:ng="http://angularjs.org" lang="zh_CN">
+
+<head>
+  <base href="/">
+  <meta charset="utf-8" />
+  <!-- <meta http-equiv="Content-Type" content="text/html" charset="gb2312" > -->
+  <!-- h5 -->
+  <meta name="viewport" content="width=960px">
+  <!--   <meta name="viewport" content="width=device-width"> -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <!--  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+ <meta name="format-detection" content="telephone=no"/> -->
+  <!-- pc -->
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta name="renderer" content="webkit" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge;IE=8;Chrome=1;" />
+  <!--<meta content="always" name="referrer">-->
+  <meta name="theme-color" content="#2932e1">
+  <!--<META HTTP-EQUIV="pragma" CONTENT="no-cache">
+  <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+  <META HTTP-EQUIV="expires" CONTENT="0">-->
+  <link rel="stylesheet" type="text/css" href="/main/css/stylesheets/swiper.css">
+  <link rel="stylesheet" href="/main/styles/icons-files/icons.css">
+  <style type="text/css">
+    [ng\:cloak],
+    [ng-cloak],
+    [data-ng-cloak],
+    [x-ng-cloak],
+    .ng-cloak,
+    .x-ng-cloak {
+      display: none !important;
+    }
+  </style>
+  <title ng-bind='title'>多融财富—专注大型国企供应链金融的互联网金融平台</title>
+    <meta name="keywords" content="多融财富,多融财富理财,投资理财平台,线上理财,p2p理财平台,多融财富理财项目,银砖金融,上海银砖">
+    <meta name="description" content="多融财富是上海银砖投资控股集团旗下互联网金融平台,背靠大型国有企业，专注于国企供应链金融，基于银行与国企承兑汇票，为投资者提供票据安选、票据优选等投资品,100元起投,7天至6月投资期间任选,收益率9.00%-13%,所有资产由银行与国企承兑，安全可靠。">
+  <!-- <script src="https://api.html5media.info/1.1.4/html5media.min.js"></script> -->
+  <script type="text/javascript">
+    (function () {
+      var indexFile = (location.pathname.match(/\/(index[^\.]*\.html)/) || ['', ''])[1],
+        rUrl = /(#!\/|api|guide|misc|tutorial|error|index[^\.]*\.html).*$/,
+        baseUrl = location.href.replace(rUrl, indexFile),
+        production = location.hostname === 'docs.angularjs.org',
+        headEl = document.getElementsByTagName('head')[0],
+        sync = true;
+
+      var linkRoot = '/main/';
+      var scriptRoot = '/main/vendor/';
+      var jsRoot = '/main/js/';
+
+      addTag('base', {
+        href: baseUrl
+      });
+
+      addTag('link', {
+        rel: 'stylesheet',
+        href: linkRoot + 'css/dialog/ngDialog.min.css',
+        type: 'text/css'
+      });
+      addTag('link', {
+        rel: 'stylesheet',
+        href: linkRoot + 'css/dialog/ngDialog-custom-width.css',
+        type: 'text/css'
+      });
+      addTag('link', {
+        rel: 'stylesheet',
+        href: linkRoot + 'css/dialog/ngDialog-theme-default.min.css',
+        type: 'text/css'
+      });
+      addTag('link', {
+        rel: 'stylesheet',
+        href: linkRoot + 'css/dialog/ngDialog-theme-plain.min.css',
+        type: 'text/css'
+      });
+      addTag('link', {
+        rel: 'stylesheet',
+        href: linkRoot + 'css/stylesheets/screen.css',
+        type: 'text/css'
+      });
+      addTag('link', {
+        rel: 'stylesheet',
+        href: linkRoot + 'style/stylesheets/screen.css',
+        type: 'text/css'
+      });
+      addTag('link', {
+        rel: 'stylesheet',
+        href: linkRoot + 'css/jquery-ui.min.css',
+        type: 'text/css'
+      });
+      addTag('link', {
+        rel: 'stylesheet',
+        href: linkRoot + 'css/animate.min.css',
+        type: 'text/css'
+      });
+
+      // addTag('script', {src: scriptRoot + 'duorong-global.js'}, sync);
+
+
+      addTag('script', {
+        src: scriptRoot + 'es5-shim.min.js'
+      }, sync); //兼容ie8
+      addTag('script', {
+        src: scriptRoot + 'prototype.js'
+      }, sync); //面向对象
+      addTag('script', {
+        src: scriptRoot + 'jquery-1.11.1.min.js'
+      }, sync);
+      addTag('script', {
+        src: scriptRoot + 'jquery.cookie.js'
+      }, sync);
+      addTag('script', {
+        src: scriptRoot + 'angular.min.js'
+      }, sync);
+      addTag('script', {
+        src: scriptRoot + 'slider.js'
+      }, sync);
+      addTag('script', {
+        src: scriptRoot + 'rotate.js'
+      }, sync); //jQ 旋转插件
+      // addTag('script', {src: scriptRoot + 'jquery.mCustomScrollbar.js' }, sync);//滚动条
+      addTag('script', {
+        src: scriptRoot + 'swiper.min.js'
+      }, sync);
+      addTag('script', {
+        src: scriptRoot + 'angular-ui-router.min.js'
+      }, sync); //嵌套路由
+      addTag('script', {
+        src: scriptRoot + 'angular-css.min.js'
+      }, sync); //嵌套路由
+      addTag('script', {
+        src: scriptRoot + 'angular-resource.min.js'
+      }, sync); // 数据交互
+      addTag('script', {
+        src: scriptRoot + 'ngStorage.min.js'
+      }, sync); //操作本地存储
+      addTag('script', {
+        src: scriptRoot + 'node_modules/angular-animate/angular-animate.min.js'
+      }, sync);
+      //addTag('script', {src: scriptRoot + 'node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js' }, sync);
+      //addTag('script', {src: 'https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-sanitize.js' }, sync);
+      // addTag('script', {src: scriptRoot + 'node_modules/angular-ui-bootstrap/src/datepicker/datepicker.js' }, sync);  //angular 和bootstrap ui 组成的日期控件
+      addTag('script', {
+        src: scriptRoot + 'ui-bootstrap-tpls-2.4.0.min.js'
+      }, sync);
+      addTag('script', {
+        src: scriptRoot + 'angular-sanitize.min.js'
+      }, sync);
+      addTag('script', {
+        src: scriptRoot + 'node_modules/moment/min/moment.min.js'
+      }, sync); //日期格式化，日期处理
+
+      addTag('script', {
+        src: scriptRoot + 'angular-locale_zh-cn.js'
+      }, sync);
+
+      addTag('script', {
+        src: scriptRoot + 'qtip.js'
+      }, sync); //  jq 的提示插件
+      addTag('script', {
+        src: scriptRoot + 'jquery.SuperSlide.2.1.1.js'
+      }, sync); //滑动门
+      addTag('script', {
+        src: scriptRoot + 'highcharts.js'
+      }, sync); //highCharts
+      addTag('script', {
+        src: scriptRoot + 'eahart.js'
+      }, sync); //eahart
+       addTag('script', {//三级联动1
+        src: scriptRoot + 'Popt.js'
+      }, sync);
+      addTag('script', {//三级联动2
+        src: scriptRoot + 'cityJson.js'
+      }, sync);
+      addTag('script', {//三级联动3
+        src: scriptRoot + 'citySet.js'
+      }, sync);
+
+
+      addTag('script', {
+        src: jsRoot + 'app.js'
+      }, sync);
+
+      addTag('script', {
+        src: jsRoot + 'ng/dialog/ngDialog.js'
+      }, sync); //angular的弹出框
+
+      addTag('script', {
+        src: jsRoot + 'ng/ngInvestList.js'
+      }, sync);
+
+
+      // controller
+      addTag('script', {
+        src: jsRoot + 'controllers/mainCtrl.js'
+      }, sync);
+      addTag('script', {
+        src: jsRoot + 'controllers/dlCtrl.js'
+      }, sync);
+      addTag('script', {
+        src: jsRoot + 'controllers/zhuceCtrl.js'
+      }, sync);
+      /*addTag('script', {
+        src: jsRoot + 'controllers/homeCtrl.js'
+      }, sync);*/
+      addTag('script', {
+        src:  '/main/activity/web/router.js?' + new Date().getTime()
+      }, sync);
+      /*addTag('script', {
+        src: jsRoot + 'controllers/home.js'
+      }, sync);*/
+      addTag('script', {
+        src: jsRoot + 'controllers/newZeroDetail.js' //新手灵活宝
+      }, sync);
+      addTag('script', {
+        src: jsRoot + 'controllers/bankBillCtrl.js' //p2p理财
+      }, sync);
+      /*addTag('script', {
+        src: jsRoot + 'controllers/bankCtrl.js' //定期理财
+      }, sync);*/
+      addTag('script', {
+        src: jsRoot + 'controllers/myCouPonCtrl.js'
+      }, sync);
+      addTag('script', {
+        src: jsRoot + 'controllers/billDetailCtrl.js' //p2p理财产品详情
+      }, sync);
+      /*addTag('script', {
+        src: jsRoot + 'controllers/billDetail2Ctrl.js' //定期理财产品详情
+      }, sync);*/
+      addTag('script', {
+        src: jsRoot + 'controllers/AccountaccountHomeCtrl.js'
+      }, sync);
+      addTag('script', {
+        src: jsRoot + 'controllers/resetPswCtrl.js'
+      }, sync);
+      addTag('script', {
+        src: jsRoot + 'controllers/accountMyassetsWrapCtrl.js'
+      }, sync);
+      addTag('script', {
+        src: jsRoot + 'controllers/accountMymsgWrapCtrl.js' //我的消息
+      }, sync);
+      addTag('script', {
+        src: jsRoot + 'controllers/accountMytaskWrapCtrl.js' //我的任务
+      }, sync);
+      addTag('script', {
+        src: jsRoot + 'controllers/myAccountmyInvestCtrl.js'
+      }, sync);
+      addTag('script', {
+        src: jsRoot + 'controllers/securityCtrl.js'
+      }, sync);
+      addTag('script', {
+        src: jsRoot + 'controllers/rechargeCtrl.js'
+      }, sync);
+      addTag('script', {
+        src: jsRoot + 'controllers/rechargeSuccessCtrl.js'
+      }, sync);
+      addTag('script', {
+        src: jsRoot + 'controllers/withdrawCtrl.js'
+      }, sync);
+      addTag('script', {
+        src: jsRoot + 'controllers/successDialogCtrl.js'
+      }, sync);
+      addTag('script', {
+        src: jsRoot + 'controllers/rechargeDialogCtrl.js'
+      }, sync);
+      addTag('script', {
+        src: jsRoot + 'controllers/personalCtrl.js'
+      }, sync);
+      addTag('script', {
+        src: jsRoot + 'controllers/sideMenuCtrl.js'
+      }, sync);
+      addTag('script', {
+        src: jsRoot + 'controllers/jtMenuCtrl.js'
+      }, sync);
+      addTag('script', {
+        src: jsRoot + 'controllers/lizsCtrl.js'
+      }, sync);
+      addTag('script', {
+        src: jsRoot + 'controllers/myFriend.js'
+      }, sync);  
+        addTag('script', {
+        src: jsRoot + 'controllers/riskEvaluationCtrl.js'
+      }, sync);
+      addTag('script', {
+        src: jsRoot + 'controllers/newsCtrl.js'
+      }, sync);
+      addTag('script', {
+        src: jsRoot + 'controllers/friendCtrl.js'
+      }, sync);
+      addTag('script', {
+        src: jsRoot + 'controllers/guideCtrl.js'
+      }, sync);
+      addTag('script', {
+        src: jsRoot + 'controllers/sendCtrl.js'
+      }, sync);
+      addTag('script', {
+        src: jsRoot + 'controllers/gsdtCtrl.js'
+      }, sync);
+      addTag('script', {
+        src: jsRoot + 'controllers/protocolCtrl.js'
+      }, sync);
+      addTag('script', {
+        src: jsRoot + 'controllers/cpaCtrl.js'
+      }, sync);
+      addTag('script', {
+        src: jsRoot + 'controllers/yhtgCtrl.js'
+      }, sync);
+      addTag('script', {
+        src: jsRoot + 'controllers/DocCtrl.js'
+      }, sync);
+      addTag('script', {
+        src: jsRoot + 'controllers/doublegiftCtrl.js'
+      }, sync);
+      addTag('script', {
+        src: jsRoot + 'controllers/guaranteeCtrl.js'
+      }, sync);
+      addTag('script', {
+        src: jsRoot + 'controllers/loveCtrl.js'
+      }, sync);
+      addTag('script', {
+        src: jsRoot + 'controllers/financialCtrl.js'
+      }, sync);
+      addTag('script', {
+        src: jsRoot + 'controllers/loanProtocolCtrl.js'
+      }, sync);
+      addTag('script', {
+        src: jsRoot + 'controllers/baoliProtocolCtrl.js'
+      }, sync);
+      addTag('script', {
+        src: jsRoot + 'controllers/transferProtocolCtrl.js'
+      }, sync);
+      addTag('script', {
+        src: jsRoot + 'controllers/cp66Ctrl.js'
+      }, sync);
+      addTag('script', {
+        src: jsRoot + 'controllers/inviteCtrl.js'
+      }, sync);
+      addTag('script', {
+        src: jsRoot + 'controllers/olympiadCtrl.js'
+      }, sync);
+      addTag('script', {
+        src: jsRoot + 'controllers/november.js'
+      }, sync);
+      addTag('script', {
+        src: jsRoot + 'controllers/moonFestivalCtrl.js'
+      }, sync);
+      addTag('script', {
+        src: jsRoot + 'controllers/registerCtrl.js'
+      }, sync);
+      addTag('script', {
+        src: jsRoot + 'controllers/activityCtrls/cp079Ctrl.js'
+      }, sync);
+      addTag('script', {
+        src: jsRoot + 'controllers/bbyjCtrl.js'
+      }, sync);
+      addTag('script', {
+        src: jsRoot + 'controllers/accountAutoBtCtrl.js'
+      }, sync);
+      addTag('script', {
+        src: jsRoot + 'controllers/activityCtrls/returnMoneyCtrl.js'
+      }, sync);
+      addTag('script', {
+        src: jsRoot + 'activity/web/doubleTwelveCtrl.js'
+      }, sync);
+      addTag('script', {
+        src: jsRoot + 'activity/activityTime.js'
+      }, sync);
+
+
+      // controller over===================================================
+
+      //directives
+      addTag('script', {
+        src: jsRoot + 'directives/myAccountDirective.js'
+      }, sync);
+      addTag('script', {
+        src: jsRoot + 'directives/pointMallDirective.js'
+      }, sync);
+      addTag('script', {
+          src: jsRoot + 'directives/escrowAccountDirective.js'
+      }, sync);
+      // directive over====================================================
+
+      //data service
+      addTag('script', {
+        src: jsRoot + 'services/datas/pointMallDataService.js'
+      }, sync);
+      addTag('script', {
+        src: jsRoot + 'services/datas/myAccountDataService.js'
+      }, sync);
+
+      addTag('script', {
+        src: jsRoot + 'services/resourceService.js'
+      }, sync);
+      addTag('script', {
+        src: jsRoot + 'services/filters/mapsFilters.js'
+      }, sync);
+      addTag('script', {
+        src: jsRoot + 'services/filters/portFilters.js'
+      }, sync);
+      addTag('script', {
+        src: jsRoot + 'services/filters/eorrFilters.js'
+      }, sync);
+
+
+      // window.console && window.console.info && window.console.info(Alphabet('DR','stereo'));
+
+      function addTag(name, attributes, sync) {
+        var el = document.createElement(name),
+          attrName;
+
+        for (attrName in attributes) {
+          if (name == 'script') {
+            el.setAttribute(attrName, attributes[attrName]); // + '?v=' + Math.random() * new Date());
+          } else {
+            el.setAttribute(attrName, attributes[attrName]);
+          }
+        }
+
+        sync ? document.write(outerHTML(el)) : headEl.appendChild(el);
+      }
+
+      function outerHTML(node) {
+        // if IE, Chrome take the internal method otherwise build one
+        return node.outerHTML || (
+          function (n) {
+            var div = document.createElement('div'),
+              h;
+            div.appendChild(n);
+            h = div.innerHTML;
+            div = null;
+            return h;
+          })(node);
+      }
+    })();
+  </script>
+  <script>
+    document.createElement('ng-investlist');
+    document.createElement('menu');
+    document.createElement('my-banner');
+    document.createElement('dr-new');
+    document.createElement('dr-pg');
+    document.createElement('my-newbanner');
+    document.createElement('my-circle');
+  </script>
+  <style type="text/css">
+    .summary-box {
+      border: 1px solid #fe7634;
+      margin-top: 50px;
+      position: fixed;
+      top: 50%;
+      right: 10px;
+      background: #fff;
+      min-height: 100px;
+      width: 300px;
+      padding: 10px;
+      overflow: hidden;
+      height: auto !important;
+      z-index: 16;
+    }
+    
+    .summary-box h1,
+    .summary-box p {
+      line-height: 23px;
+      font-size: 14px;
+    }
+    
+    .summary-box h1,
+    .summary-box a {
+      font-weight: bold;
+      color: #fe7634;
+    }
+    
+    .summary-box a {
+      padding: 0px;
+      float: right;
+    }
+  </style>
+</head>
+
+<body>
+  <div ng-show="maskHidde" class="page-loading">
+    <div class="">
+      <div class="">
+        <div class="">
+          <div class="" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+        </div>
+        <div style="width: 100%;height: 100%;position: fixed;top: 0;left: 0;background: none;z-index: 100;"></div>
+        <p style="text-align:center;"><img src="images/loading.gif"></p>
+      </div>
+    </div>
+  </div>
+  <div ui-view="" ng-cloak class='ng-scope ng-cloak' style="height:100%"></div>
+  <div class="mask-coupon" ng-show="showMaskCoupon == true">
+    <div class="coupon">
+      <div class="close" ng-click="showMaskCoupon = false"></div>
+      <a href="/main/bankBillList" ng-click="showMaskCoupon = false"></a>
+    </div>
+  </div>
+  <script type="text/javascript">
+    //
+    var _mvq = _mvq || [];
+    _mvq.push(['$setAccount', 'm-223965-0']);
+
+    _mvq.push(['$logConversion']);
+    (function () {
+      var mvl = document.createElement('script');
+      mvl.type = 'text/javascript';
+      mvl.async = true;
+      mvl.src = ('https:' == document.location.protocol ? 'https://static-ssl.mediav.com/mvl.js' : 'http://static.mediav.com/mvl.js');
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(mvl, s);
+    })();
+
+    //百度统计
+    var _hmt = _hmt || [];
+    (function () {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f7c570071c5e4a0cf001fac7a2152cae";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+</body>
+
+</html>

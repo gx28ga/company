@@ -1,0 +1,36 @@
+{% macro obj(item,type) %}
+{% if item.type!=1 %}
+<div class="box interest">
+    <div class="title ">
+        <i class="bill-interest"></i>
+        <h2>计息流程</h2>
+        <div class="line"></div>
+    </div>
+    {% if type !=2%}
+    <div class="content">
+        {% if item.status == 6 or item.status == 5 %}
+        <div class="process-bg bill-process-one"></div>
+        {% endif %}
+        {% if item.status == 8 %}
+        <div class="process-bg bill-process-two"></div>
+        {% endif %}
+        {% if item.status == 9 %}
+        <div class="process-bg bill-process-three"></div>
+        {% endif %}
+        <div class="time">
+            {{item.expireDate}}
+        </div>
+    </div>
+    {% else %}
+    <div class='content'>
+        <div class='progress-bg-newhand'></div>
+        <div class='calculateDate'>
+            {{item.calculateDate}}
+            <span class='nextTime'>{{item.profitDate}}</span>
+        </div>
+    </div>
+    {% endif %}
+
+</div>
+{% endif %}
+{% endmacro %}

@@ -1,0 +1,733 @@
+<div ng-controller="homeeCtrl" class="newHomePage">
+	<div id="Wapper">
+		<div style="box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);">
+			<!-- banner____________________start <slider-show></slider-show>-->
+			<div class="bannerBox">
+				<div id="Slideshow">
+					<my-newbanner></my-newbanner>
+				</div>
+				<div class="bannerrgb">
+				</div>
+				<div class="aside">
+					<div ng-if="!(a | isRegister).register"><p class="title login-{{(a | isRegister).register}}">国企控股平台</p></div>
+					<div ng-if="(a | isRegister).register" class="title login-{{(a | isRegister).register}}">
+						<div ng-if="user.realName != undefined">欢迎您，{{user.realName}} {{user.sex | isSex}}!</div>
+						<div ng-if="user.realName == undefined">欢迎您，{{user.mobilephone | limitTo:3}}*****{{user.mobilephone | limitTo:-3}}!</div>
+					</div>
+					<div class="content" ng-if="(a | isRegister).register">
+						<div class="txt2 login-{{(a | isRegister).register}}">账户余额:<em class="login-true">{{user.balance}}</em>元</div>
+						<div class="txt2 login-{{(a | isRegister).register}}">近30天共有<em class="login-true">{{user.dueIn}}</em>笔待收收益</div>
+						<div class="btn hvr-bounce-to-left">
+							<a ui-sref="main.myAccount.accountHome" class="nohover">我的账户</a>
+						</div>
+						<div class="reg login-{{(a | isRegister).register}}">
+							<a ng-click="userOut('userOut')" class="nohover">安全退出</a>
+						</div>
+					</div>
+					<div class="content" ng-if="!(a | isRegister).register">
+						<p class="txt1">安全  稳健  高收益</p>
+						<p class="txt2">注册送<em>1588元</em>红包</p>
+						<div class="btn hvr-bounce-to-left"><a href="{{hrefUrl}}zhuce" class="nohover">免费注册</a></div>
+						<div class="reg">
+							已有账号？<a href="{{hrefUrl}}dl" class="nohover">立即登录</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- banner____________________end -->
+			<!-- 用户相关信息 -->
+			<div class="user-info-data">
+				<div class="middle">
+					<ul>
+						<li>
+							<i class="home-icons-record-money"></i>
+							累计投资额<em>{{investTotal.investCumulative | currency:'':0}}</em>元
+						</li>
+						<li>
+							<i class="home-icons-record-profit"></i>
+							累计用户收益<em>{{investTotal.profitCumulative | currency:''}}</em>元
+						</li>
+						<li>
+							<i class="home-icons-record-user"></i>
+							累计平台用户<em>{{investTotal.regCount | currency:'':0}}</em>人
+						</li>
+						<li class="out">
+							<a ui-sref="main.report.201706({menuName:report})" target="_blank">查看运营报告</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- end 用户相关信息 -->
+			<!-- 保障 -->
+			<div class="module clearfix">
+				<div class="middle">
+					<div class="placard">
+						<ul>
+							<li class="p4">
+								<a ui-sref='guide.escrowAccount' class="nohover">
+									<div class="placlist">
+										<i></i>
+										<div class="info">
+											<span>银行存管</span>
+											<p>账户资金有华瑞银行存管</p>
+										</div>
+									</div>
+									<div class="info2">
+										<p>账户<span>资金</span><br><span>上海华瑞银行</span>存管</p>
+									</div>
+								</a>
+							</li>
+							<li class="p1">
+								<a href='/other/CP157-gqSpecial.html' target="_blank" class="nohover">
+									<div class="placlist">
+										<i></i>
+										<div class="info"><span>国有资本</span>
+											<p></p>
+											<p>国有资本入股，雄厚的实力保障</p>
+										</div>
+									</div>
+									<div class="info2">
+										<p><span>国有</span>资本入股<br>雄厚的<span>实力保障</span></p>
+									</div>
+								</a>
+							</li>
+							<li class="p2">
+								<a href='/other/pjspecial.html' target="_blank" class="nohover">
+									<div class="placlist">
+										<i></i>
+										<div class="info">
+											<span>专业票据资产</span>
+											<p>银行与大型国企承兑汇票,100%无条件承兑</p>
+										</div>
+									</div>
+									<div class="info2">
+										<p><span>银行与大型国企</span>承兑汇票<br><span>100%</span>无条件承兑</p>
+									</div>
+								</a>
+							</li>
+							<li class="p3">
+								<a ui-sref='main.jt.guarantee' target="_blank" class="nohover">
+									<div class="placlist">
+										<i></i>
+										<div class="info">
+											<span>资金安全保障</span>
+											<p>历史到期产品100%本息兑付　安全可靠</p>
+										</div>
+									</div>
+									<div class="info2">
+										<p>历史到期产品<span>100%本息兑付</span>　<br><span>安全</span>可靠</p>
+									</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- end 保障 -->
+			<div class="module gray clearfix" style="background: #f3f3f3;padding-bottom: 22px;border-top: 2px solid #ececec;">
+				<div class="middle">
+					<!-- 公告 -->
+					<div>
+						<div class="speaker">
+							<div class="tit">
+								<i class="icon-volume-up"></i>网站公告
+							</div>
+							<div class="text" ng-show="urgentNotice!=''">
+								<div class="pp"><marquee direction="up" scrolldelay="100" scrollamount="1" title="{{summaryContents}}" style="height: 16px;">{{summaryContents}}</marquee></div>
+								<div class="ppdata">[{{summaryTime | date:'yyyy-MM-dd HH:mm'}}]</div>
+							</div>
+							<div class="text" ng-show="urgentNotice==''">
+								<div class="pp">暂无公告</div>
+							</div>
+							<div class="moreno"><a  ui-sref="main.jt.GSXW" target="_blank">[更多]</a></div>
+							<div class="funds clearfix">
+								<div class="tit two">
+									最新投资用户
+								</div>
+								<div class="options"><!--  -->
+									<div class="option" ng-repeat="arr in investList" repeat-finish='listFinish'>
+										<ul ng-repeat='item in arr'>
+											<li class="tel">{{item.mobilephone}}</li>
+											<li class="price">投资 {{item.amount}}元</li>
+											<li class="date">{{item.investTime | date:'yyyy-MM-dd HH:mm'}}</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- end 公告 -->
+					<!-- 投资资金 <duorong-funds></duorong-funds> repeat-finish="listFinish()"-->
+					<!-- end 投资资金 -->
+					
+
+					<!-- 新手产品 -->
+					<div class="bank-box cplist clearfix" style="margin-bottom: 20px;height: 369px">
+						<div class="leftside">
+							<div class="img1">
+								<div class="img1 fir"></div>
+							</div>
+						</div>
+						<div class="rightside">
+							<div class="list clearfix">
+								<div style="height: 368px;border:0px;">
+									<!-- 新手活期宝 -->
+									<div class="newhandZX" style="height: 180px;">
+										<div class="left-list" style="border: 1px solid #e9e9e9;">
+											<div class="section clearfix">
+												<div class="title">
+													新手宝
+												</div>
+												<ul class="clearfix" class="newh" style="height: 86px;margin-top: 10px;">
+													<li class="rate" style="width:12%;">
+														<em>{{current.rate}}<span>%</span></em>
+														<!--<p>预期年化</p>-->
+														<p>历史年化收益率</p>
+													</li>
+													<li class="deadline" style="border-right: 1px solid #f4f4f4;">
+														<b style="color: #ff7200;"><span style="font-size: 24px;">+</span><span style="font-size: 30px;">{{current.extraRate}}</span><span style="font-size: 24px;">%</span></b>
+														<p>{{current.extraRateDays}}天额外收益</p>
+													</li>
+													<li class="info" style="text-align: left;padding-left: 25px;">
+														<b style="font-size: 24px;">随时可退</b>
+														<p>新手专享，仅限一次</p>
+													</li>
+													<li class="submit info" style="padding-left: 50px;">
+														<a class="btn hvr-bounce-to-left nohover" style="margin-top: 0;" ui-sref="main.newZeroDetail">立即转入</a>
+													</li>
+												</ul>
+												<div class="tag" style="padding: 8px 0; border-top: 1px solid #f4f4f4;">
+													<span data-tips=".newzreo-tips" class="yellow">新手奖励</span>
+												</div>
+											</div>
+										</div>
+										<div class="right-aside">
+											<div class="tagname" ></div>
+											<div class="ad hvr-grow"><a href="/other/noviceOnlyEnjoy.html" target="_blank"><img src='../main/imagess/home/ad.jpg'></a></div>
+										</div>
+									</div>
+									<!-- 新手活期宝 -->
+									<!-- 新手专享标-->
+									<div class="section clearfix" style="margin-top: 15px; border: 1px solid #e9e9e9;" ng-init="rookieListfn()" ng-repeat="item in rookieList">
+										<div class="title">{{item.fullName}}</div>
+										<ul class="clearfix" style="height: 80px; padding-top: 10px; overflow: hidden;">
+											<li class="rate">
+												<em>{{item.rate}}<span>%</span></em>
+												<!--<p>预期年化</p>-->
+												<p>历史年化收益率</p>
+											</li>
+											<li class="deadline width1">
+												<b><span>{{item.deadline}}</span>天</b>
+												<p>产品期限</p>
+											</li>
+											<li class="deadline width2">
+												<b><span>{{item.amount | currency:'':0}}</span>元</b>
+												<p>产品总额</p>
+											</li>
+											<li class="my-circle">
+												<p class="circle">{{item.pert | setProgress}}%</p>
+											    <div id="hcircle6" class="pppp" style="min-width: 180px; height: 180px; max-width: 180px; margin: -76px 0 0 -20px"></div>
+												<span ng-show="item.status == 5">募集进度</span>
+												<span ng-show="item.status == 6 || item.status == 7 || item.status == 8 || item.status == 9 ">募集完成</span>
+											</li>
+											<li class="submit">
+												<a ui-sref="main.billDetail2({ id: item.id })" class="nohover mujibtn"><div class="btn" ng-class="{true:'btnDis',false:'btn hvr-bounce-to-left'}[item.status != 5]">{{(item.status | isProductType).cnvalue}}</div></a>
+											</li>
+										</ul>
+										<div class="aside">
+											<ul>
+												<li class="textleft" ng-show="item.accept != undefined && item.accept != ''">
+													<i class="bank-icon"></i>
+													产品管理人：{{item.accept}}
+												</li>
+												<li class="tag">
+													<span data-tips=".FBQ-tips" class="red" ng-if="item.isDouble==1">翻倍券</span>
+													<span data-tips=".XJQ-tips" class="red" ng-if="item.isCash==1">返现券</span>
+													<span data-tips=".JXQ-tips" class="blue" ng-if="item.isInterest==1">加息券</span>
+													<span data-tips=".ZSJXQ-tips" class="blue" ng-if="item.isExclusive==1">专属加息券</span>
+													<span data-tips=".XSZX-tips" class="yellow" ng-if="item.isRookie==1">新手专享</span>
+												</li>
+											</ul>
+										</div>
+										<div class="cge" style="height: 0"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- end 定期产品 -->
+					<!-- 定期产品 -->
+					<div class="bank-box cplist clearfix" style="margin-bottom: 20px;" ng-if="termHot.length>0 || termList.length>0">
+						<div class="leftside">
+							<div ng-class="{true:'imgc',false:'imga'}[(termHot.length==1&&termList.length==0) || (termHot.length==0&&termList.length==1)]"><div class="ckxq"><a target="_blank" ui-sref="activitys.jinjiaosuo" class="nohover"><span>查看详情</span></a></div></div>
+						</div>
+						<div class="rightside">
+							<div class="list clearfix">
+								<div ng-class="{true:'over cpone',false:'over cptwo'}[(termHot.length==1&&termList.length==0) || (termHot.length==0&&termList.length==1)]">
+									<!-- 热推产品 -->
+									<div class="section clearfix" ng-repeat="item in termHot" ng-init="termHotfn()" ng-if="termHot[0] != null">
+										<div class="tagname"></div>
+										<div class="title">
+											<div style="display: inline-block;">
+												<i ng-if="item.type == 6" class="piaoicon-g">资管</i>
+												<i ng-if="item.type == 7" class="baoliicon-g">金交所</i>
+											</div>
+											{{item.fullName}}
+											<div style="display: inline-block;">
+												<i ng-if="item.activityRate>0" class="piaoicon-g acti-g">活动</i>
+											</div>
+										</div>
+										<ul class="clearfix" style="height: 72px; overflow: hidden;">
+											<li class="rate">
+												<em>{{item.rate}}<span>%</span></em>
+												<t ng-if="item.activityRate>0">+{{item.activityRate}}<span>%</span></t>
+												<!--<p>预期年化</p>-->
+												<p>历史年化收益率</p>
+											</li>
+											<li class="deadline width1">
+												<b><span>{{item.deadline}}</span>天</b>
+												<p>产品期限</p>
+											</li>
+											<li class="deadline width2">
+												<b><span>{{item.amount | currency:'':0}}</span>元</b>
+												<p>产品总额</p>
+											</li>
+											<li class="my-circle">
+												<p class="circle">{{item.pert | setProgress}}%</p>
+												<div id="hcircle" class="pppp" style="min-width: 180px; height: 180px; max-width: 180px; margin: -76px 0 0 -20px"></div>
+												<span ng-show="item.status == 5">募集进度</span>
+												<span ng-show="item.status == 6 || item.status == 7 || item.status == 8 || item.status == 9 ">募集完成</span>
+											</li>
+											<li class="submit">
+												<div class="btn hvr-bounce-to-left nohover"  ng-class="{true: 'btn', false: ''}[item.status == 6 || item.status == 8 || item.status == 9]"><a ui-sref="main.billDetail2({ id: item.id })" class="nohover">{{(item.status | isProductType).cnvalue}}</a></div>
+											</li>
+										</ul>
+										<div class="aside">
+											<ul>
+												<li class="textleft" ng-show="item.accept != undefined && item.accept != ''"><i class="bank-icon"></i>产品管理人：{{item.accept}}</li>
+												<li class="tag qtip">
+													<span data-tips=".FBQ-tips" class="red" ng-if="item.isDouble==1">翻倍券</span>
+													<span data-tips=".XJQ-tips" class="red" ng-if="item.isCash==1">返现券</span>
+													<span data-tips=".JXQ-tips" class="blue" ng-if="item.isInterest==1">加息券</span>
+													<span data-tips=".ZSJXQ-tips" class="blue" ng-if="item.isExclusive==1">专属加息券</span>
+												</li>
+											</ul>
+										</div>
+										<div class="cge"></div>
+									</div>
+									<!-- 普通产品   repeat-finish="init(item)"-->
+									<div class="section clearfix" ng-repeat="item in termList" repeat-finish="circletermFinish" ng-if="termList.length > 0" >
+										<div class="title">
+											<div style="display: inline-block;">
+												<i ng-if="item.type == 6" class="piaoicon-g">资管</i>
+												<i ng-if="item.type == 7" class="baoliicon-g">金交所</i>
+											</div>
+											{{item.fullName}}
+											<div style="display: inline-block;">
+												<i ng-if="item.activityRate>0" class="piaoicon-g acti-g">活动</i>
+											</div>
+										</div>
+										<ul class="clearfix" style="height: 72px; overflow: hidden;">
+											<li class="rate">
+												<em>{{item.rate}}<span>%</span></em>
+												<t ng-if="item.activityRate>0">+{{item.activityRate}}<span>%</span></t>
+												<!--<p>预期年化</p>-->
+												<p>历史年化收益率</p>
+											</li>
+											<li class="deadline width1">
+												<b><span>{{item.deadline}}</span>天</b>
+												<p>产品期限</p>
+											</li>
+											<li class="deadline width2">
+												<b><span>{{item.amount | currency:'':0}}</span>元</b>
+												<p>产品总额</p>
+											</li>
+											<li class="my-circle">
+												<p class="circle">{{item.pert | setProgress}}%</p>
+											    <div id="hcircle{{$index}}" class="pppp" style="min-width: 180px; height: 180px; max-width: 180px; margin: -76px 0 0 -20px"></div>
+												<span ng-show="item.status == 5">募集进度</span>
+												<span ng-show="item.status == 6 || item.status == 7 || item.status == 8 || item.status == 9 ">募集完成</span>
+											</li>
+											<li class="submit">
+												<a ui-sref="main.billDetail2({ id: item.id })" class="nohover mujibtn"><div class="btn" ng-class="{true:'btnDis',false:'btn hvr-bounce-to-left'}[item.status != 5]">{{(item.status | isProductType).cnvalue}}</div></a>
+											</li>
+										</ul>
+										<div class="aside">
+											<ul>
+												<li class="textleft" ng-show="item.accept != undefined && item.accept != ''">
+													<i class="bank-icon"></i>
+													产品管理人：{{item.accept}}
+												</li>
+												<li class="tag">
+													<span data-tips=".FBQ-tips" class="red" ng-if="item.isDouble==1">翻倍券</span>
+													<span data-tips=".XJQ-tips" class="red" ng-if="item.isCash==1">返现券</span>
+													<span data-tips=".JXQ-tips" class="blue" ng-if="item.isInterest==1">加息券</span>
+													<span data-tips=".ZSJXQ-tips" class="blue" ng-if="item.isExclusive==1">专属加息券</span>
+												</li>
+											</ul>
+										</div>
+										<div class="cge"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- end 定期产品 -->
+
+
+					<!-- P2P -->
+					<div class="bank-box cplist clearfix">
+						<div class="leftside" style="height:545px;">
+							<div class="imgb"><div class="ckxq"><a target="_blank" ui-sref="pjspecial" class="nohover"><span>查看详情</span></a></div></div>
+							<div class="customer-service">
+								<div class="img"></div>
+								<div class="service-bottom">
+									<h2>Lily</h2>
+									<div class="right">
+										<p>年度服务最佳客服</p>
+										<p>一对一贴心服务</p>
+									</div>
+								</div>
+								<div class="btnmask">
+									<div class="btn" ng-click="isSeek = true">立即咨询</div>
+								</div>
+							</div>
+							<!-- 客服弹框 -->
+							<div class="servertan" ng-show="isSeek">
+								<div class="title">咨询<span class="close" ng-click="isSeek=false">×</span></div>
+								<div class="con">
+									<p>咨询电话：<span>4006-908-896</span></p>
+									<form>
+										<input type="text" ng-pattern="/^([A-Za-z\u0391-\uFFE5]){2,20}$/" ng-model='customerService.name' placeholder="请输入您的姓名" class="phone"/>
+										<input type="text" ng-pattern="/^1[3|4|5|7|8][0-9]{9}$/" ng-model='customerService.phone' placeholder="请输入您的手机号码" class="phone"/>
+										<p class="error"></p>
+									</form>
+									<div class="subbtn" style="cursor: pointer;">确认</div>
+								</div>
+							</div>
+							<!-- 客服弹框 成功 -->
+							<div class="servertan" ng-show="isSeekcg">
+								<div class="title">发送成功</div>
+								<div class="con con2">
+									<div class="cgimg"></div>
+									<p class="qqcg">您的请求已发送成功</p>
+									<p class="text">客服人员将在一个工作日内与您联系，<br>请耐心等待</p>
+									<div class="subbtn subbtn2">确定</div>
+								</div>
+							</div>
+						</div>
+						<div class="rightside">
+							<div class="list clearfix">
+								<div class="over">
+									<!-- 热推产品   ng-init="initt(item)"-->
+									<div class="section clearfix" ng-repeat="item in p2pHot" ng-init="p2pHotfn()" ng-if="p2pHot[0] != null">
+										<div class="tagname"></div>
+										<div class="title">
+											<div style="display: inline-block;">
+												<i ng-if="item.type == 2 || item.type == 3" class="piaoicon-g">票据</i>
+												<i ng-if="item.type == 5" class="baoliicon-g">保理</i>
+											</div>
+											{{item.fullName}}
+											<div style="display: inline-block;">
+												<i ng-if="item.activityRate>0" class="piaoicon-g acti-g">活动</i>
+											</div>
+										</div>
+										<ul class="clearfix" style="height: 72px; overflow: hidden;">
+											<li class="rate">
+												<em>{{item.rate}}<span>%</span></em>
+												<t ng-if="item.activityRate>0">+{{item.activityRate}}<span>%</span></t>
+												<!--<p>预期年化</p>-->
+												<p>历史年化收益率</p>
+											</li>
+											<li class="deadline width1">
+												<b><span>{{item.deadline}}</span>天</b>
+												<p>产品期限</p>
+											</li>
+											<li class="deadline width2">
+												<b><span>{{item.amount | currency:'':0}}</span>元</b>
+												<p>产品总额</p>
+											</li>
+											<li class="my-circle">
+												<p class="circle">{{item.pert | setProgress}}%</p>
+												<div id="hcircle2" class="pppp" style="min-width: 180px; height: 180px; max-width: 180px; margin: -76px 0 0 -20px"></div>
+												<span ng-show="item.status == 5">募集进度</span>
+												<span ng-show="item.status == 6 || item.status == 7 || item.status == 8 || item.status == 9 ">募集完成</span>
+											</li>
+											<li class="submit">
+												<div class="btn hvr-bounce-to-left nohover"  ng-class="{true: 'btn', false: ''}[item.status == 6 || item.status == 8 || item.status == 9]"><a ui-sref="main.billDetail({ id: item.id })" class="nohover">{{(item.status | isProductType).cnvalue}}</a></div>
+											</li>
+										</ul>
+										<div class="aside">
+											<ul>
+												<li class="textleft" ng-show="item.accept != undefined && item.accept != ''"><i class="bank-icon"></i>{{item.accept}}</li>
+												<li class="tag qtip">
+													<span data-tips=".FBQ-tips" class="red" ng-if="item.isDouble==1">翻倍券</span>
+													<span data-tips=".XJQ-tips" class="red" ng-if="item.isCash==1">返现券</span>
+													<span data-tips=".JXQ-tips" class="blue" ng-if="item.isInterest==1">加息券</span>
+													<span data-tips=".ZSJXQ-tips" class="blue" ng-if="item.isExclusive==1">专属加息券</span>
+												</li>
+											</ul>
+										</div>
+										<div class="cge"></div>
+									</div>
+									<!-- 普通产品   repeat-finish="init(item)"-->
+									<div class="section clearfix" ng-repeat="item in p2pList" repeat-finish="circlep2pFinish" ng-if="p2pList.length > 0" >
+										<div class="title">
+											<div style="display: inline-block;">
+												<i ng-if="item.type == 2 || item.type == 3" class="piaoicon-g">票据</i>
+												<i ng-if="item.type == 5" class="baoliicon-g">保理</i>
+											</div>
+											{{item.fullName}}
+											<div style="display: inline-block;">
+												<i ng-if="item.activityRate>0" class="piaoicon-g acti-g">活动</i>
+											</div>
+										</div>
+										<ul class="clearfix" style="height: 72px; overflow: hidden;">
+											<li class="rate">
+												<em>{{item.rate}}<span>%</span></em>
+												<t ng-if="item.activityRate>0">+{{item.activityRate}}<span>%</span></t>
+												<!--<p>预期年化</p>-->
+												<p>历史年化收益率</p>
+											</li>
+											<li class="deadline width1">
+												<b><span>{{item.deadline}}</span>天</b>
+												<p>产品期限</p>
+											</li>
+											<li class="deadline width2">
+												<b><span>{{item.amount | currency:'':0}}</span>元</b>
+												<p>产品总额</p>
+											</li>
+											<li class="my-circle">
+												<p class="circle">{{item.pert | setProgress}}%</p>
+											    <div id="hcircle{{$index+3}}" class="pppp" style="min-width: 180px; height: 180px; max-width: 180px; margin: -76px 0 0 -20px"></div>
+												<span ng-show="item.status == 5">募集进度</span>
+												<span ng-show="item.status == 6 || item.status == 7 || item.status == 8 || item.status == 9 ">募集完成</span>
+											</li>
+											<li class="submit">
+												<a ui-sref="main.billDetail({ id: item.id })" class="nohover mujibtn"><div class="btn" ng-class="{true:'btnDis',false:'btn hvr-bounce-to-left'}[item.status != 5]">{{(item.status | isProductType).cnvalue}}</div></a>
+											</li>
+										</ul>
+										<div class="aside">
+											<ul>
+												<li class="textleft" ng-show="item.accept != undefined && item.accept != ''">
+													<i class="bank-icon"></i>
+													{{item.accept}}
+												</li>
+												<li class="tag">
+													<span data-tips=".FBQ-tips" class="red" ng-if="item.isDouble==1">翻倍券</span>
+													<span data-tips=".XJQ-tips" class="red" ng-if="item.isCash==1">返现券</span>
+													<span data-tips=".JXQ-tips" class="blue" ng-if="item.isInterest==1">加息券</span>
+													<span data-tips=".ZSJXQ-tips" class="blue" ng-if="item.isExclusive==1">专属加息券</span>
+												</li>
+											</ul>
+										</div>
+										<div class="cge"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- end P2P -->
+				</div>
+			</div>
+			<!-- 用户心声 -->
+			<div class="module clearfix usersbg">
+				<div class="middle person">
+					<p class="title">用户心声</p>
+					<p>我们懂你的每一步努力，让财富增值与你相持相伴，多融呵护你为梦想前行的每一步 </p>
+					<div class="user-box">
+						<div class="user">
+							<div class="userimg userimga"></div>
+							<p class="username">凌女士</p>
+							<div class="userinbg">
+								<div class="info infoa">在多融财富投资了半年 ，国企控股，心理比较踏实，收益也不错，会继续支持！</div>
+							</div>
+						</div>
+						<div class="user">
+							<div class="userimg userimgb"></div>
+							<p class="username">张女士</p>
+							<div class="userinbg">
+								<div class="info infob">国资多融，安全有保障，活动惊喜不断，真心是投资者信赖的平台，祝多融蓬勃发展，日胜一日</div>
+							</div>
+						</div>
+						<div class="user userc">
+							<div class="userimg userimgc"></div>
+							<p class="username">李先生</p>
+							<div class="userinbg">
+								<div class="info" style="line-height: 17px;">企业的发展来自于客户的体验以及诚信，那么多融财富做到了，理财顾问给到我的服务，很贴心，无微不至，平台给我一个很大的安全感</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<!-- end 用户心声 -->
+			<!--公司新闻 <duorong-news></duorong-news> -->
+			<div class="module gray clearfix" style="padding-top: 20px;">
+				<div class="middle" style="width: 1130px;" id="newBox">
+					<div class="news">
+						<ul class="title tabtitle">
+							<li class="current" ng-click="onClick('公司动态')">公司动态</li>
+							<li ng-click="onClick('公司新闻')">公司新闻</li>
+						</ul>
+						<div class="more">
+							<a ng-show="isnotice" target="_blank" ui-sref="main.jt.GSDT">更多</a>
+							<a ng-show="isnew" target="_blank" ui-sref="main.jt.GSXW">更多</a>
+						</div>
+						<div class="content">
+						    <!-- 新闻图片 -->
+							<div class="slider newslider">
+								<div class="swiper-img newsimg">
+									<ul>
+										<li>
+											<a href='#'>
+												<div class="img">
+													<a target="_blank" ui-sref="main.pcVideo">
+													<img src="../main/images/video/video.jpg">
+												</a> 
+												</div>
+												<a class="imgh" target="_blank" ui-sref="main.pcVideo">
+													<h2>多融财富荣获2017国家金融科技高峰论坛“优秀企业”奖</h2>
+												</a>
+											</a>
+										</li>
+										<li ng-repeat="item in newsList" repeat-finish="newsimgFin">
+											<a href='#'>
+												<div class="img">
+													<a target="_blank" ui-sref="main.jt.XWXQ({newId:{{item.arti_id}},t:1})">
+													<img src="{{item.litpic}}">
+												</a> 
+												</div>
+												<a class="imgh" target="_blank" ui-sref="main.jt.XWXQ({newId:{{item.arti_id}},t:1})">
+													<h2>{{item.title}}</h2>
+												</a>
+											</a>
+										</li>
+									</ul>
+								</div>
+								<div class="pagina imgspagina">
+									<ul>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+									</ul>
+								</div>
+							</div>
+							<!-- 新闻图片   end -->
+							<div class="list tablist">
+								<div class="options">
+									<div class='option'>
+										<!-- 动态列表 -->
+										<dl id="mover" class="hvr-forward" ng-repeat="item in notice" repeat-finish="tabFin" style=" width: 685px;">
+											<dt>
+												<div class="aside">
+													<span class="time">{{item.create_time | date:'yyyy-MM-dd HH:mm'}}</span>
+												</div>
+												<h2>
+													<a target="_blank" ui-sref="main.jt.XWXQ({newId:{{item.arti_id}},t:0})">{{item.title}}</a>
+												</h2>
+											</dt>
+											<dd>{{item.summaryContents}}</dd>
+										</dl>
+										<!-- 动态列表  end -->
+									</div>
+									<div class='option'>
+										<!-- 新闻列表 -->
+										<dl id="mover" class="hvr-forward" ng-repeat="item in news" style=" width: 685px;">
+											<dt>
+												<div class="aside">
+													<span class="time">{{item.create_time | date:'yyyy-MM-dd HH:mm'}}</span>
+												</div>
+												<h2>
+													<a target="_blank" ui-sref="main.jt.XWXQ({newId:{{item.arti_id}},t:1})">{{item.title}}</a>
+												</h2>
+											</dt>
+											<dd>{{item.summaryContents}}</dd>
+										</dl>
+										<!-- 新闻列表 end -->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="module gray clearfix">
+				<div class="middle" id="middle">
+					<!-- 合作单位<duorong-cooperation></duorong-cooperation> -->
+					<div class="cooperation clearfix">
+						<div class="title">合作单位</div>
+						<div class="content">
+							<div class="left-btn"></div>
+							<div class="right-btn"></div>
+							<div class="swiper-img coopimg">
+								<ul>
+									<li ng-repeat="item in cooperationImg" repeat-finish="cooperationFinish">
+										<div style="width: 178px; height: 59px; display: block;"><img src='{{item.linkPath}}'></div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!-- 友情链接<duorong-link></duorong-link> -->
+					<div class="cooperation2 clearfix" style="margin: 20px 0;">
+						<div class="title">友情链接</div>
+						<div class="link">
+						<div class="content content2">
+							<ul>
+								<li ng-repeat="item in firendLink"><a href="{{item.linkPath}}" target="_blank">{{item.linkName}}</a></li>
+							</ul>
+						</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<div class="float-window">
+    <div class="float-mod">
+        <div class="padd"><div class="code trigger"></div></div>
+        <div class="con">
+            <div class="img-box">
+                <img src="main/images/common/footapp.png">
+            </div>
+            <p class="down">扫一扫<br>下载手机APP</p>
+            <div class="download">iPhone 版下载<i class="home-icons-apple"></i></div>
+            <div class="download">Android 版下载<i class="home-icons-android"></i></div>
+        </div>
+    </div>
+    <div class="float-mod">
+        <div class="padd"><div class="qqicon trigger"></div></div>
+        <div class="con">
+            <p>点击QQ咨询</p>
+            <a class="qq" target="_blank" href="http://crm2.qq.com/page/portalpage/wpa.php?uin=4006908896&f=1&ty=1&aty=0&a=&from=5">
+              <div class="home-icons-qqicon"></div>
+            </a>
+            <p class="s">客服热线:4006-908-896</p>
+            <p class="s">工作时间:08:30-20:30</p>
+        </div>
+    </div>
+    <div class="float-mod">
+        <div class="padd"><div class="phone trigger"></div></div>
+        <div class="con">
+            <div class="img-box">
+                <img src="main/images/wechatcode.png">
+            </div>
+            <p>关注微信官方微信号</p>
+        </div>
+    </div>
+    <div class="float-mod">
+        <div class="padd"><div class="up trigger" ng-click="gotoTop()"></div></div>
+    </div>
+</div>
+<div class="TYJ-tips tips"><div class="jiantop"></div>新手首投可用体验金</div>
+<div class="newhands-tips tips"><div class="jiantop"></div>新手标额外增加3%的收益</div>
+<div class="newzreo-tips tips"><div class="jiantop"></div>新手宝前7天额外增加5%的收益</div>
+<div class="XJQ-tips tips"><div class="jiantop"></div>本产品可用返现券，投资成功返现</div>
+<div class="ZSJXQ-tips tips"><div class="jiantop"></div>本产品可用专属加息券，投资时增加投资利息</div>
+<div class="JXQ-tips tips"><div class="jiantop"></div>本产品可用加息券，投资时增加投资利息</div>
+<div class="FBQ-tips tips"><div class="jiantop"></div>本产品可用翻倍券，投资时产品利率翻倍</div>
+<div class="XSZX-tips tips"><div class="jiantop"></div>仅新注册用户可体验一次</div>
+</div>

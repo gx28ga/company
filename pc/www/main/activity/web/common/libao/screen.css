@@ -1,0 +1,286 @@
+/* line 2, ../sass/screen.scss */
+.libaoSuper .modal-lg{ width:1100px; }
+.newFirTan .topText {
+  margin-left: 30px;
+  text-align: left;
+}
+/* line 3, ../sass/screen.scss */
+.newFirTan .topText .title {
+  font-size: 30px;
+  color: #000;
+}
+/* line 4, ../sass/screen.scss */
+.newFirTan .topText .cash {
+  position: relative;
+}
+/* line 4, ../sass/screen.scss */
+.newFirTan .topText .cash strong {
+  color: #ff6633;
+  font-size: 58px;
+  font-weight: bold;
+  line-height: 1;
+}
+/* line 5, ../sass/screen.scss */
+.newFirTan .topText .cash span {
+  font-size: 36px;
+  color: #000;
+}
+/* line 6, ../sass/screen.scss */
+.newFirTan .topText .cash .icon {
+  position: absolute;
+  background: url('/images/cp167/alertnew.png') no-repeat;
+  left: 242px;
+  top: -37px;
+  width: 130px;
+  height: 56px;
+}
+/* line 8, ../sass/screen.scss */
+.newFirTan .topText .double {
+  font-size: 30px;
+  color: #000;
+  font-weight: bold;
+}
+/* line 9, ../sass/screen.scss */
+.newFirTan .topText .double em {
+  font-size: 29px;
+  color: #ff6633;
+  font-weight: bold;
+}
+/* line 12, ../sass/screen.scss */
+.newFirTan .rtBox {
+  padding: 85px 0 60px 60px !important;
+}
+/* line 13, ../sass/screen.scss */
+.newFirTan .register {
+  border: 1px solid #dedede;
+  color: #fff;
+  background: #ff9600;
+  margin: 20px 0 10px 75px;
+}
+/* line 14, ../sass/screen.scss */
+.newFirTan .input-box {
+  width: 330px !important;
+}
+/* line 14, ../sass/screen.scss */
+.newFirTan .input-box input {
+  width: 308px !important;
+}
+/* line 16, ../sass/screen.scss */
+.newFirTan .sub-box {
+  font-size: 14px;
+  color: #000;
+  text-align: left;
+  padding-left: 120px;
+}
+/* line 17, ../sass/screen.scss */
+.newFirTan .sub-box .server-agreement {
+  color: #0099ff;
+}
+/* line 17, ../sass/screen.scss */
+.newFirTan .sub-box .sub-btn {
+  border: none;
+  background: none !important;
+  font-size: 14px;
+  color: #ff9600 !important;
+  margin-left: 10px;
+}
+
+/* line 21, ../sass/screen.scss */
+.newSecTan {}
+/* line 22, ../sass/screen.scss */
+.newSecTan .isNewSec {
+  background: #fff;
+  margin: 0 auto;
+  text-align: center;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+/* line 23, ../sass/screen.scss */
+.newSecTan .isNewSec .close {
+  position: absolute;
+  background: url('/images/cp167/close.png') no-repeat;
+  right: 10px;
+  top: 10px;
+  width: 27px;
+  height: 27px;
+  display: block;
+  z-index: 99;
+  cursor: pointer;
+}
+/* line 25, ../sass/screen.scss */
+.newSecTan .isNewSec .ltBox {
+  float: left;
+  padding-left: 80px;
+  box-sizing: border-box;
+  padding-top: 72px;
+}
+/* line 26, ../sass/screen.scss */
+.newSecTan .isNewSec .ltBox h3 {
+  font-size: 42px;
+  color: #000;
+  margin-bottom: 76px;
+  text-align: left;
+}
+/* line 27, ../sass/screen.scss */
+.newSecTan .isNewSec .ltBox ul {
+  overflow: hidden;
+}
+/* line 28, ../sass/screen.scss */
+.newSecTan .isNewSec .ltBox ul li {
+  float: left;
+  width: 116px;
+  margin-right: 66px;
+}
+/* line 29, ../sass/screen.scss */
+.newSecTan .isNewSec .ltBox ul li img {
+  margin-bottom: 16px;
+}
+/* line 30, ../sass/screen.scss */
+.newSecTan .isNewSec .ltBox ul li span {
+  display: block;
+  color: #000;
+}
+/* line 34, ../sass/screen.scss */
+.newSecTan .isNewSec .rtBox {
+  background: #f7f7f7;
+  float: right;
+  padding-top: 60px;
+  padding-left: 80px;
+  padding-bottom: 50px;
+  height: 100%;
+  box-sizing: border-box;
+  width: 530px;
+}
+/* line 35, ../sass/screen.scss */
+.newSecTan .isNewSec .rtBox p {
+  font-size: 26px;
+  line-height: 36px;
+  color: #000;
+  text-align: left;
+  margin-bottom: 28px;
+}
+/* line 36, ../sass/screen.scss */
+.newSecTan .isNewSec .rtBox img {
+  width: 255px;
+  height: 122px;
+  display: block;
+  margin-left: 42px;
+  margin-bottom: 20px;
+}
+/* line 37, ../sass/screen.scss */
+.newSecTan .isNewSec .rtBox b {
+  font-size: 24px;
+  color: #ff9600;
+  margin-left: -90px;
+}
+/* line 38, ../sass/screen.scss */
+.newSecTan .isNewSec .rtBox .btn {
+  display: block;
+  width: 326px;
+  height: 42px;
+  border-radius: 8px;
+  text-align: center;
+  text-decoration: none;
+  line-height: 42px;
+  font-size: 18px;
+  margin-right: 90px;
+}
+/* line 39, ../sass/screen.scss */
+.newSecTan .isNewSec .rtBox .btn.register {
+  border: 1px solid #dedede;
+  color: #fff;
+  background: #ff9600;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+/* line 41, ../sass/screen.scss */
+.newSecTan .isNewSec .rtBox .btn.miss {
+  border: 1px solid #ff9600;
+  color: #ff9600;
+}
+/* line 43, ../sass/screen.scss */
+.newSecTan .isNewSec .rtBox .input-box {
+  padding-bottom: 24px;
+  position: relative;
+}
+/* line 44, ../sass/screen.scss */
+.newSecTan .isNewSec .rtBox .text {
+  width: 306px;
+  height: 24px;
+  line-height: 24px;
+  font-size: 14px;
+  color: #666666;
+  border-radius: 2px;
+  padding: 7px 10px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #cccccc;
+  border-image: initial;
+}
+/* line 45, ../sass/screen.scss */
+.newSecTan .isNewSec .rtBox .input-wrap {
+  overflow: hidden;
+}
+/* line 46, ../sass/screen.scss */
+.newSecTan .isNewSec .rtBox .input-wrap .name {
+  width: 75px;
+  float: left;
+  height: 36px;
+  line-height: 36px;
+  font-size: 14px;
+  color: #383636;
+}
+/* line 47, ../sass/screen.scss */
+.newSecTan .isNewSec .rtBox .input-wrap .input-box {
+  width: 255px;
+  float: left;
+  overflow: hidden;
+}
+/* line 48, ../sass/screen.scss */
+.newSecTan .isNewSec .rtBox .input-wrap .input-box .text {
+  width: 233px;
+  border-radius: 0px;
+  border-color: #dddddd;
+}
+/* line 49, ../sass/screen.scss */
+.newSecTan .isNewSec .rtBox .input-wrap .input-box .get-code {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 106px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 14px;
+  border-radius: 0 6px 6px 0;
+  background: #fff;
+  border: 1px solid #e8a22b;
+  color: #e8a22b;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 50, ../sass/screen.scss */
+.newSecTan .isNewSec .rtBox .input-wrap .input-box .img-box {
+  position: absolute;
+  right: 0;
+  top: 1px;
+  margin: 0;
+  width: 106px;
+  height: 38px;
+}
+/* line 51, ../sass/screen.scss */
+.newSecTan .isNewSec .rtBox .input-wrap .input-box .img-box img {
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+  margin: 0;
+}
+
+/* runoutPop */
+.runoutPop .pop-cnt{ position: relative; z-index: 999; width: 691px; height: 528px; text-align:center; background-image: url('/activity/web/shakeCoinsTree/images/pop/tip.png');}
+.runoutPop .modal-dialog,.runoutPop .modal-content{ width:691px; border:none; background: none; box-shadow:0 0 0; }
+.runoutPop .close{ position: absolute; right: 10px; top: 0; width:70px; height:70px; cursor: pointer; }
+.runoutPop .content{ padding-top:200px; font-size:36px; color:#832c01; text-align: center;}
+.runoutPop .btn{ display: inline-block; height: 60px; line-height: 60px; margin-top:20px; cursor: pointer; padding:0 20px; border-radius: 10px; background:#832c01; color:#fff; font-size:24px; }

@@ -1,0 +1,351 @@
+@charset "UTF-8";
+.account-myfriend-wrap .myFriendTab {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  font-weight: bold;
+  font-size: 14px; }
+  .account-myfriend-wrap .myFriendTab .level {
+    width: 23px;
+    height: 22px;
+    background-image: url("../../images/inviteFriend/level2.png");
+    background-repeat: no-repeat;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    line-height: 22px;
+    vertical-align: middle;
+    display: inline-block; }
+  .account-myfriend-wrap .myFriendTab p {
+    cursor: pointer;
+    padding: 0 30px;
+    float: left; }
+  .account-myfriend-wrap .myFriendTab .fontColor {
+    color: #ff7200; }
+  .account-myfriend-wrap .myFriendTab .active {
+    color: #fe7634;
+    border-bottom: 2px solid #fe7634; }
+.account-myfriend-wrap .content-list {
+  font-size: 14px;
+  color: #333; }
+  .account-myfriend-wrap .content-list .contentMode {
+    padding: 35px 25px; }
+    .account-myfriend-wrap .content-list .contentMode .fanxianTitle {
+      font-size: 18px;
+      color: red;
+      margin-bottom: 30px; }
+    .account-myfriend-wrap .content-list .contentMode .todayCount {
+      padding: 0px;
+      position: relative; }
+      .account-myfriend-wrap .content-list .contentMode .todayCount .explain {
+        color: #cccccc;
+        font-size: 12px;
+        font-family: "宋体"; }
+      .account-myfriend-wrap .content-list .contentMode .todayCount .icon {
+        width: 17px;
+        height: 17px;
+        background-repeat: no-repeat;
+        display: inline-block;
+        margin-top: 5px;
+        margin-left: 15px;
+        margin-right: 5px;
+        cursor: pointer;
+        vertical-align: bottom; }
+      .account-myfriend-wrap .content-list .contentMode .todayCount .question {
+        background-image: url("../../images/inviteFriend/question.png"); }
+      .account-myfriend-wrap .content-list .contentMode .todayCount .answer {
+        background-image: url("../../images/inviteFriend/answer.png"); }
+    .account-myfriend-wrap .content-list .contentMode .table-title {
+      height: 70px;
+      margin: 0 -39px 0 -59px;
+      border-bottom: 1px solid #e4e4e4; }
+      .account-myfriend-wrap .content-list .contentMode .table-title div {
+        float: left;
+        font-size: 24px;
+        color: #333;
+        line-height: 70px;
+        padding-left: 40px; }
+      .account-myfriend-wrap .content-list .contentMode .table-title span {
+        font-size: 14px;
+        color: #999;
+        font-weight: normal;
+        margin-left: 10px; }
+        .account-myfriend-wrap .content-list .contentMode .table-title span b {
+          color: #fe905b; }
+      .account-myfriend-wrap .content-list .contentMode .table-title .icon {
+        width: 17px;
+        height: 17px;
+        background-repeat: no-repeat;
+        display: inline-block;
+        margin-top: 5px;
+        margin-left: 15px;
+        margin-right: 5px;
+        cursor: pointer;
+        vertical-align: bottom; }
+      .account-myfriend-wrap .content-list .contentMode .table-title .question {
+        background-image: url("../../images/inviteFriend/question.png"); }
+      .account-myfriend-wrap .content-list .contentMode .table-title p {
+        float: right;
+        padding: 19px 70px 0 0;
+        font-size: 14px;
+        color: #333; }
+        .account-myfriend-wrap .content-list .contentMode .table-title p span {
+          font-size: 24px;
+          color: #ff7200;
+          margin: 0 3px; }
+        .account-myfriend-wrap .content-list .contentMode .table-title p i {
+          float: left;
+          margin: 11px 7px 0 0; }
+    .account-myfriend-wrap .content-list .contentMode .leveIcon {
+      background-image: url("../../images/inviteFriend/level.png");
+      width: 34px;
+      height: 32px;
+      background-repeat: no-repeat;
+      margin-left: 20px;
+      margin-top: 20px;
+      color: #fff;
+      text-align: center; }
+    .account-myfriend-wrap .content-list .contentMode .yongjinBox .input-box .startEnd {
+      color: #666666;
+      font-size: 14px;
+      height: 30px;
+      line-height: 30px;
+      float: left;
+      margin-right: 5px;
+      display: inline-block; }
+    .account-myfriend-wrap .content-list .contentMode .yongjinBox .search-btn {
+      width: 74px;
+      height: 30px;
+      text-align: center;
+      line-height: 28px;
+      border: 1px solid #ec6726;
+      background: #fe7634;
+      font-size: 14px;
+      color: #fff;
+      margin-left: 5px;
+      cursor: pointer; }
+    .account-myfriend-wrap .content-list .contentMode .yongjinBox .commissionRecord .recordTitle {
+      border-top: 1px solid #e4e4e4;
+      clear: both;
+      height: 35px;
+      background: red;
+      padding-left: 35px;
+      padding-right: 35px;
+      line-height: 35px;
+      background: #f9f9f9; }
+      .account-myfriend-wrap .content-list .contentMode .yongjinBox .commissionRecord .recordTitle .total {
+        float: right; }
+    .account-myfriend-wrap .content-list .contentMode .yongjinBox .commissionRecord .tableCount {
+      margin-top: 18px; }
+      .account-myfriend-wrap .content-list .contentMode .yongjinBox .commissionRecord .tableCount .tablelist {
+        padding-top: 20px;
+        width: 100%; }
+        .account-myfriend-wrap .content-list .contentMode .yongjinBox .commissionRecord .tableCount .tablelist th {
+          height: 36px;
+          text-align: center;
+          font-size: 14px;
+          color: #333333;
+          padding: 0 24px; }
+        .account-myfriend-wrap .content-list .contentMode .yongjinBox .commissionRecord .tableCount .tablelist td {
+          padding: 16px 24px;
+          text-align: center;
+          font-size: 14px;
+          color: #666666;
+          line-height: 24px; }
+    .account-myfriend-wrap .content-list .contentMode .fontColor {
+      color: #ff7200; }
+    .account-myfriend-wrap .content-list .contentMode .count {
+      font-size: 24px;
+      font-weight: 700; }
+    .account-myfriend-wrap .content-list .contentMode .received {
+      font-size: 18px; }
+    .account-myfriend-wrap .content-list .contentMode .commissionRate {
+      font-size: 12px; }
+    .account-myfriend-wrap .content-list .contentMode .promote {
+      color: #00a8ff; }
+    .account-myfriend-wrap .content-list .contentMode .countCent {
+      overflow: hidden;
+      float: left;
+      padding-bottom: 12px;
+      margin-left: -30px; }
+      .account-myfriend-wrap .content-list .contentMode .countCent .showList {
+        padding-top: 30px;
+        height: 60px; }
+        .account-myfriend-wrap .content-list .contentMode .countCent .showList li {
+          float: left;
+          padding: 0 30px;
+          border-right: 1px solid #e4e4e4;
+          text-align: center; }
+          .account-myfriend-wrap .content-list .contentMode .countCent .showList li p {
+            color: #999999; }
+          .account-myfriend-wrap .content-list .contentMode .countCent .showList li .gonglue {
+            background-image: url("../../images/inviteFriend/strategy.png");
+            width: 26px;
+            height: 24px;
+            background-repeat: no-repeat; }
+    .account-myfriend-wrap .content-list .contentMode .benjin {
+      clear: both; }
+    .account-myfriend-wrap .content-list .contentMode .taskMode .taskTitle {
+      font-size: 18px;
+      color: #333333;
+      line-height: 40px; }
+      .account-myfriend-wrap .content-list .contentMode .taskMode .taskTitle .titleExplain {
+        font-size: 12px;
+        color: #999999;
+        font-family: '宋体';
+        padding-left: 20px; }
+    .account-myfriend-wrap .content-list .contentMode .taskMode .taskexplain {
+      background: #f9f9f9;
+      color: #ff9e50;
+      padding: 20px;
+      margin-top: 25px; }
+    .account-myfriend-wrap .content-list .contentMode .table-wrap .table-rate {
+      font-size: 14px;
+      border-left: 1px solid #dedede;
+      border-right: 1px solid #dedede; }
+      .account-myfriend-wrap .content-list .contentMode .table-wrap .table-rate th {
+        height: 36px;
+        text-align: center;
+        background: #fff7f1;
+        color: #ff9e50;
+        padding: 0 36px;
+        border: 1px solid #fff7f1; }
+      .account-myfriend-wrap .content-list .contentMode .table-wrap .table-rate td {
+        border-bottom: 1px solid #dedede;
+        padding: 16px 50px;
+        text-align: center;
+        font-size: 14px;
+        color: #999999;
+        line-height: 24px; }
+        .account-myfriend-wrap .content-list .contentMode .table-wrap .table-rate td .tdIcon {
+          margin: 0 auto;
+          background: url("../../images/inviteFriend/level2.png");
+          width: 23px;
+          height: 22px;
+          color: #fff;
+          display: block;
+          text-align: center;
+          line-height: 22px; }
+        .account-myfriend-wrap .content-list .contentMode .table-wrap .table-rate td .tdicon {
+          margin: 0 auto;
+          background: url("../../images/inviteFriend/bei.png");
+          width: 23px;
+          height: 22px;
+          color: #fff;
+          display: block;
+          text-align: center;
+          line-height: 22px; }
+.account-myfriend-wrap .tips {
+  background: #fff;
+  border: 1px solid #e4e4e4;
+  color: #999999;
+  font-size: 12px;
+  width: 280px;
+  padding: 20px 20px 20px 40px; }
+  .account-myfriend-wrap .tips li {
+    list-style: square;
+    margin-bottom: 10px; }
+.account-myfriend-wrap .jiantop {
+  background: url("../../imagess/home/jian.png");
+  width: 18px;
+  height: 8px;
+  position: absolute;
+  top: -8px;
+  left: 50%; }
+
+.myFriendMask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-family: 'Microsoft yaHei';
+  font-size: 18px; }
+  .myFriendMask .tan {
+    width: 500px;
+    height: 320px;
+    background-color: #FFF;
+    position: absolute;
+    animation: openMove 1s forwards;
+    top: 50%;
+    left: 30%;
+    margin-top: -250px;
+    margin-left: -160px;
+    padding-left: 30px;
+    padding-right: 30px; }
+    .myFriendMask .tan .tanTop {
+      width: 100%;
+      height: 70px;
+      line-height: 60px;
+      border-top-right-radius: 10px;
+      border-top-left-radius: 10px;
+      text-align: left;
+      color: #333;
+      font-size: 18px; }
+      .myFriendMask .tan .tanTop .close {
+        position: absolute;
+        display: block;
+        right: 10px;
+        top: -8px;
+        font-size: 14px;
+        color: #ccc; }
+    .myFriendMask .tan .table-titler {
+      margin-bottom: 50px; }
+      .myFriendMask .tan .table-titler p {
+        float: left;
+        color: #333;
+        font-size: 14px;
+        margin-right: 70px; }
+        .myFriendMask .tan .table-titler p span {
+          font-size: 24px;
+          color: #ff7200;
+          margin: 0 3px; }
+        .myFriendMask .tan .table-titler p i {
+          margin: 0px 7px 0 0; }
+    .myFriendMask .tan .table-wraper {
+      margin-top: 18px; }
+      .myFriendMask .tan .table-wraper .table-list {
+        border: 1px solid #dedede;
+        width: 100%; }
+        .myFriendMask .tan .table-wraper .table-list th {
+          height: 36px;
+          text-align: center;
+          background: #f9f9f9;
+          font-size: 14px;
+          color: #9399a3;
+          padding: 0 24px; }
+          .myFriendMask .tan .table-wraper .table-list th:nth-child(3) {
+            border-right: 1px solid #dedede; }
+        .myFriendMask .tan .table-wraper .table-list td {
+          padding: 5px 24px;
+          text-align: center;
+          font-size: 14px;
+          color: #555;
+          line-height: 24px; }
+        .myFriendMask .tan .table-wraper .table-list .left {
+          text-align: left; }
+        .myFriendMask .tan .table-wraper .table-list tr {
+          cursor: default; }
+          .myFriendMask .tan .table-wraper .table-list tr.actived {
+            background: #fbfdfe; }
+      .myFriendMask .tan .table-wraper .page-wrap {
+        padding-top: 20px; }
+    .myFriendMask .tan .closeTan {
+      animation: closeMove 1s forwards; }
+
+@keyframes openMove {
+  0% {
+    opacity: 0;
+    transform: translateZ(0px); }
+  100% {
+    opacity: 1;
+    transform: translateZ(500px); } }
+@keyframes closeMove {
+  0% {
+    opacity: 1;
+    transform: translateZ(500px); }
+  100% {
+    opacity: 0;
+    transform: translateZ(0px); } }
+
+/*# sourceMappingURL=myFriend.css.map */

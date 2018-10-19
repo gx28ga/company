@@ -1,0 +1,91 @@
+<div class="gift-wrapper" ng-controller="doublegiftCtrl">
+	<!-- 新版欢迎栏 -->
+	<div id="Topbar" ng-hide="isLoginPage">
+		<div class="middle">
+			<div class="sideright">
+				<a ng-if="!(a | isRegister).register" href="/zhuce">新人注册</a>
+				<a ng-if="!(a | isRegister).register" href="/dl">用户登录</a>
+				<a ng-if="(a | isRegister).register" ng-click="gotoLoginPage('myAccount')">{{(a | isRegister).user.userName}}，</a>
+				<a ng-show="(a | isRegister).register" ng-click="userOut()" href="#" class="top-quit">退出</a>
+				<div class="follow">
+					<div class="follow-mod">
+						<a href="{{a|webIE8}}other/downloadApp.html">手机APP</a>
+						<div class="con">
+							<div class="common-appcode"></div>
+							<p>APP下载</p>
+						</div>
+					</div>
+				</div>
+				<a href="{{a|webIE8}}help/XSZY.html">新人指引</a>
+				<a href="{{a|webIE8}}help/CJWT.html">帮助中心</a>
+			</div>
+			<div class="sideleft">
+				<span>客服热线：<em>{{(a|web).phone}}</em></span>
+				<span class="line">|</span>
+				<div class="follow">
+					<div class="follow-mod">
+						<i class="topsina"></i>
+						<div class="con">
+							<div class="common-dr-sina"></div>
+							<p>多融财富</p>
+							<a target="_blank" href="http://weibo.com/u/5866519482">加关注</a>
+						</div>
+					</div>
+					<div class="follow-mod">
+						<i class="topwechat"></i>
+						<div class="con">
+							<div class="code-bg"><img src="/images/wechat-code.png"></div>
+							<div class="tip">扫一扫<br>关注微信号</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 欢迎栏结束 -->
+
+	<!-- 导航 -->
+	<div class="header-wrapper">
+		<div class="header-wrap">
+			<div class="logo-wrap">
+				<img src="/images/logo.png" ng-click="$state.go('main.home');">
+				<span></span>
+				<a target="_blank" style="display: block;float: left;cursor: default;"><img src="../../images/logoo.jpg" alt=""></a>
+			</div>
+			<div class="nav-box">
+				<div>
+					<ul>
+						<li><a ng-class="{true: 'active'}[activeNav == 'home' && !selMenu ]" href="/welcome">首页</a></li>
+							<li><a ng-class="{true: 'active'}[activeNav == 'bill' && !selMenu ]" href="/bankBillList">票据理财</a></li>
+							<li><a href="{{a|webIE8}}help/XSZY.html" target="_blank">新手指引</a></li>
+							<li><a ng-class="{true: 'active'}[selMenu == 'guarantee']" href="{{a|webIE8}}main/jt/guarantee?menuName=guarantee">安全保障</a></li>
+							<li><a ng-class="{true: 'active'}[selMenu == 'DRGK']" href="{{a|webIE8}}main/jt/DRGK?menuName=DRGK">关于我们</a></li>
+							<li class="account"><a href="/dl" ng-if="!(a | isRegister).register">我的账户</a><a href="/myAccount/accountHome" ng-class="{true: 'active'}[activeNav == 'account']" ng-if="(a | isRegister).register"><i class="drop"></i>我的账户</a><div class="con" ng-show="(a | isRegister).register"><div><a href="/myAccount/myAssets">我的资产</a><a href="/myAccount/myInvest">我的投资</a><a href="/myAccount/myCoupon">我的优惠券</a><a href="/myAccount/myMsg">我的消息</a></div></div></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="banner"></div>
+	<div class="step-wrapper"><div class="step"></div></div>
+	<div class="mode mode1"><a href="/zhuce" target="_blank" ng-if="!login">立即领取</a><a href="/billNewhand" target="_blank" ng-if="login">立即领取</a></div>
+	<div class="mode mode2"><a href="/bankBillList" target="_blank">立即抢钱</a></div>
+	<div class="mode mode-tri"><a href="/bankBillList" target="_blank">立即抢购</a></div>
+	<div class="mode mode-rule">
+		<div class="rule">
+			<i class="giftbg"></i>
+			<p class="title"><span>活动规则</span></p>
+			<ul>
+				<li><i></i><span>关于“壕礼1”：</span><br>新用户注册即送10000元体验金券，所赠送的体验金券仅限在“新手体验标”中使用1次；使用之后，体验金所得的收益立即发放到客户账户，体验金的本金券由平台收回；</li>
+				<li><i></i><span>关于“壕礼2”：</span><br>用户首次投资时，平台同时赠送等额理财金，标的到期后理财金收益归用户，理财金本金由平台收回（本活动仅限新用户参加一次且指定产品）；<br><strong></strong>例如：小明投资10000元，平台即送10000元理财金，此理财金与小明投资的金额一起计算收益，相当于小明投资20000元；</li>
+				<li><i></i><span>关于“壕礼3”：</span>价值1588元的红包<br>红包可用于投资时使用，投资生效后将以现金的形式返到您的账户；</li>
+				<li><i></i><p>想获得更高的年化收益，请联系<b>4006-908-896</b>，联系客服100%获得优惠券！同时您也可以等待您的专属理财师电话联系！</p></li>
+				<li><i></i>本次活动最终解释权归多融财富所有；</li>
+			</ul>
+		</div>
+		<div class="botbg"></div>
+	</div>
+	<div class="mode mode4"></div>
+	<div class="mode mode5"></div>
+	<div class="mode mode6"></div>
+</div>

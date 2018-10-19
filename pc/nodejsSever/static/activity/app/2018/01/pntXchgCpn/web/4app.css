@@ -1,0 +1,155 @@
+/* height */
+/* public */
+body, div, p, h1, h2, h3, h4, h5, h6, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, table, th, td {
+  margin: 0;
+  padding: 0; }
+
+address, cite, em, i {
+  font-style: normal; }
+
+html, body, root {
+  height: 100%;
+  overflow: hidden; }
+
+body {
+  margin: 0 auto;
+  color: #fff;
+  -webkit-appearance: none;
+  background: #fff;
+  overflow-y: scroll;
+  font-family: 'PingFang SC','STHeiti','Microsoft YaHei',Helvetica,Arial,sans-serif;
+  color: #878C92; }
+
+li {
+  list-style: none; }
+
+html, body {
+  max-width: 750px;
+  margin: 0 auto; }
+
+a {
+  color: #535862;
+  text-decoration: none; }
+
+a:hover {
+  color: #c40000;
+  text-decoration: underline; }
+
+img {
+  border: 0; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+input[type="button"], input[type="submit"], input[type="reset"] {
+  cursor: pointer;
+  -webkit-appearance: none; }
+
+/* close commented backslash hack */
+::-webkit-input-placeholder {
+  font-size: .75rem; }
+
+body {
+  height: 100%;
+  background: #f8f8f8; }
+
+/* public */
+input {
+  outline: none; }
+
+#app {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  overflow: hidden; }
+  #app .child-transition {
+    height: 100%;
+    -webkit-perspective: 600px; }
+  #app .module-scroll {
+    height: 100%;
+    overflow-y: scroll; }
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s ease; }
+
+.fade-enter, .fade-leave-active {
+  opacity: 0; }
+
+.child-view {
+  transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+  -webkit-transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1); }
+
+.slide-left-enter, .slide-right-leave-active {
+  opacity: 0;
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0); }
+
+.slide-left-leave-active, .slide-right-enter {
+  opacity: 0;
+  -webkit-transform: translate(-30px, 0);
+  transform: translate(-30px, 0); }
+
+.main-section {
+  transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s; }
+  .main-section.left-endter, .main-section.left-leave-active, .main-section.left-enter-active {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%); }
+  .main-section.left-enter-to, .main-section.left-leave-active {
+    position: absolute;
+    width: 100%;
+    opacity: 1;
+    transform: translateX(0%);
+    -webkit-transform: translateX(0%); }
+  .main-section.left-leave-to {
+    position: absolute;
+    width: 100%;
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    opacity: 0; }
+
+.module1, .module2, .module3, .module4, .module5, .child-transition {
+  transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s; }
+  .module1.left-leave-active, .module1.left-enter-active, .module2.left-leave-active, .module2.left-enter-active, .module3.left-leave-active, .module3.left-enter-active, .module4.left-leave-active, .module4.left-enter-active, .module5.left-leave-active, .module5.left-enter-active, .child-transition.left-leave-active, .child-transition.left-enter-active {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    transform: translateX(100%);
+    -webkit-transform: translateX(100%); }
+  .module1.left-enter-to, .module1.left-leave-active, .module2.left-enter-to, .module2.left-leave-active, .module3.left-enter-to, .module3.left-leave-active, .module4.left-enter-to, .module4.left-leave-active, .module5.left-enter-to, .module5.left-leave-active, .child-transition.left-enter-to, .child-transition.left-leave-active {
+    position: absolute;
+    width: 100%;
+    opacity: 1;
+    transform: translateX(0%);
+    -webkit-transform: translateX(0%); }
+  .module1.left-leave-to, .module2.left-leave-to, .module3.left-leave-to, .module4.left-leave-to, .module5.left-leave-to, .child-transition.left-leave-to {
+    position: absolute;
+    width: 100%;
+    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    opacity: 0; }
+/* height */
+/* public */
+.main-section {
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+/* height */
+/* public */
+.bg {
+  background: url(src/images/bg1.jpg?f1677582) no-repeat;
+  background-size: contain;
+  position: relative;
+}
+.bg .btn {
+    position: absolute;
+}
+
+/*# sourceMappingURL=4app.css.map?0537a83d152e9a16371f*/

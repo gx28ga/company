@@ -1,0 +1,41 @@
+/* line 1, ../sass/breakthroughOneBillion.scss */
+.breakthroughOneBillion-wrapper {
+  background: #fff;
+  height: 500px;
+}
+/* line 3, ../sass/breakthroughOneBillion.scss */
+.breakthroughOneBillion-wrapper .one {
+  width: 100%;
+  height: 534px;
+  background: url("../images/one.png") center top no-repeat;
+}
+/* line 7, ../sass/breakthroughOneBillion.scss */
+.breakthroughOneBillion-wrapper .two {
+  width: 100%;
+  height: 355px;
+  background: url("../images/two.png") center top no-repeat;
+}
+/* line 11, ../sass/breakthroughOneBillion.scss */
+.breakthroughOneBillion-wrapper .three {
+  width: 100%;
+  height: 351px;
+  background: url("../images/six.png") center top no-repeat;
+}
+/* line 15, ../sass/breakthroughOneBillion.scss */
+.breakthroughOneBillion-wrapper .four {
+  width: 100%;
+  height: 480px;
+  background: url("../images/three.png") center top no-repeat;
+}
+/* line 19, ../sass/breakthroughOneBillion.scss */
+.breakthroughOneBillion-wrapper .five {
+  width: 100%;
+  height: 643px;
+  background: url("../images/four.png") center top no-repeat;
+}
+/* line 23, ../sass/breakthroughOneBillion.scss */
+.breakthroughOneBillion-wrapper .six {
+  width: 100%;
+  height: 645px;
+  background: url("../images/five.png") center top no-repeat;
+}

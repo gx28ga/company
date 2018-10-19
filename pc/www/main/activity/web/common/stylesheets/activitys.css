@@ -1,0 +1,188 @@
+/* line 4, ../sass/activitys.scss */
+.duorongSelect {
+  background: #fff;
+  width: 1200px;
+  margin: 0 auto;
+}
+/* line 7, ../sass/activitys.scss */
+.duorongSelect .title {
+  height: 50px;
+  line-height: 50px;
+  border-bottom: 1px solid #ccc;
+  font-size: 20px;
+  padding-left: 25px;
+}
+/* line 11, ../sass/activitys.scss */
+.duorongSelect .content {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+/* line 14, ../sass/activitys.scss */
+.duorongSelect .content ul {
+  padding: 30px 30px 0px;
+  overflow: hidden;
+}
+/* line 16, ../sass/activitys.scss */
+.duorongSelect .content ul li {
+  float: left;
+  width: 49.3%;
+}
+/* line 17, ../sass/activitys.scss */
+.duorongSelect .content ul li .img {
+  float: left;
+  width: 97px;
+  height: 97px;
+  margin-left: 50px;
+}
+/* line 19, ../sass/activitys.scss */
+.duorongSelect .content ul li.img1 .img {
+  background: url(../images/selectDuorong/img1.png);
+}
+/* line 22, ../sass/activitys.scss */
+.duorongSelect .content ul li.img2 .img {
+  background: url(../images/selectDuorong/img2.png);
+}
+/* line 25, ../sass/activitys.scss */
+.duorongSelect .content ul li.img3 .img {
+  background: url(../images/selectDuorong/img3.png);
+}
+/* line 28, ../sass/activitys.scss */
+.duorongSelect .content ul li.img4 .img {
+  background: url(../images/selectDuorong/img4.png);
+}
+/* line 31, ../sass/activitys.scss */
+.duorongSelect .content ul li h2 {
+  height: 35px;
+  line-height: 35px;
+  font-size: 24px;
+  color: #000;
+  font-weight: bold;
+}
+/* line 32, ../sass/activitys.scss */
+.duorongSelect .content ul li p {
+  font-size: 14px;
+}
+/* line 34, ../sass/activitys.scss */
+.duorongSelect .content ul li .text {
+  padding-left: 170px;
+  padding-top: 18px;
+}
+
+/* line 41, ../sass/activitys.scss */
+.duorongHonor {
+  width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  background: #fff;
+}
+/* line 45, ../sass/activitys.scss */
+.duorongHonor .title {
+  height: 50px;
+  line-height: 50px;
+  border-bottom: 1px solid #ccc;
+  font-size: 20px;
+  padding-left: 25px;
+}
+/* line 49, ../sass/activitys.scss */
+.duorongHonor .content {
+  padding: 20px 0;
+  overflow: hidden;
+}
+/* line 52, ../sass/activitys.scss */
+.duorongHonor .content ul {
+  overflow: hidden;
+  clear: both;
+}
+/* line 53, ../sass/activitys.scss */
+.duorongHonor .content ul li {
+  float: left;
+  width: 24.9%;
+  text-align: center;
+}
+/* line 54, ../sass/activitys.scss */
+.duorongHonor .content ul h2, .duorongHonor .content ul p {
+  font-size: 14px;
+  line-height: 25px;
+}
+
+/* line 58, ../sass/activitys.scss */
+.duorongfooter {
+  background: #333;
+  color: #fff;
+  overflow: hidden;
+}
+/* line 61, ../sass/activitys.scss */
+.duorongfooter .bg {
+  padding: 40px 0;
+  overflow: hidden;
+}
+/* line 62, ../sass/activitys.scss */
+.duorongfooter .content {
+  width: 1200px;
+  margin: 0 auto;
+}
+/* line 64, ../sass/activitys.scss */
+.duorongfooter .content .tel {
+  float: right;
+  padding-top: 25px;
+}
+/* line 65, ../sass/activitys.scss */
+.duorongfooter .content .tel .img {
+  float: left;
+  width: 62px;
+  height: 62px;
+  margin-top: 7px;
+  background: url(../images/tel.png) no-repeat;
+}
+/* line 66, ../sass/activitys.scss */
+.duorongfooter .content .tel .text {
+  float: left;
+  padding-left: 20px;
+  overflow: hidden;
+  text-align: center;
+}
+/* line 68, ../sass/activitys.scss */
+.duorongfooter .content .tel .text em {
+  font-size: 36px;
+  color: #ffffff;
+}
+/* line 72, ../sass/activitys.scss */
+.duorongfooter .content .left-side {
+  float: left;
+}
+/* line 73, ../sass/activitys.scss */
+.duorongfooter .content .left-side .down {
+  float: left;
+  width: 107px;
+  padding-top: 115px;
+  text-align: center;
+  font-size: 16px;
+  background: url(../images/code/codeDown.png) no-repeat;
+}
+/* line 74, ../sass/activitys.scss */
+.duorongfooter .content .left-side .btns {
+  float: left;
+  padding: 20px 100px 0 30px;
+}
+/* line 75, ../sass/activitys.scss */
+.duorongfooter .content .left-side .btns .btn1 {
+  width: 121px;
+  height: 32px;
+  margin-bottom: 5px;
+  background: url(../images/IOS.png) no-repeat;
+}
+/* line 76, ../sass/activitys.scss */
+.duorongfooter .content .left-side .btns .btn2 {
+  width: 121px;
+  height: 32px;
+  background: url(../images/Android.png) no-repeat;
+}
+/* line 78, ../sass/activitys.scss */
+.duorongfooter .content .left-side .add {
+  float: left;
+  width: 107px;
+  padding-top: 115px;
+  text-align: center;
+  font-size: 16px;
+  background: url(../images/code/about.png) no-repeat;
+}

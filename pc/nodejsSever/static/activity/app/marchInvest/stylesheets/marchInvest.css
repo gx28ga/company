@@ -1,0 +1,467 @@
+body, div, p, h1, h2, h3, h4, h5, h6, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, table, th, td {
+  margin: 0;
+  padding: 0; }
+
+address, cite, em, i {
+  font-style: normal; }
+
+html, body, root {
+  height: 100%;
+  overflow: hidden; }
+
+body {
+  margin: 0 auto;
+  color: #fff;
+  -webkit-appearance: none;
+  background: #fff;
+  overflow-y: scroll;
+  font-family: 'PingFang SC','STHeiti','Microsoft YaHei',Helvetica,Arial,sans-serif;
+  color: #878C92; }
+
+li {
+  list-style: none; }
+
+html, body {
+  max-width: 750px;
+  margin: 0 auto; }
+
+a {
+  color: #535862;
+  text-decoration: none; }
+
+a:hover {
+  color: #c40000;
+  text-decoration: underline; }
+
+legend {
+  color: #000; }
+
+fieldset, img {
+  border: 0; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+input[type="button"], input[type="submit"], input[type="reset"] {
+  cursor: pointer; }
+
+.clearfix:after, .wrapper:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0; }
+
+.clearfix {
+  display: inline-block; }
+
+/* start commented backslash hack \*/
+* html .clearfix {
+  height: 1%; }
+
+.clearfix {
+  display: block; }
+
+/* close commented backslash hack */
+.middle * {
+  display: inline-block;
+  vertical-align: middle; }
+
+::-webkit-input-placeholder {
+  font-size: .75rem; }
+
+/* height */
+/* public */
+/* link color */
+.red {
+  color: #f42b13; }
+
+.green {
+  color: #16c154; }
+
+.black {
+  color: black; }
+
+.gray {
+  color: #666; }
+
+.blue {
+  color: #2899f2; }
+
+.orange {
+  color: #cb420c; }
+
+/* public */
+.flex {
+  flex-shrink: 0;
+  -webkit-flex-shrink: 0; }
+
+input {
+  outline: none; }
+
+/* layout */
+.hide {
+  display: none; }
+
+.container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  transform: translateY(300px);
+  -webkit-transform: translateY(300px);
+  transition-duration: 1s;
+  -webkit-transition-duration: 1s;
+  opacity: 0;
+  overflow: hidden; }
+
+.container.cur {
+  transform: translateY(0px);
+  -webkit-transform: translateY(0px);
+  opacity: 1; }
+
+.effect {
+  float: left;
+  transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  perspective: 600px;
+  -webkit-perspective: 600px;
+  background: #EFEFF4; }
+
+.effect .option {
+  float: left;
+  min-height: 6.25rem;
+  transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  overflow: hidden;
+  background: #fff; }
+
+body {
+  overflow-y: scroll;
+  font-size: 1rem; }
+  @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+    body {
+      font-size: 0.85714rem; } }
+  @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+    body {
+      font-size: 0.85714rem; } }
+  @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+    body {
+      font-size: 1.105rem; } }
+
+.marchInvest {
+  overflow-y: hidden;
+  padding-bottom: 1.25rem;
+  display: block;
+  background: -webkit-gradient(linear, 0 100%, 0 0, from(#e82124), to(#fc4044)); }
+  .marchInvest .banner {
+    background: url("../images/banner.png") no-repeat;
+    background-size: contain; }
+  .marchInvest .marchInvestContent {
+    position: relative; }
+    .marchInvest .marchInvestContent .activity {
+      background: url("../images/activity.png") no-repeat;
+      background-size: contain; }
+    .marchInvest .marchInvestContent .investProduct {
+      text-align: center;
+      color: #fff997; }
+      .marchInvest .marchInvestContent .investProduct .investProductTop {
+        font-size: 1.125rem; }
+        @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+          .marchInvest .marchInvestContent .investProduct .investProductTop {
+            font-size: 0.96429rem; } }
+        @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+          .marchInvest .marchInvestContent .investProduct .investProductTop {
+            font-size: 0.96429rem; } }
+        @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+          .marchInvest .marchInvestContent .investProduct .investProductTop {
+            font-size: 1.24313rem; } }
+      .marchInvest .marchInvestContent .investProduct .investProductBottom {
+        font-size: 0.9375rem; }
+        @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+          .marchInvest .marchInvestContent .investProduct .investProductBottom {
+            font-size: 0.80357rem; } }
+        @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+          .marchInvest .marchInvestContent .investProduct .investProductBottom {
+            font-size: 0.80357rem; } }
+        @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+          .marchInvest .marchInvestContent .investProduct .investProductBottom {
+            font-size: 1.03594rem; } }
+    .marchInvest .marchInvestContent .investBtn {
+      display: block;
+      margin: 0 auto;
+      background: url("../images/nowInvest.png") no-repeat;
+      background-size: contain; }
+    .marchInvest .marchInvestContent .investBtnOver {
+      display: block;
+      margin: 0 auto;
+      background: url("../images/gameOver.png") no-repeat;
+      background-size: contain; }
+    .marchInvest .marchInvestContent .rule {
+      display: block;
+      margin-top: 1.25rem;
+      text-align: right;
+      padding-right: 1.25rem;
+      color: #ffe6e6;
+      font-size: 0.75rem;
+      text-decoration: underline; }
+      @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+        .marchInvest .marchInvestContent .rule {
+          font-size: 0.64286rem; } }
+      @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+        .marchInvest .marchInvestContent .rule {
+          font-size: 0.64286rem; } }
+      @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+        .marchInvest .marchInvestContent .rule {
+          font-size: 0.82875rem; } }
+    .marchInvest .marchInvestContent .activityContent .line {
+      background: url("../images/ruleLine.png") no-repeat;
+      background-size: contain;
+      /* position:absolute;
+            top:90px;
+            left:0;  */ }
+    .marchInvest .marchInvestContent .activityContent .activityLine {
+      background: -webkit-gradient(linear, 0 100%, 0 0, from(#fd2e46), to(#fc4e62));
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px; }
+      .marchInvest .marchInvestContent .activityContent .activityLine .wealthValue {
+        position: relative; }
+        .marchInvest .marchInvestContent .activityContent .activityLine .wealthValue .wealthValueLeft {
+          float: left;
+          color: #ffffff;
+          font-size: 0.9375rem; }
+          @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+            .marchInvest .marchInvestContent .activityContent .activityLine .wealthValue .wealthValueLeft {
+              font-size: 0.80357rem; } }
+          @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+            .marchInvest .marchInvestContent .activityContent .activityLine .wealthValue .wealthValueLeft {
+              font-size: 0.80357rem; } }
+          @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+            .marchInvest .marchInvestContent .activityContent .activityLine .wealthValue .wealthValueLeft {
+              font-size: 1.03594rem; } }
+          .marchInvest .marchInvestContent .activityContent .activityLine .wealthValue .wealthValueLeft .leiji {
+            font-size: 0.75rem;
+            color: #fff997; }
+            @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+              .marchInvest .marchInvestContent .activityContent .activityLine .wealthValue .wealthValueLeft .leiji {
+                font-size: 0.64286rem; } }
+            @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+              .marchInvest .marchInvestContent .activityContent .activityLine .wealthValue .wealthValueLeft .leiji {
+                font-size: 0.64286rem; } }
+            @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+              .marchInvest .marchInvestContent .activityContent .activityLine .wealthValue .wealthValueLeft .leiji {
+                font-size: 0.82875rem; } }
+        .marchInvest .marchInvestContent .activityContent .activityLine .wealthValue .wealthValueRight {
+          position: absolute;
+          top: 50px;
+          right: 50px;
+          display: block;
+          background: url("../images/loginlook.png") no-repeat;
+          background-size: contain; }
+      .marchInvest .marchInvestContent .activityContent .activityLine .prize .prizeTitle {
+        background: url("../images/prizeTitle.png") no-repeat;
+        background-size: contain; }
+      .marchInvest .marchInvestContent .activityContent .activityLine .prize .prizeContent .jd15 {
+        background: url("../images/15000jd.png") no-repeat;
+        background-size: contain;
+        float: left; }
+      .marchInvest .marchInvestContent .activityContent .activityLine .prize .prizeContent .rimowa {
+        background: url("../images/rimowa.png") no-repeat;
+        background-size: contain;
+        float: left; }
+      .marchInvest .marchInvestContent .activityContent .activityLine .prize .prizeContent .jd50 {
+        background: url("../images/50jd.png") no-repeat;
+        background-size: contain;
+        float: left; }
+      .marchInvest .marchInvestContent .activityContent .activityLine .prize .prizeContent .daisen {
+        background: url("../images/daisen .png") no-repeat;
+        background-size: contain;
+        float: left; }
+      .marchInvest .marchInvestContent .activityContent .activityLine .prize .prizeContent .feilipu {
+        background: url("../images/feilipu.png") no-repeat;
+        background-size: contain;
+        float: left; }
+      .marchInvest .marchInvestContent .activityContent .activityLine .prize .prizeContent .Swaroviski {
+        background: url("../images/Swaroviski.png") no-repeat;
+        background-size: contain;
+        float: left; }
+      .marchInvest .marchInvestContent .activityContent .activityLine .prize .prizeContent .jdWan {
+        background: url("../images/jdWan.png") no-repeat;
+        background-size: contain;
+        float: left; }
+      .marchInvest .marchInvestContent .activityContent .activityLine .prize .prizeContent .iphone {
+        background: url("../images/iphone.png") no-repeat;
+        background-size: contain;
+        float: left; }
+      .marchInvest .marchInvestContent .activityContent .activityLine .prize .prizeContent .jiaNeng {
+        background: url("../images/jiaNeng.png") no-repeat;
+        background-size: contain;
+        float: left; }
+      .marchInvest .marchInvestContent .activityContent .activityLine .prize .prizeContent .wanLong {
+        background: url("../images/wanLong.png") no-repeat;
+        background-size: contain;
+        float: left; }
+      .marchInvest .marchInvestContent .activityContent .activityLine .prize .prizeContent .shuangLi {
+        background: url("../images/shuangLi.png") no-repeat;
+        background-size: contain;
+        float: left; }
+      .marchInvest .marchInvestContent .activityContent .activityLine .prize .prizeContent .tiXuDao {
+        background: url("../images/tiXuDao.png") no-repeat;
+        background-size: contain;
+        float: left; }
+      .marchInvest .marchInvestContent .activityContent .activityLine .prize .prizeContent .jd20 {
+        background: url("../images/jd20.png") no-repeat;
+        background-size: contain;
+        float: left; }
+      .marchInvest .marchInvestContent .activityContent .activityLine .prize .prizeContent p {
+        text-align: center;
+        color: #ffffff;
+        font-size: 0.75rem; }
+        @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+          .marchInvest .marchInvestContent .activityContent .activityLine .prize .prizeContent p {
+            font-size: 0.64286rem; } }
+        @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+          .marchInvest .marchInvestContent .activityContent .activityLine .prize .prizeContent p {
+            font-size: 0.64286rem; } }
+        @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+          .marchInvest .marchInvestContent .activityContent .activityLine .prize .prizeContent p {
+            font-size: 0.82875rem; } }
+    .marchInvest .marchInvestContent .activityRule {
+      padding: 0 1.25rem;
+      color: #fff;
+      position: relative;
+      z-index: 2;
+      clear: both; }
+      .marchInvest .marchInvestContent .activityRule .activityRuleLine {
+        position: absolute;
+        left: 0.625rem;
+        right: 0.625rem;
+        top: 0.75rem;
+        margin: 0 0.625rem;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        height: 0.0625rem;
+        font: 0/0 arial;
+        background: rgba(255, 255, 255, 0.8); }
+      .marchInvest .marchInvestContent .activityRule .rule-div {
+        position: relative;
+        z-index: 3;
+        display: -webkit-box;
+        display: -webkit-flexbox;
+        display: flexbox;
+        box-pack: center;
+        justify-content: center;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center; }
+      .marchInvest .marchInvestContent .activityRule .rule-name {
+        display: inline-block;
+        font-size: 0.875rem;
+        background: #e92325;
+        padding: 0 1.25rem; }
+        @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+          .marchInvest .marchInvestContent .activityRule .rule-name {
+            font-size: 0.75rem; } }
+        @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+          .marchInvest .marchInvestContent .activityRule .rule-name {
+            font-size: 0.75rem; } }
+        @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+          .marchInvest .marchInvestContent .activityRule .rule-name {
+            font-size: 0.96688rem; } }
+      .marchInvest .marchInvestContent .activityRule .activityRuleContent {
+        font-size: 0.75rem; }
+        @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+          .marchInvest .marchInvestContent .activityRule .activityRuleContent {
+            font-size: 0.64286rem; } }
+        @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+          .marchInvest .marchInvestContent .activityRule .activityRuleContent {
+            font-size: 0.64286rem; } }
+        @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+          .marchInvest .marchInvestContent .activityRule .activityRuleContent {
+            font-size: 0.82875rem; } }
+        .marchInvest .marchInvestContent .activityRule .activityRuleContent li {
+          padding: 0.3125rem 0;
+          list-style-type: decimal;
+          line-height: 19px; }
+
+.mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 500;
+  transform-style: preserve-3d; }
+  .mask .tishi {
+    background: url("../images/vip.png") no-repeat;
+    background-size: contain;
+    background-position: center center;
+    position: fixed;
+    color: #e20c2e;
+    text-align: center;
+    animation: show 2s forwards; }
+    .mask .tishi .tishiTitle {
+      font-weight: 700;
+      font-size: 1.5rem; }
+      @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+        .mask .tishi .tishiTitle {
+          font-size: 1.28571rem; } }
+      @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+        .mask .tishi .tishiTitle {
+          font-size: 1.28571rem; } }
+      @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+        .mask .tishi .tishiTitle {
+          font-size: 1.6575rem; } }
+    .mask .tishi .tishiContent {
+      font-size: 1.125rem; }
+      @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+        .mask .tishi .tishiContent {
+          font-size: 0.96429rem; } }
+      @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+        .mask .tishi .tishiContent {
+          font-size: 0.96429rem; } }
+      @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+        .mask .tishi .tishiContent {
+          font-size: 1.24313rem; } }
+    .mask .tishi .back {
+      background: url("../images/back.png") no-repeat;
+      background-size: contain;
+      color: #fff;
+      font-size: 1.125rem;
+      text-align: center;
+      border-radius: 30px;
+      display: block; }
+      @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+        .mask .tishi .back {
+          font-size: 0.96429rem; } }
+      @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+        .mask .tishi .back {
+          font-size: 0.96429rem; } }
+      @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+        .mask .tishi .back {
+          font-size: 1.24313rem; } }
+    .mask .tishi .close {
+      position: absolute;
+      top: 0;
+      right: 0; }
+
+@keyframes show {
+  0% {
+    transform: translateZ(0);
+    opacity: 0; }
+  100% {
+    transform: translateZ(100%);
+    opacity: 1; } }
+@keyframes close {
+  0% {
+    transform: translateZ(100%);
+    opacity: 1; }
+  100% {
+    transform: translateZ(0);
+    opacity: 0; } }
+
+/*# sourceMappingURL=marchInvest.css.map */

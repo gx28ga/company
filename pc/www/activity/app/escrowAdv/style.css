@@ -1,0 +1,113 @@
+html, body {
+  padding: 0;
+  margin: 0;
+  max-width: 750px; }
+
+.page-wrapper {
+  width: 100%;
+  background: #F7F7F7; }
+  .page-wrapper .top {
+    background: url("./images/top.jpg") center no-repeat;
+    background-size: cover; }
+  .page-wrapper .introduce {
+    margin: auto;
+    border: .00001rem dotted #333;
+    color: #333; }
+  .page-wrapper .ace-mark {
+    display: inline-block;
+    background: url("./images/go-ahead.jpg") center no-repeat;
+    background-size: contain; }
+  .page-wrapper .safe-mark {
+    display: inline-block;
+    background: url("./images/oversee.jpg") center no-repeat;
+    background-size: contain; }
+  .page-wrapper .diagram {
+    background: url("./images/diagram.jpg") center no-repeat;
+    background-size: cover; }
+  .page-wrapper .what-adv {
+    background: url("./images/what-adv.png") center no-repeat;
+    background-size: cover;
+    margin: auto; }
+  .page-wrapper .adv-item, .page-wrapper .insulate, .page-wrapper .command, .page-wrapper .exclusive, .page-wrapper .bank {
+    display: inline-block; }
+  .page-wrapper .insulate {
+    background: url("./images/insulate.jpg") center no-repeat;
+    background-size: contain; }
+  .page-wrapper .command {
+    background: url("./images/command.jpg") center no-repeat;
+    background-size: contain; }
+  .page-wrapper .exclusive {
+    background: url("./images/exclusive.jpg") center no-repeat;
+    background-size: contain; }
+  .page-wrapper .bank {
+    background: url("./images/bank.jpg") center no-repeat;
+    background-size: contain; }
+  .page-wrapper .background {
+    background: url("./images/background.jpg") center no-repeat;
+    background-size: cover; }
+    .page-wrapper .background .item {
+      border: 1px dashed #FFF;
+      border-radius: .5rem;
+      color: #FFF;
+      padding: .25rem .4rem;
+      font-size: .5rem;
+      line-height: 1.1rem; }
+      .page-wrapper .background .item span {
+        font-size: .8rem; }
+  .page-wrapper .news-report {
+    margin: auto;
+    background: url("./images/news-report.png") center no-repeat;
+    background-size: contain; }
+  .page-wrapper a.link, .page-wrapper a.link-1, .page-wrapper a.link-2, .page-wrapper a.line-3 {
+    display: inline-block;
+    float: left; }
+  .page-wrapper .link-1 {
+    background: url("./images/21cn.jpg") center no-repeat;
+    background-size: contain; }
+  .page-wrapper .link-2 {
+    background: url("./images/invest-china.jpg") center no-repeat;
+    background-size: contain; }
+  .page-wrapper .line-3 {
+    background: url("./images/hc360.jpg") center no-repeat;
+    background-size: contain; }
+  .page-wrapper .qa-title {
+    margin: auto;
+    background: url("./images/qa.png") center no-repeat;
+    background-size: contain; }
+  .page-wrapper .qa-detail {
+    width: 100%; }
+    .page-wrapper .qa-detail .tab-row {
+      margin-top: 1.5rem;
+      width: 100%;
+      border-bottom: 1px solid #999; }
+      .page-wrapper .qa-detail .tab-row .tab-item {
+        display: inline-block;
+        border-right: 1px solid #CCC;
+        padding: 0 .4rem .3rem;
+        color: #999;
+        font-size: .7rem;
+        line-height: .7rem; }
+      .page-wrapper .qa-detail .tab-row .tab-item:last-child {
+        border-right: none; }
+    .page-wrapper .qa-detail .qa-item {
+      margin: 1.5rem 0; }
+      .page-wrapper .qa-detail .qa-item .q {
+        color: #E8A22B;
+        font-size: .72rem;
+        margin-bottom: .3rem; }
+        .page-wrapper .qa-detail .qa-item .q span {
+          display: inline-block;
+          padding: 0 .3rem;
+          line-height: 1.1rem;
+          font-size: .5rem;
+          vertical-align: top; }
+      .page-wrapper .qa-detail .qa-item p {
+        margin-left: 1rem;
+        color: #000;
+        font-size: .6rem;
+        line-height: 1.2rem; }
+    .page-wrapper .qa-detail .qa-item:last-child {
+      padding-bottom: 1.5rem;
+      margin-bottom: 0; }
+
+/*# sourceMappingURL=style.css.map */

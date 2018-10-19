@@ -1,0 +1,471 @@
+$invite-sprite-dimensions: true;
+@import "invite/*.png";
+@include all-invite-sprites();
+.invite-wrapper{
+	background: #c9f8ff;
+	.banner{
+		width: 100%;
+		height: 455px;
+		background: image-url('invite-banner.jpg') center top;
+	}
+	.method-wrapper{
+		width: 1200px;
+		margin: 0 auto;
+		padding-left: 5px;
+	}
+	.method-wrap{
+		height: 282px;
+		width: 1199px;
+		background: #0468b3;
+		.method-box{
+			width: 1150px;
+			margin: 0 auto;
+			background: #61a7db;
+			height: 260px;
+			.method{
+				width: 1100px;
+				background: #fff;
+				margin: 0 auto;
+				height: 238px;
+				border: 1px solid #63a8db;
+				border-top: none;
+				position: relative;
+				.rule{
+					position: absolute;
+					right: 40px;
+					bottom: 12px;
+					font-size: 14px;
+					color: #004eff;
+					text-decoration: underline;
+				}
+				.invite-roll{
+					position: absolute;
+					left: 420px;
+					top: -179px;
+					span{
+						float: left;
+						font-size: 14px;
+						color: #fff;
+						text-align: center;
+						padding-top: 110px;
+						line-height: 18px;
+						&.link{
+							width: 216px;
+						}
+						&.share{
+							width: 140px;
+						}
+					}
+				}
+				.mode{
+					padding-top: 68px;
+					.mode-link{
+						overflow: hidden;
+						height: 84px;
+						.title{
+							float: left;
+							font-size: 18px;
+							text-align: right;
+							width: 228px;
+							margin-top: -5px;
+							span{
+								color: #e8a22b;
+								font-weight: bold;
+								margin-right: 14px;
+							}
+							p{
+								color: #333;
+							}
+						}
+						.btns{
+							float: left;
+							padding-left: 10px;
+							input{
+								width: 515px;
+								height: 25px;
+								padding: 10px 19px;
+								border: 1px solid #e5e5e5;
+								color: #666;
+								font-size: 14px;
+								float: left;
+							}
+							.invite-copy{
+								float: left;
+								margin: 2px 0 0 6px;
+								font-size: 18px;
+								color: #000;
+								text-align: center;
+								line-height: 43px;
+							}
+							.nologin{
+								width: 553px;
+								height: 45px;
+								text-align: center;
+								line-height: 45px;
+								background: #f8f8f8;
+								border: 1px solid #e5e5e5;
+								float: left;
+								color: #333;
+								font-size: 14px;
+								a{
+									color: #004eff;
+									text-decoration: underline;
+									float: none;
+									margin: 0;
+								}
+							}
+							a{
+								float: left;
+								margin-right: 9px;
+								&.invite-share-sina,&.invite-share-qq,&.invite-share-wechat{
+									margin-top: 2px;
+									font-size: 18px;
+									color: #fff;
+									line-height: 44px;
+									padding: 0 !important;
+									width: 111px !important;
+									height: 44px !important;
+									margin: 0 9px 0 0 !important;
+									padding-left: 52px !important;
+									background-image: image-url('invite-share.png') !important;
+									text-align: center !important;
+								}
+								&.invite-share-sina{
+									background-position: 0 0 !important;
+								}
+								&.invite-share-qq{
+									background-position: 0 -44px !important;
+								}
+								&.invite-share-wechat{
+									background-position: 0 -88px !important;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.list-wrap{
+		width: 1200px;
+		margin: 78px auto 0;
+		.invite-title{
+			color: #fff;
+			span{
+				padding: 48px 0 0 107px;
+				width: 285px;
+				float: left;
+				font-size: 30px;
+			}
+			p{
+				font-size: 18px;
+				float: left;
+				padding-top: 80px;
+			}
+		}
+		.list{
+			background: #6ad3ff;
+			padding: 20px 0;
+			.nologin{
+				height: 280px;
+				line-height: 280px;
+				text-align: center;
+				font-size: 18px;
+				color: #333;
+				a{
+					color: #002aff;
+					text-decoration: underline;
+				}
+			}
+			.nolist{
+				@extend .nologin;
+			}
+			table{
+				width: 1122px;
+				margin: 0 auto;
+				th{
+					height: 55px;
+					background: #1da2e7;
+					border: 1px solid #6ad3ff;
+					text-align: center;
+					font-size: 18px;
+					color: #fff;
+				}
+				.head{
+					th:nth-child(1){
+						border-radius: 7px 0 0 6px;
+					}
+					th:nth-child(3){
+						border-radius: 0 7px 6px 0;
+					}
+				}
+				td{
+					height: 55px;
+					text-align: center;
+					color: #333;
+					font-size: 18px;
+				}
+				.bg{
+					td{
+						background: #5acdff;
+					}
+				}
+			}
+		}
+		.more-wrap{
+			height: 36px;
+			line-height: 36px;
+			text-align: center;
+			font-size: 14px;
+			background: #54cbff;
+			position: relative;
+			.invite-more-left{
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			.invite-more-right{
+				position: absolute;
+				right: 0;
+				top: 0;
+			}
+			a{
+				color: #004eff;
+				text-decoration: underline;
+			}
+		}
+	}
+	.rules-wrap{
+		@extend .list-wrap;
+		.rules-box{
+			background: #6ad3ff;
+			padding: 24px 0 21px;
+			.rules{
+				width: 1143px;
+				margin: 0 auto;
+				border-radius: 4px;
+				background: #cef1ff;
+				ul{
+					width: 1056px;
+					padding: 36px 0 18px 46px;
+					li{
+						position: relative;
+						padding: 0 0 14px 22px;
+						font-size: 14px;
+						color: #333;
+						line-height: 24px;
+						p{
+							color: #0468b3;
+						}
+						b{
+							font-weight: bold;
+						}
+						i{
+							position: absolute;
+							left: 0;
+							top: 0;
+						}
+						span{
+							margin-left: -22px;
+						}
+					}
+				}
+			}
+		}
+		.bot-wrap{
+			height: 9px;
+			background: #54cbff;
+			position: relative;
+			.invite-bot-left{
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			.invite-bot-right{
+				position: absolute;
+				right: 0;
+				top: 0;
+			}
+		}
+	}
+
+	.common-wrapper{
+		padding-bottom: 70px;
+		overflow: hidden;
+		.mode{
+			width: 1198px;
+			margin: 82px auto 0;
+			border: 1px solid #91d8f3;
+			position: relative;
+			.title{
+				width: 162px;
+				height: 33px;
+				text-align: center;
+				line-height: 33px;
+				background: #51b3e6;
+				font-size: 18px;
+				color: #f0f0f0;
+				float: left;margin: -17px 0 0 30px;
+			}
+			.love-icon{
+				position: absolute;
+				left: 53px;
+				top: 140px;
+			}
+			.content{
+				padding: 49px 0 10px 120px;
+				overflow: hidden;
+				clear: both;
+				zoom: 1;
+				.iconmode{
+					width: 529px;
+					float: left;
+					height: 137px;
+					position: relative;
+					i{
+						position: absolute;
+						left: 0;
+						top: 0;
+					}
+					div{
+						padding: 14px 0 0 112px;
+						font-size: 14px;
+						color: #333;
+						span{
+							font-size: 26px;
+							color: #333;
+						}
+					}
+				}
+			}
+			ul{
+				padding: 40px 0 40px 33px;
+				overflow: hidden;
+				clear: both;
+				zoom: 1;
+				li{
+					float: left;
+					margin-right: 17px;
+					width: 271px;
+					text-align: center;
+					a:hover{
+						color: #313131;
+					}
+					p{
+						font-size: 14px;
+						color: #313131;
+						line-height: 24px;
+						padding-top: 16px;
+					}
+				}
+			}
+			.partners{
+				padding: 50px 0 44px 30px;
+				overflow: hidden;
+				clear: both;
+				zoom: 1;
+				.love-left{
+					float: left;margin: 30px 10px 0 0;
+					cursor: pointer;
+				}
+				.imgs{
+					width: 1099px;
+					overflow: hidden;
+					float: left;
+					height: 78px;
+					ul{
+						width: 2080px;
+						padding: 0;
+						li{
+							float: left;
+							width: auto;
+							margin: 0 !important;
+							img{
+								width: 153px;
+							}
+						}
+					}
+				}
+				.love-right{
+					float: left;margin: 30px 0 0 10px;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+	.code-wrapper{
+		width: 100%;
+		height: 200px;
+		background: #51b3e6;
+		.code{
+			width: 1200px;
+			margin: 0 auto;
+			.appcode{
+				float: left;
+				margin: 41px 0 0 44px;
+			}
+			.wechatcode{
+				float: left;
+				margin: 41px 0 0 98px;
+			}
+			.tel{
+				float: left;
+				margin: 76px 0 0 353px;
+				.number{
+					i{
+						float: left;
+					}
+					div{
+						float: left;
+						color: #fff;
+						padding-left: 13px;
+						margin-top: -5px;
+						span{
+							font-size: 32px;
+						}
+						p{
+							font-size: 12px;
+							margin-top: -3px;
+						}
+					}
+				}
+			}
+			.title{
+				font-size: 16px;
+				color: #fff;
+				padding-top: 6px;
+			    width: 106px;
+			    text-align: center;
+			}
+			.code-box{
+				overflow: hidden;
+				.app-code-icon{
+					float: left;
+					img{
+						display: block;
+						border: 1px solid #008c40;
+					}
+				}
+				.app-code-word{
+					float: left;
+					padding: 29px 0 0 18px;
+					p{
+						width: 102px;
+						height: 23px;
+						border: 1px solid #bfe4e3;
+						border-radius: 2px;
+						margin-bottom: 10px;
+						font-size: 12px;
+						color: #fff;
+						line-height: 23px;
+						i{
+							float: left;
+							margin: 3px 5px 0 20px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

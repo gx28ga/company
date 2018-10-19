@@ -1,0 +1,16 @@
+{#公司荣誉#}
+<div class='honor clearfix'>
+    <div class='content1'>
+        <div class="left-btn"></div>
+        <div class="right-btn"></div>
+         <div class="swiper-img honorimg">
+            <ul>
+                {% for item in honorImg %}
+                    <li>
+                        <div style="width: 302px; height: 208px; display: block;"><img src='{{item.linkPath}}' style='width:100%;height:100%'></div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>

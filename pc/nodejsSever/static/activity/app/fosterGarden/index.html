@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="someApp" id='ng-app' xmlns:ng="http://angularjs.org" lang="zh_CN">
+
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta name="theme-color" content="#2932e1">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="format-detection" content="telephone=no, email=no" />
+  <link rel="stylesheet" type="text/css" href="./stylesheets/fosterGarden.css">
+  <script type="text/javascript" src="../../../vendor/jquery-1.11.1.min.js"></script>
+  <title>慰问寄养所</title>
+</head>
+
+<body>
+<div class="body-wrap">
+   <div class="banner img-size" data-height='373'>
+  </div>
+  <div class="number1 img-size" data-width='554' data-height='369' data-marginTop='35'></div>
+  <div class="number2 img-size" data-width='542' data-height='263' data-marginTop='42'></div>
+  <div class="number3 img-size" data-width='713' data-height='274' data-marginTop='50'></div> 
+  <div class="number4 img-size" data-width='741' data-height='732' data-marginTop='20'></div>
+  <div class="number5 img-size" data-width='457' data-height='399' data-marginTop='30'></div>
+  <div class="number6 img-size" data-width='395' data-height='108' data-marginTop='30'></div>
+  <div class="number7 img-size" data-width='457' data-height='399' data-marginTop='30'></div>
+  <div class="number8 img-size" data-width='469' data-height='404' data-marginTop='35'></div>
+  <div class="number9 img-size" data-width='542' data-height='128' data-marginTop='30'></div> 
+  <div class="number10 img-size" data-width='706' data-height='742' data-marginTop='30'></div>
+  <div class="number11 img-size" data-width='721' data-height='106' data-marginTop='30'></div>
+  <div class="number12 img-size" data-width='438' data-height='380' data-marginTop='30'></div>
+  <div class="number13 img-size" data-width='532' data-height='147' data-marginTop='30'></div>
+  <div class="number14 img-size" data-width='750' data-height='778' data-marginTop='30'></div> 
+</div>
+ 
+  <script>
+    function setImgSize() {
+      var originWidth = 375,
+        ratio = $(window).width() / originWidth;
+      $('.img-size').each(function () {
+        var self = $(this);
+        $.each(['height', 'width', 'left', 'right', 'bottom', 'top', 'paddingTop', 'lineHeight', 'paddingLeft', 'paddingRight', 'paddingBottom', 'marginTop', 'marginLeft', 'marginRight', 'marginBottom'], function (i, str) {
+          var num = self.attr('data-' + str);
+          if (num) {
+            num = num * ratio / 2 + 'px';
+            self.css(str, num)
+          }
+        })
+      });
+    }
+    setImgSize();
+  </script>
+</body>
+
+</html>

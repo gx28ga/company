@@ -1,0 +1,121 @@
+<!--<div class="pointMall" ng-controller="pointMall">-->
+<div class="pointMall">
+  <div class="point-wrap">
+  <!-- 面包屑 复制票据详情的-->
+    <div class="bread-nav-wrapper new-bread-wrapper" style="position: relative; left: -30px;">
+      <div class="bread-nav">
+        <div class="bread-box"><span ng-repeat="item in ctrl.path"><a href="{{item.url}}">{{item.pathName}}</a> > </span>{{ctrl.title}}</div>
+      </div>
+    </div>
+    <div class="content-top clearfix">
+      <!-- banner部分 -->
+      <div class="banner"></div>
+      <div class="point">
+        <div class="pointTop">
+          <div  ng-if="ctrl.isLogin == false" class="registerWrapper">
+            <a href="/zhuce?recommPhone&toFrom" class="nohover">
+              <div class="btn hvr-bounce-to-left">
+                <div class="label">免费注册</div>
+              </div>
+            </a>
+            <div class="haveAccount">
+              已有账号？<a href="/dl" class="nohover">立即登录</a>
+            </div>
+          </div>
+          <div ng-if="ctrl.isLogin == true" class="myPoint">
+            <p class="pointSum">我的积分：<span ng-click="ctrl.onPointDetail()" style="cursor: pointer;">{{ctrl.map.result.points | currency : '' : 0}}</span></p>
+            <p class="expiringPoint">月底将要过期积分：<span>{{ctrl.map.result.willExpirePoints | currency : '' : 0}}</span></p>
+            <div class="btnArea">
+              <a href="#" class="nohover">
+              <div class="btnWrapper">
+                <div class="btnLabel" ng-click="ctrl.onRecords()">兑换记录</div>
+              </div></a>
+            </div>
+          </div>
+        </div>
+        <div class="pointBottom">
+          <div class="earnPoints" ng-click="ctrl.onEarnPoint()">
+            <p class="earn">去赚积分</p>
+            <div class="bg"></div>
+          </div>
+          <div class="intergral" ng-click="ctrl.onRemark()">
+            <p class="earn">积分说明</p>
+            <div class="shuoming"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 公告 -->
+    <div class="gonggao">
+      <!--{{ctrl.map.result.castContent}}-->
+      积分商场火热上线，更多优惠敬请期待！！
+    </div>
+    <div ng-if="ctrl.hasOwnProperty('map') == true && ctrl.map.result.hasOwnProperty('interestProducts') && ctrl.map.result.interestProducts.length > 0" class="goodsArea clearfix">
+      <h3 class="firstCate">加息券</h3>
+      <ul>
+        <li ng-repeat="item in ctrl.map.result.interestProducts" ng-class="($index + 1) % 4 == 0 ? 'trim-rt-margin': ''">
+          <div class="thumb box">
+            <div class="card">
+              <!--<span>{{item.rate}}</span>%
+              <br>加息券-->
+            </div>
+          </div>
+          <div ng-if="item.surplusQty <= 0" class="soldOut"></div>
+          <!--<p class="name">{{item.rate}}%加息券</p>-->
+          <p class="name">{{item.name | truncate : 30}}</p>
+          <p class="nameB"><span>{{item.realPoints | currency:'':0}}</span> 积分<a ng-click="ctrl.onGoodsDetail(item)" href="" ng-class="['duihuan', item.surplusQty <= 0 ? 'disable' : '']">兑换</a></p>
+        </li>
+      </ul>
+    </div>
+    <div ng-if="ctrl.hasOwnProperty('map') == true && ctrl.map.result.hasOwnProperty('cashProducts') && ctrl.map.result.cashProducts.length > 0" class="goodsArea clearfix">
+      <h3>红包</h3>
+      <ul>
+        <li ng-repeat="item in ctrl.map.result.cashProducts" ng-class="($index + 1) % 4 == 0 ? 'trim-rt-margin': ''">
+          <div class="thumb box">
+            <!--<p class="card"><span>{{item.value}}</span>元-->
+              <!--<br>红包</p>-->
+          </div>
+          <div ng-if="item.surplusQty <= 0" class="soldOut"></div>
+          <p class="name">{{item.name | truncate : 30}}</p>
+          <p class="nameB"><span>{{item.realPoints | currency:'':0}}</span> 积分<a ng-click="ctrl.onGoodsDetail(item)" href="" ng-class="['duihuan', item.surplusQty <= 0 ? 'disable' : '']">兑换</a></p>
+        </li>
+      </ul>
+    </div>
+    <div ng-if="ctrl.hasOwnProperty('map') == true && ctrl.map.result.hasOwnProperty('realProducts') && ctrl.map.result.realProducts.length > 0" class="goodsArea clearfix">
+      <h3>限量兑换</h3>
+      <ul>
+        <li ng-repeat="item in ctrl.map.result.realProducts" ng-class="($index + 1) % 4 == 0 ? 'trim-rt-margin': ''">
+          <div class="thumb box">
+            <!--<p class="card"><span>{{item.value}}</span>元-->
+            <!--<br>红包</p>-->
+          </div>
+          <div ng-if="item.surplusQty <= 0" class="soldOut"></div>
+          <p class="name">{{item.name | truncate : 30}}</p>
+          <p class="nameB"><span>{{item.realPoints | currency:'':0}}</span> 积分<a ng-click="ctrl.onGoodsDetail(item)" href="" ng-class="['duihuan', item.surplusQty <= 0 ? 'disable' : '']">兑换</a></p>
+        </li>
+      </ul>
+    </div>
+    <!--<div ng-if="ctrl.hasOwnProperty('map') == false" class="goodsArea clearfix">
+      <ul>
+        <li ng-repeat="item in [1,2,3,4] track by $index" ng-class="item % 4 == 0 ? 'trim-rt-margin': ''">
+          <div class="jiaxi box">
+            <p class="card">
+              <br>加息券</p>
+          </div>
+          <p class="name">&nbsp;</p>
+          <p class="nameB"><a href="" class="duihuan">兑换</a></p>
+        </li>
+      </ul>
+      <ul>
+        <li ng-repeat="item in [1,2,3,4] track by $index" ng-class="item % 4 == 0 ? 'trim-rt-margin': ''">
+          <div class="hongbao box">
+            <p class="card">
+              <br>红包</p>
+          </div>
+          <p class="name">&nbsp;</p>
+          <p class="nameB"><a href="" class="duihuan">兑换</a></p>
+        </li>
+      </ul>
+    </div>-->
+  </div>
+</div>

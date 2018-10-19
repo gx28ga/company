@@ -1,0 +1,71 @@
+.views{
+	float:right;
+	i{
+		background:url("../../../images/common/views.jpg") no-repeat;
+		background-size:contain;
+	}
+}
+.loadding{
+	width:100px;
+	height:100px;
+	margin:45% auto 0;
+	background:url("../../../images/common/loading.gif");
+	background-size:contain;
+}
+.detial{
+	.container{
+		padding:20px;
+		background:#fff;
+	}
+	h1{
+		line-height:25px;
+		font-weight:bold;
+		text-align:left;
+		margin-bottom:10px;
+	}
+	.title-info{
+		padding:20px 0;
+		i{
+			background:url("../../../images/detail/ingyong.png") no-repeat;
+			background-size:contain;
+		}
+		.left{
+			float:left;
+		}
+		.right{
+			display:inline-block;
+			transform:rotate(180deg);
+		}
+		p{
+			display:inline;
+			padding:0 15px;
+			color:#999;
+		}
+	}
+	.about{
+		color:#999999;
+	}
+	.content{
+
+		h2{
+			font-weight:bold;
+		}
+		img{
+			display:block;
+			max-width:100%;
+			margin:10px auto;
+		}
+		line-height:25px;
+		span{
+			line-height:30px;
+		}
+		p{
+			padding:10px 0;
+			text-indent:2em;
+		}
+	}
+	.copright{
+		padding:20px;
+		color:#666;
+	}
+}

@@ -1,0 +1,1147 @@
+/* line 1, ../../../common/style/global.scss */
+body, div, p, h1, h2, h3, h4, h5, h6, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, table, th, td {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 2, ../../../common/style/global.scss */
+address, cite, em, i {
+  font-style: normal;
+}
+
+/* line 3, ../../../common/style/global.scss */
+html, body, root {
+  height: 100%;
+  overflow: hidden;
+}
+
+/* line 4, ../../../common/style/global.scss */
+body {
+  margin: 0 auto;
+  color: #fff;
+  -webkit-appearance: none;
+  background: #fff;
+  overflow-y: scroll;
+  font-family: 'PingFang SC','STHeiti','Microsoft YaHei',Helvetica,Arial,sans-serif;
+  color: #878C92;
+}
+
+/* line 5, ../../../common/style/global.scss */
+li {
+  list-style: none;
+}
+
+/* line 6, ../../../common/style/global.scss */
+html, body {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+/* line 7, ../../../common/style/global.scss */
+a {
+  color: #535862;
+  text-decoration: none;
+}
+
+/* line 8, ../../../common/style/global.scss */
+a:hover {
+  color: #c40000;
+  text-decoration: underline;
+}
+
+/* line 9, ../../../common/style/global.scss */
+legend {
+  color: #000;
+}
+
+/* line 10, ../../../common/style/global.scss */
+fieldset, img {
+  border: 0;
+}
+
+/* line 11, ../../../common/style/global.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 12, ../../../common/style/global.scss */
+input[type="button"], input[type="submit"], input[type="reset"] {
+  cursor: pointer;
+}
+
+/* line 13, ../../../common/style/global.scss */
+.clearfix:after, .wrapper:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+/* line 14, ../../../common/style/global.scss */
+.clearfix {
+  display: inline-block;
+}
+
+/* start commented backslash hack \*/
+/* line 16, ../../../common/style/global.scss */
+* html .clearfix {
+  height: 1%;
+}
+
+/* line 17, ../../../common/style/global.scss */
+.clearfix {
+  display: block;
+}
+
+/* close commented backslash hack */
+/* line 19, ../../../common/style/global.scss */
+.middle * {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* line 20, ../../../common/style/global.scss */
+::-webkit-input-placeholder {
+  font-size: .75rem;
+}
+
+/* height */
+/* public */
+/* link color */
+/* line 195, ../../../common/style/global.scss */
+.red {
+  color: #f42b13;
+}
+
+/* line 196, ../../../common/style/global.scss */
+.green {
+  color: #16c154;
+}
+
+/* line 197, ../../../common/style/global.scss */
+.black {
+  color: black;
+}
+
+/* line 198, ../../../common/style/global.scss */
+.gray {
+  color: #666;
+}
+
+/* line 199, ../../../common/style/global.scss */
+.blue {
+  color: #2899f2;
+}
+
+/* line 200, ../../../common/style/global.scss */
+.orange {
+  color: #cb420c;
+}
+
+/* public */
+/* line 203, ../../../common/style/global.scss */
+.flex {
+  flex-shrink: 0;
+  -webkit-flex-shrink: 0;
+}
+
+/* line 204, ../../../common/style/global.scss */
+input {
+  outline: none;
+}
+
+/* layout */
+/* line 207, ../../../common/style/global.scss */
+.hide {
+  display: none;
+}
+
+/* line 208, ../../../common/style/global.scss */
+.container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  transform: translateY(300px);
+  -webkit-transform: translateY(300px);
+  transition-duration: 1s;
+  -webkit-transition-duration: 1s;
+  opacity: 0;
+  overflow: hidden;
+}
+
+/* line 209, ../../../common/style/global.scss */
+.container.cur {
+  transform: translateY(0px);
+  -webkit-transform: translateY(0px);
+  opacity: 1;
+}
+
+/* line 210, ../../../common/style/global.scss */
+.effect {
+  float: left;
+  transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  perspective: 600px;
+  -webkit-perspective: 600px;
+  background: #EFEFF4;
+}
+
+/* line 211, ../../../common/style/global.scss */
+.effect .option {
+  float: left;
+  min-height: 6.25rem;
+  transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  overflow: hidden;
+  background: #fff;
+}
+
+/* line 3, ../sass/fouthWave.scss */
+.secWave-wrapper .banner {
+  position: relative;
+  width: 100%;
+  background: url("../images/banner.png") no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+/* line 3, ../sass/fouthWave.scss */
+.secWave-wrapper .banner span {
+  font-size: 1rem;
+  color: #fcf7b3;
+  display: block;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 3, ../sass/fouthWave.scss */
+  .secWave-wrapper .banner span {
+    font-size: 0.85714rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 3, ../sass/fouthWave.scss */
+  .secWave-wrapper .banner span {
+    font-size: 0.85714rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 3, ../sass/fouthWave.scss */
+  .secWave-wrapper .banner span {
+    font-size: 1.105rem;
+  }
+}
+/* line 4, ../sass/fouthWave.scss */
+.secWave-wrapper .contain {
+  width: 100%;
+  background: url("../images/contain.jpg") no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+/* line 5, ../sass/fouthWave.scss */
+.secWave-wrapper .contain .containTop {
+  position: relative;
+}
+/* line 6, ../sass/fouthWave.scss */
+.secWave-wrapper .contain .containTop .btnbox {
+  position: relative;
+}
+/* line 7, ../sass/fouthWave.scss */
+.secWave-wrapper .contain .containTop .btnbox .firstBtn {
+  text-align: center;
+  position: relative;
+  color: #fff;
+  background: url("../images/firBtn.png") no-repeat;
+  background-size: contain;
+  background-position: center center;
+  height: 100%;
+  float: left;
+}
+/* line 8, ../sass/fouthWave.scss */
+.secWave-wrapper .contain .containTop .btnbox .firstBtn.firstBtn-g {
+  background: url("../images/firBtn-g.png") no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+/* line 10, ../sass/fouthWave.scss */
+.secWave-wrapper .contain .containTop .btnbox .secBtn {
+  text-align: center;
+  color: #ff9283;
+  background: url("../images/secBtn.png") no-repeat;
+  background-size: contain;
+  background-position: center center;
+  height: 100%;
+  float: left;
+  position: absolute;
+  right: 0;
+}
+/* line 11, ../sass/fouthWave.scss */
+.secWave-wrapper .contain .containTop .btnbox .secBtn.secBtn-g {
+  background: url("../images/secBtn-g.png") no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+/* line 14, ../sass/fouthWave.scss */
+.secWave-wrapper .contain .containTop .redbox {
+  width: 100%;
+  background: url("../images/redBox.png") no-repeat;
+  background-size: contain;
+  background-position: center center;
+  position: absolute;
+  bottom: 0;
+}
+/* line 15, ../sass/fouthWave.scss */
+.secWave-wrapper .contain .containTop .redbox p {
+  color: #ba000e;
+  font-size: 1rem;
+  text-align: center;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 15, ../sass/fouthWave.scss */
+  .secWave-wrapper .contain .containTop .redbox p {
+    font-size: 0.85714rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 15, ../sass/fouthWave.scss */
+  .secWave-wrapper .contain .containTop .redbox p {
+    font-size: 0.85714rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 15, ../sass/fouthWave.scss */
+  .secWave-wrapper .contain .containTop .redbox p {
+    font-size: 1.105rem;
+  }
+}
+/* line 18, ../sass/fouthWave.scss */
+.secWave-wrapper .contain #gocoupon1, .secWave-wrapper .contain #gocoupon2 {
+  text-align: center;
+  display: block;
+  color: #fcf7b3;
+  text-decoration: underline;
+  font-size: 0.875rem;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 18, ../sass/fouthWave.scss */
+  .secWave-wrapper .contain #gocoupon1, .secWave-wrapper .contain #gocoupon2 {
+    font-size: 0.75rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 18, ../sass/fouthWave.scss */
+  .secWave-wrapper .contain #gocoupon1, .secWave-wrapper .contain #gocoupon2 {
+    font-size: 0.75rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 18, ../sass/fouthWave.scss */
+  .secWave-wrapper .contain #gocoupon1, .secWave-wrapper .contain #gocoupon2 {
+    font-size: 0.96688rem;
+  }
+}
+/* line 20, ../sass/fouthWave.scss */
+.secWave-wrapper .contain .containBottom .lqbtn {
+  background: #ffecb8;
+  border-radius: 0.5rem;
+  margin: 0 auto;
+  box-shadow: inset -2px 0 10px #ffa80d,inset 0px 0 20px #ffa80d,inset 0 1px 50px #ffa80d,inset 0 0px 0px #ffa80d;
+  color: #b30f00;
+  font-size: 1.125rem;
+  text-align: center;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 20, ../sass/fouthWave.scss */
+  .secWave-wrapper .contain .containBottom .lqbtn {
+    border-radius: 0.42857rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 20, ../sass/fouthWave.scss */
+  .secWave-wrapper .contain .containBottom .lqbtn {
+    border-radius: 0.42857rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 20, ../sass/fouthWave.scss */
+  .secWave-wrapper .contain .containBottom .lqbtn {
+    border-radius: 0.5525rem;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 20, ../sass/fouthWave.scss */
+  .secWave-wrapper .contain .containBottom .lqbtn {
+    font-size: 0.96429rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 20, ../sass/fouthWave.scss */
+  .secWave-wrapper .contain .containBottom .lqbtn {
+    font-size: 0.96429rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 20, ../sass/fouthWave.scss */
+  .secWave-wrapper .contain .containBottom .lqbtn {
+    font-size: 1.24313rem;
+  }
+}
+/* line 23, ../sass/fouthWave.scss */
+.secWave-wrapper .contain .containBottom .lqbtn.wksbtn {
+  background: #dad6d6;
+  box-shadow: inset -2px 0 10px #827c78,inset 0px 0 20px #827c78,inset 0 1px 50px #827c78,inset 0 0px 0px #827c78;
+  color: #82662a;
+}
+/* line 27, ../sass/fouthWave.scss */
+.secWave-wrapper .contain .containBottom .timebtn {
+  background: #ffecb8;
+  border-radius: 0.5rem;
+  margin: 0 auto;
+  box-shadow: inset -2px 0 10px #ffa80d,inset 0px 0 20px #ffa80d,inset 0 1px 50px #ffa80d,inset 0 0px 0px #ffa80d;
+  color: #b30f00;
+  font-size: 1.125rem;
+  text-align: center;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 27, ../sass/fouthWave.scss */
+  .secWave-wrapper .contain .containBottom .timebtn {
+    border-radius: 0.42857rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 27, ../sass/fouthWave.scss */
+  .secWave-wrapper .contain .containBottom .timebtn {
+    border-radius: 0.42857rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 27, ../sass/fouthWave.scss */
+  .secWave-wrapper .contain .containBottom .timebtn {
+    border-radius: 0.5525rem;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 27, ../sass/fouthWave.scss */
+  .secWave-wrapper .contain .containBottom .timebtn {
+    font-size: 0.96429rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 27, ../sass/fouthWave.scss */
+  .secWave-wrapper .contain .containBottom .timebtn {
+    font-size: 0.96429rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 27, ../sass/fouthWave.scss */
+  .secWave-wrapper .contain .containBottom .timebtn {
+    font-size: 1.24313rem;
+  }
+}
+/* line 30, ../sass/fouthWave.scss */
+.secWave-wrapper .contain .containBottom .timebtn .timebox, .secWave-wrapper .contain .containBottom .timebtn .timebox2 {
+  margin: 0 auto;
+  background: #790f00;
+  display: inline-block;
+  background: -webkit-gradient(linear, 0 100%, 0 0, from(#a60f00), to(#790f00));
+  border: 2px solid #b30127;
+}
+/* line 34, ../sass/fouthWave.scss */
+.secWave-wrapper .contain .containBottom .timebtn .timebox .hh, .secWave-wrapper .contain .containBottom .timebtn .timebox2 .hh {
+  background: -webkit-gradient(linear, 0 100%, 0 0, from(#f1e3b4), to(#fefefe));
+}
+/* line 35, ../sass/fouthWave.scss */
+.secWave-wrapper .contain .containBottom .timebtn .timebox span, .secWave-wrapper .contain .containBottom .timebtn .timebox2 span {
+  display: block;
+  float: left;
+  font-size: 1.125rem;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 35, ../sass/fouthWave.scss */
+  .secWave-wrapper .contain .containBottom .timebtn .timebox span, .secWave-wrapper .contain .containBottom .timebtn .timebox2 span {
+    font-size: 0.96429rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 35, ../sass/fouthWave.scss */
+  .secWave-wrapper .contain .containBottom .timebtn .timebox span, .secWave-wrapper .contain .containBottom .timebtn .timebox2 span {
+    font-size: 0.96429rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 35, ../sass/fouthWave.scss */
+  .secWave-wrapper .contain .containBottom .timebtn .timebox span, .secWave-wrapper .contain .containBottom .timebtn .timebox2 span {
+    font-size: 1.24313rem;
+  }
+}
+/* line 35, ../sass/fouthWave.scss */
+.secWave-wrapper .contain .containBottom .timebtn .timebox span:nth-child(2n), .secWave-wrapper .contain .containBottom .timebtn .timebox2 span:nth-child(2n) {
+  color: #fcf7b3;
+}
+/* line 38, ../sass/fouthWave.scss */
+.secWave-wrapper .contain .containBottom .rulebtn {
+  color: #ff9283;
+  font-size: 0.9375rem;
+  float: right;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 38, ../sass/fouthWave.scss */
+  .secWave-wrapper .contain .containBottom .rulebtn {
+    font-size: 0.80357rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 38, ../sass/fouthWave.scss */
+  .secWave-wrapper .contain .containBottom .rulebtn {
+    font-size: 0.80357rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 38, ../sass/fouthWave.scss */
+  .secWave-wrapper .contain .containBottom .rulebtn {
+    font-size: 1.03594rem;
+  }
+}
+/* line 39, ../sass/fouthWave.scss */
+.secWave-wrapper .contain .containBottom .firstnotice {
+  color: #b30f00;
+  font-size: 1rem;
+  background: url("../images/firnotice.png") no-repeat;
+  background-size: contain;
+  background-position: center center;
+  margin: 0 auto;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 39, ../sass/fouthWave.scss */
+  .secWave-wrapper .contain .containBottom .firstnotice {
+    font-size: 0.85714rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 39, ../sass/fouthWave.scss */
+  .secWave-wrapper .contain .containBottom .firstnotice {
+    font-size: 0.85714rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 39, ../sass/fouthWave.scss */
+  .secWave-wrapper .contain .containBottom .firstnotice {
+    font-size: 1.105rem;
+  }
+}
+/* line 40, ../sass/fouthWave.scss */
+.secWave-wrapper .contain .containBottom .firstnotice span {
+  display: block;
+  float: right;
+}
+
+/* line 45, ../sass/fouthWave.scss */
+.mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 888;
+  -webkit-perspective: 600px;
+}
+/* line 46, ../sass/fouthWave.scss */
+.mask .rule {
+  z-index: 999;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  background: url("../images/rulebg.png") no-repeat;
+  background-size: contain;
+  background-position: center center;
+  transition: all 0.5s ease-in-out;
+  transform: rotateY(360deg);
+  opacity: 0;
+}
+/* line 47, ../sass/fouthWave.scss */
+.mask .notice {
+  z-index: 999;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  border-radius: 1.25rem;
+  background: url("../images/rulebg.png") no-repeat;
+  background-size: contain;
+  background-size: cover;
+  transition: all 0.5s ease-in-out;
+  transform: rotateY(360deg);
+  opacity: 0;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 47, ../sass/fouthWave.scss */
+  .mask .notice {
+    border-radius: 1.07143rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 47, ../sass/fouthWave.scss */
+  .mask .notice {
+    border-radius: 1.07143rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 47, ../sass/fouthWave.scss */
+  .mask .notice {
+    border-radius: 1.38125rem;
+  }
+}
+/* line 48, ../sass/fouthWave.scss */
+.mask .title {
+  background: url("../images/titlebg.png") no-repeat;
+  background-size: contain;
+  background-position: center center;
+  margin: 0 auto;
+  color: #ffe2a4;
+  font-size: 1.125rem;
+  text-align: center;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 48, ../sass/fouthWave.scss */
+  .mask .title {
+    font-size: 0.96429rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 48, ../sass/fouthWave.scss */
+  .mask .title {
+    font-size: 0.96429rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 48, ../sass/fouthWave.scss */
+  .mask .title {
+    font-size: 1.24313rem;
+  }
+}
+/* line 49, ../sass/fouthWave.scss */
+.mask .close {
+  float: right;
+  background: rgba(255, 226, 164, 0.3);
+  color: #fff;
+  font-size: 1.5625rem;
+  text-align: center;
+  border-radius: 2.5rem;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 49, ../sass/fouthWave.scss */
+  .mask .close {
+    font-size: 1.33929rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 49, ../sass/fouthWave.scss */
+  .mask .close {
+    font-size: 1.33929rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 49, ../sass/fouthWave.scss */
+  .mask .close {
+    font-size: 1.72656rem;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 49, ../sass/fouthWave.scss */
+  .mask .close {
+    border-radius: 2.14286rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 49, ../sass/fouthWave.scss */
+  .mask .close {
+    border-radius: 2.14286rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 49, ../sass/fouthWave.scss */
+  .mask .close {
+    border-radius: 2.7625rem;
+  }
+}
+/* line 50, ../sass/fouthWave.scss */
+.mask .rulecon {
+  margin: 0 auto;
+  overflow-y: scroll;
+  color: #ffe2a4;
+  font-size: 0.75rem;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 50, ../sass/fouthWave.scss */
+  .mask .rulecon {
+    font-size: 0.64286rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 50, ../sass/fouthWave.scss */
+  .mask .rulecon {
+    font-size: 0.64286rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 50, ../sass/fouthWave.scss */
+  .mask .rulecon {
+    font-size: 0.82875rem;
+  }
+}
+/* line 50, ../sass/fouthWave.scss */
+.mask .rulecon ul {
+  overflow-y: scroll;
+}
+/* line 51, ../sass/fouthWave.scss */
+.mask .rulecon p {
+  font-size: 1.125rem;
+  text-align: center;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 51, ../sass/fouthWave.scss */
+  .mask .rulecon p {
+    font-size: 0.96429rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 51, ../sass/fouthWave.scss */
+  .mask .rulecon p {
+    font-size: 0.96429rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 51, ../sass/fouthWave.scss */
+  .mask .rulecon p {
+    font-size: 1.24313rem;
+  }
+}
+/* line 51, ../sass/fouthWave.scss */
+.mask .rulecon p:nth-child(1) {
+  font-size: 1.5rem;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 51, ../sass/fouthWave.scss */
+  .mask .rulecon p:nth-child(1) {
+    font-size: 1.28571rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 51, ../sass/fouthWave.scss */
+  .mask .rulecon p:nth-child(1) {
+    font-size: 1.28571rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 51, ../sass/fouthWave.scss */
+  .mask .rulecon p:nth-child(1) {
+    font-size: 1.6575rem;
+  }
+}
+/* line 53, ../sass/fouthWave.scss */
+.mask .tanbtn {
+  background: #fd8325;
+  margin: 0 auto;
+  color: #fff;
+  font-size: 1.125rem;
+  border-radius: 1.875rem;
+  text-align: center;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 53, ../sass/fouthWave.scss */
+  .mask .tanbtn {
+    font-size: 0.96429rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 53, ../sass/fouthWave.scss */
+  .mask .tanbtn {
+    font-size: 0.96429rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 53, ../sass/fouthWave.scss */
+  .mask .tanbtn {
+    font-size: 1.24313rem;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 53, ../sass/fouthWave.scss */
+  .mask .tanbtn {
+    border-radius: 1.60714rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 53, ../sass/fouthWave.scss */
+  .mask .tanbtn {
+    border-radius: 1.60714rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 53, ../sass/fouthWave.scss */
+  .mask .tanbtn {
+    border-radius: 2.07188rem;
+  }
+}
+/* line 54, ../sass/fouthWave.scss */
+.mask .zjl {
+  z-index: 999;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  border-radius: 1.25rem;
+  background: url("../images/zjl.png") no-repeat;
+  background-size: contain;
+  background-size: cover;
+  transition: all 0.5s ease-in-out;
+  transform: rotateY(360deg);
+  opacity: 0;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 54, ../sass/fouthWave.scss */
+  .mask .zjl {
+    border-radius: 1.07143rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 54, ../sass/fouthWave.scss */
+  .mask .zjl {
+    border-radius: 1.07143rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 54, ../sass/fouthWave.scss */
+  .mask .zjl {
+    border-radius: 1.38125rem;
+  }
+}
+/* line 55, ../sass/fouthWave.scss */
+.mask .zjl p {
+  font-size: 2.375rem;
+  color: #fff;
+  text-align: center;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 55, ../sass/fouthWave.scss */
+  .mask .zjl p {
+    font-size: 2.03571rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 55, ../sass/fouthWave.scss */
+  .mask .zjl p {
+    font-size: 2.03571rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 55, ../sass/fouthWave.scss */
+  .mask .zjl p {
+    font-size: 2.62438rem;
+  }
+}
+/* line 55, ../sass/fouthWave.scss */
+.mask .zjl p span {
+  font-size: 3.125rem;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 55, ../sass/fouthWave.scss */
+  .mask .zjl p span {
+    font-size: 2.67857rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 55, ../sass/fouthWave.scss */
+  .mask .zjl p span {
+    font-size: 2.67857rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 55, ../sass/fouthWave.scss */
+  .mask .zjl p span {
+    font-size: 3.45313rem;
+  }
+}
+/* line 58, ../sass/fouthWave.scss */
+.mask .redlisttan {
+  z-index: 999;
+  background: #ffe9c4;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  border-radius: 1.25rem;
+  transition: all 0.5s ease-in-out;
+  transform: rotateY(360deg);
+  opacity: 0;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 58, ../sass/fouthWave.scss */
+  .mask .redlisttan {
+    border-radius: 1.07143rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 58, ../sass/fouthWave.scss */
+  .mask .redlisttan {
+    border-radius: 1.07143rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 58, ../sass/fouthWave.scss */
+  .mask .redlisttan {
+    border-radius: 1.38125rem;
+  }
+}
+/* line 59, ../sass/fouthWave.scss */
+.mask .redlisttan .orange {
+  background: #ee4d35;
+  border-top-left-radius: 1.25rem;
+  border-top-right-radius: 1.25rem;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 59, ../sass/fouthWave.scss */
+  .mask .redlisttan .orange {
+    border-top-left-radius: 1.07143rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 59, ../sass/fouthWave.scss */
+  .mask .redlisttan .orange {
+    border-top-left-radius: 1.07143rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 59, ../sass/fouthWave.scss */
+  .mask .redlisttan .orange {
+    border-top-left-radius: 1.38125rem;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 59, ../sass/fouthWave.scss */
+  .mask .redlisttan .orange {
+    border-top-right-radius: 1.07143rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 59, ../sass/fouthWave.scss */
+  .mask .redlisttan .orange {
+    border-top-right-radius: 1.07143rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 59, ../sass/fouthWave.scss */
+  .mask .redlisttan .orange {
+    border-top-right-radius: 1.38125rem;
+  }
+}
+/* line 60, ../sass/fouthWave.scss */
+.mask .redlisttan .closehb {
+  float: right;
+  background: #c13d2c;
+  border-radius: 2.5rem;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 60, ../sass/fouthWave.scss */
+  .mask .redlisttan .closehb {
+    border-radius: 2.14286rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 60, ../sass/fouthWave.scss */
+  .mask .redlisttan .closehb {
+    border-radius: 2.14286rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 60, ../sass/fouthWave.scss */
+  .mask .redlisttan .closehb {
+    border-radius: 2.7625rem;
+  }
+}
+/* line 60, ../sass/fouthWave.scss */
+.mask .redlisttan .closehb .closenei {
+  maring: 0 auto;
+  float: right;
+  color: #fff;
+  font-size: 1.5625rem;
+  text-align: center;
+  border-radius: 2.5rem;
+  background: #d54934;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 60, ../sass/fouthWave.scss */
+  .mask .redlisttan .closehb .closenei {
+    font-size: 1.33929rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 60, ../sass/fouthWave.scss */
+  .mask .redlisttan .closehb .closenei {
+    font-size: 1.33929rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 60, ../sass/fouthWave.scss */
+  .mask .redlisttan .closehb .closenei {
+    font-size: 1.72656rem;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 60, ../sass/fouthWave.scss */
+  .mask .redlisttan .closehb .closenei {
+    border-radius: 2.14286rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 60, ../sass/fouthWave.scss */
+  .mask .redlisttan .closehb .closenei {
+    border-radius: 2.14286rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 60, ../sass/fouthWave.scss */
+  .mask .redlisttan .closehb .closenei {
+    border-radius: 2.7625rem;
+  }
+}
+/* line 61, ../sass/fouthWave.scss */
+.mask .redlisttan .bagList {
+  margin: 0 auto;
+}
+/* line 62, ../sass/fouthWave.scss */
+.mask .redlisttan .redbigbg {
+  background: url("../images/redbigbg.png") no-repeat;
+  background-size: contain;
+  background-position: center center;
+  text-align: center;
+  font-size: 1.4375rem;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 62, ../sass/fouthWave.scss */
+  .mask .redlisttan .redbigbg {
+    font-size: 1.23214rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 62, ../sass/fouthWave.scss */
+  .mask .redlisttan .redbigbg {
+    font-size: 1.23214rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 62, ../sass/fouthWave.scss */
+  .mask .redlisttan .redbigbg {
+    font-size: 1.58844rem;
+  }
+}
+/* line 63, ../sass/fouthWave.scss */
+.mask .redlisttan ul li {
+  display: block;
+  float: left;
+  background: url("../images/redbagbg.png") no-repeat;
+  background-size: contain;
+  background-position: center center;
+  text-align: center;
+  font-size: 0.9375rem;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 63, ../sass/fouthWave.scss */
+  .mask .redlisttan ul li {
+    font-size: 0.80357rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 63, ../sass/fouthWave.scss */
+  .mask .redlisttan ul li {
+    font-size: 0.80357rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 63, ../sass/fouthWave.scss */
+  .mask .redlisttan ul li {
+    font-size: 1.03594rem;
+  }
+}
+/* line 64, ../sass/fouthWave.scss */
+.mask .redlisttan p {
+  color: #ffe9c4;
+  font-size: 0.75rem;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 64, ../sass/fouthWave.scss */
+  .mask .redlisttan p {
+    font-size: 0.64286rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 64, ../sass/fouthWave.scss */
+  .mask .redlisttan p {
+    font-size: 0.64286rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 64, ../sass/fouthWave.scss */
+  .mask .redlisttan p {
+    font-size: 0.82875rem;
+  }
+}
+/* line 65, ../sass/fouthWave.scss */
+.mask .redlisttan .lookbtn {
+  background: #ee4d35;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 0.3125rem;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 65, ../sass/fouthWave.scss */
+  .mask .redlisttan .lookbtn {
+    border-radius: 0.26786rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 65, ../sass/fouthWave.scss */
+  .mask .redlisttan .lookbtn {
+    border-radius: 0.26786rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 65, ../sass/fouthWave.scss */
+  .mask .redlisttan .lookbtn {
+    border-radius: 0.34531rem;
+  }
+}
+/* line 65, ../sass/fouthWave.scss */
+.mask .redlisttan .lookbtn a {
+  color: #fff;
+  font-size: 0.9375rem;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 65, ../sass/fouthWave.scss */
+  .mask .redlisttan .lookbtn a {
+    font-size: 0.80357rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 65, ../sass/fouthWave.scss */
+  .mask .redlisttan .lookbtn a {
+    font-size: 0.80357rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 65, ../sass/fouthWave.scss */
+  .mask .redlisttan .lookbtn a {
+    font-size: 1.03594rem;
+  }
+}
+/* line 67, ../sass/fouthWave.scss */
+.mask .cur {
+  transform: rotateY(0deg);
+  opacity: 1;
+  z-index: 999;
+}

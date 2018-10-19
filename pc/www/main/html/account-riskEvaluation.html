@@ -1,0 +1,91 @@
+<div class='riskEvaluation' ng-controller='riskEvaluationCtrl'>
+    <div class='riskTitle'>
+        <div class='title'>投资人风险测评<span class='titleFu'>应监管邀请，投资人应完成风险测评</span></div>
+    </div>
+    <div class='content'>
+      <!--   问题1 -->
+        <div class='question'> 1. 您是否有投资于其他金融产品(如余额宝、基金或股票等)的经历？</div>
+        <input type="radio" name='number1' id='yes'  class='option-radio' value='a' ><label for="yes" class='ra'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A. 是</label><br><br>
+        <input type="radio" name='number1' text='否' id='no' class='option-radio' value='b'><label for="no" class='ra'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B. 否</label> 
+         <!--   问题2 -->
+        <div class='question'> 2. 除了多融理财外，您是否有使用其他的互联网产品（如微信、QQ或淘宝等）？</div>
+        <input type="radio" name='number2'  id='number1' class='option-radio' value='a'><label for="number1"  class='ra'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A. 是</label><br><br>
+        <input type="radio" name='number2' text='否' id='number2'  class='option-radio' value='b'><label for="number2" class='ra'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B. 否</label> 
+         <!--   问题3 -->
+        <div class='question'>3. 您是否有一定的风险识别能力？</div>
+        <input type="radio" name='number3' id='number3' class='option-radio' value='a'><label for="number3"  class='ra'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A. 是</label><br><br>
+        <input type="radio" name='number3' id='number4' text='否' class='option-radio' value='b' ><label for="number4" class='ra'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B. 否</label> 
+        <!-- 问题4 -->
+         <div class='question'>4. 您家庭的年收入为（折合人民币）？ </div>
+        <input type="radio" name='number4' id='number7' class='option-radio' value='a'><label for="number7"  class='ra'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A.  小于5万</label><br><br>
+        <input type="radio" name='number4' id='number8' text='否' class='option-radio' value='b' ><label for="number8" class='ra'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B. 5万-20万</label> <br><br>
+        <input type="radio" name='number4' id='number9' class='option-radio' value='c'><label for="number9"  class='ra'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C.  20万-50万</label><br><br>
+        <input type="radio" name='number4' id='number10' text='否' class='option-radio' value='d' ><label for="number10" class='ra'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D. 大于50万 </label>   
+        <!-- 问题5 -->
+         <div class='question'>5. 您每年可以用于投资的资金量为？</div>
+        <input type="radio" name='number5' id='number11' class='option-radio' value='a'><label for="number11"  class='ra'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A. 小于2万</label><br><br>
+        <input type="radio" name='number5' id='number12' text='否' class='option-radio' value='b' ><label for="number12" class='ra'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B.  2万-10万</label> <br><br>
+        <input type="radio" name='number5' id='number13' class='option-radio' value='c'><label for="number13"  class='ra'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C. 10万-50万</label><br><br>
+        <input type="radio" name='number5' text='否' id='number14' class='option-radio' value='d' ><label for="number14" class='ra'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D.  大于50万</label>    
+        <!-- 问题6 -->
+         <div class='question'>6. 以下哪项能说明您的投资经验？</div>
+        <input type="radio" name='number6' id='number15' class='option-radio' value='a'><label for="number15"  class='ra'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A. 除存款、国债外，我几乎不投资其他金融产品</label><br><br>
+        <input type="radio" name='number6' text='否' id='number16' class='option-radio' value='b' ><label for="number16" class='ra'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B.  大部分投资于存款、国债等，较少投资于股票、基金、P2P等风险产品</label> <br><br>
+        <input type="radio" name='number6' id='number17' class='option-radio' value='c'><label for="number17"  class='ra'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C. 资产均衡地分布于存款、国债、银行理财产品、信托产品、股票、基金、P2P等</label><br><br>
+        <input type="radio" name='number6' text='否' id='number18' class='option-radio' value='d' ><label for="number18" class='ra'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D.  大部分投资于股票、基金、P2P、外汇、金融衍生品、海外投资产品等高风险产品，较少投资于存款、国债</label> 
+         <!-- 问题6 -->
+         <div class='question'>7. 以下哪项描述最符合您的投资态度？</div>
+        <input type="radio" name='number7' id='number16' class='option-radio' value='a'><label for="number16"  class='ra'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A.  厌恶风险，不希望本金损失，希望获得稳定回报 </label><br><br>
+        <input type="radio" name='number7' text='否' id='number17' class='option-radio' value='b' ><label for="number17" class='ra'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B. 保守投资，不希望本金损失，愿意承担一定幅度的收益波动</label> <br><br>
+        <input type="radio" name='number7' id='number18' class='option-radio' value='c'><label for="number18"  class='ra'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C.  寻求资金的较高收益和成长性，愿意为此承担有限本金损失</label><br><br>
+        <input type="radio" name='number7' text='否' id='number19' class='option-radio' value='d' ><label for="number19" class='ra'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D. 希望赚取高回报，愿意为此承担较大本金损失</label> 
+         <!-- 问题8 -->
+         <div class='question'>8. 您的投资出现何种程度的波动时，您会呈现明显的焦虑？</div>
+        <input type="radio" name='number8' id='number20' class='option-radio' value='a'><label for="number20"  class='ra'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A.  本金无损失，但收益未达预期</label><br><br>
+        <input type="radio" name='number8' text='否' id='number21' class='option-radio' value='b' ><label for="number21" class='ra'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B. 本金5%以内的损失</label> <br><br>
+        <input type="radio" name='number8' id='number22' class='option-radio' value='c'><label for="number22"  class='ra'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C.  本金5%-20%的损失</label><br><br>
+        <input type="radio" name='number8' text='否' id='number23' class='option-radio' value='d' ><label for="number23" class='ra'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D. 本金20%以上的损失</label>  
+        <!-- 问题9 -->
+         <div class='question'>9. 在作出重大理财决策时, 您更关注的是潜在的亏损还是可能产生的收益？</div>
+        <input type="radio" name='number9' id='number24' class='option-radio' value='a'><label for="number24"  class='ra'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A.  总是关注亏损 </label><br><br>
+        <input type="radio" name='number9' text='否' id='number25' class='option-radio' value='b' ><label for="number25" class='ra'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B. 通常关注亏损</label> <br><br>
+        <input type="radio" name='number9' id='number26' class='option-radio' value='c'><label for="number26"  class='ra'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C.  通常关注收益</label><br><br>
+        <input type="radio" name='number9' text='否' id='number27' class='option-radio' value='d' ><label for="number27" class='ra'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D. 总是关注收益</label>   
+           <!-- 问题10 -->
+         <div class='question'>10.  您准备在多融理财投资的资金占到您个人或者家庭资产（包括固定和流动资产）的比例范围？</div>
+        <input type="radio" name='number10' id='number28' class='option-radio' value='a'><label for="number28"  class='ra'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A. 10%以下 </label><br><br>
+        <input type="radio" name='number10' text='否' id='number29' class='option-radio' value='b' ><label for="number29" class='ra'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B.  10%以上30%以下</label> <br><br>
+        <input type="radio" name='number10' id='number30' class='option-radio' value='c'><label for="number30"  class='ra'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C. 30%以上50%以下</label><br><br>
+        <input type="radio" name='number10' text='否' id='number31' class='option-radio' value='d' ><label for="number31" class='ra'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D.  50%以上</label> 
+       <!--  按钮 -->
+        <div class='box'>
+        <input type="button" value="提交" class='disable-box submit' ng-show='!submitBtn' style='margin-top: 47px;float: right;'>
+        <input type="button" value="提交" class='submit-box submit' ng-click='submit()' style='margin-top: 47px;float: right;'>
+        </div>
+    </div>
+   <!--  弹框 -->
+   <div class='mask' ng-show='mask==true'>
+  <div class="tan1" style='width: 100%;
+  height: 100%;
+  position: fixed; 
+  background-color: rgba(0, 0, 0, 0.6);
+   background:#000\9;
+  filter:alpha(opacity=60);
+  top: 0;
+  left: 0;z-index:999;'></div>
+     <div class='record' style='top:20%;left:50%;margin-left: -230px;'>
+         <div class='close' ng-click='close()'><a ui-sref='main.myAccount.accountHome'>×</a></div>
+         <div class='recordImg'></div>
+         <div class='recordCon'>
+             恭喜您完成测评<br>您的风险偏好为<span id='leixing'>{{leixing}}</span>
+         </div>
+         <div class='button' ng-click='close()'><a ui-sref='main.myAccount.accountHome' class='button' style='display: block'>完成</a></div>
+     </div>
+ </div>
+</div>
+<script>
+
+
+
+</script>
+

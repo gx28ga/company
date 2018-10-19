@@ -1,0 +1,42 @@
+<div class="bg-wrapper" ng-controller="noviceOnlyEnjoyCtrl">
+  <div class="main">
+    <div ng-if="uid == undefined" class="btn-area">
+      <div class="current on" ng-click="$state.go('dl')"></div>
+      <div class="time on" ng-click="$state.go('dl')"></div>
+    </div>
+    <div ng-if="uid !=undefined" class="btn-area">
+      <div ng-if="currentStatus == false" class="current off"></div>
+      <div ng-if="currentStatus == true" class="current on" ng-click="$state.go('main.newZeroDetail')"></div>
+      <div ng-if="timeStatus == false" class="time off"></div>
+      <div ng-if="timeStatus == true" class="time on" ng-click="onInvestTime()"></div>
+    </div>
+    <div class="rule-area">
+      <p>1、活动时间：即日起</p>
+      <p>2、活动仅针对活动期间内新注册的用户</p>
+      <p>3、注册即送</p>
+      <p>①1588元红包：20元红包+268元红包+300元红包+1000元红包的组合奖励，红包将即时发放到您的账户，请在有效期内使用。红包可用于投资时使用，投资生效后将以现金的形式返到您的账户</p>
+      <p>②2%加息券：全场通用（除新手专享产品外），可用于投资时使用，可在原有收益的基础上额外获得2%的收益</p>
+      <p>4、新手专享产品</p>
+      <p>①新手宝：仅限新用户首笔投资的类活期产品，首周加息5%，每人最高可购买额度为50000元。可随时退出，但只能投资1次。假如注册成功后首笔投资了其他产品，则无法投资新手宝。</p>
+      <p>②12%新手专享产品：仅限新用户投资1次，每人最高可购买额度为50000元。</p>
+      <p>5、想获得更多福利，了解更多活动信息，请联系4006-908-896，同时您也可以等待您的专属理财师电话联系！</p>
+      <p>6、本次活动最终解释权归多融财富所有</p>
+    </div>
+  </div>
+  <div class="footer-container">
+    <div class="content-area">
+      <div class="qrcd">
+        <img src="../../main/images/novice-only-enjoy-pc/app-qrcd.jpg">App下载
+      </div>
+      <div class="mb-os"></div>
+      <div class="qrcd" style="margin-left: 98px">
+        <img src="../../main/images/novice-only-enjoy-pc/wechat-public.jpg">关注公众号
+      </div>
+      <div class="phone-mark"></div>
+      <div class="phone-detail">
+        <h3>4006-908-896</h3>
+        <span style="margin-left: 8px;">服务时间08:30-20:30（法定节假日除外）</span>
+      </div>
+    </div>
+  </div>
+</div>

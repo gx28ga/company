@@ -1,0 +1,87 @@
+<div class="recharge-box">
+    {% if type!=2 %}
+    <div v-if="map && map.info.status == 5 && isLogin && funds" v-show="funds" style="display:none">
+    {% else %}
+    <div v-if="map  && isLogin && funds" v-show="funds" style="display:none">
+    {% endif %}
+        <a class="recharge-btn" @click="recharge" href="javascript:void(0)">充值</a>
+        <div class="my-rest">
+            账户余额：
+            <b>${funds.balance| isNumber2}</b> 元
+        </div>
+        <div class="input">
+            <div class="del" :class="{gray:delClass}" @click="del">-</div>
+            {% if type==2 %}
+            <input class="text" type="text" v-model="num" :maxlength="String(map.currentInfo.balance).length"
+           placeholder="最低{{map.currentInfo.leastPurchaseAmount}}元起投" />
+            {% else %}
+            <input class="text" type="text" v-model="num" :maxlength="String(map.info.surplusAmount).length"
+            placeholder="最低{{map.info.leastaAmount}}元起投" />
+            {% endif %}
+            <div class="add" :class="{gray:addClass}" @click="add">+</div>
+        </div>
+        {% if type !=2 %}
+        <div class="profit">
+            预计利息收益：<b>${profit}</b> 元
+        </div>
+        {% else %}
+        <div class='profit'></div>
+        {% endif %}
+        <div class="error" :class='{cur:error}'>${errorMsg}</div>
+        <!-- 新手宝下架处理 START-->
+        <!--<div class="btn" :class="{gray:btnClass}" @click="submit">${btnName}</div>-->
+        {% if type != 2 %}
+        <div class="btn" :class="{gray:btnClass}" @click="submit">${btnName}</div>
+        {% else %}
+        <div class="btn gray" onmouseover="this.style.background='#DDD'" onmouseout="this.style.backgroud='#DDD'">已售罄</div>
+        {% endif %}
+        <!-- 新手宝下架处理 END-->
+        {% if type!=2%}
+        <div class="checkbox-mod" v-if="map && map.info.id!=2">
+            <label>
+                <input type="checkbox" v-model="check"/>
+                我已阅读并同意
+                <a v-if="protocols.length" v-for="item in protocols" :href="item.url" target="_blank" >
+                    《${item.name}》
+                </a>
+            </label>
+        </div>
+        {% else %}
+        <div class="checkbox-mod" v-if="map">
+        <label>
+            <input type="checkbox" v-model="check"/>
+            我已阅读并同意
+            <a href="/other/protocol/currentProtocol.html" target="_blank">
+                《活期投资协议》
+            </a>
+        </label>
+        </div>
+        {% endif %}
+    </div>
+    <div v-else v-show="!funds" style="display:none">
+        <div class="my-rest">
+            账户余额：
+            <b>0</b>元
+        </div>
+        {%if type ==2%}
+        <input disabled="disabled" class="text gray" type="text"
+               placeholder="最低{{map.currentInfo.leastPurchaseAmount}}元起投" />
+        <div class='profit'></div>
+        {% else %}
+        <input disabled="disabled" class="text gray" type="text"
+               placeholder="最低{{map.info.leastaAmount}}元起投" />
+        <div class="profit">
+            预计利息收益：<b>0</b> 元
+        </div>
+        {% endif %}
+
+        <!-- 新手宝下架处理 START -->
+        <!--<div class="btn" @click="login">请登录后查看</div>-->
+        {% if type != 2 %}
+        <div class="btn" @click="login">请登录后查看</div>
+        {% else %}
+        <div class="btn gray" onmouseover="this.style.background='#DDD'" onmouseout="this.style.backgroud='#DDD'">已售罄</div>
+        {% endif %}
+        <!-- 新手宝下架处理 END -->
+    </div>
+</div>

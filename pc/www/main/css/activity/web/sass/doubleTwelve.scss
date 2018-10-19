@@ -1,0 +1,622 @@
+.doubleTwelve-wrapper{width: 100%;background: #e3eefa;overflow: hidden;
+	.banner{
+		background: url('../../../../images/doubleTwelve/bannerBg.png') center center no-repeat;width: 100%;height:685px;position: relative;
+		.bannerText{
+			background: url('../../../../images/doubleTwelve/bannerText.png') center center no-repeat;width:921px;height:207px;position: absolute;top: 160px;left:0;right:0;margin:auto;}
+		.bannerLenR{
+			background: url('../../../../images/doubleTwelve/bannerLenR.png') center no-repeat;width: 760px;height:292px;position: absolute;top:398px;left:1030px;}
+		.bannerPrize{
+			background: url('../../../../images/doubleTwelve/bannerprize.png') center center no-repeat;width: 710px;height:258px;position: absolute;bottom:0;left:0;right:0;margin:auto;}
+		.bannerSnow{
+			background: url('../../../../images/doubleTwelve/bannerSnow.png')center center no-repeat;width:100%;height:98px;position: absolute;bottom:0;}
+	}
+	.content-wrapper{
+		background: url('../../../../images/doubleTwelve/conBg.jpg') center center no-repeat;width: 100%;height:2231px;position: relative;z-index:2;
+		.conTop{
+			background: url('../../../../images/doubleTwelve/conTop.png') center center no-repeat;width:100%;height:269px;position: absolute;top: 0;z-index:3;
+			.title{
+				width:1200px;height:161px;position:absolute;top:85px;left:0;right:0;margin:auto;
+				p.titleCon{
+					font-size:52px;line-height:160px;color:#fff;text-align:center;
+				}
+				span.titleNotice{
+					width:307px;height:139px;background:#b61d18;border:2px dashed #fff;border-radius:50%;display: block;position: absolute;top: 8px;right: 34px;
+					p.sti{
+						font-size:24px;height: 68px;color:#ffff66;line-height:48px;text-align:center;margin-top:5px;animation:anfirst 5s;
+						span{
+							font-size:30px;
+						}
+					}
+					p.stp{
+						font-size:14px;color:#ffffcc;text-align:center;
+					}
+				}
+			}
+		}
+		.JPBox{
+			width:1200px;height:387px;position:relative;left:0;right:0;margin:auto;top:180px;z-index:0;
+			.JPLeft{
+				background: url('../../../../images/doubleTwelve/conPriL.png') center center no-repeat;width:479px;height:294px;position: absolute;top: 0;
+				p.SYJH{
+					font-size:18px;color:#eee;margin-top: 150px;text-align: center;
+				}
+				.dlBtn{
+					background: url('../../../../images/doubleTwelve/dlBtn.png') center center no-repeat;width:200px;height:45px;position: absolute;bottom:42px;left:0;right:0;margin:auto;font-size:18px;color:#010101;line-height:45px;text-align:center;cursor: pointer;
+				}
+			}
+			.JPRight{
+				background: url('../../../../images/doubleTwelve/conPriR.png') center center no-repeat;width:687px;height:387px;position: absolute;top: 0;right:0;
+				p.TZ{
+					font-size:24px;color:#ffcc00;line-height:45px;margin-top:170px;margin-left:45px;margin-bottom:10px;
+					.TZBtn{
+						background: url('../../../../images/doubleTwelve/dlBtn.png') center center no-repeat;width:200px;height:45px;font-size:18px;color:#010101;line-height:45px;text-align:center;display: block;float: right;margin-right: 200px;cursor: pointer;
+						&:hover{
+							text-decoration: none;
+						}
+					}
+				}
+				p.rule{
+					font-size:14px;color:#eeeeee;line-height:24px;margin-left:48px;
+				}
+				a.allPrize{
+					font-size:14px;color:#9de3ff;line-height:30px;float: right;margin-right: 35px;
+				}
+			}
+		}
+		.ZDBox{
+			width:100%;height:700px;margin:0 auto;position:relative;top:190px;
+			.ZDBottom{
+				background: url('../../../../images/doubleTwelve/ZDBgBott.png') center center no-repeat;width:100%;height:308px;position:absolute;bottom:0;
+				p.title{
+					text-align: center;margin-top: 130px;font-size:24px;color:#fff;
+				}
+				.person-list{
+					width:1050px;height:44px;position:absolute;bottom:63px;left:0;right:0;margin:auto;overflow:hidden;
+					ul{
+						li{
+							float: left;padding-left: 30px;height: 20px;line-height: 28px;color: #ffcccc;
+							.phone{
+								width: 160px;display: block;float: left;
+							}
+							.prizename{
+								width:160px;display: block;float: left;text-align:center;
+							}
+						}
+					}
+				}
+			}	
+			.DBox{
+				width:1200px;height:auto;position: absolute;left: 0;right: 0;margin: auto;top: 150px;
+				/* .HD{
+					background: url('../../../../images/doubleTwelve/E.png') center center no-repeat;width:243px;height:309px;display:block;float:left;
+					&:hover{
+						background: url('../../../../images/doubleTwelve/EL.png') center center no-repeat;
+					}
+					&:active{
+						background: url('../../../../images/doubleTwelve/ELH.png') center center no-repeat;
+					}
+				} */
+	            // ul li{z-index:9;}
+	            .egg_list{position:relative;width:1200px;}
+	            .egg_list li.HD{float:left;background:url('../../../../images/doubleTwelve/E.png') no-repeat bottom;width:243px;height:309px;cursor:pointer;position:relative;margin-left:110px;}
+	            .egg_list li.current{background:url('../../../../images/doubleTwelve/ELH.png') no-repeat bottom;cursor:default;z-index:300;}
+	            .hammer{background:url('../../../../images/doubleTwelve/czz.png') no-repeat;width:500px;height:352px;position:absolute; text-indent:-9999px;z-index:-7;left: 23px;top: -160px;}
+	            .result_tip{position:absolute; background:#ffc ;width:148px;padding:6px;z-index:500;top:200px; left:10px; color:#f60; text-align:center;overflow:hidden;display:none;z-index:500;}
+	            .result_tip b{font-size:14px;line-height:24px;}
+			}
+			.snow-face{
+				background: url('../../../../images/doubleTwelve/snowFace.png') center center no-repeat;width:100%;height:142px;position:absolute;bottom:142px;z-index:444;
+			}
+		}
+
+    // .demo_transform5{-webkit-transition:all 1s ease-in-out;-moz-transition:all 1s ease-in-out}
+    // .demo_transform5:hover{-webkit-transform:rotate(360deg) skew(-20deg) translate(100px,0);-moz-transform:rotate(360deg) skew(-20deg) translate(100px,0)}
+
+		.prizebox{
+			width:1100px;height:125px;position: absolute;left: 0;right: 0;margin: auto;
+			bottom: 690px;
+			.prizerelative{
+				position:relative;height:125px;
+				.prizething{
+					display:block;float: left;
+					&.prizeone{
+						transition:all 1s ease-in-out;
+						transform:rotatey(0deg) translateX(0px); opacity:0;
+						background: url('../../../../images/doubleTwelve/prizeone.png') center center no-repeat;width:157px;height:125px;position:absolute;
+						&.cur{
+							transform:rotatey(360deg) translateX(0px);opacity:1;
+						}
+					}
+					&.prizetwo{
+						transition:all 1s ease-in-out;
+						transform:rotatey(0deg) translateX(157px); opacity:0;
+						background: url('../../../../images/doubleTwelve/prizetwo.png') center center no-repeat;width:157px;height:125px;position:absolute;
+						&.cur2{
+							transform:rotatey(360deg) translateX(157px);opacity:1;
+						}
+					}
+					&.prizethree{
+						transition:all 1s ease-in-out;
+						transform:rotatey(0deg) translateX(314px); opacity:0;
+						background: url('../../../../images/doubleTwelve/prizethree.png') center center no-repeat;width:157px;height:125px;position:absolute;
+						&.cur3{
+							transform:rotatey(360deg) translateX(314px);opacity:1;
+						}
+					}
+					&.prizefour{
+						transition:all 1s ease-in-out;
+						transform:rotatey(0deg) translateX(471px); opacity:0;
+						background: url('../../../../images/doubleTwelve/prizefour.png') center center no-repeat;width:157px;height:125px;position:absolute;
+						&.cur4{
+							transform:rotatey(360deg) translateX(471px);opacity:1;
+						}
+					}
+					&.prizefive{
+						transition:all 1s ease-in-out;
+						transform:rotatey(0deg) translateX(628px); opacity:0;
+						background: url('../../../../images/doubleTwelve/prizefive.png') center center no-repeat;width:157px;height:125px;position:absolute;
+						&.cur5{
+							transform:rotatey(360deg) translateX(628px);opacity:1;
+						}
+					}
+					&.prizesix{
+						transition:all 1s ease-in-out;
+						transform:rotatey(0deg) translateX(785px); opacity:0;
+						background: url('../../../../images/doubleTwelve/prizesix.png') center center no-repeat;width:157px;height:125px;position:absolute;
+						&.cur6{
+							transform:rotatey(360deg) translateX(785px);opacity:1;
+						}
+					}
+					&.prizeseven{
+						transition:all 1s ease-in-out;
+						transform:rotatey(0deg) translateX(942px); opacity:0;
+						background: url('../../../../images/doubleTwelve/prizeseven.png') center center no-repeat;width:157px;height:125px;position:absolute;
+						&.cur7{
+							transform:rotatey(360deg) translateX(942px);opacity:1;
+						}
+					}
+				}
+			}
+		}
+		.giftBox{
+			width:1200px;height:170px;position: absolute;left: 0;right: 0;margin: auto;top: 1980px;
+			.gift{
+				background: url('../../../../images/doubleTwelve/LW.png') center center no-repeat;width:262px;height:167px;position: absolute;left: 900px;
+			}
+			.giftD{
+				animation:anTwo 3s;
+			}
+		/* .gift{animation: anfirst 5s linear; -moz-animation: anfirst 5s linear;
+		-webkit-animation: anfirst 5s linear;
+		-o-animation: anfirst 5s linear 2s infinite alternate;} */
+		}
+	}
+	.common-wrapper{
+		padding-bottom: 70px;
+		overflow: hidden;
+		background:#fff;
+		.mode{
+			width: 1198px;
+			margin: 65px auto 0;
+			border: 1px solid #87c9df;
+			position: relative;
+			.title{
+				width: 162px;
+				height: 33px;
+				text-align: center;
+				line-height: 33px;
+				background: #20b2e3;
+				font-size: 18px;
+				color: #f0f0f0;
+				float: left;
+				margin: -17px 0 0 30px;
+			}
+			.love-icon{
+				position: absolute;
+				left: 53px;
+				top: 140px;
+			}
+			.content{
+				padding: 49px 0 10px 120px;
+				overflow: hidden;
+				clear: both;
+				zoom: 1;
+				.iconmode{
+					width: 529px;
+					float: left;
+					height: 137px;
+					position: relative;
+					i{
+						position: absolute;
+						left: 0;
+						top: 0;
+					}
+					div{
+						padding: 14px 0 0 112px;
+						font-size: 14px;
+						color: #333;
+						span{
+							font-size: 26px;
+							color: #333;
+						}
+					}
+				}
+			}
+			ul{
+				padding: 40px 0 40px 33px;
+				overflow: hidden;
+				clear: both;
+				zoom: 1;
+				li{
+					float: left;
+					margin-right: 17px;
+					width: 271px;
+					text-align: center;
+					a:hover{
+						color: #333;
+					}
+					p{
+						font-size: 14px;
+						color: #333;
+						line-height: 24px;
+						padding-top: 16px;
+					}
+				}
+			}
+			.partners{
+				padding: 50px 0 44px 30px;
+				overflow: hidden;
+				clear: both;
+				zoom: 1;
+				.zhongqiu-left{
+					float: left;
+					margin: 30px 10px 0 0;
+					cursor: pointer;
+				}
+				.imgs{
+					width: 1099px;
+					overflow: hidden;
+					float: left;
+					height: 78px;
+					ul{
+						width: 2080px;
+						padding: 0;
+						li{
+							float: left;
+							width: auto;
+							margin: 0 !important;
+							img{
+								width: 153px;
+							}
+						}
+					}
+				}
+				.zhongqiu-right{
+					float: left;
+					margin: 30px 0 0 10px;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+	.code-wrapper{
+		width: 100%;
+		height: 200px;
+		background: #20b2e3;
+		.code{
+			width: 1200px;
+			margin: 0 auto;
+			position:relative;
+			.appcode{
+				float: left;
+				margin: 41px 0 0 44px;
+			}
+			.wechatcode{
+				float: left;
+				margin: 41px 0 0 198px;
+			}
+			.tel{
+				float: left;
+				margin: 76px 0 0 353px;
+				.number{
+					i{
+						float: left;
+					}
+					div{
+						float: left;
+						color: #fff;
+						padding-left: 13px;
+						margin-top: -5px;
+						span{
+							font-size: 32px;
+						}
+						p{
+							font-size: 12px;
+							margin-top: -3px;
+						}
+					}
+				}
+			}
+			.title{
+				font-size: 16px;
+				color: #fff;
+				padding-top: 6px;
+			    width: 106px;
+			    text-align: center;
+			}
+			.code-box{
+				overflow: hidden;
+				.app-code-icon{
+					float: left;
+					img{
+						display: block;
+						border: 1px solid #008c40;
+					}
+				}
+				.app-code-word{
+					float: left;
+					padding: 29px 0 0 18px;
+					p{
+						
+						i{
+							width: 104px;height: 60px;background: url('../../../../images/olympiad/appicon.png') center center no-repeat;position: absolute;top: 67px;left: 167px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.htmleaf-content {
+	font-size: 150%;
+	padding: 1em 0;
+	min-height: 100vh;
+}
+.snow-canvas {
+	display: block;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	pointer-events: none;
+}
+@keyframes prizeone{
+	0%{
+		transform: rotate(0deg);
+		left:880px; -moz-opacity:0; -webikit-opacity: 0; opacity: 0;
+	}
+	50%{
+		transform: rotate(30deg);
+		left:440px; -moz-opacity:.5; -webikit-opacity: .5; opacity: .5;
+	}
+	100%{
+		transform: rotate(0deg);
+		left: 0px; -moz-opacity:1; -webikit-opacity: 1; opacity: 1;
+	}
+}
+@keyframes prizetwo{
+	0%{
+		transform: rotate(0deg);
+		left:880px;
+	}
+	50%{
+		transform: rotate(30deg);
+		left:550px;
+	}
+	100%{
+		transform: rotate(0deg);
+		left: 220px;
+	}
+}
+@keyframes prizethree{
+	0%{
+		transform: rotate(0deg);
+		left:880px;
+	}
+	50%{
+		transform: rotate(30deg);
+		left:660px;
+	}
+	100%{
+		transform: rotate(0deg);
+		left: 440px;
+	}
+}
+@keyframes prizefour{
+	0%{
+		transform: rotate(0deg);
+		left:880px;
+	}
+	50%{
+		transform: rotate(30deg);
+		left:770px;
+	}
+	100%{
+		transform: rotate(0deg);
+		left: 660px;
+	}
+}
+@keyframes anTwo{
+	0%{
+		transform: rotate(0deg);
+		left:900px;
+	}
+	25%{
+		transform: rotate(20deg);
+		left:600px;
+	}
+	50%{
+		transform: rotate(0deg);
+		left:600px;
+	}
+	55%{
+		transform: rotate(0deg);
+		left:600px;
+	}
+	70%{
+		transform: rotate(0deg);
+		left:600px;
+	}
+	100%{
+		transform: rotate(-360deg);
+		left: 900px;
+	}
+}
+@keyframes anfirst{
+	0%{
+		transform: rotate(0deg);
+		font-size:36px;
+	}
+	25%{
+		transform: rotate(20deg);
+		font-size:36px;
+	}
+	50%{
+		transform: rotate(-20deg);
+		font-size:36px;
+	}
+	75%{
+		transform: rotate(0deg);
+		font-size:36px;
+	}
+	100%{
+		transform: rotate(0deg);
+		font-size:24px;
+	}
+}
+.mask-wrapper{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.6);
+	z-index:8899;
+	.tan{
+		background:image-url('olympiad-tan.png') center top no-repeat;
+		width:800px;
+		height: 450px;
+		margin:0 auto;
+		margin-top:-225px;
+		position:fixed;
+		top:50%;
+		left:50%;
+		margin-left:-400px;
+		padding-top:72px;
+		text-align:center;
+		.olympiad-liangjie{
+			background:image-url('../../../../images/doubleTwelve/liangjie.png') center top no-repeat;
+			width:212px;
+			height: 50px;
+			margin:0 auto 35px;
+		}
+		span{
+			font-size:24px;
+			line-height:36px;
+			color:#333;
+			text-align:center;
+		}
+		.olympiad-btn{
+			background:image-url('../../../../images/doubleTwelve/btn.png') center top no-repeat;
+			width:126px;
+			height: 32px;
+			margin:126px auto 0;
+			cursor: pointer;
+		}
+	}
+	.tanBg{
+		background:image-url('../../../../images/doubleTwelve/tanBg.png') center top no-repeat;
+		width:661px;
+		height: 497px;
+		margin:0 auto;
+		margin-top:-249px;
+		position:fixed;
+		top:50%;
+		left:50%;
+		margin-left:-330px;
+		padding-top:82px;
+		text-align:center;
+		&.tanBgt{
+			background:image-url('../../../../images/doubleTwelve/tanBgt.png') center top no-repeat;
+		}
+		.close{
+			width:50px;height:50px;border-radius:50%;position:absolute;right:0;top:0;
+		}
+		.title{
+			span.thankes{
+				font-size:30px;color:#fdff3e;text-align:center;display:block;
+			}
+			span.wkstitle{
+				font-size:30px;color:#fff600;text-align:center;display:block;font-weight:bold;
+			}
+		}
+		.titleBg{
+			background:image-url('../../../../images/doubleTwelve/titleBg.png') center top no-repeat;
+			width:508px;
+			height: 68px;
+			margin:0 auto;position: relative;z-index:99;padding-left:30px;
+			span.cz{
+				font-size:18px;color:#008dbc;display:block;text-align:left;line-height:60px;
+			}
+		}
+		.content{
+			width:445px;background:#fff;margin:-30px auto 0;padding:40px 30px 0;border-radius:8px;
+			&.conPL{
+				width:505px;padding:40px 0 30px;
+			}
+			.over{
+				height:120px;margin:0 auto;overflow-y:auto;
+				&.priLi{
+					height:160px;
+				}
+				table{
+					width:100%; height:100%; overflow:hidden;
+					td{
+						span{
+							font-size:14px;color:#008dbc;display:block;text-align: left;padding-left: 20px;
+						}
+					}
+				}
+			}
+			.conBottom{
+				width:100%;height:67px;margin:0 auto;padding-top:5px;border-top:1px solid #008dbc;text-align:left;font-size:14px;color:#666666;line-height:20px;
+			}
+		}
+		.hwks{
+			background:image-url('../../../../images/doubleTwelve/WKS.png') center top no-repeat;
+			width:654px;height: 304px;position: absolute;bottom: 93px;left: 3px;z-index:44;
+		}
+		.yjs{
+			background:image-url('../../../../images/doubleTwelve/yjs.png') center top no-repeat;
+			width:654px;height: 304px;position: absolute;bottom: 93px;left: 3px;
+		}
+		.wtz{
+			background:image-url('../../../../images/doubleTwelve/wtz.png') center top no-repeat;
+			width:229px;height: 231px;position: absolute;bottom: 173px;left: 0;right: 0;margin: auto;
+		}
+		.getx{
+			background:image-url('../../../../images/doubleTwelve/getx.png') center top no-repeat;
+			width:156px;height: 199px;position: absolute;bottom: 203px;left: 0;right: 0;margin: auto;
+		}
+		.bbtom{
+			background:image-url('../../../../images/doubleTwelve/bbtom.png') center top no-repeat;
+			width:654px;height: 159px;position: absolute;bottom: 83px;left: 3px;
+		}
+		.btn{
+			width:230px;height:46px;background:#ff8400;border-radius:30px;margin:0 auto;font-size:24px;color:#fff;line-height:46px;margin-top:15px;
+			&.btnyjs{
+			    position: absolute;left: 0;right: 0;bottom: 130px;
+			}
+			&.wksbtn{
+			    position: absolute;left: 0;right: 0;bottom: 130px;
+			}
+			&.zIndex{
+			    position: absolute;left: 0;right: 0;bottom: 130px;z-index: 99999;background:none;
+			}
+		}
+		.btnk{
+			width:230px;height:46px;border-radius:30px;margin:0 auto;font-size:24px;color:#fff;line-height:46px;position:absolute;left: 0;right: 0;top: 415px;
+		}
+	}
+}

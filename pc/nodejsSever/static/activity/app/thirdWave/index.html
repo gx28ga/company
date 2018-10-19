@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html ng-app="someApp" id='ng-app' xmlns:ng="http://angularjs.org" lang="zh_CN">
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta name="theme-color" content="#2932e1">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <title >破十亿--第三波</title>
+    <link rel="stylesheet" href="stylesheets/thirdWave.css">
+    
+</head>
+<body ng-controller="thirdWaveCtrl">
+	<div class="thirWave-wrapper">
+		<div class="banner img-size" data-height="380"></div>
+		<div class="banner2 img-size" data-height="352"><p class="img-size" data-paddingTop="194">活动时间：2017-01-27 至 2017-02-02</p></div>
+		<div class ="activity img-size" data-paddingLeft="63" data-paddingRight="33" data-height="368">
+			<ul>
+				<li><i class="img-size" data-left="-40">1.</i>投资≥30天以上产品 即可参加排名</li>
+				<li><i class="img-size" data-left="-40">2.</i>活动期间累计购买金额满2万元，赠送1张2%加息券（每人限1张）<span>（2%加息券将于活动结束后7个工作日内发放到您的多融账户，可登录多融财富APP或官网查看）</span></li>
+			</ul>
+            <div ng-show="login == true&&getInerest == true" class="icon img-size" data-width="136" data-height="89" data-top="140" data-right="50"></div><!-- 已达标icon -->
+            <div ng-show="login == true&&getInerest == false" class="wicon img-size" data-width="136" data-height="89" data-top="140" data-right="50"></div><!-- 未达标icon -->
+			<div class="tzbtn img-size" id="tzbtn" data-width="500" data-height="68" data-lineHeight="68" data-marginTop="47">立即投资</div>
+			<div class="img-size" data-marginTop="29"><div class="zjbtn img-size" id="rulebtn" data-width="132" data-height="38" data-lineHeight="38">活动规则</div><div class="zjbtn img-size" id="zjbtn" data-width="132" data-height="38" data-lineHeight="38" data-marginRight="18">中奖名单</div></div>
+		</div>
+		<div class="ge img-size" data-width="718" data-height="10" data-marginTop="50"></div>
+        <div class="img-size" data-paddingLeft="32" data-paddingRight="32" data-paddingBottom="40">
+            <div class="contain img-size" style="background: #fc4e62;">
+                <div class="title img-size" data-height="46" data-width="649" data-paddingTop="42"></div>
+                <div class="content img-size" data-paddingLeft="32" data-paddingRight="32" data-marginTop="30">
+                <div ng-show="login == true">
+                    <div ng-show="funtuneOfUserinfo.fortune > 0">
+                        <p ng-show="funtuneOfUserinfo.index <= 100">您当日财富值为：{{funtuneOfUserinfo.fortune | number : 2 }}　排名：第{{funtuneOfUserinfo.index}}名</p>
+                        <p ng-show="funtuneOfUserinfo.index > 100">您当日财富值为：{{funtuneOfUserinfo.fortune | number : 2 }}　排名：> 100名</p>
+                        <p ng-show="funtuneOfUserinfo.index <= 6">预计获得：{{funtuneOfUserinfo.prize}}</p>
+                        <p ng-show="funtuneOfUserinfo.index > 6">预计获得：无</p>
+                    </div>
+                    <div ng-show="funtuneOfUserinfo.fortune == 0">
+                        <p>您当日财富值为：{{funtuneOfUserinfo.fortune}}　排名：无</p>
+                        <p>预计获得：无</p>
+                    </div>
+                </div>
+                <div ng-show="login == false">
+                    <p>您当日财富值为：***　　　排名：第 * 名</p>
+                    <p>预计获得：***</p>
+                </div>
+                    <div ng-show="login == false" class="loginbtn img-size" data-width="150" data-height="40" data-lineHeight="40" data-marginTop="-30" data-marginRight="64">登录查看</div>
+                    <div class="kuang img-size" data-width="621" data-height="481" data-marginTop="25" style="position: relative;">
+                        <table class="img-size" data-marginTop="20" style="position: absolute;"> 
+                            <tr class="img-size" data-lineHeight="50" data-marginTop="15">
+                                <td width="10%">排名</td>
+                                <td width="30%">手机号</td>
+                                <td width="30%">财富值</td>
+                                <td width="30%"> 奖品</td>
+                            </tr>
+                            <tr class="img-size" data-lineHeight="52" ng-repeat="obj in dayRank">
+                                <td width="10%">{{obj.index}}</td>
+                                <td width="30%">{{obj.mobilePhone}}</td>
+                                <td width="30%">{{obj.fortune | number : 2 }}</td>
+                                <td width="30%">{{obj.prize}}</td>
+                            </tr>
+                        </table>
+                        <div style="position:absolute;left:0;right:0" class="img-size" data-bottom="12">
+                            <p class="img-size" id="date" data-marginTop="14">更新时间：{{now1 | date:'yyyy-MM-dd HH:mm:ss'}}</p>
+                            <p class="gs">财富值=投资金额*投资期限/365</p>
+                        </div>
+                    </div>
+                    <div class="tzbtn img-size" id="sxbtn" data-width="300" data-height="60" data-lineHeight="60" data-marginTop="33">刷新</div>
+                    <ul class="notice img-size" data-paddingLeft="40" data-paddingBottom="26" data-marginTop="14"><li><i class="img-size" data-left="-40">*</i>榜单实时展示，榜单结果以当天 23:59:59 最终结果为准，其余时间仅供参考</li></ul>
+    			</div>
+            </div>
+		</div>
+
+        <div class="mask" style="display: none;"><!--    -->
+            <div ng-show="activity.isrule" id="rule" class="rule img-size" data-width="690" data-height="988" data-marginTop="-494" data-marginLeft="-345">
+                 <div class="close img-size" data-width="62" data-height="62" data-marginRight="4"></div>
+                 <div class="titlebg img-size" data-width="429" data-height="52" data-lineHeight="52" data-marginTop="96" data-marginBottom="10">活动规则</div>
+                 <ul class="img-size" data-height="740" data-paddingLeft="95" data-paddingTop="30" data-paddingRight="60">
+                     <li class="img-size" data-marginBottom="10"><i class="img-size" data-left="-30">1.</i>活动时间：2017年1月27日-2017年2月2日</li>
+                     <li class="img-size" data-marginBottom="10"><i class="img-size" data-left="-30">2.</i>活动期间，每天进行一次排名，共7天，每天投资前6名可获得奖励；活动期间累计购买30天及以上产品金额满20000元，可获得2%加息券一张（每人限1张）</li>
+                     <li class="img-size" data-marginBottom="10"><i class="img-size" data-left="-30">3.</i><span>排名规则：</span></li>
+                     <li class="img-size" data-marginBottom="10"><i class="img-size" data-left="-30" data-lineHeight="40" id="small">●</i>排名统计时间，当天 0:00~23:59:59，以提交订单时间为准</li>
+                     <li class="img-size" data-marginBottom="10"><i class="img-size" data-left="-30" data-lineHeight="40" id="small">●</i>购买30天及以上期限产品，参与排名，按财富值进行排名，财富值=投资金额*投资期限/360</li>
+                     <li class="img-size" data-marginBottom="10"><i class="img-size" data-left="-30" data-lineHeight="40" id="small">●</i>榜单实时展示，榜单结果以当天 23:59:59 最终结果为准，其余时间仅供参考</li>
+                     <li class="img-size" data-marginBottom="10"><i class="img-size" data-left="-30" data-lineHeight="40" id="small">●</i>如遇到财富值相同的情况，按最先到达该财富值的用户优先排名</li>
+                     <li class="img-size" data-marginBottom="10"><i class="img-size" data-left="-30">4.</i>榜单前6名依次可获得奖品：2000元京东购物卡、1000元京东购物卡、500元京东购物卡、200元京东购物卡、100元京东购物卡、50元京东购物卡</li>
+                     <li class="img-size" data-marginBottom="10"><i class="img-size" data-left="-30">5.</i>平台将于2月3日上午公布本次活动所有中奖名单</li>
+                     <li class="img-size" data-marginBottom="10"><i class="img-size" data-left="-30">6.</i>京东卡奖品将统一于活动结束后15个工作日内发放，2%加息券将于活动结束后7个工作日内发放到您的多融账户，可登录多融财富APP或官网查看</li>
+                     <li class="img-size" data-marginBottom="10"><i class="img-size" data-left="-30">7.</i>本次活动最终解释权归多融财富所有</li>
+                 </ul> 
+             </div> 
+            <div ng-show="activity.isqudao" class="notice img-size" id="qudao" data-width="687" data-height="654" data-marginTop="-327" data-marginLeft="-344">
+                <div class="close img-size" data-width="62" data-height="62" data-marginRight="4"></div>
+                <div class="titlebgg img-size" data-width="429" data-height="52" data-lineHeight="52" data-marginTop="76" data-marginBottom="10">提示</div> 
+                <p class="noticetitle img-size" data-lineHeight="164">{{notice.title}}</p>
+                <p class="noticetext">{{notice.text1}}</p>
+                <p class="noticetext">{{notice.text2}}</p>
+                <p class="noticetext">{{notice.text3}}</p>
+                <div class="tanbtn img-size" data-width="300" data-height="60" data-lineHeight="60" data-marginTop="65">{{notice.btntext}}</div>
+            </div><!--    -->
+            <div ng-show="activity.zjlist" class="notice img-size" id="zjlist" data-width="687" data-height="654" data-marginTop="-327" data-marginLeft="-344" >
+                 <div class="close img-size" data-width="62" data-height="62" data-marginRight="4"></div>
+                 <div class="titlebgg img-size" data-width="429" data-height="52" data-lineHeight="52" data-marginTop="76" data-marginBottom="10">每日中奖名单</div>
+                 <div class="img-size" class="tablebox" data-height="460" style="overflow-y:hidden;" data-paddingLeft="60" data-paddingRight="60" style="position: relative;">
+                    <div class="info">
+                        <div style="color: #e20c2e;">{{rankList[pageOn].date}}</div>
+                        <div class="img-size" data-marginTop="16" data-marginLeft="36"></div>
+                        <div class="img-size" data-marginTop="18" data-width="300"></div>
+                    </div>
+                    <table class="table img-size" data-marginTop="50" data-width="571" data-height="250" data-top="130" ng-show="rankList[pageOn].thxgThird != ''" style="position: absolute;"> 
+                        <tr class="img-size" data-lineHeight="50"><td width="10%">排名</td><td width="30%">手机号</td><td width="25%">财富值</td><td width="35%">奖品</td></tr>
+                        <tr class="img-size" data-lineHeight="46" ng-repeat="item in rankList[pageOn].thxgThird"><td width="10%">{{item.index}}</td><td width="30%">{{item.mobilePhone}}</td><td width="25%">{{item.fortune | number : 2 }}</td><td width="35%">{{item.prize}}</td></tr>
+                    </table>
+                    <table id="table" class="table img-size" data-marginTop="50" data-width="571" data-height="250" ng-show="rankList[pageOn].thxgThird == ''" style="position: absolute;"> 
+                        <tr class="img-size" data-lineHeight="50"><td width="10%">排名</td><td width="30%">手机号</td><td width="25%">财富值</td><td width="35%">奖品</td></tr>
+                        <tr class="img-size" data-lineHeight="46"><td colspan = " 4 ">暂未公开</td></tr>
+                    </table>
+                    <div class="page-wrap img-size" data-height="36" data-width="320" data-bottom="80">
+                        <div class="page-box img-size">
+                            <a href ng-click="onClickPage('beforPage',pageOn)" class="prev img-size" data-width="90" data-height="34" data-lineHeight="34">上一页</a>
+                            <ul><li><a href="" class="cur img-size" data-width="40" data-height="36" data-lineHeight="36">{{(liTab-pageOn)}}</a></li></ul>
+                            <a href class="next img-size" data-width="90" data-height="34" data-lineHeight="34" ng-click="onClickPage('nextPage',pageOn)">下一页</a>
+                        </div>
+                        <span class="img-size" data-marginLeft="10">共{{liTab}}页</span>
+                    </div>
+                 </div>
+             </div> 
+        </div>
+	</div>
+</body>
+<script type="text/javascript" src="../../../vendor/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="../../../vendor/angular.min.js"></script>
+<script type="text/javascript" src="../../../vendor/angular-resource.min.js"></script>
+<script type="text/javascript" src='../../common/js/modules/time.js'></script>
+<script type="text/javascript" src="js/thirdWave.js"></script>
+<script>
+	function setImgSize(){
+        var  originWidth = 375
+            ,ratio =$(window).width()/originWidth;
+        $('.img-size').each(function(){
+            var self = $(this);
+            $.each(['height','width','left','right','bottom','top' , 'paddingTop' ,'lineHeight' , 'paddingLeft' , 'paddingRight' , 'paddingBottom','marginTop', 'marginLeft' , 'marginRight' , 'marginBottom'],function( i , str ){
+                var num = self.attr('data-'+str); 
+                if( num ){
+                    num = num*ratio/2+'px';
+                    self.css(str,num)
+                }
+            });
+        });
+    }
+    setImgSize();
+</script>
+</html>

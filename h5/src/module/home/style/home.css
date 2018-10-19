@@ -1,0 +1,85 @@
+/**
+* describe 首页样式
+* Created by wangCuiqing
+* Date: 2018/4/23
+*/
+.home{
+    color:#102542;
+    .upper{
+        background:#fff;
+    }
+    .upperTop{
+        background:url("../../../images/home/top.png") no-repeat;
+        background-size:cover;
+        .logo{
+            background:url("../../../images/home/logo.png") no-repeat;
+            background-size:contain;
+            margin:0 auto;
+        }
+        .upperCon{
+            color:#fff;
+            text-align:center;
+        }
+        .knowMore{
+            border:1px solid #fff;
+            border-radius:13px;
+            color:#fff;
+            text-align:center;
+            margin:0 auto;
+        }
+    }
+    .newGift{
+        background:#fff;
+        border-radius:5px;
+        box-shadow:0 0 4px -1px rgba(0,0,0,40);
+        margin:0 auto;
+        .newGiftTitle{
+            text-align: center;
+        }
+        .newGiftIcon{
+            background:url("../../../images/home/Icon65.png") no-repeat;
+            background-size:contain;
+            display:inline-block;
+
+        }
+        .new1{
+            background:url("../../../images/home/new_1.png") no-repeat;
+            background-size:contain;
+            margin:0 auto;
+        }
+        .new2{
+            background:url("../../../images/home/new_2.png") no-repeat;
+            background-size:contain;
+            margin:0 auto;
+        }
+        .new3{
+            background:url("../../../images/home/new_3.png") no-repeat;
+            background-size:contain;
+            margin:0 auto;
+        }
+        .upperBtn{
+            background:linear-gradient(to right,#ff5b1e 0%,#ff951a 100%);
+            color:#fff;
+            text-align:center;
+            border-radius: 5px;
+            margin:0 auto;
+        }
+    }
+    .bottomSide{
+        background:#fff;
+        .userAndAmount{
+            display: flex;
+            .flex1{
+                flex:1;
+                text-align:center;
+            }
+            .bl{
+                border-left:0.5px solid #D2D2D2;
+            }
+        }
+
+    }
+    .carousel{
+        background:#fff;
+    }
+}

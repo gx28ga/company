@@ -1,0 +1,198 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+.icon-android {
+  background-image: url(../../images/common-sprites/sprite.png);
+  background-position: -270px -156px;
+  width: 21px;
+  height: 20px;
+}
+.icon-app-store {
+  background-image: url(../../images/common-sprites/sprite.png);
+  background-position: -270px -196px;
+  width: 21px;
+  height: 20px;
+}
+.icon-bb-bg {
+  background-image: url(../../images/common-sprites/sprite.png);
+  background-position: 0px 0px;
+  width: 250px;
+  height: 79px;
+}
+.icon-dot {
+  background-image: url(../../images/common-sprites/sprite.png);
+  background-position: -245px -147px;
+  width: 4px;
+  height: 4px;
+}
+.icon-drop {
+  background-image: url(../../images/common-sprites/sprite.png);
+  background-position: -316px -244px;
+  width: 12px;
+  height: 7px;
+}
+.icon-form-error {
+  background-image: url(../../images/common-sprites/sprite.png);
+  background-position: -316px -78px;
+  width: 14px;
+  height: 14px;
+}
+.icon-form-ok {
+  background-image: url(../../images/common-sprites/sprite.png);
+  background-position: -316px -112px;
+  width: 14px;
+  height: 14px;
+}
+.icon-fot-gur {
+  background-image: url(../../images/common-sprites/sprite.png);
+  background-position: -120px -239px;
+  width: 22px;
+  height: 18px;
+}
+.icon-fot-home {
+  background-image: url(../../images/common-sprites/sprite.png);
+  background-position: -40px -239px;
+  width: 20px;
+  height: 20px;
+}
+.icon-fot-qa {
+  background-image: url(../../images/common-sprites/sprite.png);
+  background-position: -80px -239px;
+  width: 20px;
+  height: 20px;
+}
+.icon-honour-icon {
+  background-image: url(../../images/common-sprites/sprite.png);
+  background-position: -316px -216px;
+  width: 11px;
+  height: 8px;
+}
+.icon-iconbg {
+  background-image: url(../../images/common-sprites/sprite.png);
+  background-position: -316px 0px;
+  width: 17px;
+  height: 19px;
+}
+.icon-icondui {
+  background-image: url(../../images/common-sprites/sprite.png);
+  background-position: -316px -39px;
+  width: 17px;
+  height: 19px;
+}
+.icon-my {
+  background-image: url(../../images/common-sprites/sprite.png);
+  background-position: -316px -146px;
+  width: 14px;
+  height: 14px;
+}
+.icon-newgift {
+  background-image: url(../../images/common-sprites/sprite.png);
+  background-position: -170px -99px;
+  width: 54px;
+  height: 14px;
+}
+.icon-online {
+  background-image: url(../../images/common-sprites/sprite.png);
+  background-position: 0px -147px;
+  width: 66px;
+  height: 72px;
+}
+.icon-opinion {
+  background-image: url(../../images/common-sprites/sprite.png);
+  background-position: -86px -147px;
+  width: 66px;
+  height: 72px;
+}
+.icon-phone {
+  background-image: url(../../images/common-sprites/sprite.png);
+  background-position: -316px -180px;
+  width: 10px;
+  height: 16px;
+}
+.icon-qa-icon {
+  background-image: url(../../images/common-sprites/sprite.png);
+  background-position: -239px -239px;
+  width: 7px;
+  height: 7px;
+}
+.icon-rule {
+  background-image: url(../../images/common-sprites/sprite.png);
+  background-position: -244px -99px;
+  width: 6px;
+  height: 9px;
+}
+.icon-shang {
+  background-image: url(../../images/common-sprites/sprite.png);
+  background-position: -270px -119px;
+  width: 26px;
+  height: 17px;
+}
+.icon-smalllogo {
+  background-image: url(../../images/common-sprites/sprite.png);
+  background-position: 0px -99px;
+  width: 150px;
+  height: 28px;
+}
+.icon-smallphone {
+  background-image: url(../../images/common-sprites/sprite.png);
+  background-position: 0px -239px;
+  width: 20px;
+  height: 20px;
+}
+.icon-success-icon {
+  background-image: url(../../images/common-sprites/sprite.png);
+  background-position: -172px -147px;
+  width: 53px;
+  height: 53px;
+}
+.icon-tip-icon {
+  background-image: url(../../images/common-sprites/sprite.png);
+  background-position: -266px -239px;
+  width: 6px;
+  height: 6px;
+}
+.icon-topsina {
+  background-image: url(../../images/common-sprites/sprite.png);
+  background-position: -162px -239px;
+  width: 19px;
+  height: 18px;
+}
+.icon-topwechat {
+  background-image: url(../../images/common-sprites/sprite.png);
+  background-position: -201px -239px;
+  width: 18px;
+  height: 18px;
+}
+.icon-wechat {
+  background-image: url(../../images/common-sprites/sprite.png);
+  background-position: -270px -41px;
+  width: 26px;
+  height: 21px;
+}
+.icon-weibo {
+  background-image: url(../../images/common-sprites/sprite.png);
+  background-position: -270px 0px;
+  width: 26px;
+  height: 21px;
+}
+.icon-yin {
+  background-image: url(../../images/common-sprites/sprite.png);
+  background-position: -270px -82px;
+  width: 26px;
+  height: 17px;
+}

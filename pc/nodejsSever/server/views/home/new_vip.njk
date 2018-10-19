@@ -1,0 +1,69 @@
+{# 新手专享标 #}
+{% for item in rookieList %}
+<div class="section clearfix" style="display: inline-block; width: 607px; margin-top: 0px; border: 1px solid #e9e9e9;">
+    <div class="title">{{item.fullName}}</div>
+    <ul class="clearfix" style="height: 80px; padding-top: 10px; overflow: hidden;">
+        <li class="rate" style="width:170px">
+            <em>{{item.rate}}<span>%</span>{% if item.activityRate>0 %}<span>+</span>{{item.activityRate}}<span>%</span>{% endif %}
+            </em>
+           <!-- {% if item.activityRate>0 %}
+            <t>
+                +{{item.activityRate}}<span>%</span>
+            </t>
+            {% endif %}-->
+            <p>历史年化收益率</p>
+        </li>
+        <li class="deadline width1" style="width: 100px;">
+            <b><span>{{item.deadline}}</span>天</b>
+            <p>产品期限</p>
+        </li>
+        <li class="deadline width2" style="width: 170px;">
+            <b><span>{{item.amount}}</span>元</b>
+            <p>产品总额</p>
+        </li>
+        <!--<li class="my-circle">
+            <p class="circle">{{item.pert}}%</p>
+            <div id="hcircle6" class="pppp" style="min-width: 180px; height: 180px; max-width: 180px; margin: -76px 0 0 -20px"></div>
+
+            {% if item.status == 5 %}
+            <span>募集进度</span>
+            {% endif %}
+            {% if item.status == 6 or item.status == 7 or item.status == 8 or item.status == 9 %}
+            <span>募集完成</span>
+            {% endif %}
+
+        </li>-->
+        <li class="submit" style="margin-left:20px">
+	        {% if item.type == 6 or item.type==7 %}
+	        {#定期理财#}
+	        <a @click="detail({id:{{item.id}}})" class="nohover mujibtn">
+		        <div class="btn {{item.statusClass }}">{{item.statusProductType.cnvalue}}</div>
+	        </a>
+
+	        {% elif item.type==2 or item.type==3 or item.type==5%}
+	        {#票据理财#}
+	        <a @click="pjdetail({id:{{item.id}}})" class="nohover mujibtn">
+		        <div class="btn {{item.statusClass }}">{{item.statusProductType.cnvalue}}</div>
+	        </a>
+	        {% endif %}
+        </li>
+    </ul>
+    {#产品管理人begin#}
+    {#<div class="aside">
+        <ul>
+            {% if item.accept != undefined and item.accept != '' %}
+            <li class="textleft">
+                <i class="bank-icon"></i>
+                产品管理人：{{item.accept}}
+            </li>
+            {% endif %}
+            <li class="tag">
+                {% import "../common/couponTag.njk" as forms %}
+                {{ forms.coupon(item) }}
+            </li>
+        </ul>
+    </div>#}
+    {#c产品管理人end#}
+    <div class="cge" style="height: 0"></div>
+</div>
+{% endfor %}

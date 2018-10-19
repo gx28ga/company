@@ -1,0 +1,15 @@
+{% extends "common/main.njk" %}
+{% block body %}
+<link href="/style/about/newsxiangqing.css" rel="stylesheet" type="text/css" inline/>
+<link href="/style/about/menu.css" rel="stylesheet" type="text/css" inline/>
+<div id='APP' class='xiangqing'>
+  {% include "./menu.njk" %} 
+  <div class='xaingqingContent'>
+        <div class='newstitle'>
+            <div class='title'>{{map.sysArticle.title}}</div>
+        </div>
+        <div class='newContent'>{{map.sysArticle.content}}</div>
+  </div>  
+</div>
+<script src="/js/about/xwxq.js" inline></script>
+{% endblock %}

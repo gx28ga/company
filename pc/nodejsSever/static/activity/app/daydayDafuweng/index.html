@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<base target="/" />
+<title>天天大富翁-多融财富</title>
+<style>
+body, div, p, h1, h2, h3, h4, h5, h6, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, table, th, td { margin: 0; padding: 0; }
+address, cite, em, i { font-style: normal; }
+html, body, root{ height:100%; overflow:hidden;}
+body{ margin:0 auto; color:#fff; -webkit-appearance: none; background:#fff; overflow-y:scroll; font-family:'PingFang SC','STHeiti','Microsoft YaHei',Helvetica,Arial,sans-serif; color: #878C92;}
+li { list-style: none; }
+html, body{ max-width:46.875rem; margin:0 auto;}
+a { color:#535862; text-decoration: none; }
+a:hover { color:#c40000; text-decoration: underline; }
+img { border: 0; }
+table { border-collapse: collapse; border-spacing: 0; }
+input[type="button"], input[type="submit"], input[type="reset"] { cursor: pointer;-webkit-appearance: none; }
+/* close commented backslash hack */
+::-webkit-input-placeholder{ font-size: 0.75rem; font-size:.75rem;  }
+
+body{}
+.app{ max-width:46.875rem; background:url(app.jpg) #7659d7 no-repeat; background-size:100% auto;  position:relative; z-index:1; }
+.tip-text{ position: absolute; font-size:0.4375rem; right:10px; top:10px; color:#fff; }
+.btn{ position:absolute; left:50%;  margin-left: -5.8125rem; width:187px; height:45px;  background:url(btn.png) no-repeat; background-size:contain; }
+.btn:hover { -webkit-filter: brightness(1.2); }
+.text{ position:absolute;  width:100%; color:#fff; font-size:0.625rem; line-height:0.9375rem; text-align:center; padding:0 0.625rem; box-sizing:border-box;}
+</style>
+</head>
+<body>
+<div class='app img-size' data-height='1334'>
+    <div class='tip-text img-size' data-fontSize='14'>活动时间：2017/4/28 13:00 ~ 2017/5/2 17:00</div>
+    <div class='text img-size' data-top='1044' data-fontSize='24' data-lineHeight='36'>
+        温馨提示：活动时间：2017/4/28 13:00 ~ 2017/5/2 17:00
+        <br>
+        奖品数量有限，先换先得，兑完为止。
+    </div>
+    <div class='btn img-size' data-top='1140' data-width='379' data-height='91' data-marginLeft='-189.5'></div>
+</div>
+<script src='http://www.duorongcf.com/activity/app/common/js/plug/zepto.min.js'></script>
+<script>
+var uid , wap 
+function getQueryString( name ){
+    var reg = new RegExp("(^|&|/?)" + name + "=([^&]*)(&|$)", "i");
+    var r = encodeURI(window.location.search||window.location.href||window.location.hash).substr(1).match(reg);
+    if (r != null) return unescape(r[2]); return null;
+}
+function getAppInfo(){
+    uid = getQueryString('uid') , 
+    wap = getQueryString('wap');
+
+    uid = uid;
+    wap = wap == 'true';
+}
+function size(){
+    var  originWidth = 375
+        ,ratio = $(window).width()/originWidth;
+
+    $('.img-size').each(function(){
+        var self = $(this);
+        $.each(['height','width','fontSize','left','right','bottom','top' , 'paddingTop' ,'lineHeight' , 'paddingLeft' , 'paddingRight' , 'paddingBottom','marginTop', 'marginLeft' , 'marginRight' , 'marginBottom'],function( i , str ){
+            var num = self.attr('data-'+str); 
+            if( num ){
+                num = num*ratio/2/16+'rem';
+                self.css(str,num)
+            }
+        });
+    });
+}
+getAppInfo();
+size();
+setTimeout(size,300);
+
+window.onresize = size;
+$('.btn').click(function(){
+    var iswap = wap ? '?wap=true':'?';
+    iswap += uid?('&uid='+uid):'';
+   // window.location.href='http://www.duorongcf.com/activity/app/guhuaDafuweng/'+iswap;
+    window.location.href='http://192.168.0.245:8888/activity/app/guhuaDafuweng/index.html'+iswap;
+})
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+/**
+ * 协议样式
+ * Created by wangcuiqing on 2018/3/27.
+ */
+body{
+    background:#fff;
+}
+.protocol{
+    color:#454545;
+    background:#fff;
+    padding:20px 30px;
+    margin-top:10px;
+    h1{
+       font-size:20px;
+        font-weight: 700;
+        text-align: center;
+
+    }
+    h2{
+       font-size:16px;
+        font-weight:700;
+    }
+    h3{
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 24px;
+    }
+    p{
+        line-height:2;
+    }
+    .title{
+        text-align: center;
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    .cu{
+        font-weight: 700;
+    }
+    .tip{
+        color:#cf711f;
+        min-width:3em;
+        padding:0 10px;
+        display:inline-block;
+        border-bottom:1px solid #000;
+    }
+}

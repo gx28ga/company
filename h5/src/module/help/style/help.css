@@ -1,0 +1,107 @@
+/**
+* describe 帮助中心样式
+* Created by wangCuiqing
+* Date: 2018/5/6
+*/
+.help{
+    .helpTitle{
+        background:url("../../../images/help/banner_01.png") no-repeat;
+        background-size:contain;
+    }
+    .questionTitle{
+        background:url("../../../images/help/problembanner.png") no-repeat;
+        background-size:contain;
+    }
+    .arrow{
+        background:url("../../../images/help/angular.png") no-repeat;
+        background-size:contain;
+        position: absolute;
+        top:14px;
+        right:10px;
+    }
+    .helpContent{
+        background:#0087de;
+        color:#fff;
+        text-align: center;
+        .littleTitle{
+            text-decoration: underline;
+            text-align: center;
+            color:#fff;
+            font-family: "PingFangSC Regular";
+        }
+        .nthTitle{
+            text-align: center;
+            color:#fff;
+            .littleNum{
+                background:#fff;
+                color:#0087de;
+                border-radius: 50%;
+                display: inline-block;
+            }
+        }
+        .pictureImg{
+            margin:0 auto;
+        }
+    }
+    .explain{
+        background:#fff;
+       .navTab{
+           border-bottom:0.5px solid #dddddd;
+           position: relative;
+           .lib{
+               border-left:4px solid #fe7634;
+               color:#102542;
+           }
+       }
+        .normalTitle{
+            text-align: center;
+            color:#0aa1e3;
+        }
+        .changjianTitle{
+            color:#878C92;
+            text-align: center;
+        }
+        .questionT{
+            list-style: none;
+            color:#dea546;
+            .answer{
+                color:#333;
+            }
+        }
+        li:before{
+            content:"●";
+            color:#dea546;
+            margin-right: 8px;
+        }
+    }
+    .lookMore{
+        color:#0084d7;
+        text-align: center;
+        background: #fff;
+    }
+    .nav1{
+        display:flex;
+        background:#fff;
+        justify-content: center;
+        img{
+            display: block;
+            margin:0 auto;
+        }
+        p{
+            text-align: center;
+        }
+
+    }
+    .quesT{
+        color:#0aa1e3;
+        text-align: center;
+    }
+    .questionHelp{
+        background:#fff;
+        .questionList{
+            border-top:1px solid #f2f2f2;
+            background:#fff;
+            position: relative;
+        }
+    }
+}

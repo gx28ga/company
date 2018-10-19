@@ -1,0 +1,722 @@
+body, div, p, h1, h2, h3, h4, h5, h6, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, table, th, td {
+  margin: 0;
+  padding: 0; }
+
+address, cite, em, i {
+  font-style: normal; }
+
+html, body, root {
+  height: 100%;
+  overflow: hidden; }
+
+body {
+  margin: 0 auto;
+  color: #fff;
+  -webkit-appearance: none;
+  background: #fff;
+  overflow-y: scroll;
+  font-family: 'PingFang SC','STHeiti','Microsoft YaHei',Helvetica,Arial,sans-serif;
+  color: #878C92; }
+
+li {
+  list-style: none; }
+
+html, body {
+  max-width: 750px;
+  margin: 0 auto; }
+
+a {
+  color: #535862;
+  text-decoration: none; }
+
+a:hover {
+  color: #c40000;
+  text-decoration: underline; }
+
+legend {
+  color: #000; }
+
+fieldset, img {
+  border: 0; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+input[type="button"], input[type="submit"], input[type="reset"] {
+  cursor: pointer; }
+
+.clearfix:after, .wrapper:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0; }
+
+.clearfix {
+  display: inline-block; }
+
+/* start commented backslash hack \*/
+* html .clearfix {
+  height: 1%; }
+
+.clearfix {
+  display: block; }
+
+/* close commented backslash hack */
+.middle * {
+  display: inline-block;
+  vertical-align: middle; }
+
+::-webkit-input-placeholder {
+  font-size: .75rem; }
+
+/* height */
+/* public */
+/* link color */
+.red {
+  color: #f42b13; }
+
+.green {
+  color: #16c154; }
+
+.black {
+  color: black; }
+
+.gray {
+  color: #666; }
+
+.blue {
+  color: #2899f2; }
+
+.orange {
+  color: #cb420c; }
+
+/* public */
+.flex {
+  flex-shrink: 0;
+  -webkit-flex-shrink: 0; }
+
+input {
+  outline: none; }
+
+/* layout */
+.hide {
+  display: none; }
+
+.container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  transform: translateY(300px);
+  -webkit-transform: translateY(300px);
+  transition-duration: 1s;
+  -webkit-transition-duration: 1s;
+  opacity: 0;
+  overflow: hidden; }
+
+.container.cur {
+  transform: translateY(0px);
+  -webkit-transform: translateY(0px);
+  opacity: 1; }
+
+.effect {
+  float: left;
+  transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  perspective: 600px;
+  -webkit-perspective: 600px;
+  background: #EFEFF4; }
+
+.effect .option {
+  float: left;
+  min-height: 6.25rem;
+  transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  overflow: hidden;
+  background: #fff; }
+
+.blewCard {
+  /* background:#ff463e; */
+  display: block;
+  background-position: center center;
+  position: relative;
+  z-index: 1; }
+  .blewCard .banner {
+    background: url("../images/banner.jpg") no-repeat;
+    background-size: contain;
+    background-position: center center;
+    position: relative;
+    z-index: -1; }
+    .blewCard .banner .showActivityRuleBtn {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0; }
+  .blewCard .blewCardContent {
+    background: -webkit-gradient(linear, 0 100%, 0 0, from(#de0b24), to(#FF6961)); }
+    .blewCard .blewCardContent .title1 {
+      background-color: #ff4442;
+      border-top-right-radius: 36px;
+      border-bottom-right-radius: 36px;
+      z-index: 2;
+      position: relative; }
+    .blewCard .blewCardContent .lantern {
+      background: url("../images/xin.png") no-repeat;
+      background-size: contain;
+      z-index: 0;
+      position: relative; }
+    .blewCard .blewCardContent .blewCard1 {
+      border-bottom: 1px dashed  #ce201b; }
+      .blewCard .blewCardContent .blewCard1 p {
+        color: #fff997;
+        vertical-align: middle;
+        font-size: 0.8125rem; }
+        @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+          .blewCard .blewCardContent .blewCard1 p {
+            font-size: 0.69643rem; } }
+        @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+          .blewCard .blewCardContent .blewCard1 p {
+            font-size: 0.69643rem; } }
+        @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+          .blewCard .blewCardContent .blewCard1 p {
+            font-size: 0.89781rem; } }
+        .blewCard .blewCardContent .blewCard1 p span {
+          font-weight: 400; }
+      .blewCard .blewCardContent .blewCard1 .touzibtn {
+        background: url("../images/btnclickbefore.png") no-repeat;
+        background-size: contain;
+        background-position: center center;
+        background-repeat: repeat-x;
+        border-radius: 30px;
+        color: #fe5100;
+        font-size: 0.9375rem;
+        text-align: center;
+        vertical-align: middle;
+        float: right;
+        right: 0; }
+        .blewCard .blewCardContent .blewCard1 .touzibtn .touzi123 {
+          color: #fe5100;
+          display: block;
+          text-decoration: none; }
+        @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+          .blewCard .blewCardContent .blewCard1 .touzibtn {
+            font-size: 0.80357rem; } }
+        @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+          .blewCard .blewCardContent .blewCard1 .touzibtn {
+            font-size: 0.80357rem; } }
+        @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+          .blewCard .blewCardContent .blewCard1 .touzibtn {
+            font-size: 1.03594rem; } }
+    .blewCard .blewCardContent .investment p {
+      color: #fffffe;
+      font-size: 0.9375rem; }
+      @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+        .blewCard .blewCardContent .investment p {
+          font-size: 0.80357rem; } }
+      @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+        .blewCard .blewCardContent .investment p {
+          font-size: 0.80357rem; } }
+      @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+        .blewCard .blewCardContent .investment p {
+          font-size: 1.03594rem; } }
+    .blewCard .blewCardContent .investment .look {
+      background: url("../images/look1.png") no-repeat;
+      background-size: contain;
+      color: #fe5100;
+      display: block;
+      font-size: 0.75rem;
+      text-align: center;
+      vertical-align: middle; }
+      @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+        .blewCard .blewCardContent .investment .look {
+          font-size: 0.64286rem; } }
+      @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+        .blewCard .blewCardContent .investment .look {
+          font-size: 0.64286rem; } }
+      @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+        .blewCard .blewCardContent .investment .look {
+          font-size: 0.82875rem; } }
+    .blewCard .blewCardContent .investment .progress {
+      background: url("../images/progress.png") no-repeat;
+      background-size: contain; }
+      .blewCard .blewCardContent .investment .progress .progressingBefore {
+        background-color: #ffff66;
+        float: left; }
+      .blewCard .blewCardContent .investment .progress .progressingAfter {
+        background-color: #a633ff;
+        float: left; }
+    .blewCard .blewCardContent .investment span {
+      font-size: 0.75rem;
+      color: #ffff66; }
+      @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+        .blewCard .blewCardContent .investment span {
+          font-size: 0.64286rem; } }
+      @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+        .blewCard .blewCardContent .investment span {
+          font-size: 0.64286rem; } }
+      @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+        .blewCard .blewCardContent .investment span {
+          font-size: 0.82875rem; } }
+    .blewCard .blewCardContent .investment .jd {
+      background: url("../images/jd.png") no-repeat;
+      background-size: contain;
+      display: inline-block; }
+    .blewCard .blewCardContent .investment .num {
+      font-size: 0.75rem;
+      display: inline-block; }
+      @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+        .blewCard .blewCardContent .investment .num {
+          font-size: 0.64286rem; } }
+      @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+        .blewCard .blewCardContent .investment .num {
+          font-size: 0.64286rem; } }
+      @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+        .blewCard .blewCardContent .investment .num {
+          font-size: 0.82875rem; } }
+    .blewCard .blewCardContent .investment .investcontent {
+      font-size: 0.75rem;
+      color: #fffffe; }
+      @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+        .blewCard .blewCardContent .investment .investcontent {
+          font-size: 0.64286rem; } }
+      @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+        .blewCard .blewCardContent .investment .investcontent {
+          font-size: 0.64286rem; } }
+      @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+        .blewCard .blewCardContent .investment .investcontent {
+          font-size: 0.82875rem; } }
+    .blewCard .blewCardContent .blewCard2 {
+      background: -webkit-gradient(linear, 0 100%, 0 0, from(#fa454d), to(#fd2e46));
+      border-radius: 6px; }
+      .blewCard .blewCardContent .blewCard2 .top {
+        background: url("../images/top2.png") no-repeat;
+        background-size: contain;
+        background-position: center center; }
+      .blewCard .blewCardContent .blewCard2 .title2 {
+        background-color: #f93232;
+        border-top-right-radius: 36px;
+        border-bottom-right-radius: 36px; }
+      .blewCard .blewCardContent .blewCard2 .chanpin {
+        color: #fff997;
+        vertical-align: middle;
+        font-size: 0.8125rem; }
+        @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+          .blewCard .blewCardContent .blewCard2 .chanpin {
+            font-size: 0.69643rem; } }
+        @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+          .blewCard .blewCardContent .blewCard2 .chanpin {
+            font-size: 0.69643rem; } }
+        @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+          .blewCard .blewCardContent .blewCard2 .chanpin {
+            font-size: 0.89781rem; } }
+      .blewCard .blewCardContent .blewCard2 p {
+        color: #fff997;
+        vertical-align: middle;
+        font-size: 0.9375rem; }
+        @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+          .blewCard .blewCardContent .blewCard2 p {
+            font-size: 0.80357rem; } }
+        @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+          .blewCard .blewCardContent .blewCard2 p {
+            font-size: 0.80357rem; } }
+        @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+          .blewCard .blewCardContent .blewCard2 p {
+            font-size: 1.03594rem; } }
+        .blewCard .blewCardContent .blewCard2 p span {
+          font-weight: 400; }
+      .blewCard .blewCardContent .blewCard2 .touzibtn {
+        background: url("../images/btnclickbefore.png") no-repeat;
+        background-size: contain;
+        background-position: center center;
+        background-repeat: repeat-x;
+        border-radius: 30px;
+        color: #fe5100;
+        font-size: 0.9375rem;
+        text-align: center;
+        vertical-align: middle;
+        float: right; }
+        @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+          .blewCard .blewCardContent .blewCard2 .touzibtn {
+            font-size: 0.80357rem; } }
+        @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+          .blewCard .blewCardContent .blewCard2 .touzibtn {
+            font-size: 0.80357rem; } }
+        @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+          .blewCard .blewCardContent .blewCard2 .touzibtn {
+            font-size: 1.03594rem; } }
+        .blewCard .blewCardContent .blewCard2 .touzibtn .touzi123 {
+          color: #fe5100;
+          display: block;
+          text-decoration: none; }
+      .blewCard .blewCardContent .blewCard2 .scratch {
+        background: url("../images/scratchbg.png") no-repeat;
+        background-size: contain;
+        background-position: center center; }
+        .blewCard .blewCardContent .blewCard2 .scratch .scratchBefore {
+          background: url("../images/guajiang.jpg") no-repeat;
+          background-size: contain;
+          background-position: center center; }
+          .blewCard .blewCardContent .blewCard2 .scratch .scratchBefore p {
+            font-size: 1.3125rem;
+            text-align: center;
+            vertical-align: middle;
+            color: #333333; }
+            @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+              .blewCard .blewCardContent .blewCard2 .scratch .scratchBefore p {
+                font-size: 1.125rem; } }
+            @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+              .blewCard .blewCardContent .blewCard2 .scratch .scratchBefore p {
+                font-size: 1.125rem; } }
+            @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+              .blewCard .blewCardContent .blewCard2 .scratch .scratchBefore p {
+                font-size: 1.45031rem; } }
+          .blewCard .blewCardContent .blewCard2 .scratch .scratchBefore .scratchBtn {
+            background: url("../images/btn.png") no-repeat;
+            background-size: contain;
+            font-size: 0.9375rem;
+            background-position: center center;
+            text-align: center;
+            vertical-align: middle;
+            color: #8b2c00;
+            /*    a:link{text-decoration:none;}
+                 a:active{ color:#8b2c00;}
+                 a:visited{color:#8b2c00;}*/ }
+            @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+              .blewCard .blewCardContent .blewCard2 .scratch .scratchBefore .scratchBtn {
+                font-size: 0.80357rem; } }
+            @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+              .blewCard .blewCardContent .blewCard2 .scratch .scratchBefore .scratchBtn {
+                font-size: 0.80357rem; } }
+            @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+              .blewCard .blewCardContent .blewCard2 .scratch .scratchBefore .scratchBtn {
+                font-size: 1.03594rem; } }
+            .blewCard .blewCardContent .blewCard2 .scratch .scratchBefore .scratchBtn .denglu {
+              color: #8b2c00;
+              display: block; }
+          .blewCard .blewCardContent .blewCard2 .scratch .scratchBefore .scratchCard span {
+            color: #ff3333; }
+        .blewCard .blewCardContent .blewCard2 .scratch .scratching {
+          background-color: #fff;
+          background: url("../images/guajiangtuceng.jpg") no-repeat;
+          background-size: contain;
+          background-position: center center; }
+        .blewCard .blewCardContent .blewCard2 .scratch .scratched {
+          position: relative;
+          background: url("../images/guakai.jpg") no-repeat;
+          background-size: contain;
+          background-position: center center;
+          margin: 0 auto;
+          top: 0 !important;
+          left: 0 !important;
+          transform: 0 !important; }
+          .blewCard .blewCardContent .blewCard2 .scratch .scratched p {
+            font-family: "Microsoft Yahei"; }
+          .blewCard .blewCardContent .blewCard2 .scratch .scratched .scratchBtn {
+            background: url("../images/btn.png") no-repeat;
+            background-size: contain;
+            font-size: 0.9375rem;
+            background-position: center center;
+            text-align: center;
+            vertical-align: middle;
+            color: #8b2c00;
+            position: absolute;
+            bottom: 10px; }
+            @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+              .blewCard .blewCardContent .blewCard2 .scratch .scratched .scratchBtn {
+                font-size: 0.80357rem; } }
+            @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+              .blewCard .blewCardContent .blewCard2 .scratch .scratched .scratchBtn {
+                font-size: 0.80357rem; } }
+            @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+              .blewCard .blewCardContent .blewCard2 .scratch .scratched .scratchBtn {
+                font-size: 1.03594rem; } }
+            .blewCard .blewCardContent .blewCard2 .scratch .scratched .scratchBtn .denglu {
+              color: #8b2c00; }
+            .blewCard .blewCardContent .blewCard2 .scratch .scratched .scratchBtn a:link {
+              text-decoration: none; }
+            .blewCard .blewCardContent .blewCard2 .scratch .scratched .scratchBtn a:active {
+              color: #8b2c00; }
+            .blewCard .blewCardContent .blewCard2 .scratch .scratched .scratchBtn a:visited {
+              color: #8b2c00; }
+          .blewCard .blewCardContent .blewCard2 .scratch .scratched .scratchedCardCount {
+            color: #333333;
+            font-size: 0.9375rem; }
+            @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+              .blewCard .blewCardContent .blewCard2 .scratch .scratched .scratchedCardCount {
+                font-size: 0.80357rem; } }
+            @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+              .blewCard .blewCardContent .blewCard2 .scratch .scratched .scratchedCardCount {
+                font-size: 0.80357rem; } }
+            @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+              .blewCard .blewCardContent .blewCard2 .scratch .scratched .scratchedCardCount {
+                font-size: 1.03594rem; } }
+            .blewCard .blewCardContent .blewCard2 .scratch .scratched .scratchedCardCount span {
+              color: #ff3333; }
+          .blewCard .blewCardContent .blewCard2 .scratch .scratched .scratchedContent {
+            color: #333333;
+            text-align: center;
+            font-size: 0.9375rem; }
+            @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+              .blewCard .blewCardContent .blewCard2 .scratch .scratched .scratchedContent {
+                font-size: 0.80357rem; } }
+            @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+              .blewCard .blewCardContent .blewCard2 .scratch .scratched .scratchedContent {
+                font-size: 0.80357rem; } }
+            @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+              .blewCard .blewCardContent .blewCard2 .scratch .scratched .scratchedContent {
+                font-size: 1.03594rem; } }
+            .blewCard .blewCardContent .blewCard2 .scratch .scratched .scratchedContent .hongse {
+              color: #ff3333; }
+          .blewCard .blewCardContent .blewCard2 .scratch .scratched .scratchedContentBottom {
+            color: #333333;
+            text-align: center;
+            font-size: 0.625rem; }
+            @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+              .blewCard .blewCardContent .blewCard2 .scratch .scratched .scratchedContentBottom {
+                font-size: 0.53571rem; } }
+            @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+              .blewCard .blewCardContent .blewCard2 .scratch .scratched .scratchedContentBottom {
+                font-size: 0.53571rem; } }
+            @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+              .blewCard .blewCardContent .blewCard2 .scratch .scratched .scratchedContentBottom {
+                font-size: 0.69063rem; } }
+      .blewCard .blewCardContent .blewCard2 .prizes .prizesTitle {
+        font-size: 0.9375rem;
+        color: #ffffff;
+        float: left; }
+        @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+          .blewCard .blewCardContent .blewCard2 .prizes .prizesTitle {
+            font-size: 0.80357rem; } }
+        @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+          .blewCard .blewCardContent .blewCard2 .prizes .prizesTitle {
+            font-size: 0.80357rem; } }
+        @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+          .blewCard .blewCardContent .blewCard2 .prizes .prizesTitle {
+            font-size: 1.03594rem; } }
+      .blewCard .blewCardContent .blewCard2 .prizes .records {
+        font-size: 0.75rem;
+        color: #3399ff;
+        float: right; }
+        @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+          .blewCard .blewCardContent .blewCard2 .prizes .records {
+            font-size: 0.64286rem; } }
+        @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+          .blewCard .blewCardContent .blewCard2 .prizes .records {
+            font-size: 0.64286rem; } }
+        @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+          .blewCard .blewCardContent .blewCard2 .prizes .records {
+            font-size: 0.82875rem; } }
+      .blewCard .blewCardContent .blewCard2 .prizes .prizesList {
+        clear: both; }
+        .blewCard .blewCardContent .blewCard2 .prizes .prizesList div {
+          display: inline-block; }
+        .blewCard .blewCardContent .blewCard2 .prizes .prizesList p {
+          text-align: center;
+          display: inline-block;
+          font-size: 0.75rem;
+          color: #ffffff; }
+          @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+            .blewCard .blewCardContent .blewCard2 .prizes .prizesList p {
+              font-size: 0.64286rem; } }
+          @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+            .blewCard .blewCardContent .blewCard2 .prizes .prizesList p {
+              font-size: 0.64286rem; } }
+          @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+            .blewCard .blewCardContent .blewCard2 .prizes .prizesList p {
+              font-size: 0.82875rem; } }
+        .blewCard .blewCardContent .blewCard2 .prizes .prizesList .iphone {
+          background: url("../images/iphone.png") no-repeat;
+          background-size: contain; }
+        .blewCard .blewCardContent .blewCard2 .prizes .prizesList .daisen {
+          background: url("../images/daisen.png") no-repeat;
+          background-size: contain; }
+        .blewCard .blewCardContent .blewCard2 .prizes .prizesList .cup {
+          background: url("../images/cup.png") no-repeat;
+          background-size: contain; }
+        .blewCard .blewCardContent .blewCard2 .prizes .prizesList .jdcard {
+          background: url("../images/jdcard.png") no-repeat;
+          background-size: contain; }
+        .blewCard .blewCardContent .blewCard2 .prizes .prizesList .hongbao {
+          background: url("../images/hongbao.png") no-repeat;
+          background-size: contain; }
+        .blewCard .blewCardContent .blewCard2 .prizes .prizesList .jaxicard {
+          background: url("../images/jiaxi.png") no-repeat;
+          background-size: contain; }
+      .blewCard .blewCardContent .blewCard2 .qingren {
+        background: url("../images/qingrenBottom.png") no-repeat;
+        background-size: contain; }
+  .blewCard .footer {
+    text-align: center;
+    background: url("../images/footer.jpg") no-repeat;
+    background-size: contain;
+    background-repeat: repeat-y;
+    font-size: 0.75rem;
+    color: #ff9999; }
+    @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+      .blewCard .footer {
+        font-size: 0.64286rem; } }
+    @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+      .blewCard .footer {
+        font-size: 0.64286rem; } }
+    @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+      .blewCard .footer {
+        font-size: 0.82875rem; } }
+  .blewCard .mask {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 500; }
+    .blewCard .mask .activityRule {
+      position: fixed;
+      background: url("../images/bgc.png") no-repeat;
+      background-size: contain;
+      background-position: center center; }
+      .blewCard .mask .activityRule .ruleTop {
+        position: relative;
+        z-index: -1; }
+        .blewCard .mask .activityRule .ruleTop .ruleTitile {
+          background: url("../images/rule.png") no-repeat;
+          background-size: contain;
+          position: absolute; }
+      .blewCard .mask .activityRule .closeBtn {
+        position: absolute;
+        right: 0;
+        top: 0; }
+      .blewCard .mask .activityRule .ruleMiddle p {
+        line-height: 1.5rem;
+        font-size: 0.75rem;
+        padding-bottom: 5px;
+        color: #333333; }
+        @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+          .blewCard .mask .activityRule .ruleMiddle p {
+            line-height: 1.28571rem; } }
+        @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+          .blewCard .mask .activityRule .ruleMiddle p {
+            line-height: 1.28571rem; } }
+        @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+          .blewCard .mask .activityRule .ruleMiddle p {
+            line-height: 1.6575rem; } }
+        @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+          .blewCard .mask .activityRule .ruleMiddle p {
+            font-size: 0.64286rem; } }
+        @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+          .blewCard .mask .activityRule .ruleMiddle p {
+            font-size: 0.64286rem; } }
+        @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+          .blewCard .mask .activityRule .ruleMiddle p {
+            font-size: 0.82875rem; } }
+        .blewCard .mask .activityRule .ruleMiddle p .circle {
+          font-weight: 700; }
+        .blewCard .mask .activityRule .ruleMiddle p span {
+          font-weight: 400; }
+        .blewCard .mask .activityRule .ruleMiddle p .closeBtn {
+          position: absolute;
+          background: #f00; }
+      .blewCard .mask .activityRule .ruleBottom button {
+        display: block;
+        margin: 0 auto;
+        background-color: #ff772a;
+        border-radius: 25px;
+        box-shadow: inset 0 -3px 0 0 #d13400;
+        border: 0;
+        color: #fff;
+        font-family: "Microsoft Yahei"; }
+    .blewCard .mask .tishi {
+      background: url("../images/tishi.png") no-repeat;
+      background-size: contain;
+      background-position: center center;
+      position: fixed; }
+      .blewCard .mask .tishi .tishiContent {
+        font-size: 1.125rem;
+        text-align: center;
+        color: #333;
+        font-family: 'Microsoft Yahei';
+        position: absolute; }
+        @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+          .blewCard .mask .tishi .tishiContent {
+            font-size: 0.96429rem; } }
+        @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+          .blewCard .mask .tishi .tishiContent {
+            font-size: 0.96429rem; } }
+        @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+          .blewCard .mask .tishi .tishiContent {
+            font-size: 1.24313rem; } }
+      .blewCard .mask .tishi .closeBtn {
+        position: absolute;
+        right: 0;
+        top: 0; }
+      .blewCard .mask .tishi .back {
+        background: url("../images/back.png") no-repeat;
+        background-size: contain;
+        background-position: center center;
+        position: absolute;
+        left: 50%;
+        bottom: 20%; }
+    .blewCard .mask .record {
+      background-color: #ffe7e7; }
+      .blewCard .mask .record p {
+        text-align: center; }
+
+.record {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #ffe7e7;
+  color: #333333; }
+  .record .left {
+    display: inline-block;
+    position: absolute; }
+  .record p {
+    text-align: center;
+    font-size: 1.125rem;
+    font-family: 'Microsoft Yahei'; }
+    @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+      .record p {
+        font-size: 0.96429rem; } }
+    @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+      .record p {
+        font-size: 0.96429rem; } }
+    @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+      .record p {
+        font-size: 1.24313rem; } }
+  .record .recordTop {
+    background: url("../images/jilu.png") no-repeat;
+    background-size: contain; }
+  .record .recordContent {
+    background-color: #ffe7e7;
+    height: 80%; }
+    .record .recordContent ul {
+      font-size: 0.5rem;
+      overflow-y: scroll;
+      height: 95%; }
+      @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+        .record .recordContent ul {
+          font-size: 0.42857rem; } }
+      @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+        .record .recordContent ul {
+          font-size: 0.42857rem; } }
+      @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+        .record .recordContent ul {
+          font-size: 0.5525rem; } }
+      .record .recordContent ul li {
+        border-bottom: 1px solid #ede7d9;
+        background-color: #FFF;
+        clear: both; }
+        .record .recordContent ul li .name {
+          float: left; }
+        .record .recordContent ul li .updateTime {
+          float: right; }
+        .record .recordContent ul li span {
+          display: block; }
+
+/*# sourceMappingURL=blewCard.css.map */

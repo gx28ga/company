@@ -1,0 +1,54 @@
+/* @import "assets/stylesheets/bootstrap/variables";
+@import "assets/stylesheets/bootstrap/mixins"; */
+
+// Components
+.uib-datepicker .uib-title {
+  width: 100%;
+}
+
+.uib-day button, .uib-month button, .uib-year button {
+  min-width: 100%;
+}
+
+.uib-datepicker-popup.dropdown-menu {
+  display: block;
+}
+
+.uib-button-bar {
+  padding: 10px 9px 2px;
+}
+
+
+.dropdown-menu{
+	.sr-only{ // previous next
+	    position: absolute;
+	    width: 1px;
+	    height: 1px;
+	    padding: 0;
+	    margin: -1px;
+	    overflow: hidden;
+	    clip: rect(0,0,0,0);
+	    border: 0;
+	}
+	.btn{
+		&.btn-danger{ color:#fff; }
+		&.btn-sm{padding: 5px 10px; font-size: 12px; line-height: 1.5; border-radius: 3px;}
+		&.btn-info { color: #fff; background-color: #5bc0de; border-color: #46b8da;}
+		&.btn-success { color: #fff; background-color: #5cb85c; border-color: #4cae4c;}
+	}
+	tr{
+		th{ 
+			.btn-default{ text-align:center; }
+		}
+		td{
+			padding:0;
+			.btn{
+				padding:1px 7px;
+				&:hover{ background:#f07700; color:#fff; }
+			}
+		}
+	}
+	li{
+		
+	}
+}

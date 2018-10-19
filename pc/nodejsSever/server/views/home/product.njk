@@ -1,0 +1,85 @@
+{% macro productList(arrayList,highchartsId,obj={tagname:false},btnLink='billDetail') %}
+{% for item in arrayList %}
+{% if arrayList.length %}
+<div class="section clearfix">
+    {% if obj.tagname %}
+        <div class="tagname"></div>
+    {% endif %}
+    <div class="title">
+        <!--<div style="display: inline-block;">-->
+            <!--{% if item.type == 6 %}-->
+                <!--<i class="piaoicon-g">资管</i>-->
+            <!--{% endif %}-->
+            <!--{% if item.type == 7 %}-->
+                <!--<i class="baoliicon-g">金交所</i>-->
+            <!--{% endif %}-->
+            <!--{% if item.type == 2 or item.type == 3 %}-->
+                <!--<i class="piaoicon-g">票据</i>-->
+            <!--{% endif %}-->
+            <!--{% if item.type == 5 %}-->
+                <!--<i class="baoliicon-g">保理</i>-->
+            <!--{% endif %}-->
+        <!--</div>-->
+        {{item.fullName}}
+        <div style="display: inline-block;">
+            {% if item.activityRate>0 %}
+            <i class="piaoicon-g acti-g">活动</i>
+            {% endif %}
+        </div>
+    </div>
+    <ul class="clearfix" style="height: 72px; overflow: hidden;">
+        <li class="rate">
+            <em>{{item.rate}}<span>%</span>{% if item.activityRate>0 %}<span>+</span>{{item.activityRate}}<span>%</span>{% endif %}
+            </em>
+            <p>历史年化收益率</p>
+        </li>
+        <li class="deadline width1">
+            <b><span>{{item.deadline}}</span>天</b>
+            <p>产品期限</p>
+        </li>
+        <li class="deadline width2">
+            <b><span>{{item.amount}}</span>元</b>
+            <p>产品总额</p>
+        </li>
+        <li class="my-circle">
+            <p class="circle">{{item.pert}}%</p>
+            <div id="{{highchartsId}}{{loop.index}}" class="pppp" style="min-width: 180px; height: 180px; max-width: 180px; margin: -76px 0 0 -20px"></div>
+            {% if item.status == 5 %}
+            <span>募集进度</span>
+            {% elif item.status == 6 or item.status == 7 or item.status == 8 or item.status == 9 %}
+            <span >募集完成</span>
+            {% endif %}
+        </li>
+        <li class="submit">
+            {% if item.type == 6 or item.type==7 %}
+                {#定期理财#}
+                <a @click="detail({id:{{item.id}}})" class="nohover mujibtn">
+                    <div class="btn {{item.submitStatusClass}}">{{item.statusProductType.cnvalue}}</div>
+                </a>
+
+            {% elif item.type==2 or item.type==3 or item.type==5 or item.type==9%}
+                {#票据理财#}
+                <a @click="pjdetail({id:{{item.id}}})" class="nohover mujibtn">
+                    <div class="btn {{item.submitStatusClass}}">{{item.statusProductType.cnvalue}}</div>
+                </a>
+            {% endif %}
+
+            {# 8为新手标 #}
+        </li>
+    </ul>
+    <div class="aside">
+        <ul>
+            {% if item.accept != undefined and item.accept != '' %}
+            <li class="textleft"><i class="bank-icon"></i>产品管理人：{{item.accept}}</li>
+            {% endif %}
+            <li class="tag">
+                {% import "../common/couponTag.njk" as forms %}
+                {{ forms.coupon(item) }}
+            </li>
+        </ul>
+    </div>
+    <div class="cge"></div>
+</div>
+{% endif %}
+{% endfor %}
+{% endmacro %}

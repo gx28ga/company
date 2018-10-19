@@ -1,0 +1,175 @@
+<!-- 用户注册 -->
+<div ng-controller="zhuceCtrl" >
+<!-- tou -->
+	<div class="loginpage">
+		<div class="header-wrap">
+			<div class="logo-wrap">
+				<img src="/main/images/logo.png" ng-click="$state.go('main.home');">
+				<span></span>
+				<a target="_blank" style="display: block;float: left;cursor: default;"><img src="../../main/images/logoo.jpg" alt=""></a>
+			</div>
+		</div>
+		<!-- <i class="bot"></i> -->
+	</div>
+	<!-- tou over -->
+
+	<!-- zhong -->
+	<div class="quick-register-wrap" style="min-height: 596px;background-color: #EBF8FF;">
+	  <div class="wqq-quick-register-wrap-box" style="width: 1200px;margin: 0 auto;position: relative;">
+		<i class="register-banner2" style="left:0"></i>
+		<div class="quick-register-wrapper" style="padding: 20px 0 0 1140px;float: left;position: absolute;right: 0;">
+			<form class="login_form" ng-model="login" name="loginform">
+				<input style="display:none">
+				<input type="password" style="display:none">
+				<div class="quick-register-mod" style="width: 420px;">
+				    <div class="title">
+						<div class="throung"></div>	
+						<div class="p-box">
+							<p ng-cloak class="ng-cloak">会员注册</p>
+						</div>
+					</div>
+					<div class="quick-register-box"style="padding:20px 16px 0 16px;">
+						<!-- 注册登录名 -->
+						<div class="input-box" style="padding-bottom: 20px;">
+							<div class="input-mod">
+								<input id="userphone" type="text" ng-pattern="/^1[3|4|5|7|8][0-9]{9}$/"  placeholder="请输入手机号码" ng-blur="blurID('focusMobilephone',loginform)" onkeyup="this.value=this.value.replace(/[\D\.]/gi,'')" class="text"  ng-model="login.mobilePhone" name="mobilePhone" required minlength="11" maxlength="11" />
+								<i ng-show="loginform.mobilePhone.$valid" ng-class="{false: 'common-form-ok', true: 'common-form-error'}[loginform.mobilePhone.$valid]"></i>
+				                <!--<span class="error" ng-show="loginform.mobilephone.$valid">{{loginform.mobilephone | zhuCePhoneError:serverErrorCode}}</span>-->
+								<span class="error" ng-show="loginform.mobilePhone.$valid">{{loginform.mobilePhone | zhuCePhoneError:serverErrorCode}}</span>
+							</div>
+						</div>		
+						<!-- 图文验证 -->
+						<div class="input-box" style="padding-bottom: 20px;">
+							<div class="img-box"><img ng-click="clickInput('changePic',$event)" src="login/validateCode.do"></div>
+							<div class="input-mod">
+								<input id="imgcode" type="text" placeholder="请输入验证码" class="text small-text" ng-model="login.picCode" name="picCode" minlength="4" maxlength="4" required autocomplete="off"/>
+							</div>
+							<i ng-show="loginform.picCode.$valid" ng-class="{false: 'common-form-ok', true: 'common-form-error'}[loginform.picCode.$valid]"></i>
+							<span class="error" ng-show="loginform.picCode.$valid"><font color="red">{{loginform.picCode | zhuCePicCodeError:serverErrorCode}}</font></span>
+						</div>
+						<!-- 短信验证 -->
+						<div class="input-box" style="padding-bottom: 20px;">
+							<a href="" ng-if="loginform.mobilePhone.$valid" class="get-code" ng-class="{true: 'getcode-disabled',false: ''}[isGetCode]">{{nowTimer}}获取验证码</a>
+
+							<a href="" ng-if="!loginform.mobilePhone.$valid" id="zcGetYzm" ng-click="clickInput('phonecodeMSG',$event,null,loginform,false)" class="get-code" ng-class="{true: 'getcode-disabled',false: ''}[isGetCode]">{{nowTimer}}获取验证码</a>
+							<div class="input-mod">
+								<input ng-disabled="!loginform.mobilePhone.$dirty || !loginform.picCode.$dirty || loginform.mobilePhone.$valid || loginform.picCode.$valid" placeholder="请输入短信验证码"  type="text" ng-model="login.smsCode"  name="smsCode" class="text small-text" maxlength="4" required/>
+							</div>
+							<i ng-show="loginform.smsCode.$valid" ng-class="{false: 'common-form-ok', true: 'common-form-error'}[loginform.smsCode.$valid]"></i>
+							<span class="error" ng-show="loginform.smsCode.$valid"><font color="red">{{loginform.smsCode | zhuCesmsCodeCodeError:serverErrorCode}}</font></span>
+						</div>
+
+						
+						<!-- 密码 -->
+						<div class="input-box passwd-box"  style="padding-bottom: 20px;">
+							<div class="input-mod">
+								<input autocomplete="off" ng-show="passwordText" placeholder="请输入密码" ng-pattern="/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,18}$/" ng-mouseout="showPassword(passwordText)" type="text" ng-model="login.passWord" class="text" name="passWord" required />
+								<input autocomplete="off" ng-hide="passwordText" placeholder="请输入密码" ng-pattern="/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,18}$/" type="passWord" ng-model="login.passWord" class="text" name="passWord" required/>
+							</div>
+							<i ng-class="{true:'login-icons-eyehide',false:'login-icons-eye'}[passwordText]" ng-click="showPassword(passwordText)" ></i>
+
+							<i ng-show="loginform.passWord.$valid" ng-class="{false: 'common-form-ok', true: 'common-form-error'}[loginform.passWord.$valid]"></i>
+							<span  class="error" ng-show="loginform.passWord.$valid"><font color="red">{{loginform.passWord | zhuCePassWordError:serverErrorCode}}</font></span>
+						</div>
+						<!-- 推荐人 -->
+						<div class="input-box recommend-box" style="padding-bottom: 20px;">
+							<div class="show-mod" ng-click="onClickReferee()">
+								<a href="">推荐人（选填）<i ng-class="{true: 'login-icons-rotriangle', false: 'login-icons-triangle'}[isShowReferee]"></i></a>
+							</div>
+							<div class="input-mod">
+								<input ng-value='login.recommPhone' ng-show="isShowReferee" placeholder="请输入推荐人手机号码/推荐码" type="text" class="text" ng-model="login.recommPhone" name="recommPhone" autocomplete="off" maxlength="11" />
+							</div>
+							<i ng-show="loginform.recommPhone.$valid && isShowReferee" ng-class="{false: 'common-form-ok', true: 'common-form-error'}[loginform.recommPhone.$valid]||{false: '', true: 'ng-hide'}[isZhuCe]"></i>
+							<span  class="error" ng-show="loginform.recommPhone.$valid && isShowReferee"><font color="red">{{loginform.recommPhone | zhuCeRefereeError:serverErrorCode}}</font></span>
+						</div>
+
+
+						<!-- 登录/注册 按钮 -->
+						<div class="sub-box" ng-click="LoginClick('zhuCe',loginform)">
+							<input style="background:#E8A22B;" ng-disabled="loginform.$invalid || !login.checkbox" class="sub-btn sub" id="zcBtn" type="submit" value="立即注册"/>
+						</div>
+						<!-- 服务条款/切换状态 -->
+						<div class="agreement-box">
+							<label for="agreement"><input type="checkbox" ng-model="login.checkbox" ng-true-value="true"  name="checkbox" id="agreement" class="check-box" checked />我已阅读并同意<a href="/other/protocol/zhuceProtocol.html" target="_blank" class="server-agreement">《多融财富注册协议》</a><a href="/other/protocol/fwProtocol.html" target="_blank" class="server-agreement">《多融财富投资服务协议》</a>
+							</label>
+							<div class="choose-box" style="font-size: 14px;">我已注册 
+								<a href="{{hrefUrl}}dl"  class="change-btn" style="color: #004eff;">立即登录</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	  </div>
+	</div>
+	<!-- zhong over -->
+
+	<!-- buttom -->
+	<div id="footer">
+		<div class="footer-wrapper">
+			<div class="foot-wrap">
+				<div class="foot-nav">
+					<div class="nav-mod">
+						<!-- <i class="common-fot-home"></i> -->
+						<p>关于多融</p>
+						<ul>
+							<li><a href="{{a|webIE8}}about/DRGK.html" target="_blank">多融概况</a></li>
+							<li><a href="{{a|webIE8}}about/LXWM.html" target="_blank">联系我们</a></li>
+							<li><a href="{{a|webIE8}}about/AQBZ.html" target="_blank">安全保障</a></li>
+						</ul>
+					</div>
+					<div class="nav-mod">
+						<!-- <i class="common-fot-qa"></i> -->
+						<p>帮助中心</p>
+						<ul>
+							<li><a href="{{a|webIE8}}help/CJWT.html" target="_blank">常见问题</a></li>
+							<li><a href="{{a|webIE8}}help/LCKT.html" target="_blank">理财课堂</a></li>
+							<li><a href="{{a|webIE8}}help/XSZY.html" target="_blank">新手指引</a></li>
+							<li><a href="{{a|webIE8}}help/MZSM.html" target="_blank">免责声明</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="modeline"></div>
+				<div class="foot-code">
+					<div class="mode">
+						<div class="box">
+							<img src="/main/images/common/footwechat.png">
+						</div>
+						<p>关注官方微信号<br>最新理财资讯，投资领先一步</p>
+					</div>
+					<div class="mode">
+						<div class="box">
+							<img src="/main/images/common/footapp.png">
+						</div>
+						<p>下载多融APP<br>开启理财护航之路</p>
+					</div>
+				</div>
+				<div class="modeline"></div>                                                                
+				<div class="contact-wrap">
+					<div class="title">
+						<p>客服热线</p>
+					</div>
+					<strong ng-cloak>{{(a | web).phone}}</strong>
+					<span>工作时间:08:30 — 20:30<br>法定节假日除外<br>客服QQ:4006908896</span>
+				</div>
+			</div>
+		</div>
+		<div class="right-wrapper">
+			<div class="foot-right">
+				<!--<div class="right-text" style="padding: 0;">市场有风险 投资需谨慎；平台建议的预期年化收益率仅供参考，不代表未来实际收益</div>-->
+				<div class="right-text" style="padding: 0;">市场有风险 投资需谨慎；平台建议的历史年化收益率仅供参考，不代表未来实际收益</div>
+				<div class="right-text" style="padding: 0;">沪ICP备15011207号-5 | Copyright Reserved © 上海银砖金融信息服务有限公司 {{v}}</div>
+				<div class="right-text" style="padding-top: 0;">公司电话：021-80312696 | 公司地址：上海市虹口区四川北路859号中信广场41楼</div>
+				<ul>
+					<li><a class="spread-partners-hu" href="https://trustsealinfo.verisign.com/splash?form_file=fdf/splash.fdf&dn=www.duorongcf.com&lang=zh_cn" target="_blank"><img src="/main/images/spread-partners/hu.png"></a></li>
+					<li><a id='___szfw_logo___' class="spread-partners-kexin" href="https://credit.szfw.org/CX20170123033101030377.html" target="_blank"><img src="/main/images/spread-partners/kexin.png"></a></li>
+					<li><a class="spread-partners-aliyun" href="https://www.aliyun.com/" target="_blank"><img src="/main/images/spread-partners/aliyun.png"></a></li>
+					<li><a class="spread-partners-zdcy" href="https://www.yunaq.com/cyd/" target="_blank"><img src="/main/images/spread-partners/zdcy.png"></a></li>
+					<li><a  key ="570e15dfefbfb02ee9d6f567"  logo_size="83x30"  logo_type="business"  href="http://v.pinpaibao.com.cn/authenticate/cert/?site=www.duorongcf.com&at=business" target="_black" ><img style="background: #fff;" src="//static.anquan.org/static/outer/image/hy_83x30.png" alt="安全联盟认证" width="83" height="30" style="border: none;"></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<script type='text/javascript'>(function(){document.getElementById('___szfw_logo___').oncontextmenu = function(){return false;}})();</script>
+	<!-- 底部结束 -->
+</div>

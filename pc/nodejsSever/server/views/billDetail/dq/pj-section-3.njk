@@ -1,0 +1,90 @@
+{% if map.info.type!=1 %}
+<div class="fileSpeci" >
+	{% if file.length >0 %}
+	<h3 class="title">项目文件</h3>
+	<div class="content">
+		<div class="infomation">
+			为了保证您的权益，多融财富特别提醒您，在您投资之前请仔细阅读以下文件，如您继续投资，则表示您已经完全理解相关文件的全部内容并自愿接受相关文件的约束。更多项目介绍请点击查看：
+		</div>
+		<div class="tags">
+			<ul>
+				{% for item in file %}
+				<li><a href="{{item.bigUrl}}" target='_blank'>{{item.title}}</a></li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+	{% endif %}
+	{% if map.extendInfos.length>0 %}
+		<div class="product-about">
+			<div class="title">
+				<i></i>
+				<h2>产品说明</h2>
+				<div class="line"></div>
+			</div>
+			<div class="content">
+				{% if map.extendTableList.length>0 %}
+				<div class="infomation">
+					<div class="message">
+						<table>
+							<tbody>
+							{% for item in map.extendTableList %}
+								<tr>
+									<td class="t">{{item.title}}</td>
+									<td class="c">{{item.content}}</td>
+								</tr>
+							{% endfor %}
+							</tbody>
+						</table>
+					</div>
+				</div>
+				{% endif %}
+				<div class="infomation">
+					{% for item in map.extendTextList %}
+					<h4 class="littleTitle">{{item.title}}</h4>
+					<div class="message">
+						{{item.content}}
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	{% endif %}
+
+	{# 借款人信息 #}
+	{% if product.borrower!=undefined and product.borrower!="" %}
+		<h3 class="title">借款人信息</h3>
+		<div class="content">
+			<p>{{product.borrower}}</p>
+		</div>
+	{% endif %}
+	{# end借款人信息 #}
+
+	{# 承兑方概况 保理信息 #}
+	{% if product.introduce!=undefined and product.introduce!="" %}
+		<h3 class="title">{{"承兑方概况" if product.type != 5 else "保理信息" }}</h3>
+		<div class="content">
+			<p>{{product.introduce}}</p>
+		</div>
+	{% endif %}
+	{# end承兑方概况 保理信息 #}
+
+	{# 还款来源 #}
+	{% if product.repaySource!=undefined and product.repaySource!="" %}
+		<h3 class="title">还款来源</h3>
+		<div class="content">
+			<p>{{product.repaySource}}</p>
+		</div>
+	{% endif %}
+	{# end还款来源 #}
+
+	{# 风险控制 #}
+	{% if product.windMeasure!=undefined and product.windMeasure!="" %}
+		<h3 class="title">风险控制</h3>
+		<div class="content">
+			<p>{{product.windMeasure}}</p>
+		</div>
+	{% endif %}
+	{# end风险控制 #}
+</div>
+{% endif %}

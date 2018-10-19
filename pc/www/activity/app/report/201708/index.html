@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html ng-app="someApp" id='ng-app' xmlns:ng="http://angularjs.org" lang="zh_CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+  <title>运营报告</title>
+  <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no">
+  <script type='text/javascript' src='dist/swiper.js'></script>
+  <script type="text/javascript" src="dist/zepto.js"></script>
+  <script type="text/javascript" src='dist/eahart.js'></script>
+  <script type="text/javascript" src="../../../../js/plug/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="../../../../main/vendor/angular.min.js"></script>
+  <script type="text/javascript" src="../../../../main/vendor/angular-resource.min.js"></script>
+  <script type='text/javascript' src='dist/report.js'></script>
+  <link rel="stylesheet" href="dist/swiper.css">
+  <link rel="stylesheet" href="stylesheets/report.css">
+  <style type="text/css">
+    body {
+      background-color: #f2f4f5;
+      margin: 0;
+      padding: 0;
+    }
+    
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+    }
+    
+    .swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+    
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    
+    @-webkit-keyframes start {
+      0%,
+      30% {
+        opacity: 0.2;
+        -webkit-transform: translate(0, 10px);
+      }
+      60% {
+        opacity: 1;
+        -webkit-transform: translate(0, 0);
+      }
+      100% {
+        opacity: 0.2;
+        -webkit-transform: translate(0, -5px);
+      }
+    }
+    
+    @keyframes start {
+      0%,
+      30% {
+        opacity: 0.2;
+        transform: translate(0, 10px);
+      }
+      60% {
+        opacity: 1;
+        transform: translate(0, 0);
+      }
+      100% {
+        opacity: 0.2;
+        transform: translate(0, -5px);
+      }
+    }
+    
+    .start {
+      position: fixed;
+      left: 50%;
+      margin-left: -17px;
+      top: 95%;
+      margin-top: -34px;
+      width: 34px;
+      height: 34px;
+    }
+    
+    .start {
+      position: absolute;
+      left: 50%;
+      bottom: 10px;
+      margin-left: -9px;
+      width: 19px;
+      height: 12px;
+      background: url(images/top.png);
+      background-size: 100% 100%;
+      -webkit-animation: start 1.5s infinite ease-in-out;
+      animation: start 1.5s infinite ease-in-out;
+    }
+    
+    .swiper-slide {
+      position: relative;
+    }
+  </style>
+</head>
+
+<body ng-controller="report" class="wp">
+  <div id="container" class="swiper-container">
+    <div class="swiper-wrapper">
+      <!-- 第一张 -->
+      <div class="swiper-slide p1  img-size">
+        <img src="images/number1.jpg" alt="">
+        <div class="month img-size" data-width='296' data-height='265' data-marginLeft='-148'><img  alt="" id='number' ></div>
+        <span class="start"></span>
+      </div>
+      <!-- 平台数据总览 -->
+      <div class="swiper-slide p2">
+        <div class="numTitle title1Color alcenter img-size" data-marginTop='70'>平台整体数据总览</div>
+        <div class="jiezhi alcenter colorWhite img-size" data-marginTop='20'>截止日期 <span class="colorYellow">{{deadline |date:'yyyy-MM-dd' }}</span></div>
+        <!--  累计1 -->
+        <div class="totalIcon img-size" data-width='235' data-height='202' data-marginTop='70'><img src="images/total1.png" alt=""></div>
+        <div class="alcenter totalFont img-size" data-marginTop='30'>累计交易总额：<span class="fongBlod colorYellow">{{cumulativeTurnover | number:0}}</span> 元</div>
+        <div class="totalIcon img-size" data-width='341' data-height='161' data-marginTop='70'><img src="images/total2.png" alt=""></div>
+        <div class="alcenter totalFont img-size" data-marginTop='30'>累计赚取收益：<span class="fongBlod colorYellow">{{cumulativeIncome | number:0}}</span> 元</div>
+        <div class="totalIcon img-size" data-width='206' data-height='133' data-marginTop='70'><img src="images/total3.png" alt=""></div>
+        <div class="alcenter totalFont img-size" data-marginTop='30'>累计注册用户：<span class="fongBlod colorYellow">{{cumulativeRegisteredUser | number:0}}</span>人</div>
+        <span class="start"></span>
+      </div>
+      <!-- 业绩数据 -->
+      <div class="swiper-slide p3">
+        <div class="numTitle title2Color alcenter img-size" data-marginTop='70'>业绩数据</div>
+        <div class="jiezhi alcenter colorWhite img-size" data-marginTop='20'><span class="colorYellow">{{year}}</span>年<span class="colorYellow">{{month}} </span> 月份累计交易额 <span class="colorYellow fongBlod">{{cumulativeMonthlyTurnover | number:0}}</span> 元</div>
+        <div class="top10 jiezhi alcenter colorWhite img-size" data-marginTop='60'>
+          <div class="top10Img img-size" data-width='53' data-height='53'></div>
+          按区域分布排名前<span class="ten">10</span>名
+        </div>
+        <div class="map img-size" data-width='590' data-height='492' data-right='70' data-bottom='150'></div>
+        <div class="chart img-size" data-height='800' data-width='550' id='yeji' data-marginLeft='100'></div>
+        <span class="start"></span>
+      </div>
+      <!-- 注册数据 -->
+      <div class="swiper-slide p4">
+        <div class="numTitle title3Color alcenter img-size" data-marginTop='70'>注册数据</div>
+        <div class="jiezhi alcenter colorWhite img-size" data-marginTop='20'> <span class="colorYellow">{{year}} </span>年<span class="colorYellow">{{month}} </span> 月份新增注册用户<span class="colorYellow fongBlod">{{cumulativeMonthlyRegistered |number:0}} </span>人</div>
+        <div class="top10 jiezhi alcenter colorWhite img-size" data-marginTop='60'>
+          <div class="top10Img img-size" data-width='53' data-height='53'></div>
+          按区域分布排名前<span class="ten">10</span>名
+        </div>
+        <div class="map img-size" data-width='590' data-height='492' data-right='70' data-bottom='150'></div>
+        <div class="chart img-size" data-height='800' data-width='550' id='zhuce' data-marginLeft='100'></div>
+        <span class="start"></span>
+      </div>
+      <!-- 渠道数据 -->
+      <div class="swiper-slide p5">
+        <div class="numTitle title3Color alcenter img-size" data-marginTop='70'>渠道数据</div>
+        <div class="jiezhi alcenter colorWhite img-size" data-marginTop='20'> <span class="colorYellow">{{year}}</span>年<span class="colorYellow">{{month}} </span> 月份投资终端分布</div>
+        <div class="chart img-size" data-width='550' data-height='800' data-marginLeft='100' id='qudao'></div>
+        <span class="start"></span>
+      </div>
+      <!-- 用户画像 -->
+      <div class="swiper-slide p6">
+        <div class="numTitle title4Color alcenter img-size" data-marginTop='70'>用户画像</div>
+        <div class="jiezhi alcenter colorWhite img-size" data-marginTop='20'>截止日期 <span class="colorYellow">{{deadline |date:'yyyy-MM-dd' }}</span> </div>
+        <div class="person img-size" data-marginTop='70'>
+          <div class="manImg img-size" data-width='312' data-height='251'></div>
+          <div class="manFont img-size" data-marginTop='35'>注册占比：{{registeredMaleRatio}}%
+            <br>投资占比：{{investedMaleRatio}}%</div>
+          <div class="womanImg img-size" data-marginTop='70' data-width='267' data-height='251'></div>
+          <div class="womanFont img-size" data-marginTop='35'>
+            注册占比：{{registeredFemaleRatio}}%
+            <br>投资占比：{{investedFemaleRatio}}% </div>
+        </div>
+         <span class="start"></span>
+      </div>
+      <!-- 用户年龄分析 -->
+    <div class="swiper-slide p7">
+      <div class="numTitle title3Color alcenter img-size" data-marginTop='70'>用户年龄分析</div>
+      <div class="jiezhi alcenter colorWhite img-size" data-marginTop='20'>截止日期 <span class="colorYellow">{{deadline |date:'yyyy-MM-dd' }}</span><br>
+      多融注册用户年龄分布情况
+      </div>
+      <div class="chart img-size" data-width='550' data-height='600' data-marginLeft='100' id='ageUser'></div>
+      <span class="start"></span>
+    </div>
+   <!--  最给力投资用户 -->
+    <div class="swiper-slide p8">
+      <div class="numTitle title5Color alcenter img-size" data-marginTop='70'>最给力投资用户</div>
+      <div class="jiezhi alcenter colorWhite img-size" data-marginTop='20'> <span class="colorYellow">{{year}}</span>年<span class="colorYellow">{{month}} </span> 月</div>
+      <div class="person img-size">
+          <div class="littlePerson img-size" data-width='375' data-marginTop='80'>
+              <div>累计投资额最多</div>
+              <div class="littleWoman img-size" ng-if='maxCumulativeInvest.sex==2'  data-width='158' data-height='148' data-marginTop='30'></div> 
+              <div class="littleMan img-size" ng-if='maxCumulativeInvest.sex==1'  data-width='184' data-height='148' data-marginTop='30'></div>
+              <div class="womanFontLittle img-size" data-marginTop='20' ng-if='maxCumulativeInvest.sex==2'>
+                  <span ng-bind='maxCumulativeInvest.surname'></span>女士 <br><span ng-bind='maxCumulativeInvest.mobilePhone'></span> <br>共计投资：<span class="spanColor" >{{maxCumulativeInvestCount | number:0}}</span> 元
+              </div>
+              <div class="womanFontLittle img-size" data-marginTop='20' ng-if='maxCumulativeInvest.sex==1'>
+                  <span ng-bind='maxCumulativeInvest.surname'></span>先生 <br> <span ng-bind='maxCumulativeInvest.mobilePhone'></span><br>共计投资：<span class="spanColor" >{{maxCumulativeInvestCount | number:0}}</span> 元
+              </div>
+          </div>
+              <div class="littlePerson img-size" data-width='375' data-marginTop='80'>
+              <div>单笔投资额最大</div>
+              <div class="littleWoman img-size" ng-if='maxOnceInvest.sex==2'  data-width='158' data-height='148' data-marginTop='30'></div> 
+              <div class="littleMan img-size" ng-if='maxOnceInvest.sex==1'  data-width='184' data-height='148' data-marginTop='30'></div>
+              <div class="womanFontLittle img-size" data-marginTop='20' ng-if='maxOnceInvest.sex==2'>
+                  <span ng-bind='maxOnceInvest.surname'></span>女士 <br><span ng-bind='maxOnceInvest.mobilePhone'></span> <br>单笔投资：<span class="spanColor" >{{maxOnceInvestCount | number:0}}</span> 元
+              </div>
+              <div class="womanFontLittle img-size" data-marginTop='20' ng-if='maxOnceInvest.sex==1'>
+                  <span ng-bind='maxOnceInvest.surname'></span>先生 <br> <span ng-bind='maxOnceInvest.mobilePhone'></span><br>单笔投资：<span class="spanColor" >{{maxOnceInvestCount | number:0}}</span> 元
+              </div>
+          </div>
+              <div class="littlePerson img-size" data-width='375' data-marginTop='80'>
+              <div>累计投资次数最多</div>
+             <div class="littleWoman img-size" ng-if='maxInvestFrequency.sex==2'  data-width='158' data-height='148' data-marginTop='30'></div> 
+              <div class="littleMan img-size" ng-if='maxInvestFrequency.sex==1'  data-width='184' data-height='148' data-marginTop='30'></div>
+              <div class="womanFontLittle img-size" data-marginTop='20' ng-if='maxInvestFrequency.sex==2'>
+                  <span ng-bind='maxInvestFrequency.surname'></span>女士 <br><span ng-bind='maxInvestFrequency.mobilePhone'></span> <br>共计投资：<span class="spanColor" >{{maxInvestFrequencyCount | number:0}}</span> 次
+              </div>
+              <div class="womanFontLittle img-size" data-marginTop='20' ng-if='maxInvestFrequency.sex==1'>
+                  <span ng-bind='maxInvestFrequency.surname'></span>先生 <br> <span ng-bind='maxInvestFrequency.mobilePhone'></span><br>共计投资：<span class="spanColor">{{maxInvestFrequencyCount | number:0}}</span> 次
+              </div>
+          </div>
+              <div class="littlePerson img-size" data-width='375' data-marginTop='80'>
+              <div>邀请好友总数最多</div>
+              <div class="littleWoman img-size" ng-if='maxRecommendFrequency.sex==2'  data-width='158' data-height='148' data-marginTop='30'></div> 
+              <div class="littleMan img-size" ng-if='maxRecommendFrequency.sex==1'  data-width='184' data-height='148' data-marginTop='30'></div>
+              <div class="womanFontLittle img-size" data-marginTop='20' ng-if='maxRecommendFrequency.sex==2'>
+                  <span ng-bind='maxRecommendFrequency.surname'></span>女士 <br><span ng-bind='maxRecommendFrequency.mobilePhone'></span> <br>共邀好友：<span class="spanColor">{{maxRecommendFrequencyCount | number:0}}</span> 位
+              </div>
+              <div class="womanFontLittle img-size" data-marginTop='20' ng-if='maxRecommendFrequency.sex==1'>
+                  <span ng-bind='maxRecommendFrequency.surname'></span>先生 <br> <span ng-bind='maxRecommendFrequency.mobilePhone'></span><br>共邀好友：<span class="spanColor">{{maxRecommendFrequencyCount | number:0}}</span> 位
+              </div>
+          </div>
+      </div>
+      <span class="start"></span>
+    </div>
+    <!-- 借款企业分析 -->
+    <div class="swiper-slide p9">
+      <div class="numTitle title6Color alcenter img-size" data-marginTop='50'>借款企业分析</div>
+      <div class="jiekuan img-size" data-marginTop='70'>最大单户借款余额占比</div>
+      <div class="chart img-size" data-width='600' data-height='350' data-marginLeft='75' id='danhu' style="position: relative;" ></div>
+      <div class="maxTen img-size" data-marginTop='60'>最大10户借款余额占比</div>
+      <div class="chart img-size" data-width='600' data-height='350' data-marginLeft='75' id='maxTen' style="position: relative;" ></div>
+      <p class="bank img-size" data-paddingLeft='65' data-paddingRight='65'>      我们只选择银行、大型国企作为担保承兑机构的 票据（银行汇票、商业汇票），确保资产真实、优质 无条件兑付。</p>
+      <span class="start"></span>
+    </div>
+    <!-- 逾期数据 -->
+    <div class="swiper-slide p10">
+    <img src="images/yuqi.jpg" alt="">
+      <span class="start"></span>
+    </div>
+    <!-- 平台福利 -->
+    <div class="swiper-slide p11">
+      <div class="numTitle title7Color alcenter img-size" data-marginTop='70'>{{month}}月份平台福利</div>
+      <div class="fuliFont img-size" data-marginTop='50' data-marginBottom='30'>砸冰块拿大奖
+</div>
+      <div class="fuliImg img-size" data-width='660' data-height='360'>
+          <img src="images/app1.png" alt="">
+      </div>
+       <div class="fuliFont img-size" data-marginTop='60' data-marginBottom='30'>集碎片玩拼图
+
+</div>
+       <div class="fuliImg img-size" data-width='660' data-height='360'>
+          <img src="images/app2.png" alt="">
+      </div>
+      <span class="start"></span></div>
+    <div class="swiper-slide p12">
+     <img src="images/dashiji1.png" alt="">
+     <span class="start"></span></div>
+     <div class="swiper-slide p13">
+     <img src="images/dashiji2.png" alt="">
+     <span class="start"></span></div>
+    <div class="swiper-slide p14" id="last">
+      <img src="images/erweima.png" alt="">
+    </div>
+  </div>
+  </div>
+  <!--   <span class="start"><b></b></span> -->
+</body>
+<!-- <script type="text/javascript" src="dist/zepto.js"></script>
+<script type="text/javascript" src="dist/zepto.fullpage.js"></script> -->
+<script>
+  function setImgSize() {
+    var originWidth = 375,
+      ratio = $(window).width() / originWidth;
+    $('.img-size').each(function () {
+      var self = $(this);
+      $.each(['height', 'width', 'left', 'right', 'bottom', 'top', 'paddingTop', 'lineHeight', 'paddingLeft', 'paddingRight', 'paddingBottom', 'marginTop', 'marginLeft', 'marginRight', 'marginBottom'], function (i, str) {
+        var num = self.attr('data-' + str);
+        if (num) {
+          num = num * ratio / 2 + 'px';
+          self.css(str, num)
+        }
+      })
+    });
+  }
+  setImgSize();
+</script>
+<script type="text/javascript">
+  var mySwiper = new Swiper('.swiper-container', {
+    direction: 'vertical'
+  })
+</script>
+
+</html>

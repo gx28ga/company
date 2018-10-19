@@ -1,0 +1,43 @@
+<!-- banner开始 -->
+<div class="banner-box">
+	<img src="/main/images/activity/wqq/banner.jpg" alt="">
+</div>
+<!-- banner结束 -->	
+
+<!-- tab开始 -->
+<div class="tab-box" ng-controller="wqqReportCtrl" ng-init="action=0;">
+	<div class="tap-top">
+		<div class="tap-list">
+			<div ng-click="action= 0" ng-class="{0:'tap-top-item-0',1:'tap-top-item',2:'tap-top-item',3:'tap-top-item',4:'tap-top-item'}[action]">平台业务数据</div>
+			<div ng-click="action= 1" ng-class="{0:'tap-top-item',1:'tap-top-item-1',2:'tap-top-item',3:'tap-top-item',4:'tap-top-item'}[action]">平台逾期数据</div>
+			<div ng-click="action= 2" ng-class="{0:'tap-top-item',1:'tap-top-item',2:'tap-top-item-2',3:'tap-top-item',4:'tap-top-item'}[action]">借款企业分析</div>
+			<div ng-click="action= 3" ng-class="{0:'tap-top-item',1:'tap-top-item',2:'tap-top-item',3:'tap-top-item-3',4:'tap-top-item'}[action]" style="margin-right:0;">出借用户分析</div>
+		</div>       
+	</div>
+
+	<div ng-if="action==0" class="tap-con">
+		<img src="/main/images/activity/wqq/tab1.png" alt="">
+	</div>
+	<div ng-if="action==1" class="tap-con">
+		<img src="/main/images/activity/wqq/tab2.png" alt="">
+	</div>
+	<div ng-if="action==2" class="tap-con">
+		<img src="/main/images/activity/wqq/tab3.png" alt="">
+	</div>
+	<div ng-if="action==3" class="tap-con">
+		<img src="/main/images/activity/wqq/tab4.png" alt="">
+	</div>
+</div>
+<!-- tab结束 -->
+
+<!-- 运营大事件  开始 -->
+<div class="bigEvent">
+	<img src="/main/images/activity/wqq/bigEvent.png" alt="">
+</div>
+<!-- 运营大事件  结束 -->
+
+<!-- 主要奖项  开始 -->
+<div class="mainPrize">
+	<img src="/main/images/activity/wqq/mainPrize.png" alt="">
+</div>
+<!-- 主要奖项  开始-->

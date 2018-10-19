@@ -1,0 +1,92 @@
+/* height */
+/* public */
+.explain {
+  /*@mixin contain '../images/explain.png';*/
+  width: 20rem;
+  height: 20rem;
+  background: #fff;
+  font-size: 0.875rem;
+  font-family: "PingFangSC-Light";
+  position: relative;
+  z-index: 999;
+  display: flex;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+.explain {
+      font-size: 0.75rem;
+}
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+.explain {
+      font-size: 0.75rem;
+}
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+.explain {
+      font-size: 0.96687rem;
+}
+}
+.explain .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: center;
+}
+.content {
+  flex: 1;
+  overflow-y: scroll;
+  color: #333;
+}
+.content dt {
+    float: left;
+}
+.content dd {
+    float: left;
+}
+/* height */
+/* public */
+.modal-header .title-bg {
+  background: red;
+}
+.modal-body {
+  color: #333;
+}
+.modal-body .notStart {
+    text-align: center;
+}
+.modal-body .notStart p {
+      font-size: 0.875rem;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+.modal-body .notStart p {
+          font-size: 0.75rem;
+}
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+.modal-body .notStart p {
+          font-size: 0.75rem;
+}
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+.modal-body .notStart p {
+          font-size: 0.96687rem;
+}
+}
+.publicTips {
+  display: flex;
+  flex-direction: row;
+}
+.publicTips .cancel {
+    margin-left: 5px;
+    padding: 0 20px;
+    border-radius: 13px;
+    background: yellow;
+    /*  background: linear-gradient(to bottom, #eee, #eee 40% , #ccc 55% , #ccc); */
+    color: #666;
+}
+.publicTips .btn {
+    background: #ff0000;
+    color: #fff;
+}
+
+/*# sourceMappingURL=8vendor.css.map?5a5032fa06dabf22c744*/

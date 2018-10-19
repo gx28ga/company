@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=960px">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta name="renderer" content="webkit" />
+    <title>{{ title }}</title>
+    <meta name='keywords' content="{{ keywords }}">
+    <meta name='description' content="{{ description }}">
+    <link rel="stylesheet" type="text/css" href="/style/common/common.css" inline>
+    <link href="/style/activity/publicitySec.css" rel="stylesheet" type="text/css" inline/>
+</head>
+<body>
+<div class="header-wrap">
+    <div class="logo-wrap">
+        <a href="http://www.duorongcf.com"><img src="/images/logo/logo.png"></a>
+        <span></span>
+        <a class="logoimg" href="http://www.duorongcf.com" target="_blank" style=""></a>
+    </div>
+    <div class="nav-box">
+        <div>
+            <ul>
+                <li><img src="/images/activity/publicitySec/topright.png" alt=""></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="APP" class="publicitySec">
+    <div class="banner">
+        <div class="regbox">
+            <div class="reg">
+                <form v-model="login" @click="clearEvent">
+                    <div class="input-box">
+                        <input type="tel" class="text" placeholder="请输入手机号码" v-model="login.mobilePhone" maxlength="11" >
+                        <p class="error phoneErr">${phoneErr}</p>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" class="text" placeholder="请输入验证码" v-model="login.imgCode" >
+                        <img :src="imgCodeUrl" @click="getImgCodeUrl" class="imgcode" alt="">
+                        <p class="error">${imgCodeErr}</p>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" class="text" placeholder="请输入短信验证码" v-model="login.msg" >
+                        <div class="getMsgBtn" @click="getSortMsg($event)">${sortName}</div>
+                        <p class="error">${msgErr}</p>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" class="text" placeholder="请设置密码" v-model="login.pwd">
+                        <p class="error">${passErr}</p>
+                    </div>
+                    <div class="recommend">
+                        <p class="recommend-title"><i class="d" :class="{up:showRecommend}" @click="recommend"></i>推荐人（选填）</p>
+                        <div class="input-box">
+                            <input type="text" v-show="showRecommend" class="text" placeholder="请输入推荐人手机号码/推荐码" v-model="login.recommPhone" maxlength="11">
+                            <p class="error"></p>
+                        </div>
+                    </div>
+                    <div class="input-box agree" @click="check">
+                        <div class="checked" :class="{check:!login.checkbox}"></div>
+                        我已阅读并同意
+                        <a href="/other/protocol/zhuceProtocol.html" target="_blank">《用户协议》</a>
+                        <p class="error">${checkErr}</p>
+                    </div>
+                </form>
+                <div class="input-box">
+                    <div class="text regbtn" :class="{gray:btnClass}" @click="submit">立即注册</div>
+                    <p class="error"></p>
+                </div>
+                <p class="dl">已有账号，<a href="/dl">立即登录</a> </p>
+            </div>
+        </div>
+    </div>
+    <div class="newhand">
+        <p class="title">多融财富--国资委下属事业单位控股，您的安心之选</p>
+        <p class="titlefu">新人专享四重礼</p>
+        <div class="gift-box">
+            <ul class="pub">
+                <!--<li class="gifticon gifta">-->
+                    <!--<p>活期理财<br>历史年化收益率10%</p>-->
+                    <!--<span>新手专享，首周收益翻倍</span>-->
+                <!--</li>-->
+                <li class="gifticon gifta">
+                    <p>12%<br>新手高息月标</p>
+                    <span>新手专享，12%高息月标</span>
+                </li>
+                <li class="gifticon giftb">
+                    <p>2%加息券</p>
+                    <span>专享加息，福利升级</span>
+                </li>
+                <li class="gifticon giftc">
+                    <p>1588元红包</p>
+                    <span>组合红包，立即到账</span>
+                </li>
+                <li class="gifticon giftd">
+                    <p>VIP客服</p>
+                    <span>私人定制，贴心服务</span>
+                </li>
+            </ul>
+            <div class="step">
+                <ul class="pub">
+                    <li>
+                        <div class="icon icona"></div>
+                        <p>免费注册<br><span>30秒快速注册</span></p>
+                    </li>
+                    <li class="line"></li>
+                    <li>
+                        <div class="icon iconb"></div>
+                        <p>安全认证<br><span>实名身份认证</span></p>
+                    </li>
+                    <li class="line"></li>
+                    <li>
+                        <div class="icon iconc"></div>
+                        <p>充值投资<br><span>在线支付，同卡进出</span></p>
+                    </li>
+                    <li class="line"></li>
+                    <li>
+                        <div class="icon icond"></div>
+                        <!--<p>新手活期体验<br><span>历史年化收益率10%</span></p>-->
+                        <p>新手高息月标<br><span>历史年化收益率12%</span></p>
+                    </li>
+                </ul>
+            </div>
+            <div class="look-rule" @click="showRule">查看活动规则></div>
+        </div>
+    </div>
+    <div class="product">
+        <p class="title">精选优质票据资产 满足多样理财需求</p>
+        <div class="new-product">
+            <div>
+                <span>新手月标</span><br>
+                <i>仅限新手</i>
+            </div>
+            <div>
+                <span class="pret">12%</span><br>
+                <b>历史年化收益率</b>
+            </div>
+            <div>
+                <span>100元</span><br>
+                <b>起投金额</b>
+            </div>
+            <div>
+                <span>28天起</span><br>
+                <b>投资期限</b>
+            </div>
+            <div class="tzbtn-box">
+                <div class="tzbtn" @click="showreg">立即投资</div>
+            </div>
+        </div>
+        <div class="product-list">
+            <ul class="pub">
+                <!--<li>
+                    <p class="name">朝朝盈</p>
+                    <p class="namef">活期理财，随时可取</p>
+                    <p class="pret">5%</p>
+                    <p class="history">历史年化收益率</p>
+                    <p class="daySY">万元每日收益：1.36元</p>
+                    <p class="quan">*新用户首周收益翻倍：<span>2.73</span>元</p>
+                    <div class="MSLC" @click="showreg">马上理财</div>
+                </li>-->
+                <li>
+                    <p class="name">月月盈</p>
+                    <p class="namef">投资期限 <span>30天</span></p>
+                    <p class="pret">8%</p>
+                    <p class="history">历史年化收益率</p>
+                    <p class="daySY">1万元收益：<span>65.75</span>元</p>
+                    <p class="quan">使用加息券收益:<span>82.19</span>元</p>
+                    <div class="MSLC" @click="showreg">马上理财</div>
+                </li>
+                <li>
+                    <p class="name">季季盈</p>
+                    <p class="namef">投资期限 <span>90天</span></p>
+                    <p class="pret">9.5%</p>
+                    <p class="history">历史年化收益率</p>
+                    <p class="daySY">1万元收益: <span>234.24</span>元</p>
+                    <p class="quan">使用加息券收益：<span>283.56</span>元</p>
+                    <div class="MSLC" @click="showreg">马上理财</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="introduce">
+        <ul class="pub">
+            <li>
+                <div class="inicon inicona"></div>
+                <p class="btitle">国资委下属事业单位控股</p>
+                <p class="notice">多融财富由国资委旗下<br>沪深控股战略控股占股比例为99%</p>
+            </li>
+            <li>
+                <div class="inicon iniconb"></div>
+                <p class="btitle">资金安全</p>
+                <p class="notice">资金流转透明<br>银行资金存管</p>
+            </li>
+            <li>
+                <div class="inicon iniconc"></div>
+                <p class="btitle">实力雄厚</p>
+                <p class="notice">注册资金1亿元<br>千万风险保障金</p>
+            </li>
+            <li>
+                <div class="inicon inicond"></div>
+                <p class="btitle">收益可观</p>
+                <p class="notice">百元起投<br>历史年化收益率12%</p>
+            </li>
+        </ul>
+    </div>
+    <div class="bottom">
+        <div class="bottom-btn" @click="showreg">立即注册</div>
+    </div>
+    <div class="zhucetan" id="zhucetan" v-show="iszhuce">
+        <div class="left">
+            <div class="top">
+                <div>注册多融财富即送<i></i></div>
+                <p class="li"><strong>1588</strong>元红包+2%加息券</p>
+                <!--<p class="agian">新手再享：<span>10%</span>活期理财+ <span>12%</span>专享月标</p>-->
+                <p class="agian">新手再享：<span>12%</span>新手高息月标</p>
+            </div>
+            <div class="tan-bottom">
+                <ul class="pub">
+                    <li>
+                        <div class="sicon sicona"></div>
+                        <p>国资委下属事业单位控股</p>
+                    </li>
+                    <li>
+                        <div class="sicon siconb"></div>
+                        <p>实力雄厚 千万保障金</p>
+                    </li>
+                    <li>
+                        <div class="sicon siconc"></div>
+                        <p>银行资金存管</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="right">
+            <form>
+                <div class="input-box2">
+                    手机号码：<input type="tel" placeholder="请输入手机号码" v-model="loginT.mobilePhone" maxlength="11" >
+                    <p class="error">${phoneErrT}</p>
+                </div>
+                <div class="input-box2">
+                    验证码：<input type="text" placeholder="请输入验证码" v-model="loginT.imgCode" >
+                    <img :src="imgCodeUrlT" @click="getImgCodeUrlT" class="imgcode2" alt="">
+                    <p class="error">${imgCodeErrT}</p>
+                </div>
+                <div class="input-box2">
+                    手机验证：<input type="text" placeholder="请输入短信验证码" v-model="loginT.msg" >
+                    <div class="getMsgBtn2" @click="getSortMsgT($event)">${sortNameT}</div>
+                    <p class="error">${msgErrT}</p>
+                </div>
+                <div class="input-box2">
+                    设置密码：<input type="password" placeholder="请设置密码" v-model="loginT.pwd">
+                    <p class="error">${passErrT}</p>
+                </div>
+                <p class="error">${checkErrT}</p>
+            </form>
+            <div class="regbtn2" :class="{gray:btnClassT}" @click="submitT">立即领取大礼包</div>
+            <div class="regagree">注册即为同意 <a href="/other/protocol/zhuceProtocol.html">《用户协议》</a> <span><a href="/dl">立即登录</a></span></div>
+        </div>
+    </div>
+    <div class="zhucetan" id="zhucetan2" v-show="iszhuce2">
+        <div class="left">
+            <p class="notlq">你还有新手礼品未领取</p>
+            <ul class="pub">
+                <li>
+                    <i class="alerticon alerticona"></i> <br>
+                    <!--<span>10%高活期收益</span>-->
+                    <span>12%新手高息月标</span>
+                </li>
+                <li>
+                    <i class="alerticon alerticonb"></i> <br>
+                    <span>1588元红包</span>
+                </li>
+                <li>
+                    <i class="alerticon alerticonc"></i> <br>
+                    <span>2%加息券</span>
+                </li>
+            </ul>
+        </div>
+        <div class="right">
+            <p>你真得要走了吗？<br>请再多给我一次机会吧！</p>
+            <div class="ku"></div>
+            <p class="sheng">你还有1588元红包未领取</p>
+            <div class="btn tzhuceben" @click="showreg2">注册领取</div>
+            <div class="btn tsorry" @click="closetan">遗憾错过</div>
+        </div>
+    </div>
+    <div class="zhucetan" id="rule" v-show="isrule">
+        <div class="title-box">
+            <div class="title">
+                <div class="dian"></div>
+                <div class="titlename">活动规则</div>
+                <div class="dian"></div>
+            </div>
+            <ul>
+                <li>活动结束时间待定，如需停止将提前3天以上告知用户。</li>
+                <!--<li>新用户完成注册即获得1588元红包+2%加息券，首投专享：历史年化收益率10%活期理财+12%新手专享月标。</li>-->
+                <li>新用户完成注册即获得1588元红包+2%加息券，首投专享：历史年化收益率12%新手高息月标。</li>
+                <li>用户可在我的账户-优惠红包中查看理财金、加息券。</li>
+                <li>本活动现金红包不可与其他活动理财金，红包，加息券同时使用。</li>
+                <li>活动解释权在法律允许范围内归多融财富所有。</li>
+            </ul>
+        </div>
+    </div>
+    {% include "common/layui.njk" %}
+</div>
+<div class="pageBott" style="">
+    <p>{{company.ICP}} | Copyright Reserved © {{company.name}} {{version}}</p>
+    <p>公司电话：{{company.phone}} | 公司地址：{{company.address}}</p>
+</div>
+<script>
+    (function(b,a,e,h,f,c,g,s){b[h]=b[h]||function(){(b[h].c=b[h].c||[]).push(arguments)};
+        b[h].s=!!c;g=a.getElementsByTagName(e)[0];s=a.createElement(e);
+        s.src="//s.union.360.cn/"+f+".js";s.defer=!0;s.async=!0;g.parentNode.insertBefore(s,g)
+    })(window,document,"script","_qha",263951,false);
+</script>
+<script src="/js/plug/jquery-1.11.1.min.js"></script>
+<script src="/js/plug/vue.2.4.2.min.js"></script>
+<script src="/js/common/global.js"></script>
+<script src="/js/common/verifcation.js" inline></script>
+<script src="/js/activity/publicitySec.js" inline></script>
+<script type='text/javascript'>
+    //百度统计
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?f7c570071c5e4a0cf001fac7a2152cae";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+</body>
+</html>

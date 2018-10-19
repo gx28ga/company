@@ -1,0 +1,780 @@
+/* line 1, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper {
+  background: #1356b1;
+  background: -webkit-gradient(linear, 0 100%, 0 0, from(#1356b1), to(#528ad9));
+  background: -webkit-linear-gradient(top, #1356b1, #528ad9);
+  background: -moz-linear-gradient(top, #1356b1, #528ad9);
+  background: -o-linear-gradient(top, #1356b1, #528ad9);
+  background: -ms-linear-gradient(top, #1356b1, #528ad9);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr = #1356b1, endColorstr = #528ad9);
+}
+/* line 10, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newYearRegister-wrap .banner {
+  position: relative;
+  height: 720px;
+}
+/* line 12, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newYearRegister-wrap .banner .bannerbg {
+  width: 100%;
+  height: 488px;
+  background: url("../images/banner.jpg") center top no-repeat;
+}
+/* line 16, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newYearRegister-wrap .banner .bannerfloor {
+  width: 100%;
+  height: 426px;
+  background: url("../images/floor.png") center top no-repeat;
+  position: absolute;
+  top: 307px;
+}
+/* line 22, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newYearRegister-wrap .banner .bannerprizes .prizeone {
+  width: 200px;
+  height: 250px;
+  background: url("../images/prizeOne.png") center top no-repeat;
+  position: absolute;
+  top: 367px;
+  left: 600px;
+  animation: prizeone 3s;
+}
+/* line 28, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newYearRegister-wrap .banner .bannerprizes .prizetwo {
+  width: 200px;
+  height: 250px;
+  background: url("../images/prizeTwo.png") center top no-repeat;
+  position: absolute;
+  top: 387px;
+  left: 830px;
+  animation: prizetwo 3s;
+}
+/* line 34, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newYearRegister-wrap .banner .bannerprizes .prizethree {
+  width: 200px;
+  height: 250px;
+  background: url("../images/prizeThree.png") center top no-repeat;
+  position: absolute;
+  top: 457px;
+  left: 1050px;
+  animation: prizethree 3s;
+}
+@keyframes prizeone {
+  0% {
+    top: 600px;
+    left: 0px;
+  }
+  100% {
+    top: 367px;
+    left: 600px;
+  }
+}
+@keyframes prizetwo {
+  0% {
+    top: 600px;
+    left: 0px;
+  }
+  100% {
+    top: 387px;
+    left: 830px;
+  }
+}
+@keyframes prizethree {
+  0% {
+    top: 600px;
+    left: 0px;
+  }
+  100% {
+    top: 457px;
+    left: 1050px;
+  }
+}
+/* line 54, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newYearRegister-wrap .gamebox {
+  width: 1200px;
+  margin: -35px auto 0;
+}
+/* line 56, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newYearRegister-wrap .gamebox ul.text {
+  display: block;
+  height: 50px;
+  font-size: 24px;
+  color: #fff;
+  padding-left: 180px;
+  margin-top: -80px;
+}
+/* line 58, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newYearRegister-wrap .gamebox ul.text li {
+  float: left;
+  list-style: initial;
+}
+/* line 58, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newYearRegister-wrap .gamebox ul.text li span {
+  color: #fff600;
+}
+/* line 60, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newYearRegister-wrap .gamebox .gametop {
+  height: 169px;
+  background: url("../images/gametop.png") center top no-repeat;
+}
+/* line 64, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newYearRegister-wrap .gamebox .gamecenter {
+  height: 674px;
+  background: url("../images/gamebg.png") center top no-repeat;
+}
+/* line 67, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newYearRegister-wrap .gamebox .gamecenter .prizebox {
+  width: 780px;
+  margin-left: 207px;
+  padding-top: 179px;
+  height: 243px;
+}
+/* line 69, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newYearRegister-wrap .gamebox .gamecenter .prizebox .prize {
+  width: 169px;
+  margin-right: 90px;
+  overflow: hidden;
+  height: 243px;
+  float: left;
+  position: relative;
+}
+/* line 71, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newYearRegister-wrap .gamebox .gamecenter .prizebox .prize ul {
+  position: absolute;
+}
+/* line 72, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newYearRegister-wrap .gamebox .gamecenter .prizebox .prize ul li {
+  width: 169px;
+  height: 243px;
+}
+/* line 74, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newYearRegister-wrap .gamebox .gamecenter .prizebox .prize ul li.bg1 {
+  background: url("../images/d.png") center center no-repeat;
+}
+/* line 77, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newYearRegister-wrap .gamebox .gamecenter .prizebox .prize ul li.bg2 {
+  background: url("../images/f.png") center center no-repeat;
+}
+/* line 80, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newYearRegister-wrap .gamebox .gamecenter .prizebox .prize ul li.bg3 {
+  background: url("../images/l.png") center center no-repeat;
+}
+/* line 83, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newYearRegister-wrap .gamebox .gamecenter .prizebox .prize ul li.bg4 {
+  background: url("../images/q.png") center center no-repeat;
+}
+/* line 86, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newYearRegister-wrap .gamebox .gamecenter .prizebox .prize ul li.bg5 {
+  background: url("../images/s.png") center center no-repeat;
+}
+/* line 89, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newYearRegister-wrap .gamebox .gamecenter .prizebox .prize ul li.bg6 {
+  background: url("../images/y.png") center center no-repeat;
+}
+/* line 92, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newYearRegister-wrap .gamebox .gamecenter .prizebox .prize ul li.bg7 {
+  background: url("../images/z.png") center center no-repeat;
+}
+/* line 99, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newYearRegister-wrap .gamebox .gamecenter .yaobtn {
+  width: 76px;
+  height: 70px;
+  border-radius: 50%;
+  float: right;
+  margin-top: -203px;
+}
+/* line 102, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newYearRegister-wrap .gamebox .gamecenter .notice {
+  font-size: 24px;
+  color: #000;
+  float: left;
+  margin: 139px 0 0 166px;
+}
+/* line 103, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newYearRegister-wrap .gamebox .gamecenter .startbtn {
+  width: 293px;
+  height: 75px;
+  margin: 114px auto 0;
+  cursor: pointer;
+}
+/* line 109, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newYearRegister-wrap .rulebox {
+  width: 1200px;
+  margin: 35px auto 0;
+}
+/* line 111, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newYearRegister-wrap .rulebox .ruletitle {
+  height: 40px;
+  width: 1152px;
+  background: url("../images/ruletitle.png") center center no-repeat;
+  font-size: 30px;
+  color: #fff;
+  text-align: center;
+}
+/* line 118, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newYearRegister-wrap .rulebox .rule ul li {
+  font-size: 18px;
+  color: #fff;
+  position: relative;
+  padding-left: 20px;
+  padding-top: 13px;
+}
+/* line 120, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newYearRegister-wrap .rulebox .rule ul li .jiantou {
+  width: 9px;
+  height: 13px;
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 0px;
+  background: url("../images/jiantou.png") center center no-repeat;
+}
+/* line 124, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newYearRegister-wrap .rulebox .rule ul li .dian {
+  width: 4px;
+  height: 4px;
+  display: block;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 25px;
+  left: 0px;
+}
+/* line 132, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newYearRegister-wrap .bottom {
+  height: 147px;
+  width: 100%;
+  background: url("../images/bottom.png") center center no-repeat;
+  margin-top: 50px;
+}
+/* line 138, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .common-wrapper {
+  padding-bottom: 70px;
+  overflow: hidden;
+  background: #fff;
+}
+/* line 139, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .common-wrapper .mode {
+  width: 1198px;
+  margin: 65px auto 0;
+  border: 1px solid #3a8acf;
+  position: relative;
+}
+/* line 140, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .common-wrapper .mode .cooperation {
+  padding: 0 40px;
+  overflow: hidden;
+  clear: both;
+  zoom: 1;
+}
+/* line 141, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .common-wrapper .mode .cooperation .content2 {
+  padding: 20px 0 10px;
+  overflow: hidden;
+}
+/* line 145, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .common-wrapper .mode .cooperation .content2 .swiper-img ul.partent {
+  width: 1120px;
+}
+/* line 145, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .common-wrapper .mode .cooperation .content2 .swiper-img li {
+  float: left;
+  width: 177px;
+  height: 100px;
+  margin-right: 9px;
+}
+/* line 145, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .common-wrapper .mode .cooperation .content2 .swiper-img li img {
+  display: block;
+  max-width: 175px;
+}
+/* line 149, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .common-wrapper .mode .title {
+  width: 162px;
+  height: 33px;
+  text-align: center;
+  line-height: 33px;
+  background: #3a8acf;
+  font-size: 18px;
+  color: #f0f0f0;
+  float: left;
+  margin: -17px 0 0 30px;
+}
+/* line 150, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .common-wrapper .mode .content {
+  padding: 49px 0 10px 120px;
+  overflow: hidden;
+  clear: both;
+  zoom: 1;
+}
+/* line 151, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .common-wrapper .mode .content .iconmode {
+  width: 529px;
+  float: left;
+  height: 137px;
+  position: relative;
+}
+/* line 152, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .common-wrapper .mode .content .iconmode .iconbox {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+/* line 153, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .common-wrapper .mode .content .iconmode .iconbox .wai {
+  width: 97px;
+  height: 97px;
+  background: #e6f3ff;
+  border-radius: 50%;
+  position: relative;
+}
+/* line 154, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .common-wrapper .mode .content .iconmode .iconbox .wai .nei {
+  width: 70px;
+  height: 70px;
+  background: #3a8acf;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 13.5px;
+}
+/* line 155, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .common-wrapper .mode .content .iconmode .iconbox .wai .nei .icon {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 18px;
+}
+/* line 156, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .common-wrapper .mode .content .iconmode .iconbox .wai .nei .icon.gzkg {
+  height: 34px;
+  width: 38px;
+  background: url("../images/GQKG.png") center center no-repeat;
+}
+/* line 157, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .common-wrapper .mode .content .iconmode .iconbox .wai .nei .icon.zjaq {
+  height: 34px;
+  width: 38px;
+  background: url("../images/ZJAQ.png") center center no-repeat;
+}
+/* line 158, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .common-wrapper .mode .content .iconmode .iconbox .wai .nei .icon.pjcd {
+  height: 34px;
+  width: 38px;
+  background: url("../images/PJCD.png") center center no-repeat;
+}
+/* line 159, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .common-wrapper .mode .content .iconmode .iconbox .wai .nei .icon.zyls {
+  height: 34px;
+  width: 38px;
+  background: url("../images/ZYLS.png") center center no-repeat;
+}
+/* line 164, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .common-wrapper .mode .content .iconmode .text {
+  padding: 14px 0 0 112px;
+  font-size: 14px;
+  color: #333;
+}
+/* line 164, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .common-wrapper .mode .content .iconmode .text span {
+  font-size: 26px;
+  color: #333;
+}
+/* line 167, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .common-wrapper .mode ul {
+  padding: 40px 0 40px 33px;
+  overflow: hidden;
+  clear: both;
+  zoom: 1;
+}
+/* line 168, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .common-wrapper .mode ul li {
+  float: left;
+  margin-right: 17px;
+  width: 271px;
+  text-align: center;
+}
+/* line 169, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .common-wrapper .mode ul li a:hover {
+  color: #333;
+}
+/* line 169, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .common-wrapper .mode ul li p {
+  font-size: 14px;
+  color: #333;
+  line-height: 24px;
+  padding-top: 16px;
+}
+/* line 174, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .code-wrapper {
+  width: 100%;
+  height: 200px;
+  background: #3a8acf;
+}
+/* line 175, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .code-wrapper .code {
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+/* line 176, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .code-wrapper .code .appcode {
+  float: left;
+  margin: 41px 0 0 44px;
+}
+/* line 177, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .code-wrapper .code .wechatcode {
+  float: left;
+  margin: 41px 0 0 198px;
+}
+/* line 178, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .code-wrapper .code .tel {
+  float: left;
+  margin: 76px 0 0 353px;
+}
+/* line 178, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .code-wrapper .code .tel .number i {
+  float: left;
+}
+/* line 178, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .code-wrapper .code .tel .number div {
+  float: left;
+  color: #fff;
+  padding-left: 13px;
+  margin-top: -5px;
+}
+/* line 178, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .code-wrapper .code .tel .number div span {
+  font-size: 32px;
+}
+/* line 178, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .code-wrapper .code .tel .number div p {
+  font-size: 12px;
+  margin-top: -3px;
+}
+/* line 179, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .code-wrapper .code .title {
+  font-size: 16px;
+  color: #fff;
+  padding-top: 6px;
+  width: 106px;
+  text-align: center;
+}
+/* line 180, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .code-wrapper .code .code-box {
+  overflow: hidden;
+}
+/* line 180, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .code-wrapper .code .code-box .app-code-icon {
+  float: left;
+}
+/* line 180, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .code-wrapper .code .code-box .app-code-icon img {
+  display: block;
+  border: 1px solid #008c40;
+}
+/* line 180, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .code-wrapper .code .code-box .app-code-word {
+  float: left;
+  padding: 29px 0 0 18px;
+}
+/* line 180, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .code-wrapper .code .code-box .app-code-word p i {
+  width: 104px;
+  height: 60px;
+  background: url("../../../../images/olympiad/appicon.png") center center no-repeat;
+  position: absolute;
+  top: 67px;
+  left: 167px;
+}
+/* line 184, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newFirTan .topText {
+  margin-left: 30px;
+  text-align: left;
+}
+/* line 185, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newFirTan .topText .title {
+  font-size: 30px;
+  color: #000;
+}
+/* line 186, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newFirTan .topText .cash {
+  position: relative;
+}
+/* line 186, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newFirTan .topText .cash strong {
+  color: #ff6633;
+  font-size: 58px;
+  font-weight: bold;
+  line-height: 1;
+}
+/* line 187, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newFirTan .topText .cash span {
+  font-size: 36px;
+  color: #000;
+}
+/* line 188, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newFirTan .topText .cash .icon {
+  position: absolute;
+  background: url('/images/cp167/alertnew.png') no-repeat;
+  left: 242px;
+  top: -37px;
+  width: 130px;
+  height: 56px;
+}
+/* line 190, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newFirTan .topText .double {
+  font-size: 30px;
+  color: #000;
+  font-weight: bold;
+}
+/* line 191, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newFirTan .topText .double em {
+  font-size: 29px;
+  color: #ff6633;
+  font-weight: bold;
+}
+/* line 194, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newFirTan .rtBox {
+  padding: 85px 0 0 60px !important;
+}
+/* line 195, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newFirTan .register {
+  border: 1px solid #dedede;
+  color: #fff;
+  background: #ff9600;
+  margin: 20px 0 10px 75px;
+}
+/* line 196, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newFirTan .input-box {
+  width: 330px !important;
+}
+/* line 196, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newFirTan .input-box input {
+  width: 308px !important;
+}
+/* line 198, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newFirTan .sub-box {
+  font-size: 14px;
+  color: #000;
+  text-align: left;
+  padding-left: 120px;
+}
+/* line 199, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newFirTan .sub-box .server-agreement {
+  color: #0099ff;
+}
+/* line 199, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newFirTan .sub-box .sub-btn {
+  border: none;
+  background: none !important;
+  font-size: 14px;
+  color: #ff9600 !important;
+  margin-left: 10px;
+}
+/* line 203, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newSecTan {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+/* line 204, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newSecTan .isNewSec {
+  background: #fff;
+  width: 1100px;
+  height: 500px;
+  margin: 0 auto;
+  margin-top: -259px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -486px;
+  text-align: center;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+/* line 205, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newSecTan .isNewSec .close {
+  position: absolute;
+  background: url('/images/cp167/close.png') no-repeat;
+  right: 10px;
+  top: 10px;
+  width: 27px;
+  height: 27px;
+  display: block;
+  z-index: 99;
+  cursor: pointer;
+}
+/* line 207, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newSecTan .isNewSec .ltBox {
+  float: left;
+  padding-left: 84px;
+  box-sizing: border-box;
+  padding-top: 72px;
+}
+/* line 208, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newSecTan .isNewSec .ltBox h3 {
+  font-size: 42px;
+  color: #000;
+  margin-bottom: 76px;
+  text-align: left;
+}
+/* line 209, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newSecTan .isNewSec .ltBox ul {
+  overflow: hidden;
+}
+/* line 210, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newSecTan .isNewSec .ltBox ul li {
+  float: left;
+  width: 116px;
+  margin-right: 66px;
+}
+/* line 211, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newSecTan .isNewSec .ltBox ul li img {
+  margin-bottom: 16px;
+}
+/* line 212, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newSecTan .isNewSec .ltBox ul li span {
+  display: block;
+  color: #000;
+}
+/* line 216, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newSecTan .isNewSec .rtBox {
+  background: #f7f7f7;
+  float: right;
+  padding-top: 60px;
+  padding-left: 80px;
+  height: 100%;
+  box-sizing: border-box;
+  width: 530px;
+}
+/* line 217, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newSecTan .isNewSec .rtBox p {
+  font-size: 26px;
+  line-height: 36px;
+  color: #000;
+  text-align: left;
+  margin-bottom: 28px;
+}
+/* line 218, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newSecTan .isNewSec .rtBox img {
+  width: 255px;
+  height: 122px;
+  display: block;
+  margin-left: 42px;
+  margin-bottom: 20px;
+}
+/* line 219, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newSecTan .isNewSec .rtBox b {
+  font-size: 24px;
+  color: #ff9600;
+  margin-left: -90px;
+}
+/* line 220, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newSecTan .isNewSec .rtBox .btn {
+  display: block;
+  width: 326px;
+  height: 42px;
+  border-radius: 8px;
+  text-align: center;
+  text-decoration: none;
+  line-height: 42px;
+  font-size: 18px;
+  margin-right: 90px;
+}
+/* line 221, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newSecTan .isNewSec .rtBox .btn.register {
+  border: 1px solid #dedede;
+  color: #fff;
+  background: #ff9600;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+/* line 223, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newSecTan .isNewSec .rtBox .btn.miss {
+  border: 1px solid #ff9600;
+  color: #ff9600;
+}
+/* line 225, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newSecTan .isNewSec .rtBox .input-box {
+  padding-bottom: 24px;
+  position: relative;
+}
+/* line 226, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newSecTan .isNewSec .rtBox .text {
+  width: 306px;
+  height: 24px;
+  line-height: 24px;
+  font-size: 14px;
+  color: #666666;
+  border-radius: 2px;
+  padding: 7px 10px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #cccccc;
+  border-image: initial;
+}
+/* line 227, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newSecTan .isNewSec .rtBox .input-wrap {
+  overflow: hidden;
+}
+/* line 228, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newSecTan .isNewSec .rtBox .input-wrap .name {
+  width: 75px;
+  float: left;
+  height: 36px;
+  line-height: 36px;
+  font-size: 14px;
+  color: #383636;
+}
+/* line 229, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newSecTan .isNewSec .rtBox .input-wrap .input-box {
+  width: 255px;
+  float: left;
+  overflow: hidden;
+}
+/* line 230, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newSecTan .isNewSec .rtBox .input-wrap .input-box .text {
+  width: 233px;
+  border-radius: 0px;
+  border-color: #dddddd;
+}
+/* line 231, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newSecTan .isNewSec .rtBox .input-wrap .input-box .get-code {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 106px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 14px;
+  border-radius: 0 6px 6px 0;
+  background: #fff;
+  border: 1px solid #e8a22b;
+  color: #e8a22b;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 232, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newSecTan .isNewSec .rtBox .input-wrap .input-box .img-box {
+  position: absolute;
+  right: 0;
+  top: 1px;
+  margin: 0;
+  width: 106px;
+  height: 38px;
+}
+/* line 233, ../sass/newYearRegister.scss */
+.newYearRegister-wrapper .newSecTan .isNewSec .rtBox .input-wrap .input-box .img-box img {
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+  margin: 0;
+}

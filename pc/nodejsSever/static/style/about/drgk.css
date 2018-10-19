@@ -1,0 +1,327 @@
+.wqq-ysbm-box {
+    width: 1200px;
+    background: #fff;
+    margin: 0 auto;
+    .top {
+        width: 100%;
+        height: 202px;
+        background: url('../../images/about/gsjj/topbg.png') top left no-repeat;
+        background-size: contain;
+        .icons-box {
+            width: 746px;
+
+            height: 110px;
+            margin: 0 auto;
+            padding: 0 55px;
+            div {
+                display: block;
+                float: left;
+                margin: 55px 70px 0 0;
+                img {
+                    width: 60px;
+                    height: 60px;
+                }
+                p {
+                    font-size: 16px;
+                    line-height: 24px;
+                    color: #000;
+                }
+            }
+        }
+    }
+    .content {
+        ul {
+            padding: 0 40px 40px 40px;
+            li {
+                h1 {
+                    font-size: 30px;
+                    text-align: center;
+                    line-height: 158px;
+                    color: #333;
+                }
+                .SANJIAO {
+                    color: #ff7200;
+                    font-size: 18px;
+                    line-height: 24px;
+                    margin-bottom: 10px;
+                    img {
+                        display: inline-block;
+                        margin-right: 8px;
+                    }
+                }
+                p {
+                    color: #666;
+                    font-size: 18px;
+                    line-height: 24px;
+                }
+                .img {
+                    text-align: center;
+                    padding-top: 60px;
+                }
+                .fenge {
+                    width: 1200px;
+                    height: 1px;
+                    border-bottom: 1px solid #ccc;
+                    margin-left: -40px;
+                    margin-top: 74px;
+                }
+                .gltd-box {
+                    width: 100%;
+                    height: 730px;
+                    display: block;
+                    .gltd-desc {
+                        p {
+                            line-height: 24px;
+                            font-size: 18px;
+                            color: #666;
+                        }
+                        h2 {
+                            font-size: 18px;
+                            color: #333;
+                            font-weight: bold;
+                            margin-top: 24px;
+                        }
+                    }
+                    .gltd-photo {
+                        margin: 64px 6px 26px;
+                        .ceo {
+                            float: left;
+                        }
+                        .team {
+                            float: right;
+                        }
+                    }
+                    .gltd-photo::after {
+                        clear: both;
+                        content: '';
+                        display: block;
+                        width: 0;
+                        height: 100%;
+                    }
+                }
+                .staff-box {
+                    background: #fff;
+                    padding: 0;
+                    overflow: hidden;
+                    .content1 {
+                        overflow: hidden;
+                        .left-btn,
+                        .right-btn {
+                            float: left;
+                            width: 17px;
+                            height: 26px;
+                            margin-top: 125px;
+                            background: url(../../images/home/icon.png);
+                            cursor: pointer;
+                        }
+                        .left-btn {
+                            margin-right: 10px;
+                        }
+                        .right-btn {
+                            float: right;
+                            background-position: 0 -32px;
+                        }
+                        .staffimg {
+                            margin: 18px 0;
+                        }
+                        ul {
+                            float: left;
+                            width: 2136px;
+                        }
+                        li {
+                            float: left!important;
+                            width: 349px!important;
+                            margin-right: 9px;
+                        }
+                    }
+                    .tempWrap {
+                        width: 1066px!important;
+                    }
+                }
+                .bz-bigbox {
+                    width: 100%;
+                    height: 621px;
+                    .bz-box {
+                        width: 318px;
+                        height: auto;
+                        margin-right: 75px;
+                        padding-bottom: 20px;
+                        float: left;
+                        .bz-img {
+                            padding: 4px 4px 0 4px;
+                            border: 1px solid #f1f1f1;
+                            text-align: center;
+                            img {
+                                width: 308px;
+                                height: 96px;
+                            }
+                        }
+                        .bz-con {
+                            font-size: 18px;
+                            color: #333;
+                            padding: 0 8px;
+                            h3 {
+                                font-weight: bold;
+                                line-height: 50px;
+                            }
+                        }
+                    }
+                }
+
+                .honor-box {
+                    width: 1164px;
+                    height: 145px;
+                    padding: 18px 0 0px 0;
+                    margin-top: 75px;
+                    overflow: hidden;
+                    clear: both;
+                    zoom: 1;
+                    .home-icons-prev {
+                        float: left;
+                        margin: 50px 35px 0 0;
+                        cursor: pointer;
+                    }
+                    .imgs {
+                        width: 1050px;
+                        overflow: hidden;
+                        float: left;
+                        ul {
+                            padding: 0;
+                            height: auto !important;
+                            li {
+                                float: left;
+                                height: auto !important;
+                                img {
+                                    width: 219px;
+                                    height: 145px;
+                                    display: block;
+                                    margin-right: 29px;
+                                }
+                            }
+                        }
+                    }
+                    .home-icons-next {
+                        float: left;
+                        margin: 50px 25px 0 0;
+                        cursor: pointer;
+                    }
+                }
+                .partner-box {
+                    width: 1164px;
+                    height: 85px;
+                    padding: 18px 0 0px 0;
+                    overflow: hidden;
+                    clear: both;
+                    zoom: 1;
+                    .home-icons-prev {
+                        float: left;
+                        margin: 28px 35px 0 0;
+                        cursor: pointer;
+                    }
+                    .imgs {
+                        width: 1050px;
+                        overflow: hidden;
+                        float: left;
+                        ul {
+                            padding: 0;
+                            height: auto !important;
+                            li {
+                                float: left;
+                                height: auto !important;
+                                img {
+                                    width: 225px;
+                                    height: 85px;
+                                    display: block;
+                                    margin-right: 39px;
+                                }
+                            }
+                        }
+                    }
+                    .home-icons-next {
+                        float: left;
+                        margin: 28px 25px 0 0;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+    .honor {
+        background: #fff;
+        padding: 0 20px;
+        overflow: hidden;
+        .content1 {
+            overflow: hidden;
+            .left-btn,
+            .right-btn {
+                float: left;
+                width: 17px;
+                height: 26px;
+                margin-top: 100px;
+                background: url(../../images/home/icon.png);
+                cursor: pointer;
+            }
+            .left-btn {
+                margin-right: 10px;
+            }
+            .right-btn {
+                float: right;
+                background-position: 0 -32px;
+            }
+            .honorimg {
+                margin: 18px 0;
+            }
+            ul {
+                float: left;
+                width: 1040px;
+            }
+            li {
+                float: left!important;
+                width: 350px!important;
+                margin-right: 9px;
+            }
+        }
+        .tempWrap {
+            width: 1034px!important;
+        }
+    }
+    .partner {
+        background: #fff;
+        padding: 0 20px;
+        overflow: hidden;
+        .content1 {
+            overflow: hidden;
+            .left-btn,
+            .right-btn {
+                float: left;
+                width: 17px;
+                height: 26px;
+                margin-top: 33px;
+                background: url(../../images/home/icon.png);
+                cursor: pointer;
+            }
+            .left-btn {
+                margin-right: 10px;
+            }
+            .right-btn {
+                float: right;
+                background-position: 0 -32px;
+            }
+            .partnerimg {
+                margin: 18px 0;
+            }
+            ul {
+                float: left;
+                width: 900px;
+            }
+            li {
+                float: left!important;
+                width: 200px!important;
+                margin-right: 9px;
+            }
+        }
+        .tempWrap {
+            width: 1034px!important;
+        }
+    }
+}

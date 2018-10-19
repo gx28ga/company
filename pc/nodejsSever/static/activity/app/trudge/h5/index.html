@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<link rel="stylesheet" href="../common/css/demo.css">
+<link rel="stylesheet" href="../common/css/jquery.flipster.css">
+</head>
+<style type="text/css">
+	body {
+		max-width: 750px;
+		width: 100%;
+		margin: 0 auto;
+		font: 12px/1.5 "Microsoft Yahei",arial,tahoma,"Hiragino Sans GB",\5b8b\4f53;
+	}
+	.main{
+		width: 100%;
+		background: url("./images/bg.jpg") no-repeat;
+		background-size: contain;
+		position: relative;
+	}
+	.flipster{
+		position: relative;
+	}
+	.nav-wrapper{
+		position: absolute;
+		width: 100%;
+		text-align: center;
+	}
+	.nav-wrapper .nav{
+		display: inline-block;
+		vertical-align: middle;
+		z-index: 10;
+		cursor: pointer;
+	}
+	.nav-wrapper .nav:hover{
+		background-color: rgba(0, 0, 0, .6);
+	}
+	.nav.left{
+		background: url("../common/images/nav-btn.png") no-repeat;
+		background-size: contain;
+	}
+	.nav.right{
+		background: url("../common/images/nav-btn.png") no-repeat;
+		background-size: contain;
+		transform: rotate(180deg);
+	}
+</style>
+<body>
+
+<!-- 代码部分begin -->
+<div class="main img-size" data-width="750" data-height="4534">
+	<div class="flipster img-size" data-top="4089" data-width="750" data-height="361" ontouchstart="onTouchStart(event)" ontouchend="onTouchEnd(event)">
+		<ul>
+			<li><img class="Button img-size" data-width="542" data-height="361" src="../common/images/pic-1.jpg" /></li>
+			<li><img class="Button img-size" data-width="542" data-height="361" src="../common/images/pic-2.jpg" /></li>
+			<li><img class="Button img-size" data-width="542" data-height="361" src="../common/images/pic-3.jpg" /></li>
+			<li><img class="Button img-size" data-width="542" data-height="361" src="../common/images/pic-4.jpg" /></li>
+			<li><img class="Button img-size" data-width="542" data-height="361" src="../common/images/pic-5.jpg" /></li>
+			<li><img class="Button img-size" data-width="542" data-height="361" src="../common/images/pic-6.jpg" /></li>
+			<li><img class="Button img-size" data-width="542" data-height="361" src="../common/images/pic-7.jpg" /></li>
+			<li><img class="Button img-size" data-width="542" data-height="361" src="../common/images/pic-8.jpg" /></li>
+		</ul>
+	</div>
+	<div class="nav-wrapper img-size" data-top="4247">
+		<div class="nav left img-size" data-borderRadius="23" data-width="46" data-height="46" data-marginRight="625"></div><div class="nav right img-size" data-borderRadius="23" data-width="46" data-height="46"></div>
+	</div>
+</div>
+<script src="../common/js/jquery-1.8.3.min.js"></script>
+<script src="../common/js/jquery.flipster.js"></script>
+<script>
+	var T = {
+			body : $("body"),
+			update : function(){
+				T.width = T.body.width();
+				T.height = T.body.height();
+			}
+			,setImgSize : function(){
+				T.update();
+				var  originWidth = 375
+					,ratio = T.width/originWidth;
+
+				$('.img-size').each(function(){
+					var self = $(this);
+					$.each(['height','width', 'minHeight', 'maxHeight', 'left','right','bottom','top' , 'paddingTop' ,'lineHeight' , 'paddingLeft' , 'paddingRight' , 'paddingBottom','marginTop', 'marginLeft' , 'marginRight' , 'marginBottom', 'fontSize', 'borderRadius'],function( i , str ){
+						var num = self.attr('data-'+str);
+						if( num ){
+							num = num*ratio/2+'px';
+							self.css(str,num)
+						}
+					});
+				});
+			}
+		};
+	setTimeout(function() {T.setImgSize();}, 20);
+</script>
+<script>
+	    var flipster = $(".flipster").flipster({
+	        style: 'carousel',
+			start: 0
+		});
+	    $(".nav.left").click(function () {
+            flipster.flipster("jump", "left");
+        });
+        $(".nav.right").click(function () {
+            flipster.flipster("jump", "right");
+        });
+
+        var stPosX, stPosY, edPosX, edPosY;
+        function onTouchStart(evt) {
+            stPosX = evt.changedTouches[0].clientX;
+            stPosY = evt.changedTouches[0].clientY;
+        };
+        function onTouchEnd(evt) {
+            var last = evt.changedTouches.length - 1;
+            edPosX = evt.changedTouches[last].clientX;
+            edPosY = evt.changedTouches[last].clientY;
+            var lenX = Math.abs(edPosX - stPosX);
+            if(lenX < 20 || Math.abs(edPosY - stPosY) > lenX) return;
+            if (edPosX > stPosX ) {
+                flipster.flipster("jump", "left");
+            } else {
+                flipster.flipster("jump", "right");
+            }
+        };
+</script>
+<script type="text/javascript">
+    //适配屏幕尺寸调整字体大小
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = Math.min(docEl.clientWidth, 750);
+                if (!clientWidth) return;
+                docEl.style.fontSize = 16 * (clientWidth / 320) + 'px';
+            };
+
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+</script>
+</body>
+</html>

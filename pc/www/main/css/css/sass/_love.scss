@@ -1,0 +1,460 @@
+$love-sprite-dimensions: true;
+@import "love/*.png";
+@include all-love-sprites();
+
+$financial-sprite-dimensions: true;
+@import "financial/*.png";
+@include all-financial-sprites();
+
+.love-body{
+	width: 100%;
+	background: image-url('lovebg.jpg') center 122px no-repeat;
+	.banner-wrap{
+		width: 1200px;
+		margin: 0 auto;
+		position: relative;
+		height: 489px;
+		.center{
+			position: absolute;
+			width: 948px;
+			height: 439px;
+			background: image-url('lovebanner.png') no-repeat;
+			left: 128px;
+			top: 50px;
+			p{
+				position: absolute;
+				color: #e50c85;
+				font-size: 24px;
+				font-style: italic;
+				left: 280px;
+				top: 268px;
+			}
+			.list{
+				width: 553px;
+				height: 55px;
+				line-height: 55px;
+				font-size: 22px;
+				color: #fff;
+				font-style: italic;
+				background: #e4007f;
+				border: 2px solid #fff;
+				text-align: center;
+				border-radius: 17px;
+				top: 302px;
+				left: 220px;
+				position: absolute;
+			}
+		}
+	}
+	.list-wrap{
+		width: 1200px;
+		margin: 0 auto;
+		height: 291px;
+		background: image-url('lovelistbg.png');
+		overflow: hidden;
+		position: relative;
+		.love-get{
+			position: absolute;
+			left: 938px;
+			top: 5px;
+		}
+		.stitle{
+			width: 194px;
+			height: 33px;
+			background: #e83679;
+			line-height: 33px;
+			text-align: center;
+			font-size: 16px;
+			color: #f4bdd2;
+			margin: 24px 0 0 580px;
+		}
+		.list{
+			padding: 22px 0 0 131px;
+			overflow: hidden;
+			p{
+				width: 224px;
+				float: left;
+				font-size: 66px;
+				color: #fffe93;
+				font-weight: bold;
+				&.list3{
+					padding-left: 7px;
+				}
+				&.list4{
+					padding-left: 39px;
+				}
+			}
+		}
+		.tip{
+			text-align: center;
+			font-size: 16px;
+			color: #fff;
+			padding-top: 18px;
+		}
+		a{
+			display: block;
+			width: 259px;
+			height: 48px;
+			text-align: center;
+			line-height: 48px;
+			background: #fffd55;
+			font-size: 24px;
+			color: #e4007f;
+			border-radius: 50px;
+			margin: 9px auto 0;
+			&:hover{
+				background: #f6f439;
+				text-decoration: none;
+			}
+		}
+	}
+	.mode{
+		width: 1198px;
+		margin: 82px auto 0;
+		border: 1px solid #eb99b4;
+		position: relative;
+		.title{
+			width: 162px;
+			height: 33px;
+			text-align: center;
+			line-height: 33px;
+			background: #eb6693;
+			font-size: 18px;
+			color: #f0f0f0;
+			float: left;margin: -17px 0 0 30px;
+		}
+		.love-icon{
+			position: absolute;
+			left: 53px;
+			top: 140px;
+		}
+		.con{
+			padding: 38px 0 0 282px;
+			font-size: 16px;
+			color: #e9447c;
+			line-height: 20px;
+			.modelist{
+				position: relative;
+			}
+			div{
+				padding-bottom: 11px;
+				b{
+					font-weight: bold;
+				}
+			}
+			p{
+				line-height: 32px;
+			}
+			i{
+				position: absolute;
+				left: -20px;
+				top: 5px;
+			}
+			span{
+				display: block;
+				padding: 18px 0 12px;
+				font-size: 12px;
+			}
+		}
+		.content{
+			padding: 49px 0 10px 120px;
+			overflow: hidden;
+			clear: both;
+			zoom: 1;
+			.iconmode{
+				width: 529px;
+				float: left;
+				height: 137px;
+				position: relative;
+				i{
+					position: absolute;
+					left: 0;
+					top: 0;
+				}
+				div{
+					padding: 14px 0 0 112px;
+					font-size: 14px;
+					color: #333;
+					span{
+						font-size: 26px;
+						color: #e9447c;
+					}
+				}
+			}
+		}
+		ul{
+			padding: 40px 0 40px 33px;
+			overflow: hidden;
+			clear: both;
+			zoom: 1;
+			li{
+				float: left;
+				margin-right: 17px;
+				width: 271px;
+				text-align: center;
+				a:hover{
+					color: #313131;
+				}
+				p{
+					font-size: 14px;
+					color: #313131;
+					line-height: 24px;
+					padding-top: 16px;
+				}
+			}
+		}
+		.partners{
+			padding: 50px 0 44px 30px;
+			overflow: hidden;
+			clear: both;
+			zoom: 1;
+			.love-left{
+				float: left;margin: 30px 10px 0 0;
+				cursor: pointer;
+			}
+			.imgs{
+				width: 1099px;
+				overflow: hidden;
+				float: left;
+				height: 78px;
+				ul{
+					width: 2080px;
+					padding: 0;
+					li{
+						float: left;
+						width: auto;
+						margin: 0 !important;
+						img{
+							width: 153px;
+						}
+					}
+				}
+			}
+			.love-right{
+				float: left;margin: 30px 0 0 10px;
+				cursor: pointer;
+			}
+		}
+	}
+	.code-wrapper{
+		width: 100%;
+		height: 200px;
+		background: #eb6693;
+		margin-top: 62px;
+		.code{
+			width: 1200px;
+			margin: 0 auto;
+			.appcode{
+				float: left;
+				margin: 41px 0 0 44px;
+			}
+			.wechatcode{
+				float: left;
+				margin: 41px 0 0 98px;
+			}
+			.tel{
+				float: left;
+				margin: 76px 0 0 353px;
+				.number{
+					i{
+						float: left;
+					}
+					div{
+						float: left;
+						color: #fff;
+						padding-left: 13px;
+						margin-top: -5px;
+						span{
+							font-size: 32px;
+						}
+						p{
+							font-size: 12px;
+							margin-top: -3px;
+						}
+					}
+				}
+			}
+			.title{
+				font-size: 16px;
+				color: #fff;
+				padding-top: 6px;
+			    width: 106px;
+			    text-align: center;
+			}
+			.code-box{
+				overflow: hidden;
+				.app-code-icon{
+					float: left;
+					img{
+						display: block;
+						border: 1px solid #e9447c;
+					}
+				}
+				.app-code-word{
+					float: left;
+					padding: 29px 0 0 18px;
+					p{
+						width: 102px;
+						height: 23px;
+						border: 1px solid #f9d0de;
+						border-radius: 2px;
+						margin-bottom: 10px;
+						font-size: 12px;
+						color: #fff;
+						line-height: 23px;
+						i{
+							float: left;
+							margin: 3px 5px 0 20px;
+						}
+					}
+				}
+			}
+		}
+	}
+	&.financial-body{
+		background: #fff;
+		.financial-line{
+			width: 100%;
+			height: 966px;
+			background: image-url('618line.png') no-repeat center top;
+		}
+		.banner{
+			width: 100%;
+			height: 513px;
+			background: image-url('618banner.png') center top;
+			.date{
+				padding-top: 259px;
+				height: 36px;
+				width: 500px;
+				line-height: 36px;
+				text-align: center;
+				font-size: 18px;
+				color: #fff;
+				font-weight: bold;
+				margin: 0 auto;
+				p{
+					margin-left: -25px;
+				}
+			}
+		}
+		.package-wrap{
+			width: 100%;
+			background: #fff1f4;
+			padding: 79px 0 0;
+			overflow: hidden;
+		}
+		.package{
+			width: 1194px;
+			margin: 0 auto;
+			border: 2px solid #ff2e55;
+			padding-bottom: 102px;
+			position: relative;
+			.financial-hasget{
+				position: absolute;
+				right: 15px;
+				top: -32px;
+			}
+			.financial-titlebg{
+				margin: -64px auto 0;
+				p{
+					font-size: 24px;
+					color: #ff3366;
+					padding: 65px 0 0 128px;
+				}
+			}
+			ul{
+				padding: 79px 0 0 118px;
+				overflow: hidden;
+				li{
+					float: left;
+					margin: 0 50px 50px 0;
+				}
+			}
+			.bot{
+				width: 644px;
+				height: 55px;
+				line-height: 55px;
+				font-size: 24px;
+				color: #ff2e55;
+				position: absolute;
+				left: 140px;
+				bottom: -20px;
+				background: #f6c5d2;
+				i{
+					position: absolute;
+					left: -11px;
+					bottom: 1px;
+				}
+				p{
+					padding-left: 78px;
+				}
+			}
+		}
+		.time{
+			text-align: center;
+			font-size: 30px;
+			color: #ff2e55;
+			vertical-align: middle;
+			padding: 90px 0 70px;
+			span{
+				vertical-align: middle;
+				display: inline-block;
+				&.financial-time{
+					margin-right: 14px;
+					vertical-align: top;
+				}
+				&.financial-timebg{
+					margin-right: 2px;
+					text-align: center;
+					color: #fff;
+				}
+			}
+		}
+		.btn{
+			display: block;
+			margin: 40px auto 46px;
+		}
+		.rules-wrap{
+			width: 100%;
+			background: image-url('618rulesbg.png') center top;
+			height: 448px;
+			.rules{
+				width: 1120px;
+				margin: 0 auto;
+				.box{
+					padding: 155px 0 0 56px;
+					color: #333;
+					p{
+						font-size: 30px;
+						padding-bottom: 35px;
+					}
+					ul{
+						padding-left: 10px;
+					}
+					li{
+						font-size: 18px;
+						padding-bottom: 22px;
+					}
+				}
+			}
+		}
+		.mode{
+			border-color: #ffb9c1;
+			.title{
+				background: #ff697b;
+			}
+			.content .iconmode div{
+				span{
+					color: #333;
+				}
+				p{
+					padding-top: 4px;
+				}
+			}
+		}
+		.code-wrapper{
+			margin: 0;
+			background: #ff697b;
+		}
+	}
+}

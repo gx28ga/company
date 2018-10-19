@@ -1,0 +1,114 @@
+<div class="body-wrapper">
+  <!-- banner -->
+  <div class="banner"></div>
+  <div class='content'>
+      <div class='gaoge'>
+          
+      </div>
+     <!--  一路有你 -->
+      <div  class='you'>
+           <div class='youTitle'></div>
+           <div class='youFont'></div>
+           <div class='youInfo'></div>
+      </div>
+      <div class='qianxing'>
+            <div class='qianTitle'></div>
+            <div class='qianFont'></div>
+            <div class='bigEvent'></div>    
+      </div>
+      <div class='thank'>
+            <div class='thankTitle'></div>
+            <div class='thankFont'></div>
+            <div class='thankTree'></div>
+            <div class='thankContent'></div>
+      </div>
+  </div>
+<!-- 底部 -->
+<div id="footer">
+  <div class="footer-wrapper">
+    <div class="foot-wrap">
+      <div class="foot-nav">
+        <div class="nav-mod">
+          <p class="sml">移动端下载</p>
+          <ul class="fir">
+            <a ui-sref="appdownload"><li class="ios"></li></a>
+            <a ui-sref="appdownload"><li class="and"></li></a>
+            <!-- <a href="http://app.duorongcf.com"><li class="pho"></li></a> -->
+          </ul>
+        </div>
+        <div class="nav-mod mod2">
+          <p class="sml">手机APP二维码</p>
+          <ul class="fir">
+            <li class="apper"></li>
+          </ul>
+        </div>
+        <div class="nav-mod  mod2">
+          <p class="sml">关注微信服务号</p>
+          <ul class="fir">
+            <li class="weier"></li>
+          </ul>
+        </div>
+      </div>
+      <div class="modeline"></div>                                                                
+      <div class="contact-wrap">
+        <div class="nav-mod mod3">
+          <i class="about"></i>
+          <p>关于多融</p>
+          <ul>
+            <li><a href="{{a|webIE8}}main/jt/DRGK?menuName=DRGK" target="_blank">多融概况</a></li>
+            <li><a href="{{a|webIE8}}main/jt/LXWM?menuName=LXWM" target="_blank">联系我们</a></li>
+            <li><a href="{{a|webIE8}}main/jt/guarantee?menuName=guarantee" target="_blank">安全保障</a></li>
+          </ul>
+        </div>
+        <div class="nav-mod mod3">
+          <i class="help"></i>
+          <p>帮助中心</p>
+          <ul>
+            <li><a href="{{a|webIE8}}main/jt2/help?menuName=help" target="_blank">常见问题</a></li>
+            <li><a href="{{a|webIE8}}main/jt2/LCZS?menuName=LCZS" target="_blank">理财课堂</a></li>
+            <li><a href="{{a|webIE8}}main/jt2/XSZY?menuName=XSZY" target="_blank">新手指引</a></li>
+            <li><a href="{{a|webIE8}}main/FLFG" target="_blank">免责声明</a></li>
+          </ul>
+        </div>
+        <div class="nav-mod mod3 three">
+          <i class="ask"></i>
+          <strong ng-cloak>4006-908-896</strong>
+          <span>工作时间<em>：08:30 — 20:30</em><br>法定节假日除外<br>客服<em>QQ：4006908896</em></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="right-wrapper">
+    <div class="foot-right">
+            <!--<div class="right-text" style="padding: 0;">市场有风险 投资需谨慎；平台建议的预期年化收益率仅供参考，不代表未来实际收益</div>-->
+      <div class="right-text" style="padding: 0;">市场有风险 投资需谨慎；平台建议的历史年化收益率仅供参考，不代表未来实际收益</div>
+      <div class="right-text" style="padding: 0;">沪ICP备15011207号-5 | Copyright Reserved © 上海银砖金融信息服务有限公司 {{v}}</div>
+      <div class="right-text" style="padding-top: 0;">公司电话：021-80312696 | 公司地址：上海市虹口区四川北路859号中信广场41楼</div>
+      <ul>
+        <li><a class="spread-partners-hu" href="https://trustsealinfo.verisign.com/splash?form_file=fdf/splash.fdf&dn=www.duorongcf.com&lang=zh_cn" target="_blank"><img src="/main/images/spread-partners/hu.png"></a></li>
+        <li><a id='___szfw_logo___' class="spread-partners-kexin" href="https://credit.szfw.org/CX20170123033101030377.html" target="_blank"><img src="/main/images/spread-partners/kexin.png"></a></li>
+        <li><a class="spread-partners-aliyun" href="https://www.aliyun.com/" target="_blank"><img src="/main/images/spread-partners/aliyun.png"></a></li>
+        <li><a class="spread-partners-zdcy" href="https://www.yunaq.com/cyd/" target="_blank"><img src="/main/images/spread-partners/zdcy.png"></a></li>
+        <li><a  key ="570e15dfefbfb02ee9d6f567"  logo_size="83x30"  logo_type="business"  href="http://v.pinpaibao.com.cn/authenticate/cert/?site=www.duorongcf.com&at=business" target="_black" ><img style="background: #fff;" src="//static.anquan.org/static/outer/image/hy_83x30.png" alt="安全联盟认证" width="83" height="30" style="border: none;"></a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+  <script>
+    $(document).ready(function () {
+      //默认样式
+      $(".tab_content").hide();
+      $("ul.tabs li:first").addClass("active").show();
+      $(".tab_content:first").show();
+      //点击事件
+      $('ul.tabs li a').click(function () {
+        $('ul.tabs li a').removeClass('active');
+        $(this).addClass('active');
+        $('.tab_content').hide();
+        var activeTab = $(this).attr("href");
+        $(activeTab).fadeIn();
+        return false;
+      })
+    })
+  </script>
+</div>

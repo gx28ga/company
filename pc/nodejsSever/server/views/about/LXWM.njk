@@ -1,0 +1,47 @@
+{% extends "common/main.njk" %}
+{% block body %}
+<link href="/style/about/contactus.css" rel="stylesheet" type="text/css" inline/>
+<link href="/style/about/menu.css" rel="stylesheet" type="text/css" inline/>
+<div id='APP' class='about'>
+ {% include "./menu.njk" %}
+<div class="lxwm-ysbm-box us">
+    <div class="top"></div>
+    <div class="content">
+         <h1>上海银砖金融信息服务有限公司 </h1>
+         <p>公司固话：{{company.phone}} </p>
+         <p>公司传真：{{company.fax }} </p>
+         <p>公司邮箱： <a href="mailto:duorongcf@yinzhuansh.com">{{company.email}}</a></p>
+         <p>公司地址：{{company.address}}</p>
+         <p>邮编：{{company.code}}</p>
+
+    </div>
+    <div class="content">
+         <h1>客户服务</h1>
+         <p>服务热线：{{contactPhone}}</p>
+         <p>客服QQ： {{contactQq}}</p>
+         <p>客服邮箱：<a href="mailto:kefu@yinzhuansh.com"> {{contactEmail}}</a></p>
+    </div>
+    <div class="content">
+         <h1>了解更多 </h1>
+         <p>请关注我们，以获取更多的理财信息和更好的服务：</p>
+    </div>
+    <div class="content">
+        <div class="img-box">
+            <img src="/images/common/weixin-158x158.png" alt="">
+            <p>多融财富官方微信二维码</p>
+        </div>
+        <div class="img-box">
+            <img src="/images/common/app-158x158.png" alt="">
+            <p>多融财富APP下载二维码</p>
+        </div>
+    </div>
+    <div class="content2">
+        <div class="map">
+            <img src="/images/about/gsjj/map.png" alt="">
+        </div>
+    </div>
+</div>
+
+</div>
+<script src="../js/about/LXWM.js" inline></script>
+{% endblock %}

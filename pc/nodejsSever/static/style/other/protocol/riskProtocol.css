@@ -1,0 +1,46 @@
+.riskprotocal{
+    padding-top:20px;
+    padding-bottom:38px;
+    .container{
+        background-color:#fff;
+        max-width: 1140px;
+        margin: 0 auto;
+        padding: 38px 20px;
+        width: 80%;
+        box-sizing:border-box;
+        h3{
+            font-size:24px;
+            color:#000;
+            text-align:center;
+        }
+        .risk-title{
+            p{
+                line-height:30px;
+                color:rgb(16,37,66);
+                font-size:14px;
+            }
+        }
+        .risk-content{
+            line-height:30px;
+            color:rgb(16,37,66);
+            font-size:14px;
+            h1{
+                color:#000;
+                font-weight:700;
+            }
+            h3{
+                font-size:14px;
+                text-align:left;
+            }
+            .risk-strong{
+                font-weight:700;
+            }
+            .risk-h{
+                margin-top:40px;
+            }
+        }
+    }
+    .risk-btm{
+        margin-bottom:28px;
+    }
+}

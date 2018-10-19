@@ -1,0 +1,176 @@
+{% extends "common/main.njk" %}
+{% block body %}
+<style>
+    body{
+        background:#fff;
+        font-family:"MicrosoftYaHeiLight";
+        font-size:18px;
+        color:#333333;
+    }
+    .banner{
+        height:503px;
+        background:url("/images/other/huifang/banner.jpg") center 0 no-repeat;
+    }
+    .content1{
+        width:1200px;
+        margin:25px auto;
+    }
+    .content1.number1{
+        width:1120px;
+        height:320px;
+        background:#e8f2fb;
+        border:1px solid #116dc0;
+        border-radius:8px;
+    }
+    .number1 .left{
+        float:left;
+        margin-top:15px;
+        margin-left:55px;
+        width:286px;
+        height:283px;
+        background:url("/images/other/huifang/left.png") no-repeat;
+    }
+    .number1 .right{
+        float:right;
+        width:710px;
+        margin-right:44px;
+        margin-top:30px;
+        line-height:48px;
+    }
+    .content{
+    width:100%;
+    background:#e8f2fb;
+    }
+    .content  .jieshao{
+        width:1200px;
+        margin:0 auto;
+        padding:60px 40px;
+    }
+    .content .title{
+        background:#116dc0;
+        width:350px;
+        height:66px;
+        margin-bottom:30px;
+        border-radius:33px;
+        color:#ffffff;
+        text-align:center;
+        line-height:66px;
+        font-size:30px;
+        margin-top:40px;
+    }
+    .content .jieshaoContent{
+        text-indent:2em;
+        line-height:48px;
+        font-family:"MicrosoftYaHeiLight";
+        font-size:18px;
+        color:#333333;
+    }
+    .content .xiangmu{
+    background:url("/images/other/huifang/xiangmu.png") no-repeat;
+    width:915px;
+    height:670px;
+    margin:40px auto 0px;
+    }
+    .shouxian{
+        background:#116dc0;
+        border-radius:8px;
+        width:1120px;
+        height:355px;
+        margin:50px auto 60px;
+    }
+    .shouxian .shouxianing{
+        float:right;
+        width:332px;
+        height:249px;
+        background:url("/images/other/huifang/shouxian.jpg") no-repeat;
+        margin-top:45px;
+        margin-right:70px;
+
+    }
+    .shouxian .shcontent{
+        color:#fff;
+        font-size:18px;
+        width:580px;
+        line-height:45px;
+        margin-left:50px;
+        margin-top:64px;
+        float:left;
+
+    }
+    .shouxian .shcontent:first-letter{
+        font-size:48px;
+
+    }
+    .content1 .number2{
+        width:310px;
+        height:237px;
+        position:absolute;
+        top:50px;
+        right:60px;
+        background:url("/images/other/huifang/number2.png") no-repeat;
+    }
+    .content1 .number3{
+        width:740px;
+        line-height:50px;
+        font-size:18px;
+        text-indent:2em;
+    }
+    .number4{
+        width:938px;
+        height:827px;
+        margin:70px auto 80px;
+        clear:both;
+        background:url("/images/other/huifang/number4.png") no-repeat;
+    }
+    .last{
+        width:1120px;
+        margin:0px auto;
+        text-indent:2em;
+        line-height:45px;
+    }
+</style>
+<div class="wapper">
+    <div class="banner"></div>
+    <div class='content1 number1'>
+        <div class='left'></div>
+        <div class='right'>
+            10月底，上海银砖金融信息服务有限公司（以下称“多融财富”）根据平台风控管理制度要求对业务合作机构之一中交第二航务工程局有限公司（以下称“中交二航局”）进行访问并对合作项目进行实地考察。多融财富主要与中交二航局旗下负责物资采购与流通的子公司进行合作，而业务标的即为中交二航局在福州在建的工程——马尾大桥。
+        </div>
+    </div>
+    <div class='content'>
+        <div class='jieshao'>
+            <div  class='title' style='margin-top:0px;'>企业简介</div>
+            <div class='jieshaoContent'>
+                中交二航局创建于1950年，是世界500强企业——中国交通建设股份有限公司（大型央企）全资子公司。总部位于湖北武汉，注册资本380979.81万元人民币。业务涵盖路桥、港航、铁路、城市轨道交通、市政工程、房建、水利水电、房地产开发、综合管廊、水务环保、建筑装配化、民航机场、城市综合体、特色小镇等。
+            </div>
+            <div class='title'>经营业绩</div>
+            <div class='jieshaoContent'>
+                经过60多年的发展，市场遍布全国29个省（市、自治区），以及东南亚、南亚、中东、欧洲、非洲、南美洲的24个国家和地区。二航局下辖12家子公司，13家分公司，3家参股公司，30余家投资、房地产项目公司，以及30余家经营性分公司和海外经营办事处。拥有各类大型工程船舶近百艘，施工机械设备4000余台（套）。
+            </div> 
+            <div class='title'>代表项目</div>
+            <div class='jieshaoContent'>
+                 二航局承建的江苏南通洋口港人工岛主体工程，成功开创了国内无遮掩外海人工岛施工先河。世界上最大跨径斜拉桥苏通长江大桥、世界上最长的跨海大桥杭州湾大桥等一批世界级桥梁相继建成通车。先后承建了哈大铁路客运专线、京沪高速铁路、沪杭铁路客运专线等世界一流的高速铁路、客运专线和铁路专用线等项目。二航局积极实施国际化战略，先后承建了马尔代夫中马友谊大桥、斯里兰卡外环高速公路等极具国际影响力的桥梁公路项目，以及越南西贡国际（和黄）码头、巴基斯坦卡西姆集装箱码头、以色列阿什杜德港码头等一系列重大港口项目。
+            </div>
+            <div class='xiangmu'></div>
+        </div>
+    </div>
+    <div class='shouxian'>
+        <div class='shcontent'>首先考察的是马尾大桥的项目管理部。中交二航局负责物资采购的廖经理简单介绍了马尾大桥项目的情况。多融财富合作的供应商与中交二航局发生的赊销采购主要是钢材（螺纹钢、盘螺、直条钢筋、冷轧带肋等钢材），而钢材主要用于中交二航局在福州的马尾大桥项目。</div>
+        <div class='shouxianing'></div>
+    </div>
+    <div class='content1' style='position:relative;'>
+        <div class='number3'>  福州马尾大桥工程由主桥、南连接线和北连接线3个部分组成，总投资约36亿元，大桥全长6.38公里。工程全线南起仓山区环岛路，经福泉高速公路、南江滨路、闽江、北江滨路、福马铁路、104国道，与机场高速公路二期对接。其中，主桥长约1.8公里，位于闽江下游河段。南连接线长约1.9公里，与福泉高速公路、环岛路、南江滨路等互通。北连接线长约2.5公里，起于北江滨路，连接机场高速二期公路，与福马路、北江滨路等互通。马尾大桥是目前福州最大的跨江大桥。马尾大桥及其接线工程横跨闽江，建成后，将连通南台岛与马尾区、中心城区，是连接马尾新城马尾片区与仓山片区的重要桥梁，也是南台岛向宁德、浙江方向辐射的重要通道。</div>
+        <div class='number3'>  然后去马尾大桥项目施工地去考察。</div>
+        <div class='number2'></div>
+    </div>
+    <div class='number4'>
+    </div>
+    <div class='last' style='margin-top:60px;'>
+    该工程主体部分已经建设一年多，工程量基本完成大半，再需建设一年即可大桥主线贯通，预计2019年年初基本建成通车。整个工程每个月平均使用各类钢材共计5000多吨，工程总计需要各类钢材预计15万吨左右。多融财富能参与到这个业务中，为相关企业进行供应链金融支持，也是中交二航局对我方的认可。
+    </div> 
+     <div class='last' style='margin-bottom:40px;'>
+    中交二航局在国内外正在建设的工程非常多：港航、铁路、城市轨道交通、市政工程、房建、水利水电、房地产开发等。中交二航局所有项目各个环节都需要各种材料的采购：建材、钢材、水泥、混凝土、机械设备等，大部分业务都有赊账采购的需求，多融财富和中交二航局后续会有更多的业务合作。
+    </div>
+</div>
+<script src="../js/other/huifang.js" inline></script>
+{% endblock %}

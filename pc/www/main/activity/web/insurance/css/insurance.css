@@ -1,0 +1,268 @@
+.body-wrapper {
+  width: 100%;
+  background: #fff; }
+  .body-wrapper .banner {
+    width: 100%;
+    height: 1125px;
+    background: url("../images/banner.png") center 0 no-repeat; }
+    .body-wrapper .banner .con {
+      width: 1200px;
+      height: 700px;
+      margin: 0 auto;
+      position: relative;
+      color: #00fff0;
+      font-size: 24px; }
+      .body-wrapper .banner .con a {
+        color: #00fff0; }
+      .body-wrapper .banner .con .biao {
+        position: absolute;
+        bottom: 70px;
+        color: #00fff0;
+        text-decoration: underline; }
+      .body-wrapper .banner .con .biao1 {
+        left: 46px; }
+      .body-wrapper .banner .con .biao2 {
+        left: 213px; }
+      .body-wrapper .banner .con .biao3 {
+        left: 380px; }
+      .body-wrapper .banner .con .biao4 {
+        left: 536px; }
+      .body-wrapper .banner .con .biao5 {
+        left: 720px; }
+      .body-wrapper .banner .con .biao6 {
+        left: 888px; }
+      .body-wrapper .banner .con .biao7 {
+        left: 1055px; }
+  .body-wrapper .number1 {
+    background: url("../images/number1.png") no-repeat;
+    width: 1221px;
+    height: 889px;
+    margin: 0 auto;
+    margin-top: -450px;
+    position: relative; }
+    .body-wrapper .number1 .jieshao {
+      list-style: circle inside url("../images/circle.png");
+      color: #1f1f29;
+      font-size: 18px;
+      width: 1080px;
+      position: absolute;
+      bottom: 80px;
+      left: 50%;
+      margin-left: -540px; }
+      .body-wrapper .number1 .jieshao .concon {
+        margin-bottom: 20px; }
+      .body-wrapper .number1 .jieshao .ha {
+        color: #ff7200; }
+  .body-wrapper .content {
+    width: 1200px;
+    margin: 0 auto; }
+    .body-wrapper .content .title2 {
+      background: url("../images/title2.png") no-repeat;
+      width: 534px;
+      height: 116px;
+      margin: 70px auto 0px; }
+    .body-wrapper .content .title3 {
+      background: url("../images/title3.png") no-repeat;
+      width: 534px;
+      height: 116px;
+      margin: 70px auto 0px; }
+    .body-wrapper .content .title6 {
+      background: url("../images/title6.png") no-repeat;
+      width: 534px;
+      height: 116px;
+      margin: 70px auto 0px; }
+    .body-wrapper .content .title7 {
+      background: url("../images/title7.png") no-repeat;
+      width: 539px;
+      height: 119px;
+      margin: 70px auto 0px; }
+    .body-wrapper .content .number2 {
+      background: url("../images/number2.png") no-repeat;
+      width: 1231px;
+      height: 421px;
+      margin: 70px auto 0;
+      position: relative; }
+      .body-wrapper .content .number2 .bank {
+        width: 480px;
+        height: 140px;
+        color: #74747f;
+        font-size: 18px;
+        position: absolute;
+        left: 160px; }
+      .body-wrapper .content .number2 .bank1 {
+        top: 10px; }
+      .body-wrapper .content .number2 .bank2 {
+        bottom: 90px; }
+      .body-wrapper .content .number2 .bankTitle {
+        color: #ff7200;
+        font-size: 22px; }
+    .body-wrapper .content .number3 {
+      background: url("../images/number3.png") no-repeat;
+      width: 1199px;
+      height: 480px;
+      margin: 70px auto 0; }
+    .body-wrapper .content .titCon {
+      text-align: center;
+      color: #aeb3be;
+      font-size: 24px;
+      margin-top: -40px; }
+    .body-wrapper .content .jianjie {
+      margin: 50px auto 0; }
+      .body-wrapper .content .jianjie .jieicon {
+        background: url("../images/icon1.png") no-repeat;
+        width: 14px;
+        height: 24px; }
+      .body-wrapper .content .jianjie .jieCon {
+        color: #1f1f29;
+        font-size: 22px;
+        margin-left: 20px;
+        margin-top: -28px; }
+  .body-wrapper .number6 {
+    background: url("../images/number6.png") no-repeat;
+    width: 1199px;
+    height: 691px;
+    margin: 70px auto 0; }
+  .body-wrapper .number7 {
+    background: url("../images/number7.png") center 0 no-repeat;
+    width: 100%;
+    height: 317px;
+    margin: 70px auto 0; }
+  .body-wrapper .content1 {
+    width: 100%;
+    margin: 0 auto; }
+    .body-wrapper .content1 .jianjie {
+      width: 1200px;
+      margin: 60px auto 0; }
+  .body-wrapper .content2 {
+    width: 100%;
+    margin: 0 auto;
+    background: #f2f4fb;
+    padding: 60px 0 55px; }
+    .body-wrapper .content2 .jianjie {
+      width: 1200px;
+      margin: 60px auto 0; }
+    .body-wrapper .content2 .title4 {
+      background: url("../images/title4.png") no-repeat;
+      width: 697px;
+      height: 116px;
+      margin: 70px auto 0px; }
+  .body-wrapper .number4 {
+    background: url("../images/number4.png") no-repeat;
+    width: 998px;
+    height: 813px;
+    margin: 60px auto 0;
+    position: relative; }
+    .body-wrapper .number4 #xy {
+      position: absolute;
+      bottom: 0;
+      right: 80px;
+      width: 400px;
+      height: 570px; }
+  .body-wrapper .number5 {
+    background: url("../images/number5.png") no-repeat;
+    width: 1199px;
+    height: 726px;
+    margin: 60px auto 0; }
+  .body-wrapper .rongyu .rongyuTitle {
+    text-align: center;
+    color: #333333;
+    font-size: 30px;
+    margin-top: 70px; }
+  .body-wrapper .rongyu .rongyuImg {
+    margin: 70px auto 0;
+    position: relative;
+    width: 1000px;
+    padding: 10px; }
+    .body-wrapper .rongyu .rongyuImg ul {
+      overflow: hidden;
+      zoom: 1;
+      height: 208px;
+      width: 1000px;
+      margin: 0 auto; }
+      .body-wrapper .rongyu .rongyuImg ul li {
+        float: left;
+        overflow: hidden; }
+        .body-wrapper .rongyu .rongyuImg ul li img {
+          display: block;
+          margin: 0 10px;
+          width: 300px;
+          height: 216px; }
+    .body-wrapper .rongyu .rongyuImg .left {
+      background: url("../images/left.png") no-repeat;
+      width: 30px;
+      height: 55px;
+      cursor: pointer;
+      position: absolute;
+      left: -30px;
+      top: 50%;
+      margin-top: -27px; }
+    .body-wrapper .rongyu .rongyuImg .right {
+      background: url("../images/right.png") no-repeat;
+      width: 31px;
+      height: 54px;
+      cursor: pointer;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      margin-top: -27px; }
+  .body-wrapper .rongyu .fu {
+    width: 1197px;
+    height: 76px;
+    margin: 0 auto;
+    background: url("../images/fu.png") no-repeat; }
+  .body-wrapper .rongyu .partner {
+    margin: 70px auto 0;
+    position: relative;
+    width: 1000px;
+    padding: 10px; }
+    .body-wrapper .rongyu .partner ul {
+      overflow: hidden;
+      zoom: 1;
+      height: 60px;
+      width: 1000px;
+      margin: 0 auto; }
+      .body-wrapper .rongyu .partner ul li {
+        float: left;
+        overflow: hidden; }
+        .body-wrapper .rongyu .partner ul li img {
+          display: block;
+          margin: 0 10px;
+          width: 178px;
+          height: 59px; }
+    .body-wrapper .rongyu .partner .leftbtn {
+      background: url("../images/leftbtn.png") no-repeat;
+      width: 17px;
+      height: 27px;
+      cursor: pointer;
+      position: absolute;
+      left: -20px;
+      top: 50%;
+      margin-top: -14px; }
+    .body-wrapper .rongyu .partner .rightbtn {
+      background: url("../images/rightbtn.png") no-repeat;
+      width: 17px;
+      height: 27px;
+      cursor: pointer;
+      position: absolute;
+      right: -20px;
+      top: 50%;
+      margin-top: -14px; }
+  .body-wrapper .xy {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0; }
+    .body-wrapper .xy .img {
+      width: 521px;
+      height: 733px;
+      background: url("../images/xy.jpg") no-repeat;
+      display: block;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-top: -300px;
+      margin-left: -260px; }
+
+/*# sourceMappingURL=insurance.css.map */

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html ng-app="someApp" id='ng-app' xmlns:ng="http://angularjs.org"  lang="zh_CN">
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge;IE=8" />
+    <meta content="always" name="referrer"><meta name="theme-color" content="#2932e1">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <title >缤纷盛夏，乐在多融</title>
+    <link rel="stylesheet" type="text/css" href="css/stylesheets/swiper.css">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheets/newapp.css">
+    <script type="text/javascript" src="../../vendor/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../../vendor/angular.min.js"></script>
+    <script type="text/javascript" src="../../vendor/angular-resource.min.js"></script>
+    <script type="text/javascript" src="../../vendor/swiper.min.js"></script>
+    <!-- <script type="text/javascript" src="../../vendor/qtip.js"></script> -->
+    <script type="text/javascript" src="../../js/activity/olympic.js"></script>
+</head><!--15a57c-->
+<body class="summerwin-body">
+<div class="olympic-app-wrapper appbody" ng-controller="summerCtrl"><!--  ng-init="flag=true;activeList=true" -->
+	<div class="banner"><img src="../../images/olympicapp/banner.png"></div>
+	<div class="olympic-medal">
+		<div class="total">恭贺中国代表团获得70枚奖牌</div>
+		<table>
+			<tr>
+				<td width="24%"><div class="gold"><span>26</span></div></td>
+				<td width="52%"><div class="silver"><span>18</span></div></td>
+				<td width="24%"><div class="bronze"><span>26</span></div></td>
+			</tr>
+		</table>
+	</div>
+	<div class="olympic-title"><img src="../../images/olympicapp/title.png"></div>
+	<div class="greenmode-box olympic-box">
+		<div class="mode-two mode">
+			<div class="pet"></div>
+			<div class="titletw"></div>
+			<table class="gift-table">
+				<tr>
+					<td width="27%"><div class="air"></div></td>
+					<td width="20%"><span>第1名</span></td>
+					<td width="53%">Apple MacBook Air</td>
+				</tr>
+				<tr>
+					<td><div class="galaxy"></div></td>
+					<td><span>第2名</span></td>
+					<td>三星Galaxy S7</td>
+				</tr>
+				<tr>
+					<td><div class="ipad"></div></td>
+					<td><span>第3名</span></td>
+					<td>Ipad air2</td>
+				</tr>
+				<tr>
+					<td><div class="watch"></div></td>
+					<td><span>第4名</span></td>
+					<td>Apple Watch Sport</td>
+				</tr>
+				<tr>
+					<td><div class="juicer"></div></td>
+					<td><span>第5名</span></td>
+					<td>惠人原汁机</td>
+				</tr>
+				<tr>
+					<td><div class="robot"></div></td>
+					<td><span>第6名</span></td>
+					<td>科沃斯扫地机器人</td>
+				</tr>
+				<tr>
+					<td><div class="box"></div></td>
+					<td><span>第7名</span></td>
+					<td>美旅拉杆箱</td>
+				</tr>
+				<tr>
+					<td><div class="eight"></div></td>
+					<td><span>第8名</span></td>
+					<td>800元现金红包</td>
+				</tr>
+				<tr>
+					<td><div class="five"></div></td>
+					<td><span>第9名</span></td>
+					<td>500元购物卡</td>
+				</tr>
+				<tr>
+					<td><div class="two"></div></td>
+					<td><span>第10名</span></td>
+					<td>200元购物卡</td>
+				</tr>
+			</table>
+
+			<div class="join">
+				<a href="http://app.duorongcf.com/bankBillList" class="btn">立即加入投资达人排行榜</a>
+			</div>
+			<p>*图片仅供参考</p>
+		</div>
+
+		<div class="linebg"><img src="../../images/summer-app/linebg.png"></div>
+	</div>
+	<div class="redmode-box">
+		<div class="mode-four mode">
+			<i class="ring"></i>
+			<div class="titlefour"></div>
+			<div class="rank-box">
+				<div class="con">
+					<table class="rank-table">
+						<tr>
+							<th width="25%">名    次</td>
+							<th width="40%">手机号码</td>
+							<th width="35%">投资金额</td>
+						</tr>
+					</table>
+					<div class="show-list">
+						<table class="rank-table my-list"><!-- ng-show="phList.investList.length > 0" -->
+							<tr ng-repeat="item in phList.investList" >
+								<td width="25%">第{{$index+1}}名</td>
+								<td width="40%">{{item.mobilePhone | limitTo:3}}****{{item.mobilePhone | limitTo:-4}}</td>
+								<td width="35%">{{item.total}}元</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+			<strong ng-show="isLogin == false">
+				登录后可查看您的投资金额
+			</strong>
+			<strong ng-show="isLogin == true">
+				<p>截止{{phList.readTime | date: 'yyyy-MM-dd HH:mm:ss'}}<br>您累计投资金额<span>{{phList.memberInvest | currency:'':2}}</span>元</p>
+			</strong>
+			<a href="" ng-show="isLogin == true" ng-click="refresh()" class="btn">刷新</a>
+			<a href="http://app.duorongcf.com/dl" ng-show="isLogin == false" class="btn">登录</a>
+		</div>
+		<div class="linebg"><img src="../../images/summer-app/linebg.png"></div>
+	</div>
+
+	<div class="greenmode-box">
+		<div class="mode-five mode">
+			<div class="titlefive"></div>
+			<ul>
+				<li><i></i>在活动期间内8月25日0点—8月31日24点，用户投资≥30天产品，累计投资总额最高的前10名用户可获得对应排名奖品。如遇到多名用户累计投资总额相同时，则以最后一笔投资时间为准并决定获奖排名，先投的用户将获此排名奖品，后投的用户则延顺下一个排名奖品；平台将实时更新投资排行情况；</li>
+				<li><i></i>活动结束后的两个工作日公布获奖名单；客服在公布后的5个工作日内联系获奖用户，核对用户信息和奖品信息后发放奖品；若5个工作日内未能取得联系，则视为该用户放弃本次获奖资格；奖品的邮寄地址仅限中国大陆快递公司可覆盖区域，寄出后客服会告知快递单号；</li>
+				<li class="small"><i></i>本次所有活动最终解释权归多融财富所有。</li>
+			</ul>
+		</div>
+		<div class="linebg"><img src="../../images/summer-app/linebg.png"></div>
+	</div>
+
+	<div class="redmode-box">
+		<div class="mode-six mode">
+			<div class="titlesix"></div>
+			<div class="content">
+				<div class="iconmode">
+					<i class="gzkg"></i>
+					<div>
+						<span>国企控股</span>
+						<p>大型国企中商投控股</p>
+					</div>
+				</div>
+				<div class="iconmode">
+					<i class="guarantee"></i>
+					<div>
+						<span>本息保障计划</span>
+						<p>历史到期产品100%本息兑付<br>安全可靠</p>
+					</div>
+				</div>
+				<div class="iconmode">
+					<i class="pjcd"></i>
+					<div>
+						<span>票据100%承兑</span>
+						<p>所有票据来源于银行与大型国企<br>100%无条件承兑</p>
+					</div>
+				</div>
+				<div class="iconmode">
+					<i class="lszc"></i>
+					<div>
+						<span>专业律所全程支持</span>
+						<p>专业律所全程保驾护航</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="code-wrapper">
+		<div class="code">
+			<div class="tel">
+				<table class="number">
+					<tr>
+						<td>
+							<i class="boat-phone-icon"></i>
+							<div>
+								<span>4006-908-896</span>
+								<p>服务时间 08:30 - 20:30 （法定节假日除外）</p>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<div class="mask" ng-show="phList.isJoin == false"></div>
+	<div class="vipbox" ng-show="phList.isJoin == false">
+		<p class="title">亲，由于您是渠道VIP用户，<br>所以不能参加此次活动，敬请谅解！</p>
+		<a ng-if="wap == true" href="http://app.duorongcf.com/home" class="return"><i></i></a>
+		<a ng-if="wap == false" href="jump://page=1?" class="return"><i></i></a>
+	</div>
+
+</div>
+</body>
+</html>

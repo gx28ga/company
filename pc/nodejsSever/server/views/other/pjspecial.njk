@@ -1,0 +1,26 @@
+{% extends "common/main.njk" %}
+{% block body %}
+<link href="/style/other/pjspecial.css" rel="stylesheet" type="text/css" inline/>
+<div id="APP" class="pjspecial">
+    <div class="wrap">
+        <div class="bot">
+            <div class="con">
+                <div class="left" @click="imgL"></div>
+                <div class="left" @click="imgR"></div>
+            </div>
+        </div>
+    </div>
+    <div class="code-wrapper">
+        <div class="code">
+            <div class="code-box">
+                <div class="app-code-icon" style="width: 53%"><div class="img-box"><img src="/images/other/pjspecial/newfriend-app.png"></div></div>
+                <a class="app-code-icon" style="width: 40%" href="/zhuce" target="_blank"><p class="to-ze">立即注册</p></a>
+            </div>
+        </div>
+    </div>
+    <div class="img-l" v-show="isimgL"></div>
+    <div class="img-r" v-show="isimgR"></div>
+    {% include "common/layui.njk" %}
+</div>
+<script src="/js/other/pjspecial.js" inline></script>
+{% endblock %}

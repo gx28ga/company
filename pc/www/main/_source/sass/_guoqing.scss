@@ -1,0 +1,512 @@
+.guoqing-body{
+	.guoqing-app-wrapper{
+		//line-height: rem-calc(60);
+		header{
+			img{
+				width:100%;
+				width:100%;
+				display: block;
+			}
+		}
+		section{
+			background: #ffde98;
+			padding:rem-calc(80px 56px 0 56px,1080);
+			overflow: hidden;
+			.con-top{
+				padding:rem-calc(48px 68px 42px 68px,1080);
+				background: #d83347;
+				height:rem-calc(374px,1080);
+				border-radius: rem-calc(5px,1080);
+				color:#fff;
+				h2{
+					font-size: rem-calc(58px,1080);
+					width:100%;
+					text-align: center;
+				}
+				p{
+					font-size: rem-calc(44px,1080);
+					width:100%;
+					text-align: center;
+					margin-bottom: rem-calc(45px,1080);
+				}
+				.invest-total{
+					overflow: hidden;
+					display: -webkit-flex;
+					display: -ms-flex;
+					display: -moz-flex;
+					display: flex;
+					justify-content: space-between;
+					justify-content: space-between;
+					justify-content: space-between;
+					span{
+						color:#d83347;
+						line-height: rem-calc(112px,1080);
+						text-align: center;
+						font-size: rem-calc(60px,1080);
+						margin-right: rem-calc(10px,1080);
+						width:rem-calc(78px,1080);
+						height:rem-calc(112px,1080);
+						@include rem-sprite("guoqing-app/*.png",bg,$spacing:4px,$rem-base:1080px);
+						&.no{
+							margin-right: 0;
+						}
+					}
+					i{
+						width:rem-calc(16px,1080);
+						height:rem-calc(30px,1080);
+						float: left;
+						@include rem-sprite("guoqing-app/*.png",dian,$spacing:4px,$rem-base:1080px);
+						margin-right: rem-calc(10px,1080);
+						margin-top: rem-calc(80px,1080);
+					}
+				}
+			}
+			.cash-bag{
+				margin: rem-calc(80px 0 80px 0,1080);
+				ul{
+					overflow: hidden;
+					display: -webkit-flex;
+					display: -ms-flex;
+					display: -moz-flex;
+					display: flex;
+					li{
+						height: rem-calc(182px,1080);
+						width: rem-calc(284px,1080);
+						border-radius: rem-calc(15px,1080);
+						color:#f1f1f1;
+						font-size: rem-calc(48px,1080);
+						text-align: center;
+						line-height: rem-calc(90px,1080);
+						// box-shadow: rem-calc(5px 3px 24px -6px,1080) #333;
+						margin-bottom: rem-calc(10px,1080);
+						-webkit-box-flex: 1.0;
+						-moz-box-flex: 1.0;
+						margin-right: rem-calc(78px,1080);
+						@include rem-sprite("guoqing-app/*.png",hbbg,$spacing:4px,$rem-base:1080px);
+						&.active{
+							color:#ffda2f;
+							@include rem-sprite("guoqing-app/*.png",hbbgred,$spacing:4px,$rem-base:1080px);
+						}
+						&.no{
+							margin-right: 0;
+						}
+
+					}
+				}
+			}
+
+
+
+			 .user-info{
+			//width: rem-calc(968px,1080);
+			margin: 0 auto;
+			background: #fff;
+			padding-bottom: rem-calc(20px,1080);
+			//position: relative;
+			margin-top: rem-calc(-10px,1080);
+			border-radius: rem-calc(10px,1080);
+			padding-top: rem-calc(16px,1080);
+			table{
+					width: rem-calc(968px,1080);
+					margin: 0 auto;
+					th{
+						height: rem-calc(96px,1080);
+						text-align: center;
+						color: #fff;
+						font-size: rem-calc(32px,1080);
+						font-weight: normal;
+						background: #1da2e7;
+					}
+
+					td{
+						height: rem-calc(32px,1080);
+						text-align: center;
+						color: #333;
+						font-size: rem-calc(32px,1080);
+						line-height: rem-calc(52px,1080);
+					}
+				}
+
+			.list{
+				padding: rem-calc(20px 0 20px,1080);
+				overflow: hidden;
+				height: rem-calc(80px,1080);
+
+				table{
+					width: rem-calc(968px,1080);
+					margin: 0 auto;
+					th{
+						height: rem-calc(96px,1080);
+						text-align: center;
+						color: #fff;
+						font-size: rem-calc(32px,1080);
+						font-weight: normal;
+						background: #1da2e7;
+					}
+
+					td{
+						height: rem-calc(32px,1080);
+						text-align: center;
+						color: #333;
+						font-size: rem-calc(32px,1080);
+						line-height: rem-calc(52px,1080);
+					}
+				}
+			}
+}
+
+
+			.info{
+				overflow: hidden;
+				color:#d83347;
+				font-size: rem-calc(44px,1080);
+				margin-top: rem-calc(10px,1080);
+				.info-left{
+					float: left;
+				}
+				.people{
+					line-height: rem-calc(84px,1080);
+				}
+				span{
+					float: right;
+					color:#004585;
+					line-height: rem-calc(84px,1080);
+				}
+			}
+			.btn{
+				margin: rem-calc(140px 0 140px 0,1080);
+				display: block;
+				height:rem-calc(138px,1080);
+				line-height: rem-calc(138px,1080);
+				text-align: center;
+				background: #d83347;
+				border-radius: rem-calc(60px,1080);
+				font-size: rem-calc(48px,1080);
+				color:#fff;
+				box-shadow: rem-calc(5px 3px 24px -6px,1080) #333;
+			}
+			.font-list{
+				&.band{
+					height: rem-calc(850px,1080);
+					overflow: hidden;
+				}
+				//height: rem-calc(815px,1080);
+				.title{
+					color:#fff;
+					background: #d83347;
+					text-align: center;
+					font-size: rem-calc(58px,1080);
+					padding-top: rem-calc(10px,1080);
+					border-radius: rem-calc(6px 6px 0 0,1080);
+					p{
+						font-size: rem-calc(44px,1080);
+						padding-bottom: rem-calc(50px,1080);
+					}
+					h3{
+						line-height: rem-calc(84px,1080);
+						&.info{
+							color:#fff;
+							line-height: rem-calc(160px,1080);
+							font-size: rem-calc(58px,1080);
+						}
+					}
+				}
+				table{
+					width:100%;
+					background: #fff;
+					text-align: center;
+					font-size: rem-calc(40px,1080);
+					color: #666;
+					line-height: rem-calc(108px,1080);
+					border-radius: rem-calc(0 0 6px 6px,1080);
+					ul{
+						overflow: hidden;
+						li{
+							float: left;
+							width: rem-calc(60px,1080);
+							height: rem-calc(60px,1080);
+							background: #f0f0f0;
+							border-radius: rem-calc(5px,1080);
+							text-align: center;
+							line-height: rem-calc(60px,1080);
+							color:#fff;
+							margin-right: rem-calc(16px,1080);
+							&.active{
+								background: #d83347;
+							}
+							&.no{
+								margin: 0;
+							}
+						}
+					}
+				}
+			}
+			.my-font{
+				margin: rem-calc(40px 0 0 0,1080);
+				width:100%;
+				h4{
+					font-size: rem-calc(44px,1080);
+					color: #d83347;
+					margin-bottom:  rem-calc(40px,1080);
+				}
+				p{
+					font-size: rem-calc(44px,1080);
+					color: #d83347;
+					a{
+						color: #004585;
+						text-decoration: underline;
+					}
+				}
+
+				ul{
+					display: -webkit-flex;
+					display: -ms-flex;
+					display: -moz-flex;
+					display: flex;
+					justify-content: space-between;
+					justify-content: space-between;
+					justify-content: space-between;
+					width:100%;
+					color:#787878;
+					font-size: rem-calc(44px,1080);
+					li{
+						float: left;
+						width: rem-calc(200px,1080);
+						height: rem-calc(200px,1080);
+						border-radius: rem-calc(7px,1080);
+						text-align: center;
+						background: #f0f0f0;
+						margin-right: rem-calc(56px,1080);
+						margin-bottom: rem-calc(60px,1080);
+							span{
+							display: block;
+							margin: rem-calc(33px auto,1080);
+								&.duo{
+								@include rem-sprite("guoqing-app/*.png",duobai,$spacing:4px,$rem-base:1080px);
+								}
+								&.duoyellow{
+									@include rem-sprite("guoqing-app/*.png",duoyellow,$spacing:4px,$rem-base:1080px);
+								}
+								&.rong{
+									@include rem-sprite("guoqing-app/*.png",rongbai,$spacing:4px,$rem-base:1080px);
+								}
+								&.rongyellow{
+									@include rem-sprite("guoqing-app/*.png",rongyellow,$spacing:4px,$rem-base:1080px);
+								}
+								&.cai{
+									@include rem-sprite("guoqing-app/*.png",caibai,$spacing:4px,$rem-base:1080px);
+								}
+								&.caiyellow{
+									@include rem-sprite("guoqing-app/*.png",caiyellow,$spacing:4px,$rem-base:1080px);
+								}
+								&.fu{
+									@include rem-sprite("guoqing-app/*.png",fubai,$spacing:4px,$rem-base:1080px);
+								}
+								&.fuyellow{
+									@include rem-sprite("guoqing-app/*.png",fuyellow,$spacing:4px,$rem-base:1080px);
+
+								}
+							}
+							i{
+								margin-bottom: -30px;
+
+							}
+						&.no{
+							margin-right: 0;
+						}
+						&.active{
+							background: #d83347;
+							color: #d83347;
+						}
+
+					}
+				}
+			}
+			.rule-btn{
+				float: right;
+				color:#004585;
+				line-height: rem-calc(84px,1080);
+				font-size: rem-calc(44px,1080);
+			}
+			.activity-info{
+				ul{
+					padding: rem-calc(66px 10px 66px 44px,1080);
+					background: #fff;
+					border-radius: rem-calc(0 0 6px 6px,1080);
+					li{
+						font-size: rem-calc(34px,1080);
+						color:#666;
+						padding-left: rem-calc(48px,1080);
+						margin-bottom: rem-calc(6px,1080);
+						position: relative;
+						//position: relative;
+						//background: url('../../images/guoqing-app/dian2.png') no-repeat left center ;
+						span{
+							width: rem-calc(12px,1080);
+							height: rem-calc(12px,1080);
+							border-radius: 50%;
+							position: absolute;
+							top:30%;
+							left:0;
+							background: #666;
+							&.dian{
+							top:10%;
+							}
+						}
+					}
+				}
+			}
+			.rules-bg{
+				height: 100%;
+				position: fixed;
+				width: 100%;
+				top: 0;
+				left: 0;
+				z-index: 100;
+				background: rgba(0,0,0,0.6);
+				.mask{
+					height:100%;
+					width:100%;
+					background: rgba(0,0,0,0.6);
+					z-index: 100;
+					position: absolute;
+					top:0;
+					left:0;
+				}
+				.model-content{
+					margin:rem-calc(500px 56px 0,1080);
+					height: rem-calc(520px,1080);
+					border-radius: rem-calc(10px,1080);
+					background:#fff;
+			    	text-align: center;
+			    	z-index: 1000;
+			    	&.tips{
+			    		height: rem-calc(680px,1080);
+			    	}
+			    	&.splice-rule{
+			    		li{
+			    			margin-bottom: rem-calc(6px,1080);
+			    		}
+			    	}
+			    	.title{
+				    	text-align: center;
+				    	background: #d83347;
+				    	font-size: rem-calc(58px,1080);
+				    	width: 100%;
+				    	height: rem-calc(160px,1080);
+				    	border-radius: rem-calc(10px 10px 0 0,1080);
+				    	position: relative;
+				    	height: rem-calc(160px,1080);
+				    	line-height: rem-calc(160px,1080);
+				    	.text{
+				    		color:#fff;
+				    	}
+				    	.icon{
+							background: url('../../images/guoqing-app/close.png') no-repeat;
+							position: absolute;
+							top: rem-calc(40px,1080);
+							right: rem-calc(70px,1080);
+							width: rem-calc(36px,1080);
+							height: rem-calc(36px,1080);
+							background-size: contain;
+				    	}
+					}
+					ul{
+				    	li{
+				    		position: relative;
+				    		span{
+								width: rem-calc(12px,1080);
+								height: rem-calc(12px,1080);
+								border-radius: 50%;
+								position: absolute;
+								top:10%;
+								left:0;
+								background: #666;
+							}
+				    	}
+				    }
+					.con{
+						font-size: rem-calc(42px,1080);
+						line-height: rem-calc(82px,1080);
+						color:#666;
+						text-align: center;
+						padding-top: rem-calc(82px,1080);
+						padding-bottom: rem-calc(62px,1080);
+						.go-back{
+							background: #d83347;
+							color:#fff;
+							text-align: center;
+							margin: 30px auto 0;
+							border-radius: rem-calc(10px,1080);
+							font-size: rem-calc(44px,1080);
+							height: rem-calc(120px,1080);
+							line-height: rem-calc(120px,1080);
+							width: rem-calc(328px,1080);
+							display: block;
+						}
+					}
+					ul{
+						padding: rem-calc(66px 40px,1080);
+						background: #fff;
+						border-radius: rem-calc(0 0 6px 6px,1080);
+						font-size: 0;
+						li{
+							font-size: rem-calc(34px,1080);
+							color:#666;
+							//background: url('../../images/guoqing-app/dian2.png') no-repeat left 4px ;
+							padding-left: rem-calc(48px,1080);
+							text-align: start;
+							position: relative;
+							&.margin{
+								margin-bottom: rem-calc(20px,1080);
+							}
+						}
+					}
+				}
+			}
+		}
+		footer{
+			padding: rem-calc(100px 56px,1080);
+			color:#d83347;
+			background: #ffde98;
+			position: relative;
+			.tel{
+				text-align: center;
+				position: relative;
+				.line{
+					position: absolute;
+					top: 50%;
+					width: rem-calc(154px,1080);
+					height: 2px;
+					margin-top: rem-calc(-1px,1080);
+					background-color: #d83347;
+					&.left-line{
+						left: 0;
+					}
+					&.right-line{
+						right: 0;
+					}
+				}
+				.icon{
+					background: #ffde98 url('../../images/guoqing-app/phone.png') no-repeat;
+					width: rem-calc(62px,1080);
+					height: rem-calc(62px,1080);
+					display: inline-block;
+					vertical-align: middle;
+					background-size: contain;
+				}
+				.text{
+					display: inline-block;
+					vertical-align: middle;
+					font-size: rem-calc(62px,1080);
+				}
+			}
+			.time{
+				font-size: rem-calc(28px,1080);
+				text-align: center;
+				width: 100%;
+				display: inline-block;
+			}
+		}
+	}
+}

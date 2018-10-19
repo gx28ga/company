@@ -1,0 +1,137 @@
+/**
+* 充值和提现
+* created by bo.peng 2018/4/12
+* email:spion@qq.com
+*/
+.recharnge {
+    color: #102542;
+    .center {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .bank-logo {
+        background: #fff;
+        box-sizing: border-box;
+        .to {
+            .img {
+                background: url("../../../images/account/recharge/arrow-thin-right.png") no-repeat;
+                background-size: contain;
+            }
+        }
+        .account-logo {
+            background: url("../../../images/account/recharge/cg_qian@2x.png") no-repeat;
+            background-size: contain;
+        }
+        h4 {
+            color: #102542;
+            font-weight: normal;
+        }
+        p {
+            color: #A0A0A0;
+        }
+    }
+    .bank {
+        float: left;
+    }
+    .account {
+        float: right;
+    }
+    .to {
+        margin: 0 auto;
+    }
+    .limit {
+        color: #A0A0A0;
+    }
+    .input-text {
+        background: #fff;
+        display: flex;
+        align-items: center;
+        .text{
+            padding-top:2px;
+        }
+        .input-number{
+            height: 35px;
+            flex: 1;
+            display:flex;
+            input {
+                display:flex;
+                align-items:center;
+                box-sizing: border-box;
+                height: 38px;
+                line-height:38px;
+                border: none;
+                -webkit-tap-highlight-color:transparent;
+                ::placeholder{
+                    line-height: 38px;
+                }
+            }
+        }
+    }
+    .balance {
+        color: #666666;
+        em {
+            padding: 0 10px;
+        }
+        .result {
+            em {
+                color: #FE7634;
+            }
+        }
+    }
+    .error {
+        height: 0;
+        overflow: hidden;
+        text-align: center;
+        color: #e60012;
+        transition-duration: .3s;
+        &.current {
+            height: 22px;
+            line-height: 22px;
+        }
+    }
+    .tips {
+        .title {
+            display: flex;
+            align-items: center;
+            h2 {
+                font-weight: normal;
+            }
+        }
+        .icon {
+            background: url(../../../images/account/recharge/Combinedshape.png);
+            background-size: contain;
+        }
+        .content {
+            line-height: 25px;
+            i {
+                width: 12px;
+                height: 12px;
+                margin-top: -2px;
+                margin-right: 5px;
+                vertical-align: middle;
+                background: #787878;
+                border-radius: 100%;
+            }
+            a ,em{
+                color: #FE7634;
+            }
+        }
+    }
+    .rechargetInfofooter{
+        position:fixed;
+        left:0;
+        right:0;
+        bottom:10px;
+    }
+    @media only screen and (min-device-width : 320px) and (max-device-width : 340px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio:1) and (-webkit-max-device-pixel-ratio:2) {
+        .rechargetInfofooter {
+            padding-top:20px;
+            position: relative;
+            left: auto;
+            right: auto;
+            bottom: auto;
+        }
+    }
+}

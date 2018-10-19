@@ -1,0 +1,233 @@
+.body-wrapper{
+    width:100%;
+    .banner{
+        width:100%;
+        height:758px;
+        background:url('../../images/other/friend/bannerpc.jpg') center 0 no-repeat;
+        position:relative;
+        .btn{
+            position: absolute;
+            bottom:160px;
+            left:50%;
+            margin-left:-255px;
+            a{
+                display: block;
+                width:540px;
+                height:130px;
+            }
+        }
+        a:hover{
+            text-direction:none;
+        }
+    }
+    .bg{
+        background:-webkit-gradient(linear, 0 0, 0 bottom, from(#fedf44), to(#ffffff));
+        background:-moz-gradient(linear, 0 0, 0 bottom, from(#fedf44), to(#ffffff));
+        padding-top:100px;
+        .content{
+            background:#fff9df;
+            border:3px solid #a17afe;
+            border-radius:20px;
+            position:relative;
+            margin:0 auto 100px;
+            padding:100px 100px 40px 100px;
+            .title{
+                background:url("../../images/other/friend/titleB.png");
+                width:653px;
+                height:135px;
+                position:absolute;
+                top:-50px;
+                left:290px;
+                text-align:center;
+                line-height:135px;
+                font-size:42px;
+                font-weight:bold;
+                color:#fff;
+
+            }
+            .littleTitle{
+                color:#ff495b;
+                font-size:32px;
+
+            }
+            .nei{
+                background:#fff;
+                width:1080px;
+                height:315px;
+                margin:0 auto;
+                border-radius:5px;
+                -webkit-box-shadow:inset 0 0 10px #ffe8e4;
+                -moz-box-shadow:inset 0 0 10px #ffe8e4;
+                margin-left:-30px;
+                .line{
+                    height:1px;
+                    border-top:1px dotted #cf6100;
+                    margin:40px 0 30px;
+                }
+                .littleIcon{
+                    list-style:url('../../images/other/friend/li.png') ;
+                    color:#ff495b;
+                    font-size:24px;
+                    font-weight:bold;
+                    .rate{
+                        background:url("../../images/other/friend/rate.png");
+                        width:975px;
+                        height:328px;
+                        margin:0 auto;
+                    }
+                    .myAccount{
+                        width:680px;
+                        margin:40px auto 0;
+                        .myAccountLeft{
+                            color:#ff5228;
+                            float: left;
+                            text-align:center;
+                            margin-bottom:20px;
+                        }
+                        .daishou{
+                            width:360px;
+                            height:45px;
+                            background:#ffe5c1;
+                            border-radius:5px;
+                            text-align:center;
+                            line-height:45px;
+                            font-size:18px;
+                            float: left;
+                            color:#ff5228;
+                            margin-bottom:5px;
+                        }
+                        .daishou:last-child{
+                            margin-bottom: 85px;
+                        }
+                        .jian{
+                            float: left;
+                            width:55px;
+                            text-align:center;
+                            height:45px;
+                            line-height:45px;
+                            color:#ff5228;
+                            font-weight:700;
+                        }
+                        .yongjinRate{
+                            width:265px;
+                            height:45px;
+                            background:#fe9657;
+                            color:#fff;
+                            text-align:center;
+                            line-height:45px;
+                            margin-bottom:5px;
+                            border-radius:5px;
+                            float: right;
+                        }
+                    }
+                }
+                .neiLeft{
+                    float: left;
+                    color:#cf6100;
+                    margin-right:25px;
+                    padding-left: 55px;
+                    width:265px;
+                    .conTop{
+                        font-size:30px;
+                        line-height:45px;
+                        margin-top:80px;
+                        margin-bottom: 20px;
+                        .fon{
+                            color:#ff495b;
+                            font-weight:bold;
+                        }
+                    }
+                    .conBottom{
+                        border-top:1px dotted #cf6100;
+                        font-size:18px;
+                        line-height:30px;
+                        padding-top: 20px;
+                    }
+                }
+                .neiRight{
+                    float: left;
+                    .jiangli{
+                        background:url("../../images/other/friend/jiangli.png");
+                        width:693px;
+                        height:252px;
+                        margin-top:32px;
+                    }
+                    .friendInvest{
+                        background:url("../../images/other/friend/lalalk.png");
+                        width:602px;
+                        height:299px;
+                        margin-top:32px;
+                    }
+                }
+            }
+        }
+        .con1{
+            height:380px;
+            width:1000px;
+        }
+        .con2{
+            width:1000px;
+            .nei{
+                height: 360px!important;
+                margin-left: -30px!important;
+            }
+            .neiLeft{
+                width:330px!important;
+                padding-left:55px!important;
+                .conTop{
+                    font-size: 24px!important;
+                    margin-top: 60px!important;
+                    margin-bottom: 20px!important;
+                }
+                .conBottom{
+                    padding-top: 20px;
+                }
+            }
+        }
+        .con3{
+            width:1000px;
+            .nei{
+                height:1000px;
+                padding-top: 40px;
+                margin-left: -30px;
+                .littleIcon{
+                    margin-top: 25px;
+                    margin-left: 30px;
+                }
+                .littleIcon{
+                    margin-top: 25px;
+                    margin-left: 30px;
+                    clear:both;
+                    .myAccountLeft{
+                        width:360px
+                    }
+                    .myAccountLeft:nth-child(2){
+                        width:265px;
+                        float:right
+                    }
+                }
+            }
+        }
+    }
+    .footer{
+        clear:both;
+        width:100%;
+        height:396px;
+        background:url('../../images/other/friend/footer.png') center 0 no-repeat;
+        position:relative;
+        .btn{
+            width:509px;
+            height:99px;
+            background:url('../../images/other/friend/bannerbutton.png');
+            position:absolute;
+            top:200px;
+            left:50%;
+            margin-left:-255px;
+            a{
+                display: block;
+                width:100%;
+                height:100%;
+            }
+        }
+    }
+}

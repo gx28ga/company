@@ -1,0 +1,376 @@
+.guarantee-wrapper {
+    color: #666;
+    background: #fff;
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid #dcdcdc;
+    padding-bottom: 54px;
+    .banner {
+        width: 100%;
+        height: 1125px;
+        background: url("../../images/about/insurance/banner.png") center 0 no-repeat;
+        .con {
+            width: 1200px;
+            height: 700px;
+            margin: 0 auto;
+            position: relative;
+            color: #00fff0;
+            font-size: 24px;
+            a {
+                color: #00fff0;
+            }
+            .biao {
+                position: absolute;
+                bottom: 70px;
+                color: #00fff0;
+                text-decoration: underline;
+            }
+           .biao1 {
+                left: 135px;
+            }
+            .biao2 {
+                left: 295px;
+            }
+            .biao3 {
+
+                left: 470px;
+            }
+            .biao4 {
+                left: 630px;
+            }
+            .biao5 {
+
+                left: 810px;
+            }
+            .biao6 {
+                left: 975px;
+            }
+        }
+    }
+    .number1 {
+        background: url("../../images/about/insurance/number1.png") no-repeat;
+        width: 1221px;
+        height: 889px;
+        margin: 0 auto;
+        margin-top: -450px;
+        position: relative;
+
+        .jieshao {
+            list-style: circle inside url("../../images/about/insurance/circle.png");
+            color: #1f1f29;
+            font-size: 22px;
+            width: 1080px;
+            position: absolute;
+            bottom: 160px;
+            left: 50%;
+            margin-left: -540px;
+            .concon {
+                margin-bottom: 20px;
+            }
+            .ha {
+                color: #ff7200;
+            }
+        }
+    }
+    .content {
+        width: 1200px;
+        margin: 0 auto;
+        padding-top:70px;
+        .title2 {
+            background: url("../../images/about/insurance/title2.png") no-repeat;
+            width: 534px;
+            height: 116px;
+            margin: 0px auto 0px;
+        }
+        .title3 {
+            background: url("../../images/about/insurance/title3.png") no-repeat;
+            width: 534px;
+            height: 116px;
+            margin: 70px auto 0px;
+        }
+        .title5 {
+            background: url("../../images/about/insurance/title5.png") no-repeat;
+            width: 534px;
+            height: 116px;
+            margin: 70px auto 0px;
+        }
+        .title6 {
+            background: url("../../images/about/insurance/title6.png") no-repeat;
+            width: 539px;
+            height: 119px;
+            margin: 70px auto 0px;
+        }
+        .number2 {
+            background: url("../../images/about/insurance/number2.png") no-repeat;
+            width: 1231px;
+            height: 421px;
+            margin: 0px auto 0;
+            position: relative;
+            .bank {
+                width: 480px;
+                height: 140px;
+                color: #74747f;
+                font-size: 18px;
+                position: absolute;
+                left: 160px;
+            }
+            .bank1 {
+                top: 10px;
+            }
+            .bank2 {
+                bottom: 90px;
+            }
+            .bankTitle {
+                color: #ff7200;
+                font-size: 22px;
+            }
+        }
+        .number3 {
+            background: url("../../images/about/insurance/number3.png") no-repeat;
+            width: 1199px;
+            height: 480px;
+            margin: 70px auto 0;
+        }
+        .titCon {
+            text-align: center;
+            color: #aeb3be;
+            font-size: 24px;
+            margin-top: -40px;
+        }
+        .jianjie {
+            margin: 50px auto 0;
+            .jieicon {
+                background: url("../../images/about/insurance/icon1.png") no-repeat;
+                width: 14px;
+                height: 24px;
+            }
+            .jieCon {
+                color: #1f1f29;
+                font-size: 22px;
+                margin-left: 20px;
+                margin-top: -28px;
+            }
+        }
+    }
+    .number4 {
+        background: url("../../images/about/insurance/number4.png") no-repeat;
+        width: 1235px;
+        height: 726px;
+        margin: 60px auto 0;
+    }
+    .number5 {
+        background: url("../../images/about/insurance/number5.png") no-repeat;
+        width: 1199px;
+        height: 691px;
+        margin: 70px auto 0;
+    }
+    .number6 {
+        background: url("../../images/about/insurance/number6.png") center 0 no-repeat;
+        width: 100%;
+        height: 317px;
+        margin: 70px auto 0;
+    }
+    .content1 {
+        width: 100%;
+        margin: 0 auto;
+        .jianjie {
+            width: 1200px;
+            margin: 60px auto 0;
+        }
+    }
+    .content2 {
+        width: 100%;
+        margin: 0 auto;
+        background: #f2f4fb;
+        padding: 60px 0 55px;
+        .jianjie {
+            width: 1200px;
+            margin: 60px auto 0;
+        }
+        .title4 {
+            background: url("../../images/about/insurance/title4.png") no-repeat;
+            width: 697px;
+            height: 116px;
+            margin: 70px auto 0px;
+        }
+    }
+  /*   .number4 {
+      background: url("../../images/about/insurance/number4.png") no-repeat;
+      width: 998px;
+      height: 813px;
+      margin: 60px auto 0;
+       position:relative;
+      #xy{
+          position:absolute;
+          bottom:0;
+          right:80px;
+          width:400px;
+          height:570px;
+      }
+  } */
+    .number5 {
+        background: url("../../images/about/insurance/number5.png") no-repeat;
+        width: 1199px;
+        height: 726px;
+        margin: 0px auto 0;
+    }
+      .rongyu {
+        .rongyuTitle {
+            text-align: center;
+            color: #333333;
+            font-size: 30px;
+            margin-top: 70px;
+        }
+        .rongyuImg {
+            margin: 70px auto 0; // overflow:hidden;
+            position: relative;
+            width: 1000px;
+            padding: 10px;
+            ul {
+                overflow: hidden;
+                zoom: 1;
+                height: 208px;
+                width: 1000px;
+                margin: 0 auto;
+                li {
+
+                    float: left;
+                    overflow: hidden;
+                    img {
+                        display: block;
+                        margin: 0 10px;
+                        width: 300px;
+                        height: 216px;
+                    }
+                }
+            }
+            .left {
+                background: url("../../images/about/insurance/left.png") no-repeat;
+                width: 30px;
+                height: 55px;
+                cursor: pointer;
+                position: absolute;
+                left: -30px;
+                top: 50%;
+                margin-top: -27px;
+            }
+            .right {
+                background: url("../../images/about/insurance/right.png") no-repeat;
+                width: 31px;
+                height: 54px;
+                cursor: pointer;
+                position: absolute;
+                right: 0;
+                top: 50%;
+                margin-top: -27px;
+            }
+           
+        }
+        .fu{
+            width:1197px;
+            height:76px;
+            margin :0 auto;
+            background:url("../../images/about/insurance/fu.png") no-repeat;
+        }
+    }
+        .honor {
+        background: #fff;
+        padding: 0 20px;
+        width:1080px;
+        margin:0 auto;
+        overflow: hidden;
+        .content1 {
+            overflow: hidden;
+            .left-btn,
+            .right-btn {
+                float: left;
+                width: 17px;
+                height: 26px;
+                margin-top: 100px;
+                background: url(../../images/home/icon.png);
+                cursor: pointer;
+            }
+            .left-btn {
+                margin-right: 10px;
+            }
+            .right-btn {
+                float: right;
+                background-position: 0 -32px;
+            }
+            .honorimg {
+                margin: 18px 0;
+            }
+            ul {
+                float: left;
+                width: 1040px;
+            }
+            li {
+                float: left!important;
+                width: 350px!important;
+                margin-right: 9px;
+            }
+        }
+        .tempWrap {
+            width: 1034px!important;
+        }
+    }
+    .partner {
+        background: #fff;
+        padding: 0 20px;
+        overflow: hidden;
+        width:1080px;
+        margin:0 auto;
+        .content1 {
+            overflow: hidden;
+            .left-btn,
+            .right-btn {
+                float: left;
+                width: 17px;
+                height: 26px;
+                margin-top: 33px;
+                background: url(../../images/home/icon.png);
+                cursor: pointer;
+            }
+            .left-btn {
+                margin-right: 10px;
+            }
+            .right-btn {
+                float: right;
+                background-position: 0 -32px;
+            }
+            .partnerimg {
+                margin: 18px 0;
+            }
+            ul {
+                float: left;
+                width: 900px;
+            }
+            li {
+                float: left!important;
+                width: 200px!important;
+                margin-right: 9px;
+            }
+        }
+        .tempWrap {
+            width: 1034px!important;
+        }
+    }
+}
+  .xy{
+        width:100%;
+        height : 100%;
+        background:rgba(0,0,0,0.8);
+        position:fixed;
+        top:0;
+        left:0;
+        .img{
+            width:521px;height:733px;
+            background:url("../../images/about/insurance/xy.jpg") no-repeat;
+            display:block;
+            position:absolute;
+            left:50%;
+            top:50%;
+            margin-top:-300px;
+            margin-left:-260px;
+        }
+    }

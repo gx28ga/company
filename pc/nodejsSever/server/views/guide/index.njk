@@ -1,0 +1,112 @@
+{% extends "common/main.njk" %}
+{% block body %}
+<link href="/style/guide/index.css" rel="stylesheet" type="text/css" inline/>
+<div id="APP" class="wrap">
+    <div class="header-wrapper">
+        <div class="header-wrap">
+            <div class="logo-wrap">
+                <img src="/images/logo/logo.png" onclick="location.href='/'">
+                <span></span>
+                <a class="logoimg" href="http://www.china-hshc.com/" target="_blank"></a>
+            </div>
+            <div class="nav-box">
+            </div>
+        </div>
+    </div>
+    <div class="quick_links">
+        <div class="wrap">
+            <p>
+                <span>快速入口：</span>
+                <a href="{{http}}/">多融首页</a>
+                <a href="{{http}}/dq" class="hover">定期理财</a>
+                <a href="{{http}}/pj">P2P理财</a>
+                <a href="{{http}}/about/DRGK.html">公司简介</a>
+            </p>
+        </div>
+    </div>
+    <div class="content">
+        <div class="main">
+
+
+            {% for item in list %}
+            <div class="clearfix">
+                 <h2>{{item.firstT}}</h2>
+                 {% for itemF in item.secondT %}
+                 <div class="section">
+                      <h3 class="{{itemF.borderC}}" style="{{itemC.styleC}}">{{itemF.secondName}}</h3>
+                     <ul>
+                         {% for itemC in itemF.child %}
+                         <li><a href="{{itemC.url}}" class="{{'hover' if itemC.active==true else ''}}">{{itemC.linkName}}</a></li>
+                         {% endfor %}
+                     </ul>
+                 </div>
+                 {% endfor %}
+            </div>
+            {% endfor %}
+
+            <div class="clearfix">
+                <div class="section">
+                    <h3 style="border-color: #1d88e4;">手机</h3>
+                    <ul>
+                        <li><a @click="chat">手机网页版</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="what">
+                <h2>什么是银行承兑汇票 </h2>
+                <p>银行承兑汇票是由在承兑银行开立存款帐户的存款人出票，向开户银行申请并 ······<a href="{{http}}/help/LCKT.html">更多</a></p>
+            </div>
+            <div class="right-aside adbox">
+                <h2>新手专享 </h2>
+                <div class="ad"><a href="{{http}}/other/noviceOnlyEnjoy.html" target="_blank">查看详情</a></div>
+             </div>
+            <div class="haveimg cp">
+                <h2>最新推荐 </h2>
+                <ul>
+                    <li>
+                        <!--<a href="{{http}}/billDetail/newhand.html">新手专区</a>-->
+                        <a href="{{http}}/other/noviceOnlyEnjoy.html">新手专区</a>
+                        <p>新手专享，可用大额红包</p>
+                    </li>
+                    <li>
+                        <a href="{{http}}/dq">资管产品</a>
+                        <p>资产管理机构进行资产托管</p>
+                    </li>
+                    <li>
+                        <a href="{{http}}/pj">P2P理财</a>
+                        <p>优选国企供应链融资</p>
+                    </li>
+                </ul>
+            </div>
+            <!--<div class="haveimg">
+                <h2>最新推荐 </h2>
+                <ul>
+                    <li>
+                        <span>新手专区</span>
+                        <a href="">新手专区</a>
+                        <p>新手专享，可用大额红包</p>
+                    </li>
+                    <li>
+                        <span style="background: #33a1ff">资管产品</span>
+                        <a href="">资管产品</a>
+                        <p>资产管理机构进行资产托管</p>
+                    </li>
+                    <li>
+                        <span style="background: #ffb733">票据理财</span>
+                        <a href="">票据理财</a>
+                        <p>优选国企供应链融资</p>
+                    </li>
+                </ul>
+            </div>-->
+        </div>
+    </div>
+    <div v-show="ischat" id="chat" style="display:none;">
+        <div class="title">| 如何访问多融财富手机网页版</div>
+        <div class="linkbg"></div>
+    </div>
+    {% include "common/layui.njk" %}
+</div>
+<script src="/js/guide/index.js" inline></script>
+{% endblock %}

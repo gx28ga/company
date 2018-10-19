@@ -1,0 +1,93 @@
+.wq-my-account-wrapper{
+  background: #f1f1f1;
+  width:1200px;
+  margin:0 auto;
+    border-top: 1px solid #dedede;
+  .my-account-wrap{
+    background:url("../../images/about/report/bg.jpg") repeat;
+    .my-account-side{
+      background:url("../../images/about/report/bg.jpg") repeat;
+      margin-right: 15px;
+      overflow: hidden;
+      .line{
+        display: block;
+        height: 4px;
+        font-size: 0;
+        line-height: 0;
+        background: #fe7634;
+      }
+      .side-mode-list{
+        border: 1px solid #dcdcdc;
+        border-top: none;
+        border-bottom: none;
+      }
+      .side-mode{
+        position: relative;
+        overflow: hidden;
+        display:block;
+        float:left;
+        margin: 10px 0;
+
+        a{
+          line-height: 40px;
+          font-size: 16px;
+          color: #fff;
+          padding:0 50.5px;
+          cursor: pointer;
+          display: block;
+          border-bottom: 3px solid rgba(255,255,255,0);
+        }
+        a:hover{
+           text-decoration: none;
+            color:#e8a22b;
+        }
+       
+        .mode-title{
+            height: 49px;
+            line-height: 40px;
+            font-size: 16px;
+            color: #555;
+            padding:0 66.5px;
+            cursor: pointer;
+            display: block;
+            border-bottom: 3px solid rgba(255,255,255,0);
+        }
+         .actived{
+           text-decoration: none;
+            border-bottom: 3px solid #e8a22b;
+            color:#e8a22b;
+        }
+      }
+       .actived{
+           text-decoration: none;
+            border-bottom: 3px solid #e8a22b;
+            color:#e8a22b;
+        }
+      .phone-wrap{
+        height: 117px;
+        border: 1px solid #dcdcdc;
+        border-top: none;
+        p{
+          padding: 32px 0 0 42px;
+          font-size: 14px;
+          color: #999;
+          font-weight: bold;
+          i{
+            float: left;
+            margin: 2px 6px 0 0;
+          }
+        }
+        strong{
+          display: block;
+          font-size: 24px;
+          color: #999;
+          font-weight: bold;
+          text-align: center;
+          padding-top: 10px;
+          margin-top: -3px;
+          font-family: Arial;
+        }
+      }
+    }
+  }
+}

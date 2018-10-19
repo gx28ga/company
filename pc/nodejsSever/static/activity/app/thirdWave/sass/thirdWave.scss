@@ -1,0 +1,47 @@
+@import "../../../common/style/global.scss";
+$fontColorBg: #ffff99;
+.thirWave-wrapper{@include font-size(15px);color:$fontColorBg;background:#f10c49;
+	.banner{position:relative;width:100%; @include contain('../images/banner.jpg');background-position:center center;}
+	.banner2{position:relative;width:100%; @include contain('../images/bannerr.jpg');background-position:center center;
+		p{text-align:center;}
+	}
+	ul{li{position:relative;@include font-size(15px);i{position: absolute;&#small{@include font-size(9px);}}span{color:#fce3e3;@include font-size(13px);}}&.notice{@include font-size(12px);color:#fce3e3;}}
+	.tzbtn{text-align:center;color:#fe5100;@include font-size(18px);margin:0 auto;background:#ffa403;background: -webkit-gradient(linear,0 100% , 0 0, from(#ffa403), to(#ffe06b));@include size(border-radius,30px);}
+	.loginbtn{text-align:center;color:#fe5100;@include font-size(12px);background:#ffcd3f;@include size(border-radius,30px);float:right;}
+	.activity{background:#f10c49;position:relative;
+		.zjbtn{background:#f10c49;@include size(border-radius,8px);float:right;box-shadow:inset 0px 0 10px #b40a35;color:#fce2e2;@include font-size(8px);text-align:center;}
+		.icon{@include contain('../images/icon.png');background-position:center center;position:absolute;}
+		.wicon{@include contain('../images/wicon.png');background-position:center center;position:absolute;}
+	}
+	.ge{@include contain('../images/ge.png');background-position:center center;margin:0 auto;}
+	.contain{@include size(border-radius,6px);
+		.title{@include contain('../images/title.png');background-position:center center;margin:0 auto;}
+		p{@include font-size(15px);}
+		.kuang{@include contain('../images/kuang.png');background-position:center center;
+			table{@include font-size(12px);width:100%;text-align:center;tr:nth-child(1){font-weight:bold;@include font-size(13px);}}
+			p{text-align:center;@include font-size(15px);border-top:1px dashed #ef0c47;color:#fce3e3;&.gs{border-top:none;color:$fontColorBg;@include font-size(13px);}}
+		}
+	}
+}
+.mask{ width:100%;height:100%;position:fixed;top:0;left:0;background:rgba(0,0,0,0.8);z-index:888; -webkit-perspective:600px;
+	.rule{z-index:999;position: fixed;top: 50%;left: 50%;@include contain('../images/tanbg.png',100% auto);background-position:center center;transition:all 0.5s ease-in-out;transform:rotateY(360deg); opacity:1;ul{overflow-y:scroll;color:#333 !important; @include font-size(12px);span{font-weight:bold;color:#333 !important;}}}
+	.close{@include contain('../images/close.png');background-position:center top;float:right;color:#fff;@include font-size(25px);text-align:center;@include size(border-radius,40px);}
+	.titlebg{@include contain('../images/titlebg.png');background-position:center top;margin:0 auto;color:#ffe2a4;@include font-size(18px);text-align:center;color:#e20a2e;}
+	.titlebgg{margin:0 auto;color:#ffe2a4;@include font-size(18px);text-align:center;color:#e20a2e;}
+	.notice{z-index:999;position: fixed;top: 50%;left: 50%;@include size( border-radius,20px);@include contain('../images/tanbgg.png');background-size: cover;transition:all 0.5s ease-in-out;transform:rotateY(360deg); opacity:1;
+		p{@include font-size(18px);color:#e20c2e;text-align:center;&.noticetitle{font-weight:bold;@include font-size(24px);}}
+	}
+	.tanbtn{background:#fd8325;margin:0 auto;color:#fff;@include font-size(18px);@include size(border-radius,30px);text-align:center;}
+	.info{div{float:left;&:nth-child(2){width:3px;height:3px;background:#e20c2e;}&:nth-child(3){background:#e20c2e;height:1px}}}
+	.tablebox{position:relative;}
+	.table{position:absolute;@include font-size(9px);text-align:center;color:#333;tr:nth-child(1){@include font-size(9px);font-weight:bold;}}
+	// #table{position:relative;@include font-size(9px);text-align:center;color:#333;tr:nth-child(1){position:absolute;left:0;right:0;margin:auto;@include font-size(9px);font-weight:bold;}}
+	.page-wrap {text-align: center;margin:0 auto;position:absolute;left:0;right:0;
+  		a {display: block;float:left;color: #ffb26b;@include font-size(9px);text-align: center;}
+    	.page-box {display: block;float:left;border: 1px solid #ffb26b;
+    		ul {display: block;float:left;li {a {background: #f9f9f9;background: #ffb26b;color: #fff;}}}
+	  	}
+  		span {@include font-size(9px);display: block;float:left;color: #ffb26b;}
+	}
+	.cur{transform:rotateY(0deg);opacity:1;z-index:999;}
+}

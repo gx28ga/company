@@ -1,0 +1,46 @@
+{# 项目文件 #}
+{% if table.length>0 or doc.length>0 %}
+<div class="fileSpeci" >
+	<h3 class="title">项目文件</h3>
+	<div class="content">
+		<div class="infomation">
+			为了保证您的权益，多融财富特别提醒您，在您投资之前请仔细阅读以下文件，如您继续投资，则表示您已经完全理解相关文件的全部内容并自愿接受相关文件的约束。更多项目介绍请点击查看：
+		</div>
+		<div class="tags">
+			<ul>
+				{% for item in file %}
+				<li><a href="{{item.bigUrl}}" target='_blank'>{{item.title}}</a></li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+	<h3 class="title">项目介绍</h3>
+	<div class="content">
+		{% if table.length>0 %}
+		<div class="infomation">
+			<div class="message">
+				<table>
+					<tbody>
+					{% for item in table %}
+					<tr>
+						<td class="t">{{item.title}}</td>
+						<td class="c">{{item.content}}</td>
+					</tr>
+					{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</div>
+		{% endif %}
+		<div class="infomation">
+			{% for info in doc %}
+			<h4 class="littleTitle">{{info.title}}</h4>
+			<div class="message">
+				{{info.content}}
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+{% endif %}
+{# end项目文件 #}

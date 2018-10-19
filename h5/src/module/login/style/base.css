@@ -1,0 +1,62 @@
+/**
+* 公共样式
+* created by bo.peng 2018/3/27
+* email:spion@qq.com
+*/
+.login{
+    position:relative;
+    z-index: 2;
+    .banner{
+        img{
+            display:block;
+            width:100%;
+        }
+    }
+    .readed{
+        padding:10px;
+        color: #9B9B9B;
+        em{
+            color: #FF8246;
+        }
+        .checkbox{
+            display:inline-block;
+            vertical-align: top;
+            margin-top:2px;
+            width:12px;
+            height:12px;
+            border:1px solid #ccc;
+            border-radius: 100%;
+            background:#fff;
+            transition-duration:.3s;
+            box-sizing:border-box;
+            &.current{
+                background:#fff;
+                border-width:4px;
+                border-color:#FF8246;
+            }
+        }
+    }
+    .input-test{
+        input{
+            width:100%;
+            display: block;
+            padding-left:10px;
+            border:none;
+            background:#fff;
+            box-sizing:border-box;
+        }
+    }
+    .show-tel{
+        position:absolute;
+        height:33px;
+        line-height:33px;
+        background:#ffeb01;
+        border:1px solid #f51818;
+        color:#ff0000;
+        text-align:center;
+    }
+    .submit{
+        padding:10px;
+
+    }
+}

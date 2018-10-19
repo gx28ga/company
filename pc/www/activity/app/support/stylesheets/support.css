@@ -1,0 +1,334 @@
+body, div, p, h1, h2, h3, h4, h5, h6, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, table, th, td {
+  margin: 0;
+  padding: 0; }
+
+address, cite, em, i {
+  font-style: normal; }
+
+html, body, root {
+  height: 100%;
+  overflow: hidden; }
+
+body {
+  margin: 0 auto;
+  color: #fff;
+  -webkit-appearance: none;
+  background: #fff;
+  overflow-y: scroll;
+  font-family: 'PingFang SC','STHeiti','Microsoft YaHei',Helvetica,Arial,sans-serif;
+  color: #878C92; }
+
+li {
+  list-style: none; }
+
+html, body {
+  max-width: 750px;
+  margin: 0 auto; }
+
+a {
+  color: #535862;
+  text-decoration: none; }
+
+a:hover {
+  color: #c40000;
+  text-decoration: underline; }
+
+legend {
+  color: #000; }
+
+fieldset, img {
+  border: 0; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+input[type="button"], input[type="submit"], input[type="reset"] {
+  cursor: pointer; }
+
+.clearfix:after, .wrapper:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0; }
+
+.clearfix {
+  display: inline-block; }
+
+/* start commented backslash hack \*/
+* html .clearfix {
+  height: 1%; }
+
+.clearfix {
+  display: block; }
+
+/* close commented backslash hack */
+.middle * {
+  display: inline-block;
+  vertical-align: middle; }
+
+::-webkit-input-placeholder {
+  font-size: .75rem; }
+
+/* height */
+/* public */
+/* link color */
+.red {
+  color: #f42b13; }
+
+.green {
+  color: #16c154; }
+
+.black {
+  color: black; }
+
+.gray {
+  color: #666; }
+
+.blue {
+  color: #2899f2; }
+
+.orange {
+  color: #cb420c; }
+
+/* public */
+.flex {
+  flex-shrink: 0;
+  -webkit-flex-shrink: 0; }
+
+input {
+  outline: none; }
+
+/* layout */
+.hide {
+  display: none; }
+
+.container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  transform: translateY(300px);
+  -webkit-transform: translateY(300px);
+  transition-duration: 1s;
+  -webkit-transition-duration: 1s;
+  opacity: 0;
+  overflow: hidden; }
+
+.container.cur {
+  transform: translateY(0px);
+  -webkit-transform: translateY(0px);
+  opacity: 1; }
+
+.effect {
+  float: left;
+  transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  perspective: 600px;
+  -webkit-perspective: 600px;
+  background: #EFEFF4; }
+
+.effect .option {
+  float: left;
+  min-height: 6.25rem;
+  transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  overflow: hidden;
+  background: #fff; }
+
+.support {
+  font-family: "PingFangSC Light"; }
+  .support .banner1 {
+    background: url("../images/banner_01.png") no-repeat;
+    background-size: contain;
+    background-size: 100% auto; }
+  .support .banner2 {
+    background: url("../images/banner_02.png") no-repeat;
+    background-size: contain;
+    background-size: 100% auto; }
+  .support .banner3 {
+    background: url("../images/banner_03.jpg") no-repeat;
+    background-size: contain;
+    background-size: 100% auto; }
+  .support .content1 {
+    background: url("../images/bg1.png") repeat;
+    position: relative; }
+    .support .content1 .xingcheng {
+      background: url("../images/xingcheng.png") no-repeat;
+      background-size: contain;
+      margin: 0 auto; }
+    .support .content1 .videoTitle {
+      background: url("../images/videoTitle.png") no-repeat;
+      background-size: contain;
+      margin: 0 auto;
+      position: absolute; }
+    .support .content1 .videoCon {
+      font-size: 0.5625rem;
+      font-family: "PingFangSC Light";
+      color: #4693cb;
+      text-align: center;
+      position: absolute; }
+      @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+        .support .content1 .videoCon {
+          font-size: 0.48214rem; } }
+      @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+        .support .content1 .videoCon {
+          font-size: 0.48214rem; } }
+      @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+        .support .content1 .videoCon {
+          font-size: 0.62156rem; } }
+    .support .content1 .videoImg {
+      background: url("../images/videoImg.png") no-repeat;
+      background-size: contain;
+      position: absolute;
+      margin: 0 auto; }
+    .support .content1 .mediaTitle {
+      background: url("../images/meitiTitle.png") no-repeat;
+      background-size: contain;
+      margin: 0 auto;
+      position: absolute; }
+    .support .content1 .mediaImg1 {
+      background: url("../images/mediaImg_03.png") no-repeat;
+      background-size: contain;
+      position: absolute; }
+    .support .content1 .mediaImg2 {
+      background: url("../images/mediaImg_06.png") no-repeat;
+      background-size: contain;
+      position: absolute; }
+    .support .content1 .mediaImg3 {
+      background: url("../images/mediaImg_08.png") no-repeat;
+      background-size: contain;
+      position: absolute; }
+    .support .content1 .mediaCon {
+      position: absolute; }
+      .support .content1 .mediaCon a {
+        font-size: 0.625rem;
+        font-family: "PingFangSC Regular";
+        color: #000;
+        text-decoration: none;
+        position: absolute; }
+        @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+          .support .content1 .mediaCon a {
+            font-size: 0.53571rem; } }
+        @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+          .support .content1 .mediaCon a {
+            font-size: 0.53571rem; } }
+        @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+          .support .content1 .mediaCon a {
+            font-size: 0.69063rem; } }
+    .support .content1 .line {
+      background: url("../images/line_01.png") no-repeat;
+      background-size: contain;
+      position: absolute; }
+    .support .content1 .conTitle {
+      font-size: 0.5625rem;
+      text-align: center;
+      color: #fff;
+      border-radius: 1.875rem;
+      position: absolute; }
+      @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+        .support .content1 .conTitle {
+          font-size: 0.48214rem; } }
+      @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+        .support .content1 .conTitle {
+          font-size: 0.48214rem; } }
+      @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+        .support .content1 .conTitle {
+          font-size: 0.62156rem; } }
+    .support .content1 .conC {
+      border-radius: 1.25rem;
+      border: 0.0625rem dashed #c8c8c8;
+      font-size: 0.6875rem;
+      text-indent: 2em;
+      position: absolute;
+      font-family: "PingFangSC Light";
+      color: #333; }
+      @media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+        .support .content1 .conC {
+          font-size: 0.58929rem; } }
+      @media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+        .support .content1 .conC {
+          font-size: 0.58929rem; } }
+      @media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+        .support .content1 .conC {
+          font-size: 0.75969rem; } }
+      .support .content1 .conC .link {
+        color: #4693cb; }
+    .support .content1 .day1Img {
+      background: url("../images/img1.png") no-repeat;
+      background-size: contain;
+      position: absolute; }
+    .support .content1 .day2Img {
+      background: url("../images/img2.png") no-repeat;
+      background-size: contain;
+      position: absolute; }
+    .support .content1 .day3Img {
+      background: url("../images/img3.png") no-repeat;
+      background-size: contain;
+      position: absolute; }
+    .support .content1 .day4Img {
+      background: url("../images/img4.png") no-repeat;
+      background-size: contain;
+      position: absolute; }
+    .support .content1 .bg1 {
+      background: #9cbe5b; }
+    .support .content1 .bg2 {
+      background: #bebebe; }
+  .support .content2 {
+    background: url("../images/bg2.png") repeat; }
+    .support .content2 .content2Title {
+      background: url("../images/appgongyi.png") no-repeat;
+      background-size: contain;
+      margin: 0 auto; }
+    .support .content2 .con {
+      /*  border-radius: $s30;
+            border:$s2 dashed #c8c8c8;
+            @include font-size(11px);
+            line-height:$s20;
+            text-indent:2em; */
+      background: url("../images/con123.png") no-repeat;
+      background-size: contain;
+      margin: 0 auto; }
+    .support .content2 .prevIU {
+      background: url("../images/titleIcon1.png") no-repeat;
+      background-size: contain;
+      margin: 0 auto; }
+    .support .content2 .box {
+      position: relative; }
+      .support .content2 .box .slideBox {
+        z-index: 0;
+        margin: 0 auto; }
+        .support .content2 .box .slideBox .bd {
+          overflow: hidden;
+          margin: 0 auto;
+          position: relative; }
+          .support .content2 .box .slideBox .bd .imgbox {
+            margin: 0 auto; }
+          .support .content2 .box .slideBox .bd li {
+            zoom: 1;
+            vertical-align: middle;
+            margin: 0 auto; }
+          .support .content2 .box .slideBox .bd img {
+            display: block; }
+      .support .content2 .box .btnRight {
+        background: url("../images/btn_05.png") no-repeat;
+        background-size: contain;
+        position: absolute; }
+      .support .content2 .box .btnLeft {
+        background: url("../images/btn_03.png") no-repeat;
+        background-size: contain;
+        position: absolute; }
+    .support .content2 .ceoIcon {
+      background: url("../images/titleIcon2.png") no-repeat;
+      background-size: contain;
+      margin: 0 auto; }
+    .support .content2 .ceo {
+      background: url("../images/ceo.png") no-repeat;
+      background-size: contain;
+      margin: 0 auto; }
+
+/*# sourceMappingURL=support.css.map */

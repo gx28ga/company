@@ -1,0 +1,13 @@
+{% macro sy(item) %}
+    {% if item.repayType ==1 %}
+    <span>到期一次还本付息</span>
+    {% elif item.repayType ==2 %}
+    <span>按月付息到期还本</span>
+    {% elif item.repayType ==3 %}
+    <span>等额本金</span>
+    {% elif item.repayType ==4 %}
+    <span>等额本息</span>
+    {% elif item.repayType ==5 %}
+    <span>其他</span>
+    {% endif %}
+{% endmacro %}

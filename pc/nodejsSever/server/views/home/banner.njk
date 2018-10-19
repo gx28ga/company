@@ -1,0 +1,43 @@
+<div class="bannerBox">
+    <div id="Slideshow">
+        <div id="Slideshow">
+            <ul class="swiper-img">
+                <li class="banner" v-for="item in banner">
+                    <a v-if="item.location" target="_blank" :href="item.location" style="background-repeat:no-repeat; background-position:center 0" :style="{backgroundImage: 'url(' + item.imgUrl + ')'}"></a>
+                    <div v-else style="width:100%; height:100%;background-repeat:no-repeat; background-position:center 0" :style="{backgroundImage: 'url(' + item.imgUrl + ')'}"></div>
+                </li>
+            </ul>
+            <div class="pagina">
+                <ul>
+                    <li v-for="item in banner">${item.title}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="bannerrgb">
+    </div>
+    <div class="aside">
+        <div v-if="!isLogin"><p class="title">国资委下属事业单位控股</p></div>
+        <div v-else v-show="isLogin" class="title login" style="display:none">
+            <div>欢迎您，${userInfo.realName}!</div>
+        </div>
+        <div v-if="isLogin && userInfo" v-show="isLogin && userInfo" class="content" style="display:none">
+            <div class="txt2">账户余额:<em class="login-true">${userInfo.balance}</em>元</div>
+            <div class="txt2">近30天共有<em class="login-true">${userInfo.dueIn}</em>笔待收收益</div>
+            <div class="btn hvr-bounce-to-left">
+                <a href="{{http}}/main/myAccount/accountHome" class="nohover">我的账户</a>
+            </div>
+            <div class="reg login-true">
+                <a @click="exit" class="nohover">安全退出</a>
+            </div>
+        </div>
+        <div v-else class="content">
+            <p class="txt1">安全  稳健  高收益</p>
+            <p class="txt2">注册送<em>1588元</em>红包</p>
+            <div class="btn hvr-bounce-to-left"><a href="javascript:void(0)" @click="reg" class="nohover">免费注册</a></div>
+            <div class="reg">
+                已有账号？<a href="javascript:void(0)" @click="login" class="nohover">立即登录</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+/**
+* 帐户页相关常用样式
+* created by bo.peng 2018/4/2
+* email:spion@qq.com
+*/
+.my-account{
+    color: #102542;
+    .box{
+        display:flex;
+        flex-direction:row;
+    }
+    .flex{
+        flex:1;
+    }
+    >article{
+        >section{
+            background:#fff;
+            ul{
+
+            }
+            li{
+                align-items:center;
+                &:not(:last-child){
+                    border-bottom:.5px solid #d2d2d2;
+                }
+                .icon{}
+                .text{
+                    color: #A0A0A0;
+                }
+                aside{
+                    display:flex;
+                    flex-direction: row;
+                    align-items:center;
+                }
+                .arrow-parent{
+                    padding-left:10px;
+                }
+            }
+        }
+    }
+
+}

@@ -1,0 +1,28 @@
+{% extends "common/main.njk" %}
+{% block body %}
+<link href="/style/help/index.css" rel="stylesheet" type="text/css" inline/>
+<div id="APP" class="help">
+	<article class="container">
+		{% include "./left.njk" %}
+		<div class="right cur" style="display:block;">
+			<h1>理财课堂</h1>
+			<div class="content">
+				<div class="list-box">
+					{% for item in knows %}
+					<div class="wqq-helpBox">
+						<div class="wqq-helpBox-titel">
+							<a href="javascript:void(0)" style="cursor:default;">{{item.title}}</a>
+							<div class="wqq-help-sanjiao"></div>
+						</div>
+						<div class="wqq-check-element animate-show helpBox-text">
+							<p>{{item.text}}</p>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</article>
+</div>
+<script src="/js/help/index.js" inline></script>
+{% endblock %}

@@ -1,0 +1,115 @@
+{% extends "common/main.njk" %}
+{% block body %}
+<link href="/style/other/friend.css" rel="stylesheet" type="text/css" inline/>
+<div id="APP" class="body-wrapper">
+    <div class="banner">
+        <div class="btn">
+            <a @click='loginReturn'></a>
+        </div>
+    </div>
+    <div class='bg'>
+        <div class='content con1'>
+            <div class='title'>邀请奖励</div>
+            <div class='littleTitle'>· 邀友越多，奖励越多</div>
+            <div class='nei'>
+                <div class='neiLeft'>
+                    <div class='conTop'> 好友首投≥5000&nbsp;▶</div>
+                    <div class='conBottom'>* 奖励可累计获得。<br>
+                        例如：每月成功邀请10人，可
+                        获得10+50+80+100=240元</div>
+                </div>
+                <div class='neiRight'>
+                    <div class='jiangli'></div>
+                </div>
+            </div>
+        </div>
+        <div class='content con2'>
+            <div class='title'>首月返现</div>
+            <div class='littleTitle'>· 好友投资越多，可获返现越多</div>
+            <div class='nei'>
+                <div class='neiLeft'>
+                    <div class='conTop'>
+                        好友注册后<span class='fon'>30天内</span>进行投资，
+                        您将获得每笔投资收益的<span class='fon'>15%</span>
+                        的返现奖励
+                    </div>
+                    <div class='conBottom'>
+                        * 好友投资产品使用的红包、加息券等任
+                        何福利产生的收益，不计入投资收益之
+                        中，不享受投资收益返现
+                    </div>
+                </div>
+                <div class='neiRight'>
+                    <div class='friendInvest'></div>
+                </div>
+            </div>
+        </div>
+        <div class='content con3'>
+            <div class='title'>每日佣金</div>
+            <div class='littleTitle'>· 一次邀请，天天拿佣金</div>
+            <div class='nei'>
+                <ul>
+                    <li class="littleIcon">佣金计算公式
+                        <div class="rate"></div>
+                    </li>
+                    <li class='line'></li>
+                    <li class="littleIcon">佣金奖励利率
+                        <div class="myAccount">
+                            <div class="myAccountLeft">我的待收（元）</div>
+                            <div class="myAccountLeft">奖励佣金率</div>
+                            <ul>
+                                <li>
+                                    <div class="daishou">待收＜5000</div>
+                                    <div class="jian">&gt;</div>
+                                    <div class="yongjinRate">0.0%</div>
+                                </li>
+                                <li>
+                                    <div class="daishou">5000≤待收＜10000</div>
+                                    <div class="jian">&gt;</div>
+                                    <div class="yongjinRate">0.4%</div>
+                                </li>
+                                <li>
+                                    <div class="daishou">10000≤待收＜20000</div>
+                                    <div class="jian">&gt;</div>
+                                    <div class="yongjinRate">0.5%</div>
+                                </li>
+                                <li>
+                                    <div class="daishou">20000≤待收＜50000</div>
+                                    <div class="jian">&gt;</div>
+                                    <div class="yongjinRate">0.6%</div>
+                                </li>
+                                <li>
+                                    <div class="daishou">50000≤待收＜100000</div>
+                                    <div class="jian">&gt;</div>
+                                    <div class="yongjinRate">0.7%</div>
+                                </li>
+                                <li>
+                                    <div class="daishou">100000≤待收＜200000</div>
+                                    <div class="jian">&gt;</div>
+                                    <div class="yongjinRate">0.8%</div>
+                                </li>
+                                <li>
+                                    <div class="daishou">200000≤待收＜500000</div>
+                                    <div class="jian">&gt;</div>
+                                    <div class="yongjinRate">0.9%</div>
+                                </li>
+                                <li>
+                                    <div class="daishou">待收≥500000</div>
+                                    <div class="jian">&gt;</div>
+                                    <div class="yongjinRate">1.0%</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="btn">
+            <a @click='loginReturn'></a>
+        </div>
+    </div>
+</div>
+<script src="/js/other/friend.js" inline></script>
+{% endblock %}

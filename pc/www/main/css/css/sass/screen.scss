@@ -1,0 +1,79 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+// @import "menu/btns";
+
+@import "compass/CSS3";
+@import "compass/typography/lists";
+@import "compass/utilities/sprites";
+@import "compass/utilities/general/clearfix";
+
+// 公共样式---头部、底部
+@import "common";
+
+
+// 首页样式
+@import "newhome";
+
+// 登录注册
+@import "login";
+
+// 票据列表详情
+@import "billnew";
+
+// 我的账户
+@import "my";
+
+@import "datepicker-bootstrap";
+
+@import "help";
+
+@import "protocol";
+
+@import "friend";
+
+@import "guide";
+
+@import "background";
+
+@import "send";
+
+@import "publicity";
+
+@import "gift";
+
+@import "guarantee";
+
+@import "love";
+
+@import "boat";
+
+@import "update";
+
+//新产品结构-体验金
+@import "newCP";
+//票据专题
+@import "wqqReport";
+@import "cp66";
+@import "cp079";
+@import "cp167";
+
+@import "spider";
+
+@import "tanabata";
+@import "appdownload";
+@import "invite";
+@import "olympiad";
+@import "november";
+@import "zhongqiu";
+
+@import "cp138AutoTb";
+//@import "nineReport";
+// @import "national";
+@import "returnMoney";
+.menu{
+	@include border-radius(1px);
+}

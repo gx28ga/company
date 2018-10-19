@@ -1,0 +1,111 @@
+<!--
+	cp138
+	lee -2016-9-18
+-->
+<div class="cp138-box" ng-controller='accountAutoBtCtrl' >
+
+	<h3>自动投标设置</h3>
+	<form class="login_form" ng-model="autoTb" name="stateList">
+
+	 	<div class="list-title">
+	 		<p>自动投标状态：</p>
+	 		<div class="state-tab">
+	 			<div ng-if="tunOff" class="no-start">未启用</div>
+		 		<div ng-if="!tunOff" class="start" >
+		 			<p>已启用</p>
+		 			<a href="#" style="color: #fe7634;" ng-click='onClickToBillDetail("开启")' ng-show='closeForm' >关闭自动投标</a>
+		 			<a href="#" style="color: #fe7634;" ng-click='onClickToBillDetail("开启")' ng-show='!closeForm'>开启自动投标</a>
+		 		</div>
+	 		</div>
+	 	</div>
+		<!-- 未设置 -->
+	 	<div  ng-show='closeForm' class="animate-show list-con">
+	 	<!-- <div  ng-show='closeForm' class="list-con"> -->
+	 		<div class="list-con-box">
+	 			<span>单笔投标金额</span>
+	 			<input type="text" onkeyup="this.value=this.value.replace(/[\D\.]/gi,'') " placeholder="最低100元起" ng-model="autoTb.amount" name="amount" ng-blur="onClickToBillDetail('单标投资金额',stateList.amount)" required  minlength="3"/>
+	 			<div ng-show="stateListAmountError != null" class="error-info">
+	 				<font color="red">{{stateListAmountError}}</font>
+	 				<!-- <font  ng-show="" color="red">输入金额是100的倍数</font> -->
+	 			</div>
+	 		</div>
+
+	 		<div class="list-con-box">
+	 			<span>账户保留余额</span>
+	 			<input type="text" onkeyup="this.value=this.value.replace(/[\D\.]/gi,'') " placeholder="请输入账户保留余额" ng-model="autoTb.balance" name="balance" ng-blur="onClickToBillDetail('账户保留余额',stateList.balance)" required />
+	 			<div  class="error-info">
+	 				<font color="red">{{stateListBalanceError}}</font>
+	 			</div>
+	 		</div>
+	 		<div class="list-con-box">
+	 			<span>项目期限范围</span>
+	 			<div class="date-range" >
+	 				<!-- <select ng-value="autoTb.minDeadline" name="minDeadline" required>
+                            <option  ng-repeat="item in selItemsMin" value="{{item.code}}">{{item.cnvalue}}</option>
+                    </select> -->
+                    <select ng-model="autoTb.minDeadline" ng-blur="onClickToBillDetail('期限')" name="minDeadline" required  ng-options="obj.cnvalue for obj in selItemsMin"> </select>
+
+	 				<i> 至 </i>
+                  <!--   <select ng-value="autoTb.maxDeadline" name="maxDeadline" required>
+                            <option  ng-repeat="item in selItemsMax" value="{{item.code}}">{{item.cnvalue}}</option>
+                    </select> -->
+                    <select ng-model="autoTb.maxDeadline" ng-blur="onClickToBillDetail('期限')" name="minDeadline" required  ng-options="obj.cnvalue for obj in selItemsMax"></select>
+
+	 			</div>
+	 			<div  class="error-info">
+	 				<font ng-if="deadlineError" color="red">时间范围错误</font>
+	 			</div>
+	 		</div>
+	 		<div class="list-con-sale">
+	 			<span>是否使用优惠券</span>
+	 			<div  class="sale-radio">
+		 			<!-- <input ng-model="autoTb.useCoupon" ng-true-value="0"  name="useCoupon"  class="check-box" checked type="radio" /> -->
+		 			<input type="checkbox" ng-model="autoTb.useCoupon" ng-true-value="1"  class="check-box" checked />
+		 			 <em>是</em>
+		 			<input type="checkbox" ng-model="autoTb.useCoupon" ng-true-value="0"  class="check-box" checked />
+		 			 <em>否</em>
+	 			</div>
+	 		</div>
+	 	</div>
+		<div class="list-bottom">
+			<div class="list-bottom-password">
+				<span>交易密码</span>
+				<!-- <input type="password">
+				<a href="" class="reset-passwd"  ng-click="forgetTradeCode()">忘记密码？</a>
+				<div class="passwd-tip">输入密码错误提示</div>-->
+				<div class="input-mod">
+						<input class="text" type="password" onkeyup="this.value=this.value.replace(/[\D\.]/gi,'') " ng-model="autoTb.tpwd" name="tpwd"  maxlength="6" minlength="6" required autocomplete="off">
+						<a href="{{a|webIE8}}main/myAccount/security?nmb=pswd"  target="_blank" class="forget">忘记密码？</a>
+				</div>
+			</div>
+			<!-- 提交按钮 -->
+			<input readonly="readonly" ng-if="tunOff" ng-disabled="!stateList.$valid" type="" ng-click="onClickToBillDetail('submin')" value="启用" class="restart sub-btn sub">
+			<input readonly="readonly" ng-show='closeForm' ng-if="!tunOff" ng-disabled="!stateList.$valid" type="" ng-click="onClickToBillDetail('修改submin')" value="确认修改" class="restart sub-btn sub">
+			<input readonly="readonly" ng-hide='closeForm' ng-if="!tunOff" ng-disabled="!stateList.$valid" type="" ng-click="onClickToBillDetail('修改submin')" value="确认关闭" class="restart sub-btn sub">
+
+		</div>
+	 </form>
+
+
+	 <div class="autoTb-info">
+	 	<h4>
+			<i class="icon icon-info"></i>
+	 	自动投标说明：
+	 	</h4>
+	 	<ul>
+	 		<li>1、自动投标适用于平台中所有平台，请根据自己的风险偏好、投资习惯在自动投标中设置各种条件后并开启；</li>
+	 		<li>2、开启自动投标后，此功能方可生效；功能生效后，每次上架产品将根据您的投标配置自动进行投资。</li>
+	 		<li>3、自动投标设置或修改成功后，次日生效；关闭自动投标，当日生效。</li>
+	 		<li>4、单笔自动投标金额 < 项目最低投资金额，不执行自动投标；</li>
+	 		<li>5、账户可用余额 < 单笔自动投标金额 + 账户保留金额，不执行自动投标；</li>
+	 		<li>6、使用优惠券：自动投标时系统默认会使用收益最高的优惠券。</li>
+	 		<li>7、自动投资成功会生成记录到我的账户-投资记录中。</li>
+	 		<li>8、用户的第一笔自动投标满足如下条件：投资金额≥1000元且投资期限≥30天时，系统会自动返现5元到账户余额。</li>
+	 		<li>自动投标规则的解释权归多融财富平台所有。</li>
+	 	</ul>
+	 	<div class="autotb-bgone"></div>
+	 </div>
+
+
+
+</div>

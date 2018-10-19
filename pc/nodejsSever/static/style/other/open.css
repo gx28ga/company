@@ -1,0 +1,308 @@
+
+body{
+    background:url("/images/other/openWinter/bg.png") repeat;
+    font-family:"MicrosoftYaHei";
+    font-size:20px;
+    color:#333333;
+}
+.banner{
+    height:547px;
+    background:url("/images/other/openWinter/banner.jpg") center 0 no-repeat;
+}
+.content{
+    width:1200px;
+    margin:0px auto;
+    height:946px;
+    position: relative;
+}
+.content .winter1{
+    color:#834e00;
+    line-height: 33px;
+    position: absolute;
+    left:160px;
+    top:80px;
+}
+.content .rightpic{
+    background: url("/images/other/openWinter/rightpic.png") no-repeat;
+    position: absolute;
+    top:34px;
+    right:34px;
+    width:579px;
+    height: 498px;
+}
+.content .plan{
+    background: url("/images/other/openWinter/plan.png") no-repeat;
+    width:352px;
+    height: 400px;
+    position:absolute;
+    left:160px;
+    bottom:54px;
+}
+.content .who{
+    color:#834e00;
+    font-size: 20px;
+    line-height: 35px;
+    position: absolute;
+    right:170px;
+    bottom:60px;
+}
+.content .whocontent{
+    color:#834e00;
+    font-size: 20px;
+    line-height: 35px;
+}
+.content .whofont{
+    color:#834e00;
+}
+.content .whotitle{
+    color:#eb6100;
+    font-size: 32px;
+    border-bottom:2px solid #eb6100 ;
+    width:300px;
+    height: 35px;
+    line-height: 35px;
+}
+.wuzititle{
+    width:496px;
+    height: 63px;
+    background: url("/images/other/openWinter/title.png") no-repeat;
+    margin:0 auto 80px;
+}
+.wuzipic{
+    width:845px;
+    height: 166px;
+    background: url("/images/other/openWinter/wuzi.png") no-repeat;
+    margin:0 auto 80px;
+}
+.juanzeng{
+    width:1200px;
+    margin:0 auto;
+    height: 580px;
+}
+.juanzengleft{
+    float: left;
+    width: 748px;
+    height:580px;
+    position: relative;
+}
+.juanzengleft .left-btn{
+    position: absolute;
+    left:20px;
+    top:50%;
+    margin-top: -55px;
+}
+.juanzengleft .right-btn{
+    position: absolute;
+    right:20px;
+    top:50%;
+    margin-top: -55px;
+}
+.juanzengleft .bd{
+    width: 560px;
+    height: 560px;
+    margin-left:90px;
+    overflow: hidden;
+}
+.juanzengleft .bd li img{
+    width:100%;
+    height: 100%;
+}
+.juanzengright{
+    float: right;
+    width: 452px;
+}
+.juanzengright .juantitle{
+    width: 245px;
+    border-bottom: 2px solid #eb6100;
+    height: 30px;
+    text-align: center;
+    color:#eb6100;
+    margin-top: 40px;
+    font-size: 30px;
+    line-height: 30px;
+}
+.juanzengright .juanCon{
+    line-height: 30px;
+    font-size: 20px;
+    width:350px;
+    color:#834e00;
+    margin-bottom: 70px;
+}
+.btnLeft{
+    background: url("/images/other/openWinter/leftbtn.png") no-repeat;
+    width: 43px;
+    height:110px;
+}
+.btnRight{
+    background: url("/images/other/openWinter/rightbtn.png") no-repeat;
+    width: 43px;
+    height:110px;
+}
+.zoufangtitle{
+    background: url("/images/other/openWinter/zoufangtitle.png") no-repeat;
+    width:496px;
+    height: 63px;
+    margin:100px auto 60px;
+}
+.zoufangcon{
+    width:900px;
+    margin:0 auto;
+    position: relative;
+}
+.zoufangcon .hb {
+    position: absolute;
+    bottom:20px;
+    left:50%;
+    margin-left: -33px;
+}
+.zoufangcon .hb  li{
+    width:12px;
+    height:12px;
+    border-radius: 50%;
+    background:#bda99f;
+    float: left;
+    margin-right: 10px;
+}
+.zoufangcon .hb  li.on{
+    background: #eb6100;
+}
+.zoufangcon .zouleft{
+    position: absolute;
+    top:50%;
+    left:0px;
+    margin-top: -55px;
+}
+.zoufangcon .zouright{
+    position: absolute;
+    top:50%;
+    margin-top: -55px;
+    right:0px;
+}
+.zoufangcon .bg{
+    background: url("/images/other/openWinter/book.png") no-repeat;
+    width: 750px;
+    height: 505px;
+    margin:60px auto 20px;
+}
+.zoufangcon .bg ul{
+    width: 631px;
+    height:412px;
+    padding-top:43px;
+    margin-left:60px;
+    overflow: hidden;
+}
+.zoufangcon .bg ul img{
+    width: 100%;
+    height: 100%;
+}
+.jieshi{
+    width: 720px;
+    margin:0 auto;
+    color:#834e00;
+    font-size: 20px;
+    line-height: 35px;
+}
+.seven{
+    width: 1200px;
+    height:500px;
+    margin:0 auto;
+    color:#834e00;
+}
+.seven .sevenLeft{
+    float: left;
+    width: 455px;
+
+}
+.seven .sevenLeft .seventitle{
+    background: url("/images/other/openWinter/seven.png") no-repeat;
+    width: 356px;
+    height: 63px;
+    margin:0 auto;
+}
+.seven .sevenLeft .sevenCon{
+    width: 337px;
+    margin: 75px auto 0;
+}
+.seven .sevenright {
+    float:right;
+    position: relative;
+    width:730px;
+}
+.seven .sevenright .sevenimg ul{
+    width:555px;
+    height:395px;
+    overflow: hidden;
+    margin:0 auto;
+}
+.seven .sevenright .sevenimg ul img{
+    width:100%;
+    height:100%;
+}
+.sevenleftbtn{
+    position: absolute;
+    top:50%;
+    margin-top: -55px;
+    left:0px;
+}
+.sevenrightbtn{
+    position: absolute;
+    top:50%;
+    margin-top: -55px;
+    right:0px;
+}
+
+.ceotitle{
+    background: url("/images/other/openWinter/ceotitle.png") no-repeat;
+    width: 356px;
+    height: 63px;
+    margin:0 auto;
+}
+.ceocon{
+    width: 680px;
+    height: 630px;
+    padding-top: 20px;
+    margin:30px auto;
+    background:#f8c2c5;
+    border-radius: 5px;
+    padding-left: 55px;
+    padding-right: 55px;
+}
+.ceocon .ceoimg{
+    background: url("/images/other/openWinter/ceo.png") no-repeat;
+    width: 438px;
+    height: 374px;
+    margin:0 auto;
+}
+.ceocon .pco{
+    text-indent: 2em;
+    font-size: 20px;
+    width: 690px;
+    margin:0 auto;
+    font-family: "pingfangSC Light";
+}
+.mediatitle{
+    background:url("/images/other/openWinter/mediatitle.png") no-repeat;
+    width:356px;
+    height:63px;
+    margin:40px auto;
+}
+.meda{
+    background:url("/images/other/openWinter/meda.png") no-repeat;
+    width:960px;
+    height:701px;
+    margin:30px auto;
+    position: relative;
+}
+.meda .tv{
+    position: absolute;
+    top:50px;
+    left:45px;
+    width:875px;
+    height:525px;
+}
+.footer{
+    background: url("/images/other/openWinter/bottom.png") no-repeat;
+    width: 734px;
+    height:464px;
+    margin:30px auto 0;
+}

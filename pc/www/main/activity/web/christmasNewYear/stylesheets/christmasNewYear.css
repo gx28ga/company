@@ -1,0 +1,1353 @@
+@charset "UTF-8";
+/* line 2, ../sass/christmasNewYear.scss */
+.money {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+}
+/* line 8, ../sass/christmasNewYear.scss */
+.money i {
+  position: absolute;
+  width: 145px;
+  height: 110px;
+  transition-duration: .3s;
+  background: url("../../../../images/christmas/money/m1.png") no-repeat center;
+  background-size: contain;
+}
+/* line 15, ../sass/christmasNewYear.scss */
+.money i.bg2 {
+  background-image: url("../../../../images/christmas/money/m2.png");
+}
+/* line 18, ../sass/christmasNewYear.scss */
+.money i.bg3 {
+  background-image: url("../../../../images/christmas/money/m3.png");
+}
+/* line 21, ../sass/christmasNewYear.scss */
+.money i.bg4 {
+  background-image: url("../../../../images/christmas/money/m4.png");
+}
+/* line 24, ../sass/christmasNewYear.scss */
+.money i.bg5 {
+  background-image: url("../../../../images/christmas/money/m5.png");
+}
+
+/* line 30, ../sass/christmasNewYear.scss */
+.christmas-wrapper {
+  width: 100%;
+  background: #fff;
+}
+/* line 33, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 88;
+  transform-style: preserve-3d;
+}
+/* line 42, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg.coins-bg {
+  background: rgba(0, 0, 0, 0.8);
+}
+/* line 45, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop {
+  background: url("../../../../images/christmas/noreadybg.jpg") center 0 no-repeat #fff;
+  width: 660px;
+  height: 470px;
+  margin: 0 auto;
+  margin-top: -350px;
+  position: fixed;
+  top: 60%;
+  left: 50%;
+  margin-left: -330px;
+  text-align: center;
+  border-radius: 12px;
+  box-sizing: border-box;
+  position: relative;
+  opacity: 0;
+  transform: scale(0);
+}
+/* line 61, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop.coinsdetails-pop {
+  height: 548px;
+}
+/* line 64, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop.exchangerecord-pop {
+  height: 598px;
+}
+/* line 67, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop .clo-coins {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 26px;
+  height: 26px;
+  background: url("../../../../images/christmas/coinclose.png") center 0 no-repeat;
+}
+/* line 76, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop .addcoins {
+  position: absolute;
+  top: 182px;
+  color: #fff443;
+  right: 127px;
+  font-size: 36px;
+}
+/* line 83, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop .tentimes {
+  position: absolute;
+  bottom: 50px;
+  right: 97px;
+  font-size: 18px;
+  color: #fff;
+}
+/* line 90, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop .coins-details {
+  position: absolute;
+  bottom: 50px;
+  right: 0;
+  color: #00aeff;
+  font-size: 18px;
+}
+/* line 98, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop.coins-pop {
+  background: url("../../../../images/christmas/1000coins.png") center 0 no-repeat;
+}
+/* line 102, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop.openMode {
+  animation: 0.5s ease-in openMove;
+  animation-fill-mode: forwards;
+}
+/* line 106, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop.closeMode {
+  animation: 0.5s ease-in closeMove;
+  animation-fill-mode: forwards;
+}
+/* line 110, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop.form-pop {
+  background: #fff;
+}
+/* line 112, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop.form-pop .list-mode {
+  width: 526px;
+  height: 417px;
+  border-radius: 10px;
+  border: 1px solid #a61a12;
+  position: absolute;
+  top: 98px;
+  left: 50%;
+  margin-left: -263px;
+  padding: 27px 55px 0 55px;
+  box-sizing: border-box;
+}
+/* line 123, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop.form-pop .list-mode.coinsdetails-mode {
+  height: 376px;
+}
+/* line 127, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop.form-pop .list-mode .tab-body .openTab {
+  animation: 0.5s ease-in openTab;
+  animation-fill-mode: forwards;
+}
+/* line 132, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop.form-pop .list-mode .title-mode {
+  width: 100%;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 10px 10px 0 0;
+}
+/* line 138, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop.form-pop .list-mode .title-mode .tab {
+  float: left;
+  width: 50%;
+  line-height: 40px;
+  text-align: center;
+  font-size: 18px;
+  color: #fff;
+  background: #c77b5f;
+  cursor: pointer;
+}
+/* line 147, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop.form-pop .list-mode .title-mode .tab.active {
+  float: left;
+  width: 50%;
+  line-height: 40px;
+  text-align: center;
+  font-size: 18px;
+  color: #fff;
+  background: #9d3a39;
+  cursor: pointer;
+}
+/* line 159, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop.form-pop .list-mode .piece {
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+/* line 162, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop.form-pop .list-mode .piece .items {
+  float: left;
+  font-size: 14px;
+  color: #333;
+  width: 156px;
+  text-align: left;
+}
+/* line 170, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop.form-pop .list-mode .piece .numbers {
+  float: left;
+  font-size: 14px;
+  color: #333;
+  width: 116px;
+  text-align: left;
+}
+/* line 178, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop.form-pop .list-mode .piece .time {
+  float: left;
+  font-size: 14px;
+  color: #333;
+  text-align: left;
+}
+/* line 187, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop.form-pop .pages {
+  position: absolute;
+  bottom: 17px;
+  left: 205px;
+}
+/* line 191, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop.form-pop .pages ul {
+  float: left;
+}
+/* line 194, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop.form-pop .pages .prev {
+  float: left;
+  width: 66px;
+  height: 34px;
+  border: 1px solid #d7d7d7;
+  line-height: 34px;
+  text-align: center;
+  cursor: pointer;
+  color: #999;
+}
+/* line 205, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop.form-pop .pages .list-item {
+  float: left;
+}
+/* line 207, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop.form-pop .pages .list-item .btn {
+  background: #fff;
+  float: left;
+  height: 36px;
+  width: 36px;
+  line-height: 36px;
+  text-align: center;
+  cursor: pointer;
+  color: #999;
+}
+/* line 216, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop.form-pop .pages .list-item .btn.now {
+  background: #dcdcdc;
+  color: #fff;
+}
+/* line 223, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop.form-pop .pages .next {
+  float: left;
+  width: 66px;
+  height: 34px;
+  border: 1px solid #d7d7d7;
+  line-height: 34px;
+  text-align: center;
+  cursor: pointer;
+  color: #999;
+}
+/* line 235, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop.form-pop .total-pages {
+  position: absolute;
+  bottom: 25px;
+  right: 119px;
+  color: #999;
+}
+/* line 242, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop.form-pop .form-mode {
+  position: relative;
+  background: #a61a12;
+  height: 360px;
+  border-radius: 12px 12px 0 0;
+}
+/* line 247, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop.form-pop .form-mode.details-mode {
+  height: 58px;
+}
+/* line 250, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop.form-pop .form-mode .info {
+  font-size: 24px;
+  color: #ffcccc;
+  position: absolute;
+  left: 18px;
+  top: 15px;
+  cursor: pointer;
+}
+/* line 259, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop.form-pop .form-mode .coins-title {
+  font-size: 24px;
+  color: #ffcccc;
+  line-height: 58px;
+}
+/* line 265, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop.form-pop .form-mode .go-account {
+  font-size: 24px;
+  color: #ffcccc;
+  position: absolute;
+  left: 176px;
+  top: 170px;
+}
+/* line 273, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop.form-pop .form-mode .success {
+  font-size: 30px;
+  color: #ffcccc;
+  position: absolute;
+  width: 180px;
+  top: 105px;
+  left: 50%;
+  margin-left: -90px;
+}
+/* line 283, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop.form-pop .form-mode p {
+  font-size: 24px;
+  color: #ffcccc;
+  position: absolute;
+  top: 185px;
+  left: 100px;
+}
+/* line 291, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop.form-pop .form-mode .costed {
+  font-size: 24px;
+  color: #ffcccc;
+  position: absolute;
+  left: 158px;
+  top: 177px;
+}
+/* line 299, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop.form-pop .form-mode .line {
+  width: 97%;
+  height: 0;
+  border-bottom: 1px dashed #ffcccc;
+  position: absolute;
+  left: 10px;
+  top: 60px;
+}
+/* line 307, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop.form-pop .form-mode .close {
+  background: url("../../../../images/christmas/closeb.png") center 0 no-repeat;
+  top: 15px;
+  right: 15px;
+}
+/* line 312, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop.form-pop .form-mode .form-box {
+  position: absolute;
+  top: 114px;
+  left: 90px;
+}
+/* line 316, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop.form-pop .form-mode .form-box .ipt-mode {
+  margin-bottom: 18px;
+}
+/* line 318, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop.form-pop .form-mode .form-box .ipt-mode label {
+  margin-right: 30px;
+  font-size: 18px;
+  color: #fcc;
+}
+/* line 323, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop.form-pop .form-mode .form-box .ipt-mode input {
+  width: 330px;
+  height: 40px;
+  background: url("../../../../images/christmas/ipt.png") center 0 no-repeat;
+  border: none;
+  padding-left: 10px;
+  box-sizing: border-box;
+  outline: none;
+  color: #fff;
+}
+/* line 333, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop.form-pop .form-mode .form-box .ipt-mode span {
+  color: #fff;
+  position: absolute;
+  left: 122px;
+}
+/* line 340, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop.form-pop .form-mode .checkinfo {
+  position: absolute;
+  bottom: 36px;
+  left: 90px;
+  color: #fcc;
+  font-size: 18px;
+}
+/* line 351, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop .prizename {
+  color: #ff9;
+  font-size: 36px;
+  position: absolute;
+  top: 135px;
+  left: 228px;
+}
+/* line 359, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop .cost {
+  font-size: 36px;
+  color: #fff;
+  position: absolute;
+  top: 218px;
+  left: 189px;
+}
+/* line 366, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop .text {
+  color: #ffff99;
+  font-size: 42px;
+  top: 212px;
+  left: 236px;
+  position: absolute;
+}
+/* line 372, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop .text.noready {
+  top: 157px;
+  left: 200px;
+}
+/* line 377, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop .close {
+  width: 41px;
+  height: 41px;
+  display: block;
+  position: absolute;
+  background: url("../../../../images/christmas/close.png") center 0 no-repeat;
+  right: 2px;
+  top: 2px;
+}
+/* line 386, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop .sureBtn {
+  width: 230px;
+  height: 46px;
+  line-height: 46px;
+  color: #fff;
+  background: #ff8400;
+  text-align: center;
+  font-size: 24px;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  margin-left: -115px;
+  border-radius: 18px;
+  cursor: pointer;
+  text-decoration: none;
+}
+/* line 401, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop .sureBtn.done {
+  bottom: 30px;
+}
+/* line 404, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop .sureBtn.submit {
+  bottom: -76px;
+}
+/* line 408, ../sass/christmasNewYear.scss */
+.christmas-wrapper .pop-bg .pop .notenough {
+  font-size: 18px;
+  color: #333;
+  position: absolute;
+  bottom: 18px;
+  left: 276px;
+}
+/* line 418, ../sass/christmasNewYear.scss */
+.christmas-wrapper .banner {
+  width: 100%;
+  height: 488px;
+  background: url("../../../../images/christmas/banner.gif") center 0 no-repeat;
+  background-size: cover;
+  position: relative;
+}
+/* line 424, ../sass/christmasNewYear.scss */
+.christmas-wrapper .banner .banner-btm {
+  width: 100%;
+  height: 211px;
+  position: absolute;
+  background: url("../../../../images/christmas/bannerbtm.png") center 0 no-repeat;
+  background-size: cover;
+  left: 0;
+  bottom: -192px;
+  z-index: 2;
+}
+/* line 436, ../sass/christmasNewYear.scss */
+.christmas-wrapper .con-wrapper {
+  width: 100%;
+  background: #86110a;
+  margin-top: 31px;
+  padding-bottom: 42px;
+}
+/* line 441, ../sass/christmasNewYear.scss */
+.christmas-wrapper .con-wrapper .info-mode {
+  width: 100%;
+  padding-top: 72px;
+}
+/* line 444, ../sass/christmasNewYear.scss */
+.christmas-wrapper .con-wrapper .info-mode .tips {
+  overflow: hidden;
+  margin: 0 auto;
+  width: 900px;
+}
+/* line 451, ../sass/christmasNewYear.scss */
+.christmas-wrapper .con-wrapper .info-mode p {
+  float: left;
+  margin-right: 90px;
+  color: #fff;
+  font-size: 18px;
+}
+/* line 456, ../sass/christmasNewYear.scss */
+.christmas-wrapper .con-wrapper .info-mode p.longer {
+  margin-right: 110px;
+}
+/* line 459, ../sass/christmasNewYear.scss */
+.christmas-wrapper .con-wrapper .info-mode p i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #fff;
+  display: inline-block;
+  vertical-align: middle;
+}
+/* line 467, ../sass/christmasNewYear.scss */
+.christmas-wrapper .con-wrapper .info-mode p b {
+  color: #ffcc00;
+}
+/* line 472, ../sass/christmasNewYear.scss */
+.christmas-wrapper .con-wrapper .rockHappy-mode {
+  width: 1202px;
+  height: 836px;
+  background: url("../../../../images/christmas/rockbox.gif") center 0 no-repeat;
+  background-size: contain;
+  margin: 10px auto 0;
+  position: relative;
+}
+/* line 479, ../sass/christmasNewYear.scss */
+.christmas-wrapper .con-wrapper .rockHappy-mode .login {
+  padding-top: 197px;
+  width: 618px;
+  text-align: center;
+  margin: 0 auto;
+  color: #fff;
+  font-size: 30px;
+}
+/* line 486, ../sass/christmasNewYear.scss */
+.christmas-wrapper .con-wrapper .rockHappy-mode .login .login-btn {
+  color: #00aeff;
+  border-bottom: 1px solid #00aeff;
+  text-decoration: none;
+}
+/* line 492, ../sass/christmasNewYear.scss */
+.christmas-wrapper .con-wrapper .rockHappy-mode .rock-box {
+  position: relative;
+  width: 836px;
+  height: 318px;
+  margin-left: 65px;
+  margin-top: 46px;
+}
+/* line 498, ../sass/christmasNewYear.scss */
+.christmas-wrapper .con-wrapper .rockHappy-mode .rock-box .rock-bg {
+  width: 868px;
+  height: 348px;
+  background: url("../../../../images/christmas/rock-bg.png") center 0 no-repeat;
+  position: absolute;
+  left: 0;
+}
+/* line 504, ../sass/christmasNewYear.scss */
+.christmas-wrapper .con-wrapper .rockHappy-mode .rock-box .rock-bg .rock-list-wrap {
+  width: 172px;
+  height: 243px;
+  float: left;
+  margin-left: 76px;
+  position: relative;
+  margin-top: 50px;
+  overflow: hidden;
+}
+/* line 512, ../sass/christmasNewYear.scss */
+.christmas-wrapper .con-wrapper .rockHappy-mode .rock-box .rock-bg .rock-list-wrap:nth-of-type(1) {
+  margin-left: 100px;
+}
+/* line 516, ../sass/christmasNewYear.scss */
+.christmas-wrapper .con-wrapper .rockHappy-mode .rock-box .rock-bg .rock-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 172px;
+  height: 243px;
+  font-size: 0;
+}
+/* line 524, ../sass/christmasNewYear.scss */
+.christmas-wrapper .con-wrapper .rockHappy-mode .rock-box .rock-bg .rock-img.cen {
+  left: 346px;
+}
+/* line 527, ../sass/christmasNewYear.scss */
+.christmas-wrapper .con-wrapper .rockHappy-mode .rock-box .rock-bg .rock-img.third {
+  left: 593px;
+}
+/* line 530, ../sass/christmasNewYear.scss */
+.christmas-wrapper .con-wrapper .rockHappy-mode .rock-box .rock-bg .rock-img .prize-img {
+  width: 100%;
+  height: 163px;
+  margin: 40px auto;
+  display: inline-block;
+  background: url("../../../../images/christmas/d.png") center 0 no-repeat;
+}
+/* line 536, ../sass/christmasNewYear.scss */
+.christmas-wrapper .con-wrapper .rockHappy-mode .rock-box .rock-bg .rock-img .prize-img.bg2 {
+  background: url("../../../../images/christmas/f.png") center 0 no-repeat;
+}
+/* line 539, ../sass/christmasNewYear.scss */
+.christmas-wrapper .con-wrapper .rockHappy-mode .rock-box .rock-bg .rock-img .prize-img.bg3 {
+  background: url("../../../../images/christmas/l.png") center 0 no-repeat;
+}
+/* line 542, ../sass/christmasNewYear.scss */
+.christmas-wrapper .con-wrapper .rockHappy-mode .rock-box .rock-bg .rock-img .prize-img.bg4 {
+  background: url("../../../../images/christmas/q.png") center 0 no-repeat;
+}
+/* line 545, ../sass/christmasNewYear.scss */
+.christmas-wrapper .con-wrapper .rockHappy-mode .rock-box .rock-bg .rock-img .prize-img.bg5 {
+  background: url("../../../../images/christmas/s.png") center 0 no-repeat;
+}
+/* line 548, ../sass/christmasNewYear.scss */
+.christmas-wrapper .con-wrapper .rockHappy-mode .rock-box .rock-bg .rock-img .prize-img.bg6 {
+  background: url("../../../../images/christmas/y.png") center 0 no-repeat;
+}
+/* line 551, ../sass/christmasNewYear.scss */
+.christmas-wrapper .con-wrapper .rockHappy-mode .rock-box .rock-bg .rock-img .prize-img.bg7 {
+  background: url("../../../../images/christmas/z.png") center 0 no-repeat;
+}
+/* line 559, ../sass/christmasNewYear.scss */
+.christmas-wrapper .con-wrapper .rockHappy-mode .once {
+  position: absolute;
+  right: 46px;
+  top: 322px;
+  width: 206px;
+  height: 112px;
+  line-height: 112px;
+  background: url("../../../../images/christmas/once.png") center 0 no-repeat;
+  text-align: center;
+  font-size: 30px;
+  font-family: "微软雅黑";
+  font-weight: 600;
+  color: #732300;
+  cursor: pointer;
+}
+/* line 575, ../sass/christmasNewYear.scss */
+.christmas-wrapper .con-wrapper .rockHappy-mode .over {
+  height: 97px;
+  line-height: 97px;
+  background: url("../../../../images/christmas/btnover.png") center 0 no-repeat;
+  cursor: auto;
+}
+/* line 581, ../sass/christmasNewYear.scss */
+.christmas-wrapper .con-wrapper .rockHappy-mode .game-over {
+  position: absolute;
+  left: 285px;
+  top: 438px;
+  font-size: 36px;
+  color: #ff9;
+}
+/* line 588, ../sass/christmasNewYear.scss */
+.christmas-wrapper .con-wrapper .rockHappy-mode .ten-times {
+  position: absolute;
+  right: 46px;
+  top: 466px;
+  width: 206px;
+  height: 112px;
+  line-height: 112px;
+  background: url("../../../../images/christmas/tentimes.png") center 0 no-repeat;
+  text-align: center;
+  font-size: 30px;
+  font-family: "微软雅黑";
+  font-weight: 600;
+  color: #732300;
+  cursor: pointer;
+}
+/* line 603, ../sass/christmasNewYear.scss */
+.christmas-wrapper .con-wrapper .rockHappy-mode .over {
+  height: 97px;
+  line-height: 97px;
+  background: url("../../../../images/christmas/btnover.png") center 0 no-repeat;
+  cursor: auto;
+}
+/* line 609, ../sass/christmasNewYear.scss */
+.christmas-wrapper .con-wrapper .rockHappy-mode .rule-tip {
+  color: #fff;
+  font-size: 18px;
+  position: absolute;
+  bottom: 134px;
+  left: 52px;
+}
+/* line 616, ../sass/christmasNewYear.scss */
+.christmas-wrapper .con-wrapper .rockHappy-mode .rule-tip .rule-btn {
+  padding-left: 24px;
+  color: #00aeff;
+  cursor: pointer;
+}
+/* line 623, ../sass/christmasNewYear.scss */
+.christmas-wrapper .con-wrapper .rockHappy-mode .more-invest {
+  color: #ffff99;
+  font-size: 18px;
+  position: absolute;
+  bottom: 109px;
+  left: 52px;
+  font-weight: bold;
+}
+/* line 631, ../sass/christmasNewYear.scss */
+.christmas-wrapper .con-wrapper .rockHappy-mode .invest {
+  width: 291px;
+  height: 74px;
+  line-height: 74px;
+  font-size: 30px;
+  color: #fff;
+  position: absolute;
+  bottom: 30px;
+  text-align: center;
+  text-decoration: none;
+  left: 50%;
+  margin-left: -145px;
+  background: url("../../../../images/christmas/invest.png") center 0 no-repeat;
+}
+/* line 647, ../sass/christmasNewYear.scss */
+.christmas-wrapper .con-wrapper .total-info {
+  margin-top: 77px;
+  width: 1200px;
+  margin: 77px auto 0;
+  font-size: 24px;
+  color: #fff;
+}
+/* line 653, ../sass/christmasNewYear.scss */
+.christmas-wrapper .con-wrapper .total-info .login-btn {
+  color: #00aeff;
+  border-bottom: 1px solid #00aeff;
+  text-decoration: none;
+}
+/* line 658, ../sass/christmasNewYear.scss */
+.christmas-wrapper .con-wrapper .total-info .details {
+  color: #00aeff;
+  font-size: 18px;
+  margin-left: 90px;
+}
+/* line 666, ../sass/christmasNewYear.scss */
+.christmas-wrapper .introdution-mode {
+  width: 100%;
+  background: url("../../../../images/christmas/wave.jpg") center 0 no-repeat #fff;
+  padding-top: 80px;
+}
+/* line 670, ../sass/christmasNewYear.scss */
+.christmas-wrapper .introdution-mode .exchange-box {
+  width: 1200px;
+  height: 254px;
+  background: #9d3a39;
+  margin: 0 auto;
+}
+/* line 675, ../sass/christmasNewYear.scss */
+.christmas-wrapper .introdution-mode .exchange-box .title-mode {
+  width: 100%;
+  height: 38px;
+  background: #f1d8d7;
+  overflow: hidden;
+}
+/* line 680, ../sass/christmasNewYear.scss */
+.christmas-wrapper .introdution-mode .exchange-box .title-mode .tab {
+  float: left;
+  width: 144px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 18px;
+  color: #9d3a39;
+}
+/* line 687, ../sass/christmasNewYear.scss */
+.christmas-wrapper .introdution-mode .exchange-box .title-mode .tab.active {
+  background: #9d3a39;
+  color: #fff;
+}
+/* line 693, ../sass/christmasNewYear.scss */
+.christmas-wrapper .introdution-mode .exchange-box .title-mode .record {
+  float: right;
+  font-size: 14px;
+  color: #333;
+  border-bottom: 1px solid #333;
+  line-height: 38px;
+  margin-right: 10px;
+}
+/* line 703, ../sass/christmasNewYear.scss */
+.christmas-wrapper .introdution-mode .exchange-box .tab-body {
+  width: 100%;
+  background: #ede2e5;
+}
+/* line 707, ../sass/christmasNewYear.scss */
+.christmas-wrapper .introdution-mode .exchange-box .list-box {
+  width: 100%;
+  background: #ede2e5;
+  height: 216px;
+  margin-top: 2px;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 48px 22px 26px 72px;
+  display: none;
+}
+/* line 716, ../sass/christmasNewYear.scss */
+.christmas-wrapper .introdution-mode .exchange-box .list-box.openTab {
+  animation: 0.5s ease-in openTab;
+  animation-fill-mode: forwards;
+}
+/* line 721, ../sass/christmasNewYear.scss */
+.christmas-wrapper .introdution-mode .exchange-box .list-box.superprize-mode .bag {
+  margin-right: 15px;
+}
+/* line 725, ../sass/christmasNewYear.scss */
+.christmas-wrapper .introdution-mode .exchange-box .list-box .bag {
+  float: left;
+  margin-right: 54px;
+}
+/* line 728, ../sass/christmasNewYear.scss */
+.christmas-wrapper .introdution-mode .exchange-box .list-box .bag .imgs {
+  width: 222px;
+  height: 90px;
+  background: url("../../../../images/christmas/bag.png") center 0 no-repeat;
+  text-align: center;
+  padding-top: 12px;
+}
+/* line 734, ../sass/christmasNewYear.scss */
+.christmas-wrapper .introdution-mode .exchange-box .list-box .bag .imgs.prize {
+  width: 140px;
+  height: 70px;
+}
+/* line 737, ../sass/christmasNewYear.scss */
+.christmas-wrapper .introdution-mode .exchange-box .list-box .bag .imgs.prize .redbag {
+  font-size: 12px;
+  margin-top: 31px;
+}
+/* line 742, ../sass/christmasNewYear.scss */
+.christmas-wrapper .introdution-mode .exchange-box .list-box .bag .imgs.prize1834 {
+  background: url("../../../../images/christmas/iphone.jpg") center 0 no-repeat;
+}
+/* line 745, ../sass/christmasNewYear.scss */
+.christmas-wrapper .introdution-mode .exchange-box .list-box .bag .imgs.prize1838 {
+  background: url("../../../../images/christmas/ipad.jpg") center 0 no-repeat;
+}
+/* line 748, ../sass/christmasNewYear.scss */
+.christmas-wrapper .introdution-mode .exchange-box .list-box .bag .imgs.prize1837 {
+  background: url("../../../../images/christmas/sony.jpg") center 0 no-repeat;
+}
+/* line 751, ../sass/christmasNewYear.scss */
+.christmas-wrapper .introdution-mode .exchange-box .list-box .bag .imgs.prize1839 {
+  background: url("../../../../images/christmas/bycirle.jpg") center 0 no-repeat;
+}
+/* line 754, ../sass/christmasNewYear.scss */
+.christmas-wrapper .introdution-mode .exchange-box .list-box .bag .imgs.prize1840 {
+  background: url("../../../../images/christmas/borang.jpg") center 0 no-repeat;
+}
+/* line 757, ../sass/christmasNewYear.scss */
+.christmas-wrapper .introdution-mode .exchange-box .list-box .bag .imgs.prize1836 {
+  background: url("../../../../images/christmas/jdcard.jpg") center 0 no-repeat;
+}
+/* line 760, ../sass/christmasNewYear.scss */
+.christmas-wrapper .introdution-mode .exchange-box .list-box .bag .imgs.prize1835 {
+  background: url("../../../../images/christmas/jdcard.jpg") center 0 no-repeat;
+}
+/* line 763, ../sass/christmasNewYear.scss */
+.christmas-wrapper .introdution-mode .exchange-box .list-box .bag .imgs .rmb {
+  color: #ffc;
+  font-size: 30px;
+  margin-bottom: 8px;
+}
+/* line 768, ../sass/christmasNewYear.scss */
+.christmas-wrapper .introdution-mode .exchange-box .list-box .bag .imgs .redbag {
+  color: #fff;
+  font-size: 20px;
+}
+/* line 774, ../sass/christmasNewYear.scss */
+.christmas-wrapper .introdution-mode .exchange-box .list-box .bag .coins-num {
+  color: #86110a;
+  font-size: 14px;
+  float: left;
+  margin-top: 16px;
+}
+/* line 781, ../sass/christmasNewYear.scss */
+.christmas-wrapper .introdution-mode .exchange-box .list-box .bag .exchange-btn {
+  float: right;
+  margin-top: 8px;
+  width: 60px;
+  height: 24px;
+  background: #f78b01;
+  border-radius: 6px;
+  box-shadow: 0px 2px 0px 0px #aa2f00;
+  text-align: center;
+  line-height: 24px;
+  color: #fff;
+  text-decoration: none;
+}
+/* line 794, ../sass/christmasNewYear.scss */
+.christmas-wrapper .introdution-mode .exchange-box .list-box .bag .huibtn {
+  float: right;
+  margin-top: 8px;
+  width: 60px;
+  height: 25px;
+  border-radius: 6px;
+  text-align: center;
+  line-height: 25px;
+  color: #fff;
+  text-decoration: none;
+  background: #999;
+}
+/* line 810, ../sass/christmasNewYear.scss */
+.christmas-wrapper .rule-mode {
+  width: 1200px;
+  margin: 0 auto;
+  margin-top: 85px;
+  position: relative;
+  border: 2px solid #deced2;
+}
+/* line 817, ../sass/christmasNewYear.scss */
+.christmas-wrapper .rule-mode .title {
+  font-size: 30px;
+  background: url("../../../../images/christmas/rule-title.png") center 0 no-repeat;
+  position: absolute;
+  top: -23px;
+  left: 50%;
+  margin-left: -142px;
+  width: 284px;
+  height: 47px;
+  line-height: 47px;
+  text-align: center;
+  color: #86110a;
+}
+/* line 830, ../sass/christmasNewYear.scss */
+.christmas-wrapper .rule-mode ul {
+  margin-top: 70px;
+  margin-left: 64px;
+}
+/* line 833, ../sass/christmasNewYear.scss */
+.christmas-wrapper .rule-mode ul li {
+  font-size: 18px;
+  line-height: 30px;
+  color: #852c2c;
+  position: relative;
+  margin-bottom: 10px;
+  line-height: normal;
+}
+/* line 840, ../sass/christmasNewYear.scss */
+.christmas-wrapper .rule-mode ul li.mr {
+  margin-left: 24px;
+}
+/* line 844, ../sass/christmasNewYear.scss */
+.christmas-wrapper .rule-mode ul li i {
+  width: 4px;
+  height: 4px;
+  background: #852c2c;
+  vertical-align: middle;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 20px;
+}
+/* line 852, ../sass/christmasNewYear.scss */
+.christmas-wrapper .rule-mode ul li i.arrow {
+  width: 9px;
+  height: 13px;
+  background: url("../../../../images/christmas/arrow.png") center 0 no-repeat;
+  margin-right: 16px;
+}
+/* line 858, ../sass/christmasNewYear.scss */
+.christmas-wrapper .rule-mode ul li i.bigCircle {
+  width: 6px;
+  height: 6px;
+  background: #852c2c;
+  vertical-align: middle;
+  border-radius: 50%;
+  display: inline-block;
+}
+/* line 868, ../sass/christmasNewYear.scss */
+.christmas-wrapper .rule-mode ul li strong {
+  color: #000;
+}
+/* line 873, ../sass/christmasNewYear.scss */
+.christmas-wrapper .rule-mode.investBox {
+  margin-top: 68px;
+  font-size: 24px;
+  color: #ff557a;
+  text-align: center;
+  position: relative;
+  height: 630px;
+}
+/* line 880, ../sass/christmasNewYear.scss */
+.christmas-wrapper .rule-mode.investBox .btn {
+  width: 450px;
+  height: 68px;
+  position: absolute;
+  bottom: 52px;
+  left: 23%;
+  background: #ce0341;
+  border-radius: 6px;
+  padding: 1px 1px 1px 1px;
+  box-sizing: content-box;
+}
+/* line 890, ../sass/christmasNewYear.scss */
+.christmas-wrapper .rule-mode.investBox .btn a {
+  width: 450px;
+  text-align: center;
+  line-height: 67px;
+  font-size: 24px;
+  color: #fffefe;
+  cursor: pointer;
+  display: block;
+  height: 68px;
+  line-height: 68px;
+  background: #ff557a;
+}
+/* line 901, ../sass/christmasNewYear.scss */
+.christmas-wrapper .rule-mode.investBox .btn a:hover {
+  text-decoration: none;
+}
+/* line 906, ../sass/christmasNewYear.scss */
+.christmas-wrapper .rule-mode.investBox p {
+  margin-top: 68px;
+}
+/* line 909, ../sass/christmasNewYear.scss */
+.christmas-wrapper .rule-mode.investBox .tableBox {
+  width: 100%;
+  margin-left: 0;
+  margin-top: 34px;
+}
+/* line 913, ../sass/christmasNewYear.scss */
+.christmas-wrapper .rule-mode.investBox .tableBox ul {
+  margin: 0 auto;
+  width: 90%;
+  font-size: 18px;
+  background: #fc99b7;
+  border-radius: 10px;
+  padding: 0 1px 5px 1px;
+  box-sizing: border-box;
+}
+/* line 921, ../sass/christmasNewYear.scss */
+.christmas-wrapper .rule-mode.investBox .tableBox ul li {
+  background: #852c2c;
+  height: 52px;
+  line-height: 52px;
+  margin-bottom: 0;
+}
+/* line 926, ../sass/christmasNewYear.scss */
+.christmas-wrapper .rule-mode.investBox .tableBox ul li.dl {
+  background: #ff7ba3;
+  color: #fff;
+  border-radius: 6px 6px 0 0;
+}
+/* line 931, ../sass/christmasNewYear.scss */
+.christmas-wrapper .rule-mode.investBox .tableBox ul li.bla {
+  color: #000;
+}
+/* line 934, ../sass/christmasNewYear.scss */
+.christmas-wrapper .rule-mode.investBox .tableBox ul li.bg {
+  background: #ffe8ef;
+}
+/* line 937, ../sass/christmasNewYear.scss */
+.christmas-wrapper .rule-mode.investBox .tableBox ul li.radius {
+  border-radius: 0 0 6px 6px;
+}
+/* line 940, ../sass/christmasNewYear.scss */
+.christmas-wrapper .rule-mode.investBox .tableBox ul li span {
+  text-align: center;
+  font-weight: normal;
+  width: 320px;
+  display: inline-block;
+}
+/* line 945, ../sass/christmasNewYear.scss */
+.christmas-wrapper .rule-mode.investBox .tableBox ul li span.pl {
+  padding-left: 80px;
+}
+/* line 948, ../sass/christmasNewYear.scss */
+.christmas-wrapper .rule-mode.investBox .tableBox ul li span.cen {
+  padding-left: 85px;
+  box-sizing: border-box;
+}
+/* line 954, ../sass/christmasNewYear.scss */
+.christmas-wrapper .rule-mode.investBox .tableBox ul li i {
+  width: 1px;
+  height: 52px;
+  background: #fc99b7;
+  display: inline-block;
+  margin-left: 487px;
+}
+/* line 960, ../sass/christmasNewYear.scss */
+.christmas-wrapper .rule-mode.investBox .tableBox ul li i.rt {
+  margin-left: 771px;
+}
+/* line 969, ../sass/christmasNewYear.scss */
+.christmas-wrapper .common-wrapper {
+  padding-bottom: 70px;
+  overflow: hidden;
+}
+/* line 972, ../sass/christmasNewYear.scss */
+.christmas-wrapper .common-wrapper .mode {
+  width: 1198px;
+  margin: 70px auto 0;
+  border: 1px solid #d4acac;
+  position: relative;
+}
+/* line 977, ../sass/christmasNewYear.scss */
+.christmas-wrapper .common-wrapper .mode .title {
+  width: 162px;
+  height: 33px;
+  text-align: center;
+  line-height: 33px;
+  background: #9d3a39;
+  font-size: 18px;
+  color: #f0f0f0;
+  float: left;
+  margin: -17px 0 0 30px;
+}
+/* line 988, ../sass/christmasNewYear.scss */
+.christmas-wrapper .common-wrapper .mode .love-icon {
+  position: absolute;
+  left: 53px;
+  top: 140px;
+}
+/* line 993, ../sass/christmasNewYear.scss */
+.christmas-wrapper .common-wrapper .mode .content {
+  padding: 49px 0 10px 120px;
+  overflow: hidden;
+  clear: both;
+  zoom: 1;
+}
+/* line 998, ../sass/christmasNewYear.scss */
+.christmas-wrapper .common-wrapper .mode .content .iconmode {
+  width: 529px;
+  float: left;
+  height: 137px;
+  position: relative;
+}
+/* line 1003, ../sass/christmasNewYear.scss */
+.christmas-wrapper .common-wrapper .mode .content .iconmode i {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 97px;
+  height: 97px;
+}
+/* line 1009, ../sass/christmasNewYear.scss */
+.christmas-wrapper .common-wrapper .mode .content .iconmode i.olympiad-gzkg {
+  background: url('/images/../../../../images/christmas/zuanshi.jpg?1481615305') center center no-repeat;
+}
+/* line 1012, ../sass/christmasNewYear.scss */
+.christmas-wrapper .common-wrapper .mode .content .iconmode i.olympiad-guarantee {
+  background: url('/images/../../../../images/christmas/fangzi.jpg?1481615305') center center no-repeat;
+}
+/* line 1016, ../sass/christmasNewYear.scss */
+.christmas-wrapper .common-wrapper .mode .content .iconmode i.olympiad-pjcd {
+  background: url('/images/../../../../images/christmas/piaoju.png?1481615305') center center no-repeat;
+}
+/* line 1020, ../sass/christmasNewYear.scss */
+.christmas-wrapper .common-wrapper .mode .content .iconmode i.olympiad-lszc {
+  background: url('/images/../../../../images/christmas/san.jpg?1481615305') center center no-repeat;
+}
+/* line 1026, ../sass/christmasNewYear.scss */
+.christmas-wrapper .common-wrapper .mode .content .iconmode div {
+  padding: 14px 0 0 112px;
+  font-size: 14px;
+  color: #333;
+}
+/* line 1030, ../sass/christmasNewYear.scss */
+.christmas-wrapper .common-wrapper .mode .content .iconmode div span {
+  font-size: 26px;
+  color: #333;
+}
+/* line 1037, ../sass/christmasNewYear.scss */
+.christmas-wrapper .common-wrapper .mode ul {
+  padding: 40px 0 40px 33px;
+  overflow: hidden;
+  clear: both;
+  zoom: 1;
+}
+/* line 1042, ../sass/christmasNewYear.scss */
+.christmas-wrapper .common-wrapper .mode ul li {
+  float: left;
+  margin-right: 17px;
+  width: 271px;
+  text-align: center;
+}
+/* line 1047, ../sass/christmasNewYear.scss */
+.christmas-wrapper .common-wrapper .mode ul li a:hover {
+  color: #313131;
+}
+/* line 1050, ../sass/christmasNewYear.scss */
+.christmas-wrapper .common-wrapper .mode ul li p {
+  font-size: 14px;
+  color: #313131;
+  line-height: 24px;
+  padding-top: 16px;
+}
+/* line 1058, ../sass/christmasNewYear.scss */
+.christmas-wrapper .common-wrapper .mode .partners {
+  padding: 50px 0 44px 30px;
+  overflow: hidden;
+  clear: both;
+  zoom: 1;
+}
+/* line 1063, ../sass/christmasNewYear.scss */
+.christmas-wrapper .common-wrapper .mode .partners .olympiad-left {
+  float: left;
+  margin: 30px 10px 0 0;
+  cursor: pointer;
+}
+/* line 1068, ../sass/christmasNewYear.scss */
+.christmas-wrapper .common-wrapper .mode .partners .imgs {
+  width: 100%;
+  overflow: hidden;
+  float: left;
+  height: 78px;
+}
+/* line 1073, ../sass/christmasNewYear.scss */
+.christmas-wrapper .common-wrapper .mode .partners .imgs ul {
+  padding: 0;
+}
+/* line 1075, ../sass/christmasNewYear.scss */
+.christmas-wrapper .common-wrapper .mode .partners .imgs ul li {
+  float: left;
+  width: auto;
+  margin-right: 33px;
+}
+/* line 1079, ../sass/christmasNewYear.scss */
+.christmas-wrapper .common-wrapper .mode .partners .imgs ul li img {
+  width: 153px;
+}
+/* line 1085, ../sass/christmasNewYear.scss */
+.christmas-wrapper .common-wrapper .mode .partners .olympiad-right {
+  float: left;
+  margin: 30px 0 0 10px;
+  cursor: pointer;
+  width: 14px;
+  height: 14px;
+  background: url('/images/olympiad/right.png') center center no-repeat;
+}
+/* line 1096, ../sass/christmasNewYear.scss */
+.christmas-wrapper .code-wrapper {
+  width: 100%;
+  height: 200px;
+  background: #9d3a39;
+}
+/* line 1100, ../sass/christmasNewYear.scss */
+.christmas-wrapper .code-wrapper .code {
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+/* line 1104, ../sass/christmasNewYear.scss */
+.christmas-wrapper .code-wrapper .code .icon {
+  width: 104px;
+  height: 60px;
+  background: url('/images/olympiad/appicon.png') center center no-repeat;
+  position: absolute;
+  top: 67px;
+  left: 167px;
+}
+/* line 1112, ../sass/christmasNewYear.scss */
+.christmas-wrapper .code-wrapper .code .phonecode {
+  width: 62px;
+  height: 62px;
+  background: url('/images/olympiad/phone.png') center center no-repeat;
+  position: absolute;
+  top: 75px;
+  right: 322px;
+}
+/* line 1121, ../sass/christmasNewYear.scss */
+.christmas-wrapper .code-wrapper .code .appcode {
+  float: left;
+  margin: 41px 0 0 44px;
+}
+/* line 1125, ../sass/christmasNewYear.scss */
+.christmas-wrapper .code-wrapper .code .wechatcode {
+  float: left;
+  margin: 41px 0 0 172px;
+}
+/* line 1129, ../sass/christmasNewYear.scss */
+.christmas-wrapper .code-wrapper .code .tel {
+  float: left;
+  margin: 76px 0 0 414px;
+}
+/* line 1133, ../sass/christmasNewYear.scss */
+.christmas-wrapper .code-wrapper .code .tel .number i {
+  float: left;
+}
+/* line 1136, ../sass/christmasNewYear.scss */
+.christmas-wrapper .code-wrapper .code .tel .number div {
+  float: left;
+  color: #fff;
+  padding-left: 13px;
+  margin-top: -5px;
+}
+/* line 1141, ../sass/christmasNewYear.scss */
+.christmas-wrapper .code-wrapper .code .tel .number div span {
+  font-size: 32px;
+}
+/* line 1144, ../sass/christmasNewYear.scss */
+.christmas-wrapper .code-wrapper .code .tel .number div p {
+  font-size: 12px;
+  margin-top: -3px;
+}
+/* line 1151, ../sass/christmasNewYear.scss */
+.christmas-wrapper .code-wrapper .code .title {
+  font-size: 16px;
+  color: #fff;
+  padding-top: 6px;
+  width: 106px;
+  text-align: center;
+}
+/* line 1158, ../sass/christmasNewYear.scss */
+.christmas-wrapper .code-wrapper .code .code-box {
+  overflow: hidden;
+}
+/* line 1160, ../sass/christmasNewYear.scss */
+.christmas-wrapper .code-wrapper .code .code-box .app-code-icon {
+  float: left;
+}
+/* line 1162, ../sass/christmasNewYear.scss */
+.christmas-wrapper .code-wrapper .code .code-box .app-code-icon img {
+  display: block;
+  border: 1px solid #008c40;
+}
+/* line 1167, ../sass/christmasNewYear.scss */
+.christmas-wrapper .code-wrapper .code .code-box .app-code-word {
+  float: left;
+  padding: 29px 0 0 18px;
+}
+/* line 1172, ../sass/christmasNewYear.scss */
+.christmas-wrapper .code-wrapper .code .code-box .app-code-word p i {
+  float: left;
+  margin: 3px 5px 0 20px;
+}
+
+@keyframes openMove {
+  0% {
+    opacity: 0.2;
+    transform: translateY(1000px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes closeMove {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0.2;
+    transform: translateY(-1000px);
+  }
+}
+@keyframes openTab {
+  0% {
+    opacity: 0.2;
+    transform: scaleY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}

@@ -1,0 +1,30 @@
+{# 定期产品 #}
+{% if termHot.length>0 or termList.length>0 %}
+<div class="bank-box cplist clearfix" style="margin-bottom: 20px;">
+    <div class="leftside">
+        <div class="{{termHotClass}}">
+            <div class="hover">
+                <div class="bg"></div>
+                <div class="bg-hover">
+                    <!--<div class="ckxq">
+                        <a target="_blank" href="{{http}}/activitys/jinjiaosuo" class="nohover"><span>查看详情</span></a>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="rightside">
+        <div class="list clearfix">
+            <div class="over {{termHotClass1}}">
+                {# 热推产品 #}
+                {% import "./product.njk" as product %}
+                {{ product.productList(termHot,"fixedterm",{tagname:false},'billDetail2') }}
+                {# 普通产品 #}
+                {% import "./product.njk" as product1 %}
+                {{ product1.productList(termList,"fixedterms",{tagname:false},'billDetail2') }}
+                {# end 普通产品 #}
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}

@@ -1,0 +1,27 @@
+{% extends "common/main.njk" %}
+{% block body %}
+<link href="/style/other/noviceOnlyEnjoy.css" rel="stylesheet" type="text/css" inline/>
+<div id="APP" class="noviceOnlyEnjoy">
+    <div class="main">
+        <div class="btn-area">
+            <div class="current" @click="clickNewHand"></div>
+            <div class="time" @click="clickNewHand"></div>
+        </div>
+        <!--<div class="product">
+            <div class="time" @click="clickNewHand"></div>
+        </div>-->
+        <div class="rule-area">
+            <p>1、活动时间：即日起</p>
+            <p>2、活动仅针对活动期间内新注册的用户</p>
+            <p>3、注册即送</p>
+            <p>①1588元红包：20元红包+268元红包+300元红包+1000元红包组合，红包将即时发放到您的账户，请在有效期内使用。红包可用于投资时使用，投资生效后将以现金的形式返到您的账户</p>
+            <p>②2%加息券：全场通用（除新手专享产品外），可用于投资时使用，可在原有收益的基础上额外获得2%的收益</p>
+            <p>4、短期新手体验产品：仅限新用户首笔投资，每人最高可购买额度50000元。例如注册成功后，首笔投资了其他产品，则无法投资新手体验短期产品</p>
+            <p>5、新手专享产品：每个产品仅限新用户投资1次，每人最高可购买额度为50000元</p>
+            <p>6、想获得更多福利，了解更多活动信息，请联系4006-908-896，同时您也可以等待您的专属理财师电话联系！</p>
+            <p>7、本次活动最终解释权归多融财富所有</p>
+        </div>
+    </div>
+</div>
+<script src="/js/other/noviceOnlyEnjoy.js" inline></script>
+{% endblock %}

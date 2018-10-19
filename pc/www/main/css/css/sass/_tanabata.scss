@@ -1,0 +1,495 @@
+$tanabata-sprite-dimensions: true;
+@import "tanabata/*.png";
+@include all-tanabata-sprites();
+
+.tanabata-wrapper{
+	width: 100%;
+	background: #fff image-url('tanabata/banner.png') center top no-repeat;
+	min-height: 905px;
+	overflow: hidden;
+	.draw-wrap{
+		width: 1205px;
+		margin: 324px auto 0;
+		position: relative;
+		min-height: 1086px;
+		z-index: 10;
+		.tanabata-draw{
+			position: absolute;
+		    left: 3px;
+		    top: 2px;
+		    .iflogin{
+		    	padding: 369px 0 0 45px;
+		    	font-size: 24px;
+		    	color: #fff;
+		    	span{
+		    		margin-left: 20px;
+		    	}
+		    	a{
+		    		color: #0486ff;
+		    		text-decoration: underline;
+		    		margin: 0 8px;
+		    		&.check{
+		    			color: #fffb92;
+		    		}
+		    	}
+		    }
+		    .limit{
+		    	width: 460px;
+		    	border-top: 1px dashed #e73a7e;
+		    	border-bottom: 1px dashed #e73a7e;
+		    	margin: 25px 0 0 26px;
+		    	padding: 37px 0 35px;
+		    	.tanabata-join{
+		    		margin-left: 19px;
+		    	}
+		    	.tanabata-min{
+		    		margin: 15px 0 0 16px;
+		    		display: block;
+		    	}
+		    }
+		    .tanabata-list{
+		    	margin: 32px 0 0 29px;
+		    	overflow: hidden;
+		    	.list-wrap{
+		    		margin: 113px 0 0 98px;
+					overflow: hidden;
+					height: 130px;
+					li{
+						font-size: 14px;
+						color: #333;
+						padding-bottom: 16px;
+						b{
+							margin-left: 67px;
+						}
+					}
+		    	}
+		    }
+		    .tanabata-drawbtn{
+		    	position: absolute;
+		    	right: 168px;
+		    	bottom: 265px;
+		    }
+		}
+	}
+	.rules-wrap{
+		width: 1200px;
+		background: #fffaef;
+		margin: -30px auto 0;
+		padding-top: 80px;
+		position: relative;
+		border-radius: 0 0 20px 20px;
+		.tanabata-ruletitle{
+			text-align: center;
+			margin: 0 auto;
+			font-size: 30px;
+			color: #be8118;
+			line-height: 2px;
+		}
+		.tanabata-rulebg{
+			position: absolute;
+			left: 40px;
+			bottom: 99px;
+		}
+		.rules{
+			padding: 50px 0 26px 310px;
+			p{
+				position: relative;
+				i{
+					position: absolute;
+					left: 0;
+					top: 0;
+				}
+				font-size: 18px;
+				color: #be8118;
+				padding-bottom: 18px;
+				line-height: 24px;
+				width: 820px;
+				padding-left: 16px;
+			}
+		}
+	}
+	.mode{
+		width: 1198px;
+		margin: 82px auto 0;
+		border: 1px solid #ffb9c1;
+		position: relative;
+		.title{
+			width: 162px;
+			height: 33px;
+			text-align: center;
+			line-height: 33px;
+			background: #ff697b;
+			font-size: 18px;
+			color: #f0f0f0;
+			float: left;margin: -17px 0 0 30px;
+		}
+		.love-icon{
+			position: absolute;
+			left: 53px;
+			top: 140px;
+		}
+		.con{
+			padding: 38px 0 0 282px;
+			font-size: 16px;
+			color: #e9447c;
+			line-height: 20px;
+			.modelist{
+				position: relative;
+			}
+			div{
+				padding-bottom: 11px;
+				b{
+					font-weight: bold;
+				}
+			}
+			p{
+				line-height: 32px;
+			}
+			i{
+				// position: absolute;
+				// left: -20px;
+				// top: 5px;
+				background: image-url('activity/cp079/b1.png') center 122px no-repeat;
+			}
+			span{
+				display: block;
+				padding: 18px 0 12px;
+				font-size: 12px;
+			}
+		}
+		.content{
+			padding: 49px 0 10px 120px;
+			overflow: hidden;
+			clear: both;
+			zoom: 1;
+			.iconmode{
+				width: 529px;
+				float: left;
+				height: 137px;
+				position: relative;
+				i{
+					float: left;
+				}
+				div{
+					padding: 14px 0 0 112px;
+					font-size: 14px;
+					color: #333;
+					span{
+						font-size: 26px;
+						color: #333333;
+					}
+					p{
+						padding-top: 4px;
+					}
+				}
+			}
+		}
+		ul{
+			padding: 40px 0 40px 33px;
+			overflow: hidden;
+			clear: both;
+			zoom: 1;
+			li{
+				float: left;
+				margin-right: 17px;
+				width: 271px;
+				text-align: center;
+				a:hover{
+					color: #313131;
+				}
+				p{
+					font-size: 14px;
+					color: #313131;
+					line-height: 24px;
+					padding-top: 16px;
+				}
+			}
+		}
+		.partners{
+			padding: 50px 0 44px 30px;
+			overflow: hidden;
+			clear: both;
+			zoom: 1;
+			.love-left{
+				float: left;margin: 30px 10px 0 0;
+				cursor: pointer;
+			}
+			.imgs{
+				width: 1099px;
+				overflow: hidden;
+				float: left;
+				height: 78px;
+				ul{
+					width: 2080px;
+					padding: 0;
+					li{
+						float: left;
+						width: auto;
+						margin: 0 !important;
+						img{
+							width: 153px;
+						}
+					}
+				}
+			}
+			.love-right{
+				float: left;margin: 30px 0 0 10px;
+				cursor: pointer;
+			}
+		}
+	}
+	.code-wrapper{
+		width: 100%;
+		height: 200px;
+		background: #ff697b;
+		margin-top: 82px;
+		.code{
+			width: 1200px;
+			margin: 0 auto;
+			.appcode{
+				float: left;
+				margin: 41px 0 0 44px;
+			}
+			.wechatcode{
+				float: left;
+				margin: 41px 0 0 98px;
+			}
+			.tel{
+				float: left;
+				margin: 76px 0 0 353px;
+				.number{
+					i{
+						float: left;
+					}
+					div{
+						float: left;
+						color: #fff;
+						padding-left: 13px;
+						margin-top: -5px;
+						span{
+							font-size: 32px;
+						}
+						p{
+							font-size: 12px;
+							margin-top: -3px;
+						}
+					}
+				}
+			}
+			.title{
+				font-size: 16px;
+				color: #fff;
+				padding-top: 6px;
+			    width: 106px;
+			    text-align: center;
+			}
+			.code-box{
+				overflow: hidden;
+				.app-code-icon{
+					float: left;
+					img{
+						display: block;
+						border: 1px solid #e9447c;
+					}
+				}
+				.app-code-word{
+					float: left;
+					padding: 29px 0 0 18px;
+					p{
+						width: 102px;
+						height: 23px;
+						border: 1px solid #f9d0de;
+						border-radius: 2px;
+						margin-bottom: 10px;
+						font-size: 12px;
+						color: #fff;
+						line-height: 23px;
+						i{
+							float: left;
+							margin: 3px 5px 0 20px;
+						}
+					}
+				}
+			}
+		}
+	}
+	.dialog-mask{
+		position: fixed;
+		top: 0;
+		left: 0;
+		background: rgba(0,0,0,.8);
+		background: none \9;
+   		filter: progid:DXImageTransform.Microsoft.Gradient(startColorstr=#88000000,endColorstr=#88000000) \9;
+		width: 100%;
+		height: 100%;
+		z-index: 20;
+	}
+	.tanabata-dialog{
+		position: fixed;
+		left: 50%;
+		top: 50%;
+		margin: -261px 0 0 -298px;
+		z-index: 30;
+		.close{
+			width: 60px;
+			height: 60px;
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+		.wintext{
+			font-size: 36px;
+			color: #ffeed1;
+			font-weight: bold;
+			text-align: center;
+			line-height: 48px;
+			width: 360px;
+			padding: 242px 0 0 129px;
+		}
+		.text{
+			font-size: 36px;
+			color: #ffeed1;
+			font-weight: bold;
+			text-align: center;
+			line-height: 48px;
+			width: 360px;
+			padding: 200px 0 0 120px;
+		}
+		.btn{
+			width: 202px;
+			height: 47px;
+			position: absolute;
+			left: 202px;
+			bottom: 51px;
+		}
+	}
+	.dialog-giftlist{
+		position: fixed;
+		left: 50%;
+		top: 50%;
+		margin: -287px 0 0 -312px;
+		z-index: 30;
+		.close{
+			width: 118px;
+			height: 109px;
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+		.list-box{
+			width: 552px;
+			background: #fff;
+			border-radius: 10px;
+			margin-top: -78px;
+			position: relative;
+			// overflow: hidden;
+			.tip{
+				width: 453px;
+				margin: 0 auto;
+				padding: 13px 0;
+				line-height: 18px;
+				font-size: 14px;
+				color: #666;
+			}
+			.gift-box{
+				width: 449px;
+				border-radius: 12px;
+				border: 2px solid #e3cfab;
+				margin: 0 auto;
+				padding: 24px 0 10px;
+				position: relative;
+				.tanabata-mygift{
+					position: absolute;
+					left: 54px;
+					top: -17px;
+				}
+				.page-wrap a {
+				    height: auto;
+				    line-height: 0;
+				    padding: 0;
+				    color: #e3c78a;
+				    border: none;
+				    margin-right: 0;
+				    text-decoration: underline;
+				    vertical-align: initial;
+				}
+				.page-wrap{
+					// padding-top: 8px;
+					font-size: 14px;
+					li{
+						// padding: 0 10px;
+						margin: 0;
+						a{
+							text-decoration: none;
+						}
+						span{
+							padding: 0 10px;
+						}
+					}
+				}
+				.page-wrap span {
+				    height: auto;
+				    line-height: 0;
+				    color: #e3c78a;
+				    padding-left: 16px;
+				    vertical-align: initial;
+				}
+				.gift-con{
+					padding-left: 58px;
+					li{
+						font-size: 14px;
+						line-height: 24px;
+						color: #666;
+						overflow: hidden;
+						p{
+							width: 236px;
+							float: left;
+						}
+						span{
+							float: left;
+						}
+					}
+				}
+			}
+		}
+	}
+	.dialog-expect{
+		position: fixed;
+		left: 50%;
+		top: 50%;
+		width: 800px;
+		height: 450px;
+		background: #fff;
+		border-radius: 6px;
+		overflow: hidden;
+		margin: -225px 0 0 -400px;
+		z-index: 30;
+		.tanabata-expect{
+			margin: 74px auto 0;
+		}
+		.center{
+			text-align: center;
+			line-height: 36px;
+			color: #333;
+			font-size: 24px;
+			padding-top: 30px;
+		}
+		.bot{
+			width: 800px;
+			height: 159px;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			background: #e8a22b;
+			i{
+				position: absolute;
+				left: 378px;
+				top: 0;
+			}
+			a{
+				display: block;
+				margin: 53px auto 0;
+			}
+		}
+	}
+}

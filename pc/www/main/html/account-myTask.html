@@ -1,0 +1,70 @@
+<div class="account-mytask-wrap" ng-controller="accountMytaskWrapCtrl">
+  <div class="myTaskContent">
+    <!--      推荐任务 -->
+    <div class="task clearfix" ng-repeat='item in taskGrop'>
+      <div class="title" >{{item.taskGroupName}}</div>
+      <div class="card" ng-repeat='task in item.tasks'>
+        <div class="cardTop">
+          <div class="star"></div>
+          <div class="name">{{task.taskName}}</div>
+          <div class="date" ng-show='task.taskTypeEnum != "REGISTER" && task.taskTypeEnum != "SIGNATURE" && task.taskTypeEnum != "FIRST_INVEST" '>有效期：{{task.startTime| limitTo:10}} 至 {{task.endTime| limitTo:10}}</div>
+        </div>
+        <div class="cardContent">
+          <p class="content" ng-repeat="content in task.taskDesc">
+            {{content}}
+          </p>
+        </div>
+        <div class="cardBottom">
+          <div class="reward">任务奖励：<span class="award" ng-show='task.points != 0'>{{task.points}}积分</span><span class="award" ng-show='task.experiencePoints != 0'>{{task.experiencePoints}}经验</span>
+          </div>
+          <div class="btn go"><a ng-if='task.goToPage ==2' ui-sref='main.home' target="_blank">去做任务</a><a ng-if='task.goToPage ==1' ui-sref='main.myAccount.security' target="_blank">去做任务</a><a ng-if='task.goToPage ==0' ui-sref='main.home' target="_blank">去做任务</a><a ng-if='task.goToPage ==3' ui-sref='main.home' target="_blank">去做任务</a><a ng-if='task.goToPage ==4' ui-sref='main.myAccount.myFriend' target="_blank">去做任务</a></div>
+        </div>
+      </div>
+    </div>
+ <!--    <div class="task clearfix">//二期开发使用
+ <div class="title">每月任务</div>
+ <div class="card">
+   <div class="cardTop">
+     <div class="star"></div>
+     <div class="name">邀请好友</div>
+     <div class="date">有效期：2017.1.1 - 2017.1.31</div>
+   </div>
+   <div class="cardContent">
+     <p class="content">
+       已注册用户每邀请一位好友注册，并且投资一笔，已注册用户每邀请一位好友注册，并已注册用户每邀请一位好友注册，并且投资一笔，已注册用户每邀请一位好友注册，并已注册用户每邀请一位好友注册，并且投资一笔，已注册用户每邀请一位好友注册，并已注册用户每邀请一位好友注册，并且投资一笔，已注册用户每邀请一位好友注册，并已注册用户每邀请一位好友注册，并且投资一笔，已注册用户每邀请一位好友注册，并已注册用户每邀请一位好友注册，并且投资一笔，已注册用户每邀请一位好友注册，并
+     </p>
+   </div>
+   <div class="cardBottom">
+     <div class="reward rewardDo">任务奖励：<span class="award">200积分</span><span class="award">200积分</span>
+     </div>
+     <div class="progress">
+       <div class="progressing">
+         <div class="leng"></div>
+       </div>
+     </div>
+     <div class="data">30人/50人</div>
+     <div class="btn todo"><a ui-sref='main.bankBillList'>继续任务</a></div>
+   </div>
+ </div>
+   </div> -->
+    <div class="task clearfix" >
+      <div class="title">已完成任务</div>
+      <div class="card cardFinishi" ng-repeat='item in taskFinish'>
+        <div class="cardTop">
+          <div class="star"></div>
+          <div class="name">{{item.taskName}}</div>
+          <div class="date" ng-show='item.taskTypeEnum != "REGISTER" && item.taskTypeEnum != "SIGNATURE" && item.taskTypeEnum != "FIRST_INVEST" '>有效期：{{item.startTime| limitTo:10}}至{{item.endTime| limitTo:10}}</div>
+        </div>
+        <div class="cardContent">
+          <p class="content">
+            {{item.taskDesc}}
+          </p>
+        </div>
+        <div class="cardBottom">
+          <div class="reward">任务奖励：<span class="award" ng-show='item.points != 0'>{{item.points}}积分</span><span class="award" ng-show='item.experiencePoints != 0'>{{item.experiencePoints}}经验</span>
+          </div>
+          <div class="btn finish"><a>已完成</a></div>
+        </div>
+      </div>
+    </div>
+  </div>

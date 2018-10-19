@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html ng-app="someApp" id='ng-app' xmlns:ng="http://angularjs.org" lang="zh_CN">
+
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta name="theme-color" content="#2932e1">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="format-detection" content="telephone=no, email=no" />
+  <link rel="stylesheet" type="text/css" href="./stylesheets/marchInvest.css">
+  <script type="text/javascript" src="../../../vendor/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="../../../vendor/angular.min.js"></script>
+  <script type="text/javascript" src="../../../vendor/angular-resource.min.js"></script>
+  <script type="text/javascript" src="./js/marchInvest.js"></script>
+  <title>marchInvest</title>
+</head>
+
+<body ng-controller='marchInvestCtrl '>
+  <div class="marchInvest">
+    <!--  banner -->
+    <div class="banner img-size" data-height='489' data-width='750'></div>
+    <!-- 活动 -->
+    <div class="marchInvestContent img-size" data-marginTop='-10'>
+      <!-- activity -->
+      <div class="activity img-size" data-height='99'>
+      </div>
+      <!-- 文字 -->
+      <div class="investProduct img-size" data-paddingTop='40'>
+        <p class="investProductTop img-size" data-height='60' data-lineHeight='44'>通过投资≥30天的产品，可累计财富值</p>
+        <p class="investProductBottom img-size img-size" data-lineHeight='30'>（财富值=投资金额*产品期限/365）</p>
+      </div>
+      <!-- 内容 -->
+      <div class="submit img-size" data-paddingTop='50'>
+            <a class="investBtn img-size" data-width='507' data-height='78' ng-show='!wap && !gameOver' href="jump://page=2?"></a>
+            <a class="investBtn img-size" data-width='507' data-height='78'  ng-show='wap && !gameOver' href="http://app.duorongcf.com/main/bankBillList"></a>
+            <a class="investBtnOver img-size" data-width='507' data-height='78'  href="javascript:void(0);" ng-show='gameOver'></a>
+          <!-- 活动规则 -->
+          <!-- onclick="linkTo()" -->
+      </div>
+      <a onclick="linkTo()" id='RULE' class="rule smooth">活动规则</a>
+      <!-- 活动内容 -->
+      <div class="activityContent img-size" data-height='1633' data-width='720' data-marginLeft='15' data-marginTop='50'>
+        <div class="line img-size" data-width='718' data-height='13' data-marginTop='-1'></div>
+        <!-- data-height='950' -->
+        <div class="activityLine img-size" data-height='1620'  data-width='670' data-marginLeft='9' data-paddingLeft='30'>
+          <!-- 财富值未登录 -->
+          <div class="wealthValue img-size" data-paddingTop='40' ng-show='!login'>
+            <div class="wealthValueLeft img-size" data-width='515'>
+              <p class="img-size" data-lineHeight='60' data-height='60'>您的当前财富值为 ****** </p>
+              <p class="img-size" data-lineHeight='60' data-height='60'> 预计获得：****** 奖品</p>
+            </div>
+            <a class="wealthValueRight img-size" data-width='155' data-height='46' ng-show='!wap' href='jump://page=4?'></a>
+            <a class="wealthValueRight img-size" data-width='155' data-height='46' ng-show='wap' href='javascript:void(0)' ng-click='goLogin()'></a>
+          </div>
+          <!-- 财富值已登录 -->
+          <div class="wealthValue img-size" data-paddingTop='40' ng-show='login && !gameOver'>
+            <div class="wealthValueLeft img-size" data-width='610'>
+              <p class="img-size" data-lineHeight='60' data-height='60'>您的当前财富值为 {{coin | number:2}} </p>
+              <p class="img-size" data-lineHeight='60' data-height='60'> 预计获得：{{expectGet}}奖品</p>
+              <p class="img-size leiji" data-height='30' data-lineHeight='30' ng-show='isHeigh==false'>再累计 {{need | number:2}} 财富值，可获得：{{superiorGift}} 奖品</p>
+            </div>
+          </div>
+          <!-- 活动结束 -->
+          <div class="wealthValue img-size" data-paddingTop='40' ng-show='login && gameOver '>
+            <div class="wealthValueLeft img-size" >
+              <p class="img-size" data-lineHeight='60' data-height='60'>活动期间您累计财富值为 {{coin | number:2}} </p>
+              <p class="img-size" data-lineHeight='60' data-height='60'> 获得：{{expectGet}}奖品</p>
+            </div>
+          </div>
+          <!--  奖品 -->
+          <div class="prize img-size" data-marginTop='200'>
+            <div class="prizeTitle img-size" data-width='645' data-height='49'></div>
+            <div class="prizeContent img-size" data-width='630' data-marginTop='60' data-marginLeft='7'>
+              <div class="jd15 img-size" data-width='210'>
+                <div class="jd15img img-size" data-width='195' data-height='195'></div>
+                <p class=" img-size" data-height='35' data-marginTop='20'>财富值 2000000</p>
+              </div>
+              <div class="jdWan img-size" data-width='210'>
+                <div class="jd15img img-size" data-width='195' data-height='195'></div>
+                <p class=" img-size" data-height='35' data-marginTop='20'>财富值 1500000</p>
+              </div>
+                <div class="iphone img-size" data-width='210'>
+                <div class=" img-size" data-width='195' data-height='195'></div>
+                <p class=" img-size" data-height='35' data-marginTop='20'>财富值 1100000</p>
+              </div>
+              <div class="rimowa img-size" data-width='210' data-marginTop='30'>
+                <div class="jd15img img-size" data-width='195' data-height='195'></div>
+                <p class=" img-size" data-height='35' data-marginTop='20'>财富值 850000</p>
+              </div>
+                <div class="jiaNeng img-size" data-width='210' data-marginTop='30'>
+                <div class=" img-size" data-width='195' data-height='195'></div>
+                <p class=" img-size" data-height='35' data-marginTop='20'>财富值 650000</p>
+              </div>
+              <div class="daisen img-size" data-width='210' data-marginTop='30'>
+                <div class=" img-size" data-width='194' data-height='194'></div>
+                <p class=" img-size" data-height='35' data-marginTop='21'>财富值 450000</p>
+              </div>
+               <div class="wanLong img-size" data-width='210' data-marginTop='30'>
+                <div class=" img-size" data-width='195' data-height='195'></div>
+                <p class=" img-size" data-height='35' data-marginTop='20'>财富值 330000</p>
+              </div>
+              <div class="feilipu img-size" data-width='210' data-marginTop='30'>
+                <div class=" img-size" data-width='195' data-height='195'></div>
+                <p class=" img-size" data-height='35' data-marginTop='20'>财富值 220000</p>
+              </div>
+                  <div class="shuangLi img-size" data-width='210' data-marginTop='30'>
+                <div class=" img-size" data-width='195' data-height='195'></div>
+                <p class=" img-size" data-height='35' data-marginTop='20'>财富值 150000</p>
+              </div>
+              <div class="Swaroviski img-size" data-width='210' data-marginTop='30'>
+                <div class=" img-size" data-width='195' data-height='195'></div>
+                <p class=" img-size" data-height='35' data-marginTop='20'>财富值 95000</p>
+              </div>
+               <div class="tiXuDao img-size" data-width='210' data-marginTop='30'>
+                <div class=" img-size" data-width='195' data-height='195'></div>
+                <p class=" img-size" data-height='35' data-marginTop='20'>财富值 40000</p>
+              </div>
+              <div class="jd50 img-size" data-width='210' data-marginTop='30'>
+                <div class=" img-size" data-width='195' data-height='195'></div>
+                <p class=" img-size" data-height='35' data-marginTop='20'>财富值 10000</p>
+              </div>
+              <div class="jd20 img-size" data-width='622' data-marginTop='30'>
+                <div class=" img-size" data-width='622' data-height='69'></div>
+                <p class=" img-size" data-height='35' data-marginTop='20'></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 活动规则 -->
+      <div id='rule' class="activityRule img-size" data-paddingLeft='40' data-paddingRight='40' data-marginTop='50'>
+        <a name='rule'></a>
+        <div class="activityRuleLine"></div>
+        <div class="rule-div">
+          <div class="rule-name img-size" data-height='30' data-lineHeight='30' data-marginTop='-22' data-marginLeft='-54'>活动规则</div>
+        </div>
+        <ol class="activityRuleContent img-size" data-marginTop='40' data-paddingLeft='20' data-paddingRight='20'>
+          <li>活动时间为2017年3月1日-2017年3月19日 </li>
+          <li>活动期间，投资30天以上产品（包含30天）可累计财富值， 财富值计算方法：<span style='color:#fff997'>投资金额*产品期限/365</span>。小于30天产品不参与此活动，不计入财富值</li>
+          <li>活动奖品以实际获得的最高奖项为准，不重复获得，平台将在活动结束后的15个工作日内完成礼品的发放。</li>
+          <li>本活动最终解释权归多融财富所有</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <!-- 弹框 -->
+  <div class="mask" ng-show='mask'>
+    <div class="tishi img-size" ng-show='showingBox=="vipBox"' data-width='687' data-height='660' data-marginLeft='30' data-marginTop='100'>
+      <p class="tishiTitle img-size" data-marginTop='180'>敬请谅解!</p>
+      <p class="tishiContent img-size" data-marginTop='60'>亲，由于您是渠道VIP用户
+        <br> 所以不能参与此次活动</p>
+      <a class=" back img-size" data-width='303' data-height='63' data-lineHeight='63' data-marginTop='30' data-marginLeft='200' ng-show='!wap' href="jump://page=1?">回到首页</a>
+      <a class=" back img-size" data-width='303' data-height='63' data-lineHeight='63' data-marginTop='30' data-marginLeft='200' ng-show='wap' href="http://app.duorongcf.com/main/home">回到首页</a>
+      <a class="close img-size" data-height='100' data-width='100' ng-show='!wap' href="jump://page=1?"></a>
+      <a class="close img-size" data-height='100' data-width='100' ng-show='wap' href="http://app.duorongcf.com/main/home"></a>
+    </div>
+    <div class="tishi img-size" ng-show='showingBox=="earlyBox"' data-width='687' data-height='660' data-marginLeft='30' data-marginTop='100'>
+      <p class="tishiTitle img-size" data-marginTop='180'>感谢关注!</p>
+      <p class="tishiContent img-size" data-marginTop='60'>本次活动尚未开始
+        <br/> 敬请期待</p>
+      <a class=" back img-size" data-width='303' data-height='63' data-lineHeight='63' data-marginTop='30' data-marginLeft='200' ng-show='!wap' href="jump://page=1?">我知道了</a>
+      <a class=" back img-size" data-width='303' data-height='63' data-lineHeight='63' data-marginTop='30' data-marginLeft='200' ng-show='wap' href="http://app.duorongcf.com/main/home">我知道了</a>
+      <a class="close img-size" data-height='100' data-width='100' ng-show='!wap' href="jump://page=1?"></a>
+      <a class="close img-size" data-height='100' data-width='100' ng-show='wap' href="http://app.duorongcf.com/main/home"></a>
+    </div>
+  </div>
+  <script>
+    function setImgSize() {
+      var originWidth = 375,
+        ratio = $(window).width() / originWidth;
+      $('.img-size').each(function () {
+        var self = $(this);
+        $.each(['height', 'width', 'left', 'right', 'bottom', 'top', 'paddingTop', 'lineHeight', 'paddingLeft', 'paddingRight', 'paddingBottom', 'marginTop', 'marginLeft', 'marginRight', 'marginBottom'], function (i, str) {
+          var num = self.attr('data-' + str);
+          if (num) {
+            num = num * ratio / 2 + 'px';
+            self.css(str, num)
+          }
+        })
+      });
+    }
+    setImgSize();
+    //添加锚点
+    function linkTo() {
+      var haha = document.getElementById('rule').scrollIntoView(true);
+    }
+    // var windowHeight=$(window).height();
+    // console.log(windowHeight);
+    // $('#RULE').click(function(){
+    //   $('window').animate({
+    //     scrollTop:$($(this).attr('href')).offset().top+"px"
+    //   },500)
+    // })
+    // $("#RULE").click(function(){
+    //   console.log(11);
+    //     //$("html,body").animate({scrollTop:$("#rule").offset().top},1000); 
+    //    $("html,body").animate({scrollTop:$("#rule").offset().top},1000); 
+    //    console.log($('html,body').animate({scrollTop:$("#rule").offset().top}));
+    //    return false;
+    // })
+  </script>
+</body>
+
+</html>

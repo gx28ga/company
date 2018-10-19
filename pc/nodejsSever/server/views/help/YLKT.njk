@@ -1,0 +1,25 @@
+{% extends "common/main.njk" %}
+{% block body %}
+<link href="/style/help/index.css" rel="stylesheet" type="text/css" inline/>
+<div id="APP" class="help">
+	<article class="container">
+		{% include "./left.njk" %}
+		<div class="right cur" style="display:block;">
+			<h1>银联开通</h1>
+			<div class="content">
+				<div class="list-box bank-open">
+					<div class="mtitle ltitle">开通地址：<a href="https://online.unionpay.com/portal/open/init.do?entry=open" target="_blank">https://online.unionpay.com/portal/open/init.do?entry=open</a></div>
+					<div class="mtitle ltitle">仅需三步，快速搞定</div>
+					<div class="mtitle">第一步：</div>
+					<img src="/images/help/bank-open1.png">
+					<div class="mtitle">第二步：</div>
+					<img src="/images/help/bank-open2.png">
+					<div class="mtitle">第三步：</div>
+					<img src="/images/help/bank-open3.png">
+				</div>
+			</div>
+		</div>
+	</article>
+</div>
+<script src="/js/help/index.js" inline></script>
+{% endblock %}

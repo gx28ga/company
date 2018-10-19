@@ -1,0 +1,12 @@
+<div class="cooperation2 clearfix" style="margin: 20px 0;">
+    <div class="title">友情链接</div>
+    <div class="link">
+        <div class="content content2">
+            <ul>
+                {% for item in firendLink %}
+                    <li><a href="{{item.linkPath}}" target="_blank">{{item.linkName}}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>

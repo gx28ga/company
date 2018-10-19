@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html ng-app="someApp" id='ng-app' xmlns:ng="http://angularjs.org"  lang="zh_CN">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <title>加息标与金蛋齐飞</title>
+    <link rel="stylesheet" type="text/css" href="../../css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/activity/app/stylesheets/doubleDec-app.css">
+    <script type="text/javascript" src="../../vendor/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../../vendor/angular.min.js"></script>
+    <script type="text/javascript" src="../../vendor/angular-resource.min.js"></script>
+    <script type="text/javascript" src="../../vendor/swiper-3.4.0.jquery.min.js"></script>
+    <style type="text/css">
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+          display: none !important;
+        }
+    </style>
+    <!-- <script type="text/javascript" src="../../vendor/qtip.js"></script> -->
+    <!-- // <script type="text/javascript" src="../../js/activity/cp183DouDecCtrl.js"></script> -->
+   <!-- localhost/html/activity/cp183DouDec-app.html -->
+
+</head><!--15a57c-->
+<body class="cp183-wrapper" ng-app="someApp" ng-controller="douDecCtrl">
+    <!-- 飘雪效果 -->
+
+    <!-- 活动未开始 -->
+    <div ng-show='actStatus==1' class="noready img-size" data-height='1920'>
+    </div>
+
+    <!-- 活动进行中 -->
+    <div ng-show='actStatus==2' style="overflow: hidden;">
+            <div class="snow foreground"></div>
+            <div class="snow foreground layered"></div>
+            <div class="snow background"></div>
+            <div class="snow background layered"></div>
+    <!--全部奖品弹窗-->
+        <div class="prizes-bg" ng-cloak ng-show='showPrizePop' >
+            <div class="prize-pop img-size " data-height='1140' data-width='1000' data-left='36' data-marginTop='150'>
+                <h2>全部奖品</h2>
+                <a href="" class="close-btn" ng-click=onHelp('关闭全部奖品')></a>
+                <div class="scrollBox">
+                    <div class="lihead">
+                        <div class="number">实物奖励</div>
+                        <div class="prizeName">iPhone7(32G)</div>
+                    </div>
+                    <div class="lihead">
+                        <div class="number">实物奖励</div>
+                        <div class="prizeName">iPad mini4(64G)</div>
+                    </div>
+                    <div class="lihead">
+                        <div class="number">实物奖励</div>
+                        <div class="prizeName">vivo X7Plus (64G)</div>
+                    </div>
+                    <!-- 手机话费 -->
+                    <div>
+                        <div class="lt">手机话费</div>
+                        <div class="rt">200元</div>
+                    </div>
+                    <div>
+                        <div class="lt">手机话费</div>
+                        <div class="rt">100元</div>
+                    </div>
+                    <div>
+                        <div class="lt">手机话费</div>
+                        <div class="rt">50元</div>
+                    </div>
+                    <div>
+                        <div class="lt">手机话费</div>
+                        <div class="rt">30元</div>
+                    </div>
+                    <!-- 手机流量 -->
+                    <div>
+                        <div class="lt">手机流量</div>
+                        <div class="rt">500兆</div>
+                    </div>
+                    <div>
+                        <div class="lt">手机流量</div>
+                        <div class="rt">150兆</div>
+                    </div>
+                    <div>
+                        <div class="lt">手机流量</div>
+                        <div class="rt">70兆</div>
+                    </div>
+                    <div>
+                        <div class="lt">手机流量</div>
+                        <div class="rt">30兆</div>
+                    </div>
+                    <div>
+                        <div class="lt">手机流量</div>
+                        <div class="rt">10兆</div>
+                    </div>
+                     <!-- 返现红包 -->
+                    <div>
+                        <div class="lt">返现红包</div>
+                        <div class="rt">188元</div>
+                    </div>
+                    <div>
+                        <div class="lt">返现红包</div>
+                        <div class="rt">150元</div>
+                    </div>
+                    <div>
+                        <div class="lt">返现红包</div>
+                        <div class="rt">88元</div>
+                    </div>
+                    <div>
+                        <div class="lt">返现红包</div>
+                        <div class="rt">12元</div>
+                    </div>
+                    <div>
+                        <div class="lt">返现红包</div>
+                        <div class="rt">3元</div>
+                    </div>
+                    <div>
+                        <div class="lt">加息券</div>
+                        <div class="rt">1.5%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--中奖记录弹窗-->
+        <div class="prizes-bg" ng-cloak ng-show='showRecordPop'>
+            <div class="prize-pop img-size " data-height='1140' data-width='1000' data-left='36' data-marginTop='150'>
+                <h2>中奖记录</h2>
+                <a href="" class="close-btn" ng-click=onHelp('关闭中奖记录')></a>
+                <div class="scrollBox">
+                    <div ng-repeat=' item in userRecordList' >
+                        <div class="lt">{{item.giftName}}</div>
+                        <div class="rt">{{item.addTime | date:'yyyy-MM-dd'}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 恭喜您获得XXXX  弹窗 -->
+        <div class="prizes-bg" ng-cloak ng-show='showCongrulationsPop'>
+            <div class="prize-pop img-size congratulations " data-height='1140' data-width='1000' data-left='36'>
+                <h2 class="prizeinfo">恭喜您：获得了{{prizeData.name}}</h2>
+                <a href="" class="close-btn con-btn"  ng-click=onHelp('关闭恭喜')></a>
+                <div class="iphone7 img-size" data-height='668' data-width='661' data-left='143' data-top='116'ng-show='prizeImg==1'></div>
+                <div class="cost img-size" data-height='668' data-width='661'  data-left='143' data-top='116' ng-show='prizeImg==2'></div>
+                <div class="coupons img-size" data-height='668' data-width='661' data-left='143' data-top='116' ng-show='prizeImg==3'></div>
+                <div class="iPad img-size" data-height='668' data-width='661' data-left='143' data-top='116' ng-show='prizeImg==4'></div>
+                <div class="vivo img-size" data-height='668' data-width='661' data-left='143' data-top='116' ng-show='prizeImg==5'></div>
+            </div>
+        </div>
+
+        <div class="banner img-size" data-height='550'>
+            <div class="bg"></div>
+        </div>
+        <div class="con-wrapper">
+            <div class="break-mode ">
+                <div class="gold-egg img-size swiper-container swiper-container-horizontal" data-width='986' data-height='871'>
+                    <p class="total img-size" data-left='304' data-top='233'>您当前有{{count}}个金蛋</p>
+                    <p class="break img-size" data-left='304' data-top='300' ng-if='login'>今日已砸{{lotteryEd||'0'}}个金蛋</p>
+                    <div class="swiper-wrapper img-size"  data-width='520' data-height='460' data-left='300' data-top='330'>
+                        <div class="eggs"  ng-show="login">
+                            <div class="eggImg swiper-slide"></div>
+                        </div>
+                        <div class="eggImg img-size noegg" data-width='520' data-height='460' data-left='300' data-top='300' ng-show='!login'></div>
+                    </div>
+                    <a href="" class="prev swiper-button-prev" ng-show="eggedit && login"></a>
+                    <a href="" class="next swiper-button-next" ng-show="eggedit && login"></a>
+                </div>
+                <!-- 活动已结束 -->
+                <!-- <div class="gold-egg img-size over"  data-width='984' data-height='872'></div> -->
+                <a href="" class="prizeRecBtn img-size" data-marginLeft='780' data-marginTop='46'  data-marginBottom='46' data-width='250' ng-click=onHelp('中奖记录') ng-cloak ng-show="login">中奖纪录 >></a>
+                <a href="http://app.duorongcf.com/bankBillList" class="chanceBtn get img-size" data-width='1000' data-height='129' ng-cloak ng-show="login && wap">获取机会</a>
+                <a href="jump://page=2?" class="chanceBtn get img-size" ng-cloak  ng-show="login && !wap " data-width='1000' data-height='129'>获取机会</a>
+                <!-- <a href="" class="chanceBtn flowclick" style="background: rgba(0,0,0,0.0); z-index: 3;"></a> -->
+                <a href="javascript:void(0)" onclick="window.location.href='http://app.duorongcf.com/dl?'+encodeURIComponent('returnUrl='+window.location.href)" class="chanceBtn img-size" ng-cloak ng-show="!login && wap" data-marginTop='130' data-width='1000' data-height='129'>登录</a>
+                <a href="jump://page=4?" ng-cloak ng-show="!login && !wap" class=" chanceBtn img-size" data-marginTop='130' data-width='1000' data-height='129'>登录</a>
+                <!-- <a href="" class="chanceBtn noready img-size" style="display: none;">活动未开始</a> -->
+                <!-- <a href="" class="chanceBtn over">活动已结束</a> -->
+            </div>
+            <div class="prize-mode">
+                <h2 class="img-size" data-width='376' data-height='221'>活动奖品</h2>
+                <ul>
+                    <li class="iphone7 img-size" data-width='301' data-height='353'></li>
+                    <li class="coupons img-size" data-width='301' data-height='373'></li>
+                    <li class="callflow img-size" data-width='301' data-height='353'></li>
+                </ul>
+                <a href="" class="allPri-btn img-size" data-marginLeft='780' data-marginTop='46'  data-marginBottom='46' data-width='250' ng-click=onHelp('全部奖品')>全部奖品>></a>
+            </div>
+            <div class="win-list img-size"  data-width='1000' data-height='613'>
+                <h2 class="img-size" data-width='376' data-height='221' data-left='324' data-top='-98' >实时中奖名单</h2>
+                <div class="lihead img-size" data-width='848' data-paddingTop='95'>
+                    <div class="number">手机号</div>
+                    <div class="prizeName">奖品</div>
+                </div>
+                <div class="run-box img-size scrollBox" data-height='400'>
+                    <ul class="list img-size" data-width='848'>
+                        <li ng-repeat='item in allRecordList' class="img-size"  data-marginBottom='38'>
+                            <div class="lt">{{item.mobilePhone}}</div>
+                            <div class="rt">{{item.giftName}}</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="activity img-size"  data-width='1000' data-height='560' data-marginTop='100'>
+                <h2 class="img-size" data-width='376' data-height='221' data-left='324' data-top='-88'>活动标</h2>
+                <div class="image animated swing img-size" data-width='689' data-height='128' data-left='180' data-top='165'></div>
+                <div class="info  img-size" data-top='360' data-left='120'>
+                    <p class="img-size" data-marginBottom='18'>活动期间每天9点发出活动加息1%的加息标</p>
+                    <p class="img-size" data-marginBottom='18'>欢迎抢购</p>
+                </div>
+            </div>
+            <div class="rule-mode img-size" data-width='1000' data-height='1720' data-marginTop='100'>
+                <h2 class="img-size" data-width='376' data-height='221' data-left='324' data-top='-68'>活动规则</h2>
+                <ul class="img-size" data-width='906' data-paddingLeft='20' data-paddingTop='140'>
+                    <li>活动时间：2016年12月6日-12月19日；</li>
+                    <li>活动期间每天上午9点上线一款≥60天的产品，在产品原有预期年化收益基础上再额外加息1%，欢迎抢购；</li>
+                    <li>活动期间单笔投资≥30天产品，投资金额≥3千元可砸蛋1次，单笔投资≥90天产品，投资金额≥3千元可砸蛋2次，每位用户每天最多可获得5次砸蛋机会，所有砸蛋机会仅限当日使用，逾期作废；</li>
+                    <li>活动期间邀请好友注册并投资≥30天产品，单笔投资金额≥3千元，即可额外获得1次砸蛋机会；红包和加息券抽中后，立即发放至个人账户登录后可在“我的账户—优惠券”中查看。红包投资≥15天产品，投资金额≥100元可使用，加息券投资≥30天产品，投资金额≥1000元可使用；</li>
+                    <li>关于实物奖励： 活动结束后客服将在5个工作日内联系获奖用户，核对用户信息和奖品信息后发放奖品，若5个工作日内未能成功与用户取得联系，则视为该用户自动放弃本次获奖奖品(实物奖品颜色随机发货)；</li>
+                    <li>奖品的邮寄地址仅限中国大陆快递公司可覆盖区域，寄出后客服会告知快递单号；</li>
+                    <li class="hotline">如有疑问，欢迎咨询客服热线4006-908-896</li>
+                    <li class="hotline">本次活动最终解释权归多融财富所有。</li>
+                </ul>
+            </div>
+            <div class="about-mode img-size"  data-width='1000' data-height='1271'  data-marginTop='60'>
+                <h2 class="img-size" data-width='376' data-height='221' data-left='324' data-top='-78'>关于多融</h2>
+                <ul class="img-size" data-width='882'  data-paddingTop='120'>
+                    <li class="img-size" data-marginBottom='30' data-marginRight='40'>
+                        <div class="cha img-size" data-width='348' data-height='343'></div>
+                        <p class="img-size" data-marginTop='35'>国资背景</p>
+                        <span>大型国企中商沪深控股</span>
+                        <i>商业网点建设开发中心旗下</i>
+                    </li>
+                    <li class="img-size" data-marginBottom='30'>
+                        <div class="san img-size" data-width='320' data-height='330'></div>
+                        <p class="top img-size" data-marginTop='42'>资金安全</p>
+                        <span>资金流转透明</span>
+                        <i>签署银行存管协议</i>
+                    </li>
+                    <li  class="thi img-size" data-marginBottom='30' data-marginRight='122' data-marginLeft='85'>
+                        <div class="qian img-size" data-width='294' data-height='280'></div>
+                        <p class="img-size" data-marginTop='35'>实力雄厚</p>
+                        <span>注册资金1亿元</span>
+                        <i>千万风险保障金</i>
+                    </li>
+                    <li class="img-size" data-marginBottom='30'>
+                        <div class="bao img-size" data-width='299' data-height='268'></div>
+                        <p class="top img-size" data-marginTop='42'>收益可观</p>
+                        <span>百元起投</span>
+                        <i>预期年化收益12%</i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer img-size" data-height='223' data-marginTop='-80'></div>
+        <!-- 渠道不能参加弹窗 -->
+            <!--渠道用户弹窗-->
+        <div class="rules-bg" ng-cloak ng-show='login && showChannelPop==0'>
+            <div class="model-content" >
+                <div class="title">
+                    <h3 class="text">提示</h3>
+                </div>
+                <div class="con">
+                    <p>亲，由于您是渠道VIP用户<br>所以不能参加此次活动，敬请谅解</p>
+                    <a class="go-back" href="http://app.duorongcf.com/home" ng-if="wap">返回首页</a><!--H5首页-->
+                    <!---->
+                    <a class="go-back" href="jump://page=1?"  ng-if="!wap">返回首页</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 活动已结束 -->
+    <div ng-show='actStatus==3' class="game-over img-size" data-height='1920'>
+
+    </div>
+
+
+
+
+<script>
+var routerApp = angular.module('someApp', [
+    'ngResource'
+    ]);
+
+
+routerApp.factory(
+        'resourceService',
+        ['$resource', '$http','$filter',function($resource, $http,$filter) {
+    return new resourceService($resource, $http,$filter);
+}]);
+/*缓存要跳转到页面名*/
+routerApp.factory(
+        'communicationService',
+        ['$resource', '$http','$filter',function($resource, $http,$filter) {
+    return new function(){
+        var tag = {};
+        /*路径*/
+        this.setTagPage=function(name,url){
+            tag.name=name;
+            tag.url=url;
+        };
+        this.getTagPage=function(){
+            return tag;
+        };
+        /*产品*/
+        this.setProduct=function(item){ tag.product = item;}
+        this.getProduct=function(){return tag.product;}
+    };
+}]);
+
+
+function resourceService(resource, http , $filter) {
+    var actions = {
+        'query':{
+            method:'GET'
+        },
+        'queryPost':{
+            method:'POST'
+            // headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'}
+        },
+        'formGet':{
+            method:'GET',
+            async:false
+            // headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'}
+        }
+    };
+    //加载json模板页面
+    this.getJsonServer = function(scope,url,data,type) {
+        var queryResource = resource(url, {}, actions);
+        queryResource.query(data, function(data) {
+                scope.$broadcast('resourceService_GET_JSON.MYEVENT',data,type);
+        }, function(error) {
+        });
+    };
+        //查找
+    this.queryPost = function(scope,url,data,type) {
+                /*临时改变时间*/
+                if ($filter('isOnLine')()) {
+                    var queryResource = resource(url, {}, actions);
+                    queryResource.queryPost(data, function(data) {
+                        if(data.success){
+                            scope.$broadcast('resourceService.QUERY_POST_MYEVENT',data,type);
+                        }else{
+                            if(data.errorCode == '9999'){
+                            }else{
+                                scope.$broadcast('resourceService.QUERY_POST_MYEVENT',data,type);
+                            }
+                        }
+
+                    }, function(error) {
+                        // $filter('服务器信息')(type, scope,'y');
+                    });
+                }else{
+                    test(scope,url,data,type);
+                };
+    };
+
+}
+routerApp
+/*开发环境*/
+        .filter('isOnLine', function() {
+            return function() {
+                var isOnLine = true;//fasle=静态调试；true=开发模式
+                return isOnLine;
+            }
+        })
+
+        //   调后台接口文档
+         .filter('交互接口对照表', function() {
+
+            return function(name) {
+                var portUrlMap = {
+
+                    /* guoqing  */
+                    'cp183双十二获取抽奖次数': '../../activity/queryCountFor12.do',
+                    'cp183双十二获取抽奖': '../../activity/getLotteryGift12.do',
+                    'cp183双十二获取抽奖记录': '../../activity/queryLotteryLogFor12.do',  //----改这里的值
+                    'end' : 'end'
+                };
+
+                return portUrlMap[name];
+            }
+        })
+
+//这里开始写自己的东西
+routerApp.controller('douDecCtrl', ['$scope','$location','$filter','resourceService','$timeout',function($scope,$location,$filter,resourceService,$timeout) {
+    $scope.wap = getUrlParam('wap') == 'true' ? true : false;    // 是h5还是app进来的
+    if(getUrlParam('uid')!='' && getUrlParam('uid')!= undefined){  //登录
+        $scope.uid = getUrlParam('uid');
+        $scope.login = true;
+    } else {
+        $scope.login = false;
+    }
+
+    $scope.lotteryDrawSuccess=true;//初始化渠道用户获取成功
+    $scope.prizeImg=null;
+  // h5下图片和宽高根据不同设备屏幕适配转化
+   function setImgSize(){
+        var  width = $(window).width()
+            ,originWidth = 540
+            ,ratio = width/originWidth;
+
+        $('.img-size').each(function(){
+            var self = $(this);
+            $.each(['data-height','data-width','data-left','data-right','data-bottom','data-top' , 'data-paddingTop' , 'data-paddingLeft' , 'data-paddingRight' , 'data-paddingBottom','data-marginTop', 'data-marginLeft' , 'data-marginRight' , 'data-marginBottom'],function( i , str ){
+                var num = self.attr(str);
+                if( num ){
+                    num = num*ratio/2+1+'px';
+                    self.css(str.match(/\w+$/)[0],num)
+                }
+            });
+        });
+    }
+    window.onresize = setImgSize;
+    setImgSize();
+  // ------over-----------------------------------
+// $('.prize-pop').mousemove(function(event){
+//     event.stopPropagation();
+// })
+     $scope.noEggStatus=false;
+
+$scope.showPrizePop=false;
+$scope.showRecordPop=false;
+$scope.showCongrulationsPop=false;
+$scope.onHelp = function (type) {
+    switch(type) {
+        case "全部奖品":
+            $('.prize-pop').removeClass('close-pop');
+            $timeout(function(){
+                $scope.showPrizePop=true;
+            },510)
+        break;
+        case "关闭全部奖品":
+            $('.prize-pop').addClass('close-pop');
+            $timeout(function(){
+                $scope.showPrizePop=false;
+            },510)
+        break;
+        case "中奖记录":
+            resourceService.queryPost($scope,$filter('交互接口对照表')('cp183双十二获取抽奖记录'),{
+            uid:$scope.uid
+        },'cp183双十二获取抽奖记录');
+                $scope.$on('resourceService.QUERY_POST_MYEVENT', function(event,data,eObj) {
+                    switch(eObj) {
+                        case "cp183双十二获取抽奖记录":
+                        if(data.success){
+                            $scope.allRecordList=data.map.allList;
+                            $scope.userRecordList=data.map.list;
+                        }
+                        break;
+                    }
+                });
+            $('.prize-pop').removeClass('close-pop');
+            $timeout(function(){
+                $scope.showRecordPop=true;
+            },510)
+        break;
+        case "关闭中奖记录":
+            $('.prize-pop').addClass('close-pop');
+            $timeout(function(){
+                $scope.showRecordPop=false;
+            },510)
+        break;
+        case "恭喜":
+            $('.prize-pop').removeClass('close-pop');
+            $timeout(function(){
+                $scope.showCongrulationsPop=true;
+            },300)
+        break;
+        case "关闭恭喜":
+            $('.prize-pop').addClass('close-pop');
+            $timeout(function(){
+                $scope.showCongrulationsPop=false;
+            },300)
+        break;
+
+    }
+}
+
+$scope.eggedit = false;
+var Tool = {
+    init : function(){
+        Tool.getData.count();
+        Tool.getData.record();
+        Tool.regData();
+    }
+    ,eggEvent : function( count , lotteryEd ){
+        var timer = 0
+        ,data = { count : count , otterCount : lotteryEd }
+        ,parent = $('.swiper-wrapper')
+        ,eggs = parent.find('.eggs')
+        ,eg = eggs.find('.eggImg')
+        ,egs = null
+        ,egarr = []
+        ,eggsCount = 0; //砸蛋次数
+
+        eg[0].otter = count>0?false:true; //未抽过奖;
+        egarr.push(eg);
+
+        for(var i = 0; i<data.count ; i++){
+            egs = eg.clone(true);
+            egs[0].otter = false
+            egarr.push(egs);
+        }
+        if(eg[0].otter == false){
+            egarr.pop();
+        }
+        for(var i = 0; i<data.otterCount ; i++){
+            egs = eg.clone(true);
+            egs[0].otter=true;
+            egarr.push(egs);
+        }
+        if(eg[0].otter == true){
+            egarr.pop();
+        }
+        $.each(egarr,function(){
+            eggs.append($(this));
+        })
+
+        var ele = parent,
+        swiper = ele.swiper({
+            wrapperClass : 'eggs',
+            slideClass : 'eggImg',
+            speed : 300,
+            loop: false,
+            prevButton:'.swiper-button-prev',
+            nextButton:'.swiper-button-next'
+        })
+
+        egarr.map(function( ele ){
+            var otter = ele[0].otter;
+            $(ele).css({'transition-duration':'0s'})
+            $(ele).css({'-webkit-transition-duration':'0s'})
+            if(otter == true){//已抽过奖
+                $(ele).addClass('over');
+            }else{
+                $(ele).removeClass('over');
+            }
+            ele.click(function( e ){
+                if(this.otter == false ){
+                    var width = $(this).width()/1.5 ,
+                        left1 = $(this).offset().left ,
+                        left = e.clientX;
+                    if( (left - left1) < width ){
+                        this.otter=true;
+                        $scope.count--
+                        $scope.lotteryEd++;
+                        Tool.down($(this));
+                    }
+                }
+            })
+        });
+    }
+    ,clearEgg : function( swiper ){ //暂无可砸
+        var eggs = $('.eggs .eggImg');
+        eggs.removeAttr('style').addClass('noegg').removeClass('over');
+
+        if(eggs.length <=1){
+            $scope.eggedit = false;
+             $scope.$apply();
+        }
+
+    }
+    ,updateEgg : function(){
+        $scope.lotteryEd ++;
+        $scope.$apply();
+    }
+    ,setEggCount : function(){
+        var  count = $scope.count //剩余抽奖次数
+            ,lotteryEd = $scope.lotteryEd;//已经砸了几次
+
+        $scope.eggedit = true;
+        Tool.eggEvent(count,lotteryEd);
+        if(count==0 && lotteryEd==0){
+            Tool.clearEgg();
+        }
+    }
+    ,down : function( ele , callback ){
+        var num = 0 , timer = 0
+        ,imagesUrl = ['../../css/activity/app/cp183/egg/egg-ready.png',
+            '../../css/activity/app/cp183/egg/egg-break.png',
+            '../../css/activity/app/cp183/egg/egg-broken.png',
+            '../../css/activity/app/cp183/egg/game-over.png'
+        ]
+        ,len = imagesUrl.length;
+
+        function eggauto(){
+            if(num>=len){
+                clearTimeout(timer);
+                Tool.getData.prize(); //抽奖
+                callback && callback();
+            }else{
+                ele.css({background:'url('+imagesUrl[num]+')', 'background-size':'contain'});
+                timer = setTimeout(eggauto,400);
+                num++;
+            }
+        }
+        eggauto();
+     }
+     ,getPrice : function( data ){ //中奖
+        var name = data.map.name;
+        if(name.indexOf('红包')>0 || name.indexOf('返现')>0 || name.indexOf('券')>0){
+            $scope.prizeImg=3;
+        }else if(name.indexOf('流量')>0 || name.indexOf('话费')>0){
+            $scope.prizeImg=2;
+        }else if(name.indexOf('iphone')>0){
+            $scope.prizeImg=1;
+        }else if(name.indexOf('iPad')>0){
+            $scope.prizeImg=4;
+        }else if(name.indexOf('vivo')>0){
+            $scope.prizeImg=5;
+        }
+        $scope.onHelp('恭喜')
+     }
+     ,getData : {//获取接口 并派发事件
+        prize : function(){
+            resourceService.queryPost($scope,$filter('交互接口对照表')('cp183双十二获取抽奖'),{
+                uid:$scope.uid
+            },'cp183双十二获取抽奖');
+        }
+        ,count : function(){
+            resourceService.queryPost($scope,$filter('交互接口对照表')('cp183双十二获取抽奖次数'),{
+                uid:$scope.uid
+            },'cp183双十二获取抽奖次数');
+        }
+        ,record : function(){
+            resourceService.queryPost($scope,$filter('交互接口对照表')('cp183双十二获取抽奖记录'),{
+                uid:$scope.uid
+            },'cp183双十二获取抽奖记录');
+        }
+     }
+     ,regData : function(){//接收数据
+         $scope.$on('resourceService.QUERY_POST_MYEVENT', function(event,data,eObj) {
+            switch(eObj) {
+                case "cp183双十二获取抽奖次数" : {
+                   if(data.success){
+                        $scope.count=data.map.count;
+                        $scope.lotteryEd=data.map.lotteryCount; //已经砸了几次
+                        $scope.showChannelPop=data.map.channel;
+                        Tool.setEggCount();
+                   }
+                    break;
+                }
+                case "cp183双十二获取抽奖记录" : {
+                    if(data.success){
+                        $scope.allRecordList=data.map.allList;
+                        $scope.userRecordList=data.map.list;
+                    }
+                    break;
+                }
+                case "cp183双十二获取抽奖" : {
+                    if(data.success){
+                        $scope.prizeData=data.map;
+                        Tool.getPrice( data );
+
+                    }
+                    break;
+                }
+            }
+        });
+     }
+}
+Tool.init();
+function getUrlParam(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+    var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+    if (r != null) return unescape(r[2]); return null; //返回参数值
+}
+var end='';
+var start='';
+
+
+var scrollListtimer = 0;
+function scrollList(){
+    var  list = $('.run-box .list')
+        ,li = list.find('li')
+        ,h = list.height()
+        ,time = 15;
+
+    if(!li.length){
+        scrollListtimer = setTimeout(scrollList,1000)
+    }else{
+        clearTimeout(scrollListtimer);
+        if(li.length>5){
+            list.append(list.html());
+            function go(){
+                list.css({transitionDuration:time+'s',transform:'translateY('+-h+'px)'});
+                list.css({'-webkit-transitionDuration':time+'s','-webkit-transform':'translateY('+-h+'px)'});
+                setTimeout(function(){
+                    list.css({transitionDuration:'0s',transform:'translateY(0px)'});
+                    list.css({'-webkit-transitionDuration':'0s','-webkit-transform':'translateY(0px)'});
+                    setTimeout(function(){
+                        go();
+                    },50)
+                },time*1000);
+            }
+            go();
+        }
+    }
+
+}
+scrollList();
+
+      // ------------------------    实时中奖名单------------------------------over----------------------------
+
+
+
+// -------------------------------- 砸金蛋功效 --------------------------
+
+
+
+                          // -----------------------------砸金蛋   over----------------------------------
+    // -------------------所有弹窗-------------------------------------------------
+
+
+
+
+
+
+   // ------------------------------  弹窗 over---------
+   //
+   //     活动未开始      已结束----------------
+   //
+        $scope.actStatus=null;
+   timeInit(null,{prev:'2016/11/01',start:'2016/12/06',end:'2016/12/20',getTime:false},function(){
+        // console.log('活动未开始');
+        $scope.actStatus=1;
+    },function(){
+        // console.log('活动进行中');
+        $scope.actStatus=2;
+    },function(){
+        // console.log('活动已结束');
+        $scope.actStatus=3;
+    })
+
+
+
+    function timeInit( timeElem, initObject , callback , callback1 , callback2  ){
+  var time1=0,time2=0,time3=0;
+    function getRTime( time ,callback ){
+        var EndTime= new Date(time); //截止时间
+        var NowTime = new Date();
+        var t =EndTime.getTime() - NowTime.getTime();
+        if(t<=0){
+            callback();
+        }else{
+            var d=Math.floor(t/1000/60/60/24);
+            var h=Math.floor(t/1000/60/60%24);
+            var m=Math.floor(t/1000/60%60);
+            var s=Math.floor(t/1000%60);
+
+            d = d<10?('0'+d):d;
+            h = h<10?('0'+h):h;
+            m = m<10?('0'+m):m;
+            s = s<10?('0'+s):s;
+
+          if(timeElem){
+            var eles = timeElem
+                d = String(d, 2);
+                h = String(h, 2);
+                m = String(m, 2);
+                s = String(s, 2);
+
+                eles.eq(0).text(h[0]);
+                eles.eq(1).text(h[1]);
+
+                eles.eq(3).text(m[0]);
+                eles.eq(4).text(m[1]);
+
+                eles.eq(6).text(s[0]);
+                eles.eq(7).text(s[1]);
+          }
+        }
+    }
+    function prev(){
+        getRTime(initObject.prev,function(){
+            callback();
+            clearInterval(time1);
+            start();
+        if(initObject.getTime){
+                time2 = setInterval(start,1000);
+        }
+        });
+    }
+    function start(){
+      getRTime(initObject.start,function(){
+        callback1();
+        clearInterval(time2);
+        end();
+        if(initObject.getTime){
+           time3 = setInterval(end,1000);
+         }
+      })
+    }
+    function end(){
+      getRTime(initObject.end,function(){
+        callback2();
+        clearInterval(time3);
+      });
+    }
+    prev();
+    if(initObject.getTime){
+      time1 = setInterval(prev,1000);
+        }
+    }
+
+                      // 活动状态   ---------------over--------------------------------------------
+}])
+</script>
+</body>
+</html>

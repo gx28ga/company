@@ -1,0 +1,78 @@
+@import "../../../common/style/global.scss";
+.body-wrap {
+  background: #fff1ea;
+  .banner {
+    @include contain('../images/banner.jpg');
+    background-position: center center;
+  }
+  .number1 {
+    @include contain('../images/number1.jpg');
+    background-position: center center;
+    margin: 0 auto;
+  }
+  .number2{
+    @include contain('../images/number2.png');
+    background-position: center center;
+    margin: 0 auto;
+  }
+    .number3{
+    @include contain('../images/number3.png');
+    background-position: center center;
+    margin: 0 auto;
+  }
+    .number4{
+    @include contain('../images/number4.png');
+    background-position: center center;
+    margin: 0 auto;
+  }
+    .number5{
+    @include contain('../images/number5.png');
+    background-position: center center;
+    margin: 0 auto;
+  }
+    .number6{
+    @include contain('../images/number6.png');
+    background-position: center center;
+    margin: 0 auto;
+  }
+    .number7{
+    @include contain('../images/number7.png');
+    background-position: center center;
+    margin: 0 auto;
+  }
+    .number8{
+    @include contain('../images/number8.png');
+    background-position: center center;
+    margin: 0 auto;
+  }
+    .number9{
+    @include contain('../images/number9.png');
+    background-position: center center;
+    margin: 0 auto;
+  } 
+    .number10{
+    @include contain('../images/number10.png');
+    background-position: center center;
+    margin: 0 auto;
+  }    
+  .number11{
+    @include contain('../images/number11.png');
+    background-position: center center;
+    margin: 0 auto;
+  } 
+    .number12{
+    @include contain('../images/number12.png');
+    background-position: center center;
+    margin: 0 auto;
+  } 
+   .number13{
+    @include contain('../images/number13.png');
+    background-position: center center;
+    margin: 0 auto;
+  } 
+    .number14{
+    @include contain('../images/number14.png');
+    background-position: center center;
+    margin: 0 auto;
+  }
+}

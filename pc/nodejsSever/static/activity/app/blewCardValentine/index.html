@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html ng-app="someApp" id='ng-app' xmlns:ng="http://angularjs.org" lang="zh_CN">
+
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta name="theme-color" content="#2932e1">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="format-detection" content="telephone=no, email=no" />
+  <link rel="stylesheet" type="text/css" href="./stylesheets/blewCard.css">
+  <script type="text/javascript" src="../../../vendor/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="../../../vendor/angular.min.js"></script>
+  <script type="text/javascript" src="../../../vendor/angular-resource.min.js"></script>
+  <script type="text/javascript" src="./js/blewCard.js"></script>
+  <script type='text/javascript' src='./js/lucky-card.js'></script>
+  <script type='text/javascript' src='./js/zepto.js'></script>
+  <link rel="stylesheet" href="./stylesheets/lucky-card.css">
+  <title>刮刮卡</title>
+</head>
+
+<body ng-controller='blewCardCtrl '>
+  <!-- banner -->
+  <div class="blewCard img-size" data-width='750'>
+    <!-- banner部分 -->
+    <div class="banner img-size" data-width='750' data-height='580'>
+      <!-- 活动规则 -->
+      <a class=" showActivityRuleBtn img-size" href="javascript: void(0);" data-width='150' data-height='120' ng-click='showBox("activityRule")'></a>
+    </div>
+    <!-- 刮刮卡 -->
+    <div class="blewCardContent img-size">
+      <div class="title1 img-size" data-width='670' data-height='72'>
+        <img src="images/title1.png" class='img-size' data-height='94' data-width='618' data-marginLeft='14' data-marginTop='-15'>
+      </div>
+      <div class='lantern img-size' data-width='750' data-height='98' data-marginLeft='5' data-marginTop='-100'> </div>
+      <div class="blewCard1 img-size" data-height='136' data-marginLeft='62' data-marginRight='62' data-paddingTop='33'>
+        <p>截止2/28累计投资<span>每满3万≥90</span>天</p>
+        <p>产品送50元京东卡</p>
+        <div class='touzibtn img-size' data-width='183' data-height='63' data-lineHeight='63' data-marginTop='-65'><a class='touzi123' ng-show='!wap' href="jump://page=2?">立即投资</a><a class='touzi123' ng-show='wap' href="http://192.168.1.248/main/bankBillList">立即投资</a></div>
+      </div>
+      <!-- 投资金额未登录状态 -->
+      <div class='investment img-size' data-width='611' data-marginLeft='62' data-marginTop='26' ng-show='!login'>
+        <p class="img-size" data-lineHeight='50'>您当前的累计投资金额：******</p>
+        <a class=" look img-size" data-width='152' data-height='43' data-lineHeight='43' data-marginTop='16' ng-show='!wap' href='jump://page=4?'>登录查看</a>
+        <a class=" look img-size" data-width='152' data-height='43' data-lineHeight='43' data-marginTop='16' ng-show='wap' href="http://192.168.1.248/dl">登录查看</a>
+        <div class='progress img-size' data-width='624' data-height='13' data-marginTop='22'>
+          <div class="progressing img-size" data-width='123' data-height='10'></div>
+        </div>
+        <span class="img-size" data-marginTop='10' data-marginRight='210'>0</span>
+        <span class="img-size" data-marginTop='10' data-marginRight='210'>3万</span>
+        <span class="img-size" data-marginTop='10'>6万</span>
+        <span class="jd img-size" data-width='40' data-height='25' data-marginTop='24' data-marginLeft='210'></span>
+        <span class='num img-size' data-width='40' data-lineHeight='25' data-height='25'>x 1</span>
+        <span class="jd img-size" data-width='40' data-height='25' data-marginTop='24' data-marginLeft='170'></span>
+        <span class='num img-size' data-width='40' data-lineHeight='25' data-height='25'>x 2</span>
+        <p class="investcontent img-size" data-lineHeight='36' data-marginTop='40'>* 投资90天以下产品，投资金额不计入总金额，京东卡将于活动结束后统一发放</p>
+      </div>
+      <!-- 投资金额登录状态 -->
+      <div class='investment img-size' ng-show='login' data-width='611' data-marginLeft='62' data-marginTop='26'>
+        <p>您当前的累计投资金额：<span>{{investTotalPrice}}</span>元</p>
+        <p ng-if='investTotalPrice<30000'>继续投资<span>{{30000-investTotalPrice}}</span>元，可以再获取1张京东卡</p>
+        <p ng-if='investTotalPrice>30000 || investTotalPrice==30000'>继续投资<span>{{nextPrice-investTotalPrice}}</span>元，可以再获取1张京东卡</p>
+        <div class='progress img-size' data-width='624' data-height='13' data-marginTop='22'>
+          <div class="progressingBefore img-size" data-height='10'></div>
+          <div class="progressingAfter img-size" data-height='10'></div>
+        </div>
+        <span class="img-size" data-marginTop='10' data-marginRight='230'>0</span>
+        <span ng-if='investTotalPrice==0' class="img-size" data-marginTop='10' data-marginRight='220'>3万</span>
+        <span ng-if='investTotalPrice>0' class="img-size" data-marginTop='10' data-marginRight='220'>{{nowPrice/10000}}万</span>
+        <span ng-if='investTotalPrice==0' class="img-size" data-marginTop='10'>6万</span>
+        <span ng-if='investTotalPrice>0' class="img-size" data-marginTop='10'>{{nextPrice/10000}}万</span>
+        <span class="jd img-size" data-width='40' data-height='25' data-marginTop='24' data-marginLeft='214'></span>
+        <span ng-if='investTotalPrice==0' class='num img-size' data-width='40' data-lineHeight='25' data-height='25'>x 1</span>
+        <span ng-if='investTotalPrice>0' class='num img-size' data-width='56' data-lineHeight='25' data-height='25'>x {{nowJdCardCount}}</span>
+        <span class="jd img-size" data-width='40' data-height='25' data-marginTop='24' data-marginLeft='170'></span>
+        <span ng-if='investTotalPrice==0' class='num img-size' data-width='40' data-lineHeight='25' data-height='25'>x 2</span>
+        <span ng-if='investTotalPrice>0' class='num img-size' data-width='56' data-lineHeight='25' data-height='25'>x {{nextJdCardCount}}</span>
+        <p class="investcontent img-size" data-lineHeight='36' data-marginTop='40'>* 投资90天以下产品，投资金额不计入总金额，京东卡将于活动结束后统一发放</p>
+      </div>
+      <!-- 刮刮卡2  -->
+      <div class="blewCard2 img-size" data-width='688' data-marginLeft='31' data-marginTop='40'>
+        <!-- 刮刮卡顶部 -->
+        <div class="top img-size" data-width='718' data-height='13' data-marginLeft='-15'></div>
+        <!-- 标题 -->
+        <div class="title2 img-size" data-width='670' data-height='72' data-marginTop='34' data-marginLeft='-31'>
+          <img src="images/title2.png " alt="" class="img-size" data-width='588' data-height='115' data-marginTop='-30' data-marginLeft='20'>
+        </div>
+        <p class="img-size chanpin" data-marginTop='33' data-marginLeft='22'>单笔投资<span>每满5000元≥30</span>天产品 </p>
+        <p class="img-size chanpin" data-marginLeft='22'>获取1张刮刮卡</p>
+        <div class='touzibtn img-size' data-width='183' data-height='63' data-lineHeight='63' data-marginTop='-65' data-marginRight='26'><a class='touzi123' ng-show='!wap' href="jump://page=2?">立即投资</a><a class='touzi123' ng-show='wap' href="http://192.168.1.248/main/bankBillList">立即投资</a></div>
+        <!-- 刮奖区域 -->
+        <!-- 未登录状态 -->
+        <div class="scratch img-size" data-width='643' data-height='326' data-marginTop='36' data-marginLeft='22' data-paddingTop='35' ng-show='!login'>
+          <div class="scratchBefore img-size " data-width='584' data-height='283' data-marginLeft='26'>
+            <p class="img-size" data-height='120' data-lineHeight='120' data-paddingTop='40'>登录后查看刮奖机会</p>
+            <div class="scratchBtn img-size" data-width='327' data-height='65' data-lineHeight='65' data-marginLeft='136' '><a  class='denglu img-size ' data-width='100% ' ng-show='!wap ' href='jump://page=4? '>登&nbsp;&nbsp;录</a><a class='denglu img-size ' data-width='100% ' ng-show='wap '  href='http://192.168.1.248/dl '>登&nbsp;&nbsp;录</a></div>    
+           </div>     
+        </div>
+        <div  ng-show='login '>
+        <!-- 登录后显示刮奖 -->
+         <div class="scratch img-size" data-width='643 ' ng-if='scratchCardChance> 0' data-height='326' data-marginTop='36' data-marginLeft='22' data-paddingTop='35' ng-show=' showingScratch =="scratchNumberNot0" '>
+              <div class="scratchBefore img-size " data-width='584' data-height='283' data-marginLeft='26'>
+                <p class="scratchCard img-size" data-height='120' data-lineHeight='120' data-paddingTop='40'>亲，你当前有<span>{{scratchCardChance}}张</span>刮刮卡</p>
+                <div class="scratchBtn img-size" ng-click='showScratched(guajiang)' data-width='327' data-height='65' data-lineHeight='65' data-marginLeft='136'>开始刮奖</div>
+              </div>
+            </div>
+            <!-- 登录后没有刮奖机会 -->
+            <div class="scratch img-size" data-width='643' data-height='326' data-marginTop='36' data-marginLeft='22' data-paddingTop='35' ng-if='scratchCardChance===0' ng-show=' showingScratch==="scratchNumber0"'>
+              <div class="scratchBefore img-size " data-width='584' data-height='283' data-marginLeft='26'>
+                <p class="scratchCard img-size" data-height='120' data-lineHeight='120' data-paddingTop='40'>亲，你当前机会已经用完</p>
+                <div class="scratchBtn img-size" ng-href='' data-width='327' data-height='65' data-lineHeight='65' data-marginLeft='136'><a ng-show='!wap' href="jump://page=2?">投资获取</a><a ng-show='wap' href="http://192.168.1.248/main/bankBillList">投资获取</a></div>
+              </div>
+            </div>
+            <!-- 刮奖次数 -->
+            <div id='scratch' class="scratch img-size" data-width='643' data-height='320' data-marginTop='36' data-marginLeft='22' data-paddingTop='1' ng-show='showingScratch==guajiang'>
+              <!--  data-paddingLeft='20' data-paddingRight='20' -->
+              <div id='card' class="scratched img-size" data-width='584' data-height='283' data-marginTop='18'>
+                <p class=" scratchedCardCount img-size" data-marginLeft='40' data-lineHeight='70'>你目前还剩<span>{{chanceCount}}张</span>刮刮卡</p>
+                <p class="scratchedContent img-size" data-lineHeight='35' data-marginLeft='60'>恭喜获得<span class='hongse'>{{prizeName}}</span></p>
+                <p class="img-size scratchedContentBottom" ng-if='type!==5 '>可到多融财富APP或多融官网登录账户查看</p>
+                <p class="img-size scratchedContentBottom" ng-if='type==5 '>实物奖品将于活动结束后15个工作日内联系发放</p>
+                <div class="scratchBtn img-size" ng-show='chanceCount == 0' data-marginBottom='15' data-width='327' data-height='65' data-lineHeight='65' data-marginLeft='136'><a ng-show='!wap' href="jump://page=2?">投资再获取一张{{$scope.chanceCount}}</a><a ng-show='wap' href="http://192.168.1.248/main/bankBillList">投资再获取一张{{$scope.chanceCount}}</a></div>
+                <div class="scratchBtn img-size" ng-show='chanceCount > 0' ng-click='showScratched(guajiang)' data-marginBottom='15' data-width='327' data-height='65' data-lineHeight='65' data-marginLeft='136'><a href="" ng-show='!wap'>再刮一次</a><a href="" ng-show='wap'>再刮一次</a></div>
+              </div>
+            </div>
+          </div>
+          <!-- 奖品区域 -->
+          <div class="prizes img-size" data-marginTop='15'>
+            <span class="prizesTitle img-size" data-marginLeft='22'>刮刮卡奖品</span>
+            <span class="records  img-size" ng-show='login' data-marginRight='22' ng-click='showRecord(records)'>查看我的中奖纪录&gt;</span>
+            <!-- 奖品列表 -->
+            <div class="prizesList img-size" data-paddingTop='10'>
+              <div class=" iphone img-size" data-marginLeft='30' data-width='184' data-height='184'></div>
+              <div class=" daisen img-size" data-marginLeft='30' data-width='184' data-height='184'></div>
+              <div class=" cup img-size" data-marginLeft='30' data-width='184' data-height='184'></div>
+              <p class="img-size" data-width='184' data-marginLeft='30'>iphone7 plus</p>
+              <p class="img-size" data-width='184' data-marginLeft='30'>戴森吸尘器</p>
+              <p class="img-size" data-width='184' data-marginLeft='30'>象印保温杯</p>
+              <div class="jdcard img-size" data-marginLeft='30' data-width='184' data-height='184' data-marginTop='15'></div>
+              <div class="hongbao img-size" data-marginLeft='30' data-width='184' data-height='184' data-marginTop='15'></div>
+              <div class="jaxicard img-size" data-marginLeft='30' data-width='184' data-height='184' data-marginTop='15'></div>
+              <p class="img-size" data-width='210' data-marginLeft='10'>10-500元京东卡</p>
+              <p class="img-size" data-width='205' data-marginLeft='10' data-marginRight='10'>10-200元红包</p>
+              <p class="img-size" data-width='205'>0.5%-2%加息券</p>
+            </div>
+          </div>
+          <div class='qingren img-size' data-width='750' data-height='272' data-marginTop='-30'></div>
+        </div>
+        <div class="footer img-size" data-lineHeight='64' data-height='64'>· 活动最终解释权归多融财富所有 ·</div>
+      </div>
+      <!-- 弹框 -->
+      <div class="mask img-size" ng-show='mask'>
+        <!-- 活动规则弹框 -->
+        <div class="activityRule  img-size" ng-show='showingBox==="activityRule"' data-width='687' data-height='886' data-marginLeft='30' data-marginTop='50'>
+          <a href="javascript:void(0);" ng-click='hideBox()' class="closeBtn img-size" data-width='60' data-height='60'></a>
+          <div class="ruleTop img-size" data-height='200'>
+            <div class="ruleTitile img-size" data-width='233' data-height='55' data-marginTop='55' data-marginLeft='225'></div>
+          </div>
+          <div class='ruleMiddle img-size' style='overflow: auto;' data-width='686' data-height='580'>
+                <p class="img-size" data-paddingLeft='96' data-paddingRight='96' data-lineHeight='45'><span>&gt;&nbsp;活动时间：2017.2.8~3.15 </span></p>
+                <p class="img-size" data-paddingLeft='96' data-paddingRight='96'><span>&gt;&nbsp;30天以下投资期限产品不参加本次活动</span></p>
+                <p class="img-size" data-paddingLeft='96' data-paddingRight='96'><span>&gt;&nbsp; 投资有奖</span></p>
+                <p class="img-size" data-paddingLeft='96' data-paddingRight='96'>&nbsp; &nbsp; 即日起~2月28日，累计投资每满3万≥90天的产品，送50元京东卡1张。如累计投资6万元即获2张，以此类推。</p>
+                <p class="img-size" data-paddingLeft='96' data-paddingRight='96'><span>&gt;&nbsp;刮刮卡</span></p>
+                <p class="img-size" data-paddingLeft='96' data-paddingRight='96'><i class="circle">·</i>&nbsp;每人每日1次免费机会，单笔投资每满5000元可再获得1次刮刮卡机会。<span>如单笔投资10000元即获得2次机会，以此类推。</span></p>
+                <p class="img-size" data-paddingLeft='96' data-paddingRight='96'><i class="circle">·</i>&nbsp;刮刮卡奖品包括：iphone7 plus，戴森吸尘器，象印保温杯，500京东卡，50京东卡，10京东卡，10~200红包，0.5%~2%加息券。<br><span style='color:#ff772a;font-style:italic;'>温馨提示：情人节期间（2.12~2.14），有神秘礼物等你来发现哟！</span></p>
+                <p class="img-size" data-paddingLeft='96' data-paddingRight='96'><span>&gt;</span>红包、加息券将即时发放到您的多融账户中，可前往多融财富APP或多融官网登录账户查看。</p>
+                <p class="img-size" data-paddingLeft='96' data-paddingRight='96'><span>&gt;</span>京东卡及其他实物奖品将于活动结束后15个工作日内联系发放，期间请确保手机畅通。</p>
+                <p class="img-size" data-paddingLeft='96' data-paddingRight='96'><span>&gt;</span>本活动最终解释权归多融财富所有。</p>
+            </div>
+          <div class='ruleBottom img-size' data-height='103'>
+            <button class="img-size" data-height='63' data-width='260' data-lineHeight='63' data-marginTop='15' ng-click='hideBox()'>我知道了</button>
+          </div>
+        </div>
+        <!--  渠道用户弹框 -->
+        <div class='tishi  img-size' data-width='687' data-height='566' ng-show='showingBox==="vipBox"' data-marginLeft='30' data-marginTop='150'>
+          <a ng-show='!wap' href="jump://page=1?" class="closeBtn img-size" data-width='60' data-height='60'></a>
+          <a ng-show='wap' href="http://192.168.1.248/main/home" class="closeBtn img-size" data-width='60' data-height='60'></a>
+          <div class='img-size tishiContent' data-width='600' data-marginLeft='30' data-marginTop='250'> 亲，由于您是渠道VIP用户
+            <br/> 所以不能参与此次活动</div>
+          <a class="back img-size" data-width='265' data-height='66' data-marginLeft='-132' ng-show='!wap' href="jump://page=1?"></a>
+          <a class="back img-size" data-width='265' data-height='66' data-marginLeft='-132' ng-show='wap' href="http://192.168.1.248/main/home"></a>
+        </div>
+        <!--  活动已结束弹框 -->
+        <div class='tishi  img-size' data-width='687' data-height='566' ng-show='showingBox==="endBox"' data-marginLeft='30' data-marginTop='150'>
+          <a ng-show='!wap' href="jump://page=1?" class="closeBtn img-size" data-width='60' data-height='60'></a>
+          <a " ng-show='wap' href="http://192.168.1.248/main/home " class="closeBtn img-size " data-width='60' data-height='60'></a>
+             <div class='img-size tishiContent' data-width='600' data-marginLeft='30' data-marginTop='250' >  本次活动已结束 <br/> 请继续关注我们 n(*≧▽≦*)n</div>
+             <a class="back img-size " data-width='265' data-height='66' data-marginLeft='-132' ng-show='!wap' href="jump://page=1? "></a>
+            <a class="back img-size " data-width='265' data-height='66' data-marginLeft='-132' ng-show='wap' href="http://192.168.1.248/main/home "></a>
+        </div>
+          <!--  活动尚未开始弹框 -->
+         <div class='tishi  img-size' data-width='687' data-height='566'  ng-show='showingBox==="earlyBox"' data-marginLeft='30' data-marginTop='150'>
+            <a  ng-show='!wap' href="jump://page=1? " class="closeBtn img-size " data-width='60' data-height='60'></a>
+             <a  ng-show='wap' href="http://192.168.1.248/main/home " class="closeBtn img-size " data-width='60' data-height='60'></a>
+            <div class='img-size tishiContent' data-width='600' data-marginLeft='30' data-marginTop='250'> 本次活动尚未开始  <br/> 敬请期待</div>
+             <a class="back img-size " data-width='265' data-height='66' data-marginLeft='-132' ng-show='!wap' href="jump://page=1? "></a>
+            <a class="back img-size " data-width='265' data-height='66' data-marginLeft='-132' ng-show='wap' href="http://192.168.1.248/main/home "></a> 
+        </div>
+    </div>
+    <!-- 中奖纪录 -->
+    <div class='record img-size' ng-show='showingRecord===records' >
+      <span class="img-size left " ng-click='hideRecord()' data-marginTop='20' data-marginLeft='20' data-width='10%'>&lt;</span><p class="img-size " data-marginTop='20' data-height='46' data-lineHeight='46' data-width='90%'>我的中奖纪录</p>
+      <div class="recordTop img-size " data-width='750' data-height='128' data-marginTop='30'></div>
+      <div class="recordContent img-size " data-width='750' data-paddingBottom='30'  data-marginTop='-30'>
+        <ul class="img-size "  data-marginLeft='12'  data-marginRight='12' data-marginTop='15' data-paddingLeft='10' data-paddingRight='10' data-marginBottom='25'>
+          <li ng-repeat="data in items " class="img-size " data-height='72' data-lineHeight='72' data-paddingLeft='15' data-paddingRight='10'><span class="name img-size " data-width='75%'>{{data.name}}</span><span class=" updateTime img-size " data-width='25%'>{{data.updateTime}}</span></li>
+        </ul>
+      </div>
+    </div>
+</div>
+ <script>
+     function setImgSize(){
+    var  originWidth = 375
+        ,ratio =$(window).width()/originWidth;
+    $('.img-size').each(function(){
+        var self = $(this);
+        $.each(['height','width','left','right','bottom','top' , 'paddingTop' ,'lineHeight' , 'paddingLeft' , 'paddingRight' , 'paddingBottom','marginTop', 'marginLeft' , 'marginRight' , 'marginBottom'],function( i , str ){
+            var num = self.attr('data-'+str); 
+            if( num ){
+                num = num*ratio/2+'px';
+                self.css(str,num)
+            }
+         })
+    });
+  }
+setImgSize();
+/*    LuckyCard.case(
+    {
+        ratio: .7
+    },
+    {coverImg:'./images/guajiangtuceng.jpg'},
+     function() {
+        this.clearCover();
+    });
+*/ </script>
+</body>
+</html>

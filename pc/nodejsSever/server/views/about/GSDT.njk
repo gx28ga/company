@@ -1,0 +1,26 @@
+{% extends "common/main.njk" %}
+{% block body %}
+<link href="/style/about/news.css" rel="stylesheet" type="text/css" inline/>
+<link href="/style/about/menu.css" rel="stylesheet" type="text/css" inline/>
+<div id='APP' class='about'>
+  {% include "./menu.njk" %}   
+    <div class='content'>
+        <div class='news-wrap'>
+            <div class='title'><span>公司动态</span></div>
+            <div class='news-box'>
+                <ul>
+                    <li v-for="item in newsResult">
+                        <span> ${new Date(item.createTime).Format("yyyy-MM-dd")}</span>
+                        <a :href="'{{http}}/about/newsDetail/XWXQ_html_'+item.artiId+'.html?t=1'">${ item.title }</a>
+                    </li>
+                </ul>
+            </div>
+            {# 分页 #}
+            <div id='Page'></div>
+        </div>
+    </div>  
+
+</div>
+{% include "../common/layui.njk" %}
+<script src="../js/about/gsdt.js" inline></script>
+{% endblock %}

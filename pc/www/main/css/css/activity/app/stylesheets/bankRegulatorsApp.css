@@ -1,0 +1,1070 @@
+/* line 1, ../../common/global.scss */
+body, div, p, h1, h2, h3, h4, h5, h6, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, table, th, td {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 2, ../../common/global.scss */
+address, cite, em, i {
+  font-style: normal;
+}
+
+/* line 4, ../../common/global.scss */
+body, root {
+  height: 100%;
+}
+
+/* line 5, ../../common/global.scss */
+body {
+  color: #fff;
+  -webkit-appearance: none;
+  background: #fff;
+  overflow-y: scroll;
+  font-family: 'PingFang SC','STHeiti','Microsoft YaHei',Helvetica,Arial,sans-serif;
+  color: #878C92;
+}
+
+/* line 6, ../../common/global.scss */
+li {
+  list-style: none;
+}
+
+/* line 7, ../../common/global.scss */
+a {
+  color: #535862;
+  text-decoration: none;
+}
+
+/* line 8, ../../common/global.scss */
+a:hover {
+  color: #c40000;
+  text-decoration: underline;
+}
+
+/* line 9, ../../common/global.scss */
+legend {
+  color: #000;
+}
+
+/* line 10, ../../common/global.scss */
+fieldset, img {
+  border: 0;
+}
+
+/* line 11, ../../common/global.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 12, ../../common/global.scss */
+input[type="button"], input[type="submit"], input[type="reset"] {
+  cursor: pointer;
+}
+
+/* line 13, ../../common/global.scss */
+.clearfix:after, .wrapper:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+/* line 14, ../../common/global.scss */
+.clearfix {
+  display: inline-block;
+}
+
+/* start commented backslash hack \*/
+/* line 16, ../../common/global.scss */
+* html .clearfix {
+  height: 1%;
+}
+
+/* line 17, ../../common/global.scss */
+.clearfix {
+  display: block;
+}
+
+/* close commented backslash hack */
+/* line 19, ../../common/global.scss */
+.middle * {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* height */
+/* public */
+/* link color */
+/* line 136, ../../common/global.scss */
+.red {
+  color: #f42b13;
+}
+
+/* line 137, ../../common/global.scss */
+.green {
+  color: #16c154;
+}
+
+/* line 138, ../../common/global.scss */
+.black {
+  color: black;
+}
+
+/* line 139, ../../common/global.scss */
+.gray {
+  color: #666;
+}
+
+/* line 140, ../../common/global.scss */
+.blue {
+  color: #2899f2;
+}
+
+/* line 141, ../../common/global.scss */
+.orange {
+  color: #cb420c;
+}
+
+/* public */
+/* line 144, ../../common/global.scss */
+.flex {
+  -webkit-flex-shrink: 0;
+  -ms-flex: 0 0 auto;
+  flex-shrink: 0;
+}
+
+/* line 145, ../../common/global.scss */
+input {
+  outline: none;
+}
+
+/* line 147, ../../common/global.scss */
+#loadding {
+  padding-top: 1.875rem;
+  text-align: center;
+}
+/* line 148, ../../common/global.scss */
+#loadding i {
+  display: block;
+  width: 1.875rem;
+  height: 1.875rem;
+  margin: 0 auto 0.3125rem;
+  background: url("../images/loading.gif") no-repeat;
+  background-size: contain;
+}
+/* line 149, ../../common/global.scss */
+#loadding p {
+  font-size: 0.75rem;
+  color: #999;
+}
+
+/* line 151, ../../common/global.scss */
+.effect {
+  float: left;
+  transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  width: 100%;
+  height: 100%;
+  perspective: 600px;
+  -webkit-perspective: 600px;
+  background: #EFEFF4;
+}
+
+/* line 152, ../../common/global.scss */
+.option {
+  float: left;
+  transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  height: 100%;
+  overflow: hidden;
+  background: #fff;
+}
+
+/* layout */
+/* line 155, ../../common/global.scss */
+.hide {
+  display: none;
+}
+
+/* line 156, ../../common/global.scss */
+.container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  transition-duration: 1s;
+  -webkit-transition-duration: 1s;
+  transform: translateY(300px);
+  -webkit-transform: translateY(300px);
+  opacity: 0;
+  overflow: hidden;
+}
+
+/* line 2, ../sass/bankRegulatorsApp.scss */
+html, body, div {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 3, ../sass/bankRegulatorsApp.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 5, ../sass/bankRegulatorsApp.scss */
+.bankRegulatorsApp-wrapper {
+  background: #fff;
+}
+/* line 7, ../sass/bankRegulatorsApp.scss */
+.bankRegulatorsApp-wrapper .banner {
+  background: url("../../../../images/bankRegulators/bannerApp.png") center 0 no-repeat;
+  background-size: contain;
+}
+/* line 11, ../sass/bankRegulatorsApp.scss */
+.bankRegulatorsApp-wrapper .ptitle {
+  font-size: 1.12847rem;
+  color: #333;
+  text-align: center;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 11, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle {
+    font-size: 0.96726rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 11, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle {
+    font-size: 0.96726rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 11, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle {
+    font-size: 1.24696rem;
+  }
+}
+/* line 14, ../sass/bankRegulatorsApp.scss */
+.bankRegulatorsApp-wrapper .ptitle.stitle {
+  font-size: 0.69444rem;
+  color: #000;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 14, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.stitle {
+    font-size: 0.59524rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 14, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.stitle {
+    font-size: 0.59524rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 14, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.stitle {
+    font-size: 0.76736rem;
+  }
+}
+/* line 17, ../sass/bankRegulatorsApp.scss */
+.bankRegulatorsApp-wrapper .ptitle.htitle {
+  font-size: 0.91146rem;
+  text-align: left;
+  padding-left: 1.38889rem;
+  padding-right: 1.38889rem;
+  line-height: 1.30208rem;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 17, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.htitle {
+    font-size: 0.78125rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 17, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.htitle {
+    font-size: 0.78125rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 17, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.htitle {
+    font-size: 1.00716rem;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 17, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.htitle {
+    padding-left: 1.19048rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 17, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.htitle {
+    padding-left: 1.19048rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 17, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.htitle {
+    padding-left: 1.53472rem;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 17, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.htitle {
+    padding-right: 1.19048rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 17, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.htitle {
+    padding-right: 1.19048rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 17, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.htitle {
+    padding-right: 1.53472rem;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 17, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.htitle {
+    line-height: 1.11607rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 17, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.htitle {
+    line-height: 1.11607rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 17, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.htitle {
+    line-height: 1.4388rem;
+  }
+}
+/* line 24, ../sass/bankRegulatorsApp.scss */
+.bankRegulatorsApp-wrapper .ptitle.ltitle {
+  font-size: 0.78125rem;
+  color: #333333;
+  text-align: left;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 24, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.ltitle {
+    font-size: 0.66964rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 24, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.ltitle {
+    font-size: 0.66964rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 24, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.ltitle {
+    font-size: 0.86328rem;
+  }
+}
+/* line 27, ../sass/bankRegulatorsApp.scss */
+.bankRegulatorsApp-wrapper .ptitle.ktitle {
+  font-size: 0.78125rem;
+  color: #333333;
+  text-align: left;
+  padding-bottom: 1.73611rem;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 27, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.ktitle {
+    font-size: 0.66964rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 27, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.ktitle {
+    font-size: 0.66964rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 27, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.ktitle {
+    font-size: 0.86328rem;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 27, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.ktitle {
+    padding-bottom: 1.4881rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 27, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.ktitle {
+    padding-bottom: 1.4881rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 27, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.ktitle {
+    padding-bottom: 1.9184rem;
+  }
+}
+/* line 30, ../sass/bankRegulatorsApp.scss */
+.bankRegulatorsApp-wrapper .ptitle.btitle {
+  font-size: 1.04167rem;
+  line-height: 1.64931rem;
+  color: #2863bc;
+  text-align: left;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 30, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.btitle {
+    font-size: 0.89286rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 30, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.btitle {
+    font-size: 0.89286rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 30, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.btitle {
+    font-size: 1.15104rem;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 30, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.btitle {
+    line-height: 1.41369rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 30, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.btitle {
+    line-height: 1.41369rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 30, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.btitle {
+    line-height: 1.82248rem;
+  }
+}
+/* line 33, ../sass/bankRegulatorsApp.scss */
+.bankRegulatorsApp-wrapper .ptitle.wtitle {
+  font-size: 1.30208rem;
+  line-height: 1.73611rem;
+  color: #cccccc;
+  text-align: left;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 33, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.wtitle {
+    font-size: 1.11607rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 33, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.wtitle {
+    font-size: 1.11607rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 33, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.wtitle {
+    font-size: 1.4388rem;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 33, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.wtitle {
+    line-height: 1.4881rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 33, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.wtitle {
+    line-height: 1.4881rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 33, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.wtitle {
+    line-height: 1.9184rem;
+  }
+}
+/* line 36, ../sass/bankRegulatorsApp.scss */
+.bankRegulatorsApp-wrapper .ptitle.wstitle {
+  font-size: 1.04167rem;
+  line-height: 1.73611rem;
+  color: #cccccc;
+  text-align: left;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 36, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.wstitle {
+    font-size: 0.89286rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 36, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.wstitle {
+    font-size: 0.89286rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 36, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.wstitle {
+    font-size: 1.15104rem;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 36, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.wstitle {
+    line-height: 1.4881rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 36, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.wstitle {
+    line-height: 1.4881rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 36, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.wstitle {
+    line-height: 1.9184rem;
+  }
+}
+/* line 39, ../sass/bankRegulatorsApp.scss */
+.bankRegulatorsApp-wrapper .ptitle.botitle {
+  font-size: 0.65104rem;
+  text-align: center;
+  line-height: 3.68924rem;
+  color: #cccccc;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 39, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.botitle {
+    font-size: 0.55804rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 39, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.botitle {
+    font-size: 0.55804rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 39, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.botitle {
+    font-size: 0.7194rem;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 39, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.botitle {
+    line-height: 3.1622rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 39, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.botitle {
+    line-height: 3.1622rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 39, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.botitle {
+    line-height: 4.07661rem;
+  }
+}
+/* line 42, ../sass/bankRegulatorsApp.scss */
+.bankRegulatorsApp-wrapper .ptitle.padd {
+  padding-top: 1.84462rem;
+  padding-bottom: 2.49566rem;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 42, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.padd {
+    padding-top: 1.5811rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 42, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.padd {
+    padding-top: 1.5811rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 42, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.padd {
+    padding-top: 2.0383rem;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 42, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.padd {
+    padding-bottom: 2.13914rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 42, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.padd {
+    padding-bottom: 2.13914rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 42, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .ptitle.padd {
+    padding-bottom: 2.7577rem;
+  }
+}
+/* line 47, ../sass/bankRegulatorsApp.scss */
+.bankRegulatorsApp-wrapper .fg {
+  width: 2.60417rem;
+  height: 0.15191rem;
+  background: #5b8edb;
+  margin: 0 auto;
+  margin-top: 0.32552rem;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 47, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .fg {
+    width: 2.23214rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 47, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .fg {
+    width: 2.23214rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 47, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .fg {
+    width: 2.8776rem;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 47, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .fg {
+    height: 0.13021rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 47, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .fg {
+    height: 0.13021rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 47, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .fg {
+    height: 0.16786rem;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 47, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .fg {
+    margin-top: 0.27902rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 47, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .fg {
+    margin-top: 0.27902rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 47, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .fg {
+    margin-top: 0.3597rem;
+  }
+}
+/* line 54, ../sass/bankRegulatorsApp.scss */
+.bankRegulatorsApp-wrapper .content {
+  padding-top: 1.6276rem;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 54, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .content {
+    padding-top: 1.39509rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 54, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .content {
+    padding-top: 1.39509rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 54, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .content {
+    padding-top: 1.7985rem;
+  }
+}
+/* line 56, ../sass/bankRegulatorsApp.scss */
+.bankRegulatorsApp-wrapper .content .con {
+  padding-top: 1.08507rem;
+  padding-bottom: 1.08507rem;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 56, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .content .con {
+    padding-top: 0.93006rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 56, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .content .con {
+    padding-top: 0.93006rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 56, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .content .con {
+    padding-top: 1.199rem;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 56, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .content .con {
+    padding-bottom: 0.93006rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 56, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .content .con {
+    padding-bottom: 0.93006rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 56, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .content .con {
+    padding-bottom: 1.199rem;
+  }
+}
+/* line 60, ../sass/bankRegulatorsApp.scss */
+.bankRegulatorsApp-wrapper .content .conTwo {
+  background: url("../../../../images/bankRegulators/contwo.png") center 0 no-repeat;
+  background-size: contain;
+  margin: 0 auto;
+  margin-top: 0.65104rem;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 60, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .content .conTwo {
+    margin-top: 0.55804rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 60, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .content .conTwo {
+    margin-top: 0.55804rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 60, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .content .conTwo {
+    margin-top: 0.7194rem;
+  }
+}
+/* line 66, ../sass/bankRegulatorsApp.scss */
+.bankRegulatorsApp-wrapper .content.contentThree {
+  padding-top: 0.97656rem;
+  padding-bottom: 0.97656rem;
+  padding-left: 1.38889rem;
+  padding-right: 1.38889rem;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 66, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .content.contentThree {
+    padding-top: 0.83705rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 66, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .content.contentThree {
+    padding-top: 0.83705rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 66, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .content.contentThree {
+    padding-top: 1.0791rem;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 66, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .content.contentThree {
+    padding-bottom: 0.83705rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 66, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .content.contentThree {
+    padding-bottom: 0.83705rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 66, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .content.contentThree {
+    padding-bottom: 1.0791rem;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 66, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .content.contentThree {
+    padding-left: 1.19048rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 66, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .content.contentThree {
+    padding-left: 1.19048rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 66, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .content.contentThree {
+    padding-left: 1.53472rem;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 66, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .content.contentThree {
+    padding-right: 1.19048rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 66, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .content.contentThree {
+    padding-right: 1.19048rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 66, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .content.contentThree {
+    padding-right: 1.53472rem;
+  }
+}
+/* line 72, ../sass/bankRegulatorsApp.scss */
+.bankRegulatorsApp-wrapper .content.contentThree .conThree table {
+  width: 100%;
+  margin-top: 1.5191rem;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 72, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .content.contentThree .conThree table {
+    margin-top: 1.30208rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 72, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .content.contentThree .conThree table {
+    margin-top: 1.30208rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 72, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .content.contentThree .conThree table {
+    margin-top: 1.6786rem;
+  }
+}
+/* line 75, ../sass/bankRegulatorsApp.scss */
+.bankRegulatorsApp-wrapper .content.contentThree .conThree table .icon {
+  width: 2.99479rem;
+  height: 2.99479rem;
+  margin-bottom: 2.60417rem;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 75, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .content.contentThree .conThree table .icon {
+    width: 2.56696rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 75, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .content.contentThree .conThree table .icon {
+    width: 2.56696rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 75, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .content.contentThree .conThree table .icon {
+    width: 3.30924rem;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 75, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .content.contentThree .conThree table .icon {
+    height: 2.56696rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 75, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .content.contentThree .conThree table .icon {
+    height: 2.56696rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 75, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .content.contentThree .conThree table .icon {
+    height: 3.30924rem;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 75, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .content.contentThree .conThree table .icon {
+    margin-bottom: 2.23214rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 75, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .content.contentThree .conThree table .icon {
+    margin-bottom: 2.23214rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 75, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .content.contentThree .conThree table .icon {
+    margin-bottom: 2.8776rem;
+  }
+}
+/* line 77, ../sass/bankRegulatorsApp.scss */
+.bankRegulatorsApp-wrapper .content.contentThree .conThree table .icon.iconOne {
+  background: url("../../../../images/bankRegulators/iconOneApp.png") center center no-repeat;
+  background-size: contain;
+}
+/* line 81, ../sass/bankRegulatorsApp.scss */
+.bankRegulatorsApp-wrapper .content.contentThree .conThree table .icon.iconTwo {
+  background: url("../../../../images/bankRegulators/iconTwoApp.png") center center no-repeat;
+  background-size: contain;
+  margin-bottom: 1.30208rem;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 81, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .content.contentThree .conThree table .icon.iconTwo {
+    margin-bottom: 1.11607rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 81, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .content.contentThree .conThree table .icon.iconTwo {
+    margin-bottom: 1.11607rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 81, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .content.contentThree .conThree table .icon.iconTwo {
+    margin-bottom: 1.4388rem;
+  }
+}
+/* line 85, ../sass/bankRegulatorsApp.scss */
+.bankRegulatorsApp-wrapper .content.contentThree .conThree table .icon.iconThree {
+  background: url("../../../../images/bankRegulators/iconThreeApp.png") center center no-repeat;
+  background-size: contain;
+}
+/* line 94, ../sass/bankRegulatorsApp.scss */
+.bankRegulatorsApp-wrapper .contentFour {
+  background: url("../../../../images/bankRegulators/bottom.png") center 0 no-repeat;
+  background-size: contain;
+  padding-left: 1.38889rem;
+  padding-right: 1.38889rem;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 94, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .contentFour {
+    padding-left: 1.19048rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 94, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .contentFour {
+    padding-left: 1.19048rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 94, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .contentFour {
+    padding-left: 1.53472rem;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 94, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .contentFour {
+    padding-right: 1.19048rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 94, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .contentFour {
+    padding-right: 1.19048rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 94, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .contentFour {
+    padding-right: 1.53472rem;
+  }
+}
+/* line 99, ../sass/bankRegulatorsApp.scss */
+.bankRegulatorsApp-wrapper .contentFour table {
+  width: 100%;
+}
+/* line 101, ../sass/bankRegulatorsApp.scss */
+.bankRegulatorsApp-wrapper .contentFour table tr.dashed {
+  border-bottom: 1px dashed #ccc;
+}
+/* line 103, ../sass/bankRegulatorsApp.scss */
+.bankRegulatorsApp-wrapper .contentFour table tr.dashed td.padd {
+  padding-top: 1.95313rem;
+  padding-bottom: 1.95313rem;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 103, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .contentFour table tr.dashed td.padd {
+    padding-top: 1.67411rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 103, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .contentFour table tr.dashed td.padd {
+    padding-top: 1.67411rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 103, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .contentFour table tr.dashed td.padd {
+    padding-top: 2.1582rem;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 340px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (-webkit-max-device-pixel-ratio: 2) {
+  /* line 103, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .contentFour table tr.dashed td.padd {
+    padding-bottom: 1.67411rem;
+  }
+}
+@media only screen and (min-device-width: 240px) and (max-device-width: 600px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 0.75) and (-webkit-max-device-pixel-ratio: 1.9) {
+  /* line 103, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .contentFour table tr.dashed td.padd {
+    padding-bottom: 1.67411rem;
+  }
+}
+@media only screen and (min-device-width: 410px) and (max-device-width: 500px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2.5) and (-webkit-max-device-pixel-ratio: 4) {
+  /* line 103, ../sass/bankRegulatorsApp.scss */
+  .bankRegulatorsApp-wrapper .contentFour table tr.dashed td.padd {
+    padding-bottom: 2.1582rem;
+  }
+}

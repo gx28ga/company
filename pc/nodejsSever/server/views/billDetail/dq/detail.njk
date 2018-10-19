@@ -1,0 +1,194 @@
+<section class="box">
+    <div class="leftside">
+        <div class="title">
+            <div class="feature">
+                {% if type==0 %}
+                    {% if map.info.type == 6 or map.info.type==7 %}
+                    <span>投资成功次日计息</span>
+                    {% endif %}
+                    {% if map.info.type==3 %}
+                    <span>募集成功次日计息</span>
+                    {% endif %}
+                {% else %}
+                    {% if map.info.type==2 or map.info.type==1 %}
+                    <span>投资成功次日计息</span>
+                    {% endif %}
+                    {% if map.info.type==3 %}
+                    <span>募集成功次日计息</span>
+                    {% endif %}
+                {% endif %}
+                <i></i>
+            </div>
+            <!--<div class="tag">-->
+                <!--{% if map.info.type == 5 %}-->
+                <!--<span>保理</span>-->
+                <!--{% endif %}-->
+                <!--{% if map.info.type == 2 or map.info.type == 3 %}-->
+                <!--<span>票据</span>-->
+                <!--{% endif %}-->
+                <!--{% if map.info.type == 6 %}-->
+                <!--<span>资管</span>-->
+                <!--{% endif %}-->
+                <!--{% if map.info.type == 7 %}-->
+                <!--<span>金交所</span>-->
+                <!--{% endif %}-->
+            <!--</div>-->
+            {% if type==2 %}
+            <h2>新手宝</h2>
+            {% else %}
+            <h2>{{map.info.fullName}}</h2>
+            {% endif %}
+
+            <div class="tags">
+                {% if map.info.type==1 %}
+                    <span>新手奖励</span>
+                {% endif %}
+                {% if map.info.activityRate>0 %}
+                    <span class="tag-tips activity {{'gray' if map.info.status==6 else ''}}" data-tips="活动">活动</span>
+                {% endif %}
+            </div>
+            {% if map.info.accept != '' and map.info.type!=1 and type!=2 %}
+            <div class="about">
+                <i class="jian"></i>
+                产品管理人： {{map.info.accept}}
+            </div>
+            {% endif %}
+        </div>
+        <div class="content">
+            <ul class="data">
+                <li class="rate">
+                    {% if type==2 %}
+                     <span>
+                        <b>{{map.currentInfo.rate}}</b>%
+                    </span>
+                    {% else %}
+                    <span>
+                        <b>{{map.info.rate}}</b>%
+                        {% if map.info.activityRate>0 %}
+                        +<b style="font-size: 32px">{{map.info.activityRate}}</b>%
+                        {% endif %}
+                    </span>
+                    {% if map.info.activityRate>0 %}
+                    <div class="about" v-show="showExplain">
+                        <i class="jian"></i>
+                        加息{{map.info.activityRate}}%，
+                        {% if map.info.daysOfExtraActivityInterest < map.info.deadline%}
+                        计息日起加息{{map.info.daysOfExtraActivityInterest}}天
+                        {% else %}
+                        持有期限内加息
+                        {% endif %}
+                    </div>
+                    <div class="icon1" @click="isShowNay"></div>
+                    {% endif %}
+                    {% endif %}
+                    <p>历史年化收益率</p>
+                </li>
+                <li class="term">
+                    {% if type != 2 %}
+                    <span><b>{{map.info.deadline}}</b><dfn>天</dfn></span>
+                    <p>产品期限</p>
+                    {% else %}
+                    <span><b>{{map.currentInfo.extraRate}}%</b></span>
+                    <p>{{map.currentInfo.extraRateDays}}天额外收益</p>
+                    {% endif %}
+
+                </li>
+                <li class="acount">
+                    {% if type == 2 %}
+                    <p style='font-size: 30px;color:#999'>随时可退</p>
+                    {% else %}
+                    <span><b>{{map.info.leastaAmount | isNumber2}}</b><dfn>元</dfn></span>
+                    <p>起投金额</p>
+                    {% endif %}
+                </li>
+            </ul>
+            {% import "./acountInfo.njk" as acountInfo %}
+            {% if type==2 %}
+            {{ acountInfo.acount(map.currentInfo,type) }}
+            {% else %}
+            {{ acountInfo.acount(map.info,type) }}
+            {% endif %}
+
+            <ul class="allAcount list-mod">
+                {% if type==2 %}
+                <li class="td1">
+                        <i class='huarui'></i>
+                       您的资金将由银行提供存管服务，敬请放心
+                </li>
+                {% else %}
+                <li class="td1">
+                    <div class='bankcolor'>
+                        <i></i>
+                        银行资金存管已上线，资金安全再度升级！
+                    </div>
+                </li>
+                {% endif %}
+
+                <li class="td2">
+                    {% import "../../common/couponTag.njk" as forms %}
+                    {{ forms.coupon(map.info,{hideActivity : true}) }}
+                </li>
+            </ul>
+            {% if map.info.guarantee !="" and type!=2 %}
+            <ul class="allAcount baozhang">
+                <li class="td1">
+                    <div class="tit">保障方式：</div>
+                    <div class="cnt">
+                        {{map.info.guarantee}}
+                    </div>
+                </li>
+            </ul>
+            {% endif %}
+        </div>
+    </div>
+    <div class="rightside">
+        {%if type !=2%}
+        <div class="status" v-if="map && map.info.status == 5">
+            <div class="progress">
+                <div class="text">
+                    <span v-if="info && info.pert">${parseInt(info.pert)}%</span>
+                    <span v-else>{{map.info.pert|init}}%</span>
+                </div>
+                <div class="percent">
+                    <div class="num" v-if="info && info.pert" :style="{width:info.pert+'%'}"></div>
+                    <div class="num" v-else style="width:{{map.info.pert}}%"></div>
+                </div>
+                <div class="money">
+                    <h6>可投金额：</h6>
+                    <span v-if="info && info.surplusAmount">${info.surplusAmount | toLocaleString(2)}元</span>
+                    <span v-else>{{map.info.surplusAmount | toLocaleString(2)}}元</span>
+                </div>
+            </div>
+            <div class="wrap">
+                {% if map.info.status == 5 or type ==2 %} {# and repair==null #}
+                <i></i>
+                {% endif %}
+            </div>
+        </div>
+        <div v-else class="overdue"> <!--map.info.status == 6 || item.status == 7 || map.info.status == 8 || map.info.status == 9"-->
+            <div class="progress">
+                <div class="text">
+                    <span v-if="info && info.pert">${parseInt(info.pert)}%</span>
+                    <span v-else>{{map.info.pert|init}}%</span>
+                </div>
+                <div class="percent">
+                    <div class="num" v-if="info && info.pert" :style="{width:info.pert+'%'}"></div>
+                    <div class="num" v-else style="width:{{map.info.pert}}%"></div>
+                </div>
+            </div>
+            <div v-if="hisList" class="data">
+                <b>${hisList.total}</b>
+                <p>已投资人数</p>
+            </div>
+            <i v-if="map" :class="{'end':map.info.status==6||map.info.status==7,'wait':map.info.status==8,'already':map.info.status==9}"></i>
+        </div>
+        {% else%}
+        <div class='status'>
+            <div class='wrap'>
+                <i></i>
+            </div>
+        </div>
+        {% endif %}
+        {% include './recharge.njk' %}
+    </div>
+</section>

@@ -1,0 +1,27 @@
+<div class="about-vip-wrapper">
+  <h2>会员等级说明</h2>
+  <div class="desc">
+    <p>1、每月月初会根据上月已获得经验是否达到原VIP等级来判断是否保级成功，保级失败则VIP等级下降一级。</p>
+    <p>2、当月获得的经验达到条件可以实时升级，并同时更新VIP特权。</p>
+    <p>3、VIP等级与经验值以及对应可享受的加息特权如下表</p>
+  </div>
+  <table class="tbl">
+    <thead>
+      <tr>
+        <td width="15%">VIP等级</td>
+        <td width="15%">要求经验值</td>
+        <td width="35%">加息特权</td>
+        <td width="35%">限定条件</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="item in ctrl.vipMapData">
+        <td>{{item.vipName}}</td>
+        <td>{{item.experienceMin | currency : '' : 0}}</td>
+        <td>获加息{{item.rateLimit | number}}%特权</td>
+        <td>每月限制使用特权{{item.useTimes}}次</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="comment">更多会员特权，后续陆续开放，敬请期待。</p>
+</div>
