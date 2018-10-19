@@ -1,0 +1,23 @@
+{
+  "defaultSeverity": "warning",
+  "extends": [
+    "tslint:recommended"
+  ],
+  "linterOptions": {
+    "exclude": [
+      "node_modules/**"
+    ]
+  },
+  "rules": {
+    "quotemark": [true, "single"],
+    "indent": false,
+    "interface-name": false,
+    "ordered-imports": false,
+    "object-literal-sort-keys": false,
+    "no-console":false,// 不允许使用console对象
+    "no-var-requires":false,// 不允许使用requires
+    "no-debugger":false,// 不允许使用debugger
+    "no-shadowed-variable":false,//外部作用域中的变量不能与它所包含的作用域中的变量或参数同名
+    "no-consecutive-blank-lines": false
+  }
+}
