@@ -3,6 +3,5 @@
  *  createTime 2018-10-19 13:56
  *  description :
  */
-export default {
-    a : 1,
-};
+import './user/login';
+import './global/asideMenu';

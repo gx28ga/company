@@ -5,22 +5,40 @@
  */
 // @ts-ignore
 import $config from '../../config';
-import { Loading } from 'element-ui';
+/*import { Loading } from 'element-ui';*/
 import axios from 'axios';
 // @ts-ignore
 import NProgress from 'nprogress'; // Progress 进度条
 import 'nprogress/nprogress.css';
+import Vue from 'vue';
 const ax = axios.create({
-    baseURL : $config.modulePrefix[$config.env.NODE_ENV],
+    baseURL : $config.modulePrefix[$config.env],
 });
-console.log($config);
+ax.interceptors.request.use((config) => {
+    NProgress.start();
+    return config;
+}, (error) => {
+    return Promise.reject(error);
+});
+ax.interceptors.response.use((response) => {
+    NProgress.done();
+    return response;
+} , (error) => {
+    if (error.response.status === 404) {
+        Promise.reject(error);
+        return window.Main.$message({type: 'error', message: error.response.statusText});
+    }
+    window.Main.$message({type: 'error', message: error.response.data.message});
+    return Promise.reject(error);
+});
+
 export default class Api {
     /**
      * 创建
      * @param name
      * @param params
      */
-    public static async  create(name: string, params: object) {
+    public static async create(name: string, params?: any) {
         return ax.post(name, params).then((res) => res.data);
     }
     /**
@@ -29,7 +47,7 @@ export default class Api {
      * @param id
      * @param idx
      */
-    public static async get(name: string, id: string, idx: string) {
+    public static async get(name: string, id: string, idx?: string) {
         const str = idx ? `/${idx}` : '';
         return ax.get(name + `/${id}` + str).then((res) => res.data);
     }
@@ -38,7 +56,7 @@ export default class Api {
      * @param name
      * @param params
      */
-    public static async query(name: string, params: object) {
+    public static async query(name: string, params: any) {
         return ax.post(name + '/query', params).then((res) => res.data);
     }
     /**
@@ -55,7 +73,7 @@ export default class Api {
      * @param id
      * @param params
      */
-    public static async update(name: string, id: string, params: object) {
+    public static async update(name: string, id: string, params: any) {
         return ax.put(name + `/${id}`, params).then((res) => res.data);
     }
     /**
@@ -63,7 +81,7 @@ export default class Api {
      * @param name
      * @param params
      */
-    public static async find(name: string, params: object) {
+    public static async find(name: string, params: any) {
         return ax.get(name, { params: { ...params } }).then((res) => res.data);
     }
 }
