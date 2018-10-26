@@ -109,24 +109,6 @@ function RouteWithSubRoutes(route) {
   );
 }
 
-/*const AuthButton = withRouter(
-	({ history }) =>
-		fakeAuth.isAuthenticated ? (
-			<p>
-			  Welcome!{" "}
-			  <button
-				  onClick={() => {
-					fakeAuth.signout(() => history.push("/"));
-				  }}
-			  >
-				Sign out
-			  </button>
-			</p>
-		) : (
-			<p>You are not logged in.</p>
-		)
-);*/
-
 function Root( user ) {
   if(user.isLogin){
 	return <div>请登录</div>
