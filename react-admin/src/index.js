@@ -1,8 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
+import 'antd/dist/antd.css';
+import './style/theme-file.scss';
+import moment from 'moment';
+import 'moment/locale/zh-cn';
+import 'nprogress/nprogress.css';
 import * as serviceWorker from './serviceWorker';
+moment.locale('zh-cn');
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
