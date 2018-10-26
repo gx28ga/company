@@ -8,11 +8,11 @@ import { toggleTodo } from '../store/actions'
 import TodoList from '../components/TodoList'
 
 const getVisibleTodos = (todos, filter) => {
+  debugger;
   switch (filter) {
 	case 'SHOW_ALL':
 	  return todos
 	case 'SHOW_COMPLETED':
-	  debugger;
 	  return todos.filter(t => t.completed)
 	case 'SHOW_ACTIVE':
 	  return todos.filter(t => !t.completed)

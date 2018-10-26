@@ -5,7 +5,7 @@
  */
 import React from 'react';
 import { Route, Link  } from "react-router-dom";
-import {Container} from "../views/Container";
+import {Container} from "../containers/Container";
 /*const Home = () => <div>/</div>;
 
 const About = () => <h2>About</h2>;

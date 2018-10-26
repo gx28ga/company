@@ -15,6 +15,7 @@ const { SHOW_ALL } = VisibilityFilters
 function visibilityFilter(state = SHOW_ALL, action) {
   switch (action.type) {
 	case SET_VISIBILITY_FILTER:
+	  debugger;
 	  return action.filter
 	default:
 	  return state
