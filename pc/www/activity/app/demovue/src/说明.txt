@@ -1,6 +1,0 @@
-module 每月任务
-module1 邀请奖励记录 
-level 待收等级记录
-earn 邀请好友赚佣金
-strategy 攻略
-接口字段：我的好友待收本金

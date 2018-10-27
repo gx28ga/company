@@ -1,1 +1,0 @@
-webpackJsonp([2],{22:function(e,n,r){function t(e){var n=u[e];return n?r.e(n[1]).then(function(){return r(n[0])}):Promise.reject(new Error("Cannot find module '"+e+"'."))}var u={"./askinform.vue":[50,12],"./playResult.vue":[51,11],"./pop.vue":[52,10],"./warning.vue":[53,9]};t.keys=function(){return Object.keys(u)},e.exports=t,t.id=22}});
