@@ -4,8 +4,8 @@
  *  description :
  */
 const USER_INFO = {
-  LOGIN : false,
-  DATA : {}
+  login : false,
+  data : {}
 };
 export default {
   USER_INFO

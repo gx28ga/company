@@ -7,7 +7,6 @@ import $config from '../../config/config';
 import NProgress from 'nprogress'; // Progress 进度条
 import axios from 'axios';
 import { message} from 'antd';
-
 const ax = axios.create({
   baseURL : $config.modulePrefix[$config.env],
 });
@@ -46,6 +45,10 @@ export default class Api {
   static async get(name, id, idx) {
 	const str = idx ? `/${idx}` : '';
 	return ax.get(name + `/${id}` + str).then((res) => res.data);
+  }
+
+  static async post(name,params){
+    return ax.post(name,params).then((res) => res.data);
   }
   /**
    * query

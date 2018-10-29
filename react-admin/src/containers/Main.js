@@ -5,30 +5,18 @@
  */
 import React from 'react';
 import { connect } from 'react-redux';
-import {Login} from "./user/Login";
-import { Button } from 'antd';
-import action from "../redux/actions";
+import Login from "./user/Login";
 import RouterAPP from "../router";
 
-const mapStateUser = state => {
-  return {
-	user: state.user
-  }
-};
-let bool = false;
 const view = ({ user , dispatch }) => {
   return (
 	<>
-	  <Button  type="primary" onClick={e=>{
-		bool = !bool;
-		dispatch(action.userLogin(bool));
-	  }}/>
-	  {user.LOGIN?<RouterAPP/>:<Login/>}
+	  {user.login?<RouterAPP/>:<Login/>}
 	  </>
 )};
 
 const Main = connect(
-	mapStateUser,
+	state=>{return{user:state.user}},
 )(view);
 
 export default Main;

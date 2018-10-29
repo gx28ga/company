@@ -1,0 +1,9 @@
+html,body,#root{
+  background:#f8f8f8;
+}
+#root{
+  display:flex;
+  flex-direction: column;
+  width:100%;
+  height:100%;
+}
