@@ -1,1 +1,0 @@
-"use strict";new Vue({el:"#APP",delimiters:["${","}"],mounted:function mounted(){this.carouselChange()},methods:{carouselChange:function carouselChange(){$(".xinshengBox").slide({mainCell:".xinshengContent ul",autoPlay:true,effect:"left",interTime:2e3,prevCell:".leftBtn",nextCell:".rightBtn",vis:1})}}});

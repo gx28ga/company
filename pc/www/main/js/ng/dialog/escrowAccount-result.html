@@ -1,6 +1,0 @@
-<div class="submit-return-dialog">
-  <div ng-class="['badge-box', result.success ? 'escrow-account-success' : (result.hasOwnProperty('waiting') && result.waiting ? 'escrow-account-waiting' : 'escrow-account-failed')]"></div>
-  <div class="title">{{result.title}}</div>
-  <div ng-if="result.detail.length > 0" class="detail">{{result.detail}}<span ng-if="result.hasOwnProperty('amount')" style="font-size: 20px;">{{result.amount | currency : '' : 2}}</span><span ng-if="result.hasOwnProperty('amount')">元</span></div>
-  <div class="main-btn" ng-click="onMainBtnClick()">{{result.mainBtnName}}</div>
-</div>

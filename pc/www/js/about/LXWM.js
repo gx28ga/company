@@ -1,1 +1,0 @@
-"use strict";var app=new Vue({el:"#APP",delimiters:["${","}"],data:{linkUrl:null},mounted:function mounted(){var self=this;T.getScript("/js/about/geturl.json.js",function(){try{self.linkUrl=result.url}catch(e){}})},methods:{}});
