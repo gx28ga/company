@@ -9,7 +9,7 @@ import {
 	INVALIDATE_SUBREDDIT,
 	REQUEST_POSTS,
 	RECEIVE_POSTS
-} from '../actions'
+} from '../actions/test'
 
 function selectedsubreddit(state = 'reactjs', action) {
 	switch (action.type) {

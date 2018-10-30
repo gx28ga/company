@@ -32,7 +32,7 @@ class Login extends React.Component {
 			<div className="login-contrainer">
 				<div className="login-form">
 					<div className="title">CMS系统</div>
-					<Form onSubmit={this.handleSubmit}>
+					<Form onSubmit={this.handleSubmit} className="content">
 						<FormItem>
 							{getFieldDecorator('userName', {
 								rules: [{required: true, message: '请输入用户名!'}],

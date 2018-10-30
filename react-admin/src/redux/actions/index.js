@@ -6,5 +6,5 @@
 import user from "./user";
 export default {
   //用户登录
-  ...user
+  ...user,
 }
