@@ -6,9 +6,7 @@
 import thunkMiddleware from 'redux-thunk'
 import { createLogger } from 'redux-logger'
 import { createStore, applyMiddleware } from 'redux';
-import { selectSubreddit, fetchPosts } from './actions/test';
-/*import storeApp from './reducers';*/
-import storeApp from './reducers/test';
+import storeApp from './reducers';
 const loggerMiddleware = createLogger();
 let store = createStore(
 	storeApp,
@@ -17,10 +15,5 @@ let store = createStore(
 		loggerMiddleware
 	)
 );
-store.dispatch(selectSubreddit('reactjs'));
-debugger;
-store
-	.dispatch(fetchPosts('reactjs'))
-	.then(() => console.log(store.getState())
-	)
+console.log(store.getState());
 export default store;

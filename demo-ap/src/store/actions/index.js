@@ -21,6 +21,7 @@ function requestPosts(subreddit) {
 
 export const RECEIVE_POSTS = 'RECEIVE_POSTS'
 function receivePosts(subreddit, json) {
+	debugger;
 	return {
 		type: RECEIVE_POSTS,
 		subreddit,
@@ -59,7 +60,7 @@ function shouldFetchPosts(state, subreddit) {
 }
 
 export function fetchPostsIfNeeded(subreddit) {
-
+	debugger;
 	// 注意这个函数也接收了 getState() 方法
 	// 它让你选择接下来 dispatch 什么。
 

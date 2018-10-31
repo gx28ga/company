@@ -6,32 +6,33 @@
 import user from "../types/user";
 import Api from "../../api/Api";
 import {USER} from "../../api/urls/user";
-
-function userLogin(userInfo) {
-	return {
-		type: user.USER_LOGIN,
-		userInfo
+const U = {
+	login: {
+		requestLogin(userInfo){
+			return {
+				type: user.login.REQUEST_LOGIN,
+				userInfo
+			}
+		},
+		postLogin(userInfo,data){
+			return{
+				type: user.login.POST_LOGIN,
+				userInfo,
+				data: data,
+				receivedAt: Date.now()
+			}
+		}
 	}
-}
-function receivePosts(userInfo, data){
-	return {
-		type: user.USER_LOGIN,
-		userInfo,
-		posts: data,
-		receivedAt: Date.now()
-	}
-}
-
+};
 function login(userInfo) {
 	return function (dispatch) {
-		dispatch(userLogin(userInfo));
-		return Api.post(USER.login).then(data => {
-			dispatch(receivePosts(userInfo, data))
+		dispatch(U.login.requestLogin(userInfo));
+		return Api.post(USER.login,userInfo).then(data => {
+			dispatch(U.login.postLogin(userInfo, data))
 		})
 	}
 }
 
 export default {
-	userLogin,
 	login,
 }

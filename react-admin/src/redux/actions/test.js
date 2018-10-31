@@ -38,12 +38,17 @@ export function invalidateSubreddit(subreddit) {
 }
 
 export function fetchPosts(subreddit) {
-	debugger;
 	return dispatch => {
 		dispatch(requestPosts(subreddit))
 		return fetch(`http://www.reddit.com/r/${subreddit}.json`)
-			.then(response => response.json())
-			.then(json => dispatch(receivePosts(subreddit, json)))
+			.then(response => {
+				debugger;
+				return response.json()
+			})
+			.then(json => {
+				debugger;
+				return dispatch(receivePosts(subreddit, json))
+			})
 	}
 }
 

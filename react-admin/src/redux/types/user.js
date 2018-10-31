@@ -6,12 +6,15 @@
 
 
 export default {
-  //登出
-  LOGIN_OUT: "LOGIN_OUT",
-  //登录
-   USER_LOGIN: "USER_LOGIN",
-  //更新用户
-  USER_UPDATE: "USER_UPDATE",
-  //删除用户
-  USER_DELTE: "USER_DELTE",
+	login: {
+		//登出
+		LOGIN_OUT: "LOGIN_OUT",
+		//登录
+		REQUEST_LOGIN: "REQUEST_LOGIN",
+		POST_LOGIN: "POST_LOGIN",
+	},
+	//更新用户
+	USER_UPDATE: "USER_UPDATE",
+	//删除用户
+	USER_DELTE: "USER_DELTE",
 }

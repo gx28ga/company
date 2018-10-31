@@ -5,9 +5,9 @@
  */
 import React from 'react';
 import {Form, Icon, Input, Button} from 'antd';
+import { connect } from 'react-redux';
+import user from "../../redux/actions";
 import "./login.scss";
-import Api from "../../api/Api";
-import {USER} from "../../api/urls/user";
 import Util from "../../Utils/Util";
 
 const FormItem = Form.Item;
@@ -20,9 +20,7 @@ class Login extends React.Component {
 				console.log('Received values of form: ', values);
 			}
 			values.password = Util.pwdmd5(values.password);
-			Api.post(USER.login,values).then(data => {
-				console.log(data);
-			})
+			this.props.dispatch(user.login(values));
 		});
 	};
 
@@ -60,5 +58,4 @@ class Login extends React.Component {
 		);
 	}
 }
-
-export default Form.create()(Login);
+export default connect()(Form.create()(Login));

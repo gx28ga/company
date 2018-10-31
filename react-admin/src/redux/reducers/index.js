@@ -4,8 +4,10 @@
  *  description :
  */
 import { combineReducers } from 'redux';
-import userFn from "./user";
+import reduces from "./user";
+import catchs from "./catch";
 const reducerApp = combineReducers({
-	user: userFn
+	user: reduces.login.postsLogin,
+	catchs: catchs
 });
 export default reducerApp;
