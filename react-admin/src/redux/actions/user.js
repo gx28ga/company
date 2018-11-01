@@ -3,10 +3,11 @@
  *  createTime 2018-10-26 17:59
  *  description :
  */
-import user from "../types/user";
+/*import user from "../types/user";
 import Api from "../../api/Api";
-import {USER} from "../../api/urls/user";
-const U = {
+import {USER} from "../../api/urls/user";*/
+import {createActions} from "redux-actions";
+/*const U = {
 	login: {
 		requestLogin(userInfo){
 			return {
@@ -31,8 +32,12 @@ function login(userInfo) {
 			dispatch(U.login.postLogin(userInfo, data))
 		})
 	}
-}
-
-export default {
-	login,
-}
+}*/
+const User = createActions({
+	login:{
+		login: userInfo => ({ userInfo: userInfo }),
+		exit: userInfo => ({ userInfo: userInfo }),
+		update: userInfo => ({ userInfo: userInfo }),
+	},
+});
+export default User;

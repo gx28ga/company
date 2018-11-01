@@ -41,7 +41,7 @@ const isInteractive = process.stdout.isTTY;
 
 // Warn and crash if required files are missing
 if (!checkRequiredFiles([paths.appHtml, paths.appIndexJs])) {
-  process.exit(1);
+  Container.exit(1);
 }
 
 // Process CLI arguments
@@ -110,14 +110,14 @@ checkBrowsers(paths.appPath, isInteractive)
     err => {
       console.log(chalk.red('Failed to compile.\n'));
       printBuildError(err);
-      process.exit(1);
+      Container.exit(1);
     }
   )
   .catch(err => {
     if (err && err.message) {
       console.log(err.message);
     }
-    process.exit(1);
+    Container.exit(1);
   });
 
 // Create the production build and print the deployment instructions.

@@ -38,7 +38,7 @@ const isInteractive = process.stdout.isTTY;
 
 // Warn and crash if required files are missing
 if (!checkRequiredFiles([paths.appHtml, paths.appIndexJs])) {
-  process.exit(1);
+  Container.exit(1);
 }
 
 // Tools like Cloud9 rely on this.
@@ -105,7 +105,7 @@ checkBrowsers(paths.appPath, isInteractive)
     ['SIGINT', 'SIGTERM'].forEach(function(sig) {
       process.on(sig, function() {
         devServer.close();
-        process.exit();
+        Container.exit();
       });
     });
   })
@@ -113,5 +113,5 @@ checkBrowsers(paths.appPath, isInteractive)
     if (err && err.message) {
       console.log(err.message);
     }
-    process.exit(1);
+    Container.exit(1);
   });

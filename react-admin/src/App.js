@@ -1,20 +1,25 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 /*import { Provider } from 'react-redux';*/
-import {BrowserRouter} from 'react-router-dom';
-import { Provider  } from 'react-redux';
-import config from "../config/config.js";
-import Main from "./containers/Main";
+import {Provider} from 'react-redux';
 import store from './redux';
+import Login from "./containers/user/Login";
+import connect from "react-redux/es/connect/connect";
+import {Root} from "./router";
+
+const view = (user) => (
+	<>
+		{user.login?<Root/>:<Login/>}
+	</>
+);
+const Jump = connect(state=>state.user)(view);
+
 class App extends Component {
   render() {
     return (
 		<Provider store={store}>
-		  <BrowserRouter basename={config.assetsPublicPath}>
-			  <Main/>
-		  </BrowserRouter>
+			<Jump/>
 		</Provider>
     );
   }
 }
-
 export default App;

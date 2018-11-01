@@ -6,8 +6,9 @@
 import { combineReducers } from 'redux';
 import reduces from "./user";
 import catchs from "./catch";
+
 const reducerApp = combineReducers({
-	user: reduces.login.postsLogin,
+	user: reduces,
 	catchs: catchs
 });
 export default reducerApp;
