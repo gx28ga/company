@@ -1,0 +1,26 @@
+
+//头部样式
+.header{
+	background:#006fd8;
+	.logo {
+		width: 180px;
+		height: 31px;
+		line-height:31px;
+		margin: 16px 28px 16px 0;
+		float: left;
+		color:#fff;
+		text-align:center;
+		font-size:25px;
+		text-shadow: 0 0 5px #fff;
+	}
+	.top-silder{
+		float:right;
+	}
+	.ant-dropdown-link{
+		color:#fff;
+		cursor:pointer;
+	}
+	.ant-menu-dark.ant-menu-horizontal{
+		background:#006fd8;
+	}
+}

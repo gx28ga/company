@@ -4,5 +4,6 @@
  *  description :
  */
 export const USER = {
-  login : "/portal/auth/login",
-}
+	login: "/portal/auth/login",
+	logout: "/portal/auth/logout",
+};

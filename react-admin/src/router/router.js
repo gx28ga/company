@@ -38,21 +38,23 @@ const routes = [
 	{
 		path: "/",
 		name: "说明",
-		component: Container
-	},
-	{
-		path: "/tacos",
-		component: Tacos,
-		children: [
+		component: Container,
+		children:[
 			{
-				path: "/tacos/bus",
-				component: Bus
-			},
-			{
-				path: "/tacos/cart",
-				component: Cart
+				path: "/tacos",
+				component: Tacos,
+				children: [
+					{
+						path: "/tacos/bus",
+						component: Bus
+					},
+					{
+						path: "/tacos/cart",
+						component: Cart
+					}
+				]
 			}
 		]
-	}
+	},
 ];
 export default routes;

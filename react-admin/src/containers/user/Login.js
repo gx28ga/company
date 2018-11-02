@@ -6,7 +6,7 @@
 import React from 'react';
 import {Form, Icon, Input, Button} from 'antd';
 import { connect } from 'react-redux';
-import {action_user} from "../../redux/actions";
+import {action_currentUser} from "../../redux/actions";
 import "./login.scss";
 import Util from "../../Utils/Util";
 
@@ -20,10 +20,9 @@ class Login extends React.Component {
 				console.log('Received values of form: ', values);
 			}
 			values.password = Util.pwdmd5(values.password);
-			this.props.dispatch(action_user.login.login(values));
+			this.props.dispatch(action_currentUser.login.request(values));
 		});
 	};
-
 	render() {
 		const {getFieldDecorator} = this.props.form;
 		return (

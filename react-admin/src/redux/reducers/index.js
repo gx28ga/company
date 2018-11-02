@@ -4,11 +4,13 @@
  *  description :
  */
 import { combineReducers } from 'redux';
-import reduces from "./user";
+import currentUser from "./currentUser";
+import global from "./global";
 import catchs from "./catch";
 
 const reducerApp = combineReducers({
-	user: reduces,
-	catchs: catchs
+	currentUser,
+	global,
+	catchs,
 });
 export default reducerApp;

@@ -41,12 +41,11 @@ export default class Api {
 	/**
 	 * 按ID获取
 	 * @param name
-	 * @param id
-	 * @param idx
+	 * @param ids
 	 */
-	static async get(name, id, idx) {
-		const str = idx ? `/${idx}` : '';
-		return ax.get(name + `/${id}` + str).then((res) => res.data);
+	static async get(name, ids) {
+		let str = ids || "";
+		return ax.get(name + str).then((res) => res.data);
 	}
 
 	static post(name, params) {

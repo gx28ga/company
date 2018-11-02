@@ -6,12 +6,12 @@ import Login from "./containers/user/Login";
 import connect from "react-redux/es/connect/connect";
 import {Root} from "./router";
 
-const view = (user) => (
+const view = (currentUser) => (
 	<>
-		{user.login?<Root/>:<Login/>}
+		{currentUser.login?<Root/>:<Login/>}
 	</>
 );
-const Jump = connect(state=>state.user)(view);
+const Jump = connect(state=>state.currentUser)(view);
 
 class App extends Component {
   render() {
