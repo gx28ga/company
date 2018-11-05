@@ -19,9 +19,17 @@ const globalReducer= {
 	permission:{
 		menu:handleActions({
 			[action_global.permission.menu.request](state, actions) {
-				let menu= Object.assign({}, state, {
-					isFetching: true,
-				});
+				let menu;
+				if(actions.payload === 'menu'){
+					menu= Object.assign({}, state, {
+						isFetching: true,
+					});
+				}else{ //删除数据
+					menu= Object.assign({}, state, {
+						isFetching: true,
+						data : null,
+					});
+				}
 				Util.storage.setLocal(GLOBAL.PERMISSION.MENU,menu);
 				return menu;
 			},

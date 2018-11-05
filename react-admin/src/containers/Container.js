@@ -15,10 +15,10 @@ function Container(props){
 		<Layout>
 			<Header {...props}/>
 			<Layout>
-				<Sider width={200} style={{background: '#fff'}}>
+				<Sider width={200}>
 					<SiderMenu/>
 				</Sider>
-				<Layout style={{padding: '0 24px 24px'}}>
+				<Layout style={{padding: '0 15px 15px'}}>
 					<Breadcrumb style={{margin: '16px 0'}}>
 						<Breadcrumb.Item>首页</Breadcrumb.Item>
 						<Breadcrumb.Item>List</Breadcrumb.Item>

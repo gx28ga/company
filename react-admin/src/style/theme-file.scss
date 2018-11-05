@@ -1,7 +1,7 @@
 
 //头部样式
 .header{
-	background:#006fd8;
+	background:#007be8;
 	.logo {
 		width: 180px;
 		height: 31px;
@@ -21,6 +21,38 @@
 		cursor:pointer;
 	}
 	.ant-menu-dark.ant-menu-horizontal{
-		background:#006fd8;
+		background:#007be8;
+	}
+}
+//左侧样式
+.ant-layout-sider{
+	background:#363636;
+	.menuNav{
+		height:45px;
+		line-height:45px;
+		color:#fff;
+		padding-left:25px;
+		font-size:18px;
+		background-color:#d20000;
+		background: linear-gradient(to bottom, #353535, #232323);
+		.menuNav-jian{
+			float: right;
+			width:0;
+			height:0;
+			margin-top: 10px;
+			border-top:12px solid transparent;
+			border-bottom:12px solid transparent;
+			border-right: 15px solid #f0f2f5;
+		}
+	}
+	.ant-layout-sider-children{
+		height:auto;
+	}
+	.ant-menu-dark{
+		background: #363636;
+		.ant-menu-sub{
+			background: rgba(0,0,0,.1);
+			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25) inset;
+		}
 	}
 }

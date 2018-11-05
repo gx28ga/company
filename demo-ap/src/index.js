@@ -1,11 +1,14 @@
 import React from 'react';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-
+import { createStore } from 'redux'
 import { render } from 'react-dom'
 import { Provider  } from 'react-redux'
-import store from './store';
 import Apps from './components/App';
+import todoApp from './reducers'
+
+let store = createStore(todoApp);
+console.log(store.getState())
 
 render(
 	<Provider store={store}>

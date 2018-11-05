@@ -4,7 +4,7 @@
  *  description :
  */
 import {call, put, takeEvery} from 'redux-saga/effects';
-import {action_currentUser} from "../actions";
+import {action_currentUser,action_global} from "../actions";
 import Api from "../../api/Api";
 import {USER} from "../../api/urls/user";
 const CurrentUser= {
@@ -28,6 +28,10 @@ const CurrentUser= {
 			type: action_currentUser.exit.receive,
 			payload: res
 		});
+		yield put({
+			type: action_global.permission.menu.request,
+			payload: null
+		})
 	},
 };
 function* rootSaga() {
