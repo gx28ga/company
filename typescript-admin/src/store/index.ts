@@ -21,7 +21,6 @@ export default new Vuex.Store({
         asideMenu,
     },
 });
-
 export interface State {
     current: CurrentDto;
     currentMenu: AsideMenuDto;
