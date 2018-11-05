@@ -1,7 +1,7 @@
 
 //头部样式
 .header{
-	background:#006fd8;
+	background:#005cad;
 	.logo {
 		width: 180px;
 		height: 31px;
@@ -21,6 +21,13 @@
 		cursor:pointer;
 	}
 	.ant-menu-dark.ant-menu-horizontal{
-		background:#006fd8;
+		background:#005cad;
+	}
+}
+//左侧样式
+.ant-layout-sider{
+	background:#001529;
+	.ant-layout-sider-children{
+		height:auto;
 	}
 }

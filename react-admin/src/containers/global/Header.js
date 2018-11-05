@@ -17,8 +17,10 @@ class HeaderTop extends React.Component{
 	componentDidMount(){
 		this.props.dispatch(action_global.permission.menu.request("menu"));
 	}
+	componentWillUpdate(preState, nextState){
+		console.log(preState,nextState)
+	}
 	update(){
-
 	}
 	exit(){
 		this.props.dispatch(action_currentUser.exit.request(this.props.currentUser));
@@ -44,7 +46,7 @@ class HeaderTop extends React.Component{
 				<Menu
 					theme="dark"
 					mode="horizontal"
-					defaultSelectedKeys={['2']}
+					defaultSelectedKeys={['0']}
 					style={{lineHeight: '64px'}}
 				>
 					{

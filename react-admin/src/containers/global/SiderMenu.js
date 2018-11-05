@@ -20,9 +20,26 @@ class SlideMenu extends React.Component{
 	render() {
 		return (
 			<>
-				{/*<div style={{height:"25px",backgroundColor:"#001529",
-					backgroundImage: "-webkit-linear-gradient(top, #006fd8 0%, #001529 100%)"
-				}}>&nbsp;</div>*/}
+				<div style={{
+					height:"45px",
+					lineHeight:"45px",
+					color:"#fff",
+					paddingLeft:"25px",
+					fontSize:"16px",
+					backgroundColor:"#d20000",
+				}}>
+					<div style={{
+						float:"right",
+						width: "0px",
+						height: "0px",
+						marginTop:"9px",
+						borderTop:"12px solid transparent",
+						borderBottom:"12px solid transparent",
+						borderRight:"20px solid #f0f2f5"
+					}}>&nbsp;</div>
+					<Icon type="user"/>
+					<span style={{paddingLeft:"5px"}}>首页</span>
+				</div>
 				<Menu
 					theme={this.state.theme}
 					mode="inline"
@@ -46,6 +63,12 @@ class SlideMenu extends React.Component{
 						<Menu.Item key="10">option10</Menu.Item>
 						<Menu.Item key="11">option11</Menu.Item>
 						<Menu.Item key="12">option12</Menu.Item>
+					</SubMenu>
+					<SubMenu key="sub55" title={<span><Icon type="laptop"/>subnav 2</span>}>
+						<Menu.Item key="51">option5</Menu.Item>
+						<Menu.Item key="61">option6</Menu.Item>
+						<Menu.Item key="71">option7</Menu.Item>
+						<Menu.Item key="81">option8</Menu.Item>
 					</SubMenu>
 				</Menu>
 			</>

@@ -1,24 +1,19 @@
-/**
- *  author : bo.peng
- *  createTime 2018-10-25 15:13
- *  description :
- */
 import { connect } from 'react-redux'
-import { setVisibilityFilter } from '../store/actions'
+import { setVisibilityFilter } from '../actions'
 import Link from '../components/Link'
 
 const mapStateToProps = (state, ownProps) => {
-  return {
-	active: ownProps.filter === state.visibilityFilter
-  }
+	return {
+		active: ownProps.filter === state.visibilityFilter
+	}
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  return {
-	onClick: () => {
-	  dispatch(setVisibilityFilter(ownProps.filter))
+	return {
+		onClick: () => {
+			dispatch(setVisibilityFilter(ownProps.filter))
+		}
 	}
-  }
 }
 
 const FilterLink = connect(

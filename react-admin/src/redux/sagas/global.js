@@ -18,7 +18,11 @@ const global= {
 				type: action_global.permission.menu.receive,
 				payload: menu
 			});
-		},
+			yield put({
+				type: action_global.permission.menuChidren,
+				payload: menu.menus[0]
+			})
+		}
 	}
 };
 function* globalSaga() {

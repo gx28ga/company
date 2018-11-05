@@ -1,18 +1,13 @@
-import React, { Component } from 'react';
-import './App.css';
-import RouterApp from "./router/Router";
-import store from "./store/index";
+import React from 'react'
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import todoApp from './reducers'
+import App from './components/App'
 
-// 打印初始状态
-console.log(store.getState());
-
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-		<RouterApp/>
-      </div>
-    );
-  }
-}
-export default App;
+let store = createStore(todoApp);
+const Apps = (
+	<Provider store={store}>
+		<App />
+	</Provider>
+);
+export default Apps;
