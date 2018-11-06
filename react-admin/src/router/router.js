@@ -9,7 +9,7 @@ import Container from "../containers/Container";
  *  description :
  */
 
-function Tacos({ routes }) {
+function Tacos({ children }) {
 	return (
 		<div>
 			<h2>Tacos</h2>
@@ -22,7 +22,7 @@ function Tacos({ routes }) {
 				</li>
 			</ul>
 
-			<RouteChildren routes={routes}/>
+			<RouteChildren children={children}/>
 		</div>
 	);
 }

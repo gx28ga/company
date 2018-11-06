@@ -9,7 +9,9 @@ import Header from "./global/Header";
 import SiderMenu from "./global/SiderMenu.js";
 import connect from "react-redux/es/connect/connect";
 import {RouteChildren} from "../router";
+
 const { Content, Sider} = Layout;
+
 function Container(props){
 	return (
 		<Layout>
@@ -25,7 +27,7 @@ function Container(props){
 						<Breadcrumb.Item>App</Breadcrumb.Item>
 					</Breadcrumb>
 					<Content style={{background: '#fff', padding: 24, margin: 0, minHeight: 280}}>
-						<RouteChildren routes={props.routes}/>
+						<RouteChildren/>
 					</Content>
 				</Layout>
 			</Layout>

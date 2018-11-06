@@ -48,11 +48,23 @@
 	.ant-layout-sider-children{
 		height:auto;
 	}
-	.ant-menu-dark{
+	.ant-menu{
 		background: #363636;
-		.ant-menu-sub{
-			background: rgba(0,0,0,.1);
-			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25) inset;
+		.ant-menu-submenu{
+			&:not(:last-child){
+				.ant-menu-submenu-title{
+					box-shadow: 0 -1px 0 rgba(255, 255, 255, .1) inset;
+				}
+			}
+			.ant-menu-sub{
+				background: rgba(0,0,0,.1);
+				box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25) inset;
+			}
+			&.ant-menu-submenu-open{
+				.ant-menu-submenu-title{
+					box-shadow:none;
+				}
+			}
 		}
 	}
 }
