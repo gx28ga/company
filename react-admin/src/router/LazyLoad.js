@@ -13,10 +13,12 @@ const Loading = () => <div>Loading...</div>;
    由于要将其作为路由下的组件，所以需要将 props 传入
 */
 
-const lazyLoad = loadComponent => props => (
-	<Bundle load={loadComponent}>
-	  {Comp => (Comp ? <Comp {...props} /> : <Loading />)}
-	</Bundle>
-);
+const lazyLoad = loadComponent => props => {
+	return (
+		<Bundle load={loadComponent}>
+			{Comp => (Comp ? <Comp {...props} /> : <Loading />)}
+		</Bundle>
+	);
+}
 
 export default lazyLoad;

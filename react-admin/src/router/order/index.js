@@ -7,7 +7,7 @@ import lazyLoad from "../LazyLoad";
  */
 import React from 'react';
 import {Redirect, Route, Switch} from "react-router-dom";
-const orderList= lazyLoad(() => import(/* webpackChunkName: "order" */ '../../containers/order/list'));
+const orderList= lazyLoad(() => import(/* webpackChunkName: "order" */ '../../containers/order/saleOrderList'));
 
 export const OrderRoute= ()=>(
 	<Switch>

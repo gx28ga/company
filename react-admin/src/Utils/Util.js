@@ -17,6 +17,9 @@ const Util = {
 		if (!obj1) return true; //没有值，说明不需要对比
 		return JSON.stringify(obj) === JSON.stringify(obj1);
 	},
+	isArray(val){
+		return Util.type(val) === "[object Array]";
+	},
 	pwdmd5(val) {
 		if (val) {
 			let md5 = require('md5');

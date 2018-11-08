@@ -28,28 +28,34 @@ ax.interceptors.response.use((response) => {
 	message.error(error.response.data.message);
 	return Promise.reject(error);
 });
+let paramData= {
+	limit: 10,
+	page: 1,
+	offset: 0,
+};
 export default class Api {
 	/**
 	 * 创建
 	 * @param name
 	 * @param params
 	 */
-	static async create(name, params) {
-		return ax.post(name, params).then((res) => res.data);
+	static create(name, params) {
+		return ax.post(name, Object.assign({},paramData,params)).then((res) => res.data);
 	}
 
 	/**
 	 * 按ID获取
 	 * @param name
-	 * @param ids
+	 * @param params
 	 */
-	static async get(name, ids) {
-		let str = ids || "";
-		return ax.get(name + str).then((res) => res.data);
+	static get(name, params) {
+		return ax.get(name,{
+			params: Object.assign({},paramData,params)
+		}).then((res) => res.data);
 	}
 
 	static post(name, params) {
-		return ax.post(name, params).then((res) => res.data);
+		return ax.post(name, Object.assign({},paramData,params)).then((res) => res.data);
 	}
 
 	/**
@@ -57,17 +63,19 @@ export default class Api {
 	 * @param name
 	 * @param params
 	 */
-	static async query(name, params) {
-		return ax.post(name + '/query', params).then((res) => res.data);
+	static query(name, params) {
+		return ax.post(name + '/query', Object.assign({},paramData,params)).then((res) => res.data);
 	}
 
 	/**
 	 * 按ID删除
 	 * @param name
-	 * @param id
+	 * @param params
 	 */
-	static async delete(name, id) {
-		return ax.delete(name + `/${id}`).then((res) => res.data);
+	static delete(name,params) {
+		return ax.delete(name,{
+			params: Object.assign({},paramData,params)
+		}).then((res) => res.data);
 	}
 
 	/**
@@ -76,7 +84,7 @@ export default class Api {
 	 * @param id
 	 * @param params
 	 */
-	static async update(name, id, params) {
+	static update(name, id, params) {
 		return ax.put(name + `/${id}`, params).then((res) => res.data);
 	}
 
@@ -85,7 +93,7 @@ export default class Api {
 	 * @param name
 	 * @param params
 	 */
-	static async find(name, params) {
+	static find(name, params) {
 		return ax.get(name, {params: {...params}}).then((res) => res.data);
 	}
 }

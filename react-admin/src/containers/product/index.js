@@ -1,11 +1,11 @@
 /**
  *  author : bo.peng
- *  createTime 2018-11-06 17:20
+ *  createTime 2018-11-08 16:27
  *  description :
  */
 import React from 'react';
 import {RouteChildren} from "../../router";
-const Order=({ parent, children })=> {
+const Product=({ parent, children })=> {
 	return <RouteChildren parent={parent} children={children}/>;
 };
-export default Order;
+export default Product;

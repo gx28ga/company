@@ -1,7 +1,11 @@
-
+//公共样式
+a:focus{
+	text-decoration:none;
+}
 //头部样式
 .header{
-	background:#007be8;
+	/*background:#0099FF;*/
+	padding:0 20px;
 	.logo {
 		width: 180px;
 		height: 31px;
@@ -21,7 +25,10 @@
 		cursor:pointer;
 	}
 	.ant-menu-dark.ant-menu-horizontal{
-		background:#007be8;
+		/*background:#0099FF;*/
+		.ant-menu-item-selected{
+			background-color:#2fadff;
+		}
 	}
 }
 //左侧样式
@@ -42,7 +49,7 @@
 			margin-top: 10px;
 			border-top:12px solid transparent;
 			border-bottom:12px solid transparent;
-			border-right: 15px solid #f0f2f5;
+			border-right: 15px solid #d6efff;
 		}
 	}
 	.ant-layout-sider-children{
@@ -67,4 +74,44 @@
 			}
 		}
 	}
+}
+/*右侧*/
+.ant-layout{
+	display:flex;
+	.ant-layout-content{
+		flex:1;
+		min-height:auto;
+		box-sizing: border-box;
+		overflow-y: auto;
+	}
+}
+.top-edit{
+	margin-bottom:20px;
+	overflow:hidden;
+	.ant-form-item{
+		margin-right:0;
+		&:not(:last-child){
+			margin-right:10px;
+		}
+	}
+}
+/*表单*/
+.ant-table-bordered{
+	.ant-table-thead,.ant-table-tbody{
+		>tr{
+			>td{
+				padding:10px;
+			}
+		}
+	}
+	.ant-table-tbody{
+		>tr{
+			>td{
+
+			}
+		}
+	}
+}
+.ant-btn{
+	height:30px;
 }

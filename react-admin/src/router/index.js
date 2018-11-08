@@ -4,32 +4,37 @@
  *  description :
  */
 import React from 'react';
-import {BrowserRouter, Route, Switch,Redirect} from "react-router-dom";
-import lazyLoad from "./LazyLoad";
-
-const Container= lazyLoad(() => import(/* webpackChunkName: "contrainer" */ '../containers/Container'));
-const Order= lazyLoad(() => import(/* webpackChunkName: "Order" */ '../containers/order'));
-/*
-import routes from "./router";
-export const RouteChildren = (props)=> (
-	props.children.map((route, i) => (<Route
-				key={i}
-				path={route.path}
-				render={props => (
-					// pass the sub-routes down to keep nesting
-					<route.component {...props} children={route.children} />
-				)}
-			/>)
+import {HashRouter, Route ,Redirect,Switch} from "react-router-dom";
+import {routes} from "./router";
+export const RouteChildren = ({parent,children})=> {
+	const chidrenRoute= (children.map((route, i) => {
+			return (
+				<Route
+					key={i}
+					path={route.path}
+					search={route.search}
+					render={props => {
+						return (
+							<route.component parent={route} {...props}
+							                 children={route.children}/>
+						)
+					}}
+				/>
+			)
+		})
+	);
+	if(!parent || !parent.redirect){
+		return chidrenRoute;
+	}
+	return (
+		<Switch>
+			{chidrenRoute}
+			<Redirect to={parent.redirect}/>
+		</Switch>
 	)
-);*/
-export const RouteChildren=()=>(
-<Switch>
-	<Route path="/order" component={Order}/>
-	<Redirect to="/order"/>
-</Switch>
-);
+};
 export const Root=()=>(
-	<BrowserRouter>
-		<Container/>
-	</BrowserRouter>
+	<HashRouter>
+		<RouteChildren children={routes}/>
+	</HashRouter>
 );

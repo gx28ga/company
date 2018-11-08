@@ -3,9 +3,11 @@
  *  createTime 2018-10-31 20:34
  *  description :
  */
-import {Icon, Menu,Spin} from "antd";
+import {Icon, Menu, Spin} from "antd";
 import React from "react";
 import {connect} from "react-redux";
+import {withRouter} from "react-router-dom";
+
 const {SubMenu} = Menu;
 
 let privateselect = null;
@@ -43,7 +45,7 @@ class SlideMenu extends React.Component{
 		privateselect = this.select;
 	}
 	select= (item)=> {
-		console.log(item.url);
+		this.props.history.replace(item.url);
 	};
 	onOpenChange = (openKeys) => {
 		const latestOpenKey = openKeys.find(key => this.state.openKeys.indexOf(key) === -1);
@@ -106,4 +108,4 @@ class SlideMenu extends React.Component{
 		return (<Spin />);
 	}
 }
-export default connect(state=>state.global.permission)(SlideMenu);
+export default connect(state=>state.global.permission)(withRouter(SlideMenu));
