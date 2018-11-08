@@ -5,7 +5,18 @@
  */
 import React from 'react';
 import {RouteChildren} from "../../router";
+function Action(parent){
+	return (<div>{parent.name}</div>);
+}
 const Product=({ parent, children })=> {
-	return <RouteChildren parent={parent} children={children}/>;
+	return (
+		<div>
+			123214
+			{
+				Action(parent)
+			}
+			<RouteChildren parent={parent} children={children}/>
+		</div>
+	);
 };
 export default Product;
