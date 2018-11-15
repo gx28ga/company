@@ -1,0 +1,34 @@
+临时方案，后期出word
+
+文件和变量：
+
+组件： 首字母大写且文件名大写
+class enum map let 等首字母大写用文件名大写
+const 常量 全部大写 例：ORDER
+所有变量首子母小写、小写动词加大写名词首字母 例： getName，orderList，addName
+
+组件命名：
+所有列表都加List 例：    ProductList.vue
+所有新增都加Add 例：     AddProduct.vue
+所有编辑都加Edit 例：    EditProduct.vue
+所有搜索都加 Search 例:  SearchProduct.vue
+
+
+路由：
+所有路由地址小写开头、小写动词加大写名词首字母 例: product,productList,addOrder
+
+样式：
+所有的样式写在 style 文件中，不要写在 dom 中
+
+
+作用域引用 变量引用：
+所有this 定义为： const self = this;
+所有变量的引用格示： let name = list;
+不推荐使用 var
+
+
+UI相关：
+<a-switch size="small" defaultChecked/>
+
+全局组件级局局部组件以K 开头：
+图片<Kimg>

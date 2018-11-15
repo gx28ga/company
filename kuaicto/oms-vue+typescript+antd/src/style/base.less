@@ -1,0 +1,198 @@
+@import "./theme-file.less";
+
+.root {
+	height: 100%;
+}
+
+//公共样式
+a:focus {
+	text-decoration: none;
+}
+
+/** 整体布局 */
+.page-layout {
+	.top-edit {
+		margin-bottom: 10px;
+		overflow: hidden;
+		.edit-left {
+			float: left;
+		}
+		.edit-right {
+			float: right;
+		}
+		.ant-form-item {
+			margin-right: 0;
+			&:not(:last-child) {
+				margin-right: 5px;
+			}
+		}
+	}
+	.content {
+		.table-list {
+			
+		}
+	}
+}
+
+/** end 整体布局 */
+//头部样式
+.header {
+	height:50px;
+	padding:0;
+	background:#252A2F;
+	.ant-menu-dark, .ant-menu-dark .ant-menu-sub {
+		background:#252A2F;
+	}
+	.logo {
+		width: 200px;
+		height: 30px;
+		line-height:30px;
+		padding:10px 24px;
+		float: left;
+		color:#2A99FF;
+		font-size:24px;
+		text-shadow: 0 0 3px #000;
+	}
+	.top-silder{
+		float:right;
+	}
+	.ant-dropdown-link{
+		color:#fff;
+		cursor:pointer;
+	}
+	.ant-menu-dark.ant-menu-horizontal{
+		line-height: 50px;
+		font-size: 14px;
+		.ant-menu-item-selected{
+			line-height: 47px;
+			background-color:rgba(0, 0, 0, 0.25);
+			border-bottom-color:@primary-color;
+			border-bottom-width: 3px;
+			border-bottom-style: solid;
+		}
+	}
+}
+
+//左侧样式
+.ant-layout-sider {
+	background:#37404B;
+	.ant-layout-sider-children{
+		height:auto;
+	}
+	.ant-menu{
+		background: #37404B;
+		.ant-menu-item {
+			height:40px;
+			line-height: 40px;
+			border-bottom: 1px solid rgba(0,0,0,0.15);
+			margin:0;
+		}
+		.ant-menu-submenu{
+			border-bottom: 1px solid rgba(0,0,0,0.15);
+			&:not(:last-child){	
+			}
+			.ant-menu-sub{
+				background: rgba(0,0,0,.1);
+				box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15) inset;
+			}
+			.ant-menu-submenu-title{
+				height:40px;
+				line-height: 40px;
+				margin:0;
+			}
+			&.ant-menu-submenu-open{
+				.ant-menu-submenu-title{
+					box-shadow:none;
+				}
+			}
+		}
+	}
+}
+
+/*右侧*/
+.ant-layout {
+	display: flex;
+	.ant-layout-content{
+		flex:1;
+		min-height:auto;
+		box-sizing: border-box;
+		background:#fff;
+		padding:15px;
+		border-radius: 3px;
+		box-shadow: 0 0 4px rgba(0,0,0,0.1);
+	}
+}
+
+/*表单*/
+.ant-table-bordered {
+	.ant-table-thead, .ant-table-tbody {
+		> tr {
+			> td {
+				padding: 10px;
+			}
+		}
+	}
+	.ant-table-tbody {
+		> tr {
+			> td {
+			
+			}
+		}
+	}
+}
+.ant-form-item-control {
+	line-height: 30px;
+}
+
+/* 按钮相关 */
+.ant-btn {
+	height: 32px;
+	border-radius: 3px;
+	font-size:12px;
+	&.ant-btn-edit {
+		border: none;
+		color: #2fadff;
+		font-size: 12px;
+		background: none;
+		padding: 0;
+	}
+}
+
+/* 表格 */
+.ant-table-small {
+	border-radius: 0;
+}
+.ant-table-small > .ant-table-content > .ant-table-header > table, .ant-table-small > .ant-table-content > .ant-table-body > table, .ant-table-small > .ant-table-content > .ant-table-scroll > .ant-table-header > table, .ant-table-small > .ant-table-content > .ant-table-scroll > .ant-table-body > table, .ant-table-small > .ant-table-content > .ant-table-fixed-left > .ant-table-header > table, .ant-table-small > .ant-table-content > .ant-table-fixed-right > .ant-table-header > table, .ant-table-small > .ant-table-content > .ant-table-fixed-left > .ant-table-body-outer > .ant-table-body-inner > table, .ant-table-small > .ant-table-content > .ant-table-fixed-right > .ant-table-body-outer > .ant-table-body-inner > table {
+	padding:0;
+}
+.ant-table-small > .ant-table-content > .ant-table-header > table > .ant-table-thead > tr > th, .ant-table-small > .ant-table-content > .ant-table-body > table > .ant-table-thead > tr > th, .ant-table-small > .ant-table-content > .ant-table-scroll > .ant-table-header > table > .ant-table-thead > tr > th, .ant-table-small > .ant-table-content > .ant-table-scroll > .ant-table-body > table > .ant-table-thead > tr > th, .ant-table-small > .ant-table-content > .ant-table-fixed-left > .ant-table-header > table > .ant-table-thead > tr > th, .ant-table-small > .ant-table-content > .ant-table-fixed-right > .ant-table-header > table > .ant-table-thead > tr > th, .ant-table-small > .ant-table-content > .ant-table-fixed-left > .ant-table-body-outer > .ant-table-body-inner > table > .ant-table-thead > tr > th, .ant-table-small > .ant-table-content > .ant-table-fixed-right > .ant-table-body-outer > .ant-table-body-inner > table > .ant-table-thead > tr > th {
+	background: #f8f8f8;
+	font-size: 12px;
+	color:#999;
+}
+.ant-table{
+	table {
+		border-radius: 0;
+		.ant-table-thead > tr > th {
+			background: #f8f8f8;
+			font-size: 12px;
+			color:#999;
+		}
+		td {
+			a:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+/* 列表 */
+.ant-card-body {
+	padding:0;
+}
+
+
+/* 分页 */
+.ant-pagination-item {
+	border-radius: 3px;
+}

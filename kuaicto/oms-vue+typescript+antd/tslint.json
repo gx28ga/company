@@ -1,0 +1,29 @@
+{
+  "defaultSeverity": "warning",
+  "extends": [
+    "tslint:recommended"
+  ],
+  "linterOptions": {
+    "exclude": [
+      "node_modules/**"
+    ]
+  },
+  "rules": {
+    "quotemark": false, //单引号双引号
+    "indent": false,
+    "interface-name": false,
+    "ordered-imports": false,
+    "object-literal-sort-keys": false,
+    "no-console":false,// 不允许使用console对象
+    "no-var-requires":false,// 不允许使用requires
+    "no-debugger":false,// 不允许使用debugger
+    "prefer-const":false,// 必需申明 const
+    //"trailing-comma":false,// 对像 数组 function 等后面加“逗号”,
+    "no-shadowed-variable":false,//外部作用域中的变量不能与它所包含的作用域中的变量或参数同名
+    "eofline": false,
+    "member-ordering": false, // 取消 methos 等 public private 提示
+    "member-access": false, // 取消 methos 等 public private 提示
+    "no-consecutive-blank-lines": false,
+    "no-unused-expression": false // 可以没有定义变量如 new
+  }
+}
