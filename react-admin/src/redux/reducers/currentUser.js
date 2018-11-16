@@ -7,7 +7,7 @@ import {currentUser} from "../store";
 import { message } from 'antd';
 import {handleActions,combineActions} from "redux-actions";
 import {action_currentUser} from "../actions";
-import Util from "../../Utils/Util";
+import Util from "../../utils/Util";
 import {USER} from "../../constants/storage/user";
 const getStore={
 	currentUser(){//获取当前用户信息

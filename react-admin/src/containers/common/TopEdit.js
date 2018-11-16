@@ -4,7 +4,7 @@
  *  description :
  */
 import React from 'react';
-export const TopEdit= (props)=> (
+export default (props)=> (
 	<div className='top-edit'>
 		<div style={{float:'right'}}>
 			{props.right}

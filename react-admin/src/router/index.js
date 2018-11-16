@@ -6,13 +6,19 @@
 import React from 'react';
 import {HashRouter, Route ,Redirect,Switch} from "react-router-dom";
 import {routes} from "./router";
-export const RouteChildren = ({parent,children})=> {
-	const chidrenRoute= (children.map((route, i) => {
+const chidrenRoute= (children)=>{
+	if(children){
+		return children.map((route, i) => {
+			let config = Object.assign({},route,{
+				component : null,
+				children : null,
+			});
+			delete config.component;
+			delete config.children;
 			return (
 				<Route
 					key={i}
-					path={route.path}
-					search={route.search}
+					{...config}
 					render={props => {
 						return (
 							<route.component parent={route} {...props}
@@ -21,15 +27,15 @@ export const RouteChildren = ({parent,children})=> {
 					}}
 				/>
 			)
-		})
-	);
-	if(!parent || !parent.redirect){
-		return chidrenRoute;
+		});
 	}
+	return (<div>暂无数据...</div>)
+};
+export const RouteChildren = ({parent,children})=> {
 	return (
 		<Switch>
-			{chidrenRoute}
-			<Redirect to={parent.redirect}/>
+			{chidrenRoute(children)}
+			{parent && parent.redirect && <Redirect to={parent.redirect}/>}
 		</Switch>
 	)
 };

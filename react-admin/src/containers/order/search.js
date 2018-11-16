@@ -20,7 +20,7 @@ class RegistrationForm extends React.Component {
 				console.log('Received values of form: ', values);
 			}
 		});
-	}
+	};
 	render() {
 		return (
 			<Form layout="inline" onSubmit={this.handleSubmit}>

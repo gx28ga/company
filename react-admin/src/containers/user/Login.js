@@ -8,7 +8,7 @@ import {Form, Icon, Input, Button} from 'antd';
 import { connect } from 'react-redux';
 import {action_currentUser} from "../../redux/actions";
 import "./login.scss";
-import Util from "../../Utils/Util";
+import Util from "../../utils/Util";
 
 const FormItem = Form.Item;
 

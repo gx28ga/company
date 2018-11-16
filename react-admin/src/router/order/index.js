@@ -1,17 +1,24 @@
-import lazyLoad from "../LazyLoad";
-
 /**
  *  author : bo.peng
- *  createTime 2018-11-06 16:28
- *  description :
+ *  createTime 2018-11-15 14:17
+ *  description : 订单
  */
-import React from 'react';
-import {Redirect, Route, Switch} from "react-router-dom";
-const orderList= lazyLoad(() => import(/* webpackChunkName: "order" */ '../../containers/order/saleOrderList'));
-
-export const OrderRoute= ()=>(
-	<Switch>
-		<Route path="/order/list" component={orderList}/>
-		<Redirect to="/order/list"/>
-	</Switch>
-);
+import lazyLoad from "../LazyLoad";
+export default {
+	path: "order",
+	name: "销售",
+	component: lazyLoad(() => import(/* webpackChunkName: "order" */ '../../containers/order')),
+	redirect: "/order/saleOrderList",
+	children: [
+		{
+			name: "销售订单",
+			path: "saleOrderList",
+			component: lazyLoad(() => import(/* webpackChunkName: "saleOrderList" */ '../../containers/order/saleOrderList'))
+		},
+		{
+			name: "订单详情",
+			path: "saleOrderDetail/:id",
+			component: lazyLoad(() => import(/* webpackChunkName: "saleOrderDetail" */ '../../containers/order/saleOrderDetail'))
+		},
+	]
+}

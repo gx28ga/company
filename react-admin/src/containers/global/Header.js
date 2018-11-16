@@ -41,7 +41,7 @@ class HeaderTop extends React.Component{
 			</span>
 				</Dropdown>
 				<Menu
-					theme="dark"
+					theme="light"
 					mode="horizontal"
 					defaultSelectedKeys={['0']}
 					style={{lineHeight: '64px'}}

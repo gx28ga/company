@@ -1,0 +1,114 @@
+临时方案，后期出word
+
+文件和变量：
+
+组件： 首字母大写且文件名大写   k-upload
+class map let 等首字母大写用文件名大写
+const 常量 全部大写 例：ORDER
+所有变量首子母小写、小写动词加大写名词首字母 例： getName，orderList，addName
+
+组件命名：
+所有列表都加List 例：    ProductList.vue
+所有新增都加Add 例：     AddProduct.vue
+所有编辑都加Edit 例：    EditProduct.vue
+所有搜索都加 Search 例:  SearchProduct.vue
+
+
+
+路由：
+所有路由地址小写开头、小写动词加大写名词首字母 例: product,productList,addOrder
+
+样式：
+所有的样式写在 style 文件中，不要写在 dom 中
+
+作用域引用 变量引用：
+所有this 定义为： const self = this;
+所有变量的引用格示： let name = list;
+不推荐使用 var
+
+UI相关：
+<a-switch size="small" defaultChecked/>
+
+全局组件级局局部组件以K 开头：
+图片<Kimg>
+
+
+
+目录: 小驼峰
+
+组件: 大驼峰
+
+方法: 动词+ 名词
+
+文件: 名词+ 动词
+
+列表: list
+
+创建: create
+
+添加: add
+
+更新: update
+
+编辑 & 添加+ 编辑: edit  
+
+变量 & 方法 : 均要注释
+
+默认缩进空格: 4
+
+函数: 一个函数控制在20行以内(一屏以内)
+
+注释: 行上
+
+尽量使用import ,不要用require
+
+存在复数的情况,名词+s
+
+修改密码文件: PasswordUpdate
+
+.vue文件名都要大写
+
+自定义组件 : k-名称
+
+
+
+
+
+
+
+项目结构
+
+api 接口相关
+
+Assets 静态文件
+
+Components 公共组件
+
+Constants 常量
+
+Mixin 混入
+
+Mock 数据模拟
+
+Plugins 常用插件
+
+Router 路由
+
+Store 数组状态管理
+
+Style 样式
+
+Test 试例
+
+Utils 工具类
+
+pages 展示层
+
+
+
+ 
+
+
+
+
+

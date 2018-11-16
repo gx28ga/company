@@ -6,7 +6,7 @@
 import { combineReducers } from 'redux';
 import {handleActions,handleAction} from "redux-actions";
 import {action_global} from "../actions";
-import Util from "../../Utils/Util";
+import Util from "../../utils/Util";
 import {global} from "../store";
 import {GLOBAL} from "../../constants/storage/global";
 const globalStore = {

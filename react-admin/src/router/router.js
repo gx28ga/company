@@ -4,6 +4,9 @@
  *  description :
  */
 import lazyLoad from "./LazyLoad";
+import order from "./order";
+import product from "./product";
+import example from "./example";
 
 const routesConfig = [
 	{
@@ -12,39 +15,14 @@ const routesConfig = [
 		component: lazyLoad(() => import(/* webpackChunkName: "Container" */ '../containers/Container')),
 		redirect:"/order/saleOrderList",
 		children:[
-			{
-				path: "order",
-				name: "销售",
-				component: lazyLoad(() => import(/* webpackChunkName: "order" */ '../containers/order')),
-				redirect:"/order/saleOrderList",
-				children: [
-					{
-						name: "销售订单",
-						path: "saleOrderList",
-						component: lazyLoad(() => import(/* webpackChunkName: "saleOrderList" */ '../containers/order/saleOrderList'))
-					},
-					{
-						name: "订单详情",
-						path: "saleOrderDetail/:id",
-						component: lazyLoad(() => import(/* webpackChunkName: "saleOrderDetail" */ '../containers/order/saleOrderDetail'))
-					},
-				]
-			},
-			{
-				path: "product",
-				name: "商品",
-				component: lazyLoad(() => import(/* webpackChunkName: "product" */ '../containers/product')),
-				redirect:"/product/productList",
-				children: [
-					{
-						name: "商品列表",
-						path: "productList",
-						component: lazyLoad(() => import(/* webpackChunkName: "productList" */ '../containers/product/productList'))
-					},
-				]
-			},
+			//订单
+			order,
+			//产品
+			product,
+			//试列
+			example,
 		]
-	},
+	}
 ];
 let routeLink= {};
 let setPath= (list)=> {
