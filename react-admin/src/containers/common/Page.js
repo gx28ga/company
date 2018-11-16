@@ -5,9 +5,9 @@
  */
 import ComBreadcrumb from "./Breadcrumb";
 import React from "react";
-export default ({location, children})=> {
+export default ({edit, location, children})=> {
 	return (<>
-		<ComBreadcrumb {...location}/>
+		<ComBreadcrumb {...location} left={edit}/>
 		{children}
 	</>);
 }
