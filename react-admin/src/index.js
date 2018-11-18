@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import "antd/dist/antd.less";
-import './style/theme-file.less';
 import './style/App.less';
 import moment from 'moment';
 import 'moment/locale/zh-cn';
