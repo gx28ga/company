@@ -8,9 +8,9 @@
       "node_modules/**"
     ]
   },
-  /*"compilerOptions":{
+  "compilerOptions":{
     "strictPropertyInitialization": false
-  },*/
+  },
   "rules": {
     "quotemark": false, //单引号双引号
     "indent": false,

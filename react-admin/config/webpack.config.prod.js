@@ -48,6 +48,8 @@ const cssRegex = /\.css$/;
 const cssModuleRegex = /\.module\.css$/;
 const sassRegex = /\.(scss|sass)$/;
 const sassModuleRegex = /\.module\.(scss|sass)$/;
+const lessRegex = /\.less$/;
+const lessModuleRegex = /\.module\.less$/;
 
 // common function to get style loaders
 const getStyleLoaders = (cssOptions, preProcessor) => {
@@ -395,6 +397,25 @@ module.exports = {
               'sass-loader'
             ),
           },
+	        {
+		        test: lessRegex,
+		        exclude: lessModuleRegex,
+		        use: getStyleLoaders({
+			        importLoaders: 1,
+			        javascriptEnabled: true,
+		        }, 'less-loader'),
+	        },
+	        // Adds support for CSS Modules (https://github.com/css-modules/css-modules)
+	        // using the extension .module.css
+	        {
+		        test: lessModuleRegex,
+		        use: getStyleLoaders({
+			        importLoaders: 1,
+			        modules: true,
+			        javascriptEnabled: true,
+			        getLocalIdent: getCSSModuleLocalIdent,
+		        }, 'less-loader'),
+	        },
           // "file" loader makes sure assets end up in the `build` folder.
           // When you `import` an asset, you get its filename.
           // This loader doesn't use a "test" so it will catch all modules

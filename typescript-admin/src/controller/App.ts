@@ -8,6 +8,8 @@ import Container from '@/views/Container.vue';
 import Login from '@/views/login/index.vue';
 import {Getter} from 'vuex-class';
 import {CurrentDto} from '@/dto/user/CurrentDto';
+import User from "@/domain/user/User";
+import {Hero} from "@/domain/Hero";
 
 @Component({
     components: {
