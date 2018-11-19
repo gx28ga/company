@@ -44,7 +44,7 @@ class HeaderTop extends React.Component{
 					theme="light"
 					mode="horizontal"
 					defaultSelectedKeys={['0']}
-					style={{lineHeight: '64px'}}
+					style={{lineHeight: '53px'}}
 				>
 					{
 						this.props.menu.data && this.props.menu.data.menus.map((item,i)=>

@@ -22,7 +22,7 @@ function Container(props){
 				</Sider>
 				<Layout>
 					<Content style={{padding: 0, margin:0}}>
-						<RouteChildren parent={props.parent} children={props.children}/>
+						<RouteChildren {...props}/>
 					</Content>
 				</Layout>
 			</Layout>

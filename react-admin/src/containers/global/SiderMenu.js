@@ -81,10 +81,9 @@ class SlideMenu extends React.Component{
 		if(data) return(
 			<>
 				<div className='menuNav'>
-					<Icon type="appstore" theme="outlined" />
-					{/*<span style={{paddingLeft:"5px"}}>
+					<span>
 						{data && data.name}
-					</span>*/}
+					</span>
 				</div>
 				<Menu
 					theme={this.state.theme}
