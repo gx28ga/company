@@ -5,7 +5,4 @@
  */
 import React from 'react';
 import {RouteChildren} from "../router";
-const Layout=({ parent, children })=> {
-	return <RouteChildren parent={parent} children={children}/>
-};
-export default Layout;
+export default (props) => <RouteChildren {...props}/>;

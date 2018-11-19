@@ -11,7 +11,7 @@ import {Link} from "react-router-dom";
 import {currency} from "../../filter/index";
 import {datetimeFilter} from "../../filter/date";
 import {routeLink} from "../../router/router";
-import {ComTopEdit} from "../common";
+import {ComPage, ComTopEdit} from "../common";
 import Search from "./search";
 
 class Order extends React.Component {
@@ -143,7 +143,7 @@ class Order extends React.Component {
 				}),
 			};
 		});
-		return (<>
+		return (<ComPage>
 			<ComTopEdit right={<Search/>}/>
 			<Table
 				rowClassName={() => 'editable-row'}
@@ -154,7 +154,7 @@ class Order extends React.Component {
 					hideOnSinglePage: true
 				}}
 			/>
-		</>);
+		</ComPage>);
 	}
 }
 

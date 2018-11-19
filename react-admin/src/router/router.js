@@ -3,16 +3,16 @@
  *  createTime 2018-10-31 19:29
  *  description :
  */
-import lazyLoad from "./LazyLoad";
 import order from "./order";
 import product from "./product";
 import example from "./example";
+import Layout from "../containers/Layout";
 
 const routesConfig = [
 	{
 		path: "/",
 		name: "首页",
-		component: lazyLoad(() => import(/* webpackChunkName: "Container" */ '../containers/Container')),
+		component: Layout,
 		redirect:"/order/saleOrderList",
 		children:[
 			//订单
