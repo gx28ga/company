@@ -7,6 +7,7 @@ import {Breadcrumb} from "antd";
 import {Link} from "react-router-dom";
 import React from "react";
 import {routes} from "../../router/router";
+import Util from "../../utils/Util";
 
 const getName = (path) => {
 	let arr = [],
@@ -26,6 +27,12 @@ const getName = (path) => {
 
 	getPath(routes);
 	return arr;
+};
+const leftConfig = ( element ) => {
+	if(Util.isObject(element) && Object.getOwnPropertyDescriptor('title')){
+		return element.title;
+	}
+	return element;
 };
 export default (props) => {
 	const names = getName(props.pathname);
@@ -53,7 +60,7 @@ export default (props) => {
 					}
 				</Breadcrumb>
 			</div>
-			{props.left}
+			{leftConfig(props.left)}
 		</div>
 	)
 }
