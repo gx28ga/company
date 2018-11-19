@@ -20,7 +20,7 @@ const chidrenRoute= (props)=>{
 				<Route
 					key={i}
 					{...config}
-					render={childrenProps => {
+					render={props => {
 						return (
 							<route.component parent={route} {...props}
 							                 children={route.children}/>

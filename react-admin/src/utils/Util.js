@@ -20,6 +20,12 @@ const Util = {
 	isArray(val){
 		return Util.type(val) === "[object Array]";
 	},
+	isObject(val){
+		return Util.type(val) === "[object Object]";
+	},
+	isFunction(val){
+		return Util.type(val) === "[object Function]";
+	},
 	pwdmd5(val) {
 		if (val) {
 			let md5 = require('md5');

@@ -30,7 +30,12 @@ const getName = (path) => {
 export default (props) => {
 	const names = getName(props.pathname);
 	const length = names.length - 1;
-	return (<div>
+	return (<div style={{
+			paddingLeft: '15px',
+			height: '40px',
+			lineHeight: '40px',
+			overflow: 'hidden',
+			...props.style}} className={props.className}>
 			<div style={{float: 'right'}}>
 				<Breadcrumb style={{height: 45, lineHeight: '45px', padding: '0 15px'}} separator=">">
 					{

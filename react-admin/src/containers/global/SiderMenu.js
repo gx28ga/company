@@ -10,8 +10,7 @@ import {withRouter} from "react-router-dom";
 
 const {SubMenu} = Menu;
 
-let privateselect = null;
-const child= (item,i)=> {
+const child= (props, item, i)=> {
 	let dom;
 	if(item.children && item.children.length){ // 父类
 		dom = (
@@ -20,12 +19,12 @@ const child= (item,i)=> {
 					{item.name}
 				</span>}>
 				{
-					item.children.map((subitem,j)=>child(subitem,i+'-'+j))
+					item.children.map((subItem,j)=>child(props, subItem, i+'-'+j))
 				}
 			</SubMenu>
 		)
 	}else{// 子类
-		dom = (<Menu.Item key={i} onClick={(e)=>privateselect(item)}>
+		dom = (<Menu.Item key={i} onClick={(e)=>props.history.replace(item.path)}>
 				<Icon type="caret-right" theme="outlined" />
 				{item.name}
 			</Menu.Item>);
@@ -41,12 +40,7 @@ class SlideMenu extends React.Component{
 			openKeys: ["0"],
 		};
 		this.onOpenChange = this.onOpenChange.bind(this);
-		this.select = this.select.bind(this);
-		privateselect = this.select;
 	}
-	select= (item)=> {
-		this.props.history.replace(item.url);
-	};
 	onOpenChange = (openKeys) => {
 		const latestOpenKey = openKeys.find(key => this.state.openKeys.indexOf(key) === -1);
 		if (this.state.rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
@@ -100,7 +94,7 @@ class SlideMenu extends React.Component{
 					onOpenChange={this.onOpenChange}
 					style={{height: '100%', borderRight: 0}}
 				>
-					{data.children.map((item,i)=>(child(item,i)))}
+					{data.children.map((item,i)=>(child(this.props,item,i)))}
 				</Menu>
 			</>
 		);
