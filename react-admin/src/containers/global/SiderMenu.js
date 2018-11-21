@@ -81,6 +81,7 @@ class SlideMenu extends React.Component{
 		if(data) return(
 			<>
 				<div className='menuNav'>
+					<Icon type="windows" style={{marginRight:'10px'}}/>
 					<span>
 						{data && data.name}
 					</span>

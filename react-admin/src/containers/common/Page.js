@@ -10,7 +10,7 @@ import Header from "../global/Header";
 import SiderMenu from "../global/SiderMenu";
 import connect from "react-redux/es/connect/connect";
 import {withRouter} from "react-router-dom";
-const { Content, Sider} = Layout;
+const { Content, Sider, Footer} = Layout;
 
 function Page(props){
 	return (
@@ -21,14 +21,19 @@ function Page(props){
 					<SiderMenu/>
 				</Sider>
 				<Layout>
-					<Content style={{padding: 0, margin:0}}>
+					<Content style={{padding: '0 20px', margin:0}}>
 						<ComBreadcrumb {...props.location} left={props.edit}/>
-						{props.children}
+						<article className='article-content'>
+							{props.children}
+						</article>
 					</Content>
+					<Footer style={{ textAlign: 'center' }}>
+						Ant Design ©2018 Created by Ant UED
+					</Footer>
 				</Layout>
 			</Layout>
 		</Layout>
-	)
+	);
 }
 export default connect(
 	state=>{

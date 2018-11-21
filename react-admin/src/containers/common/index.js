@@ -6,6 +6,8 @@
 import ComPage from "./Page";
 import ComBreadcrumb from "./Breadcrumb";
 import ComTopEdit from "./TopEdit";
+import ComBox from "./Box";
+import ComTable from "./ComTable";
 export {
 	// 总布局
 	ComPage,
@@ -13,4 +15,8 @@ export {
 	ComTopEdit,
 	// 面包屑
 	ComBreadcrumb,
+	//列表 表单等盒子
+	ComBox,
+	//table表单相关
+	ComTable,
 }

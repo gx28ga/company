@@ -4,28 +4,35 @@
  *  description :
  */
 import React from "react";
-import {Layout,Dropdown,Menu, Icon} from "antd";
+import {Layout, Dropdown, Menu, Icon} from "antd";
 import {connect} from "react-redux";
 import {action_currentUser} from "../../redux/actions";
 import action_global from "../../redux/actions/global";
-const { Header } = Layout;
-class HeaderTop extends React.Component{
-	constructor(props){
+
+const {Header} = Layout;
+
+class HeaderTop extends React.Component {
+	constructor(props) {
 		super(props);
-		this.exit= this.exit.bind(this);
+		this.exit = this.exit.bind(this);
 	}
-	componentDidMount(){
+
+	componentDidMount() {
 		this.props.dispatch(action_global.permission.menu.request("menu"));
 	}
-	update(){
+
+	update() {
 	}
-	exit(){
+
+	exit() {
 		this.props.dispatch(action_currentUser.exit.request(this.props.currentUser));
 	};
-	showChildren(item){
+
+	showChildren(item) {
 		this.props.dispatch(action_global.permission.menuChidren(item));
 	}
-	render(){
+
+	render() {
 		return (
 			<Header className="header">
 				<div className="logo">SUDAO-OMS</div>
@@ -37,7 +44,7 @@ class HeaderTop extends React.Component{
 				}
 				          className="top-silder">
 			<span className="ant-dropdown-link">
-				{this.props.currentUser.data.userName} <Icon type="down" />
+				{this.props.currentUser.data.userName} <Icon type="down"/>
 			</span>
 				</Dropdown>
 				<Menu
@@ -47,8 +54,8 @@ class HeaderTop extends React.Component{
 					style={{lineHeight: '53px'}}
 				>
 					{
-						this.props.menu.data && this.props.menu.data.menus.map((item,i)=>
-							<Menu.Item onClick={this.showChildren.bind(this,item)} key={i}>{item.name}</Menu.Item>
+						this.props.menu.data && this.props.menu.data.menus.map((item, i) =>
+							<Menu.Item onClick={this.showChildren.bind(this, item)} key={i}>{item.name}</Menu.Item>
 						)
 					}
 				</Menu>
@@ -56,4 +63,5 @@ class HeaderTop extends React.Component{
 		);
 	}
 }
-export default connect(state=>state.global.permission)(HeaderTop);
+
+export default connect(state => state.global.permission)(HeaderTop);
