@@ -6,14 +6,14 @@
 import order from "./order";
 import product from "./product";
 import example from "./example";
-import Layout from "../containers/Layout";
+import Container from "../containers/Container";
 
 const routesConfig = [
 	{
-		path: "/",
+		path: "",
 		name: "首页",
-		component: Layout,
-		redirect:"/order/saleOrderList",
+		component: Container,
+		redirect: "/order/saleOrderList",
 		children:[
 			//订单
 			order,
@@ -46,8 +46,12 @@ let setPath= (list)=> {
 		}
 		if(item.children){
 			item.children.forEach(child=> {
-				child.path = path+"/"+child.path;
-				updatePath(child,child.path);
+				if(child.path !== '/'){
+					child.path = path+"/"+child.path;
+					updatePath(child,child.path);
+				}else{
+					updatePath(child,'');
+				}
 			})
 		}
 	};
@@ -59,6 +63,7 @@ let setPath= (list)=> {
 	return list;
 };
 const routes = setPath(routesConfig);
+console.dir(routes);
 setPath= null;
 export {
 	routes,

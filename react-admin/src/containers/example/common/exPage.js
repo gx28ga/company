@@ -4,11 +4,8 @@
  *  description :
  */
 import React from "react";
-import { Layout} from 'antd';
-import ExMenu from "./menu";
 import ComBreadcrumb from "../../common/Breadcrumb";
 import {withRouter} from "react-router-dom";
-const { Content } = Layout;
 
 class ExPage extends React.Component {
 	state = {
@@ -23,22 +20,12 @@ class ExPage extends React.Component {
 
 	render() {
 		return (
-			<Layout>
-				<ExMenu {...this.props} collapsed={this.state.collapsed}/>
-				<Layout>
-					{/*<Header style={{ background: '#fff', paddingLeft: '15px' }}>
-						<Button type="primary" size="small" onClick={this.toggle}>
-							<Icon type="bars" />
-						</Button>
-					</Header>*/}
-					<Content>
-						<ComBreadcrumb {...this.props.location} left={this.props.edit}/>
-						<article style={{padding:'0 15px'}}>
-							{this.props.children}
-						</article>
-					</Content>
-				</Layout>
-			</Layout>
+			<>
+				<ComBreadcrumb {...this.props.location} left={this.props.edit}/>
+				<article style={{padding:'0 15px'}}>
+					{this.props.children}
+				</article>
+			</>
 		);
 	}
 }

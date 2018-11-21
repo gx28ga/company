@@ -4,11 +4,10 @@
  *  description : 试例
  */
 import lazyLoad from "../LazyLoad";
-import Layout from "../../containers/Layout";
 export default {
 	path: 'example',
 	name: '项目说明',
-	component: Layout,
+	component: lazyLoad(() => import(/* webpackChunkName: "example" */ '../../containers/example')),
 	redirect:"/example/namingSpecification",
 	children: [
 		{
@@ -20,6 +19,11 @@ export default {
 			name: "项目结构",
 			path: "projectStructure",
 			component: lazyLoad(() => import(/* webpackChunkName: "example.projectStructure" */ '../../containers/example/projectStructure'))
+		},
+		{
+			name: "项目流程图",
+			path: "flowChart",
+			component: lazyLoad(() => import(/* webpackChunkName: "example.flowChart" */ '../../containers/example/flowChart'))
 		},
 	]
 }
