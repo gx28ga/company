@@ -9,11 +9,12 @@ export default {
 	path: 'example',
 	name: '项目说明',
 	component: Layout,
+	redirect:"/example/namingSpecification",
 	children: [
 		{
 			name: "命名规范",
-			path: "file",
-			component: lazyLoad(() => import(/* webpackChunkName: "example.file" */ '../../containers/example/file'))
+			path: "namingSpecification",
+			component: lazyLoad(() => import(/* webpackChunkName: "example.file" */ '../../containers/example/namingSpecification'))
 		},
 	]
 }

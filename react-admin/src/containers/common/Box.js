@@ -43,7 +43,7 @@ export default class Box extends React.Component{
 			});
 			setTimeout(()=>{
 				this.setState({
-					contentStyle: {height:'0'}
+					contentStyle: {height:'0',flex:'none'}
 				});
 			},60);
 		}else{
@@ -83,7 +83,7 @@ export default class Box extends React.Component{
 						      theme="filled"
 						      style={{marginLeft:'10px', cursor:'pointer'}} />
 					</div>
-					<div className="name">{props.parent.name}</div>
+					<div className="name">{props.title || props.parent.name}</div>
 				</div>
 				<div className='content'
 				     style={this.state.contentStyle}

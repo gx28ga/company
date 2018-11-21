@@ -37,7 +37,7 @@ const leftConfig = ( element ) => {
 export default (props) => {
 	const names = getName(props.pathname);
 	const length = names.length - 1;
-	return (<div style={{...props.style}} className={'breadcrumb'+props.className}>
+	return (<div style={{...props.style}} className={'breadcrumb '+(props.className||'')}>
 			<div style={{float: 'right'}}>
 				<Breadcrumb style={{height: 45, lineHeight: '45px'}} separator="/">
 					{

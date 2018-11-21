@@ -74,8 +74,14 @@
 	line-height: 46px;
 }
 /* 盒子 */
+.horizontal-box{
+	&:extend(.table-vertical);
+	flex-direction: row;
+	.gap{
+		margin-right:15px;
+	}
+}
 .com-box{
-	background:#fff;
 	flex:@flex-auto;
 	&:extend(.table-vertical);
 	&.fixed{
@@ -104,6 +110,7 @@
 		overflow: hidden;
 		transition-duration:.3s;
 		flex:@flex-auto;
+		background:#fff;
 		&.plus-circle{
 			height: 0;
 			overflow: hidden;

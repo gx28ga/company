@@ -6,5 +6,8 @@
 export default {
 	table: {
 		size: 'default',
+	},
+	pagination:{
+		hideOnSinglePage: false, // 只有一页，不显示
 	}
 }

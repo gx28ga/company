@@ -10,6 +10,8 @@ import Header from "../global/Header";
 import SiderMenu from "../global/SiderMenu";
 import connect from "react-redux/es/connect/connect";
 import {withRouter} from "react-router-dom";
+import { Link } from 'react-router-dom';
+import {routeLink} from "../../router/router";
 const { Content, Sider, Footer} = Layout;
 
 function Page(props){
@@ -28,7 +30,7 @@ function Page(props){
 						</article>
 					</Content>
 					<Footer style={{ textAlign: 'center' }}>
-						Ant Design ©2018 Created by Ant UED
+						@2018 by bo.peng <Link to={routeLink.example.path}>演式</Link>
 					</Footer>
 				</Layout>
 			</Layout>

@@ -33,9 +33,9 @@ class ExPage extends React.Component {
 					</Header>*/}
 					<Content>
 						<ComBreadcrumb {...this.props.location} left={this.props.edit}/>
-						<div style={{padding:'15px'}}>
+						<article style={{padding:'0 15px'}}>
 							{this.props.children}
-						</div>
+						</article>
 					</Content>
 				</Layout>
 			</Layout>

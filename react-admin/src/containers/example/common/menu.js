@@ -47,7 +47,7 @@ export default (props) => {
 		collapsible
 		collapsed={collapsed}
 	>
-		<div style={logo}>项目文档规范</div>
+		<div style={logo}>项目演示</div>
 		<Menu
 			theme="dark"
 			mode="inline"
