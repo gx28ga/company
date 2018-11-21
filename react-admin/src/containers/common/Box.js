@@ -26,7 +26,6 @@ export default class Box extends React.Component{
 	}
 	// 最大化最小化
 	minusEvent(){
-		console.log(this.minusEventOpen);
 		if(!this.minusEventOpen) return;
 		this.minusEventOpen = false;
 		const content = this.content.current;

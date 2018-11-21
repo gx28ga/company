@@ -30,7 +30,7 @@ function Page(props){
 						</article>
 					</Content>
 					<Footer style={{ textAlign: 'center' }}>
-						@2018 by bo.peng <Link to={routeLink.example.path}>演式</Link>
+						@2018 by bo.peng <Link to={routeLink.example.path}>演示</Link>
 					</Footer>
 				</Layout>
 			</Layout>

@@ -14,7 +14,12 @@ export default {
 		{
 			name: "命名规范",
 			path: "namingSpecification",
-			component: lazyLoad(() => import(/* webpackChunkName: "example.file" */ '../../containers/example/namingSpecification'))
+			component: lazyLoad(() => import(/* webpackChunkName: "example.namingSpecification" */ '../../containers/example/namingSpecification'))
+		},
+		{
+			name: "项目结构",
+			path: "projectStructure",
+			component: lazyLoad(() => import(/* webpackChunkName: "example.projectStructure" */ '../../containers/example/projectStructure'))
 		},
 	]
 }

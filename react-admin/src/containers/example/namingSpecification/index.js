@@ -8,6 +8,7 @@ import {ExPage} from "../common";
 import {ComBox} from "../../common";
 import {Table} from 'antd';
 import {paginationConfig} from "../../config";
+import ComTable from "../../common/ComTable";
 
 export default (props) => {
 	const Title = () => <div>
@@ -110,6 +111,7 @@ export default (props) => {
 		},
 	];
 	data.map((item,i)=>item.key=i);
+	data1.map((item,i)=>item.key=i);
 	const page = Object.assign({},paginationConfig.pagination,{
 		pageSize: 999,
 	});
@@ -117,10 +119,14 @@ export default (props) => {
 		<ExPage edit={<Title/>}>
 			<section className="horizontal-box">
 				<ComBox {...props} title='命名规范' className='gap'>
-					<Table columns={columns} dataSource={data} pagination={page}/>
+					<ComTable table={
+						<Table columns={columns} dataSource={data} pagination={page}/>
+					}/>
 				</ComBox>
 				<ComBox {...props} title='常用命名推荐'>
-					<Table columns={columns} dataSource={data1} pagination={page}/>
+					<ComTable table={
+						<Table columns={columns} dataSource={data1} pagination={page}/>
+					}/>
 				</ComBox>
 			</section>
 		</ExPage>
