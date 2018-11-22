@@ -81,10 +81,11 @@ class SlideMenu extends React.Component{
 		if(data) return(
 			<>
 				<div className='menuNav'>
-					<Icon type="windows" style={{marginRight:'10px'}}/>
-					<span>
-						{data && data.name}
-					</span>
+					<Icon type="windows" className='icon'/>
+					<div className='text'>
+						<h2>{data && data.name}</h2>
+						<p>后台管理系统</p>
+					</div>
 				</div>
 				<Menu
 					theme={this.state.theme}

@@ -1,50 +1,35 @@
 /**
  *  author : bo.peng
- *  createTime 2018-11-15 16:16
- *  description : 试例
+ *  createTime 2018-11-22 16:40
+ *  description : vue 代码相关
  */
 import lazyLoad from "../LazyLoad";
-import react from "./react";
-import vue from "./vue";
-import webpack from "./webpack";
+import Layout from "../../containers/Layout";
 export default {
 	path: 'example',
-	name: '项目说明',
-	component: lazyLoad(() => import(/* webpackChunkName: "example" */ '../../containers/example')),
+	name: 'Vue原理',
+	component: Layout,
 	redirect:"/example/namingSpecification",
 	children: [
 		{
-			name: "命名规范",
+			name: "vue原理",
 			path: "namingSpecification",
 			component: lazyLoad(() => import(/* webpackChunkName: "example.namingSpecification" */ '../../containers/example/namingSpecification'))
 		},
 		{
-			name: "项目结构",
+			name: "vuex原理",
 			path: "projectStructure",
 			component: lazyLoad(() => import(/* webpackChunkName: "example.projectStructure" */ '../../containers/example/projectStructure'))
 		},
 		{
-			name: "公共文件级组件等",
+			name: "vue-router原理",
 			path: "public",
 			component: lazyLoad(() => import(/* webpackChunkName: "example.flowChart" */ '../../containers/example/flowChart'))
 		},
 		{
-			name: "项目流程图",
+			name: "vue-cli配置",
 			path: "flowChart",
 			component: lazyLoad(() => import(/* webpackChunkName: "example.flowChart" */ '../../containers/example/flowChart'))
 		},
-		{
-			name: "单元测试",
-			path: "flowChart",
-			component: lazyLoad(() => import(/* webpackChunkName: "example.flowChart" */ '../../containers/example/flowChart'))
-		},
-		{
-			name: "服务器部署",
-			path: "flowChart",
-			component: lazyLoad(() => import(/* webpackChunkName: "example.flowChart" */ '../../containers/example/flowChart'))
-		},
-		webpack,
-		vue,
-		react,
 	]
 }
