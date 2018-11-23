@@ -6,28 +6,28 @@
 import {Component, Vue, Watch} from 'vue-property-decorator';
 import { Layout, Menu, Icon, Input } from 'ant-design-vue';
 const Search = Input.Search;
-
+const searchConfig = {
+	style: {
+		float: 'right',
+		width : '320px',
+	},
+	props: {
+		enterButton: true,
+		placeholder: '请输入内容',
+	},
+	on: {
+		search: (value: string) => {
+			console.log(value);
+		},
+	},
+	class: 'header-search',
+};
 @Component
 export default class Header extends Vue {
-    public render() {
-        const searchConfig = {
-            style: {
-                float: 'right',
-                width : '320px',
-            },
-            on: {
-                search: (value: string) => {
-                    console.log(value);
-                },
-            },
-        };
+    private render() {
         return (<Layout.Header>
             <div className="logo" />
-            <Search
-                placeholder="input search text"
-                {...searchConfig}
-                enterButton
-            />
+            <Search {...searchConfig}/>
             <Menu theme="dark" mode="horizontal" style={{lineHeight: '64px'}}>
                 <Menu.Item key="1">
                     <Icon type="user" />
