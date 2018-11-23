@@ -1,3 +1,8 @@
+/**
+ *  author : bo.peng
+ *  createTime 2018-11-23 12:43
+ *  description :
+ */
 import Vue from 'vue';
 import Vuex from 'vuex';
 

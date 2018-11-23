@@ -11,3 +11,41 @@
 @border-radius-base: 4px;                        // 组件/浮层圆角
 @border-color-base: #d9d9d9;                     // 边框色
 @box-shadow-base: 0 2px 8px rgba(0, 0, 0, .15);  // 浮层阴影
+
+// Background color for `<body>`
+@body-background        : none;
+// Base background color for most components
+@component-background   : none;
+@font-family  : "PingFang SC", "Hiragino Sans GB",
+"Microsoft YaHei", "MicrosoftYaHei", Arial, "Helvetica Neue", Helvetica, sans-serif;
+@code-family            : "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+@heading-color          : fade(#000, 85%);
+@text-color             : fade(#000, 65%);
+@text-color-secondary   : fade(#000, 45%);
+@heading-color-dark     : fade(#fff, 100%);
+@text-color-dark        : fade(#fff, 85%);
+@text-color-secondary-dark: fade(#fff, 65%);
+@font-size-base         : 14px;
+@font-size-lg           : @font-size-base + 2px;
+@font-size-sm           : 12px;
+@line-height-base       : 1.5;
+@border-radius-base     : 4px;
+@border-radius-sm       : 2px;
+
+// Layout
+@layout-body-background         : none;
+@layout-header-background       : #001529;
+@layout-footer-background       : @layout-body-background;
+@layout-header-height           : 64px;
+@layout-header-padding          : 0 50px;
+@layout-footer-padding          : 24px 50px;
+@layout-sider-background        : @layout-header-background;
+@layout-trigger-height          : 48px;
+@layout-trigger-background      : #002140;
+@layout-trigger-color           : #fff;
+@layout-zero-trigger-width      : 36px;
+@layout-zero-trigger-height     : 42px;
+// Layout light theme
+@layout-sider-background-light  : #fff;
+@layout-trigger-background-light: #fff;
+@layout-trigger-color-light     : @text-color;

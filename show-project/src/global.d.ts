@@ -11,4 +11,8 @@ interface Window {
 declare const Main: any;
 declare module 'ant-design-vue' {
     export let Button: VueClass<Vue>;
+    export let Layout: any;
+    export let Menu: any;
+    export let Icon: any;
+    export let Input: any;
 }
