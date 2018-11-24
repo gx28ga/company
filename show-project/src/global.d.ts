@@ -15,4 +15,5 @@ declare module 'ant-design-vue' {
     export let Menu: any;
     export let Icon: any;
     export let Input: any;
+    export let Breadcrumb: any;
 }

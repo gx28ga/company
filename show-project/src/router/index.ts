@@ -7,10 +7,10 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Layout from '@/views/Layout';
 import Container from '@/views/Container';
+import demo from "./demo";
+import user from "./user";
 Vue.use(Router);
-export default new Router({
-    mode: 'history',
-    base: process.env.BASE_URL,
+const routesConfig = {
     routes: [
         {
             path: '/',
@@ -28,10 +28,15 @@ export default new Router({
                 },
             ],
         },
-        {
-            path: '/user',
-            name: 'user',
-            component: () => import(/* webpackChunkName: "user" */ '../views/user'),
-        },
+        // 用户中心
+        user,
+        // 展示页
+        demo,
     ],
+};
+
+export default new Router({
+    mode: 'history',
+    base: process.env.BASE_URL,
+    ...routesConfig,
 });
