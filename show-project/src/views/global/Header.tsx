@@ -1,26 +1,26 @@
 /**
  *  author : bo.peng
- *  createTime 2018-11-23 13:30
- *  description : 头部
+ *  createTime 2018-11-24 10:41
+ *  description :
  */
-import {Component, Vue, Watch} from 'vue-property-decorator';
+import {Component, Vue} from 'vue-property-decorator';
 import { Layout, Menu, Icon, Input } from 'ant-design-vue';
 const Search = Input.Search;
 const searchConfig = {
-	style: {
-		float: 'right',
-		width : '320px',
-	},
-	props: {
-		enterButton: true,
-		placeholder: '请输入内容',
-	},
-	on: {
-		search: (value: string) => {
-			console.log(value);
-		},
-	},
-	class: 'header-search',
+    style: {
+        float: 'right',
+        width : '320px',
+    },
+    props: {
+        enterButton: true,
+        placeholder: '请输入内容',
+    },
+    on: {
+        search: (value: string) => {
+            console.log(value);
+        },
+    },
+    class: 'header-search',
 };
 @Component
 export default class Header extends Vue {
