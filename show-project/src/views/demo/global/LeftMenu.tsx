@@ -35,10 +35,15 @@ const Child = (h: any, item: any, i: number|string) => {
 export default class LeftMenu extends Vue {
     public render(h: any) {
         return (
-	        <Sider width={200}>
+	        <Sider width={200} style={{background: 'none'}}>
+		        <div class="left-menu-title">
+			        <Icon type="appstore" style={{marginRight: '10px'}}/>
+			        项目文档
+		        </div>
 		        <Menu
                     theme='light'
                     mode="inline"
+                    class='left-menu'
 		        >
                     {config.children.map((item, i ) => Child(h, item, i))}
 		        </Menu>

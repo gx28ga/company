@@ -14,7 +14,7 @@ export default class Demo extends Vue {
     public render() {
         return (<Layout>
             <Header/>
-            <Layout>
+            <Layout style={{paddingLeft: '15px'}}>
                 <LeftMenu/>
                 <Layout style={{ padding: '0 24px 24px' }}>
                     <Breadcrumb style={{ margin: '16px 0' }}>
