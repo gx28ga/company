@@ -25,7 +25,7 @@ const Child = (h: any, item: any, i: number|string) => {
         );
     } else {// 子类
         dom = (<Menu.Item key={i} onClick={() => router.push(item.path)}>
-            <Icon type="caret-right" theme="outlined" />
+	        <Icon type={item.icon || "caret-right"} theme="outlined" />
             {item.name}
         </Menu.Item>);
     }

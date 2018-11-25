@@ -8,14 +8,10 @@ export default {
     name: 'demo',
     component: () => import(/* webpackChunkName: "demo" */ '@/views/demo'),
     children: [
-        {
-            path: '/namingSpecification',
-            name: '命名规范',
-            component: () => import(/* webpackChunkName: "namingSpecification" */ '@/views/demo/namingSpecification'),
-        },
 	    {
 		    path: '/namingSpecification',
 		    name: '项目管理',
+		    icon: 'folder',
 		    component: () => import(/* webpackChunkName: "namingSpecification" */ '@/views/demo/namingSpecification'),
 		    children: [
 			    {
