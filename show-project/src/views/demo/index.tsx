@@ -15,9 +15,9 @@ export default class Demo extends Vue {
     public render() {
         return (<Layout>
             <Header/>
-            <antLayout style={{paddingLeft: '15px'}}>
+            <Layout style={{paddingLeft: '15px'}}>
                 <LeftMenu/>
-                <antLayout style={{ padding: '0 24px 24px' }}>
+                <Layout style={{ padding: '0 24px 24px' }}>
                     <Breadcrumb style={{ margin: '16px 0' }}>
                         <Breadcrumb.Item>Home</Breadcrumb.Item>
                         <Breadcrumb.Item>List</Breadcrumb.Item>
@@ -26,8 +26,8 @@ export default class Demo extends Vue {
                     <Content style={{ background: '#fff', padding: 24, margin: 0, minHeight: 280 }}>
                         <LayoutViews/>
                     </Content>
-                </antLayout>
-            </antLayout>
+                </Layout>
+            </Layout>
         </Layout>);
     }
 }

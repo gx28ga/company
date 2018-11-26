@@ -8,9 +8,8 @@ import {Component, Vue} from 'vue-property-decorator';
 @Component
 export default class Box extends Vue {
     public render() {
-        debugger;
         return (<article>
-
+            {this.$slots.default}
         </article>);
     }
 }
