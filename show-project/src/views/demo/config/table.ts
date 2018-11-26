@@ -3,10 +3,11 @@
  * created by bo.peng 2018/11/20.
  * email:spion@qq.com
  */
-import pagination from "./pagination";
+import pagination from './pagination';
+
 export default {
-	table: {
-		size: 'default',
-	},
-	pagination,
-}
+    table: {
+        size: 'default',
+    },
+    pagination,
+};

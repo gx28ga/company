@@ -11,7 +11,7 @@ const Title = () => <div>
 		<span style={{
 			fontSize: '20px',
 			paddingRight: '5px',
-			color: '#333'
+			color: '#333',
 		}}>Naming specification</span>
 	项目文件、变量、方法、等命名规范</div>;
 const columns = [{

@@ -4,6 +4,7 @@
  * email:spion@qq.com
  */
 import ComBox from './Box';
+
 export {
-	ComBox,
-}
+    ComBox,
+};

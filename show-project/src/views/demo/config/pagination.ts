@@ -4,7 +4,7 @@
  * email:spion@qq.com
  */
 export default {
-	pagination:{
+	pagination: {
 		hideOnSinglePage: true, // 只有一页，不显示
-	}
-}
+	},
+};

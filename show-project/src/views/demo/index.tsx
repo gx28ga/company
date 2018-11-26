@@ -4,16 +4,16 @@
  *  description :
  */
 import {Component, Vue} from 'vue-property-decorator';
-import { Layout as antLayout, Breadcrumb } from 'ant-design-vue';
+import { Layout, Breadcrumb } from 'ant-design-vue';
 import LeftMenu from "./global/LeftMenu";
 import Header from "./global/Header";
-import Layout from "@/views/Layout";
-const { Content } = antLayout;
+import LayoutViews from "@/views/Layout";
+const { Content } = Layout;
 
 @Component
 export default class Demo extends Vue {
     public render() {
-        return (<antLayout>
+        return (<Layout>
             <Header/>
             <antLayout style={{paddingLeft: '15px'}}>
                 <LeftMenu/>
@@ -24,10 +24,10 @@ export default class Demo extends Vue {
                         <Breadcrumb.Item>App</Breadcrumb.Item>
                     </Breadcrumb>
                     <Content style={{ background: '#fff', padding: 24, margin: 0, minHeight: 280 }}>
-                        <Layout/>
+                        <LayoutViews/>
                     </Content>
                 </antLayout>
             </antLayout>
-        </antLayout>);
+        </Layout>);
     }
 }

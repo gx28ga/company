@@ -5,9 +5,10 @@
  */
 import tableConfig from './table';
 import paginationConfig from './pagination';
+
 export {
-	// table配置
-	tableConfig,
-	// 分页配置
-	paginationConfig,
-}
+    // table配置
+    tableConfig,
+    // 分页配置
+    paginationConfig,
+};
