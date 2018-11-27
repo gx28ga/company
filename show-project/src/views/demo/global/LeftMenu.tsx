@@ -24,7 +24,7 @@ const Child = (h: any, item: any, i: number|string) => {
             </SubMenu>
         );
     } else {// 子类
-        dom = (<Menu.Item key={i} onClick={() => router.push(item.path)}>
+        dom = (<Menu.Item key={i} onClick={() => router.push(config.path + '/' + item.path)}>
 	        <Icon type={item.icon || "caret-right"} theme="outlined" />
             {item.name}
         </Menu.Item>);

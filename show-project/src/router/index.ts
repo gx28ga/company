@@ -10,7 +10,7 @@ import Container from '@/views/Container';
 import demo from "./demo";
 import user from "./user";
 Vue.use(Router);
-const routesConfig = {
+export const routesConfig = {
     routes: [
         {
             path: '/',
